@@ -1,0 +1,100 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>初期設定　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+		<meta name="format-detection" content="telephone=no">
+		<?php if(preg_match("/(Android|iPhone|CareMenteh)/", $_SERVER["HTTP_USER_AGENT"])): ?><meta name="viewport" content="width=320, user-scalable=no" /><?php else: ?><meta name="viewport" content="width=1280" />
+		<?php endif; ?>
+
+		<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+		<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+		<link href="/wp/wp-content/themes/HAPPY_Dark/css/frm.css" rel="stylesheet">
+		<link rel="stylesheet" href="/wp/wp-content/themes/HAPPY_Dark/css/transitional.css">
+
+
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+		<script src="/_assets/js/jquery.js"></script>
+		<script src="/_assets/js/jquery.bxslider.min.js"></script>
+		<script src="/_assets/js/common.js"></script>
+		<script src="/_assets/js/form.js"></script>
+		<script src="/_assets/js/ga.js"></script>
+		<script src="/_assets/js/jquery.validationEngine.js"></script>
+		<script src="/_assets/js/jquery.validationEngine-ja.js"></script>
+        <script src="/_assets/js/tooltipster.bundle.min.js"></script>
+		<script src="/_assets/js/xc.js"></script>
+        
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+
+	</head>
+
+	<body id="pTop">
+		
+		<div id="Container">
+			<?php
+			/* ヘッダーインクルード */
+			include(DIR_PUBLIC . "/include/header_new.php");
+			?>
+			
+			<div id="Contents">
+				<div class="bg_w">
+
+				<div class="content">
+					<div class="loginBox">
+						<h3 class="settingTtl">SNSをご利用いただく前に、<br>以下の登録をお願いします。</h3>
+
+						<?php $publicGadget->html_error_array($this->get('error_array')); ?>
+
+						<form id="form_1" method="POST" name="form01" action="<?php echo FILENAME ?>" enctype="multipart/form-data">
+							<dl class="contactform">
+								<dt>アバター画像 <span class="attention">（画像形式はjpg、gif、pngのみ）</span></dt>
+								<dd><input type="file" name="avatar"></dd>
+								<dt>ニックネーム　<span>必須</span></dt>
+								<dd><input type="text" name="nickname" value="<?php echo $this->get("nickname") ?>" aria-required="true" class="validate[required]"></dd>
+								<dt>ファッション系統</dt>
+								<dd class="addressform">
+									<div class="addressselect">
+										<select name="fashion_id">
+											<OPTION VALUE="">選択してください</OPTION>
+											<?php foreach ($this->get("fashionTypeArray") AS $key => $value) { ?>
+												<?php $selected = ($key == $this->get("fashion_id") ? 'selected="selected"' : '') ?>
+												<OPTION VALUE="<?php echo $key ?>" <?php echo $selected ?>><?php echo $value ?></OPTION>
+											<?php } ?>
+
+										</select>
+									</div>
+								</dd>
+								<dt>好きなブランド</dt>
+								<dd><input type="text" name="like_brand" value="<?php echo $this->get("like_brand") ?>" placeholder="20文字以内" class="validate[maxSize[20]]"></dd>
+								<dt>自己紹介</dt>
+								<dd><textarea name="comment" value="" placeholder="200文字以内" class="validate[maxSize[200]]"><?php echo $this->get("comment") ?></textarea></dd>
+								<p class="settingTxt">上記の登録した内容はマイページへアクセスした後でも変更することができます。</p>
+								<dt class="btnarea"><input type="button" id="settingbtn" class="btn" value="確認" onclick="if(validate(document.form01))document.form01.submit()"></dt>
+							</dl>
+						</form>
+					</div>
+				</div><!--/content-->
+				</div>
+			</div><!--/Contents-->
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer_top.php");
+			?>
+		</div>
+		<!--/Container-->
+
+		<?php
+		/* フッターインクルード */
+		include(DIR_PUBLIC . "/include/footer_nav.php");
+		?>
+		
+		
+	</body>
+</html>

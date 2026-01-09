@@ -1,0 +1,427 @@
+// 旧版ではすべてのページで呼んでいたので bodyId で囲まない
+@use "mixin";
+
+@include for-pc {
+  .sale {
+    margin-bottom: 70px;
+    overflow: hidden;
+
+    &.line {
+      border-bottom: #999 solid 1px;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+    }
+
+    .saleL, .saleR .saleimg {
+      width: 100%;
+      height: auto;
+      margin: 0 0 30px;
+    }
+
+    .saleL, .saleR .saleimg img {
+      width: 100%;
+      height: auto;
+    }
+
+    .sale_header {
+      width: 100%;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      line-height: 1.8em;
+      text-align: center;
+      border-bottom: #999 solid 1px;
+
+      h2 {
+        width: 100%;
+      }
+
+      p {
+        width: 70%;
+        margin: 0 15% 0;
+      }
+    }
+
+    .memberbtnarea {
+      width: 100%;
+      text-align: center;
+      margin: 30px 0 10px;
+
+      .line {
+        width: 420px;
+        padding: 20px;
+        text-align: center;
+        margin: 0 auto;
+        border: #999 solid 1px;
+      }
+
+      p {
+        margin: 0 auto;
+        padding: 0 0 8px;
+      }
+
+      .btn {
+        background-color: $purple;
+        border: 1px solid $purple;
+        width: 300px;
+        height: 32px;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 8px;
+        cursor: pointer;
+      }
+    }
+
+    .saleL .memberbtnarea .btn {
+      padding-top: 10px;
+    }
+
+    .memberbtnarea .btn {
+      &.login {
+        background-color: #999;
+        border: 1px solid #999;
+        margin: 10px auto 0;
+      }
+
+      a {
+        color: #fff;
+      }
+
+      &:hover {
+        filter: alpha(opacity = 70);
+        -moz-opacity: 0.7;
+        opacity: 0.7;
+      }
+
+      a:hover {
+        color: #fff;
+        filter: alpha(opacity = 100);
+        -moz-opacity: 1;
+        opacity: 1;
+      }
+    }
+
+    .saleL {
+      .ticket {
+        background: linear-gradient(120deg, #702844, #581d34);
+        padding: 30px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        color: #fff;
+
+        &.gold {
+          background: linear-gradient(120deg, $purple, #6f5021);
+        }
+
+        &.mailmaga {
+          background: linear-gradient(120deg, #b8dadf, #daf7f3);
+          color: #333;
+        }
+
+        .title_sub {
+          margin: 0 0 10px;
+        }
+
+        .title {
+          font-size: 26px;
+          margin: 0 0 30px;
+        }
+
+        .sale_warp {
+          display: inline-block;
+          width: 90%;
+          margin: 0 0 10px;
+          padding: 3% 5%;
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
+          -webkit-border-radius: 8px;
+          -moz-border-radius: 8px;
+        }
+
+        &.mailmaga .sale_warp {
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .sale_warp {
+          .sale_content {
+            float: left;
+            width: 70%;
+            line-height: 1.6em;
+          }
+
+          .sale_off {
+            float: right;
+            width: 30%;
+            margin: 5px 0 0 0;
+            text-align: right;
+            font-size: 24px;
+          }
+        }
+
+        .code {
+          float: right;
+        }
+      }
+
+      img {
+        max-width: 90%;
+        height: auto;
+      }
+    }
+
+    .saleR {
+      line-height: 1.8;
+
+      h2 {
+        font-size: 22px;
+        margin-bottom: 30px;
+      }
+
+      li {
+        list-style-position: inside;
+        list-style-type: square;
+        padding-left: 1em;
+        text-indent: -1em;
+        margin-bottom: 10px;
+      }
+
+      p.caution {
+        font-weight: bold;
+        margin: 20px 0;
+      }
+
+      .limit {
+        text-align: center;
+        margin-bottom: 50px;
+        border: 2px solid #a93c3c;
+        color: #a93c3c;
+        font-weight: bold;
+        padding: 14px 0;
+      }
+    }
+
+    .btnarea {
+      width: 100%;
+      text-align: center;
+      margin: 10px 0 30px;
+
+      input {
+        background-color: $purple;
+        color: #fff;
+        width: 320px;
+        height: 40px;
+        border: none;
+        font-size: 14px;
+        line-height: 0;
+        cursor: pointer;
+
+        &:hover {
+          filter: alpha(opacity = 70);
+          -moz-opacity: 0.7;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  @include for-sp {
+    .sale {
+      overflow: hidden;
+
+      &.line {
+        border-bottom: #999 solid 1px;
+        padding-bottom: 30px;
+      }
+
+      .saleL {
+        padding: 30px 0 0 0;
+        width: 100%;
+      }
+
+      .saleR {
+        width: 100%;
+      }
+
+      .sale_header {
+        width: 100%;
+        padding-bottom: 20px;
+        line-height: 1.8em;
+        text-align: center;
+        border-bottom: #999 solid 1px;
+
+        h2 {
+          width: 100%;
+          margin: 30px 0 20px;
+        }
+
+        p {
+          width: 100%;
+          margin: 0 0 10px;
+        }
+      }
+
+      .memberbtnarea {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+
+        .btn {
+          background-color: $purple;
+          border: 1px solid $purple;
+          width: 300px;
+          height: 32px;
+          text-align: center;
+          margin: 0 auto;
+          padding-top: 12px;
+          cursor: pointer;
+
+          &.login {
+            background-color: #999;
+            border: 1px solid #999;
+            margin: 10px auto 0;
+          }
+
+          a {
+            font-size: 14px;
+            color: #fff;
+          }
+        }
+      }
+
+      .saleL {
+        text-align: left;
+        margin-bottom: 20px;
+
+        .ticket {
+          background: linear-gradient(120deg, #702844, #581d34);
+          padding: 6% 3% 8%;
+          border-radius: 8px;
+          -webkit-border-radius: 8px;
+          -moz-border-radius: 8px;
+          color: #fff;
+
+          &.gold {
+            background: linear-gradient(120deg, $purple, #6f5021);
+          }
+
+          &.mailmaga {
+            background: linear-gradient(120deg, #b8dadf, #daf7f3);
+            color: #333;
+          }
+
+          .title_sub {
+            margin: 0 0 0 4%;
+          }
+
+          .title {
+            font-size: 18px;
+            margin: 0 0 20px;
+          }
+
+          .sale_warp {
+            display: inline-block;
+            width: 94%;
+            margin: 0 0 10px;
+            padding: 3%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+          }
+
+          &.mailmaga .sale_warp {
+            background-color: rgba(255, 255, 255, 0.5);
+          }
+
+          .sale_warp {
+            .sale_content {
+              float: left;
+              width: 70%;
+              line-height: 1.6em;
+            }
+
+            .sale_off {
+              float: right;
+              width: 30%;
+              text-align: right;
+              font-size: 16px;
+            }
+          }
+
+          .code {
+            float: right;
+          }
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      .saleR {
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .saleimg {
+        width: 100%;
+        height: auto;
+        margin: 0 0 15px;
+
+        img {
+          width: 100% !important;
+          height: auto !important;
+        }
+      }
+
+      .saleR {
+        .limit {
+          text-align: center;
+          margin-bottom: 40px;
+          border: 2px solid #a93c3c;
+          color: #a93c3c;
+          font-weight: bold;
+          padding: 12px 0;
+        }
+
+        h2 {
+          font-size: 22px;
+          margin: 20px 0;
+          line-height: 1.4;
+        }
+
+        li {
+          list-style-position: inside;
+          list-style-type: square;
+          padding-left: 1em;
+          text-indent: -1em;
+          margin-bottom: 10px;
+        }
+
+        p.caution {
+          font-weight: bold;
+          line-height: 1.8;
+        }
+      }
+
+      .btnarea {
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+
+        input {
+          -webkit-appearance: none;
+          border-radius: 0;
+          background-color: $purple;
+          color: #fff;
+          width: 100%;
+          height: 40px;
+          border: none;
+          font-size: 14px;
+          line-height: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<?php
+/*
+ * フレンド検索用
+ * CREATE: 2017.2.10 aoyama
+ */
+require '../../../core/PreLoad.inc';
+$aic = new MypageFriendController();
+$aic->search();
+$aic->view("mypage".DS."friend");
+?>

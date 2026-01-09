@@ -1,0 +1,15 @@
+ input:hover{
+    border: 1px solid #9a7339;
+    color:#9a7339;
+    background-color:#fff;
+     cursor: pointer;
+}
+ .cancelbtn{
+    margin-right:20px;
+    background-color:#ccc;
+}
+.cancelbtn:hover{
+    background-color:#fff;
+    color:#ccc;
+    border:1px solid #ccc;
+}

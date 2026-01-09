@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<meta name="format-detection" content="telephone=no">
+<title>ただいまのお預かり品｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+<body id="mypage">
+    <?php
+    /* ヘッダーインクルード */
+    include(DIR_PUBLIC . "/include/header_new.php");
+    ?>
+	<!--　/header_nav　-->
+	
+	<div class="bg mypageMain">
+    <!--　/#banner -->
+		
+    <section id="mypage_nav">
+      <div class="container">
+        <ul>
+			<li><a href="../../mypage/index.html"><img src="../../img/header04.png" alt="マイページ"><span>マイページ<br>トップ</span></a></li>
+			<li class="linkoff"><a><img src="../img/mypage01.png" alt="カウンセリング"><span>カウンセリング</span></a></li>
+			<li><a class="on" href="../ordered/index.html"><img src="../img/mypage02.png" alt="ただいまのお預かり品">
+        <span>ただいまの<br>お預かり品</span>
+      </a></li>
+      <li><a href="../history/index.html"><img src="../img/mypage05.png" alt="過去のケアメンテご利用履歴">
+         <span>過去のケアメンテ<br>ご利用履歴</span>
+      </a></li>
+      <li><a href="../wardrobe/index.html"><img src="../img/mypage04.png" alt="ワードローブお預かり品">
+        <span>ワードローブ<br>お預かり品</span>
+      </a></li>
+			<li><a href="/sale/"><img src="../img/mypage03.png" alt="セール情報（会員ご優待）"><span>セール情報<br>（会員ご優待）</span></a></li>
+			</ul>
+		</div>
+    </section>
+    <!--　/#mypage_nav -->
+		
+    <section class="mainContents">
+      <div class="container">
+        <h2><img src="../img/mypage03.png" alt="ただいまのお預かり品">ただいまのお預かり品</h2>
+				<p>ケアメンテをご利用いただいたすべての履歴がご覧いただけます。</p>
+			</div>
+      <div id="mypagetab" class="historyArea historyChart">
+        <div class="container">
+          <table class="historyTable">
+            <tbody>
+              <tr>
+                <th>カルテNo</th>
+                <th>カウンセリング日</th>
+                <th>合計金額</th>
+                <th>ご利用点数</th>
+              </tr>
+              <tr>
+                <td><?php echo $this->get('chart_id') ?></td>
+                <td><?php echo $this->get('counseling_date') ?></td>
+                <td><span><?php echo $this->get('total_price') ?></span>円</td>
+                <td><span><?php echo $this->get('item_count') ?></span>点</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="tab2_inner">
+            <p>画像をクリックするとカウンセリングカルテ詳細がご覧いただけます。</p>
+            <ul class="karteItem">
+                <?php foreach ($this->get("itemAllArray") AS $values) { ?>
+                  <li>
+                    <div class="itemNo"><?php echo $values['item_id'] ?></div>
+                    <div class="itemImg"><a href="<?php echo $values['item_link'] ?>"><img src="<?php echo $values['thumb_url'] ?>" alt="<?php echo $values['item_id'] ?>"></a></div>
+                    <div class="itemName pc">
+                      <?php echo $values['brand_name'];?>
+                    </div>
+                    <div class="itemName sp">
+                    <?php 
+                      $limit = 12;
+                      if(mb_strlen($values['brand_name']) > $limit) { 
+                      $title = mb_substr($values['brand_name'],0,$limit);
+                      echo $title. "..." ;
+                      } else {
+                      echo $values['brand_name'];
+                      }?>
+                    </div>
+                    <div class="itemType"><?php echo $values['item_name'] ?></div>
+                    <div class="itemDate">お届け日：<?php echo $values['date'] ?></div>
+                    <div class="itemStatus"><span><?php echo $values['status_text'] ?></span></div>
+                  </li>
+                <?php } ?>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--　/.mainContents -->
+		
+    <div class="footer_sns">
+      <div class="container">
+        <ul>
+          <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!--　/.footer_sns -->
+    <?php
+    /* ヘッダーインクルード */
+    include(DIR_PUBLIC . "/include/footer_new.php");
+    ?>
+	</div>
+  <!--　/.bg -->
+
+ 
+  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+		
+    var menuFlag = true;
+    $('.header_nav_common .header_tab').on('click', function() {
+      menuFlag = !menuFlag;
+      if(menuFlag){
+        $('.header_nav_common').css("top","0");
+      } else {
+        $('.header_nav_common').css("top","-95px");
+      }
+  	});
+		
+  });
+  </script>
+	<script type="text/javascript">
+    $(function(){
+			$('#mypage_nav li').removeClass('on');
+      $('#mypage_nav li a').filter(function(){return $(this).prop('href')==location.href;}).addClass('on');
+    });
+  </script>
+	</body>
+</html>

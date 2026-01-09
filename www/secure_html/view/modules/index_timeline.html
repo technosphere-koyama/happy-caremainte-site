@@ -1,0 +1,29 @@
+<!-- postingarea loop -->
+<?php foreach ($this->get("timeline_array") AS $tlValue) { ?>
+    <div class="postingArea">
+        <div class="userAvatar"><img src="<?php echo $tlValue['avatar'] ?>" alt="<?php echo $tlValue['nickname'] ?>"></div>
+        <div class="userTxt">
+            <div class="userName"><a href="/profile/?uid=<?php echo $tlValue['system_id'] ?>"><?php echo $tlValue['nickname'] ?></a></div>
+            <div class="postingTime"><?php echo $tlValue['update_time'] ?></div>
+            <?php if ($tlValue['prefix'] == 'community') { ?>
+                <div class="userName2">コミュニティ名：<a href="/community/detail.html?tid=<?php echo $tlValue['thread_id'] ?>"><?php echo $tlValue['thread_name'] ?></a></div>
+            <?php } ?>
+        </div>
+        <div class="target_<?php echo $tlValue['prefix'] ?>_<?php echo $tlValue['mypage_id'] ?>">
+            <div class="postingTxt"><?php echo $tlValue['text_view']; ?></div>
+         </div>
+        <?php /* タイムラインの画像一覧 */
+        if (!StaticFunction::is_empty($tlValue['file_url'])) {
+            foreach($tlValue['file_url'] AS $img_url) {
+                ?>
+                <div class="postingImg"><a href="<?php echo $img_url; ?>" data-lightbox="image-<?php echo $tlValue['prefix'] ?>_<?php echo $tlValue['mypage_id'] ?>" target="_blank"><img src="<?php echo $img_url; ?>"></a></div>
+                <?php
+            }
+        }
+        ?>
+        <div class="postingLike"><img src="/_assets/img/mypage/like.png">:<span class="like_count"><?php echo $tlValue['like_count'] ?></span></div>
+
+
+    </div>
+<?php } ?>
+<!-- / postingarea loop -->

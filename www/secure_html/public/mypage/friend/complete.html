@@ -1,0 +1,9 @@
+<?php
+/*
+ * マイページトップ
+ */
+require '../../../core/PreLoad.inc';
+$aic = new MypageFriendController();
+$aic->complete();
+$aic->view("mypage".DS."friend");
+?>

@@ -1,0 +1,1055 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト*/
+
+/*メインビジュアル*/
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/mailmag/bg_mv.jpg) center center no-repeat;
+	background-size:cover;
+}
+
+
+/*入力画面*/
+.content span{
+	color:#a93c3c;
+}
+
+.content ul.error_box{
+	margin-bottom:40px;
+	color:red;
+}
+
+.content hr{
+	border: 0px;
+	border-top: 1px dashed #ccc;
+	margin-bottom:25px;
+}
+
+.contactform dt{
+	width:190px;
+	float:left;
+	clear:both;
+	padding: 9px 0 0;
+}
+.contactform dt.w100{
+	width:720px;
+	float:none;
+	clear:both;
+	padding: 22px 0 0;
+}
+.contactform dt a{
+	font-size: 90%;
+	text-decoration: underline;
+}
+
+.contactform dd{
+	width:530px;
+	float:right;
+}
+.contactform dd.w100{
+	width: 720px;
+	float: none;
+	padding-top: 8px;
+	margin-bottom: 15px;
+}
+
+.contactform dd input,
+.contactform dd textarea{
+	max-width:100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	margin-bottom:30px;
+	padding:11px;
+	font-size:110%;
+}
+.contactform dd input::-webkit-input-placeholder,
+.contactform dd textarea::-webkit-input-placeholder {
+    color: #ccc;
+}
+.contactform dd input:-ms-input-placeholder,
+.contactform dd textarea:-ms-input-placeholder {
+    color: #ccc;
+}
+.contactform dd input::-moz-placeholder,
+.contactform dd textarea::-moz-placeholder {
+    color: #ccc;
+}
+.contactform dd input[type="text"],
+.contactform dd input[type="email"]{
+	width:550px;
+}
+.contactform dd input.name_sei{
+	width:260px!important;
+}
+.contactform dd input.name_mei{
+	width:260px!important;
+	margin-left:10px;
+}
+.contactform dd input.postal{
+	width:150px;
+}
+.contactform dd textarea{
+	width: 100%;
+	height: 150px;
+}
+.contactform .contactTxt{
+	width:100%;
+	border-bottom: 1px solid #ddd;
+	margin: 30px 0 40px;
+}
+.contactform .addressform p{
+	float:left;
+	margin-right:20px;
+	padding: 8px 0 0;
+}
+.contactform .addressform .zipbtn,
+.contactform .btnarea input{
+	background-color:#9a7339;
+	color:#fff;
+	width:200px;
+	height:40px;
+	border:none;
+	font-size:14px;
+    line-height:0;
+	cursor:pointer;
+}
+.contactform .addressform .zipbtn:hover,
+.contactform .btnarea input:hover{
+	border: 1px solid #9a7339;
+	color:#9a7339;
+	background-color:#fff;
+}
+.contactform .addressform .zipbtn{
+	margin-left:30px;
+}
+.contactform .btnarea{
+	width:100%;
+	text-align:center;
+	margin-bottom: 80px;
+}
+.contactform .attention{
+	font-size:11px;
+	margin: -10px 0 10px;
+}
+.contactform .addressselect{
+	float:left;
+	border: 1px solid #ddd;
+	width:240px;
+	height:40px;
+	padding:0 11px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+}
+.contactform .addressselect select{
+	border:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	width:100%;
+	height:100%;
+	font-size:110%;
+	background-color:#fff;
+}
+.contactform .addressselect:before,
+.contactform .addressselect:after{
+	content: '';
+	z-index: 1;
+	display: block;
+	width: 8px;
+	border-bottom: 1px solid #9a7339;
+	position: absolute;
+	top:60%;
+	right:11px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg)
+}
+.contactform .addressselect:after{
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+.contactform .addressform,
+.contactform .addressform2{
+	height:42px;
+	margin-bottom:20px;
+}
+.contactform .addressform2[type="text"]{
+	width:260px;
+	margin-left:30px;
+}
+.contactform dd.contactnum input{
+	width:140px;
+}
+.contactform dd.contactnum p{
+	float:none;
+	margin:0 20px;
+	display: inline-block;
+	vertical-align:40%;
+}
+.contactform dd.contactnum2 input{
+	width:60px;
+}
+.contactform dd.contactnum2 p{
+	float:none;
+	margin:0 20px;
+	display: inline-block;
+	vertical-align:40%;
+}
+.contactform .dateselect{
+	float:left;
+	border: 1px solid #ddd;
+	width:140px;
+	height:40px;
+	margin-right:10px;
+	margin-bottom:40px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+}
+.contactform .dateselect select{
+	border:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	width:100%;
+	height:100%;
+	padding:0 11px;
+	font-size:110%;
+	background-color:#fff;
+	display:inline-block;
+}
+.contactform .dateselect:before,
+.contactform .dateselect:after{
+	content: '';
+	z-index: 1;
+	display: block;
+	width: 8px;
+	border-bottom: 1px solid #9a7339;
+	position: absolute;
+	top:60%;
+	right:11px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg)
+}
+.contactform .dateselect:after{
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+
+.contactform .radioselect label{
+	position: relative;
+	top: 6px;
+	vertical-align: baseline;
+	margin-right: 40px;
+}
+.contactform .radioselect label input{
+	vertical-align: baseline;
+	margin-right: 5px;
+}
+
+.contactform .checkboxselect{
+	padding-top: 7px;
+	margin-bottom: 20px;
+}
+.contactform .checkboxselect label{
+	display: block;
+	height: 35px;
+	vertical-align: baseline;
+}
+.contactform .checkboxselect label input{
+	vertical-align: baseline;
+	margin-right: 5px;
+}
+.contactform .w100 iframe{
+	border: 1px solid #ddd;
+}
+.contactform dd.enquete input[type="text"]{
+	width:100%;
+}
+.contactform input[type="file"]{
+	border: none;
+	padding-left: 0;
+}
+
+.accordionTxt{
+	overflow:hidden;
+	width:100%;
+	margin: 0 0 30px;
+	border-bottom: 1px solid #ddd;
+	background:url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/icon_arrow_off.png) right 10px no-repeat;
+	cursor:pointer;
+}
+.accordionTxt.active{
+	background:url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/icon_arrow_on.png) right 10px no-repeat;
+}
+.accordionTxt h3{
+	margin-bottom:0;
+	padding-bottom:5px;
+	letter-spacing:0;
+}
+.formaco2{
+	display:none;
+	overflow:hidden;
+}
+.LColumn h3{
+	margin-bottom:10px;
+	letter-spacing:0;
+}
+.deliveryCheck{
+	overflow:hidden;
+	width: 100%;
+	margin-bottom:10px;
+	padding-top:30px;
+}
+.section-recive{
+	margin-top:80px;
+}
+
+.contactSSL{
+	font-size:11px;
+	line-height:1.5;
+}
+.contactSSL img{
+	float:left;
+	margin-right:20px;
+}
+.contactSSL span{
+	color:#333;
+}
+
+.contactform .ifrm-container{
+	height:120px;
+	overflow:auto;
+	border: 1px solid #ccc;
+	-webkit-overflow-scrolling:touch;
+	margin: 10px 0;
+	padding: 20px;
+}
+
+
+/*確認画面*/
+.contactCheck{
+	width:100%;
+	margin-bottom:30px;
+	padding:0;
+}
+.checkform dt{
+	padding: 10px 0 5px;
+	margin: 5px 0 0;
+	border-top: 1px solid #ddd;
+	width: 190px;
+	display: block;
+	clear: left;
+	float: left;
+}
+.checkform dd{
+	padding: 10px 0 5px;
+	margin: 5px 0 0 10px;
+	border-top: 1px solid #ddd;
+	width: 500px;
+	display: block;
+	float: left;
+}
+.contactform .btnarea2{
+	width:100%;
+	text-align:center;
+	margin-top:30px;
+	margin-bottom: 80px;
+	border: none;
+}
+.contactform .btnarea2 input{
+	background-color:#9a7339;
+	color:#fff;
+	width:200px;
+	height:40px;
+	border:none;
+	font-size:14px;
+    line-height:0;
+	cursor:pointer;
+}
+.contactform .btnarea2 input:hover{
+	border: 1px solid #9a7339;
+	color:#9a7339;
+	background-color:#fff;
+}
+.contactform .btnarea2 .cancelbtn{
+	margin-right:20px;
+	background-color:#ccc;
+}
+.contactform .btnarea2 .cancelbtn:hover{
+	background-color:#fff;
+	color:#ccc;
+	border:1px solid #ccc;
+}
+
+
+/*サンクス画面*/
+.formThx{
+	min-height:200px;
+}
+.formThx h2{
+	padding-bottom:20px;
+}
+.formThx .thxTel{
+	margin:30px 0 10px;
+}
+
+}
+
+@media screen and (max-width:640px){
+/*======================
+SPレイアウト*/
+
+input[type="email"],
+input[type="tel"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+/*メインビジュアル*/
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/mailmag/bg_mv.jpg) left center no-repeat;
+	background-size:cover;
+}
+
+/*コンテンツ*/
+h2{
+	width: 100%;
+	margin: 0;
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+	color:#a9803c;
+	font-size:17px;
+	letter-spacing:0.05em;
+	margin-bottom: 10px;
+}
+
+h3{
+	width: 100%;
+	margin: 0 0 10px 0;
+	color:#333333;
+	font-size:16px;
+	line-height:1.5;
+}
+
+.content span{
+	color:#a93c3c;
+}
+
+.content ul.error_box{
+	margin-bottom:40px;
+	font-size:13px;
+	line-height:1.6;
+	color:red;
+}
+
+.content hr{
+	border: 0px;
+	border-top: 1px dashed #ccc;
+	margin-bottom:25px;
+}
+
+.contactCheck{
+	width:100%;
+	margin-bottom:20px;
+	padding:0;
+}
+
+.RColumn p{
+	text-align:center;
+}
+.content .contactSSL{
+	font-size:8px;
+	line-height:1.7;
+	text-align:left;
+	overflow:hidden;
+	width:80%;
+	margin: 30px auto 0;
+}
+.content .contactSSL img{
+	float:left;
+	width:30%;
+	margin-right:20px;
+	padding-top:8px;
+}
+.content .contactSSL span{
+	color:#333;
+}
+
+.contactform p{
+	font-size:13px;
+}
+.contactform dt{
+	clear: left;
+	margin-bottom:10px;
+	font-size: 13px;
+}
+.contactform dt.w100 p{
+	padding-bottom: 10px;
+}
+.contactform dd{
+	clear: left;
+}
+.contactform dd small{
+	font-size: 9px;
+}
+.contactform dd.w100{
+	margin-bottom: 20px;
+}
+
+.contactform dd input,
+.contactform dd textarea{
+	width:100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	margin-top: 0;
+	margin-bottom:15px;
+	padding:8px;
+	font-size:110%;
+}
+.contactform dd textarea{
+	height: 100px;
+}
+.contactform dd input::-webkit-input-placeholder,
+.contactform dd textarea::-webkit-input-placeholder {
+    color: #ccc;
+}
+.contactform dd input:-ms-input-placeholder {
+    color: #ccc;
+}
+.contactform dd input::-moz-placeholder {
+    color: #ccc;
+}
+.contactform dd input.name_sei{
+	margin:0 0 15px 0;
+}
+.contactform dd input.name_mei{
+}
+.contactTxt{
+	border-bottom: 1px solid #ddd;
+	margin:20px 0 20px;
+	padding-bottom:10px;
+	line-height:1.5;
+	background:url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/icon_arrow_off.png) right 22px no-repeat;
+	background-size:5%;
+    padding-right:15px;
+}
+.contactTxt.active{
+	background:url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/icon_arrow_on.png) right 22px no-repeat;
+	background-size:5%;
+}
+.formaco{
+	display:none;
+}
+.contactform .addressform p{
+	float:left;
+	margin-right:10px;
+	padding: 5px 0 0;
+}
+.contactform .addressform .postal{
+	width:30%;
+}
+.contactform .addressform .zipbtn{
+	width:50%;
+	margin-left:10px;
+}
+.contactform .addressform .zipbtn,
+.contactform .btnarea input{
+	background-color:#9a7339;
+	color:#fff;
+	border:none;
+	font-size:12px;
+    line-height:0;
+	height:34px;
+}
+.contactform .btnarea input{
+	width:100%;
+}
+.contactform .attention{
+	font-size:10px;
+	margin: -8px 0 15px;
+}
+.contactform .addressselect{
+	float:left;
+	border: 1px solid #ddd;
+	width:100%;
+	height:34px;
+	padding:0 8px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+	margin-bottom:15px;
+}
+.contactform .addressselect select{
+	border:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	width:100%;
+	height:100%;
+	font-size:110%;
+	background-color:#fff;
+}
+.contactform .addressselect:before,
+.contactform .addressselect:after{
+	content: '';
+	z-index: 1;
+	display: block;
+	width: 8px;
+	border-bottom: 1px solid #9a7339;
+	position: absolute;
+	top:60%;
+	right:11px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg)
+}
+.contactform .addressselect:after{
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+.contactform dd.contactnum input{
+	width:25%;
+}
+.contactform dd.contactnum p{
+	float:none;
+	margin:0 11px;
+	display: inline-block;
+	vertical-align:30%;
+}
+.contactform dd.contactnum2 input{
+	width:10%;
+}
+.contactform dd.contactnum2 p{
+	float:none;
+	margin:0 12px;
+	display: inline-block;
+	vertical-align:30%;
+}
+.contactform .dateselect{
+	float:left;
+	border: 1px solid #ddd;
+	width:31%;
+	height:34px;
+	margin-right:10px;
+	margin-bottom:20px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+}
+.contactform .dateselect:last-child{
+	margin-right:0;
+}
+.contactform .dateselect select{
+	border:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	width:100%;
+	height:100%;
+	padding:0 11px;
+	font-size:110%;
+	background-color:#fff;
+	display:inline-block;
+}
+.contactform .dateselect:before,
+.contactform .dateselect:after{
+	content: '';
+	z-index: 1;
+	display: block;
+	width: 8px;
+	border-bottom: 1px solid #9a7339;
+	position: absolute;
+	top:60%;
+	right:11px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg)
+}
+.contactform .dateselect:after{
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+
+.contactform .radioselect{
+	padding-top: 8px;
+	padding-bottom: 10px;
+}
+.contactform .radioselect label{
+	position: relative;
+	height: 20px;
+	vertical-align: middle;
+	margin-right: 20px;
+}
+.contactform .radioselect label input{
+	vertical-align: baseline;
+	margin-right: 3px;
+	width: 20px;
+	position: relative;
+	top:2px;
+}
+
+.contactform .checkboxselect{
+	padding-top: 8px;
+	padding-bottom: 10px;
+}
+.contactform .checkboxselect label{
+	display: block;
+	height: 20px;
+	vertical-align: baseline;
+	margin-bottom:10px;
+}
+.contactform .checkboxselect label input{
+	vertical-align: baseline;
+	margin-right: 3px;
+	width: 20px;
+	position: relative;
+	top:3px;
+}
+.contactform dd.enquete input[type="text"]{
+	margin: 5px 0 20px;
+}
+.contactform dd.enquete .radioselect{
+	padding:0;
+}
+
+.contactform .ifrm-container{
+	height:120px;
+	overflow:auto;
+	border: 1px solid #ccc;
+	-webkit-overflow-scrolling:touch;
+	margin: 10px 0;
+	padding: 10px;
+	line-height: 1.6;
+}
+.contactform iframe{
+	width: 95% !important;
+}
+	
+.contactform dt a{
+	font-size: 90%;
+	text-decoration: underline;
+}
+
+.accordionTxt{
+	overflow:hidden;
+	width:100%;
+	margin: 0 0 30px;
+	border-bottom: 1px solid #ddd;
+	background:url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/icon_arrow_off.png) right 5px no-repeat;
+	background-size:5%;
+}
+.accordionTxt.active{
+	background:url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/icon_arrow_on.png) right 5px no-repeat;
+	background-size:5%;
+}
+.LColumn .accordionTxt h3{
+	margin-bottom:0;
+	padding-bottom:10px;
+	letter-spacing:0;
+	text-align:left;
+	font-size:13px;
+}
+.formaco2{
+	display:none;
+	overflow:hidden;
+}
+.LColumn h2{
+	text-align: left;
+}
+.LColumn h3{
+	margin-bottom:10px;
+	letter-spacing:0;
+	font-size:13px;
+	text-align:left;
+}
+.deliveryCheck{
+	overflow:hidden;
+	width: 100%;
+	margin-top:80px;
+	margin-bottom:20px;
+}
+
+.section-recive{
+	margin-top:50px;
+}
+
+
+/*確認画面*/
+.contactCheck{
+	width:100%;
+	margin-bottom:20px;
+	padding:0;
+}
+.checkform dt{
+	width:100%;
+	clear:both;
+}
+.checkform dd{
+	width:100%;
+	margin-bottom:15px;
+	border-bottom: 1px solid #ddd;
+	padding-bottom:5px;
+}
+.checkform .btnarea2{
+	width:100%;
+	text-align:center;
+	margin-top:20px;
+	border: none;
+}
+.checkform .btnarea2 input{
+	background-color:#9a7339;
+	color:#fff;
+	width:48%;
+	height:34px;
+	border:none;
+	font-size:12px;
+    line-height:0;
+}
+.checkform .btnarea2 .cancelbtn{
+	margin-right:4%;
+	background-color:#ccc;
+}
+.checkform .btnarea2 .cancelbtn:hover{
+	background-color:#fff;
+	color:#ccc;
+	border:1px solid #ccc;
+}
+
+
+/*サンクス画面*/
+.formThx h2{
+	padding-bottom:20px;
+	font-size:20px;
+	line-height:1.6;
+	text-align:center;
+}
+.formThx .thxTel{
+	margin-top:30px;
+}
+}
+
+
+/*======================
+jQuery validationEngine*/
+
+
+/* Z-INDEX */
+ .formError { z-index: 990; }
+    .formError .formErrorContent { z-index: 991; }
+    .formError .formErrorArrow { z-index: 996; }
+
+    .ui-dialog .formError { z-index: 5000; }
+    .ui-dialog .formError .formErrorContent { z-index: 5001; }
+    .ui-dialog .formError .formErrorArrow { z-index: 5006; }
+
+
+
+
+.inputContainer {
+	position: relative;
+	float: left;
+}
+@media print, screen and (min-width:641px){
+.formError {
+	position: absolute;
+	top: 300px;
+	left: 300px;
+	display: block;
+	cursor: pointer;
+	text-align: left;
+}
+}
+@media screen and (max-width:640px){
+.formError {
+	position: absolute;
+	top: 300px;
+	left: 50% !important;
+	display: block;
+	cursor: pointer;
+	text-align: left;
+	max-width:20%;
+}
+}
+
+.formError.inline {
+	position: relative;
+	top: 0;
+	left: 0;
+	display: inline-block;
+}
+
+.ajaxSubmit {
+	padding: 20px;
+	background: #55ea55;
+	border: 1px solid #999;
+	display: none;
+}
+
+.formError .formErrorContent {
+	width: 100%;
+	background: #b01d1d;
+	position:relative;
+	color: #fff;
+	min-width: 120px;
+	font-size: 11px;
+	border: 1px solid #ddd;
+	box-shadow: 0 0 6px #999;
+	-moz-box-shadow: 0 0 6px #999;
+	-webkit-box-shadow: 0 0 6px #999;
+	-o-box-shadow: 0 0 6px #999;
+	padding: 4px 10px;
+}
+
+.formError.inline .formErrorContent {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-o-box-shadow: none;
+	border: none;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	-o-border-radius: 0;
+}
+
+.greenPopup .formErrorContent {
+	background: #33be40;
+}
+
+.blackPopup .formErrorContent {
+	background: #393939;
+	color: #FFF;
+}
+
+.formError .formErrorArrow {
+	width: 15px;
+	margin: -2px 0 0 13px;
+	position:relative;
+}
+body[dir='rtl'] .formError .formErrorArrow,
+body.rtl .formError .formErrorArrow {
+	margin: -2px 13px 0 0;
+}
+
+.formError .formErrorArrowBottom {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-o-box-shadow: none;
+	margin: 0px 0 0 12px;
+	top:2px;
+}
+
+.formError .formErrorArrow div {
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	box-shadow: 0 2px 3px #999;
+	-moz-box-shadow: 0 2px 3px #999;
+	-webkit-box-shadow: 0 2px 3px #999;
+	-o-box-shadow: 0 2px 3px #999;
+	font-size: 0px;
+	height: 1px;
+	background: #b01d1d;
+	margin: 0 auto;
+	line-height: 0;
+	font-size: 0;
+	display: block;
+}
+
+.formError .formErrorArrowBottom div {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-o-box-shadow: none;
+}
+
+.greenPopup .formErrorArrow div {
+	background: #33be40;
+}
+
+.blackPopup .formErrorArrow div {
+	background: #393939;
+	color: #FFF;
+}
+
+.formError .formErrorArrow .line10 {
+	width: 13px;
+	border: none;
+}
+
+.formError .formErrorArrow .line9 {
+	width: 11px;
+	border: none;
+}
+
+.formError .formErrorArrow .line8 {
+	width: 11px;
+}
+
+.formError .formErrorArrow .line7 {
+	width: 9px;
+}
+
+.formError .formErrorArrow .line6 {
+	width: 7px;
+}
+
+.formError .formErrorArrow .line5 {
+	width: 5px;
+}
+
+.formError .formErrorArrow .line4 {
+	width: 3px;
+}
+
+.formError .formErrorArrow .line3 {
+	width: 1px;
+	border-left: 2px solid #ddd;
+	border-right: 2px solid #ddd;
+	border-bottom: 0 solid #ddd;
+}
+
+.formError .formErrorArrow .line2 {
+	width: 3px;
+	border: none;
+	background: #ddd;
+}
+
+.formError .formErrorArrow .line1 {
+	width: 1px;
+	border: none;
+	background: #ddd;
+}
+
+

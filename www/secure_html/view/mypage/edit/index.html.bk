@@ -1,0 +1,105 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+  <title>SNS登録情報の変更｜ハッピー ケアメンテ®</title>
+  <link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+  <link href="/wp/wp-content/themes/HAPPY_Dark/css/frm.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+  <script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+
+<body id="top" class="frm">
+  <?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+  <!--　/header_nav　-->
+  <div class="bg">
+
+    <section class="frmWrap">
+      <div class="container">
+
+        <div class="frmBox">
+          <h3>SNS登録情報の変更</h3>
+          <div class="annotation">※の項目は必ずご入力ください。
+            環境依存文字及び「'」シングルクォーテーションは使用しないでください。</div>
+            <?php $publicGadget->html_error_array($this->get('error_array')); ?>
+          <form id="form_2" name="form02" method="POST" action="<?php echo FILENAME ?>" enctype="multipart/form-data">
+            <input type="hidden" name="mode" value="sns">
+            <dl class="cf">
+              <dt>ニックネーム<sup>*</sup> : </dt>
+              <dd><input type="text" name="nickname" value="<?php echo $this->get("nickname") ?>" aria-required="true" class="validate[required]"></dd>
+            </dl>
+            <dl class="cf">
+              <dt>ファッション系統 : </dt>
+              <dd><select name="fashion_id">
+                  <option value="">選択してください</option>
+                  <?php foreach ($this->get("fashionTypeArray") AS $key => $value) { ?>
+                    <?php $selected = ($key == $this->get("fashion_id") ? 'selected="selected"' : '') ?>
+                    <OPTION VALUE="<?php echo $key ?>" <?php echo $selected ?>><?php echo $value ?></OPTION>
+                  <?php } ?>
+                </select></dd>
+            </dl>
+            <dl class="cf">
+              <dt>好きなブランド : </dt>
+              <dd>
+                <div class="dateselect">
+                  <input type="text" name="like_brand" value="<?php echo $this->get("like_brand") ?>" placeholder="20文字以内" class="validate[maxSize[20]]">
+                </div>
+              </dd>
+            </dl>
+            <dl class="cf">
+              <dt>自己紹介 : </dt>
+              <dd>
+                <textarea name="comment" value="" placeholder="200文字以内" class="validate[maxSize[200]]"><?php echo $this->get("comment") ?></textarea>
+              </dd>
+            </dl>
+                <dl>
+                  <dt class="btnarea"><br />
+                    <input type="button" id="btn" class="btn" value="確　認" onclick="document.forms.form02.submit()"></dt>
+                </dl>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer_sns">
+      <div class="container">
+        <ul>
+          <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!--　/.footer_sns -->
+    <?php
+    /* ヘッダーインクルード */
+    include(DIR_PUBLIC . "/include/footer_top.php");
+    ?>
+  </div>
+  <!--　/.bg -->
+  <?php
+	/* ヘッダーインクルード */
+	include(DIR_PUBLIC . "/include/footer_nav.php");
+  ?>
+</body>
+
+</html>

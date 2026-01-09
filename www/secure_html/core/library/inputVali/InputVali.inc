@@ -1,0 +1,1542 @@
+<?php
+
+/* * **********************************
+ * NAME:InputVali
+ * DESC:
+ *  phpでのバリデーション
+ *  必須かチェックを行うかどうかを、第二引数で指定する。
+ *  指定されていない場合は必須チェックを行う。
+ *
+ * 特別な注釈がない限り、規定内の文字かどうかのチェックするより先に、
+ * 必須チェックを実施する。
+ *
+ * (※)上から順に処理される
+ * |-----------------------------------------|
+ * |						|     is_req 	 |
+ * |						|----------------|
+ * |						| true	| false	 |
+ * |-----------------------------------------|
+ * |		| 空文字   		| false	| true	 |
+ * |		|--------------------------------|
+ * | str 	| 規定内の文字 	| true	| true	 |
+ * |		|--------------------------------|
+ * |		| 規定外の文字	| false	| false	 |
+ * |-----------------------------------------|
+ *
+ * NOTICE:
+ * CREATE: 2015.12.08 sonoda
+ * UPDATE: 2016.10.26 aoyama
+ *		PHP5.3対応するためstatic対策
+ * *********************************** */
+class InputVali {
+
+	private static $error_message = '';
+
+	/*	 * **********************************
+	 * NAME:バリデーション群
+	 * DESC:
+	 * NOTICE:
+	 * 　流用しているところもあるので要調整
+	 * CREATE: 2015.12.05 sonoda
+	 * *********************************** */
+	public static function get_error_message() {
+		return InputVali::$error_message;
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_req
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 必須チェック。
+	 * なんらかの文字が入力されていればtrue、入力されていなければfalse。
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_req($str, $is_req = true) {
+
+		//必須ではない場合はチェック不要なので、trueを返す。
+		if (!$is_req) {
+			return true;
+		}
+
+		//必須で文字入力されている場合はtrueを返す。
+		if ($str != '') {
+			return true;
+		}
+
+		//必須にもかかわらす、文字入力がされてない場合はfalseを返す。
+		InputVali::$error_message = '必須項目を入力してください。';
+		return false;
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_half_char
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 半角英数かどうかをチェックする。
+	 * is_reqがtrueの場合、必須チェックも実施。
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_half_char($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+		if (preg_match("/^[a-zA-Z0-9]*$/", $str)) {
+			return true;
+		} else {
+			InputVali::$error_message = '半角英数を入力してください。';
+			return false;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_upper_char_with_space
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 半角英大文字(半角スペース許可)かどうかをチェックする。
+	 * is_reqがtrueの場合、必須チェックも実施。
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 * CREATE: 2016.09.26 hesaka
+	 * *********************************** */
+	public static function is_upper_char_with_space($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+		if (preg_match("/^[A-Z ]*$/", $str)) {
+			return true;
+		} else {
+			InputVali::$error_message = '半角英大文字を入力してください。';
+			return false;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_num
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * 　      limit_start / integer / 桁数制限(開始値)
+	 * 　      limit_end / integer / 桁数制限(終了値)
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 *  半角数字チェック
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *  -------------------------------------------
+	 *  桁数指定について
+	 *   limit_start | limit_end | action
+	 *       NULL    |    NULL   | 桁数制限なし
+	 *       NULL    |  numeric  | end桁以下 
+	 *     numeric   |    NULL   | start桁以上
+	 *     numeric   |  numeric  | start桁以上end桁以下 
+	 *  ※start,end同じ数値の場合は「start桁のみ許可」となる
+	 *  -------------------------------------------
+	 * CREATE: 2015.xx.xx sonoda
+	 * UPDATE: 2016.09.21 hesaka limitを開始・終了両方設定できるように変更
+	 * *********************************** */
+	public static function is_num($str, $is_req = true, $limit_start = NULL, $limit_end = NULL) {
+
+		//引数チェック
+		if (($limit_start !== NULL && !is_numeric($limit_start)) || ($limit_end !== NULL && !is_numeric($limit_end))) {
+			LOGS_ERR('invalid parameter! limit_start=' . $limit_start . ', limit_end=' . $limit_end);
+			InputVali::$error_message = 'エラーが発生しました。';
+			return false;
+		}
+
+		//必須判定
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+
+		//桁数リミット開始位置・終了位置どちらも指定がない場合は桁数指定なし
+		if ($limit_start === NULL && $limit_end === NULL) {
+			if (preg_match("/^[0-9]+$/", $str)) {
+				return true;
+			} else {
+				InputVali::$error_message = '半角数字で入力してください。';
+				return false;
+			}
+			//どちらか指定があった場合
+		} else {
+			if (preg_match("/^[0-9]{" . $limit_start . "," . $limit_end . "}$/", $str)) {
+				return true;
+			} else {
+				//エラー文字列作成
+				if ($limit_start == $limit_end) {
+					$text = $limit_start . '桁';
+				} else {
+					$text = (($limit_start) ? ($limit_start . '桁以上') : ('')) . (($limit_end) ? ($limit_end . '桁以下') : (''));
+				}
+				InputVali::$error_message = '半角数字' . $text . 'で入力してください。';
+				return false;
+			}
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_login_id
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 以下をチェックする。
+	 * ・半角英数字とハイフン、アンダースコアのみであるか。
+	 * ・規定文字数を満たしているか。
+	 * (※)規定文字数に関しては、InputValiConfig.incに定義。
+	 *
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_login_id($str, $is_req = true) {
+		$start = CONF::read('INPUTVALI.LOGIN_START');
+		$end = CONF::read('INPUTVALI.LOGIN_END');
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+
+		//文字列が規定内かチェック
+		if (preg_match("/^[a-zA-Z0-9\-_]{" . $start . "," . $end . "}$/", $str)) {
+			return true;
+		} else {
+			InputVali::$error_message = 'ログインIDは半角英数' . $start . '～' . $end . '文字で入力してください';
+			return false;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_password
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 以下をチェックする。
+	 * ・半角英数字とハイフン、アンダースコアのみであるか？
+	 * ・規定文字数を満たしているか。
+	 * (※)規定文字数に関しては、InputValiConfig.incに定義。
+	 *
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * UPDATE: 2016.10.13 aoyama
+	 * *********************************** */
+	public static function is_password($str, $is_req = true) {
+		$start = CONF::read('INPUTVALI.PASSWORD_START');
+		$end = CONF::read('INPUTVALI.PASSWORD_END');
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+
+		//文字列が規定内かチェック
+		if (preg_match("/^[a-zA-Z0-9]{" . $start . "," . $end . "}$/", $str)) {
+			return True;
+		} else {
+			InputVali::$error_message = 'パスワードは半角英数' . $start . '～' . $end . '文字で入力してください';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_user_name
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 以下をチェックする。
+	 * ・規定文字数を満たしているか。
+	 * (※)規定文字数に関しては、InputValiConfig.incに定義。
+	 *
+	 * 判定条件は長さだけで、文字の種別は問わない。
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_user_name($str, $is_req = true) {
+		$start = CONF::read('INPUTVALI.NAME_HALF_START');
+		$end = CONF::read('INPUTVALI.NAME_HALF_END');
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+		if (StaticFunction::text_length($str) >= $start AND StaticFunction::text_length($str) <= $end) {
+			return True;
+		} else {
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_name
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 			とりあえず入力があるかどうかだけチェック
+	 * CREATE: 2016.9.30 aoyama
+	 * *********************************** */
+	public static function is_name($str, $is_req = true) {
+		$start = CONF::read('INPUTVALI.USER_NAME_START');
+		$end = CONF::read('INPUTVALI.USER_NAME_END');
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+		if (mb_strlen($str, "UTF-8") >= $start AND mb_strlen($str, "UTF-8") <= $end) {
+			return True;
+		} else {
+			InputVali::$error_message = 'お名前を' . $start . '文字以上' . $end . '文字以内で入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_en_name
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 			アルファベット名チェック
+	 * 			とりあえず入力があるかどうかだけチェック
+	 * CREATE: 2016.9.30 aoyama
+	 * *********************************** */
+	public static function is_en_name($str, $is_req = true) {
+		$start = CONF::read('INPUTVALI.USER_NAME_START');
+		$end = CONF::read('INPUTVALI.USER_NAME_END');
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+		if (mb_strlen($str, "UTF-8") >= $start AND mb_strlen($str, "UTF-8") <= $end) {
+			return True;
+		} else {
+			InputVali::$error_message = 'アルファベット名を' . $start . '文字以上' . $end . '文字以内で入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_name_kana
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 以下をチェックする。
+	 * ・カタカナのみであるか？
+	 * ・規定文字数を満たしているか。
+	 * (※)規定文字数に関しては、InputValiConfig.incに定義。
+	 *
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_name_kana($str, $is_req = true) {
+		$start = CONF::read('INPUTVALI.KANA_HALF_START');
+		$end = CONF::read('INPUTVALI.KANA_HALF_END');
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+        
+		if (preg_match("/^[ァ-ヶー 　ｦ-ﾟ]+$/u", $str) AND (StaticFunction::text_length($str) >= $start AND StaticFunction::text_length($str) <= $end)) {
+			return True;
+		} else {
+			InputVali::$error_message = 'フリガナをカタカナのみ' . $start . '文字以上' . $end . '文字以内で入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_sex_val
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 性別チェックとして、以下をチェックする。
+	 * 必須はis_reqでチェック
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * UPDATE: 2016.10.13 aoyama
+	 * 		DB_SEXからSiteConfigに変更
+	 * *********************************** */
+	public static function is_sex_val($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		if (array_key_exists($str, CONF::read("GENDER"))) {
+			return True;
+		} else {
+			InputVali::$error_message = '性別を選択してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_zip
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 郵便番号チェック
+	 * is_reqで必須チェックも実施
+	 *
+	 * 日本だけではなく、全世界対応の郵便番号チェックを行う。
+	 * チェック対象は以下の通り。
+	 *
+	 * [郵便番号の桁数チェック]
+	 * 世界の郵便番号を調べると、アメリカの9桁が最大かもしれない。
+	 * が、確証は得られなかったので、最小：1と最大：20を
+	 * とりあえず設定しておく。
+	 *
+	 * 必要があれば、InputValiConfig.incのZIP_STARTと
+	 * ZIP_ENDを編集すること。
+	 *
+	 * この結果から、ハイフンも入力してもらったほうが安全と判断して、
+	 * ハイフンと英数字を許可する形式にした。
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * UPDATE: 2016.10.13 aoyama
+	 * 		日本仕様に戻す
+	 * *********************************** */
+	public static function is_zip($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+		/** @date 2021-02-15 ハイフンを外す */
+		if (preg_match("/^[0-9]{3}[0-9]{4}$/", $str)) {
+			return True;
+		} else {
+			InputVali::$error_message = '郵便番号は半角数字を使用して入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_prefecture
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 都道府県チェック
+	 * (ユーザチェックと同様)
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * UPDATE: 2016.10.16 aoyama
+	 * 		SiteConfigの配列チェック方式に。
+	 * *********************************** */
+	public static function is_prefecture($str, $is_req = true) {
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+
+		if (array_key_exists($str, CONF::read("PREFECTURE"))) {
+			return True;
+		} else {
+			InputVali::$error_message = '都道府県を選択してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_municipality
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 住所の入力をチェック
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 * CREATE: 2015.xx.xx sonoda
+	 * UPDATE: 2016.10.13 aoyama
+	 * *********************************** */
+	public static function is_municipality($str, $is_req = true) {
+		$start = CONF::read('INPUTVALI.ADDRESS_START');
+		$end = CONF::read('INPUTVALI.ADDRESS_END');
+
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		if (StaticFunction::text_length($str) >= $start AND StaticFunction::text_length($str) <= $end) {
+			return True;
+		} else {
+			InputVali::$error_message = '市区町村を' . $start . '文字以上' . $end . '文字以内で入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_house_number
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * その他住所チェック（名前で流用。）
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_house_number($str, $is_req = true) {
+		$start = CONF::read('INPUTVALI.HOUSE_START');
+		$end = CONF::read('INPUTVALI.HOUSE_END');
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		if (StaticFunction::text_length($str) >= $start AND StaticFunction::text_length($str) <= $end) {
+			return True;
+		} else {
+			InputVali::$error_message = '町村・番地を' . $start . '文字以上' . $end . '文字以内で入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_building
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * ビル名・マンション名・号室チェック（名前で流用。）
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_building($str, $is_req = true) {
+		$start = CONF::read('INPUTVALI.BLDG_START');
+		$end = CONF::read('INPUTVALI.BLDG_END');
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+
+		if (StaticFunction::text_length($str) >= $start AND StaticFunction::text_length($str) <= $end) {
+			return True;
+		} else {
+			InputVali::$error_message = 'ビル・マンション名を' . $start . '文字以上' . $end . '文字以内で入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_phone
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 国際電話番号チェック
+	 * ・1桁以上、15桁以下
+	 * ・数字のみ
+	 *
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * UPDATE: 2016.10.13 aoyama
+	 * 		preg_matchを調整
+	 * *********************************** */
+	public static function is_phone($str, $is_req = true) {
+		
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+		
+		if (!preg_match("/^\d{1,7}-\d{2,10}-\d{2,10}$/", $str)) {
+			return false;
+		}
+		
+		return true;
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_mailaddress
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * メールアドレスチェック
+	 * 正しいメールアドレスが設定されていなければ、
+	 * メールが送信されず、会員登録できない。
+	 * なので、ここではガチガチチェックは行わず、
+	 * 運用して何か問題が発生すれば都度更新していく。
+	 *
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_mailaddress($str, $is_req = true) {
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+
+		//メールアドレスチェック
+		if (preg_match("/^.+@.+$/", $str)) {
+			return True;
+		} else {
+			InputVali::$error_message = 'メールアドレスを半角で入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_stock
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 在庫数チェック
+	 * ・0個以上で、マイナス以外
+	 *
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	//在庫数チェック
+	//0個以上で、マイナス以外
+	public static function is_stock($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+		if (preg_match("/^[0-9]{1,}$/", $str)) {
+			return True;
+		} else {
+			InputVali::$error_message = '1以上の半角数字で入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_price
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 価格チェック
+	 * 0円以上でかつ、マイナス以外(0円はオッケーの想定)
+	 *
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_price($str, $is_req = true) {
+		//必須で、文字が空の場合はエラー
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+
+		if (preg_match("/^[0-9]{1,}$/", $str)) {
+			return true;
+		} else {
+			InputVali::$error_message = '0以上の半角数字で入力してください。' . $str;
+			return false;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_point
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * ポイントチェック
+	 * 0以上でかつ、マイナス以外
+	 *
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_point($str, $is_req = true) {
+		//必須で、文字が空の場合はエラー
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+
+		if (preg_match("/^[0-9]{1,}$/", $str)) {
+			return true;
+		} else {
+			InputVali::$error_message = '0以上の半角数字で入力してください。' . $str;
+			return false;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_date_degit_8
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 日付チェック
+	 * 年月日(西暦でハイフン区切り)
+	 *
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_date_degit_8($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+
+		if (preg_match("/^([1-9][0-9]{3})\-(0[1-9]{1}|1[0-2]{1})\-(0[1-9]{1}|[1-2]{1}[0-9]{1}|3[0-1]{1})$/", $str)) {
+			return True;
+		} else {
+			InputVali::$error_message = 'YYYY-MM-DDの形式で入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_date_degit_12
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 日付チェック
+	 * 年月日 時分(西暦でハイフン区切り。日時はコロン区切り)
+	 *
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_date_degit_12($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+
+		if (preg_match("/^([1-9][0-9]{3})\-(0[1-9]{1}|1[0-2]{1})\-(0[1-9]{1}|[1-2]{1}[0-9]{1}|3[0-1]{1}) [0-2][0-9]:[0-5][0-9]$/", $str)) {
+			return True;
+		} else {
+			InputVali::$error_message = 'YYYY-MM-DD hh:mmの形式で入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_date_degit_12
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 日付チェック
+	 * 年月日 時分(西暦でハイフン区切り。日時はコロン区切り)
+	 *
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_date_degit_12_slash($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+
+		if (preg_match("/^([1-9][0-9]{3})\/(0[1-9]{1}|1[0-2]{1})\/(0[1-9]{1}|[1-2]{1}[0-9]{1}|3[0-1]{1}) [0-2][0-9]:[0-5][0-9]$/", $str)) {
+			return True;
+		} else {
+			InputVali::$error_message = 'YYYY/MM/DD hh:mmの形式で入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_date_degit_8_str
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 日付チェック
+	 * 年月日(半角数字8桁)
+	 *
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_date_degit_8_str($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+
+		//数字8桁か？
+		if (!preg_match("/^[0-9]{8}$/", $str)) {
+			InputVali::$error_message = '数字8桁で入力してください。';
+			return False;
+		}
+
+		//正確な日時かどうか？
+		if (!checkdate(substr($str, 4, 2), substr($str, 6, 2), substr($str, 0, 4))) {
+			InputVali::$error_message = '存在する年月日を入力してください。';
+			return False;
+		}
+
+		return True;
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_amount
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 受注受付数チェック
+	 * 1以上でかつ、マイナス以外
+	 *
+	 * is_reqで必須チェックも実施
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2015.xx.xx sonoda
+	 * *********************************** */
+	public static function is_amount($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//ここまできて文字が空なら、必須でないのでtrueを返す。
+		if ($str === '') {
+			return true;
+		}
+
+		if (preg_match("/^[1-9][0-9]*$/", $str)) {
+			return True;
+		} else {
+			InputVali::$error_message = '1以上の半角数字で入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_birth_y
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 日付チェック
+	 * 年月日(半角数字4桁)
+	 * is_reqで必須チェックも実施
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2016.10.13 aoyama
+	 * *********************************** */
+	public static function is_birth_y($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//数字8桁か？
+		if (!preg_match("/^[0-9]{4}$/", $str)) {
+			InputVali::$error_message = '数字8桁で入力してください。';
+			return False;
+		}
+
+		//正確な年かどうか？
+		if ($str > date("Y") - CONF::read('INPUTVALI.BIRTH_Y_BOTTOM') || $str < date("Y") - CONF::read('INPUTVALI.BIRTH_Y_BOTTOM') - CONF::read('INPUTVALI.BIRTH_Y_RANGE')) {
+			InputVali::$error_message = '存在する年月日を入力してください。';
+			return False;
+		}
+
+		return True;
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_month
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 月チェック
+	 * is_reqで必須チェックも実施
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 * CREATE: 2016.10.13 aoyama
+	 * *********************************** */
+	public static function is_month($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//月範囲か？
+		if (!($str >= 1 && $str <= 12)) {
+			InputVali::$error_message = '1～12の範囲で入力してください。';
+			return false;
+		}
+
+		return True;
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_date
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 月チェック
+	 * is_reqで必須チェックも実施
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 * CREATE: 2016.10.13 aoyama
+	 * *********************************** */
+	public static function is_date($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//月範囲か？
+		if (!($str >= 1 && $str <= 31)) {
+			InputVali::$error_message = '1～31の範囲で入力してください。';
+			return false;
+		}
+
+		return True;
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_job
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 職業チェックとして、以下をチェックする。
+	 * 必須はis_reqでチェック
+	 * JOBS配列でチェック
+	 *
+	 * NOTICE:
+	 *  問題があった場合はエラー内容をerror_messageにセットするので
+	 *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+	 *
+	 * CREATE: 2016.10.13 aoyama
+	 * *********************************** */
+	public static function is_job($str, $is_req = true) {
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		if (array_key_exists($str, CONF::read("JOBS"))) {
+			return True;
+		} else {
+			InputVali::$error_message = '職業を選択してください。';
+			return False;
+		}
+	}
+	
+	/*	 * **********************************
+	 * NAME  : is_nickname
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 *		ニックネームは1文字以上１0文字以内。
+	 * NOTICE:
+	 * CREATE: 2016.10.14 aoyama
+	 * *********************************** */
+	public static function is_nickname($str, $is_req = true) {
+		$start = 1;
+		$end = 20;
+
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		if (mb_strlen($str, CHARACTER_ENCODING) >= $start AND mb_strlen($str, CHARACTER_ENCODING) <= $end) {
+			return True;
+		} else {
+			return False;
+		}
+	}
+	
+	/*	 * **********************************
+	 * NAME  : is_like_brand
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 *		好きなブランド名は20文字以内。
+	 *		必須ではない
+	 * NOTICE:
+	 * CREATE: 2016.10.14 aoyama
+	 * *********************************** */
+	public static function is_brand_name($str) {
+
+		if (mb_strlen($str, CHARACTER_ENCODING) <= 20) {
+			return True;
+		} else {
+			return False;
+		}
+	}
+	/*	 * **********************************
+	 * NAME  : is_prof_comment
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 *		自己紹介は200文字以内。
+	 *		必須ではない
+	 * NOTICE:
+	 * CREATE: 2016.10.14 aoyama
+	 * *********************************** */
+	public static function is_prof_comment($str) {
+		if (mb_strlen($str, CHARACTER_ENCODING) <= 200) {
+			return True;
+		} else {
+			return False;
+		}
+	}
+	
+	/*	 * **********************************
+	 * NAME  : is_comment_contact
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 			お問合せのコメントは1文字以上200文字以下
+	 * CREATE: 2016.10.16 aoyama
+	 * *********************************** */
+	public static function is_comment_contact($str, $is_req = true) {
+		$start = 1;
+		$end = 200;
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+		
+		if (mb_strlen($str, CHARACTER_ENCODING) >= $start AND mb_strlen($str, CHARACTER_ENCODING) <= $end) {
+			return True;
+		} else {
+			InputVali::$error_message = 'コメントを' . $start . '文字以上' . $end . '文字以内で入力してください。';
+			return False;
+		}
+	}
+
+	/*	 * **********************************
+	 * NAME  : is_name_thread
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 			コミュニティスレッドのコメントは1文字以上200文字以下
+	 * CREATE: 2016.10.19 aoyama
+	 * *********************************** */
+	public static function is_name_thread($str, $is_req = true) {
+		$start = 1;
+		$end = 20;
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+		
+		if (mb_strlen($str, CHARACTER_ENCODING) >= $start AND mb_strlen($str, CHARACTER_ENCODING) <= $end) {
+			return True;
+		} else {
+			return False;
+		}
+	}
+	
+	/*	 * **********************************
+	 * NAME  : is_comment_thread
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 			レビューのコメントは1文字以上1000文字以下
+	 * CREATE: 2016.11.1 aoyama
+	 * *********************************** */
+	public static function is_review_message($str, $is_req = true) {
+		$start = 1;
+		$end = 1000;
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+		
+		if (mb_strlen($str, CHARACTER_ENCODING) >= $start AND mb_strlen($str, CHARACTER_ENCODING) <= $end) {
+			return True;
+		} else {
+			InputVali::$error_message = 'コメントを' . $start . '文字以上' . $end . '文字以内で入力してください。';
+			return False;
+		}
+	}
+	
+	/*	 * **********************************
+	 * NAME  : is_comment_item
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 			カルテアイテムのコメントは1文字以上400文字以下
+	 * CREATE: 2016.11.15 aoyama
+	 * *********************************** */
+	public static function is_comment_item($str) {
+		$end = 400;
+
+		if (mb_strlen($str, CHARACTER_ENCODING) <= $end) {
+			return True;
+		} else {
+			InputVali::$error_message = 'コメントを' . $end . '文字以内で入力してください。';
+			return False;
+		}
+	}
+	
+	/*	 * **********************************
+	 * NAME  : is_comment_thread
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 * 			コミュニティスレッドのコメントは1文字以上400文字以下
+	 * CREATE: 2016.10.19 aoyama
+	 * *********************************** */
+	public static function is_comment_thread($str, $is_req = true) {
+		$start = 1;
+		$end = 1000;
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+		
+		if (mb_strlen($str, CHARACTER_ENCODING) >= $start AND mb_strlen($str, CHARACTER_ENCODING) <= $end) {
+			return True;
+		} else {
+			InputVali::$error_message = 'コメントを' . $start . '文字以上' . $end . '文字以内で入力してください。';
+			return False;
+		}
+	}
+
+    /*	 * **********************************
+ * NAME  : is_comment_thread
+ * INPUT : str / void / チェック対象
+ *         is_req / boolean / 必須かどうか
+ * OUTPUT: true / 問題なし
+ *         false / 問題あり
+ * DESC  :
+ * 			トップコミュニティスレッドの概要は1文字以上400文字以下
+ * CREATE: 2016.10.19 aoyama
+ * *********************************** */
+    public static function is_topcom_description($str, $is_req = true) {
+        $start = 1;
+        $end = 200;
+
+        if (mb_strlen($str, CHARACTER_ENCODING) >= $start AND mb_strlen($str, CHARACTER_ENCODING) <= $end) {
+            return True;
+        } else {
+            InputVali::$error_message = 'コメントを' . $start . '文字以上' . $end . '文字以内で入力してください。';
+            return False;
+        }
+    }
+
+    /*	 * **********************************
+     * NAME  : is_pichup_date
+     * INPUT : str / void / チェック対象
+     *         is_req / boolean / 必須かどうか
+     * OUTPUT: true / 問題なし
+     *         false / 問題あり
+     * DESC  :
+     *		引取日のチェック
+     *		日付形式、過去の日付ではないことを確認
+     *		is_reqで必須チェックも実施
+     * NOTICE:
+     * CREATE: 2016.10.18 aoyama
+     * *********************************** */
+	public static function is_pichup_date($y,$m,$d, $is_req = true) {
+		
+		//必須チェック
+		if (!InputVali::is_req($y, $is_req) || !InputVali::is_req($m, $is_req) || !InputVali::is_req($d, $is_req)) {
+			return false;
+		}
+		$input_date = DbDateTime::get_datetime_by_part($y,$m,$d);
+		
+		if (StaticFunction::is_empty($input_date) || DbDateTime::get_cur_date() >= DbDateTime::get_datetime_by_part($y,$m,$d)) {
+			return false;
+		}
+		
+		return true;
+	}
+
+    /*	 * **********************************
+     * NAME  : is_pickup_free
+     * INPUT : str / void / チェック対象
+     * OUTPUT: true / 問題なし
+     * DESC  : ワードローブ保管期限以内の日付変更の場合は延長料金が発生しない
+     * NOTICE:
+     * CREATE: 2016.10.18 aoyama
+     * *********************************** */
+    public static function is_pickup_free($item_array,$y,$m,$d,$is_req=true) {
+
+        //必須チェック
+        if (!InputVali::is_req($y, $is_req) || !InputVali::is_req($m, $is_req) || !InputVali::is_req($d, $is_req)) {
+            return false;
+        }
+
+        if(StaticFunction::is_empties($item_array)){
+            return false;
+		}
+
+		$input_date = DbDateTime::get_datetime_by_part($y,$m,$d);
+
+        foreach($item_array AS $value) {
+            if ((int)DbDateTime::fairing_digit_14($value['medkaterm']) < (int)$input_date) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /*	 * **********************************
+     * NAME  : is_order_pickup_date
+     * INPUT : str / void / チェック対象
+     *         is_req / boolean / 必須かどうか
+     * OUTPUT: true / 問題なし
+     *         false / 問題あり
+     * DESC  :
+     *		引取日のチェック
+     *		23時以降は翌日の指定をNGとする
+     *		is_reqで必須チェックも実施
+     * NOTICE:
+     * CREATE: 2017.05.24 aoyama
+     * *********************************** */
+    public static function is_order_pickup_date($y,$m,$d, $is_req = true) {
+
+        //必須チェック
+        if (!InputVali::is_req($y, $is_req) || !InputVali::is_req($m, $is_req) || !InputVali::is_req($d, $is_req)) {
+            return false;
+        }
+        $input_date = DbDateTime::get_datetime_by_part($y,$m,$d);
+
+        if (StaticFunction::is_empty($input_date) || DbDateTime::get_cur_date() >= DbDateTime::get_datetime_by_part($y,$m,$d)) {
+            return false;
+        }
+
+        if (date("H") >= Conf::read("MASTER_SHOP.PICKUP_TOO_LATE_TIME") && date("Ymd000000", strtotime("+1 day")) >= DbDateTime::get_datetime_by_part($y,$m,$d)) {
+            return false;
+        }
+
+        return true;
+    }
+    /*	 * **********************************
+ * NAME  : is_system_id
+ * INPUT : str / void / チェック対象
+ *         is_req / boolean / 必須かどうか
+ * OUTPUT: true / 問題なし
+ *         false / 問題あり
+ * DESC  :
+ * 以下をチェックする。
+ * ・半角英数字とハイフン、アンダースコアのみであるか。
+ * ・規定文字数を満たしているか。
+ * (※)規定文字数に関しては、InputValiConfig.incに定義。
+ *
+ * is_reqで必須チェックも実施
+ *
+ * NOTICE:
+ *  問題があった場合はエラー内容をerror_messageにセットするので
+ *  呼び出し元は、get_error_message()によりエラー内容を取得すること
+ *
+ * CREATE: 2015.xx.xx sonoda
+ * *********************************** */
+	public static function is_system_id($str, $is_req = true) {
+		$start = CONF::read('INPUTVALI.SYSTEM_ID_START');
+		$end = CONF::read('INPUTVALI.SYSTEM_ID_END');
+
+		//必須チェック
+		if (!InputVali::is_req($str, $is_req)) {
+			return false;
+		}
+
+		//文字列が規定内かチェック
+		if (preg_match("/^[a-z0-9]{" . $start . "," . $end . "}$/", $str)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	/*	 * **********************************
+	 * NAME  : is_thread_category
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 *		コミュニティカテゴリの整合性チェック
+	 * NOTICE:
+	 * CREATE: 2016.10.26 aoyama
+	 * *********************************** */
+	public static function is_array_key($category_id,$category_array) {
+		
+		if (!InputVali::is_num($category_id)) {
+			return false;
+		}
+		
+		if (array_key_exists($category_id, $category_array)) {
+			return true;
+		}
+		return false;
+	}
+	
+	/*	 * **********************************
+	 * NAME  : is_array_value
+	 * INPUT : str / void / チェック対象
+	 *         is_req / boolean / 必須かどうか
+	 * OUTPUT: true / 問題なし
+	 *         false / 問題あり
+	 * DESC  :
+	 *		文字列が配列の値に存在するか
+	 * NOTICE:
+	 * CREATE: 2016.11.7 aoyama
+	 * *********************************** */
+	public static function is_array_value($value,$array) {
+		
+		if (StaticFunction::is_empty($value) || StaticFunction::is_empty($array) ) {
+			return false;
+		}
+		
+		if (in_array($value, $array)) {
+			return true;
+		}
+		return false;
+	}
+}
+
+?>

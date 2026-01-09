@@ -1,0 +1,725 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html lang="ja" class="sr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="format-detection" content="telephone=no">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>マイページ　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+<link rel="stylesheet" href="/_assets/css/colorbox.css">
+<link rel="stylesheet" href="/wp/wp-content/themes/HAPPY_Dark/css/common.css?1606987161">
+
+<link rel="stylesheet" href="/wp/wp-content/themes/HAPPY_Dark/css/top.css">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css?v=1.0" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel='stylesheet' id='slick-css'  href='/wp/wp-content/themes/HAPPY_Dark/lib/slick/slick.css' type='text/css' media='all' />
+<link rel='stylesheet' id='slick-theme-css'  href='/wp/wp-content/themes/HAPPY_Dark/lib/slick/slick-theme.css' type='text/css' media='all' />
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+<body id="mypage">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	
+	<div class="bg">
+    
+    <?php if ($this->get('chart_count') > 0) {?>
+      <!--
+    <section id="banner">
+      <div class="container">
+        <p>カルテの作成が完了しました。カウンセリングからご確認くださいませ。</p>
+			</div>
+    </section>
+    -->
+    <?php }?>
+    <!--　/#banner -->
+
+    <section id="mypage_nav">
+      <div class="container">
+        <ul>
+					<li><a class="on" href="index.html"><img src="../img/header04.png" alt="マイページ"><span>マイページ<br>トップ</span></a></li>
+					<li class="linkoff">
+            <a><img src="img/mypage01.png" alt="カウンセリング"><span>カウンセリング</span></a></li>
+          <li><a href="ordered/index.html"><img src="img/mypage02.png" alt="ただいまのお預かり品">
+            <span>ただいまの<br>お預かり品</span>
+          </a></li>
+          <li><a href="history/index.html"><img src="img/mypage05.png" alt="過去のケアメンテご利用履歴">
+            <span>過去のケアメンテ<br>ご利用履歴</span>
+            </a></li>
+          <li><a href="wardrobe/index.html"><img src="img/mypage04.png" alt="ワードローブお預かり品">
+            <span>ワードローブ<br>お預かり品</span>
+          </a></li>
+					<li><a href="/sale/"><img src="img/mypage03.png" alt="セール情報（会員ご優待）"><span>セール情報<br>（会員ご優待）</span></a></li>
+				</ul>
+			</div>
+    </section>
+    <!--　/#mypage_nav -->
+    <section id="member_information">
+      <div class="container">
+				<div class="member_information_box">
+          <div class="member_information_name">
+            <img src="img/user.png" alt="USER">
+            <div class="member_information_name_txt">
+              <h2><?php echo $this->get("g_name") ?> <span>様</span></h2>
+              <p>お客様番号：<span><?php echo $this->get("g_suid") ?></span></p>
+            </div>
+          </div>
+          <div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+				</div>
+      </div>
+    </section>
+    <!--　/#member_information -->
+		
+    <section id="member_point">
+      <div class="container tac">
+				<div class="member_point_box">
+					<div class="member_point_box_inner">
+            <h2>ポイント</h2>
+            <p class="member_point_data"><span><?php echo $this->get("g_point") ?></span>/50</p>
+          </div>
+          <canvas id="DoughnutChart"></canvas>
+        </div>
+        <p class="member_point_ticket">50ポイントで<br class="sp">Happy Gift Card 1000円×1枚プレゼント</p>
+        <p class="member_point_ticket">デポジット残高<span><?php echo $this->get("g_depo") ?></span>円</p>
+			</div>
+    </section>
+    <!--　/#member_point -->
+				
+    <section id="member_information">
+      <div class="container">
+				<div class="btnArea">
+          <div class="btn">
+            <a href="/sale/"><img src="img/mypage03.png" alt="セール情報（会員ご優待）"><span>セール情報<br><span class="small">（会員ご優待）</span></span></a>
+          </div>
+          <div class="order">
+            <a href="/order/"><img src="../img/order.png" alt="お申し込み"><span>お申し込み</span></a>
+          </div>
+				</div>
+      </div>
+    </section>
+    <!--　/#member_information -->
+
+    <section id="member_menu">
+      <div class="container">
+        <ul>
+          <li class="linkoff">
+            <a>
+						<div class="member_menu_img">
+              <img src="img/mypage01.png" alt="カウンセリング">
+							<span class="badge"><?php echo $this->get('chart_count') ?></span>
+						</div>
+            <h3>カウンセリング</h3>
+            </a>
+          </li>
+          <li>
+            <a href="/mypage/ordered/">
+						<div class="member_menu_img">
+              <img src="img/mypage02.png" alt="ただいまのお預かり品">
+						</div>
+            <h3>ただいまの<br>お預かり品</h3>
+           </a>
+          </li>
+          <li>
+            <a href="/mypage/history/">
+						<div class="member_menu_img">
+              <img src="img/mypage03.png" alt="過去のケアメンテご利用履歴">
+						</div>
+            <h3>過去のケアメンテ<br>ご利用履歴</h3>
+            </a>
+          </li>
+          <li>
+            <a href="/mypage/wardrobe/">
+						<div class="member_menu_img">
+              <img src="img/mypage04.png" alt="ワードローブ お預かり品">
+						</div>
+            <h3>ワードローブ<br>お預かり品</h3>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!--　/#member_menu -->
+		
+    <section id="member_menu_sub">
+      <div class="container">
+				<ul>
+					<li><a href="/mypage/registration/">登録情報の変更</a></li>
+					<li><a href="/order/kiyaku.html">利用規約</a></li>
+          <li><a href="/mypageuse/use_mypage/">マイページの操作方法</a></li>
+          <li><a href="/use/howtoorder/point/">ハッピーポイントについて</a></li>
+          <li><a href="/use/howtoorder/reparation/">事故賠償制度</a></li>
+				</ul>
+      </div>
+    </section>
+    <!--　/#member_menu_sub -->
+
+    <!--　/#member_beginner -->
+
+    <section id="case">
+      <div class="container">
+        <h2 class="tac"><span>Before & After / <br class=sp>概算お見積もり実例集</span><img src="/wp/wp-content/themes/HAPPY_Dark/img/header01_w_g.png" alt="">「さがす」</h2>
+        <p class="tit_txt">あなたのご依頼品の概算見積もりが確認できます。<br class="pc">
+        2,000点を超えるBefore & After実例集から検索して仕上がり感をイメージできます。</p>
+        <ul class="slick_case_list">
+          <li>
+            <a href="/carementeh_search/detail.html?item_id=0001981">
+            <img src="https://www.kyoto-happy.co.jp:8443/_assets/img/search/index/0001981.jpg" alt="case01">
+            <div class="case_list_txt">
+              <h3>MOGA<span>婦人ジャケット</span></h3>
+              <p>ﾚｰﾖﾝ82% ｼﾙｸ10% ﾎﾟﾘｴｽﾃﾙ4% ｷｭﾌﾟﾗ4%<br>
+                緑系チェック</p>
+            </div>
+          </a>
+          </li>
+          <li>
+            <a href="/carementeh_search/detail.html?item_id=0002120">
+            <img src="https://www.kyoto-happy.co.jp:8443/_assets/img/search/index/0002120.jpg" alt="case02">
+            <div class="case_list_txt">
+              <h3>ESCADA<span>婦人上着</span></h3>
+              <p>綿98%  ｳﾚﾀﾝ2%<br><br>オフ白</p>
+            </div>
+            </a>
+          </li>
+          <li>
+            <a href="/carementeh_search/detail.html?item_id=0002120">
+            <img src="https://www.kyoto-happy.co.jp:8443/_assets/img/search/index/0002861.jpg" alt="case03">
+            <div class="case_list_txt">
+              <h3>LOUIS VUIT…<span>婦人ジャケット</span></h3>
+              <p>綿100%<br><br>ピンク系</p>
+            </div>
+            </a>
+          </li>
+          <li>
+            <a href="/carementeh_search/detail.html?item_id=0003092">
+            <img src="https://www.kyoto-happy.co.jp:8443/_assets/img/search/index/0003092.jpg" alt="case04">
+            <div class="case_list_txt">
+              <h3>DOLCE＆GAB…<span>紳士ジャケット</span></h3>
+              <p>麻100%<br><br>水色</p>
+            </div>
+            </a>
+          </li>
+          <li>
+            <a href="/carementeh_search/detail.html?item_id=0003200">
+            <img src="https://www.kyoto-happy.co.jp:8443/_assets/img/search/index/0003200.jpg" alt="case01">
+            <div class="case_list_txt">
+              <h3>MACKINTOSH<span>ハーフコート</span></h3>
+              <p>綿100%<br><br>
+                黄緑</p>
+            </div>
+          </a>
+          </li>
+          <li>
+            <a href="/carementeh_search/detail.html?item_id=0003138">
+            <img src="https://www.kyoto-happy.co.jp:8443/_assets/img/search/index/0003138.jpg" alt="case01">
+            <div class="case_list_txt">
+              <h3>LoroPiana<span>長袖シャツ</span></h3>
+              <p>綿100%<br><br>水色</p>
+            </div>
+          </a>
+          </li>
+          <li>
+            <a href="/carementeh_search/detail.html?item_id=0003238">
+            <img src="https://www.kyoto-happy.co.jp:8443/_assets/img/search/index/0003238.jpg" alt="case01">
+            <div class="case_list_txt">
+              <h3>CELINE<span>長袖ブラウス</span></h3>
+              <p>ｼﾙｸ100%<br><br>オフ白</p>
+            </div>
+          </a>
+          </li>
+          <li>
+            <a href="/carementeh_search/detail.html?item_id=0003489">
+            <img src="https://www.kyoto-happy.co.jp:8443/_assets/img/search/index/0003489.jpg" alt="case01">
+            <div class="case_list_txt">
+              <h3>Moschino<span>ﾉｰｽﾘｰﾌﾞﾀｲﾄﾜﾝﾋﾟｰｽ</span></h3>
+              <p>綿100%<br><br>白系柄</p>
+            </div>
+          </a>
+          </li>
+          <li>
+            <a href="/carementeh_search/detail.html?item_id=0003977">
+            <img src="/external_image.html?url=http://kh01.kyoto-happy.co.jp/netkuroku/images/N00039777.jpg" alt="case01">
+            <div class="case_list_txt">
+              <h3>GIORGIO BRA…<span>スエードジャケット</span></h3>
+              <p>羊革<br><br>茶系</p>
+            </div>
+          </a>
+          </li>
+          <li>
+            <a href="/carementeh_search/detail.html?item_id=0003974">
+            <img src="/external_image.html?url=http://kh01.kyoto-happy.co.jp/netkuroku/images/N00039747.jpg" alt="case01">
+            <div class="case_list_txt">
+              <h3>BORRELLI<span>長袖シャツ</span></h3>
+              <p>綿100%<br><br>白系縦縞</p>
+            </div>
+          </a>
+          </li>
+        </ul>
+        <div class="btn">
+          <a href="/carementeh_search/">実例集をもっと見る</a>
+        </div>
+      </div>
+    </section>
+    <!--　/#case -->
+    
+    <section id="partner">
+      <div class="container" data-sr-id="7" style="visibility: visible; opacity: 1; transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0s;">
+        <h2 class="tac">提携ブランド<span class="pc">／</span><br class="sp">全国取扱い店舗一覧</h2>
+      <p>様々なファッションブランドやショップ・企業がケアメンテRと提携。<br class="sp">ケアメンテRを推奨する全国のブランドやデパートでご依頼品のお預かりを受け付けております。</p>
+        <ul class="tac">
+          <li><a href="/shop/brand/tomorrowland/">
+            <img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_01.gif" alt="TOMORROWLAND"></a>
+          </li>
+          <li><a href="/shop/brand/beams/">
+            <img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_02.gif" alt="BEAMS"></a>
+          </li>
+          <li><a href="/shop/brand/united-arrows/">
+            <img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_03.gif" alt="UNITED ARROWS"></a>
+          </li>
+          <li><a href="/shop/brand/aquascutum/">
+            <img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_04.gif" alt="Aquascutum"></a>
+          </li>
+          <li><a href="/shop/brand/durban/">
+            <img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_05.gif" alt="DURBAN"></a>
+          </li>
+          <li><a href="/shop/brand/sinjuku_takashimaya/">
+            <img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_06.gif" alt="新宿タカシマヤ"></a>
+          </li>
+          <li><a href="/shop/brand/seibu_ikebukuro/">
+            <img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_07.gif" alt="西武池袋本店"></a>
+          </li>
+          <li><a href="/shop/brand/abeno_harukas/">
+            <img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_08.gif" alt="あべのハルカス 近鉄本店"></a>
+          </li>
+          <li><a href="/shop/brand/yokohama_takashimaya/">
+            <img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_09.gif" alt="横浜タカシマヤ"></a>
+          </li>
+          <li><a href="/shop/brand/komehyo/">
+            <img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_10.gif" alt="KOMEHYO"></a>
+          </li>
+        </ul>
+        <div class="btnArea">
+          <div class="hermes">
+            <a href="tel:0120-88-3040">
+            <span>エルメス公認 お客様専用ダイヤル</span><br class="sp"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_tel_w.png" alt="tel">0120-88-3040</a>
+          </div>
+          <div class="btn tac">
+            <a href="/shop_search/">近くの店舗をさがす</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--　/#partner -->
+		
+    <section id="reading">
+      <div class="container">
+				<div class="banner">
+					<a href="/sachi/">
+            <img src="/wp/wp-content/themes/HAPPY_Dark/img/reading_bnr_sachi.jpg" alt="京の伝統工芸職人を追うWebマガジン 「幸」 -sachi-">
+            <div class="banner_txt">
+              <!--h2>京の伝統工芸職人を追う<span class="small">Vol. 25<br class="pc">中村藤 本店</span>
+                <br>Webマガジン 「幸」 -sachi-</h2-->
+              <p>“技”を持つ職人達。華やかな表舞台の裏には人知れず腕を磨き精進する姿がある。職人技と呼ばれる“極み”を完成した人々、”ケアメンテ”も縁の下の力持ちに徹し、静かに”技”を研鑽している。伝統工芸の職人技とケアメンテの職人技は共通しており、それぞれの技の“極み”を発見してもらうために「幸」がある。長年に渡りご紹介してきたハッピーの季刊誌 「幸（sachi）」が、WEB版に生まれ変わり待望の復刊です。</p>
+            </div>
+          </a>
+				</div>
+			</div>
+    </section>
+    <!--　/#reading -->		
+    
+    <?php $thread_ids = $this->get("community_match"); ?>
+    <section id="member_sns">
+      <div class="container">
+        <div class="member_snsHead">
+          <h2>ハッピーSNS「つなぐ」</h2>
+          <p>ケアメンテをご利用のお客様で<br class="SPpart">情報交換にご利用いただけます。<br>「つなぐ」でしか知ることのできない貴重な情報も！</p>
+        </div>
+        <div class="member_sns_tit tac"><h2><img src="img/sns_tit.png" alt="Happy_SNS"><br>トップコミュニティー</h2>
+          <p>ハッピー公認のトップコミュニティーで、<br class="sp">話題の情報をキャッチしよう！</p>
+				</div>
+        <ul class="member_sns_list">
+          <?php foreach ($this->get("top_community_array") AS $key => $values) { ?>
+            <li class="tac">
+              <div class="member_sns_list_img tac">
+                <a href="<?php echo $values['thread_link'] ?>">
+                <img src="<?php echo $values['avatar'] ?>" alt="<?php echo $values['community_name'] ?>">
+                </a>
+              </div>
+              <div class="member_sns_list_txt">
+                <h3><?php echo $values['community_name'] ?></h3>
+                <p><?php echo $values['category_name'] ?></p>
+                <?php if (in_array($values['thread_id'],$thread_ids)) { ?>
+                  <div class="btn">
+                    <a href="<?php echo $values['thread_link'] ?>&mode=entry">フォロー済み</a>
+                  </div>
+                <?php } else { ?>
+                <div class="btn">
+                  <a href="<?php echo $values['thread_link'] ?>&mode=entry">フォローする</a>
+                </div>
+                <?php } ?>
+              </div>
+            </li>
+          <?php } ?>
+        </ul>
+        <div class="btn">
+          <a href="/mypage/sns.html">「つなぐ」をもっと見る</a>
+        </div>
+      </div>
+    </section>
+    <!--　/#member_sns -->
+		
+    <section id="member_sns_sub">
+      <div class="container">
+				<h2>外部SNS連携</h2>
+				<ul>
+					<li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><img src="../img/sns_facebook.png" alt="sns_facebook" width="32" height="32">Facebookと連携する</a></li>
+					<li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><img src="../img/sns_twitter.png" alt="sns_twitter" width="32" height="32">Twitterと連携する</a></li>
+					<li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><img src="../img/sns_instagram.png" alt="sns_instagram" width="32" height="32">Instagramと連携する</a></li>
+				</ul>
+      </div>
+    </section>
+    <!--　/#member_sns_sub -->
+
+    <section id="app">
+      <div class="container">
+        <div class="appBox">
+          <div class="app_img"><img src="/app/img/app_img.png" alt="ケアメンテ"></div>
+          <div class="app_txt">
+            <h2><img src="/wp/wp-content/themes/HAPPY_Dark/img/app_icon.png" alt="ケアメンテ">ハッピーケアメンテ</h2>
+            <div class="app_store"><img src="/wp/wp-content/themes/HAPPY_Dark/img/app_store.png" alt="Apple Android"></div>
+            <p>ケアメンテアプリは、ケアメンテ事例集「さがす」や、ご依頼品のご注文、<br class="pc">マイページでケアメンテご依頼品のご利用履歴の確認や電子カルテの閲覧など、<br class="pc">お手持ち衣類の管理ツールとしてもご活用いただける便利なアプリです。</p>
+            <div class="moreBtn">
+              <div class="btn">
+                <a href="/app/">機能紹介はこちら</a>
+              </div>
+            </div>
+            <div class="btnArea">
+              <div class="btn">
+                <a href="https://apps.apple.com/jp/app/%E3%83%8F%E3%83%83%E3%83%94%E3%83%BC%E3%82%B1%E3%82%A2%E3%83%A1%E3%83%B3%E3%83%86/id1537339559?l=ja&ls=1&mt=8">iPhone版</a>
+              </div>
+              <div class="btn">
+                <a href="https://play.google.com/store/apps/details?id=jp.happy.CareMenteh">Android版</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--　/#app -->
+
+    <section id="review">
+			<div class="container">
+				<!-- div class="review_top"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header02_w.png" alt="きづく"><br>きづく</div -->
+				<h2 class="tac">お客様レビュー</h2>
+				<p class="tit_txt">過去にケアメンテをご利用いただいたお客様から、<br class="pc">サービスのレビューをいただいています。</p>
+				<ul class="slick_review_list">
+					<li>
+						<div class="review_box">
+							<div class="review_box_customer">
+								<div class="faceicon">
+									<img src="/wp/wp-content/themes/HAPPY_Dark/img/review_customer.png" alt="お客様">
+									<p class="userName">HISASHI</p>
+									<div class="ReviewSelect">
+										<p>品　質：<span class="star">★★★★★</span></p>
+										<p>利便性：<span class="star">★★★★☆</span></p>
+									</div>
+								</div>
+								<div class="review_customer">
+									<div class="review_customer_txt">
+										<p>既存のクリーニングでは満足できずに初めてお願いしました。<br>
+		本日届いたのを確認し、大変嬉しくなりました。<br>
+		一番感じたのは、ゴワついた手触りや色くすみが取れ、<br>
+		大変柔らかな風合いのある姿で帰ってきたことです。<br>
+		言葉で言い表せない仕上がりで予想以上でした。<br>
+		<br>
+		しょっちゅうは出せませんが、季節の終わりにメンテナンスするなら<br>
+		徹底してケアしたいと思うようになりました。<br>
+		そして一つ一つの動作に注意し丁寧に扱うことに気づけたのがよかったです。<br>
+		<br>
+		ネクタイも何本か次回よろしくおねがいします。
+										<div class="postingLike">
+											<img src="/wp/wp-content/themes/HAPPY_Dark/img/review_good_w.png" alt=""><span class="like_count">2</span>
+										</div>
+										</p>
+										<img src="/wp/wp-content/themes/HAPPY_Dark/img/review_figure.png" alt="" class="review_figure">
+									</div>
+								</div>
+							</div>
+							<div class="review_box_happy">
+								<div class="faceicon">
+                  <a href="/community/detail.html?tid=1000038" tabindex="-1">
+                    <img src="/wp/wp-content/themes/HAPPY_Dark/img/review_happy.png" alt="ハッピー ケアメンテ&reg;">
+                  </a>
+								</div>
+								<p>この度は初めてのご利用まことにありがとうございました。お喜びいただけてスタッフ一同、大変うれしく存じます。<br>
+									ネクタイも、ぜひお試しいただけますと幸いです。次回のご利用を心よりお待ち申し上げております。
+								<img src="/wp/wp-content/themes/HAPPY_Dark/img/review_figure.png" alt="" class="review_figure">
+								</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="review_box">
+							<div class="review_box_customer">
+								<div class="faceicon">
+									<img src="/wp/wp-content/themes/HAPPY_Dark/img/review_customer.png" alt="お客様">
+									<p class="userName">MASAZO</p>
+									<div class="ReviewSelect">
+										<p>品　質：<span class="star">★★★★★</span></p>
+										<p>利便性：<span class="star">★★★★☆</span></p>
+									</div>
+								</div>
+								<div class="review_customer">
+									<div class="review_customer_txt">
+										<p>諦めていたモンクレールダウンが見事に復活。<br>
+											ここまで汚れをしっかり落としてくれる先はどこにもなかった。<br>
+											それだけに提示されるリスクも仕方ない。<br>
+											ちゃんと水洗いしてくれる証だと思う。<br>
+											確かに今まで利用していたクリーニングに比べると料金は高いが、<br>
+											このままでは着られないと思っていただけに、<br>
+											結果としては得した感じがする。
+										<div class="postingLike">
+											<img src="/wp/wp-content/themes/HAPPY_Dark/img/review_good_w.png" alt=""><span class="like_count">2</span>
+										</div>
+										<img src="/wp/wp-content/themes/HAPPY_Dark/img/review_figure.png" alt="" class="review_figure">                    </p>
+									</div>
+								</div>
+							</div>
+							<div class="review_box_happy">
+								<div class="faceicon">
+                  <a href="/community/detail.html?tid=1000038" tabindex="-1">
+                    <img src="/wp/wp-content/themes/HAPPY_Dark/img/review_happy.png" alt="ハッピー ケアメンテ&reg;">
+                  </a>
+								</div>
+								<p>このたびはご利用ありがとうございました。<br>
+									当社では水洗いが基本で手作業での汚れ落としを行なっております。<br>
+									ダウンの汚れもスッキリさせて良質ダウン本来の機能（空気を取り込んで保温）を復活させます。<br>
+									長く着用いただけるようにぜひ、今後も定期的なメンテナンスをお待ち申し上げております。
+								<img src="/wp/wp-content/themes/HAPPY_Dark/img/review_figure.png" alt="" class="review_figure">
+								</p>
+							</div>
+						</div>
+          </li>
+          <li>
+            <div class="review_box">
+              <div class="review_box_customer">
+                <div class="faceicon">
+                  <img src="/wp/wp-content/themes/HAPPY_Dark/img/review_customer.png" alt="お客様">
+                  <p class="userName">Mikako</p>
+                  <div class="ReviewSelect">
+                    <p>品　質：<span class="star">★★★★★</span></p>
+                    <p>利便性：<span class="star">★★★☆☆</span></p>
+                  </div>
+                </div>
+                <div class="review_customer">
+                  <div class="review_customer_txt">
+                    <p>京都に凄いキレイにしてくれるクリーニング店があると、<br>
+    某ショップの店員さんに紹介いただいてはじめて利用しました。<br>
+    <br>
+    クリーニングとは違う（？）と、いろいろ説明されたのですが、<br>
+    いまいちよく分からないまま（たしかに価格は全然違いますよね…(^_^;)<br>
+    とりあえずキレイにしてもらえるなら、と夏物スーツ上下をお願いしました。<br>
+    <br>
+    何処のクリーニング店でも無理と言われた汗ジミとか黄ばみとか、<br>
+    お願いするのがお恥ずかしいほど汚れていたのですが<br>
+    今朝スーツが届いて、ビックリするほどすっきり取れていて感動です！感謝です！<br>
+    興奮おさまらず書き込みさせていただきました。…
+                    <div class="postingLike">
+                      <img src="/wp/wp-content/themes/HAPPY_Dark/img/review_good_w.png" alt=""><span class="like_count">2</span>
+                    </div>
+                    <img src="/wp/wp-content/themes/HAPPY_Dark/img/review_figure.png" alt="" class="review_figure">                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="review_box_happy">
+                <div class="faceicon">
+                  <a href="/community/detail.html?tid=1000038" tabindex="-1">
+                    <img src="/wp/wp-content/themes/HAPPY_Dark/img/review_happy.png" alt="ハッピー ケアメンテR">
+                  </a>
+                </div>
+                <p>嬉しいお言葉をありがとうございます。<br>
+                  初回カウンセリングについては必ずお電話させていただいておりますため、
+                  多少お時間をいただいたようで申し訳ございませんでした。<br>
+                  2回目以降はPDFカルテによるメールカウンセリングにも対応しておりますので、<br>
+                  ダウンコートのご利用もぜひお待ちしております！
+                <img src="/wp/wp-content/themes/HAPPY_Dark/img/review_figure.png" alt="" class="review_figure">
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="review_box">
+              <div class="review_box_customer">
+                <div class="faceicon">
+                  <img src="/wp/wp-content/themes/HAPPY_Dark/img/review_customer.png" alt="お客様">
+                  <p class="userName">ひろさわ　かなこ</p>
+                  <div class="ReviewSelect">
+                    <p>品　質：<span class="star">★★★★★</span></p>
+                    <p>利便性：<span class="star">★★★★★</span></p>
+                  </div>
+                </div>
+                <div class="review_customer">
+                  <div class="review_customer_txt">
+                    <p>クリーニングを断られた服について、いつも洋服を買っているお店に相談したら<br>
+    ハッピーさんのことを聞いたので、半信半疑で初めて利用した。<br>
+    <br>
+    仕上がりを見て納得。<br>
+    <br>
+    買った時みたいに戻ってた。<br>
+    <br>
+    これなら洗濯絵表示は今後気にしないで服を買えるかな。
+                    <div class="postingLike">
+                      <img src="/wp/wp-content/themes/HAPPY_Dark/img/review_good_w.png" alt=""><span class="like_count">2</span>
+                    </div>
+                    <img src="/wp/wp-content/themes/HAPPY_Dark/img/review_figure.png" alt="" class="review_figure">                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="review_box_happy">
+                <div class="faceicon">
+                  <a href="/community/detail.html?tid=1000038" tabindex="-1">
+                    <img src="/wp/wp-content/themes/HAPPY_Dark/img/review_happy.png" alt="ハッピー ケアメンテR">
+                  </a>
+                </div>
+                <p>初めてのご利用、まことにありがとうございました。<br>またのご利用を心よりお待ち申し上げております。
+                <img src="/wp/wp-content/themes/HAPPY_Dark/img/review_figure.png" alt="" class="review_figure">
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+				<div class="btn">
+					<a href="/review/">お客様レビューをもっと見る</a>
+				</div>
+			</div>
+		</section>
+    <!--　/#review -->
+    
+    <?php
+    /* 最近ニュース読み込み */
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/wp/wp-load.php');
+    global $post;
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/wp/wp-content/themes/HAPPY_Dark/page-topics.php');
+    ?>
+    <!--　/#article -->
+		
+    <div class="footer_sns">
+      <div class="container">
+        <ul>
+          <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!--　/.footer_sns -->
+
+    <?php
+    /* ヘッダーインクルード */
+    include(DIR_PUBLIC . "/include/footer_new.php");
+    ?>
+
+	</div>
+  <!--　/.bg -->
+
+
+  
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-messaging.js"></script>
+	<script src="../js/push_notification.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    var user_id = '<?php echo $this->get("g_suid") ?>';
+
+    var ctx = document.getElementById("DoughnutChart");
+    var DoughnutChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+            backgroundColor: [
+                "#6a3b93",
+                "#e0e0e0",
+            ],
+            data: [<?php echo $this->get("g_point") ?>, <?php echo 50-$this->get("g_point") ?>],
+            borderWidth: [0],
+            borderColor: 'transparent'
+        }]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        tooltips: { enabled: false },
+        cutoutPercentage : 90
+        
+      }
+    });
+    
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+		
+    var menuFlag = true;
+    $('.header_nav_common .header_tab').on('click', function() {
+      menuFlag = !menuFlag;
+      if(menuFlag){
+        $('.header_nav_common').css("top","0");
+      } else {
+        $('.header_nav_common').css("top","-95px");
+      }
+  	});
+
+    $(function(){
+			$('#mypage_nav li').removeClass('on');
+      $('#mypage_nav li a').filter(function(){return $(this).prop('href')==location.href;}).addClass('on');
+    });
+
+    // async function（即時関数）内でトークンが取得できるまで待つ。
+    (async function() {
+      await PUSH.getToken().then( (ret) => { 
+        console.log(ret); 
+        push_notification(user_id, ret);
+      } );
+    }());
+
+    function push_notification(userid, token) {
+      $.ajax({
+        url: '/mypage/push/',
+        type: 'POST',
+        cache: false,
+        data: {user_id: userid, registration_token: token},
+      }).done(function(data, textStatus, jqXHR){ 
+        console.log(data);
+
+      }).fail(function(data, textStatus, errorThrown){
+          console.log(data);
+      });
+    }
+
+    
+		
+  });
+  </script>
+	</body>
+</html>

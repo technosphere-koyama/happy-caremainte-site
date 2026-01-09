@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+<meta name="description" content="上質で高級な衣服を長く楽しむためのハッピーケアメンテ。クリーニングの概念を超えた衣服再生サービスを全国宅配で提供しています。豊富な経験と確かな技術でお困りのシミ汚れや黄ばみに対応。安心の保管サービスで衣服を守ります。">
+<meta name="keywords" content="クリーニング,シミ,しみ,着物,宅配,ウェットクリーニング,水洗い,高級,黄ばみ">
+<meta name="format-detection" content="telephone=no">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+        document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+    }else{
+        document.write('<meta name="viewport" content="width=1280" />');
+    }
+</script>
+
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/_assets/img/common/512.png" sizes="512x512"/>
+
+<?php if ( is_home() || is_front_page() ) : ?>
+<link rel="canonical" href="https://www.kyoto-happy.co.jp/">
+<?php else : ?>
+<?php endif; ?>
+
+<!-- Open Graph Protocol -->
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="<?php bloginfo('name'); ?>">
+<?php if ( is_home() || is_front_page() ) : ?>
+<meta property="og:url" content="https://www.kyoto-happy.co.jp/">
+<?php else : ?>
+<meta property="og:url" content="<?php the_permalink(); ?>">
+<?php endif; ?>
+<meta property="og:title" content="<?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?>">
+<meta property="og:description" content="上質で高級な衣服を長く楽しむためのハッピーケアメンテ。クリーニングの概念を超えた衣服再生サービスを全国宅配で提供しています。豊富な経験と確かな技術でお困りのシミ汚れや黄ばみに対応。安心の保管サービスで衣服を守ります。">
+<meta property="og:image" content="https://www.kyoto-happy.co.jp/_assets/img/header/logo.png">
+<!-- Open Graph Protocol -->
+
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/colorbox.css">
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/common.css?1606987161">
+<?php
+/* 新デザイン移行済み */
+$GLOBALS['bodyId']="";
+$GLOBALS['bodyId'] = "";
+$bgClass = "";
+if(is_front_page()): ?>
+	<?php $GLOBALS['bodyId'] = "top"; ?>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/top.css?f3ec">
+
+<?php /*追加*/ ?>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/custom.css?f3ec2">
+
+
+<?php elseif(is_post_type_archive('carementeh_search') || is_tax('carementeh_search_cat') || is_singular( 'carementeh_search' ) ): ?>
+	<?php $GLOBALS['bodyId'] = "careSearch"; ?>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/search.css">
+<?php elseif ( is_page('mypage') ) : ?>
+	<?php $GLOBALS['bodyId'] = "mypage"; ?>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/mypage.css">
+<?php elseif ( is_post_type_archive('use') ) :
+  $GLOBALS['bodyId'] = "top"; $bgClass = "useIndex"; ?>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/top.css?f3ec2ac60b4">
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/use.css">
+<?php endif; ?>
+<?php if( is_tax('use_cat') || is_singular( 'use' ) ): ?>
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/use.css">
+<?php endif; ?>
+
+<?php $use_transitional = ($GLOBALS['bodyId'] == ""); ?>
+
+<!--
+<?php /* ここの個別CSSはtransitional.cssで再現されたためコメントアウトしています */ ?>
+<?php if(is_post_type_archive('shop') || is_tax('list') || is_singular( 'shop' ) || is_page('shop_search') ): ?>
+	<?php $GLOBALS['bodyId'] = "shop"; ?>
+<link rel="stylesheet" href="/_assets/css/shop.css">
+<?php elseif(is_post_type_archive('knowledge') || is_tax('knowledge_cat') || is_singular( 'knowledge' ) ): ?>
+	<?php $GLOBALS['bodyId'] = "knowledge"; ?>
+<link rel="stylesheet" href="/_assets/css/knowledge.css">
+<?php elseif(is_post_type_archive('carementeh') || is_tax('carementeh_cat') || is_singular( 'carementeh' ) ): ?>
+	<?php $GLOBALS['bodyId'] = "carementeh"; ?>
+  <link rel="stylesheet" href="/_assets/css/carementeh.css">
+<?php elseif( is_tax('use_cat') || is_singular( 'use' ) ): ?>
+	<?php $GLOBALS['bodyId'] = "use"; ?>
+	<link rel="stylesheet" href="/_assets/css/use.css?181116">
+<?php elseif(is_post_type_archive('technology') || is_tax('technology_cat') || is_singular( 'technology' ) ): ?>
+	<?php $GLOBALS['bodyId'] = "technology"; ?>
+  <link rel="stylesheet" href="/_assets/css/technology.css">
+<?php elseif(is_post_type_archive('corporate') || is_tax('corporate_cat') || is_singular( 'corporate' )): ?>
+	<?php $GLOBALS['bodyId'] = "corporate"; ?>
+<link rel="stylesheet" href="/_assets/css/corporate.css?181130">
+<?php elseif(is_post_type_archive('meeting') || is_tax('meeting_cat') || is_singular( 'meeting' )): ?>
+	<?php $GLOBALS['bodyId'] = "corporate"; ?>
+<link rel="stylesheet" href="/_assets/css/corporate.css?181130">
+<?php elseif(is_post_type_archive('detail') || is_tax('detail_cat') || is_singular( 'detail' ) || is_page( 'mariopecora') ): ?>
+	<?php $GLOBALS['bodyId'] = "detail"; ?>
+<link rel="stylesheet" href="/_assets/css/detail.css?190404">
+<?php elseif(is_post_type_archive('faq') || is_tax('faq_cat') || is_singular( 'faq' )): ?>
+	<?php $GLOBALS['bodyId'] = "faq"; ?>
+<link rel="stylesheet" href="/_assets/css/faq.css">
+<?php elseif( is_page( array( 'salemail', 'card-thanks' ) ) ): ?>
+	<?php $GLOBALS['bodyId'] = "sale"; ?>
+<link rel="stylesheet" href="/_assets/css/sale.css?200522b">
+<?php elseif( is_page('privacy') ): ?>
+	<?php $GLOBALS['bodyId'] = "privacy"; ?>
+<link rel="stylesheet" href="/_assets/css/privacy.css">
+<?php elseif( is_page('support-service') ): ?>
+	<?php $GLOBALS['bodyId'] = "support-service"; ?>
+<link rel="stylesheet" href="/_assets/css/support-service.css">
+<?php elseif(is_post_type_archive('post') || is_singular( 'post' ) || is_page('news') ): ?>
+	<?php $GLOBALS['bodyId'] = "news"; ?>
+<link rel="stylesheet" href="/_assets/css/news.css">
+<?php endif; ?>
+-->
+
+<?php /* 移行待ち */ ?>
+<?php if( is_page('lp') ): ?>
+<link rel="stylesheet" href="/_assets/css/lp.css">
+<?php endif; ?>
+<?php if( is_page( array('mypageuse', 'use1', 'use2', 'use_search', 'use_mypage', 'use_sns') ) ): ?>
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/mypage.css">
+<?php if( is_page( 'use_mypage' )): ?>
+<?php $GLOBALS['bodyId'] = "mypage"; ?>
+<?php endif; ?>
+<?php endif; ?>
+<?php if( is_page('movie') ): ?>
+<link rel="stylesheet" href="/_assets/css/movie.css">
+<?php endif; ?>
+
+<?php /* デザインは移行したがHTMLは書き換えていない */ ?>
+<?php if ( $use_transitional ) : /* HTMLの書き換えを行っていないページのための補助スタイル */ ?>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/transitional.css?1606999132">
+<?php endif; ?>
+
+
+<?php the_field('page-css') ?>
+<?php the_field('page-js') ?>
+
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+
+<script src="//kitchen.juicer.cc?color=/4VMpPelySQ=" async></script>
+
+<?php wp_head(); ?>
+<script src="/_assets/js/jquery.colorbox-min.js"></script>
+
+</head>
+<body id="<?php echo $GLOBALS['bodyId']; ?>" class="id<?php the_id(); ?>">
+<?php if ( function_exists('wp_body_open') ) wp_body_open(); ?>
+<?php
+$webroot = $_SERVER['DOCUMENT_ROOT'];
+// include($webroot."/include/header.php");
+?>
+<?php if ( is_front_page() ) : ?>
+	<!--　loader_bg<div class="loader_bg"><div class="loaderWrap"><div class="loader"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo_motion.gif" alt="Loading..."></div></div></div>　--><!--　/loader_bg　-->
+	<div id="PAGEWIDE">
+	<div class="video-backgroundWrap">
+		<div id="video-background">
+			<video muted autoplay loop width="100%">
+			<source src="https://www.kyoto-happy.co.jp/wp/wp-content/themes/HAPPY_Dark/img/opening_210322.webm" type="video/webm">
+			<source src="https://www.kyoto-happy.co.jp/wp/wp-content/themes/HAPPY_Dark/img/opening_210322.mp4" type="video/mp4">
+			</video>
+    </div>
+		<div id="video-overlay"></div>
+	</div>
+	<div class="header_nav header_nav_common" id="header_nav_common">
+<?php else: ?>
+	<div class="header_nav_common">
+<?php endif; ?>
+		<nav id="menu_pc_trigger">
+			<div>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<p>MENU</p>
+		</nav>
+		<div class="wrap">
+			<div class="title">
+				<ul>
+					<li><a href="<?php echo home_url(); ?>"><h1><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo_w.png" alt="ハッピー ケアメンテ" class="logo"></h1></a></li>
+					<li class="sac"><a href="/carementeh_search/"><span>Before&After検索<br>概算お見積り事例集</span><div class="flx"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/header01_w_y.png" alt=""><div><strong>「さがす」</strong></div></div></a></li>
+					<li><a href="<?php echo home_url("/review/"); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/header02_w.png" alt=""><span>お客さまレビュー</span><strong>「きづく」</strong></a></li>
+					<li><a href="/mypage/sns.html"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/header03_w.png" alt=""><span>ハッピー SNS</span><strong>「つなぐ」</strong></a></li>
+					<li><a href="<?php echo home_url("/mypage/"); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/header04_w.png" alt=""><span>お客さま専用ページ</span><strong>マイページ</strong></a></li>
+				</ul>
+			</div>
+			<div class="sublink">
+				<div class="telBox">
+					<div class="tel_top">
+						<a href="tel:0120-88-6868"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon_tel_w.png" alt="tel"><span class="number">0120-88-6868</span>
+						<span class="time">月?土  <span class="sub">9:00?18:00<br>(日曜・祝祭日は除く)</span></span></a>
+					</div>
+          <div class="hermes">
+          <a href="tel:0120-88-3040">
+          <span>エルメス公認 <br>お客様専用ダイヤル</span><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_tel_w.png" alt="tel">0120-88-3040<br class="sp"></a>
+          </div>
+				</div>
+				<div class="order">
+					<a href="<?php echo home_url("/order/"); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/order_w.png" alt="WEB"><br>
+					<span>お申し込み</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--　/header_nav　-->
+<?php if ( ! is_front_page() ) : ?>
+	<div class="bg <?php echo $bgClass; ?>">
+<?php endif; ?>

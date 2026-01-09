@@ -1,0 +1,258 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト　トップページ　*/
+
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/bg_mv.jpg) center center no-repeat !important;
+	background-size: cover !important;
+}
+
+h5{
+	font-weight: bold;
+	text-align: left;
+}
+table{
+	width: 100%;
+	border-collapse: collapse;
+}
+.LColumn{
+	min-height: 720px;
+	margin-bottom: 70px;
+}
+.section-imgCenter img{
+	margin-top: 0;
+}
+.smallTxt{
+	font-size: 11px;
+}
+.LColumn .linkBlankBtn{
+	display: block;
+	position: relative;
+	background: #fff;
+	border: 1px solid #b99867;
+	width: 500px;
+	margin: 0 auto;
+	padding: 6px 0;
+	font-size: 13px;
+	color: #a9803c;
+	text-decoration: none;
+	text-indent: -10px;
+	text-align: center;
+}
+.LColumn .linkBlankBtn:hover{
+	opacity: 0.8;
+}
+.LColumn .linkBlankBtn:after{
+	position: absolute;
+	content: "";
+	width: 13px;
+	height: 11px;
+	margin: 7px 0 0 15px;
+	background-image: url(https://www.kyoto-happy.co.jp:8443/_assets/img/shop/list/icn01.gif);
+	background-repeat: no-repeat;
+	background-size: 13px 11px;
+}
+.faqlist {
+	margin: 40px auto 80px;
+}
+.faqlist li {
+	display: inline-block;
+}
+.faqlist li:nth-child(2) {
+	margin: 0 10px;
+}
+.faqlist li a {
+	display: block;
+	text-align: center;
+    font-size: 13px;
+    color: #fff;
+    background: #a87f42;
+	text-decoration: none;
+    width: 200px;
+    padding: 7px 0;
+}
+.faqlist li a:hover {
+	opacity: 0.6;
+}
+	
+.q-list {
+	margin-bottom: 25px;
+}
+.a-list {
+	border-bottom: 1px solid #333;
+	padding-bottom: 35px;
+	margin-bottom: 35px;
+}
+.a-list-last {
+	border: 0;
+	padding-bottom: 0px !important;
+}
+.faq-detail .q-list,.faq-detail .a-list{
+	position: relative;
+	padding-left: 40px;
+}
+.faq-detail .q-list::before {
+	content: 'Q :';
+	display: block;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+.faq-detail .a-list::before {
+	content: 'A :';
+	display: block;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+.sp-br {
+	display: none;
+}
+.Ltwitter {
+	padding: 30px 25px;
+	border: 1px solid #ddd;
+}
+.Ltwitter h3 {
+	color: #1da1f2;
+	position: relative;
+	margin-top: 20px;
+}
+.Ltwitter h3::after {
+	content: url(../img/faq/Twitter_Logo_Blue.svg);
+	display:inline-block;
+    width:110px;
+    height:auto;
+	position: absolute;
+	top: -40px;
+}
+.Ltwitter a {
+	display: block;
+	text-align: center;
+	padding: 15px;
+	margin-top: 25px;
+	background: #1da1f2;
+	border-radius: 5px;
+	color: #fff;
+}
+.Ltwitter a:hover {
+	opacity: 0.6;
+}
+}
+
+
+@media screen and (max-width:640px){
+/*======================
+SPレイアウト　トップページ*/
+
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/bg_mv.jpg) center center no-repeat !important;
+	background-size:auto 90px;
+}
+.faqlist {
+	margin: 20px 0 30px;
+	width: 100%;
+	display: table;
+}
+.faqlist li {
+	display: table-cell;
+	table-layout: fixed;
+	width: 31%;
+}
+.faqlist li p {
+	font-size: 13px;
+}
+.faqlist li:nth-child(1) {
+	padding-right: 1%;
+}
+.faqlist li:nth-child(2) {
+	padding: 0 1%;
+}
+.faqlist li:nth-child(3) {
+	padding-left: 1%;
+}
+.faqlist li a {
+	display: block;
+	text-align: center;
+    font-size: 13px;
+    color: #fff;
+    background: #a87f42;
+	text-decoration: none;
+    padding: 10px 5px;
+}
+.faqlist li a:hover {
+	opacity: 0.6;
+}
+	
+.q-list {
+	margin-bottom: 25px;
+}
+.a-list {
+	border-bottom: 1px solid #999;
+	padding-bottom: 35px;
+	margin-bottom: 35px;
+}
+.a-list-last {
+	border: 0;
+	padding-bottom: 0px !important;
+	margin-bottom: 70px;
+}
+.faq-detail {
+	line-height: 2;
+}
+.faq-detail .q-list,.faq-detail .a-list{
+	position: relative;
+	padding-left: 25px;
+	font-size: 13px;
+}
+.faq-detail .q-list::before {
+	content: 'Q :';
+	display: block;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+.faq-detail .a-list::before {
+	content: 'A :';
+	display: block;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+.faq-detail li a {
+	color: #a9803c;
+    text-decoration: underline;
+}
+.RColumn {
+	display: block !important;
+}
+.Ltwitter {
+	padding: 30px 25px;
+	border: 1px solid #ddd;
+}
+.Ltwitter h3 {
+	color: #1da1f2;
+	width: 150px;
+    margin: auto;
+}
+.Ltwitter h3::after {
+	content: url(../img/faq/Twitter_Logo_Blue.svg);
+	display:inline-block;
+    width:110px;
+    height:auto;
+}
+.Ltwitter a {
+	display: block;
+	text-align: center;
+	padding: 15px;
+	margin-top: 25px;
+	background: #1da1f2;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 13px;
+}
+.Ltwitter a:hover {
+	opacity: 0.6;
+}
+}

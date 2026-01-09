@@ -1,0 +1,18 @@
+<?php
+
+/* ---------------------------------------
+  database
+  ---------------------------------------- */
+$config["DB"] = array(
+	"DBMS" => "mysql",
+	"HOST" => "localhost",
+	"PORT" => "3306",
+	"CHAR_SET" => "utf8",
+	"NAME" => "happy_sns",
+	"USER_ID" => "root",
+	"USER_PW" => "root",
+
+	"IS_CHECK_TABLES" => false		//テーブルチェック&なければ作成処理のON/OFF(この処理で80ms以上時間を要する)
+);
+
+?>

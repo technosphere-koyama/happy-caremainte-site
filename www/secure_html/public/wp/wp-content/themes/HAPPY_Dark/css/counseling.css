@@ -1,0 +1,1833 @@
+@charset "utf-8";
+/*==================================
+  counseling
+==================================*/
+#counseling {
+	background: #f7f2e7;
+}
+
+#counseling .bg {
+	background: none;
+	padding-top: 10vw;
+}
+#counseling #pager_top {
+	bottom: 40vw;
+}
+#counseling #counseling_record {
+  color: #050505;
+	margin-top: 10px;
+	padding-bottom: 40vw;
+}
+#counseling #counseling_record ul {
+  display: flex;
+	flex-wrap: wrap;
+}
+#counseling #counseling_record ul li {
+  background: url(../counseling/img/counseling_bg.png) no-repeat top center/contain;
+	line-height: 1.5;
+	margin: 0 4% 5% 0;
+	padding: 7vw 1.5% 6vw;
+  position: relative;
+  text-align: center;
+	width: 45%;
+}
+#counseling #counseling_record ul li:nth-child(even) {
+  margin-right: 0;
+}
+#counseling #counseling_record ul li .counseling_record_img {
+  display: inline-block;
+	line-height: 0;
+	margin: 5px auto 0;
+	width :94%;
+}
+#counseling #counseling_record ul li.check:after {
+	content: '';
+  background: url(../counseling/img/counseling_check.png) no-repeat 0% center/contain scroll;
+  position: absolute;
+  top: 0.5vw;
+  right: 0.8vw;
+  width: 10vw;
+  height: 10vw;
+}
+#counseling #counseling_record ul li.inspection:after {
+	content: '';
+  background: url(../counseling/img/counseling_inspection.png) no-repeat 0% center/contain scroll;
+  position: absolute;
+  top: 0.5vw;
+  right: 0.8vw;
+  width: 10vw;
+  height: 10vw;
+}
+#counseling #counseling_record ul li.cancel:before {
+	border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  background: rgba(5,5,5,0.2);
+  margin: auto;
+  width: 100%;
+  height: 99%;
+  z-index: 10;
+}
+#counseling #counseling_record ul li.cancel .btn_return {
+	background: #6a3b93;
+	border-radius: 4.5vw;
+  position: absolute;
+  top: 0;
+	right: 0;
+	bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 20vw;
+  height: 9vw;
+  z-index: 10;
+}
+#counseling #counseling_record ul li.cancel .btn_return a {
+  color: #FFF;
+	display: flex;
+	font-size: 3vw;
+  align-items: center;
+	justify-content: center;
+	line-height: 9vw;
+}
+#counseling #counseling_record ul li.cancel .btn_return a:hover {
+  color: rgba(255,255,255,0.7);
+}
+#counseling #counseling_record ul li.cancel .btn_return img {
+	margin-right: 2vw;
+  width: 6vw;
+}
+#counseling #counseling_record ul li.cancel .btn_return_bgw {
+	background: #FFF;
+	border-radius: 5.5vw;
+  position: absolute;
+  top: 0;
+	right: 0;
+	bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 38vw;
+  height: 11vw;
+  z-index: 10;
+}
+#counseling #counseling_record ul li.cancel .btn_return_bgw a {
+  color: #6a3b93;
+	display: flex;
+	font-size: 3vw;
+  align-items: center;
+	justify-content: center;
+	line-height: 1.2;
+	padding: 2vw 0;
+	text-align: left;
+}
+#counseling #counseling_record ul li.cancel .btn_return_bgw a:hover {
+  color: rgba(115,68,186,0.7);
+}
+#counseling #counseling_record ul li.cancel .btn_return_bgw img {
+	margin-right: 1vw;
+  width: 6vw;
+}
+#counseling #counseling_record ul li a {
+  color: #050505;
+	display: inline-block;
+	width: 100%;
+}
+#counseling #counseling_record ul li h2 {
+	font-size: 3vw;
+}
+#counseling #counseling_record ul li h3 {
+	font-size: 3vw;
+	line-height: 1.2;
+	margin-top: 2vw;
+}
+#counseling #counseling_record ul li p {
+  font-size: 3vw;
+	margin-top: 5px;
+}
+#counseling #counseling_record ul li .counseling_record_img img {
+  width: 100%;
+}
+#counseling #counseling_txt .container {
+	width: 95vw;
+	height: 33vw;
+  display: flex;
+  padding: 3vw 0 2vw;
+  position: relative;
+}
+#counseling #counseling_txt .container .counseling_txt_img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  line-height: 0;
+	width: 25vw;
+}
+#counseling #counseling_txt .container .counseling_txt_img img {
+	width: 25vw;
+}
+#counseling #counseling_txt .container p {
+	font-size: 3vw;
+  line-height: 1.5;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+#counseling #counseling_txt .container p span {
+	font-size: 3vw;
+}
+#counseling #counseling_txt .container p img {
+	vertical-align: middle;
+	width: 6vw;
+	margin-right: 5px;
+}
+/*#counseling #counseling_txt .container p.indent {
+	text-indent: -0.5em;
+}*/
+#counseling #counseling_txt .container .counseling_txt_box {
+  margin-left: 28vw;
+	width: 72vw;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea {
+  display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 4% auto 0;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea > * {
+  margin-right: 2%;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea > *:last-child {
+  margin-right: 0;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea .mr0 {
+  margin-right: 0;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea a {
+  background: #6a3b93;
+  border-radius: 10vw;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3vw;
+  line-height: 1.2;
+  padding: 1.5vw 4vw;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea a:hover {
+  color: rgba(2555,255,255,0.7);
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea a img {
+	margin-right: 5px;
+  width: 5vw;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea button {
+  background: #6a3b93;
+	border: none;
+  border-radius: 10vw;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-size: 3vw;
+	font-weight: bold;
+  line-height: 1.2;
+	margin-top: 10%;
+  padding: 1.5vw 10vw;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea button:hover {
+  color: rgba(255,255,255,0.7);
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea button.reset {
+  background: none;
+	border: 1px solid #6a3b93;
+  color: #6a3b93;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea button.reset:hover {
+  color: rgba(106,59,147,0.7);
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea .btn a.bg_none {
+  background: none;
+	border: 1px solid #6a3b93;
+  color: #6a3b93;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea .btn a.bg_none:hover {
+  color: rgba(106,59,147,0.7);
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea button.mt0 {
+	margin-top: 0;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea .selectdiv {
+  position: relative;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea select::-ms-expand {
+display: none;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea .selectdiv:after {
+  content: '<>';
+  font: 4vw "Consolas", monospace;
+  color: #050505;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 0;
+  right: 3vw;
+	bottom: 0;
+  padding: 0 0 2px;
+  border-bottom: 1px solid #050505;
+	letter-spacing: 2px;
+	margin: auto;
+  position: absolute;
+  pointer-events: none;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea .selectdiv select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 27vw;
+  padding: 1.5vw 4vw;
+  font-size: 3vw;
+  line-height: 1.75;
+  color: #050505;
+  background: #f7f2e7;
+  background-image: none;
+  border: none;
+  -ms-word-break: normal;
+  word-break: normal;
+	border-radius: 10vw;
+	font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+	outline: none;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea .selectdiv select:hover {
+	color: rgba(5,5,5,0.7);
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea .selectdiv select.w_sub {
+  width: 35vw;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea p {
+	margin-left: 0;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea .comment {
+  margin-right: 0;
+  width: 100%;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea .comment textarea {
+  background: #f7f2e7;
+  border: none;
+	border-radius: 10vw;
+  font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+	font-size: 3vw;
+  font-weight: bold;
+  height: 5vw;
+  outline: none;
+  padding: 1.5vw 5%;
+  width: 90%;
+  resize: none;
+	line-height: 5vw;
+}
+#counseling #counseling_txt .container .counseling_txt_box.sub .btnArea .comment textarea:-ms-input-placeholder {
+  color: #666;
+	font-size: 3vw;
+}
+#counseling #counseling_txt .container .counseling_txt_box.sub .btnArea .comment textarea::placeholder {
+  color: #666;
+	font-size: 3vw;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout {
+  display: block;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout .selectdiv {
+  width: 27vw;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout .btn {
+  display: inline-block;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout .btn button {
+  padding: 1.5vw 4vw;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout02 .btn.mt_sub {
+  margin-top: 3%;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout02 .btn a {
+  padding: 1.5vw;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout03 {
+  margin-top: 0;
+}
+#counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout03 span.small {
+  font-size: 2vw;
+  position: absolute;
+  right: 0;
+  bottom: 1vw;
+  left: 0;
+  margin: auto;
+	width: 70vw;
+  margin-left: 27vw;
+}
+@media (min-width: 768px) {
+  #counseling #counseling_record ul li {
+		padding: 7vw 1.5% 9vw;
+	}
+}
+@media (min-width: 992px) {
+  #counseling #pager_top {
+    bottom: 12px;
+  }
+  #counseling #counseling_record ul li.cancel .btn_return {
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+  }
+  #counseling #counseling_record ul li.cancel .btn_return a {
+		font-size: 15px;
+    line-height: 40px;
+  }
+  #counseling #counseling_record ul li.cancel .btn_return img {
+		margin-right: 10px;
+    width: 23px;
+  }
+  #counseling #counseling_record ul li.cancel .btn_return_bgw {
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+  }
+  #counseling #counseling_record ul li.cancel .btn_return_bgw a {
+		font-size: 14px;
+    line-height: 40px;
+		padding: 0;
+  }
+  #counseling #counseling_record ul li.cancel .btn_return_bgw img {
+		margin-right: 5px;
+    width: 26px;
+  }
+  #counseling .bg {
+    padding-top: 100px;
+  }
+  #counseling #counseling_record {
+    padding: 0 0 150px;
+	}
+  #counseling #counseling_record ul li {
+		line-height: 2;
+    margin: 0 2% 3% 0;
+    padding: 30px 1% 28px;
+		width: 21.5%;
+	}
+  #counseling #counseling_record ul li:nth-child(even) {
+    margin-right: 2%;
+  }
+  #counseling #counseling_record ul li:nth-child(4n) {
+    margin-right: 0;
+  }
+  #counseling #counseling_record ul li.check:after {
+    top: 5px;
+    right: 4px;
+    width: 47px;
+    height: 47px;
+  }
+  #counseling #counseling_record ul li.inspection:after {
+    top: 5px;
+    right: 4px;
+    width: 47px;
+    height: 47px;
+  }
+  #counseling #counseling_record ul li h2 {
+    font-size: 16px;
+  }
+  #counseling #counseling_record ul li h3 {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  #counseling #counseling_record ul li p {
+    font-size: 14px;
+  }
+  #counseling #counseling_record ul li .counseling_record_img {
+    width: 98%;
+  }
+  #counseling #counseling_txt {
+		bottom: 60px;
+    font-size: 16px;
+  }
+  #counseling #counseling_txt .container {
+		height: 128px;
+		display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  #counseling #counseling_txt .container .counseling_txt_img {
+    width: 130px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_img img {
+    width: 130px;
+  }
+  #counseling #counseling_txt .container p {
+    font-size: 18px;
+		height: auto;
+    margin-left: 140px;
+  }
+  #counseling #counseling_txt .container p span {
+    font-size: 12px;
+  }
+  #counseling #counseling_txt .container p img {
+		vertical-align: top;
+    width: 29px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box {
+    margin-left: 0;
+		width: 100%;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea a {
+    border-radius: 34px;
+    font-size: 16px;
+		height: 50px;
+    line-height: 1;
+    padding: 0 45px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea a img {
+    width: 29px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea button {
+    border-radius: 34px;
+    font-size: 16px;
+		width: 150px;
+		height: 50px;
+    line-height: 1;
+    margin-top: 0;
+    padding: 0;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box.sub {
+		margin-left: 140px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box.sub p {
+		margin-left: 0;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box.sub .btnArea {
+		margin-top: 10px;
+		position: relative;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea > * {
+    margin-right: 15px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box.sub .btnArea.aln {
+		align-items: normal;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box.sub .btnArea .comment textarea:-ms-input-placeholder {
+    font-size: 16px;
+		line-height: normal;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box.sub .btnArea .comment textarea::placeholder {
+    font-size: 16px;
+		line-height: normal;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box.sub .btnArea a {
+		padding: 0 30px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box.sub02 {
+		width: 100%;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box.sub02 .btnArea {
+		float: right;
+		margin-top: 10px;
+		position: relative;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box.sub02 .btnArea a {
+		padding: 0 38px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea .selectdiv:after {
+    font: 20px "Consolas", monospace;
+    width: 26px;
+    height: 26px;
+		right: 15px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea .selectdiv select {
+    width: 150px;
+    height: 50px;
+    padding: 0 0 0 20px;
+    font-size: 16px;
+    border-radius: 34px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea .selectdiv select.w_sub {
+    width: 150px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea button.reset {
+    border: 2px solid #6a3b93;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea .btn a.bg_none {
+    border: 2px solid #6a3b93;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout {
+    display: flex;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout .selectdiv {
+    width: auto;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout .btn button {
+    padding: 10px 28px;
+    height: 46px;
+    width: auto;
+    font-size: 15px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout span.small {
+    font-size: 10px;
+		bottom: 9%;
+		width: auto;
+    text-align: center;
+		margin-left: auto;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout02 .btn.mt_sub {
+    margin-top: 0;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout02 .btn a {
+    padding: 10px 28px;
+    height: auto;
+    font-size: 15px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea .comment {
+    margin-right: 15px;
+		max-width: 470px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea .comment textarea {
+    border-radius: 34px;
+		font-size:16px;
+    height: 34px;
+    padding: 8px 5%;
+		line-height: 1.5;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout .selectdiv select {
+    padding: 10px 28px;
+    height: 46px;
+    font-size: 15px;
+    width: 120px;
+  }
+}
+@media (min-width: 1050px) {
+  #counseling #counseling_record ul li {
+    padding: 45px 1% 28px;
+	}
+}
+@media (min-width: 1200px) {
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout02 .btn a {
+    padding: 0 30px;
+		font-size: 16px;
+    height: 50px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea .comment {
+		max-width: 530px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout .selectdiv select {
+    width: 150px;
+    height: 50px;
+    padding: 0 0 0 20px;
+    font-size: 16px;
+    border-radius: 34px;
+  }
+  #counseling #counseling_txt .container .counseling_txt_box .btnArea.spLayout .btn button {
+    padding: 0;
+		width: 150px;
+    height: 50px;
+		font-size: 16px;
+  }
+}
+
+/*==================================
+  counseling #counseling_top
+==================================*/
+#counseling #counseling_top {
+  color: #050505;
+	margin-top: 10px;
+	padding: 0 0 45vw;
+}
+#counseling #counseling_top .container ul li {
+	border-bottom: 1px solid #050505;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	line-height: 1;
+  padding: 5vw 0;
+}
+#counseling #counseling_top .container ul li:hover {
+	background: #FFF;
+}
+#counseling #counseling_top .container ul li:first-child {
+	border-top: 1px solid #050505;
+}
+#counseling #counseling_top .container ul li .date {
+	font-size: 4vw;
+	width: 35%;
+	margin-bottom: 5%;
+}
+#counseling #counseling_top .container ul li .name {
+	font-size: 4vw;
+	width: 65%;
+	margin-bottom: 5%;
+}
+#counseling #counseling_top .container ul li .status01 {
+	border: 1px solid #7344ba;
+	border-radius: 4vw;
+	color: #7344ba;
+	font-size: 3vw;
+	margin: 0 3% 5% 0;
+	padding: 2vw 0;
+	text-align: center;
+	width: 30%;
+}
+#counseling #counseling_top .container ul li .status02 {
+	border: 1px solid #7344ba;
+	border-radius: 4vw;
+	color: #7344ba;
+	font-size: 3vw;
+	margin: 0 3% 5% 0;
+	padding: 2vw 0;
+	text-align: center;
+	width: 30%;
+}
+#counseling #counseling_top .container ul li .status03 {
+	border: 1px solid #477ed6;
+	border-radius: 4vw;
+	color: #477ed6;
+	font-size: 3vw;
+	margin: 0 3% 5% 0;
+	padding: 2vw 0;
+	text-align: center;
+	width: 30%;
+}
+#counseling #counseling_top .container ul li .number {
+	font-size: 3vw;
+	margin-bottom: 5%;
+	padding: 2vw 0;
+	width: 65%;
+}
+#counseling #counseling_top .container ul li .orders {
+	display: flex;
+  align-items: center;
+	text-align: right;
+	width: 30%;
+}
+#counseling #counseling_top .container ul li .orders img {
+	width: 10vw;
+}
+#counseling #counseling_top .container ul li .orders p {
+	display: flex;
+	font-size: 4vw;
+  align-items: baseline;
+	margin-left: 5%;
+}
+#counseling #counseling_top .container ul li .orders p span {
+	font-size: 7vw;
+	margin-right: 10%;
+}
+#counseling #counseling_top .container ul li .price {
+	display: flex;
+  align-items: center;
+	justify-content: space-between;
+	text-align: right;
+	width: 65%;
+}
+#counseling #counseling_top .container ul li .price p {
+  display: flex;
+	font-size: 4vw;
+  align-items: baseline;
+}
+#counseling #counseling_top .container ul li .price p span {
+  display: inline-block;
+	font-size: 8vw;
+	margin: 0 5% 0 10%;
+  width: 30vw;
+}
+@media (min-width: 992px) {
+  #counseling #counseling_top {
+    padding: 0 0 150px;
+	}
+  #counseling #counseling_top .container ul li {
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px 2%;
+  }
+  #counseling #counseling_top .container ul li .date {
+		font-size: 16px;
+		margin-bottom: 0;
+    width: 9%;
+  }
+  #counseling #counseling_top .container ul li .name {
+		font-size: 16px;
+		margin-bottom: 0;
+    width: 18%;
+  }
+  #counseling #counseling_top .container ul li .status01 {
+    border-radius: 16px;
+    font-size: 12px;
+		margin-bottom: 0;
+    padding: 8px 0;
+    width: 10%;
+  }
+  #counseling #counseling_top .container ul li .status02 {
+    border-radius: 16px;
+    font-size: 12px;
+    margin-bottom: 0;
+    padding: 8px 0;
+    width: 10%;
+  }
+  #counseling #counseling_top .container ul li .status03 {
+    border-radius: 16px;
+    font-size: 12px;
+    margin-bottom: 0;
+    padding: 8px 0;
+    width: 10%;
+  }
+  #counseling #counseling_top .container ul li .number {
+    font-size: 12px;
+		margin-bottom: 0;
+		padding: 0;
+    width: 26%;
+  }
+  #counseling #counseling_top .container ul li .orders {
+    display: flex;
+    align-items: center;
+    text-align: right;
+    width: 10%;
+  }
+  #counseling #counseling_top .container ul li .orders img {
+    width: 30px;
+  }
+  #counseling #counseling_top .container ul li .orders p {
+    display: flex;
+		font-size: 16px;
+    align-items: baseline;
+    margin-left: 5%;
+  }
+  #counseling #counseling_top .container ul li .orders p span {
+    font-size: 26px;
+  }
+  #counseling #counseling_top .container ul li .price {
+    width: 20%;
+  }
+  #counseling #counseling_top .container ul li .price p {
+    font-size: 16px;
+  }
+  #counseling #counseling_top .container ul li .price p span {
+    font-size: 32px;
+    width: 120px;
+  }
+}
+
+/*=========================================
+  #counseling #counseling_record_detail
+=========================================*/
+#counseling #counseling_record_detail {
+  color: #050505;
+	margin-top: 10px;
+	padding: 0 0 45vw;
+}
+#counseling #counseling_record_detail .container .lBox ul li {
+  border-bottom: 1px solid #cccccc;
+	display: flex;
+  align-items: center;
+	font-size: 4vw;
+	padding: 5px 0;
+}
+#counseling #counseling_record_detail .container .lBox ul li:first-child {
+  border-top: 5px solid #050505;
+	display: block;
+}
+#counseling #counseling_record_detail .container .lBox ul li:last-child {
+  border-bottom: 2px solid #050505;
+}
+#counseling #counseling_record_detail .container .lBox ul li h2 {
+  font-size: 5vw;
+}
+#counseling #counseling_record_detail .container .lBox ul li span {
+	display: inline-block;
+  font-size: 3vw;
+}
+#counseling #counseling_record_detail .container .lBox ul li span.label {
+  font-size: 3vw;
+}
+#counseling #counseling_record_detail .container .lBox ul li span.name {
+  margin: 4px 0 0 10px;
+}
+#counseling #counseling_record_detail .container .lBox ul li.info01 span.label {
+  line-height: 1.6;
+}
+#counseling #counseling_record_detail .container .lBox ul li.info04 span.label, #counseling #counseling_record_detail .container .lBox ul li.info08 span.label {
+  margin-right: 10px;
+}
+#counseling #counseling_record_detail .container .lBox ul li.info07 {
+	display: block;
+  line-height: 1.6;
+}
+#counseling #counseling_record_detail .container .lBox ul li.info02 .label_box, #counseling #counseling_record_detail .container .lBox ul li.info03 .label_box, #counseling #counseling_record_detail .container .lBox ul li.info05 .label_box, #counseling #counseling_record_detail .container .lBox ul li.info06 .label_box {
+	display: flex;
+	justify-content: space-between;
+	margin-right: 10px;
+  width: 18vw;
+}
+#counseling #counseling_record_detail .container .lBox .btn_delete {
+	margin: 5vw 0 8vw;
+}
+#counseling #counseling_record_detail .container .lBox .btn_delete a {
+	background: #FFF;
+  border-radius: 5px;
+  color: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5vw;
+  line-height: 1.2;
+  padding: 3vw 0;
+}
+#counseling #counseling_record_detail .container .lBox .btn_delete a:hover {
+	color: rgba(5,5,5,0.7);
+}
+#counseling #counseling_record_detail .container .lBox .btn_delete a img {
+	width: 10vw;
+}
+#counseling #counseling_record_detail .container .lBox .btn_return {
+	margin: 5vw 0 8vw;
+}
+#counseling #counseling_record_detail .container .lBox .btn_return a {
+	background: #6a3b93;
+  border-radius: 5px;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5vw;
+  line-height: 1.2;
+  padding: 4vw 0;
+}
+#counseling #counseling_record_detail .container .lBox .btn_return a:hover {
+	color: rgba(255,255,255,0.7);
+}
+#counseling #counseling_record_detail .container .lBox .btn_return a img {
+	margin-right: 3vw;
+	width: 8vw;
+}
+#counseling #counseling_record_detail .container .rBox {
+  background: url(../counseling/img/counseling_bg_w.png) no-repeat top center/cover;
+	margin-top: 20px;
+	padding: 12vw 4vw 10vw;
+	position: relative;
+}
+#counseling #counseling_record_detail .container .rBox.cansel:before {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 4.4%;
+	content: '';
+	background: rgba(5,5,5,0.2);
+	margin: auto;
+	width: 90.5%;
+	height: 95%;
+	z-index: 10;
+}
+#counseling #counseling_record_detail .container .rBox ul.list {
+  margin: auto;
+  width: 93.75%;
+	height: 135vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+#counseling #counseling_record_detail .container .rBox ul li h3 {
+  font-size: 4vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li h4 {
+  font-size: 3vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li.bordr_btm h3 {
+	border-bottom: 1px solid #cccccc;
+	margin: 20px 0 5px;
+}
+#counseling #counseling_record_detail .container .rBox ul li.bordr_btm p {
+	font-size: 3vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li ul.list_sub {
+	font-size: 3vw;
+  width: 100%;
+}
+#counseling #counseling_record_detail .container .rBox ul li ul.list_sub li {
+	list-style-type: disc;
+  margin-left: 5vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info01 {
+  text-align: center;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info01 img {
+  width: 25vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img {
+  display: flex;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img > div:first-child {
+  margin-right: 4%;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure {
+  position: relative;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.front .status01 {
+	line-height: 0;
+  position: absolute;
+	top: 1vw;
+	right: 0;
+  left: 0;
+  margin: auto;
+	width: 20vw;
+  height: 5vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.front .status01 img {
+  width: 4vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.front .status02_01 {
+	line-height: 0;
+  position: absolute;
+	top: -1vw;
+	right: 0;
+  left: 0;
+  margin: auto;
+	width: 11vw;
+  height: 9vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.front .status02_02 {
+	line-height: 0;
+  position: absolute;
+	bottom: 8vw;
+  left: 0;
+  margin: auto;
+	width: 11vw;
+  height: 9vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.front .status02_03 {
+	line-height: 0;
+  position: absolute;
+	bottom: 8vw;
+	right: 0;
+  margin: auto;
+	width: 11vw;
+  height: 9vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.back .status01 {
+	line-height: 0;
+  position: absolute;
+	top: 1vw;
+	right: 0;
+  left: 0;
+  margin: auto;
+	width: 20vw;
+  height: 5vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.back .status01 img {
+  width: 4vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.back .status02_01 {
+	line-height: 0;
+  position: absolute;
+	top: -1vw;
+	right: 0;
+  left: 0;
+  margin: auto;
+	width: 11vw;
+  height: 9vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.back .status02_02 {
+	line-height: 0;
+  position: absolute;
+	bottom: 8vw;
+  left: 0;
+  margin: auto;
+	width: 11vw;
+  height: 9vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.back .status02_03 {
+	line-height: 0;
+  position: absolute;
+	bottom: 8vw;
+	right: 0;
+  margin: auto;
+	width: 11vw;
+  height: 9vw;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 ul.status_guide {
+  margin-top: 3vw;
+  width: 100%;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 ul.status_guide li {
+  display: inline-block;
+	font-size: 3vw;
+	margin-right: 4vw;
+	-webkit-text-stroke: 0.03em #050505;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info02 ul.status_guide li img {
+  width: 4vw;
+	height: 4vw;
+	vertical-align: sub;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info07 ul.list_rating {
+	font-size: 3vw;
+  width: 100%;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info07 ul.list_rating li {
+	display: inline-block;
+	line-height: 1.2;
+	margin-right: 20px;
+}
+#counseling #counseling_record_detail .container .rBox ul li.info07 ul.list_rating li span {
+	font-size: 5vw;
+}
+@media (min-width: 992px) {
+  #counseling #counseling_record_detail {
+    padding: 0 0 150px;
+	}
+  #counseling #counseling_record_detail .container:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+  #counseling #counseling_record_detail .container .lBox {
+		float: left;
+		/*padding-top: 100px;*/
+    width: 24.2%;
+	}
+  #counseling #counseling_record_detail .container .lBox ul li {
+    font-size: 16px;
+  }
+  #counseling #counseling_record_detail .container .lBox ul li h2 {
+    font-size: 20px;
+  }
+  #counseling #counseling_record_detail .container .lBox ul li span {
+    font-size: 14px;
+  }
+  #counseling #counseling_record_detail .container .lBox ul li span.label {
+    font-size: 12px;
+  }
+  #counseling #counseling_record_detail .container .lBox ul li.info02 .label_box, #counseling #counseling_record_detail .container .lBox ul li.info03 .label_box, #counseling #counseling_record_detail .container .lBox ul li.info05 .label_box, #counseling #counseling_record_detail .container .lBox ul li.info06 .label_box {
+    width: 75px;
+  }
+  #counseling #counseling_record_detail .container .lBox .btn_delete {
+    margin: 30px 0 0;
+  }
+  #counseling #counseling_record_detail .container .lBox .btn_delete a {
+    font-size: 14px;
+    line-height: 1;
+    padding: 10px 0;
+  }
+  #counseling #counseling_record_detail .container .lBox .btn_delete a img {
+    width: 35px;
+  }
+  #counseling #counseling_record_detail .container .lBox .btn_return {
+    margin: 30px 0 0;
+  }
+  #counseling #counseling_record_detail .container .lBox .btn_return a {
+		justify-content: flex-start;
+    font-size: 14px;
+    line-height: 1;
+    padding: 13px 0 13px 20px;
+  }
+  #counseling #counseling_record_detail .container .lBox .btn_return a img {
+		margin-right: 10px;
+    width: 29px;
+  }
+  #counseling #counseling_record_detail .container .rBox {
+    background: url(../counseling/img/counseling_bg_w.png) no-repeat top center/100% 100%;
+		float: right;
+		margin-top: 0;
+    padding: 7% 5% 8%;
+    width: 62.4%;
+	}
+  #counseling #counseling_record_detail .container .rBox ul li h3 {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li h4 {
+    font-size: 12px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul.list {
+		height: auto;
+    overflow-x: visible;
+    overflow-y: visible;
+	}
+  #counseling #counseling_record_detail .container .rBox ul li.bordr_btm p {
+    font-size: 12px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li ul.list_sub {
+    font-size: 12px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li ul.list_sub li {
+    margin-left: 15px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info01 img {
+    width: auto;
+  }
+	#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box {
+		display: flex;
+	}
+	#counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner:first-child {
+		margin-right: 4%;
+	}
+  #counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.front .status01 {
+    top: 3px;
+    width: 65px;
+    height: 13px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.front .status01 img {
+    width: 13px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.front .status02_01 {
+    top: -11px;
+    width: 46px;
+    height: 32px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.front .status02_02 {
+    bottom: 32px;
+    left: -5px;
+    width: 46px;
+    height: 32px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.front .status02_03 {
+    bottom: 32px;
+    right: -5px;
+    width: 46px;
+    height: 32px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.back .status01 {
+    top: 3px;
+    width: 65px;
+    height: 13px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.back .status01 img {
+    width: 13px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.back .status02_01 {
+    top: -11px;
+    width: 46px;
+    height: 32px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.back .status02_02 {
+    bottom: 32px;
+    left: -5px;
+    width: 46px;
+    height: 32px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure.back .status02_03 {
+    bottom: 32px;
+    right: -5px;
+    width: 46px;
+    height: 32px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info02 ul.status_guide {
+    margin: 0;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info02 ul.status_guide li {
+    font-size: 10px;
+    margin-right: 10px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info02 ul.status_guide li img {
+    width: 16px;
+    height: 14px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info07 ul.list_rating {
+    font-size: 12px;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info07 ul.list_rating li {
+    line-height: 2;
+  }
+  #counseling #counseling_record_detail .container .rBox ul li.info07 ul.list_rating li span {
+    font-size: 18px;
+  }
+}
+
+/*===============================================
+  #counseling #counseling_record_detail.estimate
+===============================================*/
+#counseling #counseling_record_detail.estimate .container {
+	position: relative;
+  padding-bottom: 225vw;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case {
+	border-radius: 2vw;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+	margin-top: 30px;
+	position: absolute;
+  bottom: 0;
+	width: 100%;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner {
+	background: #FFF;
+	border-radius: 2vw;
+	padding: 5vw 5vw 7vw;
+	position: relative;
+  z-index: 5;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .case_top {
+	font-size: 4vw;
+  line-height: 1.2;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .case_top img {
+	width: 12vw;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner h2 {
+  font-family: 'sawarabi';
+  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
+  font-size: 4vw;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .caseArea {
+	margin-top: 15px;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .caseArea h3 {
+	border-bottom: 2px solid #050505;
+	font-size: 4vw;
+	margin-bottom: 15px;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .caseArea .caseBox {
+	display: flex;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .caseArea .caseBox .case_img {
+	margin-right: 5%;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .caseArea .caseBox .case_txt h4 {
+	font-size: 4vw;
+	line-height: 1.5;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .caseArea .caseBox .case_txt h4 span {
+	font-size: 4vw;
+	-webkit-text-stroke: 0.03em #050505;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .caseArea .caseBox .case_txt p {
+	font-size: 3vw;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .btn {
+	margin-top: 7vw;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .btn a {
+	color: #FFF;
+  background: #6a3b93;
+  border-radius: 8vw;
+  display: inline-block;
+  font-size: 4vw;
+  padding: 3vw 6vw;
+}
+#counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .btn a:hover {
+	color: rgba(255,255,255,0.7);
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul {
+	width: auto;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li {
+	margin: auto;
+	width: 93.75%;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li h2 {
+	border-bottom: 1px solid #cccccc;
+  font-size: 5vw;
+	margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li h3 {
+  background: #e6e6e6;
+  font-size: 3.5vw;
+  margin: 30px 0 5px -4%;
+  padding: 4px 0 4px 4vw;
+	width: 101.5%;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li h3 span {
+  display: inline-block;
+  font-size: 4vw;
+  margin: 0 1vw 0 0;
+  vertical-align: middle;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li h5 {
+  font-size: 3.5vw;
+  margin-top: 20px;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li.info01 p {
+  font-size: 3vw;
+	font-weight: normal;
+	line-height: 1.8;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox {
+  display: flex;
+	flex-wrap: wrap;
+  font-size: 3vw;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox.bordr_top {
+  border-top: 2px solid #050505;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox.bordr_btm {
+  border-bottom: 1px solid #cccccc;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox > div {
+  padding: 5px 0;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .check {
+	padding-left: 6vw;
+  position: relative;
+	width: 20%;
+}
+/*#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .check.active:before {
+  content: '';
+  background: url(../counseling/img/record_check.png) no-repeat 0% center/contain;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 5vw;
+  height: 5vw;
+}*/
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .check label {
+	position: absolute;
+  left: 0;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .check label input[type="checkbox"] {
+	margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .check label input[type="checkbox"] + span {
+	width: 5vw;
+  height: 5vw;
+  display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .check label input[type="checkbox"] + span::before {
+  border-color: #6a3b93;
+	border-radius: 5px;
+	position: absolute;
+  top: 0;
+  left: 0;
+	content: '';
+	width: 5vw;
+  height: 5vw;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .check label input[type="checkbox"]:checked + span::before {
+	background-color: #6a3b93;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .check label input[type="checkbox"]:checked + span::after {
+	border: 0.7vw solid #fff;
+  border-width: 0 0.7vw 0.7vw 0;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+	position: absolute;
+  top: 1vw;
+  left: 1.6vw;
+	content: '';
+	z-index: 1;
+	width: 1vw;
+  height: 2vw;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .name {
+  width: 72%;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .txt {
+	font-size: 3vw;
+  font-weight: normal;
+  line-height: 1.4;
+	width: 100%;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .price {
+	text-align: right;
+	width: 100%;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .price span {
+	margin-right: 5px;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .sub_total {
+  border-top: 2px solid #050505;
+	font-size: 3vw;
+	padding-top: 5px;
+	text-align: right;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li .sub_total span {
+  font-size: 4vw;
+	margin: 0 5px 0 15px;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li.info04 {
+  border-top: 2px solid #050505;
+  margin-top: 30px;
+  padding-top: 30px;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li.info04:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li.info04 h3 {
+	font-size: 3vw;
+  margin: 0;
+  padding: 1px 0;
+	text-align: center;
+	width: auto;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li.info04 h3 span {
+	font-size: 3.5vw;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li.info04 p {
+	font-size: 5vw;
+	text-align: center;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li.info04 p.total {
+	float: right;
+	font-size: 4vw;
+	margin: 10px 0 0;
+	text-align: right;
+}
+#counseling #counseling_record_detail.estimate .container .rBox ul li.info04 p.total span {
+	font-size: 5vw;
+  margin: 0 5px 0 15px;
+}
+@media (min-width: 768px) {
+	#counseling #counseling_record_detail.estimate {
+		padding-bottom: 32vw;
+	}
+  #counseling #counseling_record_detail.estimate .container {
+		padding-bottom: 168vw;
+	}
+}
+@media (min-width: 992px) {
+  #counseling #counseling_record_detail.estimate {
+		padding-bottom: 230px;
+  }
+  #counseling #counseling_record_detail.estimate .container {
+    padding-bottom: 0;
+  }
+  #counseling #counseling_record_detail.estimate .container .lBox .case {
+		border-radius: 12px;
+    position: relative;
+  }
+  #counseling #counseling_record_detail.estimate .container .lBox .case:before {
+    background: #FFF;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    content: '';
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%) rotate(-45deg) skew(20deg,20deg);
+    top: 12%;
+    right: -10px;
+  }
+  #counseling #counseling_record_detail.estimate .container .lBox .case .case_inner {
+    border-radius: 12px;
+    padding: 1em 1em 2em;
+  }
+  #counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .case_top {
+    font-size: 16px;
+  }
+  #counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .case_top img {
+    width: 38px;
+  }
+  #counseling #counseling_record_detail.estimate .container .lBox .case .case_inner h2 {
+    font-size: 16px;
+  }
+  #counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .caseArea h3 {
+    font-size: 14px;
+  }
+  #counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .caseArea .caseBox .case_txt h4 {
+    font-size: 14px;
+  }
+  #counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .caseArea .caseBox .case_txt h4 span {
+    font-size: 16px;
+  }
+  #counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .caseArea .caseBox .case_txt p {
+    font-size: 11px;
+  }
+  #counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .btn {
+    margin-top: 15px;
+  }
+  #counseling #counseling_record_detail.estimate .container .lBox .case .case_inner .btn a {
+    border-radius: 22px;
+    font-size: 11px;
+    padding: 6px 0;
+		width: 100%;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul {
+    width: 93.75%;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li {
+    width: 100%;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li h2 {
+    font-size: 20px;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li.info01 p {
+    font-size: 12px;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li h3 {
+    font-size: 14px;
+		margin: 30px 0 5px -6.5%;
+		padding: 8px 0 8px 6.5%;
+    width: 105.6%;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li h3 span {
+    font-size: 20px;
+		margin: -2px 4px 0 0;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li h5 {
+    font-size: 14px;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox {
+		font-size: 12px;
+		flex-wrap: nowrap;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .check {
+		line-height: 32px;
+		padding-left: 25px;
+    width: 12%;
+  }
+  /*#counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .check.active:before {
+    width: 17px;
+    height: 17px;
+  }*/
+  #counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .check label input[type="checkbox"] + span {
+    width: 17px;
+    height: 17px;
+		vertical-align: sub;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .check label input[type="checkbox"] + span::before {
+    width: 17px;
+    height: 17px;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .check label input[type="checkbox"]:checked + span::after {
+    border: 2px solid #fff;
+    border-width: 0 2px 2px 0;
+    top: 2px;
+    left: 5px;
+    width: 4px;
+    height: 8px;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .name {
+		line-height: 32px;
+    width: 38%;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .txt {
+		font-size: 11px;
+    width: 35%;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .price {
+    width: 15%;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li .menuBox .price span {
+    font-size: 16px;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li.info04 h3 {
+    float: left;
+    font-size: 12px;
+		padding: 4px;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li.info04 h3 span {
+    font-size: 12px;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li.info04 p {
+    float: left;
+    font-size: 20px;
+    line-height: 34px;
+		margin: 0 4px;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li .sub_total {
+    font-size: 12px;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li .sub_total span {
+    font-size: 16px;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li.info04 p.total {
+    font-size: 14px;
+		margin: 0;
+  }
+  #counseling #counseling_record_detail.estimate .container .rBox ul li.info04 p.total span {
+    font-size: 24px;
+  }
+}
+
+/*==================================================
+  #counseling #counseling_record_detail.attention
+==================================================*/
+#counseling #counseling_record_detail.attention .container .rBox ul li h2 {
+  font-size: 5vw;
+	margin-bottom: 10px;
+  padding-bottom: 10px;
+	text-align: left;
+}
+#counseling #counseling_record_detail.attention .container .rBox ul li.info01 p {
+  font-size: 3vw;
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+#counseling #counseling_record_detail.attention .container .rBox ul li h3 {
+	border-top: 1px solid #cccccc;
+  font-size: 5vw;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+#counseling #counseling_record_detail.attention .container .rBox ul li h3 span {
+  font-size: 3vw;
+}
+#counseling #counseling_record_detail.attention .container .rBox ul li h3 span.small {
+  font-size: 4vw;
+}
+#counseling #counseling_record_detail.attention .container .rBox ul li.info02 p {
+	border: 2px solid #050505;
+  border-radius: 5px;
+  font-size: 3vw;
+  line-height: 1.8;
+	margin: 20px 0;
+  padding: 4vw;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+#counseling #counseling_record_detail.attention .container .rBox ul li.info02 ul.list_sub {
+	font-size: 3vw;
+}
+#counseling #counseling_record_detail.attention .container .rBox ul li.info02 ul.list_sub li {
+	list-style-type: disc;
+  margin-left: 5vw;
+}
+@media (min-width: 992px) {
+  #counseling #counseling_record_detail.attention .container .rBox ul li h2 {
+    font-size: 14px;
+  }
+  #counseling #counseling_record_detail.attention .container .rBox ul li.info01 p {
+    font-size: 12px;
+  }
+	#counseling #counseling_record_detail.attention .container .rBox ul li h3 {
+		font-size: 20px;
+	}
+	#counseling #counseling_record_detail.attention .container .rBox ul li h3 span {
+		font-size: 12px;
+	}
+  #counseling #counseling_record_detail.attention .container .rBox ul li h3 span.small {
+    font-size: 14px;
+  }
+  #counseling #counseling_record_detail.attention .container .rBox ul li.info02 p {
+    font-size: 12px;
+		padding: 25px;
+  }
+  #counseling #counseling_record_detail.attention .container .rBox ul li.info02 ul.list_sub {
+    font-size: 12px;
+  }
+  #counseling #counseling_record_detail.attention .container .rBox ul li.info02 ul.list_sub li {
+    margin-left: 15px;
+  }
+}
+
+/*==============================================================
+  #counseling #counseling_record_detail .counseling_record_side
+==============================================================*/
+#counseling #counseling_record_detail.counseling_record_side .container {
+  padding-bottom: 0;
+}
+#counseling #counseling_record_detail.counseling_record_side .container .lBox ul li:last-child {
+  border-bottom: 1px solid #ccc;
+}
+#counseling #counseling_record_detail.counseling_record_side .container .lBox ul li h2 {
+  font-size: 5vw;
+}
+#counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list {
+  display: flex;
+  flex-wrap: wrap;
+	margin-top: 30px;
+}
+#counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li {
+  background: url(../counseling/img/counseling_bg.png) no-repeat top center/contain;
+	border: none;
+	display: block;
+  line-height: 1.5;
+  margin: 0 4% 5% 0;
+  padding: 7vw 1.5% 6vw;
+  position: relative;
+  text-align: center;
+  width: 45%;
+}
+#counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li:nth-child(even) {
+  margin-right: 0;
+}
+#counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li a {
+  color: #050505;
+  display: inline-block;
+	margin: auto;
+	width: 96%;
+}
+#counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li:last-child {
+  border-bottom: none;
+}
+#counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li h2 {
+  font-size: 3vw;
+}
+#counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li .counseling_record_img {
+  display: inline-block;
+  line-height: 0;
+  margin: 5px auto 0;
+  width: 100%;
+}
+#counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li .counseling_record_img img {
+  width: 100%;
+}
+#counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li h3 {
+  font-size: 3vw;
+  line-height: 1.2;
+  margin-top: 2vw;
+}
+#counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li p {
+  font-size: 3vw;
+	margin-top: 5px;
+}
+@media (min-width: 768px) {
+  #counseling #counseling_record_detail.counseling_record_side .container {
+    padding-bottom: 15vw;
+  }
+  #counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li {
+		padding: 7vw 1.5% 8vw;
+	}
+}
+@media (min-width: 992px) {
+  #counseling #counseling_record_detail.counseling_record_side .container {
+    padding-bottom: 0;
+  }
+  #counseling #counseling_record_detail.counseling_record_side .container .lBox ul li a {
+    line-height: 1.5;
+		width: 96%;
+  }
+  #counseling #counseling_record_detail.counseling_record_side .container .lBox ul li h2 {
+    font-size: 16px;
+  }
+  #counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li {
+    line-height: 2;
+    margin: 0 5% 8% 0;
+    padding: 18px 1% 12px;
+  }
+  #counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li h2 {
+    font-size: 8px;
+  }
+  #counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li .counseling_record_img {
+    line-height: 1;
+    margin: 5px auto 0;
+		width: 97%;
+  }
+  #counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li h3 {
+    font-size: 7px;
+    margin-top: 0;
+  }
+  #counseling #counseling_record_detail.counseling_record_side .container .lBox ul.counseling_record_side_list li p {
+    font-size: 7px;
+		margin-top: 0;
+  }
+}

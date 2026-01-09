@@ -1,0 +1,122 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>きづく＜お客様レビュー＞｜ハッピー ケアメンテR</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns_dummy.css" rel="stylesheet">
+<link href="../css/review.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<style>
+	#Container {margin-bottom: 0;}
+	#pagetop {bottom: 2%;}
+	#pageback {bottom: 2%;}
+</style>
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+
+	<body id="pTop">
+		<?php
+		/* ヘッダーインクルード */
+		include(DIR_PUBLIC . "/include/header_new.php");
+		?>
+
+		<div id="Container">
+
+
+			<div id="Contents">
+
+				<div class="mainvisual__section">
+					<div>REVIEW<br><p>きづく＜お客様レビュー＞</p></div>
+				</div>
+				<div class="logoutArea">
+					<div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+				</div>
+
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu no-arrow">きづく＜お客様レビュー＞</p></div>
+				</div>
+
+				<!--<div class="mypageNavi PCpart">
+					<ul>
+						<li><a href="/mypage/sns.html">マイページ トップ</a></li>
+						<li><a href="/mypage/friend/">フレンド</a></li>
+						<li><a href="/community/">コミュニティ</a></li>
+						<li class="current"><a href="/review/">レビュー</a></li>
+						<li><a href="/mypage/message/">メッセージ</a></li>
+						<li><a href="<?php echo $this->get("user_link"); ?>">プロフィール</a></li>
+					</ul>
+				</div>-->
+				<div class="mypageHead SPpart">
+					<h1>きづく＜レビュー＞</h1>
+				</div>
+
+				<div class="mypageArea">
+					<div class="mypageMain">                    
+						<div class="mainContents2">
+							<div class="postingArea">
+								<?php if (!StaticFunction::is_empty($this->get("review_id"))) { ?>
+									<h2 class="PCpart">レビューの投稿の確認</h2>
+								<?php } else { ?>
+									<h2 class="SPpart">レビューの投稿の確認</h2>
+								<?php } ?>
+								<div class="postingTxt">入力した内容をご確認ください。</div>
+								<div class="postingTxt">投稿内容：<br /><?php echo $this->get("comment_view"); ?></div>
+								<div class="postingTxt">品質：<?php echo $this->get("quarity_view"); ?><br />利便性：<?php echo $this->get("utility_view"); ?></div>
+								<?php if (!StaticFunction::is_empty($this->get("file_link"))) { ?>
+									<div class="postingImg"><img src="<?php echo $this->get("file_link") ?>" alt="写真"></div>
+								<?php } ?>
+								<div class="postingBtnArea"><a href="./complete.html">この内容で投稿する</a></div>
+
+							</div><!--/postingForm-->
+						</div><!--/mainContents2-->
+					</div>
+
+					<div class="mypageSub">
+						<?php $publicGadget->get_news(); /* 右カラムのお知らせ */ ?>
+					</div><!--/mypageSub-->
+
+				</div>
+			</div><!--/Contents-->
+			
+		</div>
+		<!--/Container-->
+		<?php
+		/* フッターインクルード */
+		include(DIR_PUBLIC . "/include/footer_new.php");
+		?>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('[id^=def-]').darkTooltip({
+					trigger: 'click',
+					opacity: 1,
+					gravity: 'north'
+				});
+			});
+		</script>
+		<script>
+			$('.menu_button').click(function () {
+				$(this).next('.nav').slideToggle('slow').siblings('.nav').slideUp('slow');
+				$(this).siblings('.menu_button').removeClass('active');
+				$(this).toggleClass('active');
+			});
+		</script>
+		
+		
+	</body>
+</html>

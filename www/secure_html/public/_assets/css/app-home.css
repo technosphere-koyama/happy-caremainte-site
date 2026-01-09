@@ -1,0 +1,318 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト*/
+	.app {
+		display: none;
+	}
+}
+
+@media screen and (max-width:640px){
+/*======================
+アプリレイアウト*/
+
+	body {
+		background: #fff;
+		height: 100vh;
+		font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',Osaka,sans-serif;
+	}
+	body:before {
+		content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+		background-image: url(/wp/wp-content/themes/HAPPY_Dark/img/bg_img/carementeh_bg_sp.jpg);
+	}
+	a {
+		color: #FFF;
+	}
+	#Container{
+		overflow: hidden;
+		width: 100%;
+		margin: 0 auto;
+		background: rgba(0,0,0,0.7);
+	}
+
+	/*header*/
+	header {
+		width: 90%;
+		margin: 10px auto;
+	}
+	header .title {
+		float: left;
+		width: 40%;
+	}
+	header .title img {
+		width: 38vw;
+	}
+	header .submenu {
+		float: right;
+		font-size: 8px;
+		font-weight: bold;
+		text-align: right;
+		width: 60%;
+	}
+	header .submenu i {
+		margin-right: 1%;
+	}
+	header .submenu .tel {
+		margin-top: 6px;
+		text-align: right;
+	}
+	header .submenu .tel img {
+		width: 147px;
+	}
+	header:after {
+		display: block;
+    content: "";
+    clear: both;
+	}
+
+	/*contents*/
+	#Contents {
+		overflow: hidden;
+	}
+
+	.mainvisual img {
+		width: 100%;
+	}
+
+	.navi {
+		width: 98%;
+		margin: 20px auto;
+	}
+	.navi li a {
+		display: block;
+		float: left;
+		width: 32.6%;
+		height: 90px;
+		margin-right: 1%;
+		margin-bottom: 1%;
+		padding: 15px 0;
+		background: #fff;
+		border-radius: 6px;
+		box-sizing: border-box;
+		color: #050505;
+		font-size: 11px;
+		text-align: center;
+	}
+	.navi li:first-child a,
+	.navi li:nth-child(3) a{
+		padding: 5px 0 2px;
+	}
+	.navi li:nth-child(2) a{
+		padding: 5px 0 2px;
+	}
+	.navi li:nth-child(4) a{
+		padding: 15px 0 5px;
+	}
+	.navi li:nth-child(7) a p{
+		line-height: 1.2;
+	}
+	.navi li:nth-child(3n) a {
+		margin-right: 0;
+	}
+	.navi li.manga a {
+		margin: 5px 0 50px;
+		width: 100%;
+		height: 52px;
+		margin-right: 0;
+		padding: 12px 0;
+		text-align: center;
+		border-radius: 6px;
+		font-size: 10px;
+		line-height: 1.5em;
+		vertical-align: baseline;
+		position: relative;
+	}
+	.navi li:nth-child(10) a {
+		margin: 20px 0 10px;
+		width: 100%;
+		height: 42px;
+		margin-right: 0;
+		padding: 12px 0 12px 10%;
+		text-align: center;
+		border-radius: 6px;
+		font-size: 10px;
+		vertical-align: baseline;
+		display: flex;
+    align-items: center;
+		position: relative;
+	}
+	.navi li:nth-child(10) a:after,
+	.navi li.manga a:after {
+		position: absolute;
+    top: 0;
+    right: 5vw;
+    bottom: 0;
+    width: 3vw;
+    height: 3vw;
+    margin: auto;
+    border-top: 1vw solid #6a3b93;
+    border-right: 1vw solid #6a3b93;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: '';
+
+	}
+
+	.navi img {
+		display: block;
+		width: auto;
+		height: 35px;
+		margin: 0 auto 8px;
+	}
+	.navi li:nth-child(2) a img {
+		margin-bottom: 0;
+	}
+	.navi li:nth-child(3) a img {
+		margin-bottom: 14px;
+	}
+	.navi li:nth-child(4) a img,
+	.navi li:nth-child(7) a img,
+	.navi li:nth-child(8) a img{
+		margin-bottom: 3px;
+	}
+	.navi li:nth-child(10) a img {
+		margin: 0 5px 0 0;
+	}
+	.navi li p {
+		white-space: nowrap;
+    /*-webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);*/
+	}
+	.navi li:nth-child(1) p,
+	.navi li:nth-child(2) p,
+	.navi li:nth-child(3) p,
+	.navi li:nth-child(4) p,
+	.navi li:nth-child(7) p,
+	.navi li:nth-child(8) p{
+		line-height: 1.2;
+	}
+	.navi li span {
+		display: block;
+		margin-top: 3px;
+		font-size: 10px;
+    /*-webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);*/
+		line-height: 1.2;
+	}
+
+	.collaboration {
+		clear: both;
+		overflow: hidden;
+		padding-bottom: 40vw;
+		text-align: center;
+	}
+	.collaboration .wrap {
+		overflow: hidden;
+		width: 90%;
+		margin: 25px auto 10px;
+		box-sizing: border-box;
+	}
+	.collaboration h2 {
+		color: #c4a971;
+		width: 80%;
+		margin: 0 auto 10px;
+		padding: 8px 0;
+		font-size: 16px;
+		font-family: "sawarabi", serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+	}
+	.collaboration p {
+		font-size: 11px;
+		line-height: 1.6;
+		margin-bottom: 20px;
+		padding: 0 5%;
+		text-align: justify;
+    text-justify: inter-ideograph;
+	}
+	.collaboration ul {
+		background: #FFF;
+		font-size: 0;
+		padding: 10px 3%;
+		text-align: left;
+	}
+	.collaboration li {
+		display: inline-block;
+		width: 50%;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	.collaboration li:nth-child(9),
+	.collaboration li:last-child{
+		margin-bottom: 0;
+	}
+	.collaboration li img {
+		max-width: 90%;
+		vertical-align: middle;
+	}
+	.collaboration .hermes {
+		width: 90%;
+		margin: auto;
+	}
+	.collaboration .hermes a {
+		display: block;
+		background: #fff;
+		padding: 5px 0 10px;
+		color: #f57539;
+		border-radius: 4px;
+		box-sizing: border-box;
+		position: relative;
+	}
+	.collaboration .hermes a:after {
+		position: absolute;
+    top: 0;
+    right: 5vw;
+    bottom: 0;
+    width: 3vw;
+    height: 3vw;
+    margin: auto;
+    border-top: 1vw solid #f57539;
+    border-right: 1vw solid #f57539;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: '';
+	}
+	.collaboration .hermes a div {
+		display: inline-block;
+    font-size: 5.5vw;
+    text-align: left;
+	}
+	.collaboration .hermes a span {
+    display: inline-block;
+		font-size: 3.5vw;
+    margin-bottom: 5px;
+	}
+	.collaboration .hermes img {
+		display: inline-block;
+    margin: 0 10px 0 0;
+    vertical-align: top;
+    width: 6vw;
+	}
+	.footer_nav_sp {
+		line-height: 1.5;
+	}
+}
+
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+	.navi li a {
+		height: 90px;
+	}
+	.navi li a span {
+		-webkit-transform: scale(0.9);
+	}
+}

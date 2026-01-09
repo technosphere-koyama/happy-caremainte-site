@@ -1,0 +1,225 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>コミュニティ 編集｜コミュニティ｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns_dummy.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+<script src="/_assets/js/jquery.validationEngine.js?v=1.0"></script>
+<script src="/_assets/js/jquery.validationEngine-ja.js?v=1.0"></script>
+</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+
+		<div id="Container">
+			<?php
+			/* ヘッダーインクルード */
+			include(DIR_PUBLIC . "/include/header_new.php");
+			?>
+
+			<div id="Contents">
+				<div class="mainvisual__section">
+					<div>CONTACT<br><p>コミュニティの編集</p></div>
+				</div>
+				<div class="logoutArea">
+					<div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+				</div>
+
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu"><a href="/community/">コミュニティ</a></p><p class="pankuzu no-arrow">コミュニティ 編集</p></div>
+				</div>
+
+				<div class="mypageNavi PCpart">
+					<ul>
+						<li><a href="/mypage/sns.html">トップ</a></li>
+						<li><a href="/mypage/friend/">フレンド</a></li>
+						<li class="current"><a href="/community/">コミュニティ</a></li>
+						<li><a href="/mypage/message/">メッセージ</a><?php if ($this->get("count_unread") > 0) { ?><div class="unreadMsgNumber"><span><?php echo $this->get("count_unread"); ?></span></div><?php } ?></li>
+						<li><a href="<?php echo $this->get("user_link"); ?>">プロフィール</a></li>
+					</ul>
+				</div>
+                <div class="mypageHead SPpart">
+					<ul>
+					  <li><a href="/mypage/sns.html"><span>トップ</span></a></li>
+					  <li><a href="/mypage/friend/"><span>フレンド</span></a></li>
+					  <li class="current"><a href="/community/"><span>コミュニティ</span></a></li>
+					  <li><a href="/mypage/message/"><span>メッセージ</span></a></li>
+					  <li><a href="<?php echo $this->get("user_link"); ?>"><span>プロフィール</span></a></li>
+					</ul>
+				  </div>
+		
+				<div class="mypageHead SPpart">
+					<h1>コミュニティ 編集</h1>
+				</div>
+
+				<div class="addCommunity">
+					<div class="loginBox">
+						<h3 class="PCpart">コミュニティの編集</h3>
+						
+						<form id="form_1" name="form01" method="POST" action="/community/edit_complete.html"  enctype="multipart/form-data">
+							<input type="hidden" name="tid" value="<?php echo $this->get("tid") ?>">
+							<?php $publicGadget->html_error_array($this->get('error_array')); ?>
+							<dl class="contactform">
+								<dt>コミュニティ名　<span>必須</span></dt>
+								<dd><input type="text" name="name" aria-required="true" placeholder="20文字以内" class="validate[required,maxSize[20]]" value="<?php echo $this->get("name") ?>"></dd>
+								<dt>アバター画像 <span class="attention">（画像形式はjpg、gif、pngのみ）</span></dt>
+								<dd><input type="file" name="avatar"></dd>
+                                <?php if($this->get('topcom_flg') == 1) { ?>
+                                    <dt>管理者表示アカウント</dt>
+                                    <dd><input type="text" name="topcom_owner_system_id" placeholder="20文字以内" class="validate[maxSize[500]]" value="<?php echo $this->get("topcom_owner_system_id") ?>"></dd>
+                                    <dt>トップコミュ二ティ概要</dt>
+                                    <dd><textarea name="topcom_description" placeholder="200文字以内" class="validate[maxSize[200]]"><?php echo $this->get("topcom_description") ?></textarea></dd>
+                                    <dt>背景画像 <span class="attention">（画像形式はjpg、gif、pngのみ）</span></dt>
+                                    <dd><input type="file" name="topcom_image_file"></dd>
+                                    <dt>サイトURL</dt>
+                                    <dd><input type="text" name="topcom_url" placeholder="20文字以内" class="validate[maxSize[500]]" value="<?php echo $this->get("topcom_url") ?>"></dd>
+                                    <dt>ツイッターURL</dt>
+                                    <dd><input type="text" name="topcom_twitter" placeholder="20文字以内" class="validate[maxSize[500]]" value="<?php echo $this->get("topcom_twitter") ?>"></dd>
+                                    <dt>フェイスブックURL</dt>
+                                    <dd><input type="text" name="topcom_facebook" placeholder="20文字以内" class="validate[maxSize[500]]" value="<?php echo $this->get("topcom_facebook") ?>"></dd>
+                                    <dt>インスタグラムURL</dt>
+                                    <dd><input type="text" name="topcom_instagram" placeholder="20文字以内" class="validate[maxSize[500]]" value="<?php echo $this->get("topcom_instagram") ?>"></dd>
+                                    <dt>YouTubeURL</dt>
+                                    <dd><input type="text" name="topcom_youtube" placeholder="20文字以内" class="validate[maxSize[500]]" value="<?php echo $this->get("topcom_youtube") ?>"></dd>
+                                <?php } ?>
+								<dt>カテゴリー　<span>必須</span></dt>
+								<dd class="addressform">
+									<div class="addressselect">
+										<select id="pref" name="category" autocomplete="address-level1">
+											<?php foreach ($this->get("comunityCategoryArray") AS $key => $val) { ?>
+												<?php $selected = ($key == $this->get("category") ? 'selected="selected"' : '') ?>
+												<OPTION VALUE="<?php echo $key ?>" <?php echo $selected ?>><?php echo $val ?></OPTION>
+											<?php } ?>
+										</select>
+									</div>
+								</dd>
+								<dt>説明文</dt>
+								<dd><textarea name="comment" value="" placeholder="1000文字以内" class="validate[maxSize[1000]]"><?php echo $this->get("comment") ?></textarea></dd>
+								<dt class="btnarea"><input type="button" id="settingbtn" class="btn" value="コミュニティを変更する" onclick="if(validate(document.form01))document.form01.submit()"></dt>
+                                <dt class="btnarea"><input type="button" id="cancelbtn" class="cancelbtn" value="戻　る" onclick="javascript:history.back()"></dt>
+                            </dl>
+                        </form>
+
+                        <dl>
+                            <form id="form_4" name="form04" method="POST" action="/community/author_sort.html"
+                                  enctype="multipart/form-data">
+                                <input type="hidden" name="tid" value="<?php echo $this->get("tid") ?>">
+                                <input type="hidden" name="author_json" value="" id="author_json">
+                            <dt>
+                            <div class="cf nestable-lists">
+                                <div class="dd" id="nestable">
+                                    <?php if ($this->get('topcom_flg') == 1) { ?>
+                                    <?php $g_author = $this->get("list_comm_author"); ?>
+                                        <ol class="dd-list">
+                                            <?php foreach ((array)$this->get("list_comm_author_group") AS $key => $val) { ?>
+                                                <li class="dd-item" data-id="group-<?php echo $val['id'] ?>-<?php echo $val['group_name'] ?>">
+                                                    <div class="dd-handle type-group"><?php echo $val['group_name'] ?>
+                                                        (グループ)
+
+                                                    </div>
+                                                    <a href="javascript:void(0)" class="dd-delete">削除</a>
+                                                </li>
+                                                <?php if(array_key_exists($val['id'],$g_author)) {foreach ((array)$g_author[$val['id']] AS $author_val) { ?>
+                                                    <li class="dd-item"
+                                                        data-id="author-<?php echo $author_val['system_user_id'] ?>">
+                                                        <div class="dd-handle"><?php echo $author_val['nickname'] ?>(アカウント)</div>
+                                                        <a href="javascript:void(0)" class="dd-delete">削除</a>
+                                                    </li>
+                                                <?php }} ?>
+                                            <?php } ?>
+                                            <li class="dd-item" data-id="group-null">
+                                                <div class="dd-handle type-group">グループ未設定（グループ）</div>
+                                            </li>
+                                            <?php if(array_key_exists("",$g_author)) {foreach ((array)$g_author[""] AS $author_val) { ?>
+                                                <li class="dd-item"
+                                                    data-id="author-<?php echo $author_val['system_user_id'] ?>">
+                                                    <div class="dd-handle type-author"><?php echo $author_val['nickname'] ?>
+                                                        (アカウント)
+                                                    </div>
+                                                    <a href="javascript:void(0)" class="dd-delete">削除</a>
+                                                </li>
+                                            <?php }} ?>
+                                        </ol>
+                                    </form>
+                                </div>
+                            </div>
+                            </dt>
+                            <dt class="btnarea"><input type="button" id="settingbtn" class="btn" value="並べ替え" onclick="if(validate(document.form04))document.form04.submit()"></dt>
+                        </dl>
+                        <form id="form_2" name="form02" method="POST" action="/community/author_add.html"  enctype="multipart/form-data">
+                            <input type="hidden" name="tid" value="<?php echo $this->get("tid") ?>">
+                            <dl>
+                                <dt>ユーザー追加</dt>
+                                <dd><input type="text" name="author_uid" placeholder="ログインID" class="validate[maxSize[500]]" value="<?php echo $this->get("author_uid") ?>"></dd>
+                                <dt class="btnarea"><input type="button" id="settingbtn" class="btn" value="関連ユーザーを追加" onclick="if(validate(document.form02))document.form02.submit()"></dt>
+							</dl>
+						</form>
+                        <form id="form_3" name="form03" method="POST" action="/community/group_add.html"  enctype="multipart/form-data">
+                            <input type="hidden" name="tid" value="<?php echo $this->get("tid") ?>">
+                            <dl class="contactform">
+                                <dt>グループ追加</dt>
+                                <dd><input type="text" name="group_name" placeholder="グループ名" class="validate[maxSize[500]]" value="<?php echo $this->get("author_uid") ?>"></dd>
+                                <dt class="btnarea"><input type="button" id="settingbtn" class="btn" value="グループを追加" onclick="if(validate(document.form03))document.form03.submit()"></dt>
+                            </dl>
+                        </form>
+                <dl>
+                    <dt>新しいユーザーを作成する場合は、以下よりアカウントを作成してください。</dt>
+                    <dt class="btnarea"><input type="button" id="cancelbtn" class="cancelbtn" value="アカウント作成" onclick="location.href='/mypage/logout/entry.html'"></dt>
+                </dl>
+                <?php } ?>
+					</div>
+				</div><!--/content-->
+			</div><!--/Contents-->
+
+
+			<div class="footer_sns">
+				<div class="container">
+					<ul>
+					<li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					<li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer_nav.php");
+			?>
+		<!--/Container-->
+		<script src="/_assets/js/xc.js"></script>
+		<script>
+			$('.menu_button').click(function () {
+				$(this).next('.nav').slideToggle('slow').siblings('.nav').slideUp('slow');
+				$(this).siblings('.menu_button').removeClass('active');
+				$(this).toggleClass('active');
+			});
+		</script>
+
+
+	</body>
+</html>

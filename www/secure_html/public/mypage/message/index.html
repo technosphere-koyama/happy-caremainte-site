@@ -1,0 +1,10 @@
+<?php
+/*
+ * マイページ(共通)
+ * メッセージ
+ */
+require '../../../core/PreLoad.inc';
+$aic = new MypageMessageController();
+$aic->index();
+$aic->view('mypage'.DS.'message');
+?>

@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+.lp_top__kv img {
+	width: 100%;
+}
+
+.lp_top__section {
+	margin-top: 80px;
+}
+.lp_top__section p {
+	color: #333;
+	font-size: 14px;
+	line-height: 2;
+	margin-bottom: 35px;
+}
+
+.lp_2nd__section {
+	border-bottom: none;
+	padding-bottom: 0;
+	margin-bottom: 60px;
+}
+.lp_2nd__section .wrap > p {
+	color: #333;
+	font-size: 14px;
+	line-height: 2;
+	margin-bottom: 70px;
+}
+.lp_2nd__section h2 img {
+	width: 736px;
+}
+.lp_2nd__right, .lp_2nd__left {
+	position: relative;
+	margin-bottom: 100px;
+}
+.lp_2nd__inner {
+	width: 843px;
+	height: 482px;
+	border: 1px solid #e9ddcb;
+	box-sizing: border-box;
+	padding: 80px 300px 60px 60px;
+	text-align: left;
+}
+.lp_2nd__right .lp_2nd__inner {
+	margin-left: auto;
+	padding: 80px 60px 60px 300px;
+}
+.lp_2nd__image {
+	position: absolute;
+	top: 90px;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	width: 490px;
+	height: 330px;
+}
+.lp_2nd__right .lp_2nd__image {
+	left: 0;
+}
+.lp_2nd__left .lp_2nd__image {
+	right: 0;
+}
+.lp_2nd__section .inner_subtitle {
+	color: #977c53;
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+	font-size: 16px;
+}
+.lp_2nd__section h3 {
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+	font-size: 26px;
+	font-weight: bold;
+	line-height: 1.7;
+	margin: 25px 0 0;
+}
+.lp_2nd__section .inner_text {
+	font-size: 13px;
+	line-height: 2;
+	margin-top: 30px;
+}
+.lp_2nd__section .inner_button {
+	width: 200px;
+	margin-top: 25px;
+}
+.inner_button a {
+	display: block;
+	background: linear-gradient(90deg, #a78045, #d9a558);
+	border-radius: 30px;
+	color: #fff;
+	font-size: 12px;
+	width: 100%;
+	padding: 13px 0 12px;
+	text-align: center;
+}
+.inner_button img {
+	width: 25px;
+	margin-left: 10px;
+	vertical-align: 3px;
+}
+
+.lp_3rd__section {
+	overflow: hidden;
+	width: 1100px;
+	margin: 0 auto 200px;
+	text-align: center;
+}
+.lp_3rd__section h2 {
+	margin-bottom: 60px;
+}
+.lp_3rd__section h2 img {
+	width: 825px;
+}
+.lp_3rd__section .inner_left {
+	float: left;
+}
+.lp_3rd__section .inner_right {
+	float: right;
+	width: 600px;
+	text-align: left;
+	padding-top: 20px;
+}
+.lp_3rd__section .inner_right p {
+	font-size: 14px;
+	line-height: 2.2;
+}
+.lp_3rd__section .inner_button {
+	margin-top: 60px;
+	margin-left: auto;
+	width: 360px;
+}
+.lp_3rd__section .inner_button a {
+	font-size: 15px;
+}
+
+.lp_bottom__section {
+	border-bottom: none;
+	padding-bottom: 0;
+	margin-bottom: 130px;
+}
+.lp_bottom__section h2 {
+	margin-bottom: 70px;
+}
+
+
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト　トップページ　*/
+}
+
+
+@media screen and (max-width:640px){
+	.lp_top__section {
+		margin-top: 30px;
+	}
+	.lp_top__section p {
+		font-size: 10px;
+		width: 90%;
+		margin: 20px 5% 20px;
+	}
+	.lp_top__section .lp_line {
+		width: 90%;
+		margin: 0 5%;
+	}
+	
+	.lp_2nd__section {
+		margin-bottom: 30px;
+	}
+	.lp_2nd__section .wrap > p {
+		font-size: 10px;
+		margin-bottom: 30px;
+	}
+	.lp_2nd__right, .lp_2nd__left {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		margin-bottom: 30px;
+	}
+	.lp_2nd__right .lp_2nd__inner,
+	.lp_2nd__left .lp_2nd__inner {
+		margin: 80px 0 0;
+		width: calc(100% - 20px);
+		height: auto;
+		padding: 80px 20px 30px;
+	}
+	.lp_2nd__left .lp_2nd__inner {
+		margin-left: auto;
+	}
+	.lp_2nd__right .lp_2nd__image,
+	.lp_2nd__left .lp_2nd__image {
+		margin: 0 -20px 0 30%;
+		height: auto;
+		-webkit-order: -1;
+		-ms-flex-order: -1;
+		order: -1;
+		padding: 0 0 63%;
+		right: initial;
+		top: initial;
+		width: calc(100% - 30%)
+	}
+	.lp_2nd__left .lp_2nd__image {
+		margin: 0 30% 0 0;
+	}
+	.lp_2nd__image img {
+		width: 100%;
+	}
+	.lp_2nd__section .inner_subtitle {
+		font-size: 10px;
+	}
+	.lp_2nd__section h3 {
+		font-size: 18px;
+		margin-top: 10px;
+	}
+	.lp_2nd__section .inner_text {
+		font-size: 10px;
+		margin-top: 15px;
+	}
+	.lp_2nd__section .inner_button {
+		width: 70%;
+		margin-top: 15px;
+	}
+	.inner_button a {
+		font-size: 10px;
+		padding: 8px 0;
+	}
+	.inner_button img {
+		width: 18px;
+		vertical-align: 2px;
+	}
+	
+	.lp_3rd__section {
+		width: 90%;
+		margin: 20px 5% 60px;
+	}
+	.lp_3rd__section h2 {
+		margin-bottom: 25px;
+	}
+	.lp_3rd__section h2 img {
+		width: auto;
+		height: 45px;
+	}
+	.lp_3rd__section .inner_left,
+	.lp_3rd__section .inner_right {
+		float: none;
+	}
+	.lp_3rd__section .inner_left img {
+		width: 100%;
+	}
+	.lp_3rd__section .inner_right {
+		width: 100%;
+	}
+	.lp_3rd__section .inner_right p {
+		font-size: 10px;
+		line-height: 2;
+	}
+	.lp_3rd__section .inner_button {
+		margin-top: 10px;
+		width: 100%;
+	}
+	.lp_3rd__section .inner_button a {
+		font-size: 12px;
+	}
+	
+	.lp_bottom__section {
+		margin-bottom: 60px;
+	}
+	.lp_bottom__section h2 {
+		margin-bottom: 20px;
+	}
+}

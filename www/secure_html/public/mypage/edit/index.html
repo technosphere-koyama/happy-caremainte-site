@@ -1,0 +1,10 @@
+<?php
+
+/*
+ * マイページ-登録情報の変更
+ */
+require '../../../core/PreLoad.inc';
+$aic = new MypageEditController();
+$aic->index();
+$aic->view("mypage" . DS . "edit");
+?>

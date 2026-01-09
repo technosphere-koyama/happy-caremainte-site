@@ -1,0 +1,192 @@
+<?php
+$publicGadget = new PublicGadget();
+
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>Happy Carementeh</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+		<meta name="format-detection" content="telephone=no">
+
+		<!-- Open Graph Protocol -->
+		<meta property="og:url" content="★">
+		<meta property="og:title" content="★">
+		<meta property="og:description" content="★">
+		<meta property="og:image" content="★">
+		<!-- Open Graph Protocol -->
+
+		<link rel="stylesheet" href="/_assets/css/default.css">
+		<link rel="stylesheet" href="/_assets/css/common.css">
+		<link rel="stylesheet" href="/_assets/css/top.css">
+		<link rel="stylesheet" href="/_assets/css/jquery.bxslider.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+		<script src="/_assets/js/jquery.js"></script>
+		<script src="/_assets/js/jquery.bxslider.min.js"></script>
+		<script src="/_assets/js/common.js"></script>
+		<script src="/_assets/js/index.js"></script>
+		<script src="/_assets/js/ga.js"></script>
+        
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+
+	</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+
+		<div id="Container">
+
+			<header class="lower">
+				<div class="title"><a href="/"><img src="/_assets/img/header/logo.png" width="186" height="68" alt="Happy Carementeh"></a></div>
+				<div class="sublink">
+					<ul>
+						<?php $publicGadget->html_sublink() /* .sublink */ ?>
+					</ul>
+				</div>
+				<!--PC-->
+				<div class="PCpart">
+					<div class="navi">
+						<ul class="navi2">
+							<?php $publicGadget->html_navi2() /* .navi2 */ ?>
+						</ul>
+					</div>
+				</div>
+				<!--SP-->
+				<div class="SPpart">
+					<div class="menu"><img src="/_assets/img_sp/header/icon_menu.png" width="26" height="28" alt="MENU"></div>
+					<span class="menu_bg"></span>
+					<div class="menu_over">
+						<div class="closebtn"><img src="/_assets/img_sp/menu/btn_close.png" width="26" height="28" alt="CLOSE"></div>
+						<div class="wrap">
+							<?php $publicGadget->html_navi_sp() /* .navi_sp */ ?>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div id="Contents">
+
+				<div class="mainvisual__section">
+					<img src="/_assets/img_sp/index/pct_top.jpg" alt="">
+				</div>
+
+				<div class="bgGray">
+					<div class="link_top__section">
+						<ul>
+							<li>
+								<a href="/order/">
+									<span class="pct"><img src="/_assets/img/index/pct_menu01.jpg" width="270" height="199" alt="ORDER"></span>
+									<span class="title"><span class="mainttl">ORDER</span><br>集荷依頼（ご注文）</span>
+									<span class="text firstline">集荷（ご注文）のご依頼は<br>こちらから。</span>
+								</a>
+							</li>
+							<li>
+								<a href="carementeh/">
+									<span class="pct"><img src="/_assets/img/index/pct_menu02.jpg" width="270" height="199" alt="CAREMENTEH"></span>
+									<span class="title"><span class="mainttl">CAREMENTEH</span><br>ケアメンテとは？</span>
+									<span class="text">クリーニングの限界を解消した<br class="SPpart">ハッピーの<br class="PCpart">「ケアメンテ」に<br class="SPpart">ついてご紹介します。</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<span class="pct"><img src="/_assets/img/index/pct_menu03.jpg" width="270" height="199" alt="KNOWLEDGE"></span>
+									<span class="title"><span class="mainttl">KNOWLEDGE</span><br>おしゃれの雑学</span>
+									<span class="text">おしゃれをもっと楽しむための<br>知って得する情報が満載です。</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<span class="pct"><img src="/_assets/img/index/pct_menu04.jpg" width="270" height="199" alt="COMPANY"></span>
+									<span class="title"><span class="mainttl">COMPANY</span><br>会社情報</span>
+									<span class="text">衣服再現加工という<br class="PCpart">産業分野を<br class="SPpart">通した社会活動をご覧下さい。</span>
+								</a>
+							</li>
+						</ul>
+					</div><!--/link_top__section-->
+
+
+					<div class="link_bottom__section">
+						<ul>
+							<li>
+								<div class="pct flR"><img src="/_assets/img/index/pct_menu05.jpg" width="549" height="358" alt="CAREMENTEH"></div>
+								<div class="detail flL">
+									<div class="title">“きれい”の先にある<br>“Happyケアメンテ”を求めて</div>
+									<div class="text">お気に入りの服を、いつまでも新品のまま長く楽しんでもらいたい。<br>
+										それがHappyの、服に対する熱い「想い」です。<br>
+										そんな想いをカタチにしたのが、“Happyケアメンテサービス”です。</div>
+									<div class="btn"><a href="carementeh/"><img src="/_assets/img/index/btn_carementeh.png" width="163" height="34" alt="CAREMENTEH"></a></div>
+								</div>
+							</li>
+							<li>
+								<div class="pct flL"><img src="/_assets/img/index/pct_menu06.jpg" width="549" height="358" alt="Happy SNS"></div>
+								<div class="detail flL">
+									<div class="title">Happy SNSで<br>“つながる輪”が広がる</div>
+									<div class="text">ケアメンテ実例や、お客様の口コミレビュー等、<br>
+										Happy SNSは、“つながる輪”が広がっていくことを願っています。</div>
+									<div class="btn"><a href="/mypage/"><img src="/_assets/img/index/btn_mypage.png" width="133" height="34" alt="Happy SNS"></a></div>
+								</div>
+							</li>
+						</ul>
+					</div><!--/link_bottom__section-->
+
+				</div><!--/bgGray-->
+
+				<div class="news__section">
+					<div class="title">NEWS</div>
+					<ul>
+						<li><a href=""><span class="date">2016.08.06</span><span class="text">世界文化社ファッション情報誌 『MEN’S EX』（2016年9月号）に掲載されました。</span></a></li>
+						<li><a href=""><span class="date">2016.08.01</span><span class="text">経済産業省の広報誌『METI Journal（8・9月号）』に、 ITの利活用でサービスの質と生産性を向上している先進企業として掲載されました。</span></a></li>
+						<li><a href=""><span class="date">2016.06.13</span><span class="text">内閣総理大臣表彰『日本サービス大賞』で、優秀賞（SPRING賞）を受賞しました。</span></a></li>
+						<li><a href=""><span class="date">2016.06.01</span><span class="text">2016年度版「中小企業白書」に生産性向上のIT利活用事例として掲載されました。</span></a></li>
+						<li><a href="/review/"><span class="date">2016.06.01</span><span class="text">レビュー実装</span></a></li>
+						<li><a href="/catalog/"><span class="date">2016.06.01</span><span class="text">カタログ請求実装</span></a></li>
+					</ul>
+				</div><!--/news__section-->
+
+
+				<!--PC用-->
+				<div class="link_footer__section PCpart">
+					<ul>
+						<li><a href=""><img src="/_assets/img/index/btn_campaign.png" width="364" height="100" alt="CAMPAIGN お友達ご紹介キャンペーン実施中"></a></li>
+						<li><a href=""><img src="/_assets/img/index/btn_recruit.png" width="364" height="100" alt="RECRUIT 新卒採用受付中"></a></li>
+						<li><a href=""><img src="/_assets/img/index/btn_mailmagazine.png" width="364" height="100" alt="MAIL MAGAZINE メールマガジンのご登録はこちらから"></a></li>
+					</ul>
+				</div><!--/link_footer__section-->
+
+				<!--SP用（スライダー）-->
+				<div class="link_footer__section SPpart">
+					<ul class="slider">
+						<li><a href=""><img src="/_assets/img_sp/index/btn_campaign.png" width="230" height="55" alt="CAMPAIGN お友達ご紹介キャンペーン実施中"></a></li>
+						<li><a href=""><img src="/_assets/img_sp/index/btn_recruit.png" width="230" height="55" alt="RECRUIT 新卒採用受付中"></a></li>
+						<li><a href="/mailmag/"><img src="/_assets/img_sp/index/btn_mailmagazine.png" width="230" height="55" alt="MAIL MAGAZINE メールマガジンのご登録はこちらから"></a></li>
+					</ul>
+				</div><!--/link_footer__section-->
+			</div><!--/Contents-->
+			<?php $publicGadget->html_footer() /* footer */ ?>
+		</div>
+		<!--/Container-->
+		
+		<?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/body_retargeting_cord.php");
+		?>
+		
+		
+	</body>
+</html>

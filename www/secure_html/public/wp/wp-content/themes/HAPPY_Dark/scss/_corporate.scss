@@ -1,0 +1,306 @@
+@import "_mixin";
+
+.footerguide-corporate {
+  @for $i from 1 through 5 {
+    li.fnavi#{$i} {
+      background-image: url('/_assets/img/corporate/menu#{$i}.png');
+    }
+  }
+}
+#corporate {
+  #Contents {
+    position: relative;
+    padding-top: 40px;
+  }
+  .SDGs-logo {
+    width: 140px;
+    margin-top: 20px;
+
+    @include for-pc {
+      height: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-top: 0;
+      width: 200px;
+    }
+  }
+  .company table {
+    div {
+      border: 1px solid #999;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    span{
+      background: #999;
+    }
+  }
+  .company th {
+    width: 25%;
+    text-align: left;
+    background: hsl(0, 0%, 50%);
+  }
+  .content {
+    h5 {
+      font-weight: normal;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+  }
+  .LColumn a:not([class*="linkBtn"]) {
+    text-decoration: underline;
+  }
+  .winning {
+    font-size: 13px;
+    margin: 30px 0 40px;
+    .smallTxt {
+      display: block;
+    }
+  }
+  .media .literary img {
+    max-width: 20%;
+  }
+  @include for-sp {
+    .media .literary {
+      /* 通常 .section-imgLeft は全幅のところ、これはスマホでも float: left; */
+      img {
+        float: left;
+        margin-right: 10px;
+      }
+    }
+  }
+  .recruit .box {
+    padding: 20px 10px 0 10px;
+    margin: 0 0 40px;
+    border: 1px solid #ddd;
+    @include for-pc {
+      padding: 30px 20px 0 20px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .winningImg > * {
+    /* == /corporate/company/winning/ == */
+    max-width: 49%;
+    display: inline-block;
+    &:nth-child(even) {
+      margin-left: 1%;
+    }
+  }
+
+  // PCがスマホの派生の場合
+  @include for-pc {
+    .content {
+      font-size: $contentFontSize;
+      p {
+        line-height: 2;
+      }
+    }
+
+    .ip {
+      /* == /corporate/company/ip/ == */
+      line-height: 1.8;
+      dt {
+        float: left;
+        clear: left;
+        width: 50%;
+      }
+      dd {
+        margin-left: 50%;
+      }
+
+      dt .IPimg {
+        width: 15px;
+        height: auto;
+        vertical-align: -1px;
+        margin-left: 5px;
+      }
+    }
+    .media {
+      /* == /corporate/media/media_list/ == */
+      .listImg {
+        margin-bottom: 90px;
+
+        img {
+          margin-right: 5px;
+          margin-bottom: 5px;
+          max-width: 19%;
+
+          &.listImgR {
+            margin-right: 0;
+          }
+        }
+      }
+      .listBook img {
+        width: 10%;
+        height: auto;
+        margin-top: 0;
+      }
+    }
+  }
+
+  // PC/スマホで大きく違う部分
+  .media .mediaPrice {
+    @include for-pc {
+      .mediaPriceWrap {
+        @include clearfix;
+      }
+      .mediaPriceImg {
+        float: right;
+        width: 40%;
+      }
+      .mediaPriceTxt {
+        float: left;
+        width: 60%;
+        p {
+          margin-bottom: 1em;
+        }
+      }
+      dl {
+        font-size: 11px;
+        width: 90%;
+      }
+    }
+    dl {
+      @extend .dl-horizontal;
+    }
+  }
+
+  table.mediaTable {
+    @include for-sp {
+      border: none;
+      width: 100%;
+      margin-bottom: 20px;
+
+      &.last {
+        margin-bottom: 0;
+      }
+
+      th, td {
+        display: block;
+        border: none;
+      }
+
+      th {
+        font-weight: bold;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+      }
+
+      td {
+        line-height: 1.6;
+
+        &:nth-child(3) {
+          margin-bottom: 15px;
+          color: #ddd;
+        }
+      }
+      &.lecture {
+        td {
+          font-weight: bold;
+
+          &:nth-child(2) {
+            font-weight: normal;
+            margin-bottom: 10px;
+          }
+        }
+
+        &.last {
+          margin-bottom: 0;
+        }
+      }
+    }
+    @include for-pc {
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: $contentFontSize;
+
+      th {
+        background: black;
+        vertical-align: middle;
+        text-align: left;
+        padding: 8px 15px;
+        line-height: 1.6;
+      }
+
+      td {
+        text-align: left;
+        vertical-align: middle;
+        padding: 8px 15px;
+        line-height: 1.6;
+        width: 20%;
+
+        &:nth-child(2) {
+          width: 55%;
+        }
+
+        &:nth-child(3) {
+          width: 35%;
+        }
+      }
+
+      &.lecture {
+        td {
+          width: 20%;
+
+          &:nth-child(2) {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+
+  /* == /corporate/csr/weightlessness/ == */
+  .txtBGC {
+    color: black;
+    background: white;
+    line-height: 3;
+    padding: 5px 10px;
+  }
+  /* == /corporate/csr/world2007/ == */
+  .world2007Ttl h4 {
+    text-align: center;
+    font-size: 13px;
+    @include sawarabi;
+    margin-bottom: 2em;
+  }
+  /* == /corporate/csr/unicef/ == */
+  .Donation {
+    margin: 40px 0 0;
+    font-size: 120%;
+    line-height: 1.6em;
+
+    li {
+      width: 100%;
+      margin: 10px 0 0;
+      padding: 10px 0 0;
+      border-top: #999 solid 1px;
+      display: table;
+
+      .right, span {
+        font-size: 80%;
+      }
+    }
+
+    @include for-pc {
+      font-size: 110%;
+      .left {
+        float: left;
+      }
+      .right {
+        float: right;
+      }
+    }
+  }
+  /* == /corporate/europe/2013_summer/ == */
+  .europeIndex {
+    @extend .serviceBorderBox;
+    @extend .roundedBox;
+    dd {
+      margin-bottom: 1em;
+    }
+  }
+}

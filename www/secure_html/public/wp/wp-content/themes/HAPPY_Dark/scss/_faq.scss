@@ -1,0 +1,160 @@
+@use 'mixin';
+
+$borderColor: white;
+
+#faq {
+  .content {
+    font-size: $contentFontSize;
+  }
+  .faq-detail {
+    li a {
+      text-decoration: underline;
+    }
+  }
+  .q-list, .a-list {
+    position: relative;
+  }
+  .q-list {
+    margin-bottom: 25px;
+    &::before {
+      content: 'Q :';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .a-list {
+    border-bottom: 1px solid $borderColor;
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+    &::before {
+      content: 'A :';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .a-list-last {
+    border: 0;
+    padding-bottom: 0px !important;
+  }
+  .Ltwitter {
+    padding: 30px 25px;
+    border: 1px solid #ddd;
+    h3 {
+      color: #1da1f2;
+      position: relative;
+      &::after {
+        content: url(/_assets/img/faq/Twitter_Logo_Blue.svg);
+        display: block;
+        width: 110px;
+        height: auto;
+      }
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      padding: 15px;
+      margin-top: 25px;
+      background: #1da1f2;
+      border-radius: 5px;
+      color: #fff;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  @include for-pc {
+    h5 {
+      font-weight: bold;
+      text-align: left;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .LColumn {
+      min-height: 720px;
+      margin-bottom: 70px;
+    }
+
+    .section-imgCenter img {
+      margin-top: 0;
+    }
+
+    .smallTxt {
+      font-size: 11px;
+    }
+
+    .faq-detail {
+      .q-list, .a-list {
+        padding-left: 40px;
+      }
+
+
+    }
+
+    .sp-br {
+      display: none;
+    }
+
+    .Ltwitter {
+      .Ltwitter-banner {
+        display: flex;
+      }
+
+      h3 {
+        flex-shrink: 0;
+        margin-top: 20px;
+        padding-right: 110px;
+
+        &::after {
+          position: absolute;
+          top: -40px;
+          right: 0;
+        }
+      }
+      p {
+        flex-shrink: 1;
+        font-size: 13px;
+      }
+    }
+  }
+
+  @include for-sp {
+    .a-list-last {
+      margin-bottom: 70px;
+    }
+
+    .faq-detail {
+      line-height: 2;
+
+      .q-list, .a-list {
+        padding-left: 25px;
+        font-size: 13px;
+      }
+    }
+
+    .Ltwitter {
+      h3 {
+        width: 150px;
+        margin: auto;
+
+        &::after {
+          margin: 0 auto;
+        }
+      }
+
+      a {
+        font-size: 13px;
+      }
+    }
+  }
+}

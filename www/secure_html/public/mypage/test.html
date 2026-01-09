@@ -1,0 +1,1081 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ログイン｜ハッピー ケアメンテ®</title>
+<link href="../css/common.css" rel="stylesheet">
+<link href="../css/mypage.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+</head>
+<body id="mypage">
+  <div class="header_nav_common">
+      <nav id="menu_pc_trigger">
+        <div>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p>MENU</p>
+      </nav>
+      <div class="wrap">
+        <div class="title">
+          <ul>
+            <li><a href=""><h1><img src="/wp/wp-content/themes/HAPPY_Dark/img/logo_w.png" alt="ハッピー ケアメンテ" class="logo"></h1></a></li>
+            <li><a href="/carementeh_search/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header01_w.png" alt=""><span>ケアメンテ実例集</span><strong>「さがす」</strong></a></li>
+            <li><a href="/review/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header02_w.png" alt=""><span>お客さまレビュー</span><strong>「きづく」</strong></a></li>
+            <li><a href="/login/happy.html"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header03_w.png" alt=""><span>ハッピー SNS</span><strong>「つなぐ」</strong></a></li>
+            <li><a href="/mypage/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header04_w.png" alt=""><span>お客さま専用ページ</span><strong>マイページ</strong></a></li>
+          </ul>
+        </div>
+        <div class="sublink">
+          <div class="telBox">
+            <div class="tel_top">
+              <a href="tel:0120-88-6868"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_tel_w.png" alt="tel"><span class="number">0120-88-6868</span>
+              <span class="time">月〜土  <span class="sub">9:00〜18:00<br>(日曜・祝祭日は除く)</span></span></a>
+            </div>
+            <div class="hermes">
+              <a href="tel:0120-88-3040">
+              <span>エルメス公認 <br>お客様専用ダイアル</span><br class="sp"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_tel_w.png" alt="tel">0120-88-3040</a>
+            </div>
+          </div>
+          <div class="order">
+            <a href="/order/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/order_w.png" alt="WEB"><br>
+            <span>お申し込み</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+	<!--　/header_nav　-->
+	
+	<div class="bg">
+    <section id="banner">
+      <div class="container">
+        <p>カルテの作成が完了しました。カウンセリングからご確認くださいませ。</p>
+			</div>
+    </section>
+    <!--　/#banner -->
+		
+    <section id="mypage_nav">
+      <div class="container">
+        <ul>
+					<li><a href="index.html"><img src="../img/header04.png" alt="マイページ"><span>マイページ<br>トップ</span></a></li>
+					<li><a href="../counseling/index.html"><img src="img/mypage01.png" alt="カウンセリング"><span>カウンセリング</span></a></li>
+					<li><a href="ordered/index.html"><img src="img/mypage02.png" alt="ただいまのお預かり品"><span>ただいまの<br>お預かり品</span></a></li>
+					<li><a href="history/index.html"><img src="img/mypage05.png" alt="過去のケアメンテご利用履歴"><span>過去のケアメンテ<br>ご利用履歴</span></a></li>
+					<li><a href="wardrobe/index.html"><img src="img/mypage04.png" alt="ワードローブお預かり品"><span>ワードローブ<br>お預かり品</span></a></li>
+					<li><a href="/sale/index.html"><img src="img/mypage03.png" alt="セール情報（会員ご優待）"><span>セール情報<br>（会員ご優待）</span></a></li>
+				</ul>
+			</div>
+    </section>
+    <!--　/#mypage_nav -->
+		
+    <section id="member_point">
+      <div class="container tac">
+				<div class="member_point_box">
+					<div class="member_point_box_inner">
+            <h2>ポイント</h2>
+            <p class="member_point_data"><span>25</span>/50</p>
+            <p class="member_point_rank">GOLD</p>
+					</div>
+          <canvas id="DoughnutChart"></canvas>
+				</div>
+				<p class="member_point_ticket">使用可能な1,000円分チケット<span>1</span>枚</p>
+			</div>
+    </section>
+    <!--　/#member_point -->
+				
+    <section id="member_information">
+      <div class="container">
+				<div class="member_information_box">
+          <div class="member_information_name">
+            <img src="img/user.png" alt="USER">
+            <div class="member_information_name_txt">
+              <h2>USER NAME <span>様</span></h2>
+              <p>お客様番号：<span>000000</span></p>
+            </div>
+          </div>
+				</div>
+				<div class="btnArea">
+          <div class="btn">
+            <a href=""><img src="img/mypage03.png" alt="セール情報（会員ご優待）"><span>セール情報<br><span class="small">（会員ご優待）</span></span></a>
+          </div>
+          <div class="order">
+            <a href=""><img src="../img/order.png" alt="お申し込み"><span>お申し込み</span></a>
+          </div>
+				</div>
+      </div>
+    </section>
+    <!--　/#member_information -->
+
+    <section id="member_menu">
+      <div class="container">
+        <ul>
+          <li>
+						<div class="member_menu_img">
+              <img src="img/mypage01.png" alt="カウンセリング">
+							<span class="badge">1</span>
+						</div>
+            <h3>カウンセリング</h3>
+          </li>
+          <li>
+						<div class="member_menu_img">
+              <img src="img/mypage02.png" alt="ただいまのお預かり品">
+						</div>
+            <h3>ただいまの<br>お預かり品</h3>
+          </li>
+          <li>
+						<div class="member_menu_img">
+              <img src="img/mypage03.png" alt="過去のケアメンテご利用履歴">
+						</div>
+            <h3>過去のケアメンテ<br>ご利用履歴</h3>
+          </li>
+          <li>
+						<div class="member_menu_img">
+              <img src="img/mypage04.png" alt="ワードローブ お預かり品">
+						</div>
+            <h3>ワードローブ<br>お預かり品</h3>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!--　/#member_menu -->
+		
+    <section id="member_menu_sub">
+      <div class="container">
+				<ul>
+					<li><a href="">登録情報の変更</a></li>
+					<li><a href="">事故賠償制度</a></li>
+					<li><a href="">マイページの操作方法</a></li>
+				</ul>
+      </div>
+    </section>
+    <!--　/#member_menu_sub -->
+		
+    <section id="member_beginner">
+      <div class="container">
+				<div class="member_beginnerWrap">
+					<div>
+            <img src="img/member_beginner_parts01.png" alt="" class="member_beginner_parts01">
+            <img src="img/member_beginner_parts02.png" alt="" class="member_beginner_parts02">
+            <h2 class="tac">「ハッピーケアメンテ®」を初めてご利用のお客様へ</h2>
+            <ul>
+              <li>
+                <h3><span>1</span>ポイント制度について</h3>
+                <p>ケアメンテ代金￥2,000（税抜）につき1ポイントを自動加算させていただいております。<br> 
+                  50ポイント貯まりますと、ハッピーでお使いいただける商品券（ハッピーギフトカード） ￥1,000と交換させていただいております。 </p>
+              </li>
+              <li>
+                <h3><span>2</span>送料について</h3>
+                <p>お預かり点数に応じた送料を頂戴いたしております。当社よりお見積りのご連絡後、営業日を除き１週間以上にわたり<br class="pc">ご連絡をいただけない場合は、全品キャンセルされたものとして代金引換（税別￥1,500）にて、<br class="pc">ご依頼品をご返送させていただきますのでご了承ください。</p>
+              </li>
+              <li>
+                <h3><span>3</span>代金のお支払いが確認できない場合について</h3>
+                <p>お支払期限までにご入金が確認できない場合は自動的に代金引換でのお届けに変更となり、<br class="pc">ご請求金額に代引手数料（税抜￥1,000～￥1,500）が加算されますのでご注意ください。</p>
+              </li>
+              <li>
+                <h3><span>4</span>ご返金等の対応について</h3>
+                <p>カウンセリングカルテに基づいて出来る限りの処理をさせていただきますが、再生が難しくシミ汚れが落ちない場合や、<br class="pc">その他ご期待に添えない場合がございます。 その場合でも、<span class="borderBtm">実施したメンテナンスの代金返金はできませんのでご了承ください。</span></p>
+              </li>
+              <li>
+                <h3><span>5</span>事故賠償規約（メリット制度）について</h3>
+                <p>お客様の大切なお洋服をお預かりしておりますので、万一の事故に備えて、<br class="pc">独自の事故賠償規約（ハッピーメリット制度）を設けております。<br>
+								<span class="borderBtm">当社サービスのご利用については同規約にご同意いただいたものとさせていただきます。</span><br>
+									<span class="beginnerLink">■詳しい規約内容は、後日お送りするご請求書の裏面、<br class="pc">または当社ホームページ <a>事故賠償制度</a> にて、必ずご確認くださいますようお願いいたします。</span><br>
+								<span class="beginnerNote">※あらかじめ一定以上のリスクが伴うことが予見されるために、別途「同意承諾書」のご返信が必要となる依頼品につきましては、<br class="pc">同規約の適用除外（弁償対象外）となりますことを併せてご了承ください。 </span></p>
+              </li>
+              <li>
+                <h3><span>6</span>装飾品の修理について</h3>
+                <p>ボタン・ファスナー・ハトメ・紐止め・スパンコール・ビーズ・ラインストーンの装飾部品が破損した場合の修理代金は<br class="pc">有料となります（修理ができない場合もございます）。</p>
+              </li>
+              <li>
+                <h3><span>7</span>着用できなくなる可能性について</h3>
+                <p>一般的なクリーニングと全く異なる技法を用いてメンテナンスを実施するため、 稀に予測不能な損傷により<br class="pc">着用が難しくなる事がございます。十分注意して作業を実施しておりますが皆様にご理解をお願いしております。</p>
+              </li>
+              <li>
+                <h3><span>8</span>後日のご連絡について</h3>
+                <p>メンテナンス途上でカウンセリングカルテに記載の無い重大な瑕疵が見つかった場合や、お客様への確認が必要になった場合、<br class="pc">あらためてご連絡させていただくことがございます。</p>
+              </li>
+              <li>
+                <h3><span>9</span>ケアメンテ処理の開始時期について</h3>
+                <p>カウンセリング完了後に郵送する請求書やカウンセリングカルテ等の送達後、 2日以内に変更等のお申し出がない場合は、<br class="pc">ご利用契約が成立したものとして業務を進め させていただきます（同意承諾書のご返信要するご依頼品を除きます）。</p>
+              </li>
+            </ul>
+            <img src="img/member_beginner_parts02.png" alt="" class="member_beginner_parts03">
+            <img src="img/member_beginner_parts01.png" alt="" class="member_beginner_parts04">
+					</div>
+				</div>
+      </div>
+    </section>
+    <!--　/#member_beginner -->
+
+    <section id="case">
+      <div class="container">
+				<!-- <div class="case_top"><img src="img/header01_w.png" alt="さがす"><br>さがす</div> -->
+        <h2 class="tac"><span>Before & After 実例集</span>ケアメンテ®の実例をチェック</h2>
+        <div class="tac">
+          <p class="tit_txt">クリーニングで取れなかったシミ汚れをキレイにする。<br>
+          Before & After実例集から検索して仕上がり感をイメージできます。</p>
+        </div>
+        <ul class="slick_case_list">
+          <li>
+            <img src="../img/case01.png" alt="case01">
+            <div class="case_list_txt">
+              <h3>MOGA<span>婦人ジャケット</span></h3>
+              <p>ﾚｰﾖﾝ82% ｼﾙｸ10% ﾎﾟﾘｴｽﾃﾙ4% ｷｭﾌﾟﾗ4%<br>
+                緑系チェック</p>
+            </div>
+          </li>
+          <li>
+            <img src="../img/case02.png" alt="case02">
+            <div class="case_list_txt">
+              <h3>NARACAMICIE<span>長袖ブラウス</span></h3>
+              <p>綿50% ﾎﾟﾘｴｽﾃﾙ50%<br><br>白系ストライプ</p>
+            </div>
+          </li>
+          <li>
+            <img src="../img/case03.png" alt="case03">
+            <div class="case_list_txt">
+              <h3>BAZAR<span>婦人上着</span></h3>
+              <p>ｳｰﾙ90% ﾅｲﾛﾝ10%<br><br>茶系チェック</p>
+            </div>
+          </li>
+          <li>
+            <img src="../img/case04.png" alt="case04">
+            <div class="case_list_txt">
+              <h3>MONCLER<span>ダウンコート</span></h3>
+              <p>ﾅｲﾛﾝ100%<br><br>紫系</p>
+            </div>
+          </li>
+          <li>
+            <img src="../img/case01.png" alt="case01">
+            <div class="case_list_txt">
+              <h3>MOGA<span>婦人ジャケット</span></h3>
+              <p>ﾚｰﾖﾝ82% ｼﾙｸ10% ﾎﾟﾘｴｽﾃﾙ4% ｷｭﾌﾟﾗ4%<br>
+                緑系チェック</p>
+            </div>
+          </li>
+        </ul>
+        <div class="btn">
+          <a href="">事例集をもっと見る</a>
+        </div>
+      </div>
+    </section>
+    <!--　/#case -->
+		
+    <section id="reading">
+      <div class="container">
+				<div class="banner">
+					<a href="">
+            <img src="../img/reading_bnr_sachi.jpg" alt="京の伝統工芸職人を追うWebマガジン 「幸」 -sachi-">
+            <div class="banner_txt">
+              <h2>京の伝統工芸職人を追う<span class="small">Vol. 25<br class="pc">中村藤𠮷本店</span>
+								<br><span>Webマガジン 「幸」 -sachi-</span></h2>
+              <p>甘味や旨味の中に「苦渋味」を感じる<br>
+							お茶本来の味わいを楽しんでほしい</p>
+            </div>
+					</a>
+				</div>
+			</div>
+    </section>
+    <!--　/#reading -->		
+		
+    <section id="member_sns">
+      <div class="container">
+        <div class="member_sns_tit tac"><h2><img src="img/sns_tit.png" alt="Happy_SNS"><br>トップコミュニティー</h2>
+          <p>ハッピー公認のトップコミュニティーで、<br class="sp">話題の情報をキャッチしよう！</p>
+				</div>
+        <ul class="member_sns_list">
+          <li class="tac">
+						<div class="member_sns_list_img tac"><img src="img/sns01.png" alt="sns01"></div>
+            <div class="member_sns_list_txt">
+              <h3>松久 由宇</h3>
+              <p>アート</p>
+              <div class="btn">
+                <a href="">フォローする</a>
+              </div>
+            </div>
+          </li>
+          <li class="tac">
+						<div class="member_sns_list_img tac"><img src="img/sns02.png" alt="sns02"></div>
+            <div class="member_sns_list_txt">
+              <h3>TOMORROWLAND</h3>
+              <p>ファッション</p>
+              <div class="btn">
+                <a href="">フォローする</a>
+              </div>
+            </div>
+          </li>
+          <li class="tac">
+						<div class="member_sns_list_img tac"><img src="img/sns03.png" alt="sns03"></div>
+            <div class="member_sns_list_txt">
+              <h3>政道 徳門</h3>
+              <p>その他</p>
+              <div class="btn">
+                <a href="">フォローする</a>
+              </div>
+            </div>
+          </li>
+          <li class="tac">
+						<div class="member_sns_list_img tac"><img src="img/sns04.png" alt="sns04"></div>
+            <div class="member_sns_list_txt">
+              <h3>Happyケアメンテ</h3>
+              <p>ファッション</p>
+              <div class="btn">
+                <a href="">フォローする</a>
+              </div>
+            </div>
+          </li>
+          <li class="tac">
+						<div class="member_sns_list_img tac"><img src="img/sns01.png" alt="sns01"></div>
+            <div class="member_sns_list_txt">
+              <h3>松久 由宇</h3>
+              <p>アート</p>
+              <div class="btn">
+                <a href="">フォローする</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!--　/#member_sns -->
+		
+    <section id="member_sns_sub">
+      <div class="container">
+				<h2>外部SNS連携</h2>
+				<ul>
+					<li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><img src="../img/sns_facebook.png" alt="sns_facebook" width="32" height="32">Facebookと連携する</a></li>
+					<li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><img src="../img/sns_twitter.png" alt="sns_twitter" width="32" height="32">Twitterと連携する</a></li>
+					<li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><img src="../img/sns_instagram.png" alt="sns_instagram" width="32" height="32">Instagramと連携する</a></li>
+				</ul>
+      </div>
+    </section>
+    <!--　/#member_sns_sub -->
+
+    <section id="app">
+      <div class="container">
+        <div class="appBox">
+					<div class="app_img"><img src="../img/app_img.png" alt="ケアメンテ"></div>
+					<div class="app_txt">
+						<h2><img src="../img/app_icon.png" alt="ケアメンテ">ケアメンテ</h2>
+						<div class="app_store"><img src="../img/app_store.png" alt="Apple Android"></div>
+						<p>ケアメンテアプリは、ケアメンテ事例集「さがす」や、ご依頼品のご注文、<br class="pc">マイページでケアメンテご依頼品のご利用履歴の確認や電子カルテの閲覧など、<br class="pc">お手持ち衣類の管理ツールとしてもご活用いただける便利なアプリです。</p>
+            <div class="btnArea">
+              <div class="btn">
+                <a href="">iPhone版</a>
+              </div>
+              <div class="btn">
+                <a href="">Android版</a>
+              </div>
+            </div>
+					</div>
+        </div>
+      </div>
+    </section>
+    <!--　/#app -->
+
+    <section id="review">
+      <div class="container">
+				<!-- div class="review_top"><img src="img/header02_w.png" alt="きづく"><br>きづく</div -->
+        <h2 class="tac">お客様レビュー</h2>
+        <div class="tac">
+          <p class="tit_txt">過去にケアメンテをご利用いただいたお客様から、<br class="pc">サービスのレビューをいただいています。</p>
+        </div>
+        <ul class="slick_review_list">
+          <li>
+            <div class="review_box">
+              <div class="review_box_customer">
+                <div class="faceicon">
+                  <img src="../img/review_customer.png" alt="お客様">
+                  <p class="userName">HISASHI</p>
+                  <div class="ReviewSelect">
+                    <p>品　質：<span class="star">★★★★★</span></p>
+                    <p>利便性：<span class="star">★★★★★</span></p>
+                  </div>
+                </div>
+                <div class="review_customer">
+                  <div class="review_customer_txt">
+                    <p>クリーニングを断られた服について、いつも洋服を買っているお店に相談したら<br class="pc">ハッピーさんのことを聞いたので、半信半疑で初めて利用した。<br><br>
+                      仕上がりを見て納得。<br><br>
+                      買った時みたいに戻ってた。<br><br>
+                      これなら洗濯絵表示は今後気にしないで服を買えるかな。
+                    <div class="postingLike">
+                      <img src="../img/review_good_w.png" alt=""><span class="like_count">2</span>
+                    </div>
+                    </p>
+                    <img src="../img/review_figure.png" alt="" class="review_figure">
+                  </div>
+                </div>
+              </div>
+              <div class="review_box_happy">
+                <div class="faceicon">
+                  <img src="../img/review_happy.png" alt="ハッピー ケアメンテ®">
+                </div>
+                <p>初めてのご利用、まことにありがとうございました。<br>
+                  またのご利用を心よりお待ち申し上げております。
+                <img src="../img/review_figure.png" alt="" class="review_figure">
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="review_box">
+              <div class="review_box_customer">
+                <div class="faceicon">
+                  <img src="../img/review_customer.png" alt="お客様">
+                  <p class="userName">AAA</p>
+                  <div class="ReviewSelect">
+                    <p>品　質：<span class="star">★★★★★</span></p>
+                    <p>利便性：<span class="star">★★★★★</span></p>
+                  </div>
+                </div>
+                <div class="review_customer">
+                  <div class="review_customer_txt">
+                    <p>クリーニングを断られた服について、いつも洋服を買っているお店に相談したら<br class="pc">ハッピーさんのことを聞いたので、半信半疑で初めて利用した。<br><br>
+                      仕上がりを見て納得。<br><br>
+                      買った時みたいに戻ってた。<br><br>
+                      これなら洗濯絵表示は今後気にしないで服を買えるかな。
+                    <div class="postingLike">
+                      <img src="../img/review_good_w.png" alt=""><span class="like_count">2</span>
+                    </div>
+                    <img src="../img/review_figure.png" alt="" class="review_figure">                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="review_box_happy">
+                <div class="faceicon">
+                  <img src="../img/review_happy.png" alt="ハッピー ケアメンテ®">
+                </div>
+                <p>初めてのご利用、まことにありがとうございました。<br>
+                  またのご利用を心よりお待ち申し上げております。
+                <img src="../img/review_figure.png" alt="" class="review_figure">
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="btn">
+          <a href="">お客様レビューをもっと見る</a>
+        </div>
+      </div>
+    </section>
+    <!--　/#review -->
+
+    <section id="article">
+      <div class="container">
+				<div class="article_box">
+					<div class="contents_news">
+            <h2>News</h2>
+						<ul class="news_list">
+              <li><a href="https://www.kyoto-happy.co.jp/2020/08/07/2233/"><span class="title">2020.08.07</span><span class="text">夏期休業日のお知らせ</span></a></li>
+              <li><a href="https://www.kyoto-happy.co.jp/2020/04/07/2126/"><span class="title">2020.04.07</span><span class="text">新型コロナウイルスの影響による提携SHOPの営業時間変更について</span></a></li>
+              <li><a href="https://www.kyoto-happy.co.jp/corporate/csr/unicef/"><span class="title">2020.02.26</span><span class="text">中央共同募金会に「NHK歳末たすけあい」義援金を納付しました。ご協力いただいたお客様に御礼を申し上げます。</span></a></li>
+              <li><a href="https://www.kyoto-happy.co.jp/corporate/csr/unicef/"><span class="title">2020.02.25</span><span class="text">那覇市に「首里城再建支援金」を納付しました。ご協力いただいたお客様に御礼申し上げます。</span></a></li>
+						</ul>
+						<div class="btn"><a href="">もっと見る</a></div>
+          </div>
+					<div class="contents_faq">
+            <h2>Q<span>&</span>A</h2>
+            <ul class="faq_list">
+              <li><a href=""><span class="title">Q</span><span class="text">ケアメンテの利用方法やサービスの流れを教えてください。</span></a></li>
+              <li><a href=""><span class="title">Q</span><span class="text">配送料金はどのくらいかかりますか？</span></a></li>
+              <li><a href=""><span class="title">Q</span><span class="text">メンテナンスにかかる料金は、どの位でしょうか？</span></a></li>
+              <li><a href=""><span class="title">Q</span><span class="text">キャンセルはできますか？</span></a></li>
+            </ul>	
+						<div class="btn"><a href="">もっと見る</a></div>
+					</div>
+				</div>
+			</div>
+    </section>
+    <!--　/#article -->
+		
+    <div class="footer_sns">
+      <div class="container">
+        <ul>
+          <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!--　/.footer_sns -->
+	</div>
+  <!--　/.bg -->
+
+  <div class="footer_nav" style="">
+    <div class="container">
+      <ul id="footer_nav_pc">
+        <li class="menu__first-level">
+          <a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer01.png" alt="ご利用方法・価格表"><span>ご利用方法 価格表</span></a>
+          <div class="menu__second-level">
+            <div class="container">
+              <div class="menu__second-column">
+                <h3 class="headline">ご利用方法・価格表</h3>
+                <div class="menu__second-body menu__two_column">
+                  <ul>
+                    <li><a href="/use/">ご利用方法</a></li>
+                    <li><a href="/use/price/list/">価格表</a></li>
+                    <li><a href="/use/price/catalog/">カタログ請求／PDF閲覧</a></li>
+                    <li><a href="/use/howtoorder/point/">ハッピーポイントについて</a></li>
+                  </ul>
+                  <ul>
+                    <li><a href="/use/howtoorder/reparation/">事故賠償制度</a></li>
+                    <li><a href="/use/howtoorder/reasonable/">ケアメンテをリーズナブルにご利用いただく方法</a></li>
+                    <li><a href="/use/howtoorder/similarity/">類似サービスにご注意ください</a></li>
+                    <li><a href="/faq/">よくあるご質問</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline">提携ブランド/全国取扱い店舗一覧</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/shop_search/">現在地から取扱店を検索</a></li>
+                    <li><a href="/shop/">ショップ情報</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline">ケアメンテの評価</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/use/evaluate/blog/">ブログでの第三者評価</a></li>
+                    <li><a href="/use/evaluate/satisfaction/">ハッピー顧客満足度指数</a></li>
+                    <li><a href="/use/evaluate/value/">ケアメンテとクリーニングの評価</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="menu__first-level">
+          <a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer02.png" alt="サービス・技術"><span>サービス・技術</span></a>
+          <div class="menu__second-level">
+            <div class="container">
+              <div class="menu__second-column">
+                <h3 class="headline">サービス概要</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/carementeh/overview/style/">ケアメンテ仕事スタイル</a></li>
+                    <li><a href="/carementeh/overview/etymology/">ケアメンテの語源</a></li>
+                    <li><a href="/carementeh/overview/flow/">ケアメンテの仕事の流れ</a></li>
+                    <li><a href="/carementeh/overview/karte/">ハッピー電子カルテシステム</a></li>
+                    <li><a href="/carementeh/overview/counseling/">カウンセリング</a></li>
+                    <li><a href="/carementeh/overview/difference/">クリーニングと「ケアメンテ」はどこが違うの？</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline">サービス一覧</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/carementeh/service/aquadry/">基本洗浄「水油系アクアドライ®」</a></li>
+                    <li><a href="/carementeh/service/ripron/">再生技術「リプロン®」</a></li>
+                    <li><a href="/carementeh/service/valueon/">加工技術「バリューON®」</a></li>
+                    <li><a href="/carementeh/service/grain/">レザー修復「レザーGRAIN再現加工」</a></li>
+                    <li><a href="/carementeh/service/kimono/">きもの・仕立てたままで水洗い「きもの無重力」</a></li>
+                    <li><a href="/carementeh/service/reform/">お直し／リフォーム</a></li>
+                    <li><a href="/carementeh/service/wardrobe/">保管お預かり「ハッピーワードローブ®」</a></li>
+                  </ul>
+                </div>
+                <h3 class="headline">ケアメンテを支える技術</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/technology/innovation/weightlessness/">ハッピー独自の技術「無重力バランス洗浄技法」</a></li>
+                    <li><a href="/technology/innovation/lecirian/">サイジング技法「レシリアン」</a></li>
+                    <li><a href="/technology/innovation/press/">仕上げ技術「シルエットプレス®」</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="menu__second-column">
+                <h3 class="headline">技術の検証データ</h3>
+                <div class="menu__second-body">
+                  <h4>水系洗浄「無重力バランス洗浄技法(特許)」関連</h4>
+                  <ul>
+                    <li><a href="/technology/data/weightlessness/ma_test/">MA洗浄テストによる繊維ダメージ比較</a></li>
+                    <li><a href="/technology/data/weightlessness/hohenstein/">ホーエンシュタイン研究所での試験結果</a></li>
+                    <li><a href="/pdf/hohenstein.pdf">ホーエンシュタイン研究所掲載論文</a></li>
+                    <li><a href="/technology/data/weightlessness/niederrhein/">ドイツ・ニーダーライン大学での試験結果</a></li>
+                    <li><a href="/pdf/mujyuuryoku.pdf">実証実験による検証と考察</a></li>
+                    <li><a href="/technology/data/weightlessness/kimono/">百年昔の「きもの」を洗う</a></li>
+                  </ul>
+                  <h4>京の伝統技法とケアメンテ</h4>
+                  <ul>
+                    <li><a href="/technology/data/tradition/yuzen/">友禅流しと無重力バランス洗浄</a></li>
+                    <li><a href="/technology/data/tradition/ripron-2/">京染悉皆とリプロン</a></li>
+                  </ul>
+                  <ul>
+                    <li><a href="/technology/data/comparison/">汗汚れの洗浄比較実験</a></li>
+                    <li><a href="/technology/data/brand/">ブランド各社からの洗浄依頼品</a></li>
+                    <li><a href="/technology/data/monograph/">ケアメンテ水系洗浄の学会誌掲載論文一覧</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="menu__first-level">
+          <a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer03.png" alt="事例・レビュー"><span>事例・レビュー</span></a>
+          <div class="menu__second-level">
+            <div class="container">
+              <div class="menu__second-column">
+                <h3 class="headline">Before&amp;After /ケアメンテ事例集</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/technology/before_after/list/">Before &amp; After集</a></li>
+                    <li><a href="/technology/before_after/suit/">上質スーツ</a></li>
+                    <li><a href="/technology/before_after/down/">最高級ダウン</a></li>
+                    <li><a href="/technology/before_after/shirt/">上質シャツ</a></li>
+                    <li><a href="/technology/before_after/bag/">バッグ</a></li>
+                    <li><a href="/technology/before_after/leather/">皮革・毛皮</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline pc">&nbsp;</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/technology/before_after/wedding/">ウェディングドレス</a></li>
+                    <li><a href="/technology/before_after/macintosh/">マッキントッシュ</a></li>
+                    <li><a href="/technology/before_after/lifecare/">インテリア・ファニチャー・羽毛布団</a></li>
+                    <li><a href="/technology/before_after/tenpyou/">天平の古代染めを洗う</a></li>
+                    <li><a href="/technology/before_after/kimono-2/">百年昔の「きもの」を洗う</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline"><a href="/carementeh_search/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header01_w.png" alt="">ケアメンテ®検索エンジン「さがす」</a></h3>
+                <h3 class="headline"><a href="/review/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header02_w.png" alt="">お客さまレビュー「きづく」</a></h3>
+                <h3 class="headline"><a href="/login/happy.html"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header03_w.png" alt="">ハッピー SNS「つなぐ」</a></h3>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="menu__first-level">
+          <a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer04.png" alt="特集・読みもの"><span>特集・読みもの</span></a>
+          <div class="menu__second-level">
+            <div class="container">
+              <div class="menu__second-column">
+                <h3 class="headline"><a href="/knowledge/">おしゃれの雑学</a></h3>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline"><a href="/movie/">プロモーションビデオ</a></h3>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline"><a href="/detail/">こだわりのディテール</a></h3>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline"><a href="https://www.kyoto-happy.co.jp:8443/pdf/Manga_01.pdf?ver1.0">マンガで分かる「ケアメンテサービス」</a></h3>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline"><a href="/sachi/">WEB マガジン 幸(sachi)</a></h3>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="menu__first-level">
+          <a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer05.png" alt="会社情報・リクルート"><span>会社情報・リクルート</span></a>
+          <div class="menu__second-level">
+            <div class="container">
+              <div class="menu__second-column">
+                <h3 class="headline">会社概要</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/corporate/company/profile/">企業情報</a></li>
+                    <li><a href="/corporate/company/winning/">認定・受賞一覧</a></li>
+                    <li><a href="/corporate/company/ip/">知的財産（特許・商標）</a></li>
+                    <li><a href="/pdf/fukusyoku.pdf">服飾関連の皆様へ</a></li>
+                    <li><a href="/pdf/kanren_brand.pdf">アパレル業の皆様へ</a></li>
+                    <li><a href="/pdf/kanren_ryutu.pdf">流通業の皆様へ</a></li>
+                    <li><a href="/pdf/kanren_kaden.pdf">洗濯機メーカーの皆様へ</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline">メディア情報</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/corporate/media/media_list/">メディア報道特集</a></li>
+                    <li><a href="/corporate/media/past/">過去の報道記録</a></li>
+                    <li><a href="/corporate/media/lecture/">講演活動の記録</a></li>
+                    <li><a href="/corporate/media/literary/">著作物一覧</a></li>
+                  </ul>
+                </div>
+                <h3 class="headline">リクルート</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/corporate/recruit/cultivation/">人財育成について</a></li>
+                    <li><a href="/corporate/recruit/staff/">ケアメンテスタッフの募集</a></li>
+                    <li><a href="/corporate/recruit/executive/">経営幹部候補の募集</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline">環境への取組み</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/corporate/csr/reuse/">自然循環型産業の創出</a></li>
+                    <li><a href="/corporate/csr/weightlessness/">無重力バランス洗浄による環境保護</a></li>
+                    <li><a href="/corporate/csr/world2007/">環境と洗浄の世界大会 2007 秋</a></li>
+                    <li><a href="/corporate/csr/unicef/">ハッピーワールド助け合いプロジェクト</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline">ヨーロッパ洗浄技術交流紀行</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/corporate/europe/2013_summer/">ヨーロッパ交流紀行 2013 初夏</a></li>
+                    <li><a href="/corporate/europe/2012_autumn/">ヨーロッパ交流紀行 2012 初秋</a></li>
+                    <li><a href="/corporate/europe/2006_summer/">ヨーロッパ交流紀行 2006 夏</a></li>
+                    <li><a href="/corporate/europe/2006_spring/">ヨーロッパ交流紀行 2006 春</a></li>
+                    <li><a href="/corporate/europe/2005_autumn/">ヨーロッパ交流紀行 2005 秋</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--　/.footer_nav -->
+
+  <div class="footer_nav_sp" style="display: block;">
+    <div class="wrap">
+      <div class="container">
+        <nav id="menu_sp_trigger">
+          <div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p>MENU</p>
+        </nav>
+        <div class="gFooter">
+          <ul>
+            <li><a href="/carementeh_search/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header01_w.png" alt="さがす"><br><span>さがす</span></a></li>
+            <li><a href="/review/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header02_w.png" alt="きづく"><br><span>きづく</span></a></li>
+            <li><a href="/login/happy.html"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header03_w.png" alt="つなぐ"><br><span>つなぐ</span></a></li>
+          </ul>
+        </div>
+        <div class="link">
+          <div class="tel">
+            <a href=""><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_tel_w.png" alt="tel"><br><span>お電話</span></a>
+          </div>
+          <div class="order">
+            <a href="/order/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/order_w.png" alt="配送"><br>
+              <span>お申し込み</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="footer_Hidden"><ul id="footer_nav_sp">
+        <li class="menu__first-level">
+          <a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer01.png" alt="ご利用方法・価格表"><span>ご利用方法 価格表</span></a>
+          <div class="menu__second-level" style="display: none;">
+            <div class="container">
+              <div class="menu__second-column">
+                <h3 class="headline">ご利用方法・価格表</h3>
+                <div class="menu__second-body menu__two_column">
+                  <ul>
+                    <li><a href="/use/">ご利用方法</a></li>
+                    <li><a href="/use/price/list/">価格表</a></li>
+                    <li><a href="/use/price/catalog/">カタログ請求／PDF閲覧</a></li>
+                    <li><a href="/use/howtoorder/point/">ハッピーポイントについて</a></li>
+                  </ul>
+                  <ul>
+                    <li><a href="/use/howtoorder/reparation/">事故賠償制度</a></li>
+                    <li><a href="/use/howtoorder/reasonable/">ケアメンテをリーズナブルにご利用いただく方法</a></li>
+                    <li><a href="/use/howtoorder/similarity/">類似サービスにご注意ください</a></li>
+                    <li><a href="/faq/">よくあるご質問</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline">提携ブランド/全国取扱い店舗一覧</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/shop_search/">現在地から取扱店を検索</a></li>
+                    <li><a href="/shop/">ショップ情報</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline">ケアメンテの評価</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/use/evaluate/blog/">ブログでの第三者評価</a></li>
+                    <li><a href="/use/evaluate/satisfaction/">ハッピー顧客満足度指数</a></li>
+                    <li><a href="/use/evaluate/value/">ケアメンテとクリーニングの評価</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="menu__first-level">
+          <a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer02.png" alt="サービス・技術"><span>サービス・技術</span></a>
+          <div class="menu__second-level" style="display: none;">
+            <div class="container">
+              <div class="menu__second-column">
+                <h3 class="headline">サービス概要</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/carementeh/overview/style/">ケアメンテ仕事スタイル</a></li>
+                    <li><a href="/carementeh/overview/etymology/">ケアメンテの語源</a></li>
+                    <li><a href="/carementeh/overview/flow/">ケアメンテの仕事の流れ</a></li>
+                    <li><a href="/carementeh/overview/karte/">ハッピー電子カルテシステム</a></li>
+                    <li><a href="/carementeh/overview/counseling/">カウンセリング</a></li>
+                    <li><a href="/carementeh/overview/difference/">クリーニングと「ケアメンテ」はどこが違うの？</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline">サービス一覧</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/carementeh/service/aquadry/">基本洗浄「水油系アクアドライ®」</a></li>
+                    <li><a href="/carementeh/service/ripron/">再生技術「リプロン®」</a></li>
+                    <li><a href="/carementeh/service/valueon/">加工技術「バリューON®」</a></li>
+                    <li><a href="/carementeh/service/grain/">レザー修復「レザーGRAIN再現加工」</a></li>
+                    <li><a href="/carementeh/service/kimono/">きもの・仕立てたままで水洗い「きもの無重力」</a></li>
+                    <li><a href="/carementeh/service/reform/">お直し／リフォーム</a></li>
+                    <li><a href="/carementeh/service/wardrobe/">保管お預かり「ハッピーワードローブ®」</a></li>
+                  </ul>
+                </div>
+                <h3 class="headline">ケアメンテを支える技術</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/technology/innovation/weightlessness/">ハッピー独自の技術「無重力バランス洗浄技法」</a></li>
+                    <li><a href="/technology/innovation/lecirian/">サイジング技法「レシリアン」</a></li>
+                    <li><a href="/technology/innovation/press/">仕上げ技術「シルエットプレス®」</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="menu__second-column">
+                <h3 class="headline">技術の検証データ</h3>
+                <div class="menu__second-body">
+                  <h4>水系洗浄「無重力バランス洗浄技法(特許)」関連</h4>
+                  <ul>
+                    <li><a href="/technology/data/weightlessness/ma_test/">MA洗浄テストによる繊維ダメージ比較</a></li>
+                    <li><a href="/technology/data/weightlessness/hohenstein/">ホーエンシュタイン研究所での試験結果</a></li>
+                    <li><a href="/pdf/hohenstein.pdf">ホーエンシュタイン研究所掲載論文</a></li>
+                    <li><a href="/technology/data/weightlessness/niederrhein/">ドイツ・ニーダーライン大学での試験結果</a></li>
+                    <li><a href="/pdf/mujyuuryoku.pdf">実証実験による検証と考察</a></li>
+                    <li><a href="/technology/data/weightlessness/kimono/">百年昔の「きもの」を洗う</a></li>
+                  </ul>
+                  <h4>京の伝統技法とケアメンテ</h4>
+                  <ul>
+                    <li><a href="/technology/data/tradition/yuzen/">友禅流しと無重力バランス洗浄</a></li>
+                    <li><a href="/technology/data/tradition/ripron-2/">京染悉皆とリプロン</a></li>
+                  </ul>
+                  <ul>
+                    <li><a href="/technology/data/comparison/">汗汚れの洗浄比較実験</a></li>
+                    <li><a href="/technology/data/brand/">ブランド各社からの洗浄依頼品</a></li>
+                    <li><a href="/technology/data/monograph/">ケアメンテ水系洗浄の学会誌掲載論文一覧</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="menu__first-level">
+          <a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer03.png" alt="事例・レビュー"><span>事例・レビュー</span></a>
+          <div class="menu__second-level" style="display: none;">
+            <div class="container">
+              <div class="menu__second-column">
+                <h3 class="headline">Before&amp;After /ケアメンテ事例集</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/technology/before_after/list/">Before &amp; After集</a></li>
+                    <li><a href="/technology/before_after/suit/">上質スーツ</a></li>
+                    <li><a href="/technology/before_after/down/">最高級ダウン</a></li>
+                    <li><a href="/technology/before_after/shirt/">上質シャツ</a></li>
+                    <li><a href="/technology/before_after/bag/">バッグ</a></li>
+                    <li><a href="/technology/before_after/leather/">皮革・毛皮</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline pc">&nbsp;</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/technology/before_after/wedding/">ウェディングドレス</a></li>
+                    <li><a href="/technology/before_after/macintosh/">マッキントッシュ</a></li>
+                    <li><a href="/technology/before_after/lifecare/">インテリア・ファニチャー・羽毛布団</a></li>
+                    <li><a href="/technology/before_after/tenpyou/">天平の古代染めを洗う</a></li>
+                    <li><a href="/technology/before_after/kimono-2/">百年昔の「きもの」を洗う</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline"><a href="/carementeh_search/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header01_w.png" alt="">ケアメンテ®検索エンジン「さがす」</a></h3>
+                <h3 class="headline"><a href="/review/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header02_w.png" alt="">お客さまレビュー「きづく」</a></h3>
+                <h3 class="headline"><a href="/login/happy.html"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header03_w.png" alt="">ハッピー SNS「つなぐ」</a></h3>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="menu__first-level">
+          <a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer04.png" alt="特集・読みもの"><span>特集・読みもの</span></a>
+          <div class="menu__second-level" style="display: none;">
+            <div class="container">
+              <div class="menu__second-column">
+                <h3 class="headline"><a href="/knowledge/">おしゃれの雑学</a></h3>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline"><a href="/movie/">プロモーションビデオ</a></h3>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline"><a href="/detail/">こだわりのディテール</a></h3>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline"><a href="https://www.kyoto-happy.co.jp:8443/pdf/Manga_01.pdf?ver1.0">マンガで分かる「ケアメンテサービス」</a></h3>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline"><a href="/sachi/">WEB マガジン 幸(sachi)</a></h3>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="menu__first-level">
+          <a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer05.png" alt="会社情報・リクルート"><span>会社情報・リクルート</span></a>
+          <div class="menu__second-level" style="display: none;">
+            <div class="container">
+              <div class="menu__second-column">
+                <h3 class="headline">会社概要</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/corporate/company/profile/">企業情報</a></li>
+                    <li><a href="/corporate/company/winning/">認定・受賞一覧</a></li>
+                    <li><a href="/corporate/company/ip/">知的財産（特許・商標）</a></li>
+                    <li><a href="/pdf/fukusyoku.pdf">服飾関連の皆様へ</a></li>
+                    <li><a href="/pdf/kanren_brand.pdf">アパレル業の皆様へ</a></li>
+                    <li><a href="/pdf/kanren_ryutu.pdf">流通業の皆様へ</a></li>
+                    <li><a href="/pdf/kanren_kaden.pdf">洗濯機メーカーの皆様へ</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline">メディア情報</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/corporate/media/media_list/">メディア報道特集</a></li>
+                    <li><a href="/corporate/media/past/">過去の報道記録</a></li>
+                    <li><a href="/corporate/media/lecture/">講演活動の記録</a></li>
+                    <li><a href="/corporate/media/literary/">著作物一覧</a></li>
+                  </ul>
+                </div>
+                <h3 class="headline">リクルート</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/corporate/recruit/cultivation/">人財育成について</a></li>
+                    <li><a href="/corporate/recruit/staff/">ケアメンテスタッフの募集</a></li>
+                    <li><a href="/corporate/recruit/executive/">経営幹部候補の募集</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline">環境への取組み</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/corporate/csr/reuse/">自然循環型産業の創出</a></li>
+                    <li><a href="/corporate/csr/weightlessness/">無重力バランス洗浄による環境保護</a></li>
+                    <li><a href="/corporate/csr/world2007/">環境と洗浄の世界大会 2007 秋</a></li>
+                    <li><a href="/corporate/csr/unicef/">ハッピーワールド助け合いプロジェクト</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="menu__second-column">
+                <h3 class="headline">ヨーロッパ洗浄技術交流紀行</h3>
+                <div class="menu__second-body">
+                  <ul>
+                    <li><a href="/corporate/europe/2013_summer/">ヨーロッパ交流紀行 2013 初夏</a></li>
+                    <li><a href="/corporate/europe/2012_autumn/">ヨーロッパ交流紀行 2012 初秋</a></li>
+                    <li><a href="/corporate/europe/2006_summer/">ヨーロッパ交流紀行 2006 夏</a></li>
+                    <li><a href="/corporate/europe/2006_spring/">ヨーロッパ交流紀行 2006 春</a></li>
+                    <li><a href="/corporate/europe/2005_autumn/">ヨーロッパ交流紀行 2005 秋</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul></ul>
+  </div> 
+  <!--　/.footer_nav_sp -->
+  <div id="pager_top"><a href="#mypage">TOP</a></div>
+
+	<script type="text/javascript" src="../lib/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../lib/slick/slick.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../lib/slick/slick-theme.css" media="screen" />
+  <script src="../lib/slick/slick.min.js"></script>
+  <script src="../js/slick_common.js"></script>
+  <script src="../js/common.js"></script>
+  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+		
+    var menuFlag = true;
+    $('.header_nav_common .header_tab').on('click', function() {
+      menuFlag = !menuFlag;
+      if(menuFlag){
+        $('.header_nav_common').css("top","0");
+      } else {
+        $('.header_nav_common').css("top","-95px");
+      }
+  	});
+		
+  });
+  </script>
+	<script type="text/javascript"
+ src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+	<script>
+  var ctx = document.getElementById("DoughnutChart");
+  var DoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+          backgroundColor: [
+              "#6a3b93",
+              "#e0e0e0",
+          ],
+          data: [25, 75],
+          borderWidth: [0],
+          borderColor: 'transparent'
+      }]
+    },
+    options: {
+			legend: {
+        display: false
+      },
+			tooltips: { enabled: false },
+			cutoutPercentage : 90
+			
+    }
+  });
+  </script>
+	<script type="text/javascript">
+    $(function(){
+			$('#mypage_nav li').removeClass('on');
+      $('#mypage_nav li a').filter(function(){return $(this).prop('href')==location.href;}).addClass('on');
+    });
+  </script>
+	</body>
+</html>

@@ -1,0 +1,9 @@
+<?php
+/*
+ * 登録 メール認証メール送信完了画面
+ */
+require '../../core/PreLoad.inc';
+$uac = new RegisterController();
+$uac->confirm();
+$uac->view('entry');
+?>

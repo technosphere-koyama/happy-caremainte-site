@@ -1,0 +1,111 @@
+<?php
+/*
+Template Name: アプリホーム
+
+*/
+?>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Happy Carementeh</title>
+<meta name="viewport" content="width=320" />
+
+<link rel="stylesheet" href="/_assets/css/default.css?180523">
+<link rel="stylesheet" href="/_assets/css/app.css?180523">
+<link rel="stylesheet" href="/_assets/css/app-home.css?180523">
+<link rel="stylesheet" href="/wp/wp-content/themes/HAPPY_Dark/css/common.css">
+
+<script type="text/javascript">
+if (navigator.userAgent.indexOf('iPad') > 0) {
+location.href = 'https://www.kyoto-happy.co.jp/';
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<script src="/_assets/js/jquery.js"></script>
+<script src="/_assets/js/index.js"></script>
+<script src="/_assets/js/ga.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+<body id="pTop">
+	<div id="Container">
+		<?php
+			$webroot = $_SERVER['DOCUMENT_ROOT'];
+			include($webroot."/include/header_app.php");
+		?>
+
+		<div id="Contents">
+			<div class="navi">
+				<ul>
+					<li><a href="/order/form.html?special=apps"><img src="/_assets/img/app_home/ico_app_home01.png" alt="ご注文・お申込み"><p>ご注文<br>お申込み</p></a></li>
+					<li><a href="/carementeh_search/"><img src="/_assets/img/app_home/ico_app_home02.png" alt="「さがす」Before＆After 検索・概算お見積り 事例集"><p>「さがす」<span>Before＆After 検索<br>概算お見積り 事例集</span></p></a></li>
+					<li><a href="/shop/"><img src="/_assets/img/app_home/ico_app_home03.png" alt="提携店舗検索"><p>提携店舗検索</p></a></li>
+					<li><a href="/mypage/sns.html"><img src="/_assets/img/app_home/ico_app_home04.png" alt="「つなぐ」ハッピーSNS"><p>「つなぐ」<br>ハッピーSNS</p></a></li>
+					<li><a href="/mypage/"><img src="/_assets/img/app_home/ico_app_home05.png" alt="マイページ"><p>マイページ</p></a></li>
+					<li><a href="tel:0120886868"><img src="/_assets/img/app_home/ico_app_home06.png" alt="お電話"><p>お電話</p></a></li>
+					<li><a href="/sachi/"><img src="/_assets/img/app_home/ico_app_home07.png" alt="Webマガジン「幸」"><p>Webマガジン<br>「幸」</p></a></li>
+					<li><a href="/technology/innovation/weightlessness/"><img src="/_assets/img/app_home/ico_app_home08.png" alt="ケアメンテの技術"><p>ケアメンテの<br>技術</p></a></li>
+					<li><a href="/use/price/pricelist/"><img src="/_assets/img/app_home/ico_app_home09.png" alt="価格表"><p>価格表</p></a></li>
+					<li><a href="https://www.kyoto-happy.co.jp/"><img src="/_assets/img/app_home/ico_app_home10.png" alt="ホーム">ハッピーの公式ホームページを見る</a></li>
+					<li class="manga"><a href="https://www.kyoto-happy.co.jp:8443/pdf/Manga.pdf?ver1.1" target="_blank">クリーニングをお分かりいただくには<br />「もっと服が輝く（漫画）」をご覧ください。</a></li>
+				</ul>
+			</div>
+
+			<div class="collaboration">
+				<div class="wrap">
+					<h2>コラボレーション先</h2>
+					<p>様々なファッションブランドやショップ・企業がケアメンテ&reg;と提携。全国の取扱い店舗の地図がご覧いただけます。</p>
+					<ul>
+						<li><a href="/shop/brand/tomorrowland/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_01.gif" alt="TOMORROWLAND"></a></li>
+						<li><a href="/shop/brand/beams/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_02.gif" alt="BEAMS"></a></li>
+						<li><a href="/shop/brand/komehyo/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_10.gif" alt="KOMEHYO"></a></li>	
+						<li><a href="/shop/brand/abeno_harukas/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_08.gif" alt="近鉄あべのハルカス"></a></li>
+						<li><a href="/shop/brand/sinjuku_takashimaya/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_06.gif" alt="Takashimaya SHINJUKU"></a></li>						
+						<li><a href="/shop/brand/yokohama_takashimaya/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_11.jpg" alt="横浜タカシマヤ">
+						</a></li>
+						<li><a href="/shop/brand/seibu_ikebukuro/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/partner_logo_12.jpg" alt="西武池袋本店"></a></li>
+						<li></li>						
+					</ul>
+				</div>
+				<div class="hermes"><a href="tel:0120-88-3040"><div><span>エルメス お客様専用ダイヤル</span><br><img src="/_assets/img/app_home/icon_tel_o.png" alt="tel">0120-88-3040</div></a></div>
+			</div>
+
+		</div><!--/Contents-->
+
+<?php
+if (!session_id()) {
+	session_name("kh");
+	session_save_path($_SERVER['DOCUMENT_ROOT']."/core/tmp/session");
+	session_start();
+}
+$count = (isset($_SESSION['PUBLIC_USER']['message_count']) && $_SESSION['PUBLIC_USER']['message_count'] > 0) ? '<div class="mypage_count">'. $_SESSION['PUBLIC_USER']['message_count'] . '</div>' : '';
+?>
+<link rel="stylesheet" href="/_assets/css/app.css?180518">
+<div class="footer_nav_sp">
+	<div class="wrap">
+		<div class="container">
+			<div class="gFooter">
+				<ul>
+					<li><a href="/"><div class="gFooterImg"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_s_home.png" alt="HOME"></div><span>ホーム</span></a></li>
+					<li><a href="/carementeh_search/"><div class="gFooterImg"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_s_sarch.png" alt="さがす"></div><span>さがす</span></a></li>
+					<li><a href="/mypage/sns.html"><div class="gFooterImg"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_s_global.png" alt="つなぐ"></div><span>つなぐ</span></a></li>
+					<li><a href="/mypage/"><div class="gFooterImg"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_s_user.png" alt="マイページ"></div><span>マイページ</span></a></li>
+					<li><a href="tel:0120-88-6868"><div class="gFooterImg"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_s_tel.png" alt="tel"></div><span>お電話</span></a></li>
+					<li><a href="/order/"><div class="gFooterImg"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_s_send.png" alt="お申し込み"></div><span>お申し込み</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!--　/.footer_nav_sp -->
+
+</div>
+<!--/Container-->
+</body>
+</html>

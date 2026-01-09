@@ -1,0 +1,464 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+  document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<meta name="format-detection" content="telephone=no">
+<title>過去のケアメンテご利用履歴｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage_editing.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+<script src="/_assets/js/jquery.dependent.js?v=1.1"></script>
+<style>
+  .remove-upper-line {
+    border-bottom: 0px !important;
+  }
+  /* CSS properties for Iphone responsive
+    Added By: UKS MS 
+    On: 2021-09-28
+     */
+@media only screen and (max-device-width: 480px) {
+  * {
+    font-size: 9.5px;
+  }
+
+   #mypage .mainContents .historyTable{
+    background: #FFF;
+    border-radius: 5px;
+    border-collapse: collapse;
+    color: #050505;
+    width: 100%;
+    margin: 30px 0;
+  }
+  #mypage .mainContents .historyTable tr{
+    border-bottom: 1px solid #eee;
+    display: flex;
+    padding: 9px;
+  }
+  #mypage .mainContents .historyTable.detail tr:last-child{
+    border: none;
+    margin-bottom: 0;
+  }
+  #mypage .mainContents .historyTable tr:first-child{
+    border-bottom: 2px solid #050505;
+    margin-top: 10px;
+  }
+  #mypage .mainContents .historyTable tr:last-child{
+    margin-bottom: 30px;
+  }
+  #mypage .mainContents .historyTable th{
+    font-size: 9px;
+    text-align: left;
+    width: 35%;
+  }
+  #mypage .mainContents .historyTable th:nth-child(2){
+    width: 40%;
+  }
+  #mypage .mainContents .historyTable th:nth-child(3){
+    width: 30%;
+  }
+  #mypage .mainContents .historyTable th:nth-child(4){
+    width: 35%;
+  }
+  #mypage .mainContents .historyTable th:nth-child(4){
+    width: 35%;
+  }
+  #mypage .mainContents .historyTable th:last-child{
+    width: 30%;
+  }
+  #mypage .mainContents .historyTable td{
+    font-size: 8.5px;
+    padding: 0;
+    display: block;
+    width: 35%;
+  }
+  #mypage .mainContents .historyTable td:nth-child(2){
+    width: 40%;
+  }
+  #mypage .mainContents .historyTable td:nth-child(3){
+    width: 30%;
+  }
+  #mypage .mainContents .historyTable td:nth-child(4){
+    width: 35%;
+  }
+  #mypage .mainContents .historyTable td:last-child{
+    width: 30%;
+  }
+  #mypage .mainContents .historyTable td:before{
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    font-size: 9px;
+  }
+  #mypage .mainContents .historyTable input{
+    width: 100%;
+    padding: 3px 0;
+    border: 1px solid #333;
+    background: #fff;
+  }
+}
+
+ /* CSS properites for dropdown button to display PDF links 
+    Added By: UKS MS 
+    On: 2021-09-28
+  */
+.dropbtn {
+  background-color: none;
+  color: black;
+  padding: 0px;
+  font-size: 13px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  float: left;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: none;}
+</style>
+</head>
+<body id="mypage">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	<!--　/header_nav　-->
+	
+	<div class="bg mypageMain">
+    <!--　/#banner -->
+    <section id="mypage_nav">
+      <div class="container">
+        <ul>
+					<li><a href="/mypage/"><img src="../img/header04.png" alt="マイページ"><span>マイページ<br>トップ</span></a></li>
+					<li class="linkoff"><a><img src="../img/mypage01.png" alt="カウンセリング"><span>カウンセリング</span></a></li>
+					<li><a href="../ordered/index.html"><img src="../img/mypage02.png" alt="ただいまのお預かり品">
+            <span>ただいまの<br>お預かり品</span>
+          </a></li>
+          <li><a class="on"><img src="../img/mypage05.png" alt="過去のケアメンテご利用履歴">
+            <span>過去のケアメンテ<br>ご利用履歴</span>
+            </a></li>
+          <li><a href="../wardrobe/index.html"><img src="../img/mypage04.png" alt="ワードローブお預かり品">
+            <span>ワードローブ<br>お預かり品</span>
+          </a></li>
+					<li><a href="/sale/"><img src="../img/mypage03.png" alt="セール情報（会員ご優待）"><span>セール情報<br>（会員ご優待）</span></a></li>
+				</ul>
+			</div>
+    </section>
+		
+    <section class="mainContents">
+      <div class="container">
+        <h2><img src="../img/mypage03.png" alt="過去のケアメンテご利用履歴">過去のケアメンテご利用履歴</h2>
+				<p>ケアメンテをご利用いただいたすべての履歴がご覧いただけます。</p>
+				<div class="karteSearch">
+          <h3>お預かり品別の検索</h3>
+          <div class="accordionBtn">
+            <p class="accordionTxt">開く</p>
+            <p class="accordionIcon"><span></span><span></span></p>
+          </div>
+					<dl>
+            <form method="GET" name="form01" action="/mypage/history/search.html">
+              <dt>アイテム：</dt>
+              <dd>
+                <div class="selectform">
+                  <?php $publicGadget->html_wardrobe_select_item() ?>
+                </div>
+                <div class="selectform">
+                  <?php $publicGadget->html_wardrobe_subselect_item() ?>
+                </div>
+              </dd>
+              <dt>ブランド：</dt>
+              <dd>
+                <div class="selectform">
+                  <select name="select" id="select">
+                    <option value="">選択してください</option>
+                    <?php foreach ($this->get("brand_array") AS $brand_val) { ?>
+                      <?php $selected = ($brand_val == REQUEST::get_data('select')) ? 'selected="selected"' : ''; ?> 
+                      <option value="<?php echo $brand_val ?>" <?php echo $selected ?>><?php echo $brand_val ?></option>
+                    <?php } ?>
+                  </select>
+                </div>
+              </dd>
+              <dt>色・柄：</dt>
+              <dd>
+                <div class="selectform">
+                  <?php $publicGadget->html_wardrobe_select_color() ?>
+                </div>
+                <div class="selectform">
+                  <?php $publicGadget->html_wardrobe_subselect_color() ?>
+                </div>
+              </dd>
+              <dt>カウンセリング日：</dt>
+              <dd>
+                <div class="dateselect">
+                  <select name="year" onchange="dateCheckXc('year', 'month', 'day')">
+                    <option value="">年</option>
+                    <?php for ($i = CONF::read('INPUTVALI.HISTORY_Y_START'); $i <= date("Y"); $i++) { ?>
+                      <?php $selected = ($i == $this->get("year") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>年</option>
+                    <?php } ?>
+                  </select>
+                </div>
+                <div class="dateselect">
+                  <select name="month" onchange="dateCheckXc('year', 'month', 'day')">
+                    <option value="">月</option>
+                    <?php for ($i = 1; $i <= 12; $i++) { ?>
+                      <?php $selected = ($i == $this->get("month") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>月</option>
+                    <?php } ?>			
+                  </select>
+                </div>
+                <div class="dateselect">
+                  <select name="day">
+                    <option value="">日</option>
+                    <?php for ($i = 1; $i <= 31; $i++) { ?>
+                      <?php $selected = ($i == $this->get("day") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>日</option>
+                    <?php } ?>
+                  </select>
+                </div>
+                <div class="dateselectTxt">〜</div>
+                <div class="dateselect">
+                  <select name="year_b" onchange="dateCheckXc('year_b', 'month_b', 'day_b')">
+                    <option value="">年</option>
+                    <?php for ($i = CONF::read('INPUTVALI.HISTORY_Y_START'); $i <= date("Y"); $i++) { ?>
+                      <?php $selected = ($i == $this->get("year_b") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>年</option>
+                    <?php } ?>
+                  </select>
+                </div>
+                <div class="dateselect">
+                  <select name="month_b" onchange="dateCheckXc('year_b', 'month_b', 'day_b')">
+                    <option value="">月</option>
+                    <?php for ($i = 1; $i <= 12; $i++) { ?>
+                      <?php $selected = ($i == $this->get("month_b") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>月</option>
+                    <?php } ?>			
+                  </select>
+                </div>
+                <div class="dateselect">
+                  <select name="day_b">
+                    <option value="">日</option>
+                    <?php for ($i = 1; $i <= 31; $i++) { ?>
+                      <?php $selected = ($i == $this->get("day_b") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>日</option>
+                    <?php } ?>
+                  </select>
+                </div>
+              </dd>
+              <dt class="btnarea"><input type="button" id="btn" class="btn" value="検索開始" onclick="document.form01.submit()"></dt>
+            </form>
+					</dl>
+				</div>
+			</div>
+      <div id="mypagetab" class="historyArea">
+				<div class="container">
+          <ul class="tab_menu">
+            <li class="active"><a href="/mypage/history/">ご利用履歴一覧</a></li><li><a href="/mypage/history/search.html">ご利用アイテム一覧</a></li>
+          </ul>
+        </div>
+        <div id="tab1" class="karteWrap tab_contents active">
+          <div class="container">
+            <table class="historyTable">
+              <tbody>
+                <tr>
+                  <th>カルテNo</th>
+                  <th>ｶｳﾝｾﾘﾝｸﾞ日</th>
+                  <th>入金状況</th>
+                  <th>合計金額</th>
+                  <th style="text-align: center;">利用点数</th>
+                </tr>
+                <?php if (count($this->get("chartAllArray")) == 0) { ?>
+                <tr>
+                  <td colspan="4" style="width: 100%;"><div style="color:red">ご利用履歴はありません。</div></td>
+                  <td></td>
+                </tr>
+                <?php } else { // Checking user agent to identify smart phone and web browser ?>
+                  <?php // Added by: UKS MS on: 2021-09-28 ?>
+                  <?php $useragent= $_SERVER['HTTP_USER_AGENT']; 
+                        $iPod = stripos($useragent, "iPod"); 
+                        $iPad = stripos($useragent, "iPad"); 
+                        $iPhone = stripos($useragent, "iPhone");
+                        $Android = stripos($useragent, "Android"); 
+                        $iOS = stripos($useragent, "iOS");
+                        $caremate = stripos($useragent, "CareMenteh App User");
+                  
+                        $DEVICE = ($iPod||$iPad||$iOS||$Android||$caremate);
+                  ?>
+                <?php foreach ($this->get("chartAllArray") AS $chartList) { ?> 
+                <tr class="remove-upper-line">
+                  <td><?php echo $chartList['chart_id'] ?></td>
+                  <td><?php echo $chartList['date'] ?></td>
+                  <?php // Checking payment status ?>
+                  <?php if($chartList['paymentStatus'] == 0) { ?>
+                    <td style="color:green;">入金済み</td>
+                   <?php } else { ?>
+                    <td style="color:red;">入金待ち</td> 
+                   <?php } ?>
+                  <td><?php echo $chartList['price'] ?>円</td>
+                  <td style="text-align: center;"><?php echo $chartList['count'] ?>点</td>
+                </tr>
+                <tr>
+                  <?php //checking which device or which platform is used to view page ?>
+                  <!-- Smartphone devices -->
+                  <?php if ($DEVICE) { ?>
+                    <td colspan="1" style="width:50%;">
+                        <button onclick="location.href = '<?php echo $chartList['chart_link'] ?>'" style="padding: 7px; float: right; border: none; border-radius: 25px; color:white; background-color:#6a3b93;" title="カルテ詳細"><img src="../img/globe_uks3.png" style="width:17%; float:left;"> カルテ詳細</button>&nbsp;&nbsp;
+                      </td>
+                      <td colspan="4" style="width:100%;">
+                        <div class="dropdown" style="border-style: solid; border-width: thin; float: right; padding: 3px; border-radius: 8px;">PDF カルテ・請求書・納品書
+                          <div class="dropdown">
+                              <button class="dropbtn" style="padding:1px;" ><i class="fa fa-chevron-down"></i></button>
+                              <div class="dropdown-content" style="right:0">
+								  <a href="<?php echo $chartList['councelingchart_link']; ?>" target="_blank" rel="noopener noreferrer">カルテ</a>  
+								  <a href="<?php echo $chartList['seikyusho_link']; ?>" target="_blank" rel="noopener noreferrer">請求書</a> 
+								  <a href="<?php echo $chartList['nohinsho_link']; ?>" target="_blank" rel="noopener noreferrer">納品書</a>
+                              </div>
+                            </div>
+                        </div>
+                      </td>
+                  <?php } elseif($iPhone) { ?>
+                    <!-- for Iphones application -->
+                    <td colspan="1" style="width:55%;">
+                        <button onclick="location.href = '<?php echo $chartList['chart_link'] ?>'" style="padding: 5px; float: right; border: none; border-radius: 25px; color:white; background-color:#6a3b93;" title="カルテ詳細"><img src="../img/globe_uks3.png" style="width:18%; float:left;">  カルテ詳細</button>&nbsp;&nbsp;
+                      </td>
+                      <td colspan="4" style="width:110%;">
+                        <div class="dropdown" style="padding: 0.5px; border-style: solid; border-width: thin; float: right; border-radius: 8px; font-size: 9px;"> &nbsp;PDF カルテ・請求書・納品書
+                          <div class="dropdown">
+                              <button class="dropbtn" ><i class="fa fa-chevron-down"></i></button>
+                              <div class="dropdown-content" style="right:0">
+							      <a href="<?php echo $chartList['councelingchart_link']; ?>" target="_blank" rel="noopener noreferrer">カルテ</a>  
+								  <a href="<?php echo $chartList['seikyusho_link']; ?>" target="_blank" rel="noopener noreferrer">請求書</a> 
+								  <a href="<?php echo $chartList['nohinsho_link']; ?>" target="_blank" rel="noopener noreferrer">納品書</a>
+                              </div>
+                            </div>
+                        </div>
+                      </td>
+                  <?php } else { ?>
+                    <!-- for web application -->
+                  <td colspan="3" class="clearfix" style="width:100%;">
+                      <button onclick="location.href = '<?php echo $chartList['chart_link'] ?>'" style="cursor: pointer; width: 21%; padding: 7px; font-size: 14px; float: right; border: none; border-radius: 25px; color:white; background-color:#6a3b93;" title="カルテ詳細"><img src="../img/globe_uks3.png" style="width:21%; float:left;"> カルテ詳細</button>
+                    </td>
+                    <td colspan="2" style="width:50%;">
+                      <div class="dropdown" style="cursor: pointer; border-style: solid; border-width: thin; padding: 5px; border-radius: 8px; float: right;">PDF カルテ・請求書・納品書
+                        <div class="dropdown">
+                            <button class="dropbtn"><i class="fa fa-chevron-down"></i></button>
+                            <div class="dropdown-content" style="right:0">
+                                <a onclick="window.open('<?php echo $chartList['councelingchart_link'] ?>','_blank');">カルテ</a>
+                                <a onclick="window.open('<?php echo $chartList['seikyusho_link'] ?>','_blank');">請求書</a>
+                                <a onclick="window.open('<?php echo $chartList['nohinsho_link'] ?>','_blank');">納品書</a>
+                            </div>
+                          </div>
+                      </div>
+                    </td>
+                  <?php } ?> 
+              </tr>
+                <?php } ?>
+                <?php } ?>
+              </tbody>
+            </table>
+            <div class="postingPagenavi">
+              <ul class="pageNumbers">
+                <?php echo $this->get("pageng_html"); ?>							
+              </ul>
+            </div>
+          </div>
+				</div>
+      </div>
+    </section>
+    <!--　/.mainContents -->
+		
+    <div class="footer_sns">
+      <div class="container">
+        <ul>
+          <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!--　/.footer_sns -->
+    <?php
+    /* ヘッダーインクルード */
+    include(DIR_PUBLIC . "/include/footer_new.php");
+    ?>
+	</div>
+  <!--　/.bg -->
+  
+  <script>
+
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+		
+    var menuFlag = true;
+    $('.header_nav_common .header_tab').on('click', function() {
+      menuFlag = !menuFlag;
+      if(menuFlag){
+        $('.header_nav_common').css("top","0");
+      } else {
+        $('.header_nav_common').css("top","-95px");
+      }
+  	});
+
+    $('#item2').dependent({
+        parent: 'item', //親のid名
+        group: 'selectable3',
+        defaultText: 'さらに絞り込む'
+      });
+      $('#color2').dependent({
+        parent: 'color', //親のid名
+        group: 'selectable2',
+        defaultText: 'さらに絞り込む'
+      });
+		
+  });
+   
+  // added for iphone click even triggering
+  // By: UKS MS on: 2021-09-28
+  document.addEventListener('touchstart', function() {});
+  </script>
+	</body>
+</html>

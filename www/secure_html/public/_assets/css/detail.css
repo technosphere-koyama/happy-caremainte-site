@@ -1,0 +1,372 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト　トップページ　*/
+
+/*メインビジュアル*/
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/carementeh/bg_mv.jpg) center center no-repeat;
+	background-size:cover;
+}
+
+
+/*コンテンツ*/
+h4{
+	font-size: 22px;
+	text-align: center;
+	padding-bottom:40px;
+}
+
+.index_txt{
+	font-size: 14px;
+	line-height: 1.8em;
+	padding-bottom:50px;
+}
+.index_txt a{
+	color:#a9803c;
+	text-decoration: underline;
+}
+.index_txt2{
+	font-size: 14px;
+	line-height: 1.8em;
+	padding-bottom:30px;
+	text-align:center;
+}
+.index_txt2 a{
+	color:#a9803c;
+	text-decoration: underline;
+}
+.index_txt3{
+	font-size: 15px;
+	line-height: 1.6em;
+	padding-bottom:5px;
+	margin: 0 0 20px 130px;
+}
+.index_img{
+	text-align:center;
+	margin:0 0 20px;
+}
+
+ul.section{
+	width:1100px;
+	overflow:hidden;
+	margin-bottom:10px;
+}
+ul.section li{
+	width:266px;
+	float:left;
+	overflow:hidden;
+	margin-right:12px;
+	margin-bottom:50px;
+}
+ul.section li img{
+	width:266px;
+}
+ul.section li:nth-child(4n){
+	margin-right:0;
+}
+
+ul.section li:nth-child(4n+1){
+	clear:both;
+}
+ul.section li p.midashi{
+	font-size:14px;
+	letter-spacing:0.05em;
+	margin-top:30px;
+}
+ul.section li p.midashi a{
+	color:#a9803c;
+}
+
+.index_btn {
+	overflow: hidden;
+	margin-bottom: 80px;
+}
+.index_btn li {
+	float: left;
+}
+.index_btn li:first-child {
+	margin-right: 10px;
+}
+.index_btn li img {
+	width: 543px;
+	border: 1px solid #a9803c;
+}
+
+
+h1 span{
+	font-size: 13px;
+}
+
+.detailimg{
+	text-align: center;
+	margin: 0 0 40px;
+}
+.detailimg img{
+	width: 800px;
+}
+.detailtxt{
+	width: 800px;
+	font-size: 14px;
+	line-height: 1.8em;
+	margin: 0 0 20px 155px;
+}
+.detailtxt h4{
+	font-size: 18px;
+	margin-bottom: -15px;
+	text-align: left;
+}
+.detailtxt h5{
+	font-size: 110%;
+	margin-bottom: 5px;
+}
+.detailtxt .number{
+	color: #ea68a2;
+	font-size: 120%;
+}
+.detailPhotoBox{
+	width: 800px;
+	margin: 0 0 40px;
+	display: inline-block;
+}
+.detailPhotoBox .photo{
+	float: left;
+	width: 380px;
+	margin: 10px;
+	text-align: center;
+	font-size: 85%;
+}
+.detailPhotoBox .photo img{
+	width: 380px;
+	margin: 0 0 10px;
+}
+
+
+.btn{
+	text-align: center;
+	margin: 0 0 50px;
+}
+
+.linkBtnCommon{
+	background-color: #a9803c;
+	color: #fff;
+	font-size: 12px;
+	text-decoration: none;
+	line-height: 5;
+	margin-right: 10px;
+	padding: 10px 35px 10px 22px;
+	position: relative;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+}
+.linkBtnCommon::before,
+.linkBtnCommon::after{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	content: "";
+	vertical-align: middle;
+}
+.linkBtnCommon::after{
+	right: 22px;
+	width: 4px;
+	height: 4px;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #fff;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.linkBtnCommon:hover{
+	background-color: #936e30;
+}
+
+}
+
+@media screen and (max-width:640px){
+/*======================
+SPレイアウト　トップページ*/
+
+
+/*メインビジュアル*/
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/carementeh/bg_mv.jpg) center center no-repeat;
+	background-size:auto 90px;
+}
+
+/*コンテンツ*/
+.content{
+	margin: 0 5%;
+}
+.content .pagettl{
+	color: #333333;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.2;
+	height: 20px;
+	margin-bottom: 20px;
+}
+.content h4{
+	margin: 20px 0;
+	text-align: center;
+	font-size: 12px;
+}
+.index_txt{
+	line-height: 1.8em;
+	padding-bottom:30px;
+}
+.index_txt a{
+	color:#a9803c;
+	text-decoration: underline;
+}
+.index_txt2{
+	padding-bottom:20px;
+}
+.index_txt2 a{
+	color:#a9803c;
+	text-decoration: underline;
+	font-size: 10px;
+	line-height: 0.8em!important;
+	margin: 0 0 20px!important;
+}
+.index_img img{
+	width:100%;
+}
+
+ul.section{
+	overflow:hidden;
+}
+ul.section li{
+	width:48.5%;
+	float:left;
+	overflow:hidden;
+	margin-right:3%;
+	margin-bottom:30px;
+}
+ul.section li:nth-child(even){
+	margin-right: 0;
+}
+ul.section.last li{
+	margin-bottom: 0;
+}
+ul.section li img{
+	width:100%;
+	height:auto;
+}
+ul.section li p.midashi{
+	font-size:13px;
+	font-weight:bold;
+	line-height:1.4;
+	margin-top:15px;
+	height: 40px;
+}
+ul.section li p.midashi a{
+	color:#a9803c;
+}
+
+.index_btn {
+	margin-bottom: 40px;
+}
+.index_btn li img {
+	width: 100%;
+	margin-bottom: 10px;
+	border: 1px solid #a9803c;
+	box-sizing: border-box;
+}
+
+
+.detailimg{
+	text-align: center;
+	margin: 0 0 20px;
+}
+.detailimg img{
+	width: 100%;
+}
+.detailtxt{
+	line-height: 1.8em;
+	margin: 0 0 50px;
+}
+.detailtxt h4{
+	font-size: 15px;
+	margin-bottom: 0;
+	text-align: left;
+}
+.detailtxt h5{
+	font-size: 110%;
+	margin-bottom: 5px;
+}
+.detailtxt .number{
+	color: #ea68a2;
+	font-size: 120%;
+}
+.detailPhotoBox{
+	margin: 20px 0;
+	display: inline-block;
+}
+.detailPhotoBox .photo{
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+.detailPhotoBox .photo img{
+	width: 100%;
+	margin: 0 0 10px;
+}
+.detailPhotoBox .photo p{
+	font-size: 80%;
+	line-height: 1.6em;
+	margin: 0 0 20px;
+}
+
+
+.linkBtnCommon{
+	display: block;
+	background-color: #a9803c;
+	color: #fff;
+	font-size: 12px;
+	line-height: 1.4;
+	text-decoration: none;
+	margin-top: 10px;
+	padding: 10px 0 10px 15px;
+	position: relative;
+}
+.linkBtnCommon::before,
+.linkBtnCommon::after{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	content: "";
+	vertical-align: middle;
+}
+.linkBtnCommon::after{
+	right: 15px;
+	width: 4px;
+	height: 4px;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #fff;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+
+	.section-imgRight img {
+		float: right;
+		margin: 0 0 10px 10px;
+		width: 30%;
+	}
+	.section-imgLeft img {
+		float: left;
+		margin: 0 20px 10px 0;
+		width: 40%;
+	}
+	.section-imgRight p,
+	.section-imgLeft p {
+		margin-bottom: 10px;
+	}
+
+}

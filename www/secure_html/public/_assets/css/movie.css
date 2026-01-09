@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト　トップページ　*/
+
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/movie/bg_mv.jpg) center center no-repeat !important;
+	background-size: cover !important;
+}
+
+h5{
+	font-weight: bold;
+	text-align: left;
+}
+
+.movie-cont{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.youtube_icon{
+	text-align: right;
+}
+.youtube_icon img{
+	width: 60px;
+	margin: 40px 0 0;
+	filter:alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+
+}
+
+#player {
+	width: 100%;
+}
+#thumbnail {
+    margin-top: 50px;
+}
+#thumbnail li {
+	margin-bottom: 15px;
+	width: 48%;
+	display: inline-block;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #ddd;
+}
+#thumbnail li:nth-child(odd) {
+    margin-right: 2%;
+}
+#thumbnail li:last-child, #thumbnail li:nth-last-child(2) {
+    margin-bottom: 60px;
+	padding-bottom: 0;
+    border-bottom: 0;
+}
+#thumbnail li img {
+    width: 120px;
+    height: auto;
+}
+.ytdetail {
+	display: inline-block;
+	margin-left: 15px;
+	vertical-align: top;
+	max-width: 355px;
+}
+.ytdetail h3 {
+	width: 320px;
+	padding:0 0 20px;
+	line-height: 150%;
+	margin-bottom: 0;
+	font-weight: normal;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.ytdetail h3 a {
+	color: #a9803c;
+	font-size:14px;
+}
+.ytdetail h3 a:hover {
+	text-decoration: underline;
+}
+.ytdetail p {
+	color: #999;
+	font-size:12px;
+}
+.time img.ytlogo {
+	width: 32px !important;
+	height: auto !important;
+	margin: -18px 0 0 0;
+}
+}
+
+
+@media screen and (max-width:640px){
+/*======================
+SPレイアウト　トップページ*/
+
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/movie/bg_mv.jpg) center center no-repeat !important;
+	background-size:auto 90px;
+}
+.movie-cont{
+	max-width: 100%;
+	margin: 20px auto 0;
+}
+
+.youtube_icon{
+	text-align: right;
+}
+.youtube_icon img{
+	width: 30px;
+	margin: 10px 0 0;
+	filter:alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+
+}
+
+#player {
+	width: 100%;
+	height: auto;
+}
+#thumbnail {
+    margin-top: 30px;
+}
+#thumbnail li {
+	margin-bottom: 10px;
+	vertical-align: top;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+}
+#thumbnail li:last-child {
+	margin-bottom: 0px;
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+#thumbnail li img {
+    width: 30%;
+    height: auto;
+}
+.ytdetail {
+	display: inline-block;
+	width: 65%;
+	margin-left: 10px;
+}
+.ytdetail h3 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.ytdetail h3 a {
+	color: #a9803c;
+}
+.ytdetail h3 a:hover {
+	text-decoration: underline;
+}
+.ytdetail p {
+	color: #999;
+}
+}

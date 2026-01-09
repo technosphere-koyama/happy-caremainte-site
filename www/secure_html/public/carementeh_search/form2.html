@@ -1,0 +1,1032 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>さがす＜ケアメンテ実例集＞｜ハッピー ケアメンテR</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/search.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script src="/_assets/js/jquery.js"></script>
+<script src="/_assets/js/common.js"></script>
+<script src="/_assets/js/ga.js"></script>
+
+  <script src="/_assets/js/form.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="/_assets/js/jquery.cookie.js"></script>
+    <script src="/_assets/js/jquery.validationEngine.js"></script>
+		<script src="/_assets/js/jquery.validationEngine-ja.js"></script>
+
+    <script>
+			$(function () {
+
+				//cookieの有効期限を1時間に
+				var date = new Date();
+				date.setTime(date.getTime() + (1 * 60 * 60 * 1000));
+
+				//cookie値にカテゴリがセットされているかチェック
+				function isSetParam(val) {
+					if (typeof val == "undefined") {
+						return false;
+					} else {
+						return true;
+					}
+				}
+
+				//cookie値の各パラメータの値を分割し、対象のチェックボックスをtrueにする
+				function checkFormSingle(target) {
+					if (isSetParam($.cookie(target))) {
+						var list = $.cookie(target);
+						var split_array = list.split(",");
+						for (var i = 0, len = split_array.length; i < len; i++) {
+							$('input[name="' + target + '[]"]input[value=' + split_array[i] + ']').prop('checked', true);
+						}
+					}
+				}
+
+				//対象のチェックボックスをtrueにする（checkFormSingleの統合版）
+				function checkForm() {
+					//アイテム（商品種別）
+					checkFormSingle("item");
+					//シミ汚れの種類
+					checkFormSingle("dirt");
+					//素材
+					checkFormSingle("material");
+					//ブランド
+					checkFormSingle("brand_code");
+					//色
+					checkFormSingle("color");
+					//柄
+					checkFormSingle("pattern");
+				}
+				checkForm();
+
+				//ターゲットのカテゴリのチェックボックスをeachしてチェックされているものをテキスト化
+				function writeSelected(target) {
+
+					$.removeCookie(target);
+//console.log($.cookie(target));
+					var list = '';
+					var check_array = new Array();
+					$('input[name="' + target + '[]"]:checked').each(function () {
+						list += '<li>' + $(this).parent("label").text() + '</li>';
+						check_array.push($(this).val());
+					});
+
+					$.cookie(target, check_array.join(), {expires: date});
+//					console.log($.cookie(target));
+					return list;
+				}
+				//各カテゴリのターゲット要素に選択リストを記述
+				function createListSingle(target) {
+					//アイテム（商品種別）
+					var itemSelect = writeSelected(target);
+					if (itemSelect.length > 0) {
+						$(".selected-" + target).show();
+						$(".selected-" + target + " ul").show().html(itemSelect);
+					} else {
+						$(".selected-" + target + " ul").html();
+						$(".selected-" + target).hide();
+					}
+				}
+				//選択リストを記述（createListSingleの統合版）
+				function createList() {
+					createListSingle("item");
+					createListSingle("dirt");
+					createListSingle("material");
+					createListSingle("brand_code");
+					createListSingle("color");
+					createListSingle("pattern");
+				}
+				createList();
+
+
+				//チェックボックスに変化かある度に選択リスト再描画
+				$('input[name="item[]"],input[name="dirt[]"],input[name="material[]"],input[name="brand_code[]"],input[name="color[]"],input[name="pattern[]"]').change(function () {
+					createList();
+				});
+
+				//リセットボタン押下した時も選択リスト再描画
+				$("#reset1").on("click", function () {
+					$('input[type="checkbox"]').prop('checked', false);
+					$('input[name="brand_code[]"]').parent("label").remove();
+					createList();
+					return false;
+				});
+				$("#reset2").on("click", function () {
+					$('input[type="checkbox"]').prop('checked', false);
+					$('input[name="brand_code[]"]').parent("label").remove();
+					createList();
+					return false;
+				});
+
+			});
+		</script>
+</head>
+<body id="careSearch"  class="careBrandWrap">
+	<div class="header_nav header_nav_common" id="header_nav_common">
+	<nav id="menu_pc_trigger">
+		<div>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<p>MENU</p>
+	</nav>
+	<div class="wrap">
+		<div class="title">
+			<ul>
+				<li><a href="/"><h1><img src="/wp/wp-content/themes/HAPPY_Dark/img/logo_w.png" alt="ハッピー ケアメンテ" class="logo"></h1></a></li>
+				<li class="sac"><a href="/carementeh_search/"><span>Before&amp;After検索<br>概算お見積り実例集</span><div class="flx"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header01_w_y.png" alt=""><div><span>ケアメンテ実例集</span><strong>「さがす」</strong></div></div></a></li>
+				<li><a href="/review/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header02_w.png" alt=""><span>お客さまレビュー</span><strong>「きづく」</strong></a></li>
+				<li><a href="/mypage/sns.html"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header03_w.png" alt=""><span>ハッピー SNS</span><strong>「つなぐ」</strong></a></li>
+				<li><a href="/mypage/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header04_w.png" alt=""><span>お客さま専用ページ</span><strong>マイページ</strong></a></li>
+			</ul>
+		</div>
+		<div class="sublink">
+			<div class="telBox">
+				<div class="tel_top">
+					<a href="tel:0120-88-6868"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_tel_w.png" alt="tel"><span class="number">0120-88-6868</span>
+					<span class="time">月?土  <span class="sub">9:00?18:00<br>(日曜・祝祭日は除く)</span></span></a>
+				</div>
+				<div class="hermes">
+					<a href="tel:0120-88-3040">
+					<span>エルメス公認 <br>お客様専用ダイヤル</span><br class="sp"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_tel_w.png" alt="tel">0120-88-3040</a>
+				</div>
+			</div>
+			<div class="order">
+				<a href="/order/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/order_w.png" alt="WEB"><br>
+				<span>お申し込み</span></a>
+			</div>
+		</div>
+	</div>
+</div>	<!--　/header_nav　-->
+
+	<div class="bg">
+    <section id="case" class="careBrand">
+      <div class="container">
+        <div class="tac case_top"><img src="../img/header01.png" alt="さがす"></div>
+        <h2 class="tac"><span>豊富な経験値と、その実例集が物語る確かな技術</span><br>
+          Before&After/<br class="sp">概算お見積り実例集<br class="sp">「さがす」</h2>
+        <div class="tac case_lead">
+        <p>あなたのご依頼品の概算お見積りが確認できます。<br>
+        Before & Afrer実例集から検索して仕上がり感をイメージできます。</p>
+      </div>
+      <h3 class="tac">ただいまの登録件数：<span>2,037</span>点</h3>
+
+        <div class="tac">
+          <p class="tit_txt">検索条件を選択してください</p>
+        </div>
+				<form method="POST" id="search_form" name="form01" action="form.html">
+          <dl class="searchForm">
+
+            <div class="selected-search SPpart">
+              <dd>
+                <div class="selected-brand_code" style="display: none;">
+                  <ul></ul>
+                </div>
+              </dd>
+            </div>
+            <dt class="contactTxt">アイテム（商品種別）</dt>
+            <div class="formaco formCategory02">
+              <dd>
+                <div class="search_section Category02main">
+									<div class="Category02main_box">
+                    <p class="search_subtitle"><img src="img/ico_search_form01.png" alt="紳士スーツ">紳士スーツ</p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0101"><span>紳士背広上着</span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0102"><span>紳士ベスト</span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0103"><span>紳士ズボン</span></label></p>
+									</div>
+									<div class="Category02main_box">
+                    <p class="search_subtitle"><img src="img/ico_search_form02.png" alt="婦人スーツ">婦人スーツ</p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0201"><span>婦人上着</span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0202"><span>婦人パンツ</span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0203"><span>婦人スカート</span></label></p>
+									</div>
+									<div class="Category02main_box">
+                    <p class="search_subtitle"><img src="img/ico_search_form03.png" alt="ジャケット ブレザー">ジャケット<br>ブレザー</p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0301"><span>紳士ジャケット・ブレザー</span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0401"><span>婦人ジャケット・ブレザー</span></label></p>
+									</div>
+									<div class="Category02main_box">
+                    <p class="search_subtitle"></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0601"><span>コート・オーバー類</span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0701"><span>ダウン製品類（コート・ジャンパー等を含む）</span></label></p>
+									</div>
+                </div>
+                <div class="search_section Category02other">
+                  <p class="search_subtitle">その他のアイテム：</p>
+									<div class="Category02other_box">
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0801"><span class="itemL_frame"><img src="img/ico_search_form04.png" alt="ベスト"><br><span class="itemL_name">ベスト</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0901"><span class="itemL_frame"><img src="img/ico_search_form05.png" alt="シャツ・ワイシャツ"><br><span>シャツ<br>ワイシャツ</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0905"><span class="itemL_frame"><img src="img/ico_search_form06.png" alt="ブラウス・カットソー・Ｔシャツ"><br><span>ブラウス・カットソー<br>Ｔシャツ</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1001"><span class="itemL_frame"><img src="img/ico_search_form07.png" alt="セーター・カーディガン"><br><span>セーター<br>カーディガン</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1101"><span class="itemL_frame"><img src="img/ico_search_form08.png" alt="ズボン パンツ"><br><span>ズボン<br>パンツ</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1201"><span class="itemL_frame"><img src="img/ico_search_form09.png" alt="スカート"><br><span class="itemL_name">スカート</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1301"><span class="itemL_frame"><img src="img/ico_search_form10.png" alt="ワンピース"><br><span class="itemL_name">ワンピース</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1401"><span class="itemL_frame"><img src="img/ico_search_form11.png" alt="ドレス"><br><span class="itemL_name">ドレス</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1501"><span class="itemL_frame"><img src="img/ico_search_form12.png" alt="ネクタイ"><br><span class="itemL_name">ネクタイ</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1601"><span class="itemL_frame"><img src="img/ico_search_form13.png" alt="スカーフ・ストール・マフラー"><br><span>スカーフ・ストール<br>マフラー</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1701"><span class="itemL_frame"><img src="img/ico_search_form14.png" alt="バッグ・鞄"><br><span class="itemL_name">バッグ・鞄</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1801"><span class="itemL_frame"><img src="img/ico_search_form15.png" alt="皮革・毛皮製品類（水系洗浄を除く）"><br><span>皮革・毛皮製品類<br>（水系洗浄を除く）</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1805"><span class="itemL_frame"><img src="img/ico_search_form16.png" alt="部分皮革・部分毛皮製品類"><br><span>部分皮革<br>部分毛皮製品類</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1901"><span class="itemL_frame"><img src="img/ico_search_form17.png" alt="和服類"><br><span class="itemL_name">和服類</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="2001"><span class="itemL_frame"><img src="img/ico_search_form18.png" alt="その他"><br><span class="itemL_name">その他</span></span></label></p>
+									</div>
+                </div>
+              </dd>
+            </div>
+            <!--
+            <div class="selected-search SPpart">
+              <dd>
+                <div class="selected-item" style="display: none;">
+                  <ul></ul>
+                </div>
+              </dd>
+            </div>
+          -->
+            <dt class="contactTxt">シミ汚れの種類</dt>
+            <div class="formaco formCategory03">
+              <dd>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000002"><span>黄ばみ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000036"><span>黒ずみ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000053"><span>ラーメンスープ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000057"><span>ワイン</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000065"><span>酒</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000096"><span>色焼け</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000104"><span>輪ジミ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000112"><span>コーヒー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000156"><span>はちみつ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000176"><span>色移り</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000231"><span>水ジミ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000244"><span>魚の煮汁</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000246"><span>イチゴ果汁</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000252"><span>アイロンによる焦げ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000330"><span>インクジミ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000387"><span>カレー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000403"><span>ファンデーション</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000425"><span>ジャスミンティー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000527"><span>チョコレート</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000543"><span>醤油</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000544"><span>朱肉</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000571"><span>ガム</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000626"><span>カビ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000728"><span>色やけ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000933"><span>ビール</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001048"><span>ヘアーカラー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001070"><span>お茶</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001181"><span>ドレッシング</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001311"><span>肉汁</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001473"><span>水性マジック</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001508"><span>皮脂</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001734"><span>シャンパン</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001817"><span>アイスティー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001873"><span>泥はね</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001918"><span>ねずみ取りの粘着物</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001972"><span>口紅</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001980"><span>牛乳</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001985"><span>ブルーベリータルト</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002025"><span>油ジミ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002027"><span>錆</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002111"><span>アイスクリーム</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002146"><span>プリン</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002234"><span>ヨーグルト</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002298"><span>ウーロン茶</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002311"><span>デミグラスソース</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002326"><span>ミルクティー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002331"><span>ボールペンインク</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002353"><span>靴墨</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002430"><span>血液</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002492"><span>花粉</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002525"><span>ブルーベリー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002543"><span>グリーンピーススープ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002578"><span>百合の花粉</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002587"><span>ホットコーヒーラテ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002590"><span>カフェオレ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002678"><span>煤</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002719"><span>カラー剤</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002842"><span>マックシェイク</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002997"><span>蛍光ペン</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0003022"><span>トマトソース</span></label></p>
+              </dd>
+            </div>
+            <!--
+            <div class="selected-search SPpart">
+              <dd>
+                <div class="selected-dirt" style="display: none;">
+                  <ul></ul>
+                </div>
+              </dd>
+            </div>
+            -->
+            <dt class="contactTxt">素材</dt>
+            <div class="formaco formCategory04">
+              <dd>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="01"><span>ｱｸﾘﾙ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="02"><span>麻</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="03"><span>ｱｾﾃｰﾄ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="04"><span>ｱﾙﾊﾟｶ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="05"><span>ｱﾝｺﾞﾗ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="06"><span>ｳｰﾙ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="07"><span>ｳﾚﾀﾝ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="08"><span>ｶｼﾐｱ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="09"><span>ｷｬﾒﾙ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="10"><span>ｷｭﾌﾟﾗ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="11"><span>金属繊維</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="12"><span>合成皮革</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="13"><span>ｼﾙｸ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="14"><span>人工皮革</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="15"><span>ﾃﾝｾﾙ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="16"><span>ﾄﾘｱｾﾃｰﾄ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="17"><span>ﾅｲﾛﾝ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="18"><span>ﾎﾟﾘｴｽﾃﾙ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="19"><span>綿</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="20"><span>ﾓﾍｱ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="21"><span>ﾚｰﾖﾝ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="22"><span>皮革</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="23"><span>毛皮</span></label></p>
+              </dd>
+            </div>
+            <!--
+            <div class="selected-search SPpart">
+              <dd>
+                <div class="selected-material" style="display: none;">
+                  <ul></ul>
+                </div>
+              </dd>
+            </div>
+            -->
+            <dt class="contactTxt">色</dt>
+            <div class="formaco formCategory05">
+              <dd>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="02"><span><span></span></span>白</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="08"><span><span></span></span>グレー</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="03"><span><span></span></span>黒</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="07"><span><span></span></span>茶</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="01"><span><span></span></span>赤</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="04"><span><span></span></span>黄</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="05"><span><span></span></span>緑</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="06"><span><span></span></span>青</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="09"><span><span></span></span>紫</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="11"><span><span></span></span>ピンク</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="10"><span><span></span></span>金・銀</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="14"><span><span></span></span>多色</label></p>
+              </dd>
+            </div>
+            <!--
+            <div class="selected-search SPpart">
+              <dd>
+                <div class="selected-color" style="display: none;">
+                  <ul></ul>
+                </div>
+              </dd>
+            </div>
+            -->
+            <dt class="contactTxt">柄</dt>
+            <div class="formaco formCategory06">
+              <dd>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="01"><span><span><img src="img/search_form_pattern01.png" alt="ストライプ"></span></span>ストライプ</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="02"><span><span><img src="img/search_form_pattern02.png" alt="チェック"></span></span>チェック</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="03"><span><span><img src="img/search_form_pattern03.png" alt="横縞"></span></span>横縞</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="04"><span><span><img src="img/search_form_pattern04.png" alt="花柄"></span></span>花柄</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="05"><span><span><img src="img/search_form_pattern05.png" alt="縦縞"></span></span>縦縞</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="06"><span><span><img src="img/search_form_pattern06.png" alt="水玉"></span></span>水玉</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="07"><span><span><img src="img/search_form_pattern07.png" alt="杉織り"></span></span>杉織り</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="08"><span><span><img src="img/search_form_pattern08.png" alt="千鳥格子"></span></span>千鳥格子</label></p>
+              </dd>
+            </div>
+            <dt class="contactTxt">ブランド・アパレルメーカー</dt>
+            <div class="formaco formCategory01">
+              <dd><a href="form_brand.html">ブランド・アパレルメーカーを選択してください</a>
+                              </dd>
+            </div>
+            <!--
+            <div class="selected-search SPpart">
+              <dd>
+                <div class="selected-pattern" style="display: none;">
+                  <ul></ul>
+                </div>
+              </dd>
+            </div>
+            -->
+						<div class="parano">
+              <dt>パラメータ番号検索：</dt>
+              <dd><input name="parano" type="text" value=""></dd>
+						</div>
+            <dt class="btnarea"><input type="button" id="reset2" class="reset" value="リセット"><input type="button" id="btn" class="btn" value="検索する" onclick="document.form01.submit()"></dt>
+          </dl>
+        </form>
+      </div>
+			<div class="searchFilter ">
+        <div class="searchFilter_wrap">
+          <dl class="selected-search">
+            <dt>選択した検索条件</dt>
+            <dd>
+              <div class="selected-brand_code">
+                <ul><li></li></ul>
+              </div>
+              <div class="selected-item" style="display: none;">
+                <ul></ul>
+              </div>
+              <div class="selected-dirt" style="display: none;">
+                <ul></ul>
+              </div>
+              <div class="selected-material" style="display: none;">
+                <ul><li>ｱｸﾘﾙ</li></ul>
+              </div>
+              <div class="selected-color" style="display: none;">
+                <ul></ul>
+              </div>
+              <div class="selected-pattern" style="display: none;">
+                <ul></ul>
+              </div>
+            </dd>
+          </dl>
+          <div class="btnarea"><input type="button" id="reset1" class="reset" value="リセット"><input type="button" id="btn2" class="btn" value="検索する" onclick="document.form01.submit()"></div>
+        </div>
+      </div>
+    </section>
+    <!--　/#case.careBrand -->
+
+        <section id="counseling_txt">
+      <div class="container">
+				<div class="counseling_txt_img">
+          <img src="../img/counseling.png" alt="" width="130" height="206">
+        </div>
+				<div class="counseling_txt_box">
+          <p>ケアメンテの実例をアイテム別、シミ汚れの種別、素材別、ブランド別などで絞り込み検索することができます。</p>
+          <p style="display: none;">全ての実例を表示したい時は、検索条件を何も選択せずに「検索ボタン」をクリックしてください。</p>
+				</div>
+			</div>
+    </section>
+    	</div>
+  <!--　/.bg -->
+
+<div class="footer_pagetop pagetop" >
+	<div class="container">
+		<ul>
+			<li><a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i><span>Top</span></a></li>
+		</ul>
+	</div>
+</div>
+<!--　/.footer_sns -->
+
+<!--　/.guideNav -->
+
+<div class="footer_nav" style="">
+	<div class="container">
+		<ul id="footer_nav_pc">
+			<li class="menu__first-level">
+				<a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer01.png" alt="ご利用方法・価格表"><span>ご利用方法 価格表</span></a>
+				<div class="menu__second-level">
+					<div class="container">
+						<div class="menu__second-column">
+							<h3 class="headline act">ご利用方法・価格表</h3>
+							<div class="menu__second-body menu__two_column">
+								<ul>
+									<li><a href="/use/">ご利用方法</a></li>
+									<li><a href="/use/price/list/">価格表</a></li>
+									<li><a href="/use/price/catalog/">カタログ請求／PDF閲覧</a></li>
+									<li><a href="/use/howtoorder/point/">ハッピーポイントについて</a></li>
+								</ul>
+								<ul>
+									<li><a href="/order/kiyaku.html">利用規約</a></li>
+									<li><a href="/use/howtoorder/reparation/">事故賠償制度</a></li>
+									<li><a href="/use/howtoorder/similarity/">類似サービスにご注意ください</a></li>
+									<li><a href="/faq/">よくあるご質問</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">提携ブランド/全国取扱い店舗一覧</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/shop_search/">現在地から取扱店を検索</a></li>
+									<li><a href="/shop/">ショップ情報</a></li>
+									<li class="PCpart">&nbsp;</li>
+									<li class="PCpart">&nbsp;</li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">ケアメンテの評価</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/use/evaluate/blog/">ブログでの第三者評価</a></li>
+									<li><a href="/use/evaluate/satisfaction/">ハッピー顧客満足度指数</a></li>
+									<li><a href="/use/evaluate/value/">ケアメンテとクリーニングの評価</a></li>
+									<li class="PCpart">&nbsp;</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="menu__first-level">
+				<a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer02.png" alt="サービス・技術"><span>サービス・技術</span></a>
+				<div class="menu__second-level">
+					<div class="container">
+						<div class="menu__second-column">
+							<h3 class="headline">サービス概要</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/carementeh/overview/style/">ケアメンテ仕事スタイル</a></li>
+									<li><a href="/carementeh/overview/etymology/">ケアメンテの語源</a></li>
+									<li><a href="/carementeh/overview/flow/">ケアメンテの仕事の流れ</a></li>
+									<li><a href="/carementeh/overview/karte/">ハッピー電子カルテシステム</a></li>
+									<li><a href="/carementeh/overview/counseling/">カウンセリング</a></li>
+									<li><a href="/carementeh/overview/difference/">クリーニングと「ケアメンテ」は<br>どこが違うの？</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">サービス一覧</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/carementeh/service/aquadry/">基本洗浄「水油系アクアドライR」</a></li>
+									<li><a href="/carementeh/service/ripron/">再生技術「リプロンR」</a></li>
+									<li><a href="/carementeh/service/valueon/">加工技術「バリューONR」</a></li>
+									<li><a href="/carementeh/service/grain/">レザー修復「レザーGRAIN再現加工」</a></li>
+									<li><a href="/carementeh/service/kimono/">きもの・仕立てたままで水洗い<br>「きもの無重力」</a></li>
+									<li><a href="/carementeh/service/reform/">お直し／リフォーム</a></li>
+									<li><a href="/carementeh/service/wardrobe/">保管お預かり<br>「ハッピーワードローブR」</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">ケアメンテを支える技術</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/technology/innovation/weightlessness/">ハッピー独自の技術<br>「無重力バランス洗浄技法」</a></li>
+									<li><a href="/technology/innovation/lecirian/">サイジング技法「レシリアン」</a></li>
+									<li><a href="/technology/innovation/press/">仕上げ技術「シルエットプレスR」</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="menu__second-column">
+							<h3 class="headline">技術の検証データ</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/technology/data/weightlessness/ma_test/">「無重力バランス洗浄技法(特許)」<br>検証データ</a></li>
+									<li><a href="/technology/data/tradition/yuzen/">京の伝統技法とケアメンテ</a></li>
+									<li><a href="/technology/data/comparison/">汗汚れの洗浄比較実験</a></li>
+									<li><a href="/technology/data/brand/">ブランド各社からの洗浄依頼品</a></li>
+									<li><a href="/technology/data/monograph/">ケアメンテ水系洗浄の<br>学会誌掲載論文一覧</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="menu__first-level">
+				<a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer03.png" alt="事例・レビュー"><span>事例・レビュー</span></a>
+				<div class="menu__second-level">
+					<div class="container">
+						<div class="menu__second-column">
+							<h3 class="headline">Before&amp;After /ケアメンテ事例集</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/technology/before_after/list/">Before &amp; After集</a></li>
+									<li><a href="/technology/before_after/suit/">上質スーツ</a></li>
+									<li><a href="/technology/before_after/down/">最高級ダウン</a></li>
+									<li><a href="/technology/before_after/shirt/">上質シャツ</a></li>
+									<li><a href="/technology/before_after/bag/">バッグ</a></li>
+									<li><a href="/technology/before_after/leather/">皮革・毛皮</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline pc">&nbsp;</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/technology/before_after/wedding/">ウェディングドレス</a></li>
+									<li><a href="/technology/before_after/macintosh/">マッキントッシュ</a></li>
+									<li><a href="/technology/before_after/lifecare/">インテリア・ファニチャー・羽毛布団</a></li>
+									<li><a href="/technology/before_after/tenpyou/">天平の古代染めを洗う</a></li>
+									<li><a href="/technology/before_after/kimono-2/">百年昔の「きもの」を洗う</a></li>
+									<li class="PCpart">&nbsp;</li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline"><a href="/carementeh_search/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header01_w.png" alt="">Before&amp;After/概算お見積り実例集「さがす」</a></h3>
+							<h3 class="headline"><a href="/review/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header02_w.png" alt="">お客さまレビュー「きづく」</a></h3>
+							<h3 class="headline"><a href="/mypage/sns.html"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header03_w.png" alt="">ハッピー SNS「つなぐ」</a></h3>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="menu__first-level">
+				<a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer04.png" alt="特集・読みもの"><span>特集・読みもの</span></a>
+				<div class="menu__second-level">
+					<div class="container">
+						<div class="menu__second-column">
+							<h3 class="headline"><a href="/knowledge/">おしゃれの雑学</a></h3>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline"><a href="/movie/">プロモーションビデオ</a></h3>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline"><a href="/detail/">こだわりのディテール</a></h3>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline"><a href="https://www.kyoto-happy.co.jp:8443/pdf/Manga_01.pdf?ver1.0" target="_blank">マンガで分かる「ケアメンテサービス」</a></h3>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline"><a href="/sachi/">WEB マガジン 幸(sachi)</a></h3>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="menu__first-level">
+				<a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer05.png" alt="会社情報・リクルート"><span>会社情報・リクルート</span></a>
+				<div class="menu__second-level">
+					<div class="container">
+						<div class="menu__second-column">
+							<h3 class="headline">会社概要</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/corporate/company/profile/">企業情報</a></li>
+									<li><a href="/corporate/company/winning/">認定・受賞一覧</a></li>
+									<li><a href="/corporate/company/ip/">知的財産（特許・商標）</a></li>
+									<li><a href="/pdf/fukusyoku.pdf" target="_blank">服飾関連の皆様へ</a></li>
+									<li><a href="/pdf/kanren_brand.pdf" target="_blank">アパレル業の皆様へ</a></li>
+									<li><a href="/pdf/kanren_ryutu.pdf" target="_blank">流通業の皆様へ</a></li>
+									<li><a href="/pdf/kanren_kaden.pdf" target="_blank">洗濯機メーカーの皆様へ</a></li>
+									<li><a href="/privacy/">特定商取引法に基づく表記</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">メディア情報</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/corporate/media/media_list/">メディア報道特集</a></li>
+									<li><a href="/corporate/media/past/">過去の報道記録</a></li>
+									<li><a href="/corporate/media/lecture/">講演活動の記録</a></li>
+									<li><a href="/corporate/media/literary/">著作物一覧</a></li>
+								</ul>
+							</div>
+							<h3 class="headline">リクルート</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/corporate/recruit/cultivation/">人財育成について</a></li>
+									<li><a href="/corporate/recruit/staff/">ケアメンテスタッフの募集</a></li>
+									<li><a href="/corporate/recruit/executive/">経営幹部候補の募集</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">環境への取組み</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/corporate/csr/reuse/">自然循環型産業の創出</a></li>
+									<li><a href="/corporate/csr/weightlessness/">無重力バランス洗浄による環境保護</a></li>
+									<li><a href="/corporate/csr/world2007/">環境と洗浄の世界大会 2007 秋</a></li>
+									<li><a href="/corporate/csr/unicef/">ハッピーワールド助け合いプロジェクト</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">ヨーロッパ洗浄技術交流紀行</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/corporate/europe/2013_summer/">ヨーロッパ交流紀行 2013 初夏</a></li>
+									<li><a href="/corporate/europe/2012_autumn/">ヨーロッパ交流紀行 2012 初秋</a></li>
+									<li><a href="/corporate/europe/2006_summer/">ヨーロッパ交流紀行 2006 夏</a></li>
+									<li><a href="/corporate/europe/2006_spring/">ヨーロッパ交流紀行 2006 春</a></li>
+									<li><a href="/corporate/europe/2005_autumn/">ヨーロッパ交流紀行 2005 秋</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<!--　/.footer_nav -->
+
+<div class="footer_nav_sp" style="display: block;">
+	<div class="wrap">
+		<div class="container">
+			<nav id="menu_sp_trigger">
+				<div>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<p>MENU</p>
+			</nav>
+			<div class="gFooter">
+				<ul>
+										<li><a href="/"><div class="gFooterImg"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_s_home_a.png" alt="HOME"></div><span class="act">ホーム</span></a></li>
+										<li><a href="/carementeh_search/"><div class="gFooterImg"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_s_sarch.png" alt="さがす"></div><span>さがす</span></a></li>
+					<li><a href="/mypage/sns.html"><div class="gFooterImg"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_s_global.png" alt="つなぐ"></div><span>つなぐ</span></a></li>
+					<li><a href="/mypage/"><div class="gFooterImg"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_s_user.png" alt="マイページ"></div><span>マイページ</span></a></li>
+					<li><a href="tel:0120-88-6868"><div class="gFooterImg"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_s_tel.png" alt="tel"></div><span>お電話</span></a></li>
+					<li><a href="/order/"><div class="gFooterImg"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_s_send.png" alt="お申し込み"></div><span>お申し込み</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<ul class="footer_Hidden" style="max-height: 807px;"><ul id="footer_nav_sp">
+			<li class="menu__first-level">
+				<a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer01.png" alt="ご利用方法・価格表"><span>ご利用方法 価格表</span></a>
+				<div class="menu__second-level" style="display: none;">
+					<div class="container">
+						<div class="menu__second-column">
+							<h3 class="headline act">ご利用方法・価格表</h3>
+							<div class="menu__second-body menu__two_column">
+								<ul>
+									<li><a href="/use/">ご利用方法</a></li>
+									<li><a href="/use/price/list/">価格表</a></li>
+									<li><a href="/use/price/catalog/">カタログ請求／PDF閲覧</a></li>
+									<li><a href="/use/howtoorder/point/">ハッピーポイントについて</a></li>
+								</ul>
+								<ul>
+									<li><a href="/order/kiyaku.html">利用規約</a></li>
+									<li><a href="/use/howtoorder/reparation/">事故賠償制度</a></li>
+									<li><a href="/use/howtoorder/similarity/">類似サービスにご注意ください</a></li>
+									<li><a href="/faq/">よくあるご質問</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">提携ブランド/全国取扱い店舗一覧</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/shop_search/">現在地から取扱店を検索</a></li>
+									<li><a href="/shop/">ショップ情報</a></li>
+									<li class="PCpart">&nbsp;</li>
+									<li class="PCpart">&nbsp;</li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">ケアメンテの評価</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/use/evaluate/blog/">ブログでの第三者評価</a></li>
+									<li><a href="/use/evaluate/satisfaction/">ハッピー顧客満足度指数</a></li>
+									<li><a href="/use/evaluate/value/">ケアメンテとクリーニングの評価</a></li>
+									<li class="PCpart">&nbsp;</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="menu__first-level">
+				<a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer02.png" alt="サービス・技術"><span>サービス・技術</span></a>
+				<div class="menu__second-level" style="display: none;">
+					<div class="container">
+						<div class="menu__second-column">
+							<h3 class="headline">サービス概要</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/carementeh/overview/style/">ケアメンテ仕事スタイル</a></li>
+									<li><a href="/carementeh/overview/etymology/">ケアメンテの語源</a></li>
+									<li><a href="/carementeh/overview/flow/">ケアメンテの仕事の流れ</a></li>
+									<li><a href="/carementeh/overview/karte/">ハッピー電子カルテシステム</a></li>
+									<li><a href="/carementeh/overview/counseling/">カウンセリング</a></li>
+									<li><a href="/carementeh/overview/difference/">クリーニングと「ケアメンテ」は<br>どこが違うの？</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">サービス一覧</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/carementeh/service/aquadry/">基本洗浄「水油系アクアドライR」</a></li>
+									<li><a href="/carementeh/service/ripron/">再生技術「リプロンR」</a></li>
+									<li><a href="/carementeh/service/valueon/">加工技術「バリューONR」</a></li>
+									<li><a href="/carementeh/service/grain/">レザー修復「レザーGRAIN再現加工」</a></li>
+									<li><a href="/carementeh/service/kimono/">きもの・仕立てたままで水洗い<br>「きもの無重力」</a></li>
+									<li><a href="/carementeh/service/reform/">お直し／リフォーム</a></li>
+									<li><a href="/carementeh/service/wardrobe/">保管お預かり<br>「ハッピーワードローブR」</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">ケアメンテを支える技術</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/technology/innovation/weightlessness/">ハッピー独自の技術<br>「無重力バランス洗浄技法」</a></li>
+									<li><a href="/technology/innovation/lecirian/">サイジング技法「レシリアン」</a></li>
+									<li><a href="/technology/innovation/press/">仕上げ技術「シルエットプレスR」</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="menu__second-column">
+							<h3 class="headline">技術の検証データ</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/technology/data/weightlessness/ma_test/">「無重力バランス洗浄技法(特許)」<br>検証データ</a></li>
+									<li><a href="/technology/data/tradition/yuzen/">京の伝統技法とケアメンテ</a></li>
+									<li><a href="/technology/data/comparison/">汗汚れの洗浄比較実験</a></li>
+									<li><a href="/technology/data/brand/">ブランド各社からの洗浄依頼品</a></li>
+									<li><a href="/technology/data/monograph/">ケアメンテ水系洗浄の<br>学会誌掲載論文一覧</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="menu__first-level">
+				<a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer03.png" alt="事例・レビュー"><span>事例・レビュー</span></a>
+				<div class="menu__second-level" style="display: none;">
+					<div class="container">
+						<div class="menu__second-column">
+							<h3 class="headline">Before&amp;After /ケアメンテ事例集</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/technology/before_after/list/">Before &amp; After集</a></li>
+									<li><a href="/technology/before_after/suit/">上質スーツ</a></li>
+									<li><a href="/technology/before_after/down/">最高級ダウン</a></li>
+									<li><a href="/technology/before_after/shirt/">上質シャツ</a></li>
+									<li><a href="/technology/before_after/bag/">バッグ</a></li>
+									<li><a href="/technology/before_after/leather/">皮革・毛皮</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline pc">&nbsp;</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/technology/before_after/wedding/">ウェディングドレス</a></li>
+									<li><a href="/technology/before_after/macintosh/">マッキントッシュ</a></li>
+									<li><a href="/technology/before_after/lifecare/">インテリア・ファニチャー・羽毛布団</a></li>
+									<li><a href="/technology/before_after/tenpyou/">天平の古代染めを洗う</a></li>
+									<li><a href="/technology/before_after/kimono-2/">百年昔の「きもの」を洗う</a></li>
+									<li class="PCpart">&nbsp;</li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline"><a href="/carementeh_search/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header01_w.png" alt="">Before&amp;After/概算お見積り実例集「さがす」</a></h3>
+							<h3 class="headline"><a href="/review/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header02_w.png" alt="">お客さまレビュー「きづく」</a></h3>
+							<h3 class="headline"><a href="/mypage/sns.html"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header03_w.png" alt="">ハッピー SNS「つなぐ」</a></h3>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="menu__first-level">
+				<a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer04.png" alt="特集・読みもの"><span>特集・読みもの</span></a>
+				<div class="menu__second-level" style="display: none;">
+					<div class="container">
+						<div class="menu__second-column">
+							<h3 class="headline"><a href="/knowledge/">おしゃれの雑学</a></h3>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline"><a href="/movie/">プロモーションビデオ</a></h3>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline"><a href="/detail/">こだわりのディテール</a></h3>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline"><a href="https://www.kyoto-happy.co.jp:8443/pdf/Manga_01.pdf?ver1.0" target="_blank">マンガで分かる「ケアメンテサービス」</a></h3>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline"><a href="/sachi/">WEB マガジン 幸(sachi)</a></h3>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="menu__first-level">
+				<a><img src="/wp/wp-content/themes/HAPPY_Dark/img/footer05.png" alt="会社情報・リクルート"><span>会社情報・リクルート</span></a>
+				<div class="menu__second-level" style="display: none;">
+					<div class="container">
+						<div class="menu__second-column">
+							<h3 class="headline">会社概要</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/corporate/company/profile/">企業情報</a></li>
+									<li><a href="/corporate/company/winning/">認定・受賞一覧</a></li>
+									<li><a href="/corporate/company/ip/">知的財産（特許・商標）</a></li>
+									<li><a href="/pdf/fukusyoku.pdf" target="_blank">服飾関連の皆様へ</a></li>
+									<li><a href="/pdf/kanren_brand.pdf" target="_blank">アパレル業の皆様へ</a></li>
+									<li><a href="/pdf/kanren_ryutu.pdf" target="_blank">流通業の皆様へ</a></li>
+									<li><a href="/pdf/kanren_kaden.pdf" target="_blank">洗濯機メーカーの皆様へ</a></li>
+									<li><a href="/privacy/">特定商取引法に基づく表記</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">メディア情報</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/corporate/media/media_list/">メディア報道特集</a></li>
+									<li><a href="/corporate/media/past/">過去の報道記録</a></li>
+									<li><a href="/corporate/media/lecture/">講演活動の記録</a></li>
+									<li><a href="/corporate/media/literary/">著作物一覧</a></li>
+								</ul>
+							</div>
+							<h3 class="headline">リクルート</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/corporate/recruit/cultivation/">人財育成について</a></li>
+									<li><a href="/corporate/recruit/staff/">ケアメンテスタッフの募集</a></li>
+									<li><a href="/corporate/recruit/executive/">経営幹部候補の募集</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">環境への取組み</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/corporate/csr/reuse/">自然循環型産業の創出</a></li>
+									<li><a href="/corporate/csr/weightlessness/">無重力バランス洗浄による環境保護</a></li>
+									<li><a href="/corporate/csr/world2007/">環境と洗浄の世界大会 2007 秋</a></li>
+									<li><a href="/corporate/csr/unicef/">ハッピーワールド助け合いプロジェクト</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__second-column">
+							<h3 class="headline">ヨーロッパ洗浄技術交流紀行</h3>
+							<div class="menu__second-body">
+								<ul>
+									<li><a href="/corporate/europe/2013_summer/">ヨーロッパ交流紀行 2013 初夏</a></li>
+									<li><a href="/corporate/europe/2012_autumn/">ヨーロッパ交流紀行 2012 初秋</a></li>
+									<li><a href="/corporate/europe/2006_summer/">ヨーロッパ交流紀行 2006 夏</a></li>
+									<li><a href="/corporate/europe/2006_spring/">ヨーロッパ交流紀行 2006 春</a></li>
+									<li><a href="/corporate/europe/2005_autumn/">ヨーロッパ交流紀行 2005 秋</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul></ul>
+</div>
+  <!--　/.footer_nav_sp -->
+
+
+  <script type="text/javascript" src="/wp/wp-content/themes/HAPPY_Dark/js/common.js"></script>
+  <script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/slick/slick.min.js'></script>
+  <script type='text/javascript'>
+    /* <![CDATA[ */
+    var theme_url = {
+      "template_directory_uri": "\/wp\/wp-content\/themes\/HAPPY_Dark"
+    };
+    /* ]]> */
+  </script>
+  <script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/js/slick_common.js'></script>  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+
+    var menuFlag = true;
+    $('.header_nav_common .header_tab').on('click', function() {
+      menuFlag = !menuFlag;
+      if(menuFlag){
+        $('.header_nav_common').css("top","0");
+      } else {
+        $('.header_nav_common').css("top","-95px");
+      }
+  	});
+
+    /*メルマガSP アコーディオン*/
+    $( document ).ready(function() {
+      if ($(window).width() < 1024) {
+        $(".contactTxt").click(function () {
+          $(this).toggleClass("active");
+        });
+      }
+    });
+
+    var str_count = 0;
+    $('div.counseling_txt_box').on('click', function() {
+
+      if ($("p", this).get((str_count+1))) {
+        $("p", this).eq(str_count).hide();
+        str_count += 1;
+        $("p", this).eq(str_count).show();
+      }
+
+
+    });
+
+  });
+  </script>
+	</body>
+</html>

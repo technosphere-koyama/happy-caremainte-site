@@ -1,0 +1,1307 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト　トップページ　*/
+
+header .sub-navi img.triangle{
+	left: 1048px;
+}
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/bg_mv.jpg) center center no-repeat;
+	background-size:cover;
+}
+
+table{
+	width: 100%;
+	border-collapse: collapse;
+}
+.LColumn{
+	min-height: 720px;
+	margin-bottom: 70px;
+}
+.section-imgCenter img{
+	margin-top: 0;
+}
+.smallTxt{
+	font-size: 11px;
+}
+
+
+/*企業情報 トップ*/
+.coIndex h2{
+	text-align:center;
+	font-size:40px;
+	margin-bottom:10px;
+}
+.coIndex h3{
+	text-align:center;
+	font-size:17px;
+	margin-bottom:45px;
+}
+.coIndex h4{
+	text-align:center;
+	margin-bottom:70px;
+}
+.coIndex .section-imgRight{
+	margin-bottom:100px;
+}
+.coIndex .section-imgRight p{
+	width:560px;
+}
+.coIndex .section-imgRight img{
+	width:500px;
+	height:300px;
+}
+.coIndex .section-imgRight .Rimages{
+	float:right;
+	width:500px;
+}
+
+.footerguide ul{
+	margin-bottom: 60px;
+}
+.footerguide li{
+	height: 240px;
+	margin-bottom: 1px;
+}
+.footerguide .fnavi1{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/menu1.jpg) right center no-repeat;
+	background-color: #86a3c9;
+}
+.footerguide .fnavi2{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/menu2.jpg) right center no-repeat;
+	background-color: #9fc9c1;
+}
+.footerguide .fnavi3{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/menu3.jpg) right center no-repeat;
+	background-color: #dcceb3;
+}
+.footerguide .fnavi4{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/menu4.jpg) right center no-repeat;
+	background-color: #83b2a1;
+}
+.footerguide .fnavi5{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/menu5.jpg) right center no-repeat;
+	background-color: #b8cdd0;
+}
+.footerguide .fnavi6{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/menu6.jpg) right center no-repeat;
+	background-color: #c6c4cf;
+}
+.footerguide li .fnaviwrap{
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%); /* Safari用 */
+	transform: translateY(-50%);
+}
+.footerguide .fnaviTtl{
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+	font-size: 25px;
+	line-height: 1.3;
+	color: #fff;
+	margin-bottom: 15px;
+}
+.footerguide p{
+	width: 400px;
+	font-size: 13px;
+	line-height: 1.6;
+}
+.footerguide .fnaviBtn{
+	margin-top: 15px;
+	width: 200px;
+	height: 40px;
+	background-color: #fff;
+	text-align: center;
+	font-size: 13px;
+}
+.footerguide .fnaviBtn a{
+	color: #666;
+	line-height: 40px;
+	display: block;
+}
+.footerguide .fnaviBtn a:hover{
+	color: #999;
+}
+
+
+/*企業情報*/
+.company table{
+	border: 1px solid #ddd;
+	border-top: none;
+	width: 100%;
+	line-height: 1.6;
+	margin-bottom: 10px;
+}
+.company th,.company td{
+	padding: 10px 20px;
+}
+.company th{
+	background: #f3f3f3;
+	border-top: 1px solid #ddd;
+	width: 25%;
+	font-weight: normal;
+	vertical-align: middle;
+}
+.company td{
+	border-left: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	width: 75%;
+}
+.company table div{
+	border: 1px solid #999;
+	padding: 10px;
+	margin: 10px 0;
+}
+.company table span{
+	background: #ddd;
+}
+
+.company .winningImg{
+	margin: 20px 0 40px;
+}
+.company .winningImg img{
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.company .winningImg img.winningImgR{
+	margin-right: 0;
+}
+.company h5{
+	font-weight: normal;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+}
+.company .winning{
+	margin: 30px 0 40px;
+}
+.company .winning.last{
+	margin-bottom: 0;
+}
+.company .winning .smallTxt{
+	display: block;
+}
+
+.company .ip{
+	margin-bottom: 40px;
+	overflow: hidden;
+}
+.company .ip.last{
+	margin-bottom: 0;
+}
+.company .ip h5{
+	font-weight: bold;
+}
+.company .ip dl{
+	margin-bottom: 20px;
+}
+.company .ip dt{
+	float: left;
+	clear: left;
+	width: 50%;
+}
+.company .ip dd{
+	margin-left: 50%;
+}
+.company .ip dt .IPimg{
+	width: 15px;
+	height: auto;
+	vertical-align: -1px;
+	margin-left: 5px;
+}
+
+
+/*メディア報道特集*/
+#Contents.media .LColumn{
+	min-height: 500px;
+}
+
+.media .listImg{
+	margin-bottom: 90px;
+}
+.media .listImg img{
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+.media .listImg img.listImgR{
+	margin-right: 0;
+}
+.media h5{
+	font-weight: normal;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 15px;
+}
+.media .mediaList{
+	margin-bottom: 140px;
+}
+.media .mediaList.last{
+	margin-bottom: 0;
+}
+.media .mediaList h2{
+	margin-bottom: 20px;
+}
+.media .mediaList h3{
+	font-size: 14px;
+}
+.media .mediaList p{
+	margin-bottom: 0;
+}
+.media .listBook p{
+	line-height: 1.6;
+}
+.media .listBook img{
+	width: 10%;
+	height: auto;
+	margin-top: 0;
+}
+.media .mediaPrice{
+	margin-bottom: 70px;
+}
+.media .mediaPrice .mediaPriceWrap{
+	margin-bottom: 50px;
+	overflow: hidden;
+}
+.media .mediaPrice .mediaPriceWrap h5{
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+}
+.media .mediaPrice .mediaPriceImg{
+	float: right;
+	width: 40%;
+}
+.media .mediaPrice .mediaPriceWrap img{
+	margin-bottom: 0;
+	margin-left: 40px;
+	float: right;
+	clear: right;
+	width: 100%;
+	height: auto;
+}
+.media .mediaPrice .mediaPriceWrap .mediaPriceTxt{
+	float: left;
+	width: 60%;
+}
+.media .mediaPrice .mediaPriceWrap p{
+	margin-bottom: 10px;
+	line-height: 1.8;
+}
+.media .mediaPrice .mediaPriceWrap dl{
+	text-align: left;
+	width: 90%;
+	font-size: 12px;
+}
+.media .mediaPrice .mediaPriceWrap dt{
+	float: left;
+	clear: left;
+}
+.media .mediaPrice .mediaPriceWrap dd{
+	float: right;
+	text-align: right;
+}
+.media .mediaPrice .mediaPriceWrap .total{
+	font-style: italic;
+}
+.media .mediaSale{
+	background: #f4f4f4;
+	padding: 20px;
+	font-size: 13px;
+}
+.media .mediaSale h3{
+	color: #a93c3c;
+	margin-bottom: 0;
+}
+.media .mediaSale h4{
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+.media table.mediaTable{
+	width: 100%;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+.media table.mediaTable th{
+	background: #f3f3f3;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	font-weight: normal;
+	text-align: left;
+	padding: 8px 15px;
+	line-height: 1.6;
+}
+.media table.mediaTable td{
+	text-align: left;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	padding: 8px 15px;
+	line-height: 1.6;
+	width: 20%;
+}
+.media table.mediaTable td:nth-child(2){
+	width: 55%;
+}
+.media table.mediaTable td:nth-child(3){
+	width: 35%;
+}
+
+.media table.mediaTable.lecture td{
+	width: 20%;
+}
+.media table.mediaTable.lecture td:nth-child(2){
+	width: 80%;
+}
+
+.media .lectureReport p{
+	margin-bottom: 40px;
+}
+.media .lectureReport img{
+	width: 32.9%;
+	height: auto;
+}
+
+ul.meeting_photo{
+	margin: 50px 0 20px;
+	clear: both;
+	display: inline-block;
+}
+ul.meeting_photo li {
+	float: left;
+	margin: 0 20px 20px 0;
+}
+ul.meeting_photo li:nth-child(3n) {
+	margin: 0 0 20px 0;
+}
+ul.meeting_photo li img{
+	width: 225px;
+	height: auto;
+}
+
+.lectureReport_backBtn{
+	width: 240px;
+	margin: 60px auto 0;
+	font-size: 13px;
+	background: #fafafa;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.lectureReport_backBtn a{
+	display: block;
+	color: #333;
+	text-align: center;
+	padding: 10px 0 10px 20px;
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/mypage/back_arrow.png) no-repeat 16px 16px;
+}
+.lectureReport_backBtn a:hover{
+	color: #9a7339;
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/mypage/back_arrow_on.png) no-repeat 16px 16px;
+}
+
+
+.media .literary{
+	margin-bottom: 100px;
+}
+.media .literary.last{
+	margin-bottom: 0;
+}
+.media .literary.last p{
+	overflow: hidden;
+	font-size: 13px;
+	line-height: 1.8;
+}
+.media .literary img{
+	width: 20%;
+	height: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.media .literary h6{
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 1.6;
+}
+.media .literary .section-imgLeft{
+	margin-bottom: 30px;
+}
+.media .literary .literaryTxt{
+	margin-top: 20px;
+}
+.media .literary p{
+	line-height: 2;
+	margin-bottom: 0;
+}
+.media .literary h4{
+	margin-bottom: 10px;
+}
+.media .literary .smallTxt{
+	display: block;
+	line-height: 2;
+}
+
+
+/*リクルート*/
+.recruit h4{
+	margin-bottom: 30px;
+}
+.recruit .recruitInfo h5{
+	font-weight: bold;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+}
+.recruit .recruitInfo div{
+	margin-bottom: 40px;
+}
+.recruit .recruitInfo div.last{
+	margin-bottom: 0;
+}
+.recruit .box{
+	padding: 30px 20px 0 20px;
+	margin: 0 0 50px;
+	border: 1px solid #ddd;
+}
+
+
+/*環境への取り組み*/
+.csr span{
+	color: #a93c3c;
+}
+.csr .weightlessness h2{
+	margin-top: 70px;
+}
+.csr h4{
+	margin-bottom: 10px;
+}
+.csr .section-imgRight p,
+.csr .section-imgCenter p{
+	margin-bottom: 0;
+}
+.csr .section-imgRight.mgB,
+.csr .section-imgCenter.mgB{
+	margin-bottom: 50px;
+}
+.csr .csrWeightlessness .txtBGC{
+	background: #e8cda5;
+	color: #333;
+	font-size: 12px;
+	line-height: 3;
+	padding: 5px 10px;
+}
+.csr .csrWeightlessness h3{
+	font-size: 15px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+}
+.csr .csrWeightlessness p{
+	margin-bottom: 40px;
+}
+.csr .csrPoint{
+	background: #f3f3f3;
+	padding: 10px 20px;
+}
+.csr .csrPoint img{
+	width: 28%;
+	height: auto;
+}
+.csr .csrPoint p{
+	margin-bottom: 0;
+	font-size: 12px;
+}
+.csr .txtIndent li{
+	padding-left: 2em;
+    text-indent: -2em;
+	margin-bottom: 10px;
+}
+
+.csr .world2007 .section-imgCenter{
+	margin-top: 40px;
+}
+.csr .world2007 p{
+	margin-bottom: 70px;
+}
+.csr .world2007Ttl h2{
+	margin: 0 0 10px;
+}
+
+.csr .unicef h3{
+	margin-top: 40px;
+}
+.csr .unicef .section-imgCenter img{
+	width: 90%;
+	margin: -20px auto 30px;
+}
+.csr .unicef .section-imgRight img{
+	width: 250px;
+}
+.csr .Donation{
+	margin: 40px 0 0;
+	font-size: 110%;
+	line-height: 1.6em;
+}
+.csr .Donation li{
+	width: 100%;
+	margin: 10px 0 0;
+	padding: 10px 0 0;
+	border-top: #999 solid 1px;
+	display: table;
+}
+.csr .Donation li .left{
+	float: left;
+}
+.csr .Donation li .right{
+	float: right;
+	font-size: 80%;
+	color: #666;
+}
+.csr .Donation li span{
+	font-size: 80%;
+	color: #666;
+}
+
+/*ヨーロッパ交流紀行*/
+.europe .section-imgCenter img{
+	margin-bottom: 20px;
+}
+.europeIndex{
+	margin: 20px 0 60px;
+	background: #f3f3f3;
+	padding: 10px 20px;
+	line-height: 1.8;
+}
+.europeIndex dd{
+	margin-bottom: 15px;
+}
+.europeIndex dd:last-child{
+	margin-bottom: 0;
+}
+.europe h4{
+	margin-bottom: 20px;
+}
+.europe .section-imgRight,
+.europe .section-imgCenter{
+	margin-bottom: 70px;
+}
+.europe .section-imgRight.last,
+.europe .section-imgCenter.last{
+	margin-bottom: 0;
+}
+.europe .section-imgRight p,
+.europe .section-imgCenter p{
+	margin-bottom: 0;
+}
+.europe .section-imgRight img{
+	width: 220px;
+	height: auto;
+}
+.europe-p {
+	margin-bottom: 40px;
+}
+.europe-p-b {
+	padding-bottom: 70px;
+}
+
+}
+
+
+@media screen and (max-width:640px){
+/*======================
+SPレイアウト　トップページ*/
+
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/bg_mv.jpg) center center no-repeat;
+	background-size:auto 90px;
+}
+
+.footernavi .link_menu{
+	border-top: 1px solid #eee;
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/icon_arrow.png) 94.5% 14px no-repeat;
+	background-size: 2%;
+}
+.footernavi .link_menu a{
+	display: block;
+	padding: 0 5%;
+}
+.footernavi .link_menu.on a{
+	color: #a87f42;
+}
+
+.pagettl-sub{
+	margin-top: -10px;
+	margin-bottom: 30px;
+	font-weight: bold;
+	line-height: 1.6;
+}
+.smallTxt{
+	font-size: 10px !important;
+}
+
+
+/*企業情報*/
+#Contents.coIndex{
+	margin-bottom:0;
+}
+.coIndex h2{
+	margin-bottom:5px;
+	line-height:1.5;
+	margin-top:30px;
+}
+.coIndex h3{
+	font-size:13px;
+	margin-bottom:5px;
+}
+.coIndex h4{
+	font-size:10px;
+	text-align:center;
+	margin-bottom:30px;
+}
+.coIndex .section-imgRight{
+	margin-bottom:40px;
+}
+.coIndex .section-imgRight img{
+	margin-bottom:15px;
+}
+
+.coIndex .footerguide ul{
+	margin-bottom: 40px;
+}
+.coIndex .footerguide li{
+	margin-bottom: 1px;
+	height: 120px;
+}
+.coIndex .footerguide a{
+	display: block;
+}
+.coIndex .footerguide .fnavi1{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/corporate/menu1.jpg) right center no-repeat;
+	background-size: 100%;
+	background-color: #86a3c9;
+}
+.coIndex .footerguide .fnavi2{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/corporate/menu2.jpg) right center no-repeat;
+	background-size: 100%;
+	background-color: #9fc9c1;
+}
+.coIndex .footerguide .fnavi3{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/corporate/menu3.jpg) right center no-repeat;
+	background-size: 100%;
+	background-color: #dcceb3;
+}
+.coIndex .footerguide .fnavi4{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/corporate/menu4.jpg) right center no-repeat;
+	background-size: 100%;
+	background-color: #83b2a1;
+}
+.coIndex .footerguide .fnavi5{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/corporate/menu5.jpg) right center no-repeat;
+	background-size: 100%;
+	background-color: #b8cdd0;
+}
+.coIndex .footerguide .fnavi6{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/corporate/menu6.jpg) right center no-repeat;
+	background-size: 100%;
+	background-color: #c6c4cf;
+}
+.coIndex .footerguide li .fnaviwrap{
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%); /* Safari用 */
+	transform: translateY(-50%);
+}
+.coIndex .footerguide .fnaviTtl{
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1.3;
+	color: #fff;
+	margin-bottom: 5px;
+}
+.coIndex .footerguide p{
+	width: 60%;
+	font-size: 9px;
+	line-height: 1.5;
+}
+
+
+/*企業情報*/
+.company table{
+	width: 100%;
+	font-size: 13px;
+	line-height: 1.8;
+}
+.company th,.company td{
+	display: block;
+	text-align: left;
+}
+.company th{
+	font-weight: normal;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 5px;
+}
+.company td{
+	margin-bottom: 20px;
+}
+.company table div{
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 10px 0;
+}
+.company table span{
+	background: #ddd;
+}
+
+.company .winningImg{
+	width: 100%;
+	margin: 10px 0 20px;
+}
+.company .winningImg img{
+	width: 49%;
+	margin-right: 2%;
+	margin-bottom: 2%;
+}
+.company .winningImg img.winningImgR{
+	margin-right: 0;
+}
+.company h5{
+	font-weight: normal;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+}
+.company .winning{
+	font-size: 13px;
+	line-height: 1.8;
+	margin: 30px 0 40px;
+}
+.company .winning.last{
+	margin-bottom: 0;
+}
+.company .winning a{
+	color: #a9803c;
+	text-decoration: underline;
+}
+.company .winning .smallTxt{
+	display: block;
+	margin: 5px 0;
+}
+
+.company .ip{
+	margin-bottom: 20px;
+	overflow: hidden;
+	font-size: 13px;
+}
+.company .ip.last{
+	margin-bottom: 0;
+}
+.company .ip h5{
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+.company .ip dl{
+	margin-bottom: 20px;
+}
+.company .ip dt{
+	margin: 5px 0;
+}
+.company .ip dd{
+	margin-bottom: 15px;
+}
+.company .ip dt .IPimg{
+	width: 15px;
+	height: auto;
+	vertical-align: -1px;
+	margin-left: 5px;
+}
+
+
+/*メディア報道特集*/
+.media .listImg{
+	margin-bottom: 70px;
+}
+.media .listImg img{
+	width: 32%;
+	margin-right: 2%;
+	margin-bottom: 5px;
+}
+.media .listImg a:nth-child(3n) img{
+	margin-right: 0;
+}
+.media h5{
+	font-weight: normal;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 15px;
+}
+.media .mediaList{
+	margin-bottom: 100px;
+}
+.media .mediaList.last{
+	margin-bottom: 0;
+}
+.media .mediaList h2{
+	margin-bottom: 10px;
+}
+.media .mediaList h3{
+	font-size: 12px;
+}
+.media .mediaList p{
+	margin-bottom: 0;
+}
+.media .mediaList .section-imgRight img{
+	float: right;
+	margin: 0 0 10px 10px;
+	width: 34%;
+}
+.media .mediaList .section-imgRight img.imgCenter{
+	width: 100%;
+}
+.media .listBook{
+	margin-top: 30px;
+}
+.media .listBook h5{
+	font-size: 13px;
+}
+.media .listBook p{
+	line-height: 1.6;
+	font-size: 11px;
+}
+.media .listBook p a{
+	color: #a9803c;
+	text-decoration: underline;
+}
+.media .listBook img{
+	width: 20%;
+	height: auto;
+	margin-top: 0;
+	float: left;
+	margin-right: 20px;
+}
+.media .mediaPrice{
+	margin-top: 30px;
+	font-size: 11px;
+}
+.media .mediaPrice .mediaPriceWrap{
+	margin-bottom: 40px;
+}
+.media .mediaPrice .mediaPriceWrap h5{
+	font-size: 12px;
+	line-height: 1.6;
+}
+.media .mediaPrice .mediaPriceWrap .mediaPriceImg img{
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+}
+.media .mediaPrice .mediaPriceWrap .mediaPriceTxt p{
+	margin-bottom: 5px;
+	font-size: 11px;
+}
+.media .mediaPrice .mediaPriceWrap .mediaPriceTxt dl{
+	line-height: 1.8;
+	text-align: left;
+	overflow: hidden;
+}
+.media .mediaPrice .mediaPriceWrap .mediaPriceTxt dl:after{
+	clear: both;
+}
+.media .mediaPrice .mediaPriceWrap .mediaPriceTxt dt{
+	float: left;
+	clear: left;
+	width: 80%;
+}
+.media .mediaPrice .mediaPriceWrap .mediaPriceTxt dd{
+	float: right;
+	text-align: right;
+}
+.media .mediaPrice .mediaPriceWrap .total{
+	font-style: italic;
+}
+.media .mediaPrice .mediaPriceWrap.mgB0{
+	margin-bottom: 0;
+}
+.media .mediaPrice .mediaPriceWrap.last img{
+	margin-bottom: 0;
+}
+.media .mediaSale{
+	background: #f4f4f4;
+	padding: 15px;
+	font-size: 13px;
+}
+.media .mediaSale h3{
+	color: #a93c3c;
+	margin-bottom: 10px;
+	line-height: 1.6;
+}
+.media .mediaSale h4{
+	margin-bottom: 20px;
+	font-size: 18px;
+	text-align: center;
+	line-height: 1.6;
+}
+
+.media table.mediaTable{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.media table.mediaTable.last{
+	margin-bottom: 0;
+}
+.media table.mediaTable th,
+.media table.mediaTable td{
+	display: block;
+}
+.media table.mediaTable th{
+	font-weight: bold;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+}
+.media table.mediaTable td{
+	line-height: 1.6;
+}
+.media table.mediaTable td:nth-child(3){
+	margin-bottom: 15px;
+	color: #999;
+}
+.media table.mediaTable a{
+	color: #a9803c;
+	text-decoration: underline;
+}
+
+.media .lectureMB{
+	margin-bottom: 40px;
+}
+.media table.mediaTable.lecture td{
+	font-weight: bold;
+}
+.media table.mediaTable.lecture td:nth-child(2){
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+.media table.mediaTable.lecture.last{
+	margin-bottom: 0;
+}
+
+.media .lectureReport p{
+	margin-bottom: 10px;
+}
+.media .lectureReport img{
+	width: 100%;
+	height: auto;
+	margin-bottom: 5px;
+}
+
+ul.meeting_photo{
+	margin: 50px 0 20px;
+}
+ul.meeting_photo li {
+	margin: 0 0 20px 0;
+}
+ul.meeting_photo li img{
+	width: 100%;
+	height: auto;
+}
+.lectureReport_backBtn{
+	width: 100%;
+	margin: 30px auto 0;
+	font-size: 12px;
+	background: #fafafa;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+.lectureReport_backBtn a{
+	display: block;
+	color: #333;
+	text-align: center;
+	padding: 8px 0;
+}
+
+
+.media .literary{
+	margin-bottom: 70px;
+	overflow: hidden;
+}
+.media .literary.last{
+	margin-bottom: 0;
+}
+.media .literary a{
+	color: #a9803c;
+	text-decoration: underline;
+}
+.media .literary.last p{
+	font-size: 11px;
+	line-height: 1.8;
+}
+.media .literary img{
+	width: 20%;
+	height: auto;
+	float: left;
+	margin-right: 20px;
+}
+.media .literary h6{
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 1.4;
+}
+.media .literary .section-imgLeft{
+	margin-bottom: 30px;
+}
+.media .literary .literaryTxt{
+	clear: both;
+	padding-top: 10px;
+}
+.media .literary p{
+	line-height: 2;
+	margin-bottom: 0;
+}
+.media .literary h4{
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.media .literary .smallTxt{
+	display: block;
+	line-height: 2;
+}
+
+
+/*リクルート*/
+.recruit .section-imgCenter img{
+	margin-bottom: 20px;
+}
+.recruit .section-imgRight img{
+	float: right;
+	margin: 0 0 10px 10px;
+	width: 34%;
+}
+.recruit .section-imgLeft img{
+	float: left;
+	margin: 0 10px 10px 0;
+	width: 34%;
+}
+.recruit .LColumn p{
+	margin-bottom: 40px;
+}
+
+.recruit h4{
+	font-size: 14px;
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+.recruit .tright{
+	line-height: 1.6;
+	margin-top: -30px;
+}
+.recruit .recruitInfo{
+	margin: 60px 0 0;
+}
+.recruit .recruitInfo h5{
+	font-size: 13px;
+	font-weight: bold;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+}
+.recruit .recruitInfo div{
+	font-size: 13px;
+	line-height: 1.8;
+	margin-bottom: 30px;
+}
+.recruit .recruitInfo div.last{
+	margin-bottom: 0;
+}
+.recruit .box{
+	padding: 20px 10px 0 10px;
+	margin: 0 0 40px;
+	border: 1px solid #ddd;
+}
+
+
+
+/*環境への取り組み*/
+.csr span{
+	color: #a93c3c;
+}
+.csr .weightlessness h2{
+	margin-top: 40px;
+}
+.csr h4{
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.csr .section-imgRight p,
+.csr .section-imgCenter p{
+	margin-bottom: 0;
+}
+.csr .section-imgRight.mgB,
+.csr .section-imgCenter.mgB{
+	margin-bottom: 50px;
+}
+.csr .csrWeightlessness .txtBGC{
+	background: #e8cda5;
+	color: #333;
+	font-size: 12px;
+	line-height: 3;
+	padding: 5px 10px;
+}
+.csr .csrWeightlessness h3{
+	text-align: left;
+	font-size: 14px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+}
+.csr .csrWeightlessness p{
+	margin-bottom: 20px;
+}
+.csr .csrPoint{
+	background: #f3f3f3;
+	padding: 10px 20px 20px;
+}
+.csr .csrPoint h4{
+	font-size: 15px;
+}
+.csr .csrPoint img{
+	margin-bottom: 10px;
+}
+.csr .csrPoint p{
+	margin-bottom: 0;
+	font-size: 12px;
+	line-height: 1.8;
+}
+.csr .txtIndent li{
+	font-size: 13px;
+	line-height: 1.8;
+	padding-left: 2em;
+    text-indent: -2em;
+	margin-bottom: 10px;
+}
+.csr .weightlessnessImg{
+	margin: 30px 0;
+}
+.csr h4.mgB70{
+	margin-bottom: 50px;
+}
+
+.csr .world2007 .section-imgCenter img{
+	margin: 10px 0 20px;
+}
+.csr .world2007 .section-imgRight img{
+	float: right;
+	margin: 5px 0 10px 10px;
+	width: 30%;
+}
+.csr .world2007 h3{
+	margin-top: 40px;
+}
+
+.csr .moribito .section-imgCenter img{
+	margin: 10px 0;
+}
+.csr .moribito .section-imgCenter img.imgTop{
+	margin-top: 0;
+}
+
+.csr .unicef h3{
+	margin-top: 40px;
+}
+.csr .unicef .section-imgRight img{
+	float: right;
+	margin: 5px 0 10px 10px;
+	width: 40%;
+}
+.csr .unicef .section-imgCenter img{
+	margin: 0 0 20px;
+}
+.csr .Donation{
+	margin: 40px 0 0;
+	font-size: 120%;
+	line-height: 1.6em;
+}
+.csr .Donation li{
+	width: 100%;
+	margin: 10px 0 0;
+	padding: 10px 0 0;
+	border-top: #999 solid 1px;
+	display: table;
+}
+.csr .Donation li .right{
+	font-size: 80%;
+	color: #666;
+}
+.csr .Donation li span{
+	font-size: 80%;
+	color: #666;
+}
+
+
+/*ヨーロッパ交流紀行*/
+.europeIndex{
+	margin: 20px 0 40px;
+	background: #f3f3f3;
+	padding: 10px 15px;
+	line-height: 1.8;
+}
+.europeIndex a{
+	color: #a9803c;
+	text-decoration: underline;
+}
+.europeIndex dd{
+	margin-bottom: 10px;
+}
+.europeIndex dd:last-child{
+	margin-bottom: 0;
+}
+.europe h4{
+	font-size: 14px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.europe .section-imgCenter img,
+.europe .section-imgRight img{
+	margin-bottom: 10px;
+}
+.europe .section-imgRight,
+.europe .section-imgCenter{
+	overflow: hidden;
+}
+.europe .section-imgRight p,
+.europe .section-imgCenter p{
+	margin-bottom: 20px;
+}
+.europe .section-imgRight.mgB,
+.europe .section-imgCenter.mgB,
+.europe p.mgB{
+	margin-bottom: 40px;
+}
+.europe p.last{
+	margin-bottom: 0;
+}
+.europe-p {
+	padding-bottom: 20px;
+}
+.europe-p-b {
+	padding-bottom: 40px;
+}
+.section-imgRight .europe-simg {
+	float: right;
+	margin: 5px 0 10px 10px;
+	width: 40%;
+}
+.europe .section-imgRight.last p,
+.europe .section-imgCenter.last p{
+	margin-bottom: 0;
+}
+
+}

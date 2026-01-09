@@ -1,0 +1,17 @@
+// https://www.kyoto-happy.co.jp/_assets/css/detail.css
+
+#detail {
+  .section {
+    @include section-grid(2, 3);
+  }
+  section {
+    clear: both;
+  }
+  .btn {
+    margin-top: 1em;
+    margin-bottom: $verticalGap;
+    a {
+      @include contentButton;
+    }
+  }
+}

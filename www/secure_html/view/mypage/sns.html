@@ -1,0 +1,488 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>つなぐ ＜Happy SNS＞｜ハッピー ケアメンテ&reg;</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns_dummy.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+<script src="/_assets/js/jquery.darktooltip.js"></script>
+
+<link rel="stylesheet" href="/_assets/css/lightbox.css">
+    <script src="/_assets/js/lightbox.js"></script>
+    <script src="/_assets/js/tooltipster.bundle.min.js"></script>
+
+<script type="text/javascript">
+  function PxTextareaAdjuster( textarea ){
+    var textarea = textarea;
+    textarea.style.overflow='hidden';
+    var defaultHeight = textarea.offsetHeight;
+    function adjustTa(){
+      textarea.style.height = defaultHeight+'px';
+      var tmp_sh = textarea.scrollHeight;
+      while( tmp_sh > textarea.scrollHeight ){
+        tmp_sh = textarea.scrollHeight;
+        textarea.scrollHeight ++;
+      }
+      if( textarea.scrollHeight > textarea.offsetHeight ){
+        textarea.style.height = textarea.scrollHeight+'px';
+      }
+    }
+    function resetTa(){
+      textarea.scrollTop = 0;
+      textarea.style.height = defaultHeight+'px';
+    }
+    textarea.onfocus  = function(){ adjustTa(); }
+    textarea.onkeyup  = function(){ adjustTa(); }
+    textarea.onchange = function(){ adjustTa(); resetTa(); }
+    textarea.onblur   = function(){ adjustTa(); resetTa(); }
+  }//PxTextareaAdjuster()
+</script>
+<style>
+    @media print, screen and (min-width:641px){
+        .mypageArea .postingForm .postingImgBtn input[type="file"]{
+            margin-bottom: 5px;
+            width: 100%;
+        }
+        .mypageArea .postingForm .postingImgBtn input[type="file"]:last-child{
+            margin-bottom: 0;
+        }
+        .mypageArea .postingForm .postingImgBtn.privacy{
+            float: left;
+        }
+    }
+    @media screen and (max-width:640px){
+        .mypageArea .postingForm .postingBottom:nth-child(odd){
+            float: left;
+    width: 65%;
+        }
+        .mypageArea .postingForm .postingBottom:nth-child(even){
+            float: right;
+    width: 30%;
+        }
+        .mypageArea .postingForm .postingBottom .postingImgBtn{
+            float: none;
+            display: inherit;
+            margin-bottom: 5px;
+        }
+    }
+</style>
+</head>
+<body id="mypage" class="sns_top">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	<!--　/header_nav　-->
+	
+	<div id="Contents">
+    <div class="mainvisual__section">
+      <div><img src="img/sns_tit_b.png" alt="Happy_SNS"><br><p>つなぐ</p></div>
+    </div>
+    <div class="logoutArea">
+      <div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+    </div>
+    <div id="pankuzu-wrapp">
+      <div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu no-arrow">つなぐ ＜Happy SNS＞</p></div>
+    </div>
+    <div class="mypageNavi PCpart">
+      <ul>
+        <li class="current"><a href="/mypage/sns.html">トップ</a></li>
+        <li><a href="/mypage/friend/">フレンド</a></li>
+        <li><a href="/community/">コミュニティ</a></li>
+        <li><a href="/mypage/message/">メッセージ</a></li>
+        <li><a href="<?php echo $this->get("user_link"); ?>">プロフィール</a></li>
+      </ul>
+    </div>
+    
+    <div class="mypageHead SPpart">
+      <ul>
+        <li class="current"><a href="/mypage/sns.html"><span>トップ</span></a></li>
+        <li><a href="/mypage/friend/"><span>フレンド</span></a></li>
+        <li><a href="/community/"><span>コミュニティ</span></a></li>
+        <li><a href="/mypage/message/"><span>メッセージ</span></a></li>
+        <li><a href="<?php echo $this->get("user_link"); ?>"><span>プロフィール</span></a></li>
+      </ul>
+    </div>
+    <div class="mypageArea">
+      <div id="mypagetab" class="mypageMain">
+        <!-- mainSide -->
+        <div id="profile" class="mainSide tab_contents">
+          <div class="userProfile">
+            <div class="userAvatar"><a href="<?php echo $this->get("user_link"); ?>"><img src="<?php echo $this->get("g_avatar"); ?>?t=<?php echo time() ?>" alt="<?php echo $this->get("g_nickname") ?>"></a></div>
+            <div class="userTxt">
+              <div class="userName"><?php echo $this->get("g_nickname") ?></div>
+              <div class="userIntro"><?php echo $this->get("g_comment") ?></div>
+              <!--<div class="userNumber">お客様番号：085479</div>
+              <div class="userPoint">ハッピーポイント：0ポイント</div>
+              <div class="userNumber">デポジット残高：0円</div>-->
+            </div>
+          </div>
+          <div class="userProfile2">
+            <div class="userAvatarBtn"><a href="/mypage/edit/" onclick="">プロフィールを変更</a></div>
+            <form name="form_thumb" method="POST" action="./avatar.html" enctype="multipart/form-data">
+              <!--<input type="hidden" name="token" value="ec25a5274d67f8b0fa82b049569c9829b177cf097ce6981c3695438919517a05">-->
+              <input type="hidden" name="token" value="<?php echo SESSION::read('EXPIRES.ORIGINAL_TOKEN'); ?>">
+              <input class="btn-hidden" type="file" name="avatar" value="" style="display: none;">
+              <div class="userAvatarBtn btn-open"><a href="javascript:void(0)" onclick="">写真を変更</a></div>
+              <div class="userAvatarBtn btn-hidden" style="display: none;"><a href="javascript:void(0)" onclick="document.form_thumb.submit()">変更する</a></div>
+            </form>
+          </div>
+          <!--<div class="userKarte">
+            <h5>あなたの電子カルテ</h5>
+            <div><a href="/mypage/history/">過去のケアメンテご利用履歴</a></div>
+            <div><a href="/mypage/ordered/">ただいまのお預かり品</a></div>
+            <div><a href="/mypage/wardrobe/">ワードローブお預かり品</a></div>
+            <br />
+            <b>Warning</b>:  Use of undefined constant html_mypage_navi_sp - assumed 'html_mypage_navi_sp' (this will throw an Error in a future version of PHP) in <b>/var/www/html/happy-dev/view/mypage/sns.html</b> on line <b>162</b><br />
+          </div>-->
+          <div class="userFriends">
+            <h5>フレンド</h5>
+            <div class="userFriendsInfo">
+              <div class="userFriendsImg"><a href="/profile/?uid=happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhapp"><img src="/images/user/happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhapp/avatar.jpg" alt="Happyケアメンテ" title="Happyケアメンテ"></a></div>
+              <div class="userFriendsName"><a href="/profile/?uid=happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhapp">Happyケアメンテ</a></div>
+            </div>
+            <div class="userFriendsBtn"><a href="/mypage/friend/">フレンド一覧</a></div>
+            <div class="userFriendsBtn"><a href="/mypage/friend/search.html">フレンドを探す</a></div>
+          </div>
+          <div class="userCommunity">
+            <h5>コミュニティ</h5>
+            <div class="userCommunityTitle">参加コミュニティ一覧</div>
+            <div class="userCommunityBtn1"><a href="/mypage/community/">参加コミュニティ一覧</a></div>
+            <div class="userCommunityBtn2"><a href="/community/">コミュニティを探す</a></div>
+            <div class="userCommunityAdd"><a href="/community/form.html">コミュニティを作成する</a></div>
+          </div>
+          <div class="unreadMsg">
+            <div class="unreadMsgTxt"><a href="/mypage/message/">メッセージ</a></div>
+          </div>
+          <div class="mypageuse">
+            <div class="mypageuseTxt"><a href="/mypageuse/use_sns/" target="_blank">マイページの操作方法はこちら</a></div>
+          </div>
+            <?php $publicGadget->get_news(); /* 右カラムのお知らせ */ ?>
+        </div><!--/mainSide-->
+        <div id="post" class="mainContents tab_contents active">
+          <div class="popupModal1">
+            <a href="/snsprivacy/"><i class="far fa-clone"></i> <u>投稿に関するご注意とお願い</u></a>
+          </div>
+          <form id="form_1" name="form01" method="POST" action="sns.html" enctype="multipart/form-data">
+            <div class="postingForm">
+              <textarea name="comment" placeholder="投稿を入力" style="overflow: hidden auto; resize: none; min-height: 150px; height: 150px;"></textarea>
+              <div class="PCpart">
+                <div class="postingBottom">
+                  <div class="postingImgBtn">
+                    <input type="file" name="timeline_file[]" accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/mp4, video/quicktime, video/mpeg, video/ogv, image/*" display="inline" role="button" tabindex="0">
+                    <input type="file" name="timeline_file[]" accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/mp4, video/quicktime, video/mpeg, video/ogv, image/*" display="inline" role="button" tabindex="0">
+                    <input type="file" name="timeline_file[]" accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/mp4, video/quicktime, video/mpeg, video/ogv, image/*" display="inline" role="button" tabindex="0">
+                  </div>
+                  <div class="postingImgBtn privacy">
+                    <label>
+                      <select id="private" name="publication">
+                        <option value="1">全員に公開</option>
+                        <option value="2">フレンドのみ</option>
+                        <option value="3">自分のみ</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="postingBtnArea"><button type="submit" value=""><span>投稿する</span></button></div>
+                </div>
+              </div>
+              <div class="SPpart">
+                <div class="postingBottom">
+                  <div class="postingImgBtn"><input type="file" name="timeline_file[]" accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/mp4, video/quicktime, video/mpeg, video/ogv, image/*" display="inline" role="button" tabindex="0"></div>
+                  <div class="postingImgBtn"><input type="file" name="timeline_file[]" accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/mp4, video/quicktime, video/mpeg, video/ogv, image/*" display="inline" role="button" tabindex="0"></div>
+                  <div class="postingImgBtn"><input type="file" name="timeline_file[]" accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/mp4, video/quicktime, video/mpeg, video/ogv, image/*" display="inline" role="button" tabindex="0"></div>
+                </div>
+                <div class="postingBottom">
+                  <div class="postingImgBtn privacy">
+                    <label>
+                      <select id="private" name="publication">
+                        <option value="1">全員に公開</option>
+                        <option value="2">フレンドのみ</option>
+                        <option value="3">自分のみ</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="postingBtnArea"><button type="submit" value=""><span>投稿する</span></button></div>
+                </div>
+              </div>
+            </div><!--/postingForm-->
+          </form>
+          <?php $thread_ids = $this->get("community_match"); ?>
+                    <?php foreach ($this->get("timeline_array") AS $tlValue) { ?>
+                        <div class="postingArea">
+                            <div class="userAvatar"><a href="/community/detail.html?tid=<?php echo $tlValue['thread_id'] ?>"><img src="<?php echo $tlValue['avatar'] ?>?t=<?php echo time() ?>" alt="<?php echo $tlValue['nickname'] ?>"></a></div>
+                            <div class="userTxt">
+                                <div class="userName"><a href="/profile/?uid=<?php echo $tlValue['system_id'] ?>"><?php echo $tlValue['nickname'] ?></a></div>
+                                <div class="postingTime"><?php echo $tlValue['update_time'] ?></div>
+                                <?php if (!StaticFunction::is_empty($tlValue['thread_id'])) { ?>
+                                    <div class="userName2">コミュニティ名：<a href="/community/detail.html?tid=<?php echo $tlValue['thread_id'] ?>"><?php echo $tlValue['thread_name'] ?></a></div>
+                                <?php } ?>
+
+                                <?php if ($tlValue['is_my_post']) { // 自分のタイムライン ?>
+                                    <div id="def-<?php echo $tlValue['prefix'] ?>_<?php echo $tlValue['mypage_id'] ?>" class="postingMenu" data-tooltip="#html-<?php echo $tlValue['prefix'] ?>_<?php echo $tlValue['mypage_id'] ?>"><a aria-label="削除する" href="#" aria-haspopup="true" aria-expanded="false" rel="toggle" role="button"></a></div>
+                                    <div id="html-<?php echo $tlValue['prefix'] ?>_<?php echo $tlValue['mypage_id'] ?>" style="display:none;">
+                                        <!--												<a href="./delete.html?tl_id=<?php echo $tlValue['mypage_id'] ?>&token=<?php echo SESSION::read('EXPIRES.ORIGINAL_TOKEN'); ?>">削除する</a>-->
+                                        <!--<a href="#inline-content" class="inline">削除する</a>-->
+                                        <a href="javascript:void(0)" class="edit-timeline" rel="<?php echo $tlValue['prefix'] ?>_<?php echo $tlValue['mypage_id'] ?>">編集・削除</a>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                            <div class="target_<?php echo $tlValue['prefix'] ?>_<?php echo $tlValue['mypage_id'] ?>">
+                                <div class="postingTxt"><?php echo $tlValue['text_view']; ?></div>
+                                <?php if ($tlValue['is_my_post']) { // 自分のタイムライン ?>
+                                    <div class="postingForm edit-form ">
+                                        <form method="POST" action="<?php echo FILENAME ?>"  enctype="multipart/form-data">
+                                            <input type="hidden" name="tl_id" value="<?php echo $tlValue['mypage_id'] ?>">
+                                            <textarea name="comment" class="edit-textarea" placeholder="投稿を入力"><?php echo $tlValue['text']; ?></textarea>
+                                            <div class="postingBottom">
+                                                <div class="postingImgBtn"><span class="SPpart">ファイルを選択</span><input type="file" accept="image/*" display="inline" role="button" tabindex="0" name="timeline_file[]"></div>
+                                                <div class="postingImgBtn privacy">
+                                                    <label><select name="publication">
+                                                            <?php foreach (CONF::read('TL_PUBLICATION') AS $key => $val) { ?>
+                                                                <?php $selected = ($key == $tlValue['publication']) ? 'selected="selected"' : ''; ?>
+                                                                <option value="<?php echo $key ?>" <?php echo $selected ?>><?php echo $val ?></option>
+                                                            <?php } ?>
+                                                        </select></label>
+                                                </div>
+
+                                                <div class="postingBtnArea"><button type="submit" value="" ><span>変　更</span></button></div>
+                                                <div class="postingBtnArea delete"><a class="edit-delete" href="#" onclick="deleteConfirm('./delete.html?tl_id=<?php echo $tlValue['mypage_id'] ?>&token=<?php echo SESSION::read('EXPIRES.ORIGINAL_TOKEN'); ?>');">削除する</a></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                            <?php /* タイムラインの画像一覧 */
+                            if (!StaticFunction::is_empty($tlValue['file_url'])) {
+                                foreach($tlValue['file_url'] AS $img_url) {
+                                    ?>
+                                    <div class="postingImg"><a href="<?php echo $img_url; ?>" data-lightbox="image-<?php echo $tlValue['prefix'] ?>_<?php echo $tlValue['mypage_id'] ?>"><img src="<?php echo $img_url; ?>"></a><?php if ($tlValue['is_my_post']) { // 自分のタイムライン ?><br>
+                                      <a href="#" class="edit-delete" onclick="deleteConfirm('./delete_timeline_image.html?tid=<?php echo $tlValue['mypage_id'] ?>&file_name=<?php echo $img_url ?>&pd=<?php echo $this->get("pd") ?>&pp=<?php echo $this->get("pp") ?>')">削除</a>
+                                  <?php } ?></div>
+                                    <?php
+                                }
+                            }
+                            ?>
+                            <div class="postingLike"><a href="javascript:void(0)" rel="<?php echo $tlValue['prefix'] ?>:<?php echo $tlValue['mypage_id'] ?>" role="button"><img src="/_assets/img/mypage/like.png">:<span class="like_count"><?php echo $tlValue['like_count'] ?></span></a></div>
+
+
+                            <!-- タイムラインへの返信ここから -->
+                            <?php if (!StaticFunction::is_empty($this->get("timeline_response_array.".$tlValue['mypage_id']))) { ?>
+                                <?php foreach ($this->get("timeline_response_array.".$tlValue['mypage_id']) AS $response) { ?>
+                                    <div class="postingComment noBorder">
+                                        <div class="postingCommentArea replay">
+                                            <div class="userAvatar">
+                                                <a href="<?php echo $response['user_link'] ?>"><img src="<?php echo $response['avatar'] ?>?t=<?php echo time() ?>" alt="<?php echo $response['nickname'] ?>"></a>
+                                            </div>
+                                            <div class="userTxt">
+                                                <div class="userName">
+                                                    <a href="<?php echo $response['user_link'] ?>"><?php echo $response['nickname'] ?></a>
+                                                    <p><?php echo $response['response_text'] ?></p>
+                                                </div>
+                                                <div class="postingTime"><?php echo $response['update_time'] ?></div>
+                                                <?php if (!StaticFunction::is_empty($response['edit_link'])) { // 自分のコメントの削除 ?>
+                                                    <a href="javascript:void(0)" class="response_del">削除</a>
+                                                    <a href="<?php echo $response['edit_link'] ?>" class="response_del_commit" style="display:none;">削除する</a>
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                            <?php } ?>
+                            <!-- タイムラインへの返信ここまで -->
+
+                            <!-- タイムラインへの返信フォームここから -->
+                            <?php if (StaticFunction::is_empty($tlValue['thread_id'])) { ?>
+                                <div class="postingComment noBorder">
+                                    <div class="postingReplay last">
+                                        <form id="form_2" name="form01" method="POST" action="response.html"  enctype="multipart/form-data">
+                                            <input type="hidden" name="token" value="<?php echo SESSION::read('EXPIRES.ORIGINAL_TOKEN'); ?>">
+                                            <input type="hidden" name="timeline_id" value="<?php echo $tlValue['mypage_id'] ?>">
+                                            <input type="hidden" name="pd" value="<?php echo REQUEST::get_data('pd') ?>">
+                                            <input type="hidden" name="pp" value="<?php echo REQUEST::get_data('pp') ?>">
+                                            <div class="userAvatar PCpart"><img src="<?php echo $this->get("avatar"); ?>?t=<?php echo time() ?>" alt="<?php echo $this->get("nickname"); ?>"></div>
+                                            <textarea name="response_body" placeholder="コメントを入力" class="sns" id="adjust"></textarea>
+                                            <button type="submit" value="" class="response_submit"><span>コメントする</span></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                            <!-- タイムラインへの返信フォームここまで -->
+
+
+                            <!-- コミュニティへの返信ここから -->
+                            <?php if ($tlValue['prefix'] == 'response') { ?>
+                                <?php if(!StaticFunction::is_empty($this->get("comment_array.".$tlValue['mypage_id']))) { ?>
+                                    <?php foreach ($this->get("comment_array.".$tlValue['mypage_id']) AS $response) { ?>
+                                        <div class="postingComment noBorder">
+                                            <div class="postingCommentArea replay">
+                                                <div class="userAvatar">
+                                                    <a href="<?php echo $response['user_link'] ?>"><img src="<?php echo $response['avatar'] ?>" alt="<?php echo $response['nickname'] ?>"></a>
+                                                </div>
+                                                <div class="userTxt">
+                                                    <div class="userName">
+                                                        <a href="<?php echo $response['user_link'] ?>"><?php echo $response['nickname'] ?></a>
+                                                        <p><?php echo $response['comment_text'] ?></p>
+                                                    </div>
+                                                    <div class="postingTime"><?php echo $response['update_time'] ?></div>
+                                                    <?php if (!StaticFunction::is_empty($response['edit_link'])) { // 自分のコメントの削除 ?>
+                                                        <a href="javascript:void(0)" class="response_del">削除</a>
+                                                        <a href="<?php echo $response['edit_link'] ?>" class="response_del_commit" style="display:none;">削除する</a>
+                                                    <?php } ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php }} ?>
+                                <?php if (in_array($tlValue['thread_id'],$thread_ids)) { ?>
+                                    <div class="postingComment noBorder">
+                                        <div class="postingReplay last">
+                                            <form id="form_2" name="form01" method="POST" action="/community/comment.html"  enctype="multipart/form-data">
+                                                <input type="hidden" name="token" value="<?php echo SESSION::read('EXPIRES.ORIGINAL_TOKEN'); ?>">
+                                                <input type="hidden" name="thread_id" value="<?php echo $tlValue['thread_id'] ?>">
+                                                <input type="hidden" name="response_id" value="<?php echo $tlValue['mypage_id'] ?>">
+                                                <div class="userAvatar PCpart"><img src="<?php echo $this->get("avatar"); ?>?t=<?php echo time() ?>" alt="<?php echo $this->get("nickname"); ?>"></div>
+                                                <textarea name="comment_text" placeholder="コメントを入力" class="sns" id="adjust"></textarea>
+                                                <button type="submit" value="" class="response_submit"><span>コメントする</span></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="postingComment noBorder">
+                                        <a href="/community/detail.html/?tid=<?php echo $tlValue['thread_id'] ?>&mode=entry" class="btn_entry_community">コミュニティに参加する</a></a>
+                                    </div>
+                                <?php } ?>
+                            <?php } ?>
+                            <!-- コミュニティへの返信ここまで -->
+
+                        </div>
+                    <?php } ?>
+                    <!-- /postingarea loop -->
+          
+          <!-- /postingarea loop -->
+          <div class="postingPagenavi">
+              <ul class="pageNumbers">
+                <?php echo $this->get("pageng_html"); ?>
+              </ul>
+          </div>
+        </div><!--/mainContents-->
+      </div>
+    </div>
+  </div>
+	<!--　/#Contents -->
+	
+  <div class="footer_sns">
+    <div class="container">
+      <ul>
+        <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <!--　/.footer_sns -->
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/footer_new.php");
+  ?>
+
+  
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('[id^=def-]').darkTooltip({
+      trigger: 'click',
+      opacity: 1,
+      gravity: 'north'
+    });
+  });
+</script>
+<script type="text/javascript">
+  $(function () {
+    $('.tab_menu a').click(function (e) {
+      $('.tab_menu .active').removeClass('active');
+      $(this).parent().addClass('active');
+      $('.tab_contents').each(function () {
+        $(this).removeClass('active');
+      });
+      $(this.hash).addClass('active');
+      e.preventDefault();
+    });
+  });
+</script>
+<script>
+  $('.menu_button').click(function () {
+    $(this).next('.nav').slideToggle('slow').siblings('.nav').slideUp('slow');
+    $(this).siblings('.menu_button').removeClass('active');
+    $(this).toggleClass('active');
+  });
+</script>
+<script>
+  var like_array = new Array(<?php echo $this->get("mypage_like_array"); ?>);
+  $(function () {
+
+    //xc response valid
+    $(".btn-hidden").hide();
+    $(".btn-open").on("click", function () {
+      $(this).hide();
+      $(".btn-hidden").show();
+    });
+    $(".edit-form").css("clear", "both").hide();
+    $(".edit-timeline").on("click", function () {
+      var targ = $(this).attr("rel");
+      $(".target_" + targ).find(".postingTxt").hide();
+      $(".target_" + targ).find(".edit-form").show();
+    });
+    $(".response_del").on("click", function () {
+      $(this).hide();
+      $(this).next(".response_del_commit").show();
+    });
+
+    $('.response_submit').on('click', function() {
+      var response = $(this).parent().find('[name="response_body"]').val();
+      if(response.length == 0 || typeof response == "undefined") {
+        alert('コメントを入力してください。');
+        return false;
+      }
+      if(response.length > 200) {
+        alert('コメントは200文字以内で入力してください。');
+        return false;
+      }
+    });
+  });
+
+  function deleteConfirm(url) {
+    flag = confirm("本当に削除しますか？");
+
+    if (flag) {
+      location.href = url;
+    } else {
+      return false;
+    }
+  }
+</script>
+<script src="/_assets/js/xc.js"></script>
+<script src='/_assets/js/jquery.autoexpand.js'></script>
+<script>
+  $(function(){
+    $('textarea').autoExpand();
+  });
+</script>
+	</body>
+</html>

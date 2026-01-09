@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト　トップページ　*/
+
+header .sub-navi img.triangle{
+	left: 1048px;
+}
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/bg_mv.jpg) center center no-repeat;
+	background-size:cover;
+}
+
+table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+/*企業情報*/
+.privacy table{
+	border: 1px solid #ddd;
+	border-top: none;
+	width: 100%;
+	line-height: 1.6;
+	margin-bottom: 10px;
+}
+.privacy th,.privacy td{
+	padding: 10px 20px;
+}
+.privacy th{
+	background: #f3f3f3;
+	border-top: 1px solid #ddd;
+	width: 25%;
+	font-weight: normal;
+	vertical-align: middle;
+}
+.privacy td{
+	border-left: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	width: 75%;
+}
+.privacy table div{
+	border: 1px solid #999;
+	padding: 10px;
+	margin: 10px 0;
+}
+.privacy table span{
+	background: #ccc;
+}
+
+.privacy h5{
+	font-weight: normal;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+}
+.privacy .winning{
+	margin: 30px 0 40px;
+}
+.privacy .winning.last{
+	margin-bottom: 0;
+}
+	
+.privacy2 {
+	margin: 40px auto 70px;
+}
+}
+
+
+@media screen and (max-width:640px){
+/*======================
+SPレイアウト　トップページ*/
+
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/bg_mv.jpg) center center no-repeat;
+	background-size:auto 90px;
+}
+
+/*企業情報*/
+.privacy table{
+	width: 100%;
+	font-size: 13px;
+	line-height: 1.8;
+}
+.privacy th,.privacy td{
+	display: block;
+	text-align: left;
+}
+.privacy th{
+	font-weight: normal;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 5px;
+}
+.privacy td{
+	margin-bottom: 20px;
+}
+.privacy table div{
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 10px 0;
+}
+.privacy table span{
+	background: #ccc;
+}
+
+.privacy2 {
+	margin: 40px auto 60px;
+}
+}

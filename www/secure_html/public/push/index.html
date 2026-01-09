@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>Push Demo(Firebase)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-messaging.js"></script>
+	<script src="./push_notification.js"></script>
+	<script src="./push_notification_admin.js"></script>
+
+	■Push Demo<br>
+	Support:<span id="isSupported">unknown</span><br>
+	<br>
+	・registration token確認<br>
+	<button id="btn_getRegToken" type="button">表示更新</button><br>
+	<span id="getRegToken">status:unknown</span><br>
+	<br>
+	
+	・registration token紐付け<br>
+	user_id:<input id="updRegToken_userId" size="8" type="text" placeholder="number" />
+	<button id="btn_updRegToken" type="button">紐付け</button><br>
+	<span id="updRegToken">status:unknown</span><br>
+	<br>
+	
+	・個別Push通知送信<br>
+	user_id:<br>
+	<input id="push_userId" size="8" type="text" placeholder="number" /><br>
+	title:<br>
+	<input id="push_title" size="40" type="text" placeholder="title" /><br>
+	message:<br>
+	<textarea id="push_message" rows="3" type="text" placeholder="message"></textarea><br>
+<!--
+	schedule:<br>
+	<input id="push_schedule" size="40" type="text" placeholder="send after" /><br>
+-->
+	<button id="btn_push" type="button">Push通知送信</button><br>
+	<span id="push">status:unknown</span><br>
+	<br>
+	
+	・全体Push通知送信<br>
+	title:<br>
+	<input id="push2_title" size="40" type="text" placeholder="title" /><br>
+	message:<br>
+	<textarea id="push2_message" rows="3" type="text" placeholder="message"></textarea><br>
+<!--
+	schedule:<br>
+	<input id="push_schedule" size="40" type="text" placeholder="send after" /><br>
+-->
+	<button id="btn_push2" type="button">Push通知送信</button><br>
+	<span id="push2">status:unknown</span><br>
+	
+	<script>
+		//
+		//
+	
+		//
+		window.addEventListener('load', function() {
+			$("#isSupported").html(PUSH.isSupported() ? "true" : "false");
+		});
+
+		//
+		$(document).on("click", "#btn_getRegToken", function() {
+			$("#getRegToken").html("処理中<br>");
+
+			(async function() {
+				$("#getRegToken").html(await PUSH.getToken());
+			}());
+		});
+	
+		$(document).on("click", "#btn_updRegToken", function() {
+			$("#updRegToken").html("処理中<br>");
+
+			(async function() {
+				var regToken = await PUSH.getToken();
+				var dataJson = await PUSH.updateUserNotification(
+					$("#updRegToken_userId").val(),
+					0,
+					regToken
+				);
+
+				console.log(dataJson);
+				$("#updRegToken").html(dataJson.code + "<br>" + dataJson.message);
+			}());
+		} );
+	
+		$(document).on("click", "#btn_push", function() {
+			$("#push").html("処理中<br>");
+	
+			(async function() {
+				var regToken = await PUSH.getToken();
+				var dataJson = await PUSH.sendNotification(
+					$("#push_title").val(),
+					$("#push_message").val(),
+					$("#push_userId").val()
+				);
+
+				console.log(dataJson);
+				$("#push").html(dataJson.code + "<br>" + dataJson.message);
+			}());
+		} );
+	
+		$(document).on("click", "#btn_push2", function() {
+			$("#push2").html("処理中<br>");
+	
+			(async function() {
+				var dataJson = await PUSH.sendNotificationAll(
+					$("#push2_title").val(),
+					$("#push2_message").val()
+				);
+
+				console.log(dataJson);
+				$("#push2").html(dataJson.code + "<br>" + dataJson.message);
+			}());
+		} );
+	
+	</script>
+</body>
+</html>
+	

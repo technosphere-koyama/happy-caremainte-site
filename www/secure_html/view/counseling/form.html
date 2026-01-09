@@ -1,0 +1,257 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>さがす＜ケアメンテ事例集＞　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+		<meta name="description" content="2000点を超える豊富な実例集から、お困りの衣服に似たアイテムを探して、「ケアメンテ」の洗い・仕上がり感をイメージしてください。">
+		<meta name="keywords" content="クリーニング,シミ,しみ,着物,宅配,ウェットクリーニング,水洗い,高級,黄ばみ">
+		<meta name="format-detection" content="telephone=no">
+		<?php if (preg_match("/(Android|iPhone|CareMenteh)/", $_SERVER["HTTP_USER_AGENT"])): ?><meta name="viewport" content="width=320, user-scalable=no" /><?php else: ?><meta name="viewport" content="width=1280" />
+		<?php endif; ?>
+
+		<!-- Open Graph Protocol -->
+		<meta property="og:url" content="https://www.kyoto-happy.co.jp/carementeh_search/form.html">
+		<meta property="og:title" content="さがす＜ケアメンテ事例集＞　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?>">
+		<meta property="og:description" content="2000点を超える豊富な実例集から、お困りの衣服に似たアイテムを探して、「ケアメンテ」の洗い・仕上がり感をイメージしてください。">
+		<meta property="og:image" content="https://www.kyoto-happy.co.jp/_assets/img/header/logo.png">
+		<!-- Open Graph Protocol -->
+
+		<link rel="stylesheet" href="/_assets/css/default.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/common.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/mypage.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/search.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/form.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="/_assets/css/tooltipster.bundle.min.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+		<script src="/_assets/js/jquery.js"></script>
+		<script src="/_assets/js/common.js"></script>
+		<script src="/_assets/js/ga.js"></script>
+		<script src="/_assets/js/jquery-1.8.2.min.js"></script>
+
+
+		<script src="/_assets/js/form.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+		<script src="/_assets/js/jquery.cookie.js"></script>
+
+		<script>
+			$(function () {
+
+				//cookieの有効期限を1時間に
+				var date = new Date();
+				date.setTime(date.getTime() + (1 * 60 * 60 * 1000));
+
+				//cookie値にカテゴリがセットされているかチェック
+				function isSetParam(val) {
+					if (typeof val == "undefined") {
+						return false;
+					} else {
+						return true;
+					}
+				}
+
+				//cookie値の各パラメータの値を分割し、対象のチェックボックスをtrueにする
+				function checkFormSingle(target) {
+					if (isSetParam($.cookie(target))) {
+						var list = $.cookie(target);
+						var split_array = list.split(",");
+						for (var i = 0, len = split_array.length; i < len; i++) {
+							$('input[name="' + target + '[]"]input[value=' + split_array[i] + ']').prop('checked', true);
+						}
+					}
+				}
+
+				//対象のチェックボックスをtrueにする（checkFormSingleの統合版）
+				function checkForm() {
+					//アイテム（商品種別）
+					checkFormSingle("item");
+					//シミ汚れの種類
+					checkFormSingle("dirt");
+					//素材
+					checkFormSingle("material");
+					//ブランド
+					checkFormSingle("brand_code");
+					//色
+					checkFormSingle("color");
+					//柄
+					checkFormSingle("pattern");
+				}
+				checkForm();
+
+				//ターゲットのカテゴリのチェックボックスをeachしてチェックされているものをテキスト化
+				function writeSelected(target) {
+
+					$.removeCookie(target);
+//console.log($.cookie(target));
+					var list = '';
+					var check_array = new Array();
+					$('input[name="' + target + '[]"]:checked').each(function () {
+						list += '<li>' + $(this).parent("label").text() + '</li>';
+						check_array.push($(this).val());
+					});
+
+					$.cookie(target, check_array.join(), {expires: date});
+//					console.log($.cookie(target));
+					return list;
+				}
+				//各カテゴリのターゲット要素に選択リストを記述
+				function createListSingle(target) {
+					//アイテム（商品種別）
+					var itemSelect = writeSelected(target);
+					if (itemSelect.length > 0) {
+						$(".selected-" + target).show();
+						$(".selected-" + target + " ul").show().html(itemSelect);
+					} else {
+						$(".selected-" + target + " ul").html();
+						$(".selected-" + target).hide();
+					}
+				}
+				//選択リストを記述（createListSingleの統合版）
+				function createList() {
+					createListSingle("item");
+					createListSingle("dirt");
+					createListSingle("material");
+					createListSingle("brand_code");
+					createListSingle("color");
+					createListSingle("pattern");
+				}
+				createList();
+
+
+				//チェックボックスに変化かある度に選択リスト再描画
+				$('input[name="item[]"],input[name="dirt[]"],input[name="material[]"],input[name="brand_code[]"],input[name="color[]"],input[name="pattern[]"]').change(function () {
+					createList();
+				});
+
+				//リセットボタン押下した時も選択リスト再描画
+				$("#reset1").on("click", function () {
+					$('input[type="checkbox"]').prop('checked', false);
+					$('input[name="brand_code[]"]').parent("label").remove();
+					createList();
+					return false;
+				});
+				$("#reset2").on("click", function () {
+					$('input[type="checkbox"]').prop('checked', false);
+					$('input[name="brand_code[]"]').parent("label").remove();
+					createList();
+					return false;
+				});
+
+			});
+		</script>
+
+		<script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
+		<script src="/_assets/js/jquery.validationEngine.js"></script>
+		<script src="/_assets/js/jquery.validationEngine-ja.js"></script>
+        <script src="/_assets/js/tooltipster.bundle.min.js"></script>
+
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+
+	</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+
+		<div id="Container">
+			<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/include/header.php");
+				?>
+			</header>
+
+
+			<div id="Contents" class="careSearch">
+				<div class="mainvisual__section">
+					<div>CAREMENTEH SEARCH<br><p>さがす＜ケアメンテ事例集＞</p></div>
+				</div>
+
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p></div>
+				</div>
+
+				<div class="mypageArea">
+					<div class="mainContents3">
+          	<!-- <div class="backBtn3 PCpart"><a href="/counseling/form.html">さがす トップに戻る</a></div> -->
+
+						<!--<div class="allResultBtn"><a href="/carementeh_search/result.html">全ての事例を見る</a></div>-->
+							<dl class="searchForm">
+
+								<dt class="contactTxt">WEBカウンセリング</dt>
+								<div class="formaco">
+									<a href="./result.html">2020.12.01 お預かり品</a>
+								</div>
+								<div class="formaco">
+									<a href="./result.html">2020.12.01 お預かり品</a>
+								</div>
+								<div class="formaco">
+									<a href="./result.html">2020.12.01 お預かり品</a>
+								</div>
+								<!--
+								<div class="formaco">
+									<dd><a href="form_brand.html">ブランド・アパレルメーカーを選択してください</a><br>
+										<?php foreach ($this->get("brand_array") AS $key => $val) { ?>
+											<label><input type="checkbox" name="brand_code[]" value="<?php echo $key ?>" checked="checked"><?php echo $val ?></label>
+										<?php } ?>
+									</dd>
+								</div>
+								<div class="selected-search SPpart">
+									<dd>
+										<div class="selected-brand_code">
+											<ul></ul>
+										</div>
+									</dd>
+								</div>
+								-->
+							</dl>
+					</div><!--/mainContents3-->
+				</div>
+
+				<div class="searchFilter">
+					<div class="searchFilter_wrap">
+						<dl class="selected-search">
+							<dt>選択した検索条件</dt>
+							<dd>
+								<div class="selected-brand_code">
+									<ul></ul>
+								</div>
+								<div class="selected-item">
+									<ul></ul>
+								</div>
+								<div class="selected-dirt">
+									<ul></ul>
+								</div>
+								<div class="selected-material">
+									<ul></ul>
+								</div>
+								<div class="selected-color">
+									<ul></ul>
+								</div>
+								<div class="selected-pattern">
+									<ul></ul>
+								</div>
+							</dd>
+						</dl>
+						<div class="btnarea"><input type="button" id="reset1" class="reset" value="リセット"><input type="button" id="btn2" class="btn" value="検索する" onclick="document.form01.submit()"></div>
+					</div>
+				</div>
+			</div><!--/Contents-->
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer.php");
+			?>
+		</div>
+		<!--/Container-->
+
+
+	</body>
+</html>

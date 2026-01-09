@@ -1,0 +1,9 @@
+<?php
+/*
+ * 検索結果画面
+ */
+require '../../core/PreLoad.inc';
+$nc = new SearchController();
+$nc->response_delete();
+$nc->view('carementeh_search');
+?>

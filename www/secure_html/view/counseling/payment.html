@@ -1,0 +1,224 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title><?php echo $this->get("item_detail.item_id"); ?>　|　さがす＜ケアメンテ事例集＞　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+		<meta name="description" content="1900点を超える豊富な実例集から、お困りの衣服に似たアイテムを探して、「ケアメンテ」の洗い・仕上がり感をイメージしてください。">
+		<meta name="keywords" content="クリーニング,シミ,しみ,着物,宅配,ウェットクリーニング,水洗い,高級,黄ばみ">
+		<meta name="format-detection" content="telephone=no">
+		<?php if(preg_match("/(Android|iPhone|CareMenteh)/", $_SERVER["HTTP_USER_AGENT"])): ?><meta name="viewport" content="width=320, user-scalable=no" /><?php else: ?><meta name="viewport" content="width=1280" />
+		<?php endif; ?>
+
+		<!-- Open Graph Protocol -->
+		<meta property="og:url" content="https://www.kyoto-happy.co.jp/carementeh_search/detail.html?item_id=<?php echo $this->get("item_detail.item_id"); ?>">
+		<meta property="og:title" content="<?php echo $this->get("item_detail.item_id"); ?>　|　さがす＜ケアメンテ事例集＞　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?>">
+		<meta property="og:description" content="1900点を超える豊富な実例集から、お困りの衣服に似たアイテムを探して、「ケアメンテ」の洗い・仕上がり感をイメージしてください。">
+		<meta property="og:image" content="https://www.kyoto-happy.co.jp/_assets/img/header/logo.png">
+		<!-- Open Graph Protocol -->
+
+		<link rel="stylesheet" href="/_assets/css/default.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/common.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="/_assets/css/mypage.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="/_assets/css/form.css?20201102105357">
+		<link rel="stylesheet" href="/_assets/css/search.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="/_assets/css/tooltipster.bundle.min.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+		<script src="/_assets/js/jquery.js"></script>
+		<script src="/_assets/js/common.js"></script>
+		<script src="/_assets/js/ga.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="/_assets/js/jquery.darktooltip.js"></script>
+
+		<link rel="stylesheet" href="/_assets/css/lightbox.css">
+		<script src="/_assets/js/lightbox.js"></script>
+        
+        <script src="/_assets/js/tooltipster.bundle.min.js"></script>
+        
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+        
+	</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+
+		<div id="Container">
+
+			<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/include/header.php");
+				?>
+			</header>
+
+			<div id="Contents" class="careSearch">
+
+				<div class="mainvisual__section">
+					<div>WEB COUNSELING<br><p>WEB カウンセリング</p></div>
+				</div>
+
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu"><a href="/counseling/">WEB カウンセリング</a></p><p class="pankuzu no-arrow"><?php echo $this->get("item_detail.item_id"); ?></p></div>
+				</div>
+
+				<div class="mypageArea">
+
+					<div class="mainContents3">
+                        <div id="view_back" class="backBtn PCpart"></div>
+
+                        <div class="RColumn">2020.12.01 ご注文のお預かり品</div>
+                        <div class="LColumn">
+                        
+                        <div class="pagettl"><h1>お支払い方法</h1></div>
+                        
+                        <div class="karteyArea">
+                            <form id="form_1" name="form01" method="POST" action="/entry/confirm.html"  enctype="multipart/form-data">
+                                <dl class="contactform">
+                                    <dt>お名前 <span>*</span></dt>
+                                    <dd><input type="text" name="name1" value="<?php echo $this->get("name1") ?>" aria-required="true" autocomplete="name" class="validate[required] name_sei" placeholder="姓"><input type="text" name="name2" value="<?php echo $this->get("name2") ?>" aria-required="true" autocomplete="name" class="validate[required] name_mei" placeholder="名"></dd>
+                                    <dt>フリガナ<span>*</span></dt>
+                                    <dd><input type="text" name="kana1" value="<?php echo $this->get("kana1") ?>" aria-required="true" autocomplete="name" class="validate[required] name_sei" placeholder="セイ"><input type="text" name="kana2" value="<?php echo $this->get("kana2") ?>" aria-required="true" autocomplete="name" class="validate[required] name_mei" placeholder="メイ"></dd>
+                                    <dt>電話番号 <span>*</span></dt>
+                                    <dd class="contactnum"><input type="tel" name="telephone" value="<?php echo $this->get("telephone") ?>"><p>ー</p><input type="tel" name="telephone2" value="<?php echo $this->get("telephone2") ?>"><p>ー</p><input type="tel" name="telephone3" value="<?php echo $this->get("telephone3") ?>"></dd>
+                                    <dt>メールアドレス <span>*</span></dt>
+                                    <dd><input type="email" name="email" value="<?php echo $this->get("email") ?>" aria-required="true" autocomplete="email" class="validate[required,custom[email]]"></dd>
+                                    <dt>メールサブアドレス</dt>
+                                    <dd><input type="email" name="email2" value="<?php echo $this->get("email2") ?>" aria-required="false" autocomplete="email" class="validate[custom[email]]"></dd>
+                                    <dt>住所</dt>
+                                    <dd class="addressform"><p>〒</p><input id="zip" name="zip" value="<?php echo $this->get("zip") ?>" class="postal validate[custom[zip]]"><input type="button" id="zipbtn" name="zipbtn" class="zipbtn" value="郵便番号から住所検索"></dd>
+                                    <dd class="addressform">
+                                        <div class="addressselect">
+                                            <select id="pref" name="state" autocomplete="address-level1">
+                                                <OPTION VALUE="">---</OPTION>
+                                                <?php foreach (CONF::read('PREFECTURE') AS $key => $val) { ?>
+                                                    <?php $selected = ($key == $this->get("state") ? 'selected="selected"' : '') ?>
+                                                    <OPTION VALUE="<?php echo $key ?>" <?php echo $selected ?>><?php echo $val ?></OPTION>
+                                                <?php } ?>
+    
+                                            </select>
+                                        </div>
+                                        <input type="text" id="address" name="addr1" class="addressform2 validate[maxSize[11]]" value="<?php echo $this->get("addr1") ?>" placeholder="市区郡">
+                                    </dd>
+                                    <dd class="addressform"><input type="text" id="address2" name="addr2" value="<?php echo $this->get("addr2") ?>" placeholder="町村・番地" class="validate[maxSize[16]]"></dd>
+                                    <dd><input type="text" name="addr3" value="<?php echo $this->get("addr3") ?>" placeholder="ビル・マンション名" class="validate[maxSize[16]]"></dd>
+                                    <dt>性別 <span>*</span></dt>
+                                    <dd><div class="dateselect">
+                                            <select name="sex" class="validate[required]">
+                                                <OPTION VALUE="">-</OPTION>
+                                                <?php foreach (CONF::read('GENDER') AS $key => $val) { ?>
+                                                    <?php $selected = ($key == $this->get("sex") ? 'selected="selected"' : '') ?>
+                                                    <option value="<?php echo $key ?>" <?php echo $selected ?>><?php echo $val ?></option>
+                                                <?php } ?>
+                                            </select></div></dd>
+                                    <dt>生年月日 <span>*</span></dt>
+                                    <dd><div class="dateselect"><select name="birth_y" onchange="dateCheckXc('birth_y', 'birth_m', 'birth_d')">
+                                                <option value="">年</option>
+                                                <?php for ($i = date("Y") - CONF::read('INPUTVALI.BIRTH_Y_BOTTOM'); $i >= date("Y") - CONF::read('INPUTVALI.BIRTH_Y_BOTTOM') - CONF::read('INPUTVALI.BIRTH_Y_RANGE'); $i--) { ?>
+                                                    <?php $selected = ($i == $this->get("birth_y") ? 'selected="selected"' : ''); ?>
+                                                    <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>年</option>
+                                                <?php } ?>
+                                            </select></div>
+                                        <div class="dateselect"><select name="birth_m" onchange="dateCheckXc('birth_y', 'birth_m', 'birth_d')">
+                                                <option value="">月</option>
+                                                <?php for ($i = 1; $i <= 12; $i++) { ?>
+                                                    <?php $selected = ($i == $this->get("birth_m") ? 'selected="selected"' : ''); ?>
+                                                    <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>月</option>
+                                                <?php } ?>						
+                                            </select></div>
+                                        <div class="dateselect"><select name="birth_d">
+                                                <option value="">日</option>
+                                                <?php for ($i = 1; $i <= 31; $i++) { ?>
+                                                    <?php $selected = ($i == $this->get("birth_d") ? 'selected="selected"' : ''); ?>
+                                                    <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>日</option>
+                                                <?php } ?>												</select></div>
+                                    </dd>
+                                    <dt>職種</dt>
+                                    <dd><div class="dateselect">
+                                            <select name="wkbn" class="">
+                                                <OPTION VALUE="">---</OPTION>
+                                                <?php foreach (CONF::read('JOBS') AS $key => $val) { ?>
+                                                    <?php $selected = ($key == $this->get("wkbn") ? 'selected="selected"' : ''); ?>
+                                                    <option value="<?php echo $key ?>" <?php echo $selected ?>><?php echo $val ?></option>
+                                                <?php } ?>
+                                            </select></div>
+                                    </dd>
+                                    <dt>パスワード <span>*</span></dt>
+                                    <dd><input type="text" name="pass" value="" aria-required="true" autocomplete="name" class="validate[required],custom[onlyLetterNumber],minSize[5],maxSize[8]" placeholder="半角英数字 5桁～8桁"></dd>
+                                    <dt class="btnarea"><input type="button" id="btn" class="btn" value="確　認" onclick="if(validate(document.form01))document.form01.submit()"></dt>
+                                </dl>
+                            </form>
+                        </div>
+                        </div>
+					</div><!--/mainContents3-->
+				</div>
+			</div><!--/Contents-->
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer.php");
+			?>
+		</div>
+		<!--/Container-->
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('[id^=def-]').darkTooltip({
+					trigger: 'click',
+					opacity: 1,
+					gravity: 'north'
+				});
+			});
+		</script>
+		<script>
+			var like_array = new Array(<?php echo $this->get("comment_like_array"); ?>);
+			$(function () {
+				$(".edit-form").css("clear", "both").hide();
+				$(".edit-response").on("click", function () {
+					var targ = $(this).attr("rel");
+					$(".target_" + targ).find(".postingTxt").hide();
+					$(".target_" + targ).find(".edit-form").show();
+				});
+			});
+		</script>
+		<script src="/_assets/js/xc.js"></script>
+        <script type="text/javascript">
+		function backlink() {
+			var ref = document.referrer; //前ページ
+		
+			if (ref != "") {
+				var n = ref.indexOf("//")+2;
+				var m = ref.indexOf("/",n+1);
+				if (m == -1) {m = ref.length;}
+				//ドメイン名を抜き出す
+				if (n > -1) {ref = ref.substring(n,m);}
+			}
+			//ドメイン名が同じ場合
+			if (document.domain == ref) {
+				s = "<a href='javascript:history.back()'>検索結果に戻る</a>";
+			} else {
+				document.getElementById("view_back").style.display="none";
+				document.getElementById("view_back2").style.display="none";
+			}
+			document.getElementById("view_back").innerHTML = s;
+			document.getElementById("view_back2").innerHTML = s;
+		}
+		</script>
+        <script type="text/javascript">
+			//戻るリンクの表示
+			backlink();
+		</script>
+		
+       <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/body_retargeting_cord.php");
+		?>
+		
+		
+	</body>
+</html>

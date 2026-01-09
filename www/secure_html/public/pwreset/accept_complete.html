@@ -1,0 +1,9 @@
+<?php
+/*
+ * パスワード再設定手続完了画面
+ */
+require '../../../core/PreLoad.inc';
+$alc = new PasswordResetController();
+$alc->accept_complete();
+$alc->view('pwreset');
+?>

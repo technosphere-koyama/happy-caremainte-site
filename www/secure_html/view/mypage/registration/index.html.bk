@@ -1,0 +1,140 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>登録情報の変更｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/frm.css" rel="stylesheet">
+<link rel="stylesheet" href="/wp/wp-content/themes/HAPPY_Dark/css/transitional.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<style type="text/css">
+ul.error_box {
+    margin-bottom: 40px;
+    color: red;
+}
+</style>
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script src="/_assets/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
+<script src="/_assets/js/jquery.validationEngine.js"></script>
+<script src="/_assets/js/jquery.validationEngine-ja.js"></script>
+<!--<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>-->
+</head>
+<body id="top" class="registration_top">
+	<?php
+	/* ヘッダーインクルード */
+	include(DIR_PUBLIC . "/include/header_new.php");
+	?>
+	<!--　/header_nav　-->
+  <div class="bg">
+
+	<section class="registrationWrap">
+      <div class="container">
+		<div class="bg_w">
+
+        <div class="registrationBox">
+          <h3>登録情報の変更</h3>
+          <p>下記に変更後の情報を入力いただき「確認」ボタンを押してください。<br>
+		  ※ の項目は必ずご入力ください。</p>
+		  <?php $publicGadget->html_error_array($this->get('error_array')); ?>
+
+		<form id="form_1" name="form01" method="POST" action="./confirm.html"  enctype="multipart/form-data">
+			<input type="hidden" name="mode" value="core">
+			<dl class="contactform cf">
+				<dt>お名前 <sup>※</sup> : </dt>
+				<dd><input type="text" name="name1" value="<?php echo $this->get("name1") ?>" aria-required="true" autocomplete="name" class="validate[required] name_sei ipt_50" placeholder="姓"><input type="text" name="name2" value="<?php echo $this->get("name2") ?>" aria-required="true" autocomplete="name" class="validate[required] name_mei ipt_50" placeholder="名"></dd>
+              </dl>
+              <dl class="contactform">
+                <dt>電話番号 <sup>※</sup> : </dt>
+				<dd class="contactnum"><input type="tel" name="telephone" value="<?php echo $this->get("telephone") ?>"> - <input type="tel" name="telephone2" value="<?php echo $this->get("telephone2") ?>"> - <input type="tel" name="telephone3" value="<?php echo $this->get("telephone3") ?>"></dd>
+				</dl>
+				<dl class="contactform">
+                <dt>メールアドレス <span>※</span>:</dt>
+				<dd><input type="email" name="email" value="<?php echo $this->get("email") ?>" aria-required="true" autocomplete="email" class="validate[required,custom[email]]"></dd>
+              </dl>
+              <dl class="contactform">
+                <dt>住所 <sup>※</sup> : </dt>
+					<dd class="addressform">〒 <input id="zip" name="zip" value="<?php echo $this->get("zip") ?>" autocomplete="postal-code" class="postal"><input type="button" id="zipbtn" name="zipbtn" class="zipbtn" value="郵便番号から住所検索"></dd>
+					<dd class="addressform">
+				<div class="addressselect">
+				<select id="pref" name="state" autocomplete="address-level1">
+					<?php foreach (CONF::read('PREFECTURE') AS $key => $val) { ?>
+						<?php $selected = ($key == $this->get("state") ? 'selected="selected"' : '') ?>
+						<OPTION VALUE="<?php echo $key ?>" <?php echo $selected ?>><?php echo $val ?></OPTION>
+					<?php } ?>
+				</select></div>
+				<input type="text" id="address" name="addr1" class="addressform2" value="<?php echo $this->get("addr1") ?>" placeholder="市区郡"></dd>
+				<dd class="addressform"><input type="text" id="address2" name="addr2" value="<?php echo $this->get("addr2") ?>" placeholder="町村・番地"></dd>
+				<dd><input type="text" name="addr3" value="<?php echo $this->get("addr3") ?>" placeholder="ビル・マンション名"></dd>
+				<dt class="btnarea"><input type="button" id="btn" class="btn" value="確　認" onclick="document.forms.form01.submit()"></dt>
+				
+							</dl>
+							<div class="privacy2">
+								<h3>個人情報の取扱いについて</h3>
+								<p class="tal">当社が取得する個人情報は厳重に管理・保護のうえ、ご依頼品の集荷及び配送・洗濯・再現加工・修理修繕・保管、カウンセリング及び営業案内のご連絡、宣伝物・印刷物の送付、その他市場調査・商品開発のために利用させていただきます。お客様の同意または法令により例外として扱われる場合を除き、第三者に開示または提供いたしません。</p>
+							</div>
+						</form>
+
+				</div>
+			</div>
+			<!--bg_w-->
+			</div>
+		</section>
+
+    <div class="footer_sns">
+      <div class="container">
+        <ul>
+          <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+	<!--　/.footer_sns -->
+	<?php
+    /* ヘッダーインクルード */
+    include(DIR_PUBLIC . "/include/footer_top.php");
+    ?>
+  </div>
+  <!--　/.bg -->
+  <?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/footer_nav.php");
+  ?>
+
+  
+  <!--　/.footer_nav_sp -->
+  <script>
+	/*郵便番号から住所自動入力*/
+	$(function () {
+		$('#zip').jpostal({
+			click: '#zipbtn',
+			postcode: [
+				'#zip'
+			],
+			address: {
+				'#pref': '%3',
+				'#address': '%4',
+				'#address2': '%5'
+			}
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,1867 @@
+@charset "utf-8";
+/*==================================
+  mypage
+==================================*/
+#mypage {
+	background: url(../mypage/img/mypage_bg.jpg) no-repeat top center/cover fixed;
+}
+#mypage #banner {
+  background: #fffabd;
+	color: #050505;
+  padding: 11px 0;
+	font-size: 3vw;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  line-height: 1.5;
+}
+#mypage #member_point {
+	color: #050505;
+	margin-top: 30px;
+}
+#mypage #member_point .container {
+	background: #FFF;
+	overflow: hidden;
+	padding: 40px 0;
+}
+#mypage #member_point .container .member_point_box {
+  margin: 0 0 0 -25%;
+	position: relative;
+	width: 150%;
+}
+#mypage #member_point .container .member_point_box .member_point_box_inner {
+	height: 60%;
+	position: absolute;
+  top: 0;
+  right: 0;
+	bottom: 0;
+  left: 0;
+  margin: auto;
+}
+#mypage #member_point .container .member_point_box .member_point_box_inner h2 {
+	font-size: 4vw;
+}
+#mypage #member_point .container .member_point_box .member_point_box_inner p.member_point_data {
+	font-size: 4vw;
+	line-height: 1.4;
+}
+#mypage #member_point .container .member_point_box .member_point_box_inner p.member_point_data span {
+  display: block;
+	font-size: 10vw;
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+#mypage #member_point .container .member_point_box .member_point_box_inner p.member_point_rank {
+	color: #6b6600;
+	font-size: 5vw;
+	margin-top: 10px;
+}
+#mypage #member_point .container p.member_point_ticket {
+	font-size: 4vw;
+	margin-top: 20px;
+}
+#mypage #member_point .container p.member_point_ticket span {
+	color: #6a3b93;
+	-webkit-text-stroke: 0.05em #6a3b93;
+	display: inline-block;
+	font-size: 7vw;
+	line-height: 1;
+  margin: 0 5px;
+}
+#mypage #member_information {
+	margin-top: 30px;
+}	
+#mypage #member_information .member_information_box .member_information_name {
+  display: flex;
+	align-items: flex-end;
+}	
+#mypage #member_information .member_information_box .member_information_name img {
+  width: 20vw;
+}	
+#mypage #member_information .member_information_box .member_information_name .member_information_name_txt {
+	margin-left: 10px;
+}	
+#mypage #member_information .member_information_box .member_information_name h2 {
+  font-size :4vw;
+	line-height: 1;
+}	
+#mypage #member_information .member_information_box .member_information_name h2 span {
+  font-size :3vw;
+}	
+#mypage #member_information .member_information_box .member_information_name p {
+	font-size: 3vw;
+	margin-top: 5px;
+}	
+#mypage #member_information .btnArea {
+	display: flex;
+	margin-top: 5%;
+}
+#mypage #member_information .btnArea > div {
+	flex: 1;
+}	
+#mypage #member_information .btnArea a:hover {
+  color: rgba(5,5,5,0.7);
+}
+#mypage #member_information .btn a {
+  background: #FFF;
+  border-radius: 10vw;
+  color: #050505;
+	display: flex;
+	align-items: center;
+  justify-content: center;
+  font-size: 3.5vw;
+	line-height: 1.2;
+  padding: 3vw 0;
+}	
+#mypage #member_information .btn a img {
+  width: 10vw;
+}	
+#mypage #member_information .btn a span {
+  margin-left: 5px;
+}	
+#mypage #member_information .btn a span .small {
+  font-size: 3vw;
+	margin-left: -0.5em;
+}
+#mypage #member_information .order {
+  background: #FFF;
+	border-radius: 10vw;
+	flex: 1;
+	margin-left: 15px;
+  padding: 0.5vw;
+}	
+#mypage #member_information .order a {
+  background: #FFF;
+	border: 1px solid #6a3b93;
+  border-radius: 8vw;
+  color: #050505;
+	display: flex;
+	align-items: center;
+  justify-content: center;
+  font-size: 3.5vw;
+	line-height: 1;
+  padding: 4vw 0;
+}	
+#mypage #member_information .order a img {
+  width: 11vw;
+}	
+#mypage #member_information .order a span {
+  margin-left: 10px;
+}	
+#mypage #member_menu {
+  color: #050505;
+	margin-top: 60px;
+}
+#mypage #member_menu ul {
+  display: flex;
+	flex-wrap: wrap;
+}
+#mypage #member_menu ul li {
+	background: #FFF;
+  border-radius: 5px;
+	margin: 0 2% 2% 0;
+	padding: 7vw 2% 2vw;
+  text-align: center;
+	width: 45%;
+}
+#mypage #member_menu ul li:nth-child(even) {
+  margin-right: 0;
+}
+#mypage #member_menu ul li .member_menu_img {
+  display: inline-block;
+	line-height: 0;
+  position: relative;
+}
+#mypage #member_menu ul li .member_menu_img .badge {
+  position: absolute;
+  top: -4vw;
+  right: -4vw;
+  font-size: 3vw;
+  line-height: 8vw;
+  border-radius: 50%;
+  width: 8vw;
+  height: 8vw;
+  background-color: #6a3b93; 
+  color: #FFF;
+  text-align: center;
+}
+#mypage #member_menu ul li img {
+	width: 20vw;
+}
+#mypage #member_menu ul li h3 {
+	font-size: 4vw;
+	height: 10vw;
+	line-height: 1.2;
+}
+#mypage #member_menu ul li:first-child h3 {
+	line-height: 10vw;
+}
+#mypage #member_menu_sub {
+  color: #050505;
+	margin-top: 20px;
+}
+#mypage #member_menu_sub ul {
+  background: #FFF;
+  border-radius: 5px;
+	padding: 10vw 5vw;
+}
+#mypage #member_menu_sub ul li {
+  border-top: 1px solid #050505;
+	font-size: 3vw;
+  padding: 9px 0;
+	position: relative;
+}
+#mypage #member_menu_sub ul li:last-child {
+  border-bottom: 1px solid #050505;
+}
+#mypage #member_menu_sub ul li a {
+  color: #050505;
+	display: inline-block;
+	width: 100%;
+}
+#mypage #member_menu_sub ul li a:after {
+  position: absolute;
+  top: 0;
+  right: 10px;
+	bottom: 0;
+  width: 2vw;
+  height: 2vw;
+  margin: auto;
+  border-top: 2px solid #050505;
+  border-right: 2px solid #050505;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: '';
+}
+#mypage #member_menu_sub ul li a:hover {
+  opacity: 0.7;
+}
+#mypage #member_sns {
+	margin-top: 22vw;
+}
+#mypage #member_sns .member_sns_tit h2 {
+  font-size: 5vw;
+	line-height: 1.5;
+}
+#mypage #member_sns .member_sns_tit h2 img {
+  width: 50vw;
+}
+#mypage #member_sns .member_sns_tit p {
+  font-size: 4vw;
+	line-height: 1.5;
+	margin-top: 5px;
+}
+#mypage #member_sns ul.member_sns_list {
+  margin: 30px auto 0;
+}
+#mypage #member_sns ul.member_sns_list li {
+	margin: 0 7px;
+  outline:none;
+}
+#mypage #member_sns ul.member_sns_list li .member_sns_list_img img {
+	background: #FFF;
+  border: 1vw solid #FFF;
+  border-radius: 50%;
+	margin: auto;
+	max-width: 90%;
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt h3 {
+  font-size: 4vw;
+	margin-top: 10px;
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt p {
+	background: #afafaf;
+  border-radius: 4vw;
+	color: #FFF;
+	display: inline-block;
+  font-size: 3vw;
+	margin-top: 10px;
+  padding: 1px 4vw;
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn {
+	margin-top: 5%;
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn a {
+	color: #FFF;
+  background: #6a3b93;
+  border-radius: 8vw;
+  display: inline-block;
+  font-size: 3vw;
+  padding: 1.5vw 3vw 1.5vw 10vw;
+	position: relative;
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn a:hover {
+	color: rgba(255,255,255,0.7);
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn a:before {
+	content: '';
+	background: url(../img/check_w.png) no-repeat 0% center/contain scroll;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 3vw;
+	margin: auto;
+	width: 6vw;
+	height: 6vw;
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn a:hover:before {
+	opacity: 0.7;
+}
+#mypage #member_sns .member_sns_list_sp ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#mypage #member_sns .member_sns_list_sp ul li {
+  margin: 10vw 4% 5vw 0;
+  width: 48%;
+}
+#mypage #member_sns .member_sns_list_sp ul li:nth-child(even) {
+  margin-right: 0;
+}
+#mypage #member_sns .member_sns_list_sp li .member_sns_list_img img {
+	background: #FFF;
+	border: 4px solid #FFF;
+  border-radius: 50%;
+	max-width: 90%;
+}
+#mypage #member_sns .member_sns_list_sp .member_sns_list_txt h3 {
+	color: #6a3b93;
+  font-size: 4vw;
+}
+#mypage #member_sns .member_sns_list_sp .member_sns_list_txt p {
+	background: #afafaf;
+	border-radius: 4vw;
+	color: #FFF;
+	display: inline-block;
+  font-size: 3vw;
+	padding: 1px 4vw;
+}
+#mypage #member_sns .member_sns_list_sp .member_sns_list_txt .btn {
+	margin-top: 10px;
+}
+#mypage #member_sns .member_sns_list_sp .member_sns_list_txt .btn a {
+	color: #FFF;
+  background: #6a3b93;
+  border-radius: 8vw;
+  display: inline-block;
+  font-size: 3vw;
+  padding: 1.5vw 3vw 1.5vw 10vw;
+	position: relative;
+}
+#mypage #member_sns .member_sns_list_sp .member_sns_list_txt .btn a:before {
+	content: '';
+	background: url(../img/check_w.png) no-repeat 0% center/contain scroll;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 3vw;
+	margin: auto;
+	width: 6vw;
+	height: 6vw;
+}
+#mypage #member_sns .member_sns_list_sp .btn_toggle {
+  background: #848484;
+  border-radius: 8vw;
+  color: #FFF;
+  display: block;
+  font-size: 3.5vw;
+	margin-top: 20px;
+  padding: 3vw 0;
+	position: relative;
+  text-align: center;
+	width: 90vw;
+}
+#mypage #member_sns .member_sns_list_sp .btn_toggle:before {
+  display: block;
+  position: absolute;
+	top: 3.5vw;
+  left: 28vw;
+  width: 3vw;
+  height: 3vw;
+  margin: auto;
+  border-top: 2px solid #FFF;
+  border-right: 2px solid #FFF;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  content: '';
+}
+#mypage #member_sns .member_sns_list_sp .btn_toggle.active:before {
+	top: 5.5vw;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+	transition: all .5s ease;
+}
+#mypage #member_sns .member_sns_list_sp .member_sns_list_sp_hide {
+  display: none;
+}
+#mypage #member_sns_sub {
+	margin-top: 22vw;
+	padding-bottom: 20vw;
+}
+#mypage #member_sns_sub h2 {
+  font-size: 6vw;
+}
+#mypage #member_sns_sub ul {
+  background: #FFF;
+  border-radius: 5px;
+	margin-top: 20px;
+	padding: 10vw 5vw;
+}
+#mypage #member_sns_sub ul li {
+  border-top: 1px solid #050505;
+	font-size: 3vw;
+  padding: 9px 0 9px 12vw;
+	position: relative;
+}
+#mypage #member_sns_sub ul li:last-child {
+  border-bottom: 1px solid #050505;
+}
+#mypage #member_sns_sub ul li a {
+  color: #050505;
+	display: inline-block;
+	width: 100%;
+}
+#mypage #member_sns_sub ul li a:after {
+  position: absolute;
+  top: 0;
+  right: 10px;
+	bottom: 0;
+  width: 2vw;
+  height: 2vw;
+  margin: auto;
+  border-top: 2px solid #050505;
+  border-right: 2px solid #050505;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: '';
+}
+#mypage #member_sns_sub ul li a:hover {
+  opacity: 0.7;
+}
+#mypage #member_sns_sub ul li a img {
+  position: absolute;
+	top: 0;
+  bottom: 0;
+  left: 8px;
+  margin: auto;
+	width: 7vw;
+}
+#mypage #case {
+  border-top: none;
+}
+#mypage #reading {
+  border-top: none;
+	padding: 0;
+}
+@media (min-width: 992px) {
+  #mypage .header_nav_common {
+    display: block;
+  }
+  #mypage .bg {
+    padding-top: 105px;
+  }
+  #mypage #banner {
+    font-size: 16px;
+    padding: 39px 0;
+  }
+  #mypage #member_point .container .member_point_box {
+		margin: auto;
+    width: 510px;
+    height: 255px;
+  }
+  #mypage #member_point .container .member_point_box .member_point_box_inner {
+    height: 70%;
+  }
+  #mypage #member_point .container .member_point_box .member_point_box_inner h2 {
+    font-size: 18px;
+  }
+  #mypage #member_point .container .member_point_box .member_point_box_inner p.member_point_data {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  #mypage #member_point .container .member_point_box .member_point_box_inner p.member_point_data span {
+    font-size: 56px;
+  }
+  #mypage #member_point .container .member_point_box .member_point_box_inner p.member_point_rank {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+  #mypage #member_point .container p.member_point_ticket {
+    font-size: 18px;
+  }
+  #mypage #member_point .container p.member_point_ticket span {
+    font-size: 30px;
+  }
+  #mypage #member_information .container {
+    display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+  }	
+  #mypage #member_information .member_information_box .member_information_name img {
+    width: auto;
+  }	
+  #mypage #member_information .member_information_box .member_information_name .member_information_name_txt {
+    height: 60px;
+    margin-left: 15px;
+  }	
+  #mypage #member_information .member_information_box .member_information_name h2 {
+    font-size :24px;
+  }	
+  #mypage #member_information .member_information_box .member_information_name h2 span {
+    font-size :18px;
+  }	
+  #mypage #member_information .member_information_box .member_information_name p {
+    font-size: 16px;
+  }	
+	#mypage #member_information .btnArea > div {
+    flex: auto;
+  }	
+  #mypage #member_information .btn a {
+    border-radius: 34px;
+    font-size: 16px;
+		line-height: 1;
+    padding: 10px 45px;
+  }	
+  #mypage #member_information .btn a span .small {
+    font-size: 10px;
+  }
+  #mypage #member_information .btn a img {
+    width: 45px;
+  }	
+  #mypage #member_information .order {
+		border-radius: 34px;
+    padding: 3px;
+  }	
+  #mypage #member_information .order a {
+    border: 1px solid #6a3b93;
+    border-radius: 34px;
+    font-size: 16px;
+    padding: 10px 32px;
+  }	
+  #mypage #member_information .order a img {
+    width: 58px;
+  }	
+  #mypage #member_menu ul li {
+    flex: 1;
+		margin: 0 2% 0 0;
+    padding: 40px 0 28px;
+	}
+  #mypage #member_menu ul li:nth-child(even) {
+    margin-right: 2%;
+  }
+  #mypage #member_menu ul li:last-child {
+    margin-right: 0;
+  }
+  #mypage #member_menu ul li .member_menu_img .badge {
+    top: -13px;
+    right: -13px;
+    font-size: 18px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+  }
+  #mypage #member_menu ul li img {
+    width: auto;
+  }
+  #mypage #member_menu ul li h3 {
+    font-size: 18px;
+		height: 42px;
+  }	
+  #mypage #member_menu ul li:first-child h3 {
+    line-height: 42px;
+  }
+  #mypage #member_menu_sub {
+    margin-top: 40px;
+  }
+  #mypage #member_menu_sub ul {
+    padding: 50px 30px;
+  }
+  #mypage #member_menu_sub ul li {
+    font-size: 20px;
+  }
+  #mypage #member_menu_sub ul li a:after {
+    width: 12px;
+    height: 12px;
+  }	
+  #mypage #member_sns {
+    margin-top: 100px;
+  }
+  #mypage #member_sns .member_sns_tit h2 {
+    font-size: 22px;
+		line-height: 2;
+  }
+  #mypage #member_sns .member_sns_tit h2 img {
+    width: 246px;
+  }
+  #mypage #member_sns .member_sns_tit p {
+    font-size: 18px;
+  }
+  #mypage #member_sns ul.member_sns_list {
+		display: block;
+	}
+  #mypage #member_sns ul.member_sns_list li .member_sns_list_img img {
+    border: 7px solid #FFF;
+  }
+  #mypage #member_sns ul.member_sns_list .member_sns_list_txt h3 {
+    font-size: 20px;
+  }
+  #mypage #member_sns ul.member_sns_list .member_sns_list_txt p {
+    border-radius: 14px;
+    font-size: 13px;
+    padding: 1px 19px;
+  }
+  #mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn {
+    margin-top: 20px;
+  }
+  #mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn a {
+    border-radius: 21px;
+    font-size: 12px;
+    padding: 9px 0 9px 25px;
+    width: 117px;
+  }
+  #mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn a:before {
+    left: 15px;
+    width: 23px;
+    height: 23px;
+  }
+  .slide-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -34px;
+  }
+  .prev-arrow {
+    transition: all .2s ease;
+    cursor: pointer;
+    left: -70px;
+    padding-right: 0px;
+    padding-left: 10px;
+    width: 20px;
+    height: 34px;
+  }
+  .prev-arrow:hover {
+    transition: all .2s ease;
+    opacity: 0.7;
+  }
+  .next-arrow {
+    transition: all .2s ease;
+    cursor: pointer;
+    right: -70px;
+    padding-right: 10px;
+    padding-left: 0px;
+    width: 20px;
+    height: 34px;
+  }
+  .next-arrow:hover {
+    transition: all .2s ease;
+    opacity: 0.7;
+  }
+  #mypage #member_sns_sub {
+    margin-top: 100px;
+		padding-bottom: 80px;
+  }
+  #mypage #member_sns_sub h2 {
+    font-size: 24px;
+  }
+  #mypage #member_sns_sub ul {
+    padding: 50px 30px;
+  }
+  #mypage #member_sns_sub ul li {
+    font-size: 20px;
+    padding: 9px 0 9px 55px;
+  }
+  #mypage #member_sns_sub ul li a:after {
+    width: 12px;
+    height: 12px;
+  }	
+  #mypage #member_sns_sub ul li a img {
+    left: 10px;
+		width: 32px;
+  }
+}
+
+/*==================================
+  ログイン関連画面
+==================================*/
+#mypage .mypageMain .footer_sns {
+	background: #433e51;
+  display: block !important;
+}
+#mypage .mainContents h2 {
+  background: #FFF;
+  border-radius: 5px;
+  color: #050505;
+	font-size: 3vw;
+	margin-top: 30px;
+	padding: 2vw 0 2vw 16vw;
+  position: relative;
+}
+#mypage .mainContents h2 img {
+  width: 8vw;
+  position: absolute;
+  top: 0.2vw;
+  left: 4vw;
+	bottom: 0;
+  margin: auto;
+}
+#mypage .mainContents p {
+  margin: 20px 0;
+}
+#mypage .mainContents .karteSearch {
+  border-radius: 5px;
+  border: 1px solid #FFF;
+  padding: 5vw;
+	margin-bottom: 40px;
+}
+#mypage .mainContents .karteSearch dl{
+  overflow: hidden;
+}
+#mypage .mainContents .karteSearch dt:first-child{
+	margin-top: 0;
+}
+#mypage .mainContents .karteSearch dt{
+	margin: 20px 0 10px;
+}
+#mypage .mainContents .karteSearch dd{
+	overflow: hidden;
+	margin: 0;
+}
+#mypage .mainContents .karteSearch .selectform,
+#mypage .mainContents .karteSearch .dateselect{
+	height: 40px;
+	margin-bottom: 8px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+}
+#mypage .mainContents .karteSearch .selectform{
+	width: 100%;
+}
+#mypage .mainContents .karteSearch .dateselect{
+	width: 28%;
+	margin-right: 2%;
+	float: left;
+}
+#mypage .mainContents .karteSearch .selectform:after,
+#mypage .mainContents .karteSearch .selectform:before,
+#mypage .mainContents .karteSearch .dateselect:after,
+#mypage .mainContents .karteSearch .dateselect:before{
+	content: '';
+	z-index: 1;
+	display: block;
+	width: 8px;
+	border-bottom: 1px solid #050505;
+	position: absolute;
+	top: 55%;
+	right: 11px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg)
+}
+#mypage .mainContents .karteSearch .selectform:after,
+#mypage .mainContents .karteSearch .dateselect:after{
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+#mypage .mainContents .karteSearch .selectform select,
+#mypage .mainContents .karteSearch .dateselect select{
+	border: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 100%;
+	padding: 0 11px;
+	font-size: 13px;
+	background-color: #fff;
+	display: inline-block;
+	border-radius: 5px;
+}
+#mypage .mainContents .karteSearch .dateselectTxt{
+	float: left;
+	margin-left: 8px;
+	position: relative;
+	top: 12px;
+}
+#mypage .mainContents .karteSearch .btnarea{
+	width: 100%;
+	text-align: center;
+}
+#mypage .mainContents .karteSearch .btnarea input{
+	background-color: #6a3b93;
+	color: #fff;
+	width: 200px;
+	height: 40px;
+	border: none;
+	font-size: 14px;
+	line-height: 0;
+	cursor: pointer;
+	border-radius: 8vw;
+}
+#mypage .mainContents .karteSearch .btnarea input:hover{
+	color: rgba(255,255,255,0.7);
+}
+/*タブ*/
+#mypage .mainContents #mypagetab .tab_menu{
+	margin-bottom: 0;
+}
+#mypage .mainContents #mypagetab .tab_menu li{
+	display: inline-block;
+	width: 48%;
+	text-align: center;
+	border-top: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-bottom: none;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+#mypage .mainContents #mypagetab .tab_menu li a{
+	font-size: 12px;
+	display: block;
+	padding: 8px 0;
+	color: #FFF;
+}
+#mypage .mainContents #mypagetab .tab_menu li.active{
+	background: #433e51;
+	border-bottom: none;
+}
+#mypage .mainContents #mypagetab .tab_menu li:first-child.active{
+	border-left: 1px solid #ddd;
+}
+#mypage .mainContents #mypagetab .tab_menu li:first-child{
+	margin-right: 2%;
+}
+#mypage .mainContents #mypagetab .tab_menu li.active a{
+	color: #FFF;
+	padding-right: 1px;
+}
+#mypage .mainContents #mypagetab .tab_contents{
+	display: none;
+	overflow: hidden;
+	margin-top: -1px;
+	padding-bottom: 20vw;
+}
+#mypage .mainContents #mypagetab .tab_contents.active{
+	border-top: 1px solid #FFF;
+	display: block;
+	background: #433e51;
+}
+#mypage .mainContents .historyTable{
+	background: #FFF;
+	border-radius: 5px;
+	border-collapse: collapse;
+	color: #050505;
+	width: 100%;
+  margin: 30px 0;
+}
+#mypage .mainContents .historyTable tr{
+	border-bottom: 1px solid #eee;
+  display: flex;
+	padding: 10px;
+}
+#mypage .mainContents .historyTable.detail tr:last-child{
+	border: none;
+	margin-bottom: 0;
+}
+#mypage .mainContents .historyTable tr:first-child{
+	border-bottom: 2px solid #050505;
+	margin-top: 10px;
+}
+#mypage .mainContents .historyTable tr:last-child{
+	margin-bottom: 30px;
+}
+#mypage .mainContents .historyTable th{
+	font-size: 10px;
+	text-align: left;
+  width: 25%;
+}
+#mypage .mainContents .historyTable th:nth-child(2){
+  width: 35%;
+}
+#mypage .mainContents .historyTable th:nth-child(3), #mypage .mainContents .historyTable th:last-child{
+  width: 20%;
+}
+#mypage .mainContents .historyTable td{
+	font-size: 10px;
+	padding: 0;
+	display: block;
+  width: 25%;
+}
+#mypage .mainContents .historyTable td:nth-child(2){
+  width: 35%;
+}
+#mypage .mainContents .historyTable td:nth-child(3), #mypage .mainContents .historyTable td:last-child{
+  width: 20%;
+}
+#mypage .mainContents .historyTable td:before{
+	content: attr(data-label);
+  float: left;
+  font-weight: bold;
+	font-size: 12px;
+}
+#mypage .mainContents .historyTable input{
+	width: 100%;
+	padding: 3px 0;
+	border: 1px solid #333;
+	background: #fff;
+}
+#mypage .mainContents .tab2_inner{
+	background: #FFF;
+	border-radius: 5px;
+	color: #050505;
+  margin: 30px 0;
+	padding: 5vw;
+}
+#mypage .mainContents .tab2_inner p{
+	margin-top: 0;
+}
+#mypage .mainContents .karteItem li{
+	display: flex;
+	align-items: center;
+	margin-bottom: 5vw;
+}
+#mypage .mainContents .karteItem li div {
+	margin-left: 20px;
+}
+@media (min-width: 768px) {
+  #mypage .mainContents .historyTable th {
+    font-size: 12px;
+  }
+  #mypage .mainContents .historyTable td {
+    font-size: 12px;
+  }
+  #mypage .mainContents .karteItem{
+    display: flex;
+		flex-wrap: wrap;
+  }
+  #mypage .mainContents .karteItem li{
+    width: 45%;
+  }
+}
+@media (min-width: 992px) {
+  #mypage .mypageMain .footer_sns {
+    background: #000;
+  }
+  #mypage .mainContents h2 {
+    font-size: 18px;
+    padding: 9px 0 9px 75px;
+  }
+  #mypage .mainContents h2 img {
+    width: 40px;
+		top: 8px;
+    left: 20px;
+  }
+  #mypage .mainContents .karteSearch {
+    padding: 30px 30px;
+  }
+	#mypage .mainContents .karteSearch dt{
+    width: 150px;
+    float: left;
+    clear: both;
+    padding: 8px 0 0;
+		text-align: right;
+		margin: 0;
+  }
+  #mypage .mainContents .karteSearch dd{
+    /*width: 630px;*/
+    float: left;
+    margin-left: 40px;
+  }
+  #mypage .mainContents .karteSearch .selectform,
+  #mypage .mainContents .karteSearch .dateselect{
+    float: left;
+    height: 40px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+  }
+  #mypage .mainContents .karteSearch .selectform{
+    width: 200px;
+  }
+  #mypage .mainContents .karteSearch .dateselect{
+    width: 90px;
+  }
+  #mypage .mainContents .karteSearch .selectform:after,
+  #mypage .mainContents .karteSearch .selectform:before,
+  #mypage .mainContents .karteSearch .dateselect:after,
+  #mypage .mainContents .karteSearch .dateselect:before{
+    content: '';
+    z-index: 1;
+    display: block;
+    width: 8px;
+    border-bottom: 1px solid #050505;
+    position: absolute;
+    top: 55%;
+    right: 11px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+  }
+  #mypage .mainContents .karteSearch .selectform:after,
+  #mypage .mainContents .karteSearch .dateselect:after{
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  #mypage .mainContents .karteSearch .selectform select,
+  #mypage .mainContents .karteSearch .dateselect select{
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    padding: 0 11px;
+    font-size: 14px;
+    background: rgba(255,255,255,1);
+    display: inline-block;
+		border-radius: 5px;
+  }
+  #mypage .mainContents .karteSearch .dateselectTxt{
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    top: 10px;
+  }
+  #mypage .mainContents .karteSearch .btnarea{
+    padding-top: 15px;
+		width: 630px;
+    text-align: left;
+		margin-left: 190px;
+  }
+  #mypage .mainContents .karteSearch .btnarea input{
+    background-color: #6a3b93;
+		border: none;
+		border-radius: 20px;
+    color: #fff;
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 0;
+    cursor: pointer;
+  }
+  #mypage .mainContents .karteSearch .btnarea input:hover{
+    color: rgba(255,255,255,0.7);
+  }
+	/*タブ*/
+  #mypage .mainContents #mypagetab .tab_menu li{
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: none;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+  }
+  #mypage .mainContents #mypagetab .tab_menu li a{
+    font-size: 13px;
+    display: block;
+    padding: 8px 0;
+    color: #FFF;
+  }
+  #mypage .mainContents #mypagetab .tab_menu li:first-child.active{
+    border-left: 1px solid #ddd;
+  }
+  #mypage .mainContents #mypagetab .tab_menu li:first-child{
+    margin-right: 1%;
+  }
+  #mypage .mainContents #mypagetab .tab_menu li.active a{
+    color: #FFF;
+    padding-right: 1px;
+  }
+  #mypage .mainContents #mypagetab .tab_contents{
+    display: none;
+    overflow: hidden;
+    margin-top: -1px;
+		padding-bottom: 130px;
+  }
+  #mypage .mainContents #mypagetab .tab_contents.active{
+    display: block;
+  }
+	#mypage .mainContents .historyTable{
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #mypage .mainContents .historyTable tr{
+    border-bottom: 1px solid #eee;
+		align-items: center;
+    margin: 0 30px;
+		padding: 10px 0;
+  }
+  #mypage .mainContents .historyTable th{
+		font-size: 16px;
+    padding-bottom: 5px;
+  }
+	#mypage .mainContents .historyTable th:nth-child(2){
+    width: 30%;
+  }
+  #mypage .mainContents .historyTable th:nth-child(3){
+    width: 25%;
+  }
+  #mypage .mainContents .historyTable td{
+		font-size: 16px;
+  }
+	#mypage .mainContents .historyTable td:nth-child(2){
+    width: 30%;
+  }
+  #mypage .mainContents .historyTable td:nth-child(3){
+    width: 25%;
+  }
+  #mypage .mainContents .historyTable td span{
+		font-size: 26px;
+		margin-right: 5px;
+  }
+  #mypage .mainContents .historyTable input{
+    width: 60px;
+  }
+	#mypage .mainContents .tab2_inner{
+    padding: 30px;
+  }
+	#mypage .mainContents .karteItem li{
+    margin-right: 5%;
+		margin-bottom: 10px;
+		width: auto;
+  }
+	#mypage .mainContents .karteItem li:nth-child(3n){
+    margin-right: 0;
+  }
+}
+
+/***ワードローブ***/
+#mypage .mainContents .karteWrap .wardrobeItem{
+	clear: both;
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+#mypage .mainContents .karteWrap .wardrobeItem input{
+    margin-top: 15px;
+    margin-right: 6px;
+    vertical-align: -1px;
+  }
+#mypage .mainContents .karteWrap .karteItem.wardrobe{
+  margin-top: 20px;
+  border-bottom: 2px solid #050505;
+  padding-bottom: 10px;
+}
+#mypage .mainContents .karteWrap .wardrobeItem .karteItem .itemCheck{
+  margin: 15px 0 4px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+  font-size: 11px;
+}
+#mypage .mainContents .karteWrap .wardrobeItem .karteItem .itemCheck input{
+  margin-top: 0;
+}
+#mypage .mainContents .karteWrap .wardrobeItem .karteItem .itemChange{
+  font-size: 10px;
+  color: #050505;
+}
+#mypage .mainContents .karteWrap .btnarea{
+  width: 100%;
+  text-align: center;
+}
+#mypage .mainContents .karteWrap .btnarea input{
+  background-color: #6a3b93;
+	border-radius: 8vw;
+  color: #fff;
+  width: 200px;
+  height: 40px;
+  border: none;
+  font-size: 14px;
+  line-height: 0;
+  cursor: pointer;
+}
+#mypage .mainContents .karteWrap .wardrobeItem h3{
+	font-size: 16px;
+	padding-bottom: 30px;
+	position: relative;
+}
+#mypage .mainContents .karteWrap .wardrobeItem h3:after{
+	position: absolute;
+	right: 0;
+  bottom: 18px;
+  left: 0;
+  background: #050505;
+  border-radius: 0.5vw;
+  content: '';
+  margin: auto;
+  width: 15vw;
+  height: 0.5vw;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive h3{
+	font-size: 16px;
+	padding-bottom: 30px;
+	position: relative;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive h3:after{
+	position: absolute;
+	right: 0;
+  bottom: 18px;
+  left: 0;
+  background: #050505;
+  border-radius: 0.5vw;
+  content: '';
+  margin: auto;
+  width: 15vw;
+  height: 0.5vw;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dl{
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dt{
+  width: 100%;
+  /*margin-top: 20px;*/
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dd{
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  margin-left: 0;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dd.border{
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dd input[type="text"]{
+  width: 100%;
+  margin-bottom: 0;
+	border-radius: 5px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dd input.name_sei{
+  margin-bottom: 10px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .addressform input.postal{
+  width: 37%;
+  margin-bottom: 0;
+	border-radius: 5px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .addressform .zipbtn{
+  margin-bottom: 0;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .addressform2[type="text"]{
+  width: 100%;
+	border-radius: 5px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .addressform p{
+  float: left;
+  margin: 0 10px 0 0;
+  padding: 8px 0 0;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .contactnum input{
+  margin-bottom: 0;
+	border-radius: 5px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .contactnum p{
+  margin: 0 9px;
+  padding: 0;
+  vertical-align: middle;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .dateselect{
+	border-radius: 5px;
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dl p{
+  clear: both;
+  font-size: 13px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .btnarea{
+  overflow: hidden;
+  margin: 20px 0;
+}
+#mypage .mainContents .karteWrap #form_1{
+	background: #FFF;
+  border-radius: 5px;
+  color: #050505;
+  margin: 30px 0;
+  padding: 5vw;
+}
+#mypage .mainContents .wardrobeItem .karteItem.wardrobe li {
+	position: relative;
+}
+#mypage .mainContents .wardrobeItem .karteItem.wardrobe li label{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#mypage .mainContents .wardrobeItem .chkAll{
+	position: relative;
+  padding: 0 0 5px 30px;
+  border-bottom: 2px solid #eee;
+}
+#mypage .mainContents .wardrobeItem .chkAll label{
+	position: absolute;
+	top: -2px;
+  left: 0;
+}
+#mypage .mainContents .wardrobeItem label input[type="checkbox"] {
+	margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+#mypage .mainContents .wardrobeItem label input[type="checkbox"] + span {
+	width: 17px;
+  height: 17px;
+  display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+#mypage .mainContents .wardrobeItem label input[type="checkbox"] + span::before {
+	background: #FFF;
+	border: 1px #616161 solid;
+  /*border-color: #6a3b93;
+	border-radius: 5px;*/
+	position: absolute;
+  top: 0;
+  left: 0;
+	content: '';
+	width: 17px;
+  height: 17px;
+}
+#mypage .mainContents .wardrobeItem label input[type="checkbox"]:checked + span::before {
+	background-color: #6a3b93;
+}
+#mypage .mainContents .wardrobeItem label input[type="checkbox"]:checked + span::after {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+	position: absolute;
+	content: '';
+	z-index: 1;
+  border: 2px solid #fff;
+  border-width: 0 2px 2px 0;
+  top: 3px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+}
+@media (min-width: 992px) {
+  #mypage .mainContents .karteWrap .btnarea input:hover{
+    color: rgba(255,255,255,0.7);
+  }
+  #mypage .mainContents .karteWrap .wardrobeItem h3{
+		font-size: 18px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeItem h3:after{
+		bottom: -12px;
+    border-radius: 2px;
+    width: 72px;
+    height: 4px;
+    margin-bottom: 30px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeItem input{
+    margin-right: 10px;
+    vertical-align: 1px;
+  }
+  #mypage .mainContents .karteWrap .karteItem.wardrobe{
+    margin-top: 10px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeItem .karteItem .itemCheck{
+    margin: 15px 0 4px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+  }
+  #mypage .mainContents .karteWrap .wardrobeItem .karteItem .itemChange{
+    font-size: 10px;
+    color: #050505;
+  }
+  #mypage .mainContents .karteWrap .btnarea{
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+  }
+  #mypage .mainContents .karteWrap .btnarea input{
+    background-color: #6a3b93;
+		border-radius: 20px;
+    color: #fff;
+    width: 200px;
+    height: 40px;
+    border: none;
+    font-size: 14px;
+    line-height: 0;
+    cursor: pointer;
+  }
+  #mypage .mainContents .karteWrap .btnarea input:hover{
+    color: rgba(255,255,255,0.7);
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive h3{
+		font-size: 18px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive h3:after{
+		bottom: -12px;
+    border-radius: 2px;
+    width: 72px;
+    height: 4px;
+    margin-bottom: 30px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dt{
+    float: left;
+    width: 15%;
+		border-bottom: 1px solid #eee;
+    padding: 5px 5% 24px 0;
+    text-align: right;
+	}
+  #mypage .mainContents .karteWrap .wardrobeDelive dt.pb23{
+    padding-bottom: 23px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dt:first-child{
+    height: 216px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dd{
+    float: left;
+    width: 80%;
+    margin-bottom: 15px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dd.border.pb16{
+		padding-bottom: 16px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dd.border.pb21{
+		padding-bottom: 21px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dd input[type="text"]{
+    width: 100%;
+    margin-bottom: 0;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .addressform input.postal{
+    width: 150px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .addressform2[type="text"]{
+    width: 260px;
+    margin-left: 30px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .addressform p{
+    float: left;
+    margin: 0 20px 0 0;
+    padding: 8px 0 0;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .contactnum input{
+    margin-bottom: 0;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .contactnum p{
+    margin: 0 20px;
+    padding: 0;
+    vertical-align: middle;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .dateselect{
+    margin-bottom: 0;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dl p{
+    clear: both;
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding-top: 30px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .btnarea{
+    overflow: hidden;
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+  h5.messageSend{
+    font-weight: bold;
+    font-size: 14px;
+    margin: 30px 0 10px;
+  }
+  .postingForm.send{
+    margin-bottom: 30px;
+  }
+	#mypage .mainContents .karteWrap #form_1{
+    padding: 30px;
+  }
+  #mypage .mainContents .wardrobeItem label input[type="checkbox"] + span {
+    width: 17px;
+    height: 17px;
+		vertical-align: sub;
+  }
+  #mypage .mainContents .wardrobeItem label input[type="checkbox"] + span::before {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+/***ただいまのお預かり品***/
+@media (min-width: 992px) {
+	#mypage .mainContents.ordered h2 img {
+    top: 0;
+  }
+}
+
+/*==================================
+  ログイン
+==================================*/
+/***ログイン***/
+.login_top {
+	background: url(../mypage/img/mypage_bg.jpg) no-repeat top center/cover fixed;
+}
+.login_top .footer_sns {
+  display: block !important;
+}
+.login_top .loginWrap {
+	padding: 7vw 0 0;
+}
+.loginBox{
+	width:100%;
+	margin: 0 auto;
+	text-align:center;
+	margin-top: 30px;
+	margin-top: 15vw;
+	position: relative;
+}
+.loginBox h3{
+	font-size:6vw;
+	font-weight: normal;
+	margin-bottom: 5vw;
+	font-family: 'sawarabi';
+  -webkit-font-smoothing: antialiased;
+}
+.loginBox input{
+	width: 100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	padding: 3vw;
+	font-size: 3vw;
+	margin-bottom: 5vw;
+}
+.loginBox input[type="file"]{
+	border: none;
+	padding-left: 0;
+}
+.loginBox input::-webkit-input-placeholder{
+    color: #ccc;
+}
+.loginBox input:-ms-input-placeholder{
+    color: #ccc;
+}
+.loginBox input::-moz-placeholder{
+    color: #ccc;
+}
+.loginBox .btn{
+	color: #FFF;
+  background: #6a3b93;
+	border: none;
+  border-radius: 8vw;
+  display: inline-block;
+  font-size: 4vw;
+  padding: 2vw 10vw;
+	width: auto;
+	font-weight: bold;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+}
+.loginBox .btn:hover{
+	color: rgba(255,255,255,0.7);
+}
+.loginBox #btn{
+	margin-top: 20px;
+}
+.loginBox .passforget{
+	width: 100%;
+	margin: 0 auto;
+}
+.loginBox .passforget p{
+	text-align:center;
+	font-size:3vw;
+}
+.loginBox .passforget a{
+	text-decoration: underline;
+	color: #FFF;
+	text-align:left;
+}
+.loginBox .passforget a:hover{
+	text-decoration: none;
+}
+.loginBox p{
+	text-align:left;
+	font-size:3vw;
+	line-height: 2;
+	margin-bottom: 20px;
+}
+.loginBox p.tcntr{
+	margin-top: 30px;
+}
+.loginBox a{
+	text-decoration: underline;
+	color: #9a7339;
+}
+
+
+/***初期設定***/
+.loginBox h3.settingTtl{
+	margin-bottom: 30px;
+	line-height: 1.6;
+	font-size: 16px;
+}
+.loginBox dt{
+	text-align: left;
+	margin-bottom:5px;
+}
+.loginBox dd input{
+	margin-bottom: 20px;
+}
+.loginBox span.attention{
+	color:#999;
+}
+.loginBox span{
+	color:#a93c3c;
+}
+.loginBox .addressselect{
+	float:left;
+	border: 1px solid #ddd;
+	width:100%;
+	height:40px;
+	margin-bottom: 20px;
+	padding:0 11px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+}
+.loginBox .addressselect select{
+	border:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	width:100%;
+	height:100%;
+	font-size:110%;
+	background-color:#fff;
+}
+.loginBox .addressselect:before,
+.loginBox .addressselect:after{
+	content: '';
+	z-index: 1;
+	display: block;
+	width: 8px;
+	border-bottom: 1px solid #9a7339;
+	position: absolute;
+	top:60%;
+	right:11px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg)
+}
+.loginBox .addressselect:after{
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+.loginBox dd textarea{
+	max-width:100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	margin-bottom:20px;
+	padding:11px;
+	font-size:110%;
+}
+.loginBox dd textarea::-webkit-input-placeholder {
+    color: #ccc;
+}
+.loginBox dd textarea:-ms-input-placeholder {
+    color: #ccc;
+}
+.loginBox dd textarea::-moz-placeholder {
+    color: #ccc;
+}
+.loginBox dd textarea{
+	width: 100%;
+	height: 150px;
+}
+.loginBox .settingTxt{
+	text-align: center;
+	font-size: 12px;
+}
+
+@media (min-width: 992px) {
+  .login_top .bg {
+    padding-top: 105px;
+  }
+  .login_top .loginWrap {
+    padding: 100px 0 0;
+  }
+	.loginBox{
+    width:540px;
+    margin: 0 auto;
+    text-align:center;
+    margin-bottom: 80px;
+  }
+  .loginBox h3{
+    font-size:26px;
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+  .loginBox input{
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    padding: 11px;
+    font-size: 110%;
+    margin-bottom:20px;
+  }
+  .loginBox input[type="file"]{
+    border: none;
+    padding-left: 0;
+  }
+  .loginBox input::-webkit-input-placeholder{
+      color: #ccc;
+  }
+  .loginBox input:-ms-input-placeholder{
+      color: #ccc;
+  }
+  .loginBox input::-moz-placeholder{
+      color: #ccc;
+  }
+  .loginBox .btn{
+    border-radius: 22px;
+    font-size: 16px;
+    padding: 6px 41px;
+  }
+  .loginBox .passforget{
+    width: auto;
+    margin: 0 auto;
+		position: absolute;
+    bottom: 12px;
+    right: 0;
+  }
+  .loginBox .passforget p{
+    text-align:left;
+    font-size:12px;
+		margin-top:5px;
+  }
+  .loginBox .passforget a{
+    text-decoration: underline;
+    color: #FFF;
+    text-align:left;
+  }
+  .loginBox .passforget a:hover{
+    text-decoration: none;
+  }
+  .loginBox p{
+		font-size: 13px;
+    text-align:left;
+    line-height: 2;
+    margin-bottom: 20px;
+  }
+  .loginBox a{
+    text-decoration: underline;
+    color: #9a7339;
+  }
+  /***初期設定***/
+  .loginBox h3.settingTtl{
+    margin-bottom: 50px;
+    line-height: 1.6;
+  }
+  .loginBox dt{
+    text-align: left;
+    margin-bottom:10px;
+  }
+  .loginBox span.attention{
+    color:#999;
+  }
+  .loginBox span{
+    color:#a93c3c;
+  }
+  .loginBox .addressselect{
+    float:left;
+    border: 1px solid #ddd;
+    width:100%;
+    height:40px;
+    margin-bottom: 20px;
+    padding:0 11px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+  }
+  .loginBox .addressselect select{
+    border:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    width:100%;
+    height:100%;
+    font-size:110%;
+    background-color:#fff;
+  }
+  .loginBox .addressselect:before,
+  .loginBox .addressselect:after{
+    content: '';
+    z-index: 1;
+    display: block;
+    width: 8px;
+    border-bottom: 1px solid #9a7339;
+    position: absolute;
+    top:60%;
+    right:11px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+  }
+  .loginBox .addressselect:after{
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  .loginBox dd textarea{
+    max-width:100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    margin-bottom:20px;
+    padding:11px;
+    font-size:110%;
+  }
+  .loginBox dd textarea::-webkit-input-placeholder {
+      color: #ccc;
+  }
+  .loginBox dd textarea:-ms-input-placeholder {
+      color: #ccc;
+  }
+  .loginBox dd textarea::-moz-placeholder {
+      color: #ccc;
+  }
+  .loginBox dd textarea{
+    width: 100%;
+    height: 150px;
+  }
+  .loginBox .settingTxt{
+    text-align: center;
+    font-size:12px;
+  }
+  .login_top #member {
+    padding-bottom: 130px !important;
+  }
+}

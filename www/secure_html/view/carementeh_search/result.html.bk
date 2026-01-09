@@ -1,0 +1,131 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>さがす＜ケアメンテ実例集＞｜ハッピー ケアメンテ&reg;</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/search.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+<body id="careSearch">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	<!--　/header_nav　-->
+	
+	<div class="bg">
+    <section id="case">      
+      <div class="container">
+        
+        <div class="tac case_top">
+          <div><h2>検索結果</h2></div>
+        </div>
+
+          <h3 class="tac">
+            <?php if ($this->get("item_count") > 0) { ?>
+            <?php echo $this->get("item_count"); ?> 点の該当がありました。
+            <?php } else {?>
+              該当する検索結果がありませんでした。<br>
+              検索条件を変更して、もういちど検索をやり直してください。
+            <?php } ?>
+          </h3>
+
+          <?php if ($this->get("item_count") > 0) { ?>
+          <div class="btn">
+            <a href="/carementeh_search/form.html?<?php echo $this->get("get_query") ?>">検索画面に戻る</a>
+          </div>
+          <?php } ?>
+        
+        <ul class="case_list">            
+            <?php foreach ($this->get("careAllArray") AS $careList) { ?>
+                <li>
+                    <a href="<?php echo $careList['item_link'] ?>">
+                    <p class="itemNo"><?php echo $careList['item_id'] ?></p>
+                    <div class="itemBox">
+                        <img src="<?php echo $careList['thumb_url'] ?>" alt="case01">
+                        <div class="case_list_txt">
+                            <h4><?php echo $careList['brand_name'] ?><span><?php echo $careList['category'] ?></span></h4>
+                            <p><?php echo $careList['material'] ?><br><br><?php echo $careList['pattern'] ?></p>
+                        </div>
+                    </div>
+                    </a>
+                </li>
+            <?php } ?>
+        </ul>
+        <div class="postingPagenavi">
+          <ul class="pageNumbers">
+            <?php echo $this->get("pageng_html"); ?>
+          </ul>
+        </div>
+        <div class="btn btm_btn">
+          <a href="/carementeh_search/form.html?">検索画面に戻る</a>
+        </div>
+      </div>
+    </section>
+    <!--　/#case -->
+    <?php if ($this->get('tutorial') == 0) {?>
+    <section id="counseling_txt">
+      <div class="container">
+				<div class="counseling_txt_img">
+          <img src="../img/counseling.png" alt="" width="130" height="206">
+        </div>
+				<div class="counseling_txt_box">
+          <?php if (count($this->get('careAllArray'))) {?>
+          <p>検索結果が表示されましたね。画像を選んで詳細を確認してみてください。</p>
+          <?php } else {?>
+          <p>検索結果が見つかりませんでした。条件を見なおして再度検索をしてみましょう。</p>
+          <?php }?>
+
+				</div>
+			</div>
+    </section>
+    <?php }?>
+
+	</div>
+  <!--　/.footer_nav_sp -->
+  <?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/footer_new.php");
+  ?>
+  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+		
+    var menuFlag = true;
+    $('.header_nav_common .header_tab').on('click', function() {
+      menuFlag = !menuFlag;
+      if(menuFlag){
+        $('.header_nav_common').css("top","0");
+      } else {
+        $('.header_nav_common').css("top","-95px");
+      }
+  	});
+
+		
+  });
+  </script>
+	</body>
+</html>

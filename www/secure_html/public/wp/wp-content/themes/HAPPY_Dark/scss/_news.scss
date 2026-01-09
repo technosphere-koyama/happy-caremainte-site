@@ -1,0 +1,150 @@
+@use "mixin";
+
+#news {
+  .news__section {
+    li {
+      display: block;
+      border-bottom: 1px solid white;
+      a {
+        font-weight: normal;
+        display: block;
+      }
+    }
+  }
+  .news_link {
+    margin: 30px 0;
+
+    a {
+      display: block;
+    }
+  }
+  h1.news_title {
+    @include sawarabi;
+    font-size: 36px;
+    font-size: 7.2vw; /* h2 = 6vw * 1.2 */
+    font-size: min(7.2vw, 36px);
+    padding-bottom: 12px;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid white;
+  }
+
+  @include for-pc {
+    .LColumn {
+      margin-bottom: 70px;
+    }
+
+    .newsh {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .news__section {
+      padding-top: 40px;
+      margin-bottom: 110px;
+
+      ul {
+        margin: 0 auto;
+      }
+
+      li a {
+        font-size: 13px;
+        padding: 23px 0;
+        display: grid;
+        grid-template-columns: 125px auto;
+      }
+    }
+
+
+    .news_date { /*投稿ページ*/
+      font-size: 11px;
+      display: block;
+      margin-bottom: 20px;
+    }
+    h1.news_title {
+      font-size: 28px;
+      margin-bottom: 2rem;
+    }
+
+    .Lnews img {
+      display: block;
+      margin: 30px 0 0;
+    }
+
+    .news_entry {
+      font-size: $contentFontSize;
+    }
+
+  }
+
+  @include for-sp {
+    .newsh {
+      margin-bottom: 5px;
+      line-height: 1.5;
+      margin-top: 30px;
+    }
+
+    .news__section {
+      padding-top: 20px;
+      margin-bottom: 35px;
+
+      ul {
+        width: 90%;
+        margin: 0 5%;
+      }
+
+      li {
+        margin-bottom: 13px;
+
+        a {
+          font-size: 10px;
+          line-height: 1.7;
+          padding-bottom: 13px;
+
+          .date {
+            font-size: 8px;
+            display: block;
+          }
+        }
+      }
+    }
+
+    /*投稿ページ*/
+    .news_date {
+      display: block;
+      margin: 20px 0 10px;
+    }
+
+    .news_entry {
+      line-height: 1.6em;
+    }
+
+    .Lnews img {
+      display: block;
+      margin: 30px auto 5px;
+    }
+
+    .news_link {
+      a {
+        color: #a9803c;
+        text-decoration: underline;
+        line-height: 2;
+      }
+    }
+
+    .news_imgp {
+      text-align: center;
+    }
+
+    .LColumn {
+      p a {
+        text-decoration: underline;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

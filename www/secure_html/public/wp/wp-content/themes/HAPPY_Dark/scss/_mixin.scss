@@ -1,0 +1,66 @@
+@mixin sawarabi {
+  font-family: 'sawarabi', serif;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+$purple: #6a3b93;
+
+$tableBorder: 1px solid hsl(0, 0%, 50%);
+$secondaryBorder: 1px solid hsl(0, 0%, 30%);
+$contentFontSize: 13px; // 文字多めの .contents
+$verticalGap: 2em;
+$spPoint: 991px;
+
+@mixin for-sp {
+  @media only screen and (max-width: $spPoint ){ @content; }
+}
+@mixin for-pc {
+  @media only screen and (min-width: $spPoint + 1px ) { @content; }
+}
+@mixin clearfix {
+  overflow: hidden;
+}
+@mixin imgRight-for-sp($width: 33.3%) {
+  @include for-sp {
+    .section-imgRight img {
+      float: right;
+      margin-left: 10px;
+      width: $width;
+    }
+  }
+}
+@mixin section-grid($cols, $pcCols, $gap: 3%, $pcGap: 3%) {
+  @include clearfix;
+  li {
+    width: ( 100% - $gap / ( $cols - 1 ) ) / $cols;
+    float: left;
+    overflow: hidden;
+    margin-right: $gap;
+    margin-bottom: 30px;
+
+    @include for-sp {
+      &:nth-child(#{$cols}n) {
+        margin-right: 0;
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    @include for-pc {
+      & {
+        width: ( 100% - $gap * ( $pcCols - 1 ) ) / $pcCols;
+        margin-right: $pcGap;
+        margin-bottom: 50px;
+      }
+      &:nth-child(#{$pcCols}n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(#{$pcCols}n+1) {
+        clear: both;
+      }
+    }
+  }
+}

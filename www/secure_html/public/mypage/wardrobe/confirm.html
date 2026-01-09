@@ -1,0 +1,9 @@
+<?php
+/*
+ * ワードローブ系
+ */
+require '../../../core/PreLoad.inc';
+$aic = new MypageHistoryController(REST_ORDER_ROBE);
+$aic->confirm();
+$aic->view("mypage".DS."wardrobe");
+?>

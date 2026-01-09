@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script type="text/javascript">
+        if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+            document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+        } else {
+            document.write('<meta name="viewport" content="width=1280" />');
+        }
+    </script>
+    <title>お申し込み・ご注文｜ハッピー ケアメンテ®</title>
+    <link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+    <link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+    <link href="/wp/wp-content/themes/HAPPY_Dark/css/frm.css" rel="stylesheet">
+    <link rel="stylesheet" href="/wp/wp-content/themes/HAPPY_Dark/css/transitional.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+    <script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+    <style>
+        #cancelbtn,
+        #btn {
+            cursor: pointer;
+        }
+        /* .top-border-style {
+		border-top: 1px solid #ddd; 
+		padding: 0%;
+	} */
+        
+        @media (min-width: 740px) {
+            .top-border-style {
+                border-top: 1px solid #ddd;
+                padding: 0% !important;
+            }
+        }
+    </style>
+</head>
+
+<body id="top" class="registration_top">
+    <?php
+    /* ヘッダーインクルード */
+    include(DIR_PUBLIC . "/include/header_new.php");
+    ?>
+        <!--　/header_nav　-->
+        <div class="bg">
+
+            <section class="registrationWrap">
+                <div class="container">
+
+                    <div class="bg_w">
+                        <div class="registrationBox">
+                            <h3>お申し込み・ご注文</h3>
+                            <p>下記内容でよろしければ、送信ボタンを押してください。</p>
+
+                            <form id="form_1" name="form01" method="POST" action="./complete.html" enctype="multipart/form-data">
+                                <input type="hidden" name="mode" value="core">
+                                <dl class="contactform checkform">
+                                    <dt>お名前 <span>※</span></dt>
+                                    <dd>
+                                        <?php echo $this->get("name_view"); ?>
+                                    </dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>ふりがな <span>※</span></dt>
+                                    <dd>
+                                        <?php echo $this->get("kana_view"); ?>
+                                    </dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>性別 <span>※</span></dt>
+                                    <dd>
+                                        <?php echo $this->get("sex"); ?>
+                                    </dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>生年月日 <span>※</span></dt>
+                                    <dd>
+                                        <?php echo $this->get("birth_view"); ?>
+                                    </dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>お引取先住所 <span>※</span></dt>
+                                    <dd>
+                                        <?php echo $this->get("address_view"); ?>
+                                    </dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>電話番号 <span>※</span></dt>
+                                    <dd>
+                                        <?php echo $this->get("telephone_view"); ?>
+                                    </dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <?php if (!StaticFunction::is_empty($this->get("faxnum"))) { ?>
+                                    <dt>FAX番号</dt>
+                                    <dd>
+                                        <?php echo $this->get("faxnum_view"); ?>
+                                    </dd>
+                                    <?php } ?>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>メールアドレス <span>※</span></dt>
+                                    <dd>
+                                        <?php echo $this->get("email"); ?>
+                                    </dd>
+                                </dl>
+                                <?php if (!StaticFunction::is_empty($this->get("email2"))) { ?>
+                                <dl class="contactform conf">
+                                    <dt>メールサブアドレス</dt>
+                                    <dd>
+                                        <?php echo $this->get("email2"); ?>
+                                    </dd>
+                                </dl>
+                                <?php } ?>
+                                <dl class="contactform conf">
+                                    <dt>職種 <span>※</span></dt>
+                                    <dd>
+                                        <?php echo $this->get("wkbn"); ?>
+                                    </dd>
+                                </dl>
+
+
+                                <?php if (!StaticFunction::is_empty($this->get("s_name1")) || !StaticFunction::is_empty($this->get("s_addr1"))) { ?>
+                                <dl class="contactform conf">
+                                    <dt>お届け先お名前</dt>
+                                    <dd>
+                                        <?php echo $this->get("s_name_view"); ?>
+                                    </dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>お届け先ふりがな</dt>
+                                    <dd>
+                                        <?php echo $this->get("s_kana_view"); ?>
+                                    </dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>お届け先住所</dt>
+                                    <dd>
+                                        <?php echo $this->get("s_address_view"); ?>
+                                    </dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>お届け先電話番号</dt>
+                                    <dd>
+                                        <?php echo $this->get("s_telephone_view"); ?>
+                                    </dd>
+                                </dl>
+                                <?php } ?>
+                                <dl class="contactform conf">
+                                    <dt>引取日 <span>※</span></dt>
+                                    <dd>
+                                        <?php echo $this->get("taking_view"); ?>
+                                    </dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>運送業者 <span>※</span></dt>
+                                    <dd>
+                                        <?php echo $this->get("carrier_view"); ?>
+                                    </dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>引取時間 <span>※</span></dt>
+                                    <dd>
+                                        <?php echo $this->get("time_view"); ?>
+                                    </dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>荷物個口数 <span>※</span></dt>
+                                    <dd>
+                                        <?php echo $this->get("kutisu"); ?>個口</dd>
+                                </dl>
+
+                                <!--
+					<dt>カタログ希望 <span>*</span></dt>
+					<dd><?php echo $this->get("cat_view"); ?></dd>
+					<dt>メールマガジン <span>*</span></dt>
+					<dd><?php echo $this->get("mag_view"); ?></dd>
+					<dt>保管お預かり <span>*</span></dt>
+					<dd><?php echo $this->get("kep_view"); ?></dd>
+					-->
+                                <!--
+													<dt>制度のご確認 <span>*</span></dt>
+													<dd>同意する</dd>
+													<dt>注意事項のご確認 <span>*</span></dt>
+													<dd>同意する</dd>
+					-->
+                                <dl class="contactform conf">
+                                    <dt>今回利用されたきっかけ <span>※</span></dt>
+                                    <?php // Added by Manjunathgouda on 20220211 
+						   // ------------------------ START --------------------------- ?>
+                                    <dd class="top-border-style"></dd>
+                                    <!-- Cause 1 -->
+                                    <?php if($this->get("cause1_selected") == "checked") { ?>
+                                    <dd style="border-top: none;">
+                                        <?php echo CONF::read("ORDER_ENQUETE_TEST.1") ?>&nbsp[
+                                        <?php echo $this->get("cause_t3"); ?>]</dd>
+                                    <?php }	?>
+                                    <!-- Cause 2 -->
+                                    <?php if($this->get("cause2_selected") == "checked") { ?>
+                                    <dd style="border-top: none;">
+                                        <?php echo CONF::read("ORDER_ENQUETE_TEST.2") ?>
+                                    </dd>
+                                    <?php }	?>
+                                    <!-- Cause 3 -->
+                                    <?php if($this->get("cause3_selected") == "checked") { ?>
+                                    <dd style="border-top: none;">
+                                        <?php echo CONF::read("ORDER_ENQUETE_TEST.3") ?>
+                                    </dd>
+                                    <?php }	?>
+                                    <!-- Cause 4 -->
+                                    <?php if($this->get("cause4_selected") == "checked") { ?>
+                                    <dd style="border-top: none;">
+                                        <?php echo CONF::read("ORDER_ENQUETE_TEST.4") ?>
+                                    </dd>
+                                    <?php }	?>
+                                    <!-- Cause 5 -->
+                                    <?php if($this->get("cause5_selected") == "checked") { ?>
+                                    <dd style="border-top: none;">
+                                        <?php echo CONF::read("ORDER_ENQUETE_TEST.5") ?>
+                                    </dd>
+                                    <?php }	?>
+                                    <!-- Cause 6 -->
+                                    <?php if($this->get("cause6_selected") == "checked") { ?>
+                                    <dd style="border-top: none;">
+                                        <?php echo CONF::read("ORDER_ENQUETE_TEST.6") ?>
+                                    </dd>
+                                    <?php }	?>
+                                    <!-- Cause 7 -->
+                                    <?php if($this->get("cause7_selected") == "checked") { ?>
+                                    <dd style="border-top: none;">
+                                        <?php echo CONF::read("ORDER_ENQUETE_TEST.7") ?>
+                                    </dd>
+                                    <?php }	?>
+                                    <!-- Cause 8 -->
+                                    <?php if($this->get("cause8_selected") == "checked") { ?>
+                                    <dd style="border-top: none;">
+                                        <?php echo CONF::read("ORDER_ENQUETE_TEST.8") ?>
+                                    </dd>
+                                    <?php }	?>
+                                    <!-- Cause 9 -->
+                                    <?php if($this->get("cause9_selected") == "checked") { ?>
+                                    <dd style="border-top: none;">
+                                        <?php echo CONF::read("ORDER_ENQUETE_TEST.9") ?>&nbsp[
+                                        <?php echo $this->get("cause_t1"); ?>]</dd>
+                                    <?php }	?>
+                                    <!-- Cause 10 -->
+                                    <?php if($this->get("cause10_selected") == "checked") { ?>
+                                    <dd style="border-top: none;">
+                                        <?php echo CONF::read("ORDER_ENQUETE_TEST.10") ?>
+                                    </dd>
+                                    <?php }	?>
+                                    <!-- Cause 11 -->
+                                    <?php if($this->get("cause11_selected") == "checked") { ?>
+                                    <dd style="border-top: none;">
+                                        <?php echo CONF::read("ORDER_ENQUETE_TEST.11") ?>
+                                    </dd>
+                                    <?php }	?>
+                                    <!-- Cause 12 -->
+                                    <?php if($this->get("cause12_selected") == "checked") { ?>
+                                    <dd style="border-top: none;">
+                                        <?php echo CONF::read("ORDER_ENQUETE_TEST.12") ?>&nbsp[
+                                        <?php echo $this->get("cause_t2"); ?>]</dd>
+                                    <?php }	?>
+                                    <!-- <dd><php echo $this->get("cause_view"); ?></dd> -->
+                                    <?php // ------------------------ END --------------------------- ?>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>通信欄</dt>
+                                    <dd>
+                                        <?php echo $this->get("comm"); ?>
+                                    </dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <dt>利用規約</dt>
+                                    <dd>同意する</dd>
+                                </dl>
+                                <dl class="contactform conf">
+                                    <?php if (!StaticFunction::is_empty($this->get("idpass"))) { ?>
+                                    <dt>パスワード</dt>
+                                    <dd>
+                                        <?php echo $this->get("pass_mask"); ?>
+                                        <dd>
+
+                                            <?php } ?>
+                                            <dt class="btnarea2"><input type="button" id="cancelbtn" class="cancelbtn" value="戻　る" onclick="javascript:window.history.back(-1);return false;"><input type="button" id="btn" class="btn" value="送　信" onclick="document.form01.submit()"></dt>
+                                </dl>
+
+                                </dl>
+                                </dl>
+                            </form>
+
+                        </div>
+                    </div>
+                    <!--bg_w-->
+                </div>
+            </section>
+
+            <div class="footer_sns">
+                <div class="container">
+                    <ul>
+                        <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--　/.footer_sns -->
+            <?php
+	/* ヘッダーインクルード */
+	include(DIR_PUBLIC . "/include/footer_top.php");
+	?>
+        </div>
+        <!--　/.bg -->
+
+        <?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/footer_nav.php");
+  ?>
+</body>
+
+</html>

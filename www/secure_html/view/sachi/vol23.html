@@ -1,0 +1,156 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>幸 sachi　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+		<meta name="description" content="過去にケアメンテをご利用いただいたお客様から、サービスのレビューをいただいています。">
+		<meta name="keywords" content="クリーニング,シミ,しみ,着物,宅配,ウェットクリーニング,水洗い,高級,黄ばみ">
+		<meta name="format-detection" content="telephone=no">
+		<?php if(preg_match("/(Android|iPhone|CareMenteh)/", $_SERVER["HTTP_USER_AGENT"])): ?><meta name="viewport" content="width=320, user-scalable=no" /><?php else: ?><meta name="viewport" content="width=1280" />
+		<?php endif; ?>
+
+		<!-- Open Graph Protocol -->
+		<meta property="og:url" content="https://www.kyoto-happy.co.jp/sachi/">
+		<meta property="og:title" content="幸 sachi　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?>">
+		<meta property="og:description" content="過去にケアメンテをご利用いただいたお客様から、サービスのレビューをいただいています">
+		<meta property="og:image" content="https://www.kyoto-happy.co.jp/_assets/img/header/logo.png">
+		<!-- Open Graph Protocol -->
+
+		<link rel="stylesheet" href="/_assets/css/default.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/common.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="/_assets/css/tooltipster.bundle.min.css">
+		
+		<link rel="stylesheet" href="/_assets/css/sachi.css?<?php echo date('YmdHis');?>">
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		
+		<script src="/_assets/js/jquery.js"></script>
+		<script src="/_assets/js/jquery.bxslider.min.js"></script>
+		<script src="/_assets/js/common.js"></script>
+		<script src="/_assets/js/common_3rd.js"></script>
+		<script src="/_assets/js/ga.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="/_assets/js/tooltipster.bundle.min.js"></script>
+        
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+
+	</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+		<div id="Container">
+			<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/include/header.php");
+				?>
+			</header>
+			
+		<div id="Contents" class="sachi">
+		<div class="content">
+       		
+        <div class="mainCover">
+		<div class="backnumberLink"><a href="#backnumber"><i class="fa fa-caret-down" aria-hidden="true"></i>バックナンバーはこちら</a></div>
+		<div class="subtitle_vol23">走るオリンピック 聖火ランナーの記録<span>1964年 第1回東京オリンピック</span></div>
+		<div class="cover">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201810_cover.jpg?201810091330" alt="54年前のユニフォームとともによみがえるオリンピックの記憶">
+			<h1><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/sachi_logo_red.svg" alt="幸 sachi"></h1>
+			<h2 class="title_blue"><div class="number">Vol. 23 特別号</div><br>54年前のユニフォームと<br class="SPpart">ともによみがえる<br>オリンピックの記憶</h2>
+		</div>	
+	</div>
+				
+	<div class="main_bottomWrap">
+		<div class="Wrap">
+			<div class="title"><span>WEBマガジン　</span><br class="PCpart">幸（sachi）とは？</div>
+			<div class="txt">“技”を持つ職人達。華やかな表舞台の裏には人知れず腕を磨き精進する姿がある。<br>
+			職人技と呼ばれる“極み”を完成した人々、&#8221;ケアメンテ&#8221;も縁の下の力持ちに徹し、<br class="PCpart">
+			静かに&#8221;技&#8221;を研鑽している。伝統工芸の職人技とケアメンテの職人技は共通しており、 <br class="PCpart">
+			それぞれの技の“極み”を発見してもらうために「幸」がある。<br>
+			長年に渡りご紹介してきたハッピーの季刊誌 「幸（sachi）」が、WEB版に生まれ変わり待望の復刊です。</div>
+		</div>	
+	</div>
+	
+		
+		<section class="mainTxt">			
+		<p class="lead">ハッピーには、日々さまざまなご依頼品が届けられます。今回の『幸』では、そのなかで出会った一着がたどってきた思い出の物語を取材しました。</p>
+		<div class="pdf_linkbtn">
+			<a href="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/sachi_vol23.pdf" target="_blank"><i class="fa fa-caret-right" aria-hidden="true"></i> PDF版はこちら</a>
+		</div>
+		
+		<h3>“ハッピー初”のご依頼品</h3>
+		<div class="imgR"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201810_img01.jpg" alt="京都府内の1964年東京オリンピック聖火リレーコース"></div>
+		<p>7月のある日。ハッピーの元に日の丸のゼッケンをつけた白いユニフォームとパンツが届けられました。ゼッケンには「TOKYO 1964」の文字。カウンセラーがご依頼品についてうかがうと、それは今から54年前の東京オリンピックの聖火ランナーのユニフォームだとわかりました。<br>
+		衣類のあらゆるお悩み事が持ち込まれるハッピーですが、オリンピックの聖火ランナーのユニフォームを見るのは初めてのことです。<br>
+		ご依頼主は京都市にお住まいの太田（旧姓清水）久美子さん。2020年東京オリンピックに関する報道に接する中で、久美子さんが高校1年生のときに聖火ランナーの一員として着たユニフォームを大事にしまっていたことを思い出したそうです。<br>
+		「結婚したときも、引っ越したときも、思い出のものを入れたにずっとしまったままで出すことはなかったんです」と久美子さん。<br>
+		大切な思い出のユニフォームですが、「日の丸の赤い染料が落ちないか心配で、洗うことができなかったの」とおっしゃいます。ご依頼品は、長年のたたみジワだけでなく、首回りを中心にシミや黄ばみが浮き上がっていました。<br>
+		なんとか、元の状態に戻せないかと思っていたところ、知人から「ハッピーならキレイにしてもらえるのでは？」と紹介があり、ご依頼いただくことになったそうです。<br>
+		「孫たちがスポーツをしているので、このユニフォームを見せて“昔聖火ランナーを務めたのよ”って驚かせたいなと思ってね」（笑）<br>
+		茶目っ気たっぷりに、ケアメンテご依頼のいきさつを話してくださいました。</p>
+		
+		<h3>聖火リレーの本番までには特訓も</h3>
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201810_img02.jpg?201810091330" alt="左／長い間、行李に入ったままになっていたユニフォーム。全体的に黄ばみが目立ちます。　右上／当日の写真からは聖火ランナーの緊張の表情が見て取れます。　右下／当時配布された「実施要項」や「委嘱状」も大切に残されていました。">
+			<p>左／長い間、行李に入ったままになっていたユニフォーム。全体的に黄ばみが目立ちます。　右上／当日の写真からは聖火ランナーの緊張の表情が見て取れます。　右下／当時配布された「実施要項」や「委嘱状」も大切に残されていました。</p>
+		</div>
+		<div class="imgR PCpart"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201810_img03.jpg" alt="左／54年前の思い出とともにまっさらの状態に戻ったユニフォームと一緒に。心配されていた日の丸の色も鮮やかによみがえりました。　下／当時の新聞記事からも、聖火リレーの熱気が伝わります。「京都新聞」（1969年9月28日）より"></div>
+		<p>幼い頃から運動が大好きで、走るのも得意だったという久美子さん。当時住んでいた学区から男女1名ずつの推薦があり、聖火ランナーに選ばれたそうです。走るのは、京都府南部を通過する「京都府第2コース」の21区。観月橋から教育大附属桃山中学校前までのコースです。<br>
+		「私が走った21区は1.7キロ。この距離を9分で走らないといけなかったんですよ。トーチを持つ正走者1人、その後ろに副走者2人、随走者20人。全員が歩調を合わせて走るなか自分だけが脱落するわけにはいかないので、責任感でいっぱいでした」<br>
+		ユニフォームと一緒に大切に残してあった当時の「実施要項」には、「速度は毎時12kmを標準とする」「豪雨・雨天の場合も予想されるので、15km位の速度もたえ得る体力を有する者、特に女子の場合は悪条件にもたえ得る者であること」という走力についての条件が書かれています。<br>
+		久美子さんの通う高校からは複数のランナーが選ばれており、放課後みんなで走る練習をして、ランナーの歩幅を揃えながら走る訓練も徹底して行っていたそうです。<br>
+		本番を5日後に控えた9月23日には、次の区間への引き継ぎ時間に合わせ、時間配分を確認するためのリハーサルが現地で行われました。さらに2日後には東山区の円山音楽堂で「オリンピック聖火を迎える夕べ」というイベントも開かれ、京都中がオリンピックムードに湧いていたことが当時の資料からも感じることができます。</p>
+		<div class="imgR SPpart"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201810_img03.jpg" alt="左／54年前の思い出とともにまっさらの状態に戻ったユニフォームと一緒に。心配されていた日の丸の色も鮮やかによみがえりました。　下／当時の新聞記事からも、聖火リレーの熱気が伝わります。「京都新聞」（1969年9月28日）より"></div>
+		
+		<h3 class="clear">スポーツをする喜びを伝えたい</h3>
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201810_img04.jpg?201810091330" alt="再生技術「リプロン&reg;シミ汚れ落し」と「リプロン&reg;黄ばみ取り」によって、新品当時の真っ白なユニフォームになりました。きれいになったユニフォームは、参加記念品の絵葉書やマッチ箱とともに額装する予定とか。">
+			<p>再生技術「リプロン&reg;シミ汚れ落し」と「リプロン&reg;黄ばみ取り」によって、新品当時の真っ白なユニフォームになりました。きれいになったユニフォームは、参加記念品の絵葉書やマッチ箱とともに額装する予定とか。</p>
+		</div>
+		<div class="imgR imgSmall">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201810_img05.jpg?201810091330" alt="きれいになったユニフォームを額装してお部屋に飾ってくださいました！">
+			<p>きれいになったユニフォームを額装してお部屋に飾ってくださいました！</p>
+		</div>
+		<p>9月7日に沖縄を出発した聖火が九州、四国、岡山を経て京都にたどり着いたのは9月28日。この日は直前まで降っていた雨も上がり、観月橋付近は平日にも関わらず黒山の人だかりができていたそうです。<br>
+		大勢の声援を背中に受け、1.7キロの区間を走っている最中は「聖火を届ける」という重責で緊張していたそうですが、規定タイム通りに全員で走り切ったときには、無事に終えることができた安堵感でいっぱいだったとおっしゃいます。<br>
+		「でもね、走っているときはトーチの煙がすごくて大変だったのよ」（笑）。<br>
+		後方へと流れるトーチの黒煙にむせながらひた向きに走ったことも、今では懐かしい思い出の一コマになっているようです。<br>
+		高校を卒業後は東京の大学へ進み、体育教師として学生の指導にあたってきた久美子さんにとって、高校生で聖火ランナーを務めた経験は人生の宝だと言います。<br>
+		「この経験が、規律とか精神力の大切さを育んでくれたと思いますよ」<br>
+		最近も琵琶湖を歩いて1周するなど、活発に体を動かし続けているのは、運動することの素晴らしさを身をもって体験してきたからでしょうか。<br>
+		「スポーツを通じて多くの人と知り合い、繋がり、人との輪を得てきました。孫たちにもそういう経験をたくさんしてほしいと願っています」<br>
+		そんな久美子さんの思いは、ケアメンテで真新しくよみがえった54年前のユニフォームと一緒に、間違いなくお孫さんに伝わることでしょう。</p>
+	</section>
+	
+						
+	<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/wp/wp-content/themes/HAPPY/parts-sachi.php");
+				?>
+			</header>
+	     
+			</div><!--/content--> 
+	</div><!--/Contents--> 
+	
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer.php");
+			?>
+		</div>
+		<!--/Container-->
+		
+		<?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/body_retargeting_cord.php");
+		?>
+		
+
+	</body>
+</html>

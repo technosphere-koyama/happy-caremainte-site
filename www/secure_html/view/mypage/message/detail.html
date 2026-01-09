@@ -1,0 +1,188 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>コミュニティを探す｜コミュニティ｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns_dummy.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body id="mypage" class="sns_top">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+		<div id="Container">
+			<?php
+			/* ヘッダーインクルード */
+			include(DIR_PUBLIC . "/include/header_new.php");
+			?>
+			<div id="Contents">
+				<div class="mainvisual__section">
+					<div>MESSAGE<br><p>メッセージ</p></div>
+				</div>
+				<div class="logoutArea">
+					<div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+				</div>
+
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu"><a href="/mypage/sns.html">つなぐ ＜Happy SNS＞</a></p><p class="pankuzu"><a href="/mypage/message/">メッセージ</a></p><p class="pankuzu no-arrow"><?php echo $this->get('nickname'); ?>さんからのメッセージ</p></div>
+				</div>
+
+				<div class="mypageNavi PCpart">
+					<ul>
+						<li><a href="/mypage/sns.html">トップ</a></li>
+						<li><a href="/mypage/friend/">フレンド</a></li>
+						<li><a href="/community/">コミュニティ</a></li>
+						<li class="current"><a href="/mypage/message/">メッセージ</a><?php if ($this->get("count_unread") > 0) { ?><div class="unreadMsgNumber"><span><?php echo $this->get("count_unread"); ?></span></div><?php } ?></li>
+						<li><a href="<?php echo $this->get("user_link"); ?>">プロフィール</a></li>
+					</ul>
+				</div>
+				<div class="mypageHead SPpart">
+					<ul>
+					  <li><a href="/mypage/sns.html"><span>トップ</span></a></li>
+					  <li><a href="/mypage/friend/"><span>フレンド</span></a></li>
+					  <li><a href="/community/"><span>コミュニティ</span></a></li>
+					  <li class="current"><a href="/mypage/message/"><span>メッセージ</span></a></li>
+					  <li><a href="<?php echo $this->get("user_link"); ?>"><span>プロフィール</span></a></li>
+					</ul>
+				</div>
+
+				<div class="mypageArea">
+					<div class="mypageMain">
+						<!-- mainSide -->
+						<div id="profile" class="mainSide tab_contents PCpart">
+							<div class="userProfile">
+								<div class="userAvatar"><a href="<?php echo $this->get("user_link"); ?>"><img src="<?php echo $this->get("g_avatar"); ?>?t=<?php echo time() ?>" alt="<?php echo $this->get("g_nickname") ?>"></a></div>
+								<div class="userTxt">
+									<div class="userName"><?php echo $this->get("g_nickname") ?></div>
+                                    <div class="userIntro"><?php echo $this->get("g_comment") ?></div>
+								</div>
+							</div>							
+                            <div class="userFriends">
+								<h5>フレンド</h5>
+								<?php foreach ($this->get("friendArray") AS $friends) { ?>
+									<div class="userFriendsInfo">
+										<div class="userFriendsImg"><a href="/profile/?uid=<?php echo $friends['system_id']; ?>"><img src="<?php echo $friends['avatar']; ?>" alt="<?php echo $friends['nickname']; ?>"></a></div>
+										<div class="userFriendsName"><a href="/profile/?uid=<?php echo $friends['system_id']; ?>"><?php echo $friends['nickname']; ?></a></div>
+									</div>
+								<?php } ?>
+								<div class="userFriendsBtn"><a href="/mypage/friend/">フレンド一覧</a></div>
+							</div>
+							<div class="userCommunity">
+								<h5>コミュニティ</h5>
+								<?php foreach ($this->get("communityArray") AS $community) { ?>
+
+									<div class="userCommunityInfo">
+										<div class="userCommunityImg"><a href="<?php echo $community['thread_link'] ?>"><img src="<?php echo $community['avatar'] ?>" alt="<?php echo $community['community_name'] ?>"></a></div>
+										<div class="userCommunityName"><a href="<?php echo $community['thread_link'] ?>"><?php echo $community['community_name'] ?></a></div>
+									</div>
+								<?php } ?>
+
+								<div class="userCommunityBtn1"><a href="/mypage/community/">参加コミュニティ一覧</a></div>
+								<div class="userCommunityBtn2"><a href="/community/">コミュニティを探す</a></div>
+							</div>
+                            <div class="unreadMsg">
+								<div class="unreadMsgTxt"><a href="/mypage/message/">メッセージ</a></div>
+								<?php if ($this->get("count_unread") > 0) { ?>
+									<div class="unreadMsgNumber"><a href=""><?php echo $this->get("count_unread"); ?></a></div>
+								<?php } ?>
+							</div>
+						</div><!--/mainSide-->
+
+						<div class="mainContents">
+							<h2 class="PCpart">メッセージ</h2>
+							<div class="noticeArea postingArea friendBlock">
+
+								<div class="userAvatar">
+									<img src="<?php echo $this->get("friend_avatar"); ?>" alt="<?php echo $this->get("friend_nickname"); ?>">
+								</div>
+								<div class="userTxt detail">
+									<div class="userName"><a href="<?php echo $this->get("friend_link"); ?>"><?php echo $this->get("friend_nickname"); ?></a></div>
+									<?php if (!StaticFunction::is_empty($this->get("name"))) { ?>
+										<div class="userName"><a href="<?php echo $this->get("friend_link"); ?>">氏名：<?php echo $this->get("name"); ?></a></div>
+									<?php } ?>
+								</div>
+
+								<div class="postingForm messageDetail">
+									<?php if (!StaticFunction::is_empty($this->get('alert_error'))) { ?>
+										<p class="error_box"><?php echo $this->get('alert_error'); ?></p>
+									<?php } ?>
+									<?php $publicGadget->html_error_array($this->get('error_array')); ?>
+									<form id="form_1" name="form01" method="POST" action="./complete.html"  enctype="multipart/form-data">
+										<input type="hidden" name="uid" value="<?php echo $this->get("system_id") ?>">
+										<textarea name="message" placeholder="メッセージを入力"><?php echo $this->get("message") ?></textarea>
+										<div class="postingBottom">
+											<div class="postingImgBtn"><span class="SPpart">ファイルを選択</span><input type="file" name="message_file" accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/mp4, video/quicktime, video/mpeg, video/ogv, image/*" display="inline" role="button" tabindex="0"></div>
+											<div class="postingBtnArea"><button type="submit" value=""><span>送信</span></button></div>
+										</div>
+									</form>
+								</div>
+
+								<?php foreach ($this->get("message_array") AS $value) { ?>
+									<div class="postingArea messageLine postingForm">
+										<div class="userAvatar"><img src="<?php echo $value['from_avatar']; ?>" alt="<?php echo $value['from_nickname']; ?>"></div>
+										<div class="userTxt">
+											<p><?php echo $value['message_comment']; ?></p>
+											<?php if (!StaticFunction::is_empty($value['file'])) { ?>
+												<div class="postingImg"><a href="<?php echo $value['file']; ?>" data-lightbox="image-1-1"><img src="<?php echo $value['file']; ?>"></a></div>
+											<?php } ?>
+
+											<div class="postingTime"><?php echo $value['date']; ?></div>
+										</div>
+									</div>
+								<?php } ?>
+							</div>
+
+							<div class="postingPagenavi">
+								<ul class="pageNumbers">
+									<?php echo $this->get("pageng_html"); ?>
+								</ul>
+							</div>
+							<div class="messageBack"><a href="/mypage/message/">メッセージ一覧に戻る</a></div>
+
+						</div><!--/mainContents-->
+					</div>
+					<div class="mypageSub">
+						<?php $publicGadget->get_news(); ?>
+					</div><!--/mypageSub-->
+				</div>
+			</div><!--/Contents-->
+			<?php
+			/* ヘッダーインクルード */
+			include(DIR_PUBLIC . "/include/footer_new.php");
+			?>
+		</div>
+		<!--/Container-->
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('[id^=def-]').darkTooltip({
+					trigger: 'click',
+					opacity: 1,
+					gravity: 'north'
+				});
+			});
+		</script>
+		<script>
+			$('.menu_button').click(function () {
+				$(this).next('.nav').slideToggle('slow').siblings('.nav').slideUp('slow');
+				$(this).siblings('.menu_button').removeClass('active');
+				$(this).toggleClass('active');
+			});
+		</script>
+		<script src="/_assets/js/xc.js"></script>
+
+
+	</body>
+</html>

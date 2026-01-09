@@ -1,0 +1,182 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>フレンドを探す　|　つなぐ ＜Happy SNS＞　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+		<meta name="format-detection" content="telephone=no">
+		<?php if(preg_match("/(Android|iPhone|CareMenteh)/", $_SERVER["HTTP_USER_AGENT"])): ?><meta name="viewport" content="width=320, user-scalable=no" /><?php else: ?><meta name="viewport" content="width=1280" />
+		<?php endif; ?>
+
+		<link rel="stylesheet" href="/_assets/css/default.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/common.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/mypage.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="/_assets/css/tooltipster.bundle.min.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+		<script src="/_assets/js/jquery.js"></script>
+		<script src="/_assets/js/common.js"></script>
+		<script src="/_assets/js/ga.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="/_assets/js/tooltipster.bundle.min.js"></script>
+
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+
+	</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+		<div id="Container">
+			<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/include/header.php");
+				?>
+			</header>
+			<div id="Contents">
+				<div class="mainvisual__section">
+					<div>Happy SNS<br><p>つなぐ</p></div>
+				</div>
+				<div class="logoutArea">
+					<div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+				</div>
+
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu"><a href="/mypage/sns.html">つなぐ ＜Happy SNS＞</a></p><p class="pankuzu no-arrow">フレンドを探す</p></div>
+				</div>
+
+				<div class="mypageNavi PCpart">
+					<ul>
+						<li><a href="/mypage/sns.html">トップ</a></li>
+						<li class="current"><a href="/mypage/friend/">フレンド</a></li>
+						<li><a href="/community/">コミュニティ</a></li>
+						<li><a href="/mypage/message/">メッセージ</a><?php if ($this->get("count_unread") > 0) { ?><div class="unreadMsgNumber"><span><?php echo $this->get("count_unread"); ?></span></div><?php } ?></li>
+						<li><a href="<?php echo $this->get("user_link"); ?>">プロフィール</a></li>
+					</ul>
+				</div>
+                <div class="snsNavi SPpart">
+                	<ul>
+                    	<?php $publicGadget->html_mypage_navi_sp() /* .html_mypage_navi_sp */ ?>
+                    </ul>
+                </div>
+				<div class="mypageHead SPpart">
+					<h1>フレンドを探す</h1>
+				</div>
+
+				<div class="mypageArea">
+					<div class="mypageMain">
+						<!-- mainSide -->
+						<div id="profile" class="mainSide tab_contents PCpart">
+							<div class="userProfile">
+								<div class="userAvatar"><a href="<?php echo $this->get("user_link"); ?>"><img src="<?php echo $this->get("g_avatar"); ?>?t=<?php echo time() ?>" alt="<?php echo $this->get("g_nickname") ?>"></a></div>
+								<div class="userTxt">
+									<div class="userName"><?php echo $this->get("g_nickname") ?></div>
+                                    <div class="userIntro"><?php echo $this->get("g_comment") ?></div>
+									<!--<div class="userNumber">お客様番号：<?php echo $this->get("g_suid") ?></div>
+									<div class="userPoint">ハッピーポイント：<?php echo $this->get("g_point") ?>ポイント</div>
+									<div class="userNumber">デポジット残高：<?php echo $this->get("g_depo") ?>円</div>-->
+								</div>
+							</div>
+							<!--<div class="userKarte">
+								<h5>あなたの電子カルテ</h5>
+							<?php $publicGadget->html_chart_button() . html_mypage_navi_sp ?>
+							</div>-->
+                            <div class="userFriends">
+								<h5>フレンド</h5>
+								<?php foreach ($this->get("friendArray") AS $friends) { ?>
+									<div class="userFriendsInfo">
+										<div class="userFriendsImg"><a href="/profile/?uid=<?php echo $friends['system_id']; ?>"><img src="<?php echo $friends['avatar']; ?>" alt="<?php echo $friends['nickname']; ?>"></a></div>
+										<div class="userFriendsName"><a href="/profile/?uid=<?php echo $friends['system_id']; ?>"><?php echo $friends['nickname']; ?></a></div>
+									</div>
+								<?php } ?>
+								<div class="userFriendsBtn"><a href="/mypage/friend/">フレンド一覧</a></div>
+							</div>
+							<div class="userCommunity">
+								<h5>コミュニティ</h5>
+								<?php foreach ($this->get("communityArray") AS $community) { ?>
+
+									<div class="userCommunityInfo">
+										<div class="userCommunityImg"><a href="<?php echo $community['thread_link'] ?>"><img src="<?php echo $community['avatar'] ?>" alt="<?php echo $community['community_name'] ?>"></a></div>
+										<div class="userCommunityName"><a href="<?php echo $community['thread_link'] ?>"><?php echo $community['community_name'] ?></a></div>
+									</div>
+								<?php } ?>
+
+								<div class="userCommunityBtn1"><a href="/mypage/community/">参加コミュニティ一覧</a></div>
+								<div class="userCommunityBtn2"><a href="/community/">コミュニティを探す</a></div>
+							</div>
+                            <div class="unreadMsg">
+								<div class="unreadMsgTxt"><a href="/mypage/message/">メッセージ</a></div>
+								<?php if ($this->get("count_unread") > 0) { ?>
+									<div class="unreadMsgNumber"><a href=""><?php echo $this->get("count_unread"); ?></a></div>
+								<?php } ?>
+							</div>
+						</div><!--/mainSide-->
+
+						<div class="mainContents friendSearch">
+							<h2 class="PCpart">フレンドを探す</h2>
+                            <div class="friendResult">
+                            <h3><?php echo $this->get("friendFashionTitle") ?></h3>
+
+							<?php foreach($this->get("friendFashionArray") AS $fashion_array) { ?>
+                                <div class="postingArea friendBlock">
+                                    <div class="userAvatar"><img src="<?php echo $fashion_array['avatar'] ?>" alt="<?php echo $fashion_array['nickname'] ?>"></div>
+                                    <div class="userTxt">
+                                    <div class="userName"><a href="/profile/?uid=<?php echo $fashion_array['system_id'] ?>"><?php echo $fashion_array['nickname'] ?></a></div>
+                                    </div>
+                                    <div class="postingLike friendCount">フレンド数：<?php echo $fashion_array['friend_count'] ?></div>
+                                    <div class="sendBtn"><a href="/profile/?uid=<?php echo $fashion_array['system_id'] ?>">プロフィールを見る</a></div>
+                                </div>
+							<?php } ?>
+
+                            </div>
+							<?php if (!StaticFunction::is_empty($this->get("friendBrandTitle"))) { ?>
+                            <div class="friendResult">
+                                <h3>好きなブランド「<?php echo $this->get("friendBrandTitle") ?>」のユーザー</h3>
+								<?php foreach($this->get("friendBrandArray") AS $brand_array) { ?>
+									<div class="postingArea friendBlock">
+										<div class="userAvatar"><img src="<?php echo $brand_array['avatar'] ?>" alt="<?php echo $brand_array['nickname'] ?>"></div>
+										<div class="userTxt">
+										<div class="userName"><a href="/profile/?uid=<?php echo $brand_array['system_id'] ?>"><?php echo $brand_array['nickname'] ?></a></div>
+										</div>
+										<div class="postingLike friendCount">フレンド数：<?php echo $brand_array['friend_count'] ?></div>
+										<div class="sendBtn"><a href="/profile/?uid=<?php echo $brand_array['system_id'] ?>">プロフィールを見る</a></div>
+									</div>
+								<?php } ?>
+                            </div>
+							<?php } ?>
+						</div>
+					</div>
+					<div class="mypageSub">
+						<?php $publicGadget->get_news(); /* 右カラムのお知らせ */ ?>
+					</div><!--/mypageSub-->
+				</div>
+			</div><!--/Contents-->
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer.php");
+			?>
+		</div>
+		<!--/Container-->
+		<script>
+			$('.menu_button').click(function () {
+				$(this).next('.nav').slideToggle('slow').siblings('.nav').slideUp('slow');
+				$(this).siblings('.menu_button').removeClass('active');
+				$(this).toggleClass('active');
+			});
+		</script>
+
+		<?php
+				$webroot = $_SERVER['DOCUMENT_ROOT'];
+				include($webroot."/include/body_retargeting_cord.php");
+				?>
+
+
+	</body>
+</html>

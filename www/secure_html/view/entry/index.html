@@ -1,0 +1,226 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+  <title>新規会員登録｜ハッピー ケアメンテR</title>
+  <link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+  <link href="/wp/wp-content/themes/HAPPY_Dark/css/frm.css" rel="stylesheet">
+  <link rel="stylesheet" href="/wp/wp-content/themes/HAPPY_Dark/css/transitional.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+<script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
+<script src="/_assets/js/jquery.validationEngine.js"></script>
+<script src="/_assets/js/jquery.validationEngine-ja.js"></script>
+</head>
+
+<body id="top" class="frm">
+  <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/header_new.php");
+	?>
+  <!--　/header_nav　-->
+  <div class="bg">
+
+    <section class="frmWrap">
+      <div class="container">
+
+        <div class="bg_w">
+        <div class="frmBox">
+          <h3 class="colorB">新規会員登録</h3>
+          <p>下記に必要事項を入力して「確認」ボタンを押してください。<br>約10分後に「ID・パスワード登録完了通知」メールをお送りします。</p>
+          <div class="annotation">「ID・パスワード登録完了通知」が届かない場合は、正常に申し込みが完了していないと考えられますので、
+            もう一度申し込み操作をやり直してください。<br><br>
+            環境依存文字及び「'」シングルクォーテーションは使用しないでください。<br></div>
+            <div class="annotation">※の項目は必ずご入力ください。</div>
+        <?php $publicGadget->html_error_array($this->get('error_array')); ?>
+          <form id="form_1" name="form01" method="POST" action="./confirm.html" enctype="multipart/form-data">
+            <input type="hidden" name="mode" value="core">
+            <dl class="cf">
+              <dt>お名前 <sup>※</sup> : </dt>
+              <dd><input type="text" name="name1" value="<?php echo $this->get("name1") ?>" aria-required="true" autocomplete="name" class="validate[required] name_sei ipt_50" placeholder="姓"><input type="text" name="name2" value="<?php echo $this->get("name2") ?>" aria-required="true" autocomplete="name"
+                  class="validate[required] name_mei ipt_50" placeholder="名"></dd>
+            </dl>
+            <dl class="cf">
+              <dt>フリガナ <sup>※</sup> : </dt>
+              <dd><input type="text" name="kana1" value="<?php echo $this->get("kana1") ?>" aria-required="true" autocomplete="name" class="validate[required] name_sei ipt_50" placeholder="セイ"><input type="text" name="kana2" value="<?php echo $this->get("kana2") ?>" aria-required="true" autocomplete="name"
+                  class="validate[required] name_mei ipt_50" placeholder="メイ"></dd>
+            </dl>
+            <dl class="cf">
+              <dt>電話番号 <sup>※</sup> :</dt>
+              <dd class="contactnum"><input type="tel" name="telephone" value="<?php echo $this->get("telephone") ?>"> - <input type="tel" name="telephone2" value="<?php echo $this->get("telephone2") ?>"> - <input type="tel" name="telephone3" value="<?php echo $this->get("telephone3") ?>"></dd>
+            </dl>
+            <dl class="cf">
+              <dt>メールアドレス <span>※</span>:</dt>
+              <dd><input type="email" name="email" value="<?php echo $this->get("email") ?>" aria-required="true" autocomplete="email" class="validate[required,custom[email]]"></dd>
+            </dl>
+            <dl class="cf">
+              <dt>サブアドレス :</dt>
+              <dd><input type="email" name="email2" value="<?php echo $this->get("email2") ?>" aria-required="true" autocomplete="email" class="validate[custom[email]]"></dd>
+            </dl>
+            <dl class="cf">
+              <dt>住所 <sup>※</sup> : </dt>
+              <dd class="addressform">〒 <input id="zip" name="zip" value="<?php echo $this->get("zip") ?>" autocomplete="postal-code" class="postal validate[custom[number],maxSize[7]]">
+              <input type="button" id="zipbtn" name="zipbtn" class="zipbtn" value="郵便番号から住所検索"></dd>
+              <dd class="attention">郵便番号はハイフンを入れずに半角数字で入力ください。</dd>
+              <dd class="addressform">
+                <div class="addressselect">
+                  <select id="pref" name="state" autocomplete="address-level1">
+                    <OPTION VALUE="">---</OPTION>
+											<?php foreach (CONF::read('PREFECTURE') AS $key => $val) { ?>
+												<?php $selected = ($key == $this->get("state") ? 'selected="selected"' : '') ?>
+												<OPTION VALUE="<?php echo $key ?>" <?php echo $selected ?>><?php echo $val ?></OPTION>
+											<?php } ?>
+
+                  </select>
+                </div>
+                <input type="text" id="address" name="addr1" class="addressform2" value="<?php echo $this->get("addr1") ?>" placeholder="市区郡">
+              </dd>
+              <dd class="addressform"><input type="text" id="address2" name="addr2" value="<?php echo $this->get("addr2") ?>" placeholder="町村・番地"></dd>
+              <dd><input type="text" name="addr3" value="<?php echo $this->get("addr3") ?>" placeholder="ビル・マンション名"></dd>
+            </dl>
+            <dl class="cf">
+              <dt>性別 <sup>※</sup> : </dt>
+              <dd>
+                <div class="dateselect">
+                  <select name="sex" class="validate[required]">
+                    <OPTION VALUE="">-</OPTION>
+											<?php foreach (CONF::read('GENDER') AS $key => $val) { ?>
+												<?php $selected = ($key == $this->get("sex") ? 'selected="selected"' : '') ?>
+												<option value="<?php echo $key ?>" <?php echo $selected ?>><?php echo $val ?></option>
+											<?php } ?>
+                  </select>
+                </div>
+              </dd>
+            </dl>
+            <dl class="cf">
+              <dt>生年月日 <sup>※</sup> : </dt>
+              <dd>
+                <div class="dateselect">
+                  <select name="birth_y" onchange="dateCheckXc('birth_y', 'birth_m', 'birth_d')" class="validate[required]">
+                    <option value="">年</option>
+                    <?php for ($i = date("Y") - CONF::read('INPUTVALI.BIRTH_Y_BOTTOM'); $i >= date("Y") - CONF::read('INPUTVALI.BIRTH_Y_BOTTOM') - CONF::read('INPUTVALI.BIRTH_Y_RANGE'); $i--) { ?>
+                      <?php $selected = ($i == $this->get("birth_y") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>年</option>
+                    <?php } ?>
+                  </select>
+                </div>
+                <div class="dateselect">
+                  <select name="birth_m" onchange="dateCheckXc('birth_y', 'birth_m', 'birth_d')" class="validate[required]">
+                    <option value="">月</option>
+                    <?php for ($i = 1; $i <= 12; $i++) { ?>
+                      <?php $selected = ($i == $this->get("birth_m") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>月</option>
+                    <?php } ?>	
+                  </select>
+                </div>
+                <div class="dateselect">
+                  <select name="birth_d" class="validate[required]">
+                    <option value="">日</option>
+                    <?php for ($i = 1; $i <= 31; $i++) { ?>
+                      <?php $selected = ($i == $this->get("birth_d") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>日</option>
+                    <?php } ?>		
+                  </select>
+              </dd>
+            </dl>
+              <dl>
+                <dl class="cf">
+                  <dt>職種 <span>※</span></dt>
+                  <dd>
+                    <div class="dateselect">
+                      <select NAME="wkbn" class="validate[required]">
+                        <option value="">---</option>
+                        <?php foreach (CONF::read('JOBS') AS $key => $val) { ?>
+                          <?php $selected = ($key == $this->get("wkbn") ? 'selected="selected"' : ''); ?>
+                          <option value="<?php echo $key ?>" <?php echo $selected ?>><?php echo $val ?></option>
+                        <?php } ?>
+                      </select>
+                    </div>
+                  </dd>
+                </dl>
+                <dl class="cf">
+                  <dt>パスワード <sup>※</sup> : </dt>
+                  <dd><input type="password" name="pass" value="" aria-required="true" autocomplete="name" class="validate[required] name_sei ipt_50" placeholder="半角英数字 8桁"></dd>
+                </dl>
+                <dl>
+                  <dt class="btnarea"><br />
+                    <!--<a href="kiyaku.html" target="_blank">利用規約</a>をお読みいただき、<br />同意いただけましたら確認ボタンよりお進みください。<br />-->
+                    <br /><input type="button" id="btn" class="btn" value="確　認" onclick="if(validate(document.form01))document.forms.form01.submit()"></dt>
+                    <div class="privacy2">
+                      <h3 class="colorB">個人情報の取扱いについて</h3>
+                      <p>当社が取得する個人情報は厳重に管理・保護のうえ、ご依頼品の集荷及び配送・洗濯・再現加工・修理修繕・保管、カウンセリング及び営業案内のご連絡、宣伝物・印刷物の送付、その他市場調査・商品開発のために利用させていただきます。お客様の同意または法令により例外として扱われる場合を除き、第三者に開示または提供いたしません。</p>
+                    </div>
+                </dl>
+                <div class="RColumn">
+                  <div class="contactSSL PCpart"><span id="ss_img_wrapper_gmogs_image_125-50_en_dblue"><a href="https://jp.globalsign.com/" target="_blank" rel="nofollow"><img alt="SSL GlobalSign Site Seal" border=0 id="ss_img" src="//seal.globalsign.com/SiteSeal/images/gs_noscript_125-50_en.gif"></a></span><script type="text/javascript" src="//seal.globalsign.com/SiteSeal/gmogs_image_125-50_en_dblue.js" defer="defer"></script><br><span class="style3">このサイトはプライバシー保護のためSSL暗号通信を採用しています。</span></div>
+                </div>
+          </form>
+        </div>
+        </div>
+        <!--bg_w-->
+      </div>
+    </section>
+
+    <div class="footer_sns">
+      <div class="container">
+        <ul>
+          <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!--　/.footer_sns -->
+    <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/footer_top.php");
+  ?>
+  </div>
+  <!--　/.bg -->
+  <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/footer_nav.php");
+  ?>
+
+  
+  <script src="/_assets/js/xc.js"></script>
+  <script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
+  <script>
+    /*郵便番号から住所自動入力*/
+    $(function () {
+
+      dateCheckXc('birth_y', 'birth_m', 'birth_d');
+
+      $('#zip').jpostal({
+        click: '#zipbtn',
+        postcode: [
+          '#zip'
+        ],
+        address: {
+          '#pref': '%3',
+          '#address': '%4',
+          '#address2': '%5'
+        }
+      });
+    });
+  </script>
+  
+</body>
+
+</html>

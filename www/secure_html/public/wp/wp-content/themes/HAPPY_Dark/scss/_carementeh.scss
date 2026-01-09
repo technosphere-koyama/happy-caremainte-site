@@ -1,0 +1,388 @@
+@import "mixin";
+
+.careIndex .footerguide {
+  .fnavi1 {
+    background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/carementeh/menu1.jpg) right center no-repeat;
+    background-size: 100%;
+    background-color: #74acc1;
+  }
+
+  .fnavi2 {
+    background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/carementeh/menu2.jpg) right center no-repeat;
+    background-size: 100%;
+    background-color: #8da8c4;
+  }
+
+  .fnavi3 {
+    background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/carementeh/menu3.jpg) right center no-repeat;
+    background-size: 100%;
+    background-color: #bdad93;
+  }
+
+  .fnavi4 {
+    background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/carementeh/menu4.jpg) right center no-repeat;
+    background-size: 100%;
+    background-color: #abb98e;
+  }
+
+  .fnavi5 {
+    background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/carementeh/menu5.jpg) right center no-repeat;
+    background-size: 100%;
+    background-color: #c3aea0;
+  }
+}
+@include for-pc {
+  .careIndex .footerguide {
+    .fnavi1 {
+      background-image: url(https://www.kyoto-happy.co.jp:8443/_assets/img/carementeh/menu1.jpg);
+    }
+
+    .fnavi2 {
+      background-image: url(https://www.kyoto-happy.co.jp:8443/_assets/img/carementeh/menu2.jpg);
+    }
+
+    .fnavi3 {
+      background-image: url(https://www.kyoto-happy.co.jp:8443/_assets/img/carementeh/menu3.jpg);
+    }
+
+    .fnavi4 {
+      background-image: url(https://www.kyoto-happy.co.jp:8443/_assets/img/carementeh/menu4.jpg);
+    }
+
+    .fnavi5 {
+      background-image: url(https://www.kyoto-happy.co.jp:8443/_assets/img/carementeh/menu5.jpg);
+    }
+  }
+}
+
+/* === /carementeh/overview/etymology === */
+.content {
+  .etymology-element {
+    /* 3つの要素で構成された造語です 部分 */
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 30px;
+    min-height: 4em;
+    font-size: $contentFontSize;
+    .head, .text {
+      display: flex;
+      align-items: center;
+    }
+    .head {
+      width: 30%;
+      background: rgba(0, 0, 0, .5);
+      min-height: 4ex;
+      text-align: center;
+      margin-right: 1ex;
+    }
+    .text {
+      flex: 1 1;
+    }
+    h4 {
+      flex: 1 1;
+      font-weight: bold;
+      font-size: $contentFontSize * 2;
+      @include for-sp {
+        font-size: max(#{$contentFontSize}, 3.25vw);
+      }
+    }
+    p {
+      padding: 0;
+      margin-bottom: 0;
+    }
+  }
+  .etymology-topics {
+    margin-bottom: 1em;
+    @include clearfix;
+  }
+  .etymology-topic {
+    width: 33.3%;
+    float: left;
+    text-align: center;
+  }
+  .etymology-icon {
+    width: 100%;
+    min-height: 130px;
+    background: no-repeat top center;
+    background-size: contain;
+    display: block;
+  }
+  #etymology-topic-1 .etymology-icon {
+    background-image: url('../img/icon_etymology1.png')
+  }
+  #etymology-topic-2 .etymology-icon {
+    background-image: url('../img/icon_etymology2.png')
+  }
+  #etymology-topic-3 .etymology-icon {
+    background-image: url('../img/icon_etymology3.png')
+  }
+  .etymology-en {
+    font-size: 130%;
+  }
+  .etymology-en::first-letter {
+    font-size: 140%;
+    font-weight: bold;
+  }
+  .etymology-ja {
+    font-size: 90%;
+  }
+}
+
+/* === /carementeh/overview/flow/ === */
+h3.flow {
+  line-height: 1.4;
+  min-height: 50px;
+  &::before {
+    vertical-align: middle;
+    display: block;
+    float: left;
+    background: no-repeat left center;
+    background-size: contain;
+    content: '';
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  .flow-head-short {
+    display: block;
+    margin-left: 60px;
+  }
+  .flow-head-long {
+    display: block;
+    font-size: 80%;
+    margin-left: 60px;
+  }
+}
+h3.flow + div {
+  clear: left;
+}
+@for $i from 1 through 14 {
+  h3.flow#flow#{$i}::before {
+    background-image: url('../img/icon_flow#{$i}.png');
+  }
+}
+
+/* == /carementeh/service/kimono/ == */
+#carementeh .service .content .kimono {
+  .kimono-before-after {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    p {
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+    div.arrow {
+      flex: 0 0 auto;
+      width: 25px;
+      text-align: right;
+    }
+  }
+}
+
+/* == /carementeh/service/ripron/ == */
+#carementeh .service .content .ripron {
+  > section {
+    margin-bottom: $verticalGap * 4;
+  }
+  #service-ripron-lineup {
+    .ripronLineup-square {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include for-pc {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      gap: 15px;
+      .ripronLineupWrap {
+        border-radius: 5px;
+        background: hsla(0, 0, 50%, 0.5);
+        color: white;
+        text-align: center;
+        font-size: small;
+        padding: 0 8px;
+        display: flex;
+        align-items: center;
+        min-height: calc(80vw/2 - 15px); // contentWidth: 80vw, gap: 15px
+        @include for-pc {
+          min-height: 132.75px; // (640+$gap)/4-($gap+$padding*2)
+        }
+        > p {
+          flex: 1;
+          margin-bottom: 0;
+        }
+        b {
+          font-size: 120%;
+          display: inline-block;
+          margin-bottom: 1ex;
+        }
+        @include for-sp {
+          b {
+            display: block;
+            font-size: 13px; /* same as .content h3 */
+          }
+          p > br {
+            display: none;
+          }
+        }
+      }
+      .ripronLineupImg {
+        text-align: center;
+        grid-column-end: span 2;
+      }
+    }
+  }
+}
+
+/* == /carementeh/service/wardrobe/ == */
+#carementeh .service .content .wardrobe {
+  h3 {
+    text-align: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 2em;
+    margin-bottom: 45px;
+  }
+  .wardrobeDetailWrap {
+    background-repeat: no-repeat;
+    p {
+      @extend .fz-small;
+      line-height: 1.2;
+    }
+  }
+  @for $i from 1 through 3 {
+    #wardrobeDetail#{$i} {
+      background-image: url('../img/wardrobe_icon_#{$i}.png');
+    }
+  }
+  @mixin wardrobeDetail($width, $height) {
+    background-size: $width/2 $height/2;
+  }
+  #wardrobeDetail1 {
+    @include wardrobeDetail(94px, 120px);
+  }
+  #wardrobeDetail2 {
+    @include wardrobeDetail(83px, 117px);
+  }
+  #wardrobeDetail3 {
+    @include wardrobeDetail(105px, 105px);
+  }
+  @include for-sp {
+    $iconSize: 60px;
+    #wardrobeDetail1 {
+      background-position: ( $iconSize - 94px/2 )/4 0px;
+    }
+    #wardrobeDetail2 {
+      background-position: ( $iconSize - 83px/2 )/4 0px;
+    }
+    .wardrobeDetailWrap {
+      border-bottom: 1px solid white;
+      padding-bottom: $verticalGap;
+      margin-bottom: $verticalGap;
+      background-position: left top;
+      h4 {
+        font-size: 18px;
+        line-height: 1.2;
+        margin-bottom: 1em;
+        min-height: $iconSize;
+        margin-left: $iconSize + 15px;
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+  @include for-pc {
+    .wardrobeDetailColumn {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .wardrobeDetailWrap {
+      background-position: center top;
+      padding-top: 95px;
+      h4 {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 2em;
+      }
+    }
+  }
+  .wardrobeDetailBorder {
+    @extend .serviceBorderBox;
+    .sectionttl-sub {
+      font-size: 120%;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 2em;
+    }
+  }
+}
+
+/* == /carementeh/service/valueon/ == */
+#carementeh .service .content .valueon {
+  font-size: 14px;
+  .sectionttl-sub {
+    margin-top: -1em;
+    margin-bottom: 2em;
+    font-weight: bold;
+  }
+  .valueonOthers {
+    margin: $verticalGap*2 0;
+  }
+  .valueonWrap {
+    clear: both;
+  }
+  .valueonDetail {
+    @extend .serviceBorderBox;
+  }
+  @include for-sp {
+    .valueonWrapOthers {
+      border-bottom: 1px solid white;
+      margin-bottom: $verticalGap;
+      padding-bottom: $verticalGap;
+      h3 {
+        margin-top: 0;
+      }
+      .valueonImgBottom {
+        text-align: center;
+      }
+    }
+    .valueonDetail img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  @include for-pc {
+    h3,
+    .sectionttl-sub {
+      text-align: center;
+    }
+    .valueonOthers {
+      clear: both;
+      gap: 63px 0;
+      display: grid;
+      grid-template-columns: repeat(2, 49%);
+    }
+    $gutter: 40px;
+    .valueonWrapOthers {
+      padding-bottom: 170px;
+      position: relative;
+      h3 {
+        margin: 0 0 2em;
+      }
+      .valueonImgBottom {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        width: calc( 100% - #{$gutter} );
+      }
+    }
+    .valueonWrapOthers:nth-child(odd) {
+      border-right: 1px solid white;
+      padding-right: $gutter;
+    }
+    .valueonWrapOthers:nth-child(even) {
+      padding-left: $gutter;
+    }
+  }
+}
+

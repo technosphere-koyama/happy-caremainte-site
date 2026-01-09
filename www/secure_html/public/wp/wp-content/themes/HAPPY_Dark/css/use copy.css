@@ -1,0 +1,723 @@
+@charset "utf-8";
+/*==================================
+  use
+==================================*/
+#top {
+	background: url(../img/bg_img/use_bg.jpg) no-repeat top center/cover fixed;
+}
+.useIndex #order {
+	margin-top: 0;
+  padding: 22vw 0 20vw;
+}
+.useIndex #order .useIndex_top {
+  font-size: 12px;
+  line-height: 0;
+}
+.useIndex #order .useIndex_top img {
+  width: 18vw;
+}
+.useIndex #order h2 {
+  font-family: 'sawarabi';
+  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
+  font-size: 6vw;
+	margin: 20px auto 0;
+}
+.useIndex #order h2 span {
+	display: inline-block;
+  font-size: 4vw;
+	font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-weight: bold;
+	margin-bottom: 30px;
+}
+.useIndex #order h3 {
+  font-size: 6vw;
+	margin-top: 40px;
+	padding-bottom: 10vw;
+	position: relative;
+}
+.useIndex #order h3:after {
+  position: absolute;
+  right: 0;
+  bottom: 23px;
+  left: 0;
+  background: #FFF;
+  border-radius: 0.5vw;
+  content: '';
+  margin: auto;
+  width: 15vw;
+  height: 1vw;
+}
+.useIndex #order .number {
+  position: absolute;
+	top: -20vw;
+	left: 0;
+}
+.useIndex #order .number:before {
+	background: #FFF;
+  position: absolute;
+  bottom: -16vw;
+	left: 5vw;
+  width: 1px;
+  height: 18vw;
+  content: '';
+}
+.useIndex #order .number p {
+  border-bottom: 1px solid #FFF;
+  border-width: 1vw;
+  display: inline-block;
+  font-size: 5vw;
+	font-weight: bold;
+  line-height: 1.5;
+  text-align: right;
+  padding: 0 2vw;
+	position: absolute;
+	bottom: 2vw;
+	left: 0;
+}
+.useIndex #order .number img {
+  width: 28vw;
+}
+.useIndex #order p.tit_txt {
+  font-size: 4vw;
+  line-height: 1.5;
+  /*text-align: left;*/
+  display: inline-block;
+}
+.useIndex #order .step01 {
+  position: relative;
+	margin-top: 40vw;
+	padding-bottom: 10vw;
+}
+.useIndex #order .step01 ul {
+  margin: 20px auto 0;
+}
+.useIndex #order .step01 ul:before {
+	background: #FFF;
+  position: absolute;
+  bottom: -1vw;
+  left: 5vw;
+  width: 1px;
+  height: 20vw;
+  content: '';
+}
+.useIndex #order .step01 ul:after {
+  position: absolute;
+  bottom: 0;
+  left: 2.6vw;
+  width: 5vw;
+  height: 5vw;
+  margin: auto;
+  border-top: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  content: '';
+}
+.useIndex #order .step01 ul li {
+	border: 1px solid #FFF;
+  border-radius: 10px;
+  margin-bottom: 10%;
+	padding: 5vw;
+}
+.useIndex #order .step01 ul li h4 {
+	font-size: 5vw;
+  line-height: 1.5;
+}
+.useIndex #order .step01 ul li .btnArea {
+	margin-top: 30px;
+}
+.useIndex #order .step01 ul li .btnArea .btn:last-child{
+	margin-top: 10px;
+}
+.useIndex #order .step01 ul li .btn a {
+	color: #FFF;
+	background: #6a3b93;
+  border-radius: 8vw;
+	display: inline-block;
+	font-size: 4vw;
+	padding: 3vw 0 3vw 10%;
+	position: relative;
+	text-align: left;
+	width: 90%;
+}
+.useIndex #order .step01 ul li .btn a:hover {
+	color: rgba(255,255,255,0.7);
+}
+.useIndex #order .step01 ul li .btn a:after {
+  position: absolute;
+  top: 0;
+  right: 5vw;
+  bottom: 0;
+  width: 2vw;
+  height: 2vw;
+  margin: auto;
+  border-top: 0.5vw solid #FFF;
+  border-right: 0.5vw solid #FFF;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: '';
+}
+.useIndex #order .step01 ul li .btn a:hover:after {
+  opacity: 0.7;
+}
+.useIndex #order .step02 {
+	margin: 100px 0;
+  position: relative;
+}
+.useIndex #order .step02:before {
+	background: #FFF;
+  position: absolute;
+  bottom: -100px;
+  left: 5vw;
+  width: 1px;
+  height: 32vw;
+  content: '';
+}
+.useIndex #order .step02:after {
+  position: absolute;
+  bottom: -96px;
+  left: 2.6vw;
+  width: 5vw;
+  height: 5vw;
+  margin: auto;
+  border-top: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  content: '';
+}
+.useIndex #order .step02 .btnArea {
+	margin-top: 30px;
+}
+.useIndex #order .step02 .btn a {
+	color: #FFF;
+	background: #6a3b93;
+  border-radius: 8vw;
+	display: block;
+	font-size: 4vw;
+	padding: 3vw 12vw;
+	position: relative;
+	text-align: left;
+}
+.useIndex #order .step02 .btn a:hover {
+	color: rgba(255,255,255,0.7);
+}
+.useIndex #order .step02 .btn a:after {
+  position: absolute;
+  top: 0;
+  right: 5vw;
+  bottom: 0;
+  width: 2vw;
+  height: 2vw;
+  margin: auto;
+  border-top: 0.5vw solid #FFF;
+  border-right: 0.5vw solid #FFF;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: '';
+}
+.useIndex #order .step02 .btn a:hover:after {
+  opacity: 0.7;
+}
+.useIndex #order .step03 {
+	margin: 52vw 0 100px;
+  position: relative;
+}
+.useIndex #order .step03 .box > div {
+  border: 1px solid #FFF;
+  border-radius: 10px;
+	margin: 5vw 0 10%;
+	padding: 8vw 5vw;
+}
+.useIndex #order .step03 .box > div h4 {
+  font-size: 5vw;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.useIndex #order .step03 .box > div h5 {
+  font-size: 4.5vw;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+.useIndex #order .step03 .box > div span {
+	display: block;
+  font-size: 3vw;
+  line-height: 1.5;
+  margin-top: 10px;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #order .step03 .box > div p {
+  font-size: 4vw;
+  line-height: 1.5;
+  margin-top: 10px;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #order .step03 .box > div p.small {
+	margin: -15px 0 20px;
+  text-align: center;
+}
+.useIndex #order .step03 .box > div .triangle div {
+	margin: 20px auto;
+	width: 0;
+  height: 0;
+  border-left: 4vw solid transparent;
+  border-right: 4vw solid transparent;
+  border-top: 4vw solid #FFF;
+}
+.useIndex #order .step03 .box:before {
+	background: #FFF;
+  position: absolute;
+  bottom: -20vw;
+  left: 5vw;
+  width: 1px;
+  height: 20vw;
+  content: '';
+}
+.useIndex #order .step03 .box:after {
+  position: absolute;
+  bottom: -19vw;
+  left: 2.6vw;
+  width: 5vw;
+  height: 5vw;
+  margin: auto;
+  border-top: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  content: '';
+}
+.useIndex #order .step03 .box_sub {
+  background: rgba(255,255,255,0.05);
+  margin-top: 20px;
+	padding: 5vw;
+}
+.useIndex #order .step03 .box_sub h5 {
+  font-size: 4.5vw;
+}
+.useIndex #order .step03 .box_sub p {
+  font-size: 4vw;
+	line-height: 1.75;
+	margin-top: 10px;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #order .step03 .box_sub span {
+	display: inline-block;
+  font-size: 3vw;
+	line-height: 1.5;
+	margin: 20px 0 30px;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #order .step04 {
+	margin: 52vw 0 100px;
+  position: relative;
+}
+.useIndex #order .step04:before {
+	background: #FFF;
+  position: absolute;
+  bottom: -100px;
+  left: 5vw;
+  width: 1px;
+  height: 32vw;
+  content: '';
+}
+.useIndex #order .step04:after {
+  position: absolute;
+  bottom: -96px;
+  left: 2.6vw;
+  width: 5vw;
+  height: 5vw;
+  margin: auto;
+  border-top: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  content: '';
+}
+.useIndex #order .step04 p.tit_txt {
+  font-size: 5vw;
+	font-family: 'sawarabi';
+  -webkit-font-smoothing: antialiased;
+}
+.useIndex #order .step04 .box {
+  margin: 50px auto 0;
+}
+.useIndex #order .step02 .box {
+  margin: 50px auto 0;
+}
+.useIndex #order .step04 .btnArea {
+	margin-top: 30px;
+}
+.useIndex #order .step04 .btn a {
+	color: #FFF;
+	background: #6a3b93;
+  border-radius: 8vw;
+	display: block;
+	font-size: 4vw;
+	padding: 3vw 12vw;
+	position: relative;
+	text-align: left;
+}
+.useIndex #order .step04 .btn a:hover {
+	color: rgba(255,255,255,0.7);
+}
+.useIndex #order .step04 .btn a:after {
+  position: absolute;
+  top: 0;
+  right: 5vw;
+  bottom: 0;
+  width: 2vw;
+  height: 2vw;
+  margin: auto;
+  border-top: 0.5vw solid #FFF;
+  border-right: 0.5vw solid #FFF;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: '';
+}
+.useIndex #order .step04 .btn a:hover:after {
+  opacity: 0.7;
+}
+.useIndex #order .step05 {
+	margin: 52vw 0 100px;
+  position: relative;
+}
+.useIndex #order .step05 .number:before {
+	content: normal;
+}
+.useIndex #order .step05 p.tit_txt {
+  font-size: 5vw;
+	font-family: 'sawarabi';
+  -webkit-font-smoothing: antialiased;
+}
+.useIndex #order .step05 .box {
+  margin: 50px auto 0;
+}
+.useIndex #order .step05 .box p {
+  border: 1px solid #FFF;
+  font-size: 4vw;
+  line-height: 1.5;
+  margin-top: 20px;
+	padding: 5vw;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #order .step05 .box p.bg_w {
+  border: none;
+  background: rgba(255,255,255,0.05);
+}
+.useIndex #order .step05 .box span {
+	display: inline-block;
+  font-size: 3vw;
+	line-height: 1.5;
+	margin: 20px 0 30px;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #order .step05 .btnArea {
+	margin-top: 30px;
+}
+.useIndex #order .step05 .btn a {
+	color: #FFF;
+	background: #6a3b93;
+  border-radius: 8vw;
+	display: block;
+	font-size: 4vw;
+	padding: 3vw 12vw;
+	position: relative;
+	text-align: left;
+}
+.useIndex #order .step05 .btn a:hover {
+	color: rgba(255,255,255,0.7);
+}
+.useIndex #order .step05 .btn a:after {
+  position: absolute;
+  top: 0;
+  right: 5vw;
+  bottom: 0;
+  width: 2vw;
+  height: 2vw;
+  margin: auto;
+  border-top: 0.5vw solid #FFF;
+  border-right: 0.5vw solid #FFF;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: '';
+}
+.useIndex #order .step05 .btn a:hover:after {
+  opacity: 0.7;
+}
+.useIndex #order .step05 .box_sub {
+	display: inline-block;
+  font-size: 3vw;
+	line-height: 1.5;
+	margin-top: 60px;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #use {
+	border-top: 1px solid #FFF;
+}
+@media (min-width: 992px) {
+  #top .bg {
+    padding-top: 105px;
+  }
+	.useIndex #order {
+    padding: 100px 0 80px;
+  }
+	.useIndex #order .useIndex_top img {
+    width: 100px;
+  }
+  .useIndex #order h2 {
+    font-size: 28px;
+  }
+  .useIndex #order h2 span {
+    font-size: 19px;
+  }
+  .useIndex #order h3 {
+    font-size: 24px;
+    padding-bottom: 40px;
+  }
+  .useIndex #order h3:after {
+    border-radius: 2px;
+    width: 72px;
+    height: 4px;
+  }
+  .useIndex #order .number {
+    top: 0;
+  }
+  .useIndex #order .number:before {
+    right: 8px;
+    bottom: -86%;
+		left: auto;
+    height: 46px;
+  }
+	.useIndex #order .step02 .number:before {
+		bottom: -730%;
+		height: 600px;
+	}
+  .useIndex #order .number p {
+    border-width: 3px;
+    font-size: 28px;
+		padding: 0 12px;
+    right: -20px;
+    bottom: 0;
+    left: auto;
+  }
+  .useIndex #order .number img {
+    width: 124px;
+  }
+  .useIndex #order p.tit_txt {
+    font-size: 14px;
+  }
+  .useIndex #order .step01 {
+    margin-top: 0;
+		padding-bottom: 0;
+  }
+  .useIndex #order .step01 ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto 0;
+  }
+  .useIndex #order .step01 ul:before {
+    bottom: -100px;
+    left: 115px;
+    height: 100px;
+  }
+  .useIndex #order .step01 ul:after {
+    bottom: -96px;
+    left: 100px;
+    width: 30px;
+    height: 30px;
+  }
+  .useIndex #order .step01 ul li {
+    flex: 1;
+    width: 28%;
+    margin: 0 2.5% 0 0;
+		padding: 5% 2% 4%;
+  }
+  .useIndex #order .step01 ul li h4 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .useIndex #order .step01 ul li:last-child {
+    margin-right: 0;
+  }
+  .useIndex #order .step01 ul li .btn a {
+    border-radius: 22px;
+    font-size: 16px;
+    padding: 6px 7%;
+    width: 86%;
+  }
+  .useIndex #order .step01 ul li .btn a:after {
+    right: 20px;
+    border-top: 2px solid #FFF;
+    border-right: 2px solid #FFF;
+    width: 10px;
+    height: 10px;
+  }
+  .useIndex #order .step02 .btn a {
+    border-radius: 22px;
+		display: inline-block;
+    font-size: 16px;
+    padding: 6px 46px 6px 36px;
+  }
+  .useIndex #order .step02 .btn a:after {
+    right: 20px;
+    border-top: 2px solid #FFF;
+    border-right: 2px solid #FFF;
+    width: 10px;
+    height: 10px;
+  }
+  .useIndex #order .step02:before {
+    bottom: -100px;
+    left: 115px;
+    height: 196px;
+  }
+  .useIndex #order .step02:after {
+    bottom: -96px;
+    left: 100px;
+    width: 30px;
+    height: 30px;
+  }
+  .useIndex #order .step03 {
+    margin: 100px 0;
+  }
+  .useIndex #order .step03 .number:before {
+    bottom: -86%;
+    height: 46px;
+  }
+  .useIndex #order .step03 .box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto 0;
+  }
+  .useIndex #order .step03 .box > div {
+    flex: 1;
+		margin: 0 3% 0 0;
+    padding: 5% 4% 4%;
+  }
+  .useIndex #order .step03 .box > div:last-child {
+    margin-right: 0;
+  }
+  .useIndex #order .step03 .box > div:first-child h4 {
+    margin-bottom: 46px;
+  }
+  .useIndex #order .step03 .box > div h4 {
+    font-size: 20px;
+  }
+  .useIndex #order .step03 .box > div h5 {
+    font-size: 16px;
+  }
+  .useIndex #order .step03 .box > div span {
+    font-size: 12px;
+  }
+  .useIndex #order .step03 .box > div p {
+    font-size: 14px;
+  }
+  .useIndex #order .step03 .box > div .triangle div {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #FFF;
+  }
+  .useIndex #order .step03 .box:before {
+    bottom: -90px;
+    left: 115px;
+    height: 440px;
+  }
+  .useIndex #order .step03 .box:after {
+    bottom: -85px;
+    left: 100px;
+    width: 30px;
+    height: 30px;
+  }
+  .useIndex #order .step03 .box_sub {
+		margin: 50px auto 0;
+		max-width: 602px;
+    padding: 3% 4% 4%;
+  }
+  .useIndex #order .step03 .box_sub h5 {
+    font-size: 18px;
+  }
+  .useIndex #order .step03 .box_sub p {
+    font-size: 14px;
+		text-align: center;
+  }
+  .useIndex #order .step03 .box_sub span {
+    font-size: 12px;
+  }
+  .useIndex #order .step04 {
+    margin: 100px 0;
+  }
+  .useIndex #order .step04:before {
+    bottom: -100px;
+    left: 115px;
+    height: 420px;
+  }
+  .useIndex #order .step04:after {
+    bottom: -96px;
+    left: 100px;
+    width: 30px;
+    height: 30px;
+  }
+  .useIndex #order .step04 p.tit_txt {
+    font-size: 22px;
+  }
+  .useIndex #order .step04 .btn a {
+    border-radius: 22px;
+		display: inline-block;
+    font-size: 16px;
+    padding: 6px 46px 6px 36px;
+  }
+  .useIndex #order .step04 .btn a:after {
+    right: 20px;
+    border-top: 2px solid #FFF;
+    border-right: 2px solid #FFF;
+    width: 10px;
+    height: 10px;
+  }
+  .useIndex #order .step05 {
+    margin: 100px 0;
+  }
+  .useIndex #order .step05 p.tit_txt {
+    font-size: 22px;
+  }
+  .useIndex #order .step05 .box p {
+    font-size: 14px;
+		margin: 20px auto 0;
+		max-width: 598px;
+    padding: 2% 4%;
+    text-align: center;
+	}
+  .useIndex #order .step05 .box p.bg_w {
+    max-width: 600px;
+  }
+  .useIndex #order .step05 .box span {
+    font-size: 12px;
+		max-width: 680px;
+  }
+  .useIndex #order .step05 .btn a {
+    border-radius: 22px;
+		display: inline-block;
+    font-size: 16px;
+    padding: 6px 46px 6px 36px;
+  }
+  .useIndex #order .step05 .btn a:after {
+    right: 20px;
+    border-top: 2px solid #FFF;
+    border-right: 2px solid #FFF;
+    width: 10px;
+    height: 10px;
+  }
+  .useIndex #order .step05 .box_sub {
+    font-size: 12px;
+  }
+  .useIndex #use {
+    margin-top: 0;
+    padding-bottom: 130px !important;
+  }
+}

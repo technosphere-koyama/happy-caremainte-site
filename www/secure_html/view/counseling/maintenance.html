@@ -1,0 +1,214 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title><?php echo $this->get("item_detail.item_id"); ?>　|　さがす＜ケアメンテ事例集＞　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+		<meta name="description" content="1900点を超える豊富な実例集から、お困りの衣服に似たアイテムを探して、「ケアメンテ」の洗い・仕上がり感をイメージしてください。">
+		<meta name="keywords" content="クリーニング,シミ,しみ,着物,宅配,ウェットクリーニング,水洗い,高級,黄ばみ">
+		<meta name="format-detection" content="telephone=no">
+		<?php if(preg_match("/(Android|iPhone|CareMenteh)/", $_SERVER["HTTP_USER_AGENT"])): ?><meta name="viewport" content="width=320, user-scalable=no" /><?php else: ?><meta name="viewport" content="width=1280" />
+		<?php endif; ?>
+
+		<!-- Open Graph Protocol -->
+		<meta property="og:url" content="https://www.kyoto-happy.co.jp/carementeh_search/detail.html?item_id=<?php echo $this->get("item_detail.item_id"); ?>">
+		<meta property="og:title" content="<?php echo $this->get("item_detail.item_id"); ?>　|　さがす＜ケアメンテ事例集＞　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?>">
+		<meta property="og:description" content="1900点を超える豊富な実例集から、お困りの衣服に似たアイテムを探して、「ケアメンテ」の洗い・仕上がり感をイメージしてください。">
+		<meta property="og:image" content="https://www.kyoto-happy.co.jp/_assets/img/header/logo.png">
+		<!-- Open Graph Protocol -->
+
+		<link rel="stylesheet" href="/_assets/css/default.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/common.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/mypage.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/search.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="/_assets/css/tooltipster.bundle.min.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+		<script src="/_assets/js/jquery.js"></script>
+		<script src="/_assets/js/common.js"></script>
+		<script src="/_assets/js/ga.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="/_assets/js/jquery.darktooltip.js"></script>
+
+		<link rel="stylesheet" href="/_assets/css/lightbox.css">
+		<script src="/_assets/js/lightbox.js"></script>
+        
+        <script src="/_assets/js/tooltipster.bundle.min.js"></script>
+        
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+        
+	</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+
+		<div id="Container">
+
+			<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/include/header.php");
+				?>
+			</header>
+
+			<div id="Contents" class="careSearch">
+
+				<div class="mainvisual__section">
+					<div>WEB COUNSELING<br><p>WEB カウンセリング</p></div>
+				</div>
+
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu"><a href="/counseling/">WEB カウンセリング</a></p><p class="pankuzu no-arrow"><?php echo $this->get("item_detail.item_id"); ?></p></div>
+				</div>
+
+				<div class="mypageArea">
+
+					<div class="mainContents3">
+                    	<div id="view_back" class="backBtn PCpart"></div>
+                        
+                        <div class="pagettl"><h1>メンテナンス料金</h1></div>
+                        
+                        <div class="karteyArea">
+
+                                <h3>① 必要ケアメンテメニュー</h3>
+                                <div class="karteColumnWrap2">
+									<h3>アクアドライ</h3>
+									<table class="historyTable">
+										<tbody>
+                                            <tr>
+                                                <td class="historyTableName">ｱｸｱﾄﾞﾗｲ 上着</td>
+                                                <td class="historyTablePrice">3,500円</td>
+                                            </tr>
+										</tbody>
+									</table>
+                                </div>
+                                
+                                <h3>② オプションメニュー</h3>
+                                <div class="karteColumnWrap2">
+									<h3>リプロン（再生技術）</h3>
+									<table class="historyTable">
+										<tbody>
+                                            <tr>
+                                                <td class="historyTableName">シミ汚れ落とし（1）</td>
+                                                <td class="historyTablePrice">2,600円</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="historyTableName">黄ばみ取り</td>
+                                                <td class="historyTablePrice">2,500円</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="historyTableName">リプロン50%OFF</td>
+                                                <td class="historyTablePrice">-3,500円</td>
+                                            </tr>
+                                            <tr class="historyTableTotal">
+												<th class="historyTableName">小計</th>
+												<th class="historyTablePrice">6,050円</th>
+											</tr>
+										</tbody>
+									</table>
+                                </div>
+                                <div class="karteColumnWrap2">
+									<h3>バリューＯＮ（加工技術）</h3>
+									<table class="historyTable">
+										<tbody>
+                                            <tr>
+                                                <td class="historyTableName">シミプロテクト バリューON</td>
+                                                <td class="historyTablePrice">5,500 円</td>
+                                            </tr>
+										</tbody>
+									</table>
+                                </div>
+                                <div class="karteColumnWrap2">
+									<h3>リフォーム・その他</h3>
+									<table class="historyTable">
+										<tbody>
+                                            <tr>
+                                                <td class="historyTableName">ほつれなおし</td>
+                                                <td class="historyTablePrice">5,500 円</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="historyTableName">名称</td>
+                                                <td class="historyTablePrice">2,500 円</td>
+                                            </tr>
+                                            <tr class="historyTableTotal">
+												<th class="historyTableName">小計</th>
+												<th class="historyTablePrice">7,500円</th>
+											</tr>
+										</tbody>
+									</table>
+                                </div>
+                                
+                                <div class="backBtn PCpart">①必要ケアメンテメニュー</div>＋<div class="backBtn PCpart">② オプションメニュー</div> 合計14,900円
+                        </div>
+					</div><!--/mainContents3-->
+				</div>
+			</div><!--/Contents-->
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer.php");
+			?>
+		</div>
+		<!--/Container-->
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('[id^=def-]').darkTooltip({
+					trigger: 'click',
+					opacity: 1,
+					gravity: 'north'
+				});
+			});
+		</script>
+		<script>
+			var like_array = new Array(<?php echo $this->get("comment_like_array"); ?>);
+			$(function () {
+				$(".edit-form").css("clear", "both").hide();
+				$(".edit-response").on("click", function () {
+					var targ = $(this).attr("rel");
+					$(".target_" + targ).find(".postingTxt").hide();
+					$(".target_" + targ).find(".edit-form").show();
+				});
+			});
+		</script>
+		<script src="/_assets/js/xc.js"></script>
+        <script type="text/javascript">
+		function backlink() {
+			var ref = document.referrer; //前ページ
+		
+			if (ref != "") {
+				var n = ref.indexOf("//")+2;
+				var m = ref.indexOf("/",n+1);
+				if (m == -1) {m = ref.length;}
+				//ドメイン名を抜き出す
+				if (n > -1) {ref = ref.substring(n,m);}
+			}
+			//ドメイン名が同じ場合
+			if (document.domain == ref) {
+				s = "<a href='javascript:history.back()'>検索結果に戻る</a>";
+			} else {
+				document.getElementById("view_back").style.display="none";
+				document.getElementById("view_back2").style.display="none";
+			}
+			document.getElementById("view_back").innerHTML = s;
+			document.getElementById("view_back2").innerHTML = s;
+		}
+		</script>
+        <script type="text/javascript">
+			//戻るリンクの表示
+			backlink();
+		</script>
+		
+       <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/body_retargeting_cord.php");
+		?>
+		
+		
+	</body>
+</html>

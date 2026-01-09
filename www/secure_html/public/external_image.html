@@ -1,0 +1,87 @@
+<?php
+
+/*
+ * 外部画像を取得して表示(フレームワークを経由しない)
+ */
+
+$ei = new ExternalImage();
+$ei->exec();
+
+/* * **********************************
+ * NAME:CatalogController
+ * DESC:
+ * NOTICE:
+ * CREATE: 2016.11.29 aoyama
+ * *********************************** */
+class ExternalImage {
+
+	/* Constructor */
+	public function __construct() {
+		
+	}
+
+	/*	 * **********************************
+	 * DESC  :
+	 * 		実行 
+	 * CREATE: 2016.11.29 aoyama
+	 * *********************************** */
+	public function exec() {
+
+		$url = (isset($_GET['url'])) ? htmlspecialchars($_GET['url']) : "";
+		$type = (isset($_GET['type'])) ? htmlspecialchars($_GET['type']) : "";
+
+		// ターゲット先のURLが正しいものか判定
+		if (!$this->checkSafeUrl($url)) {
+			exit;
+		}
+
+		if (!$this->get_external_image($url)) {
+
+			switch ($type) {
+
+				case "chart":
+					$this->get_external_image($_SERVER['DOCUMENT_ROOT'] . "/_assets/img/mypage/chart_noimage.jpg");
+					break;
+				default:
+					$this->get_external_image($_SERVER['DOCUMENT_ROOT'] . "/_assets/img/mypage/noimage.jpg");
+					break;
+			}
+		}
+	}
+
+	/*	 * **********************************
+	 * DESC  : 
+	 * 		ターゲット先のURLが正しいものか判定
+	 * CREATE: 2016.11.29 aoyama
+	 * *********************************** */
+	private function checkSafeUrl($url) {
+
+		if (preg_match("/^https?:\/\/kh01\.kyoto\-happy\.co\.jp\//", $url)) {
+			return true;
+		}
+		return false;
+	}
+
+	/*	 * **********************************
+	 * DESC  : 
+	 * 		ファイルを取得
+	 * CREATE: 2016.11.29 aoyama
+	 * *********************************** */
+	private function get_external_image($url, $header = true) {
+
+		if (!$file = @file_get_contents($url)) {
+			return false;
+		}
+
+		$img_info = getimagesize($url);
+
+		//Mimeヘッダーの出力
+		if ($header) {
+			header("Content-Type: " . $img_info['mime']);
+		}
+		//メモリ上の画像データを出力
+		echo $file;
+		exit;
+	}
+
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>ブランド検索｜さがす＜ケアメンテ実例集＞｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/search.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+</head>
+<body id="careSearch">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	<!--　/header_nav　-->
+	
+	<div class="bg">
+    <section id="case" class="careBrand">
+      <div class="tac case_top"><img src="../img/header01.png" alt="さがす"></div>
+      <h2 class="tac">CAREMENTEH SEARCH<br>
+        <span>さがす ケアメンテ事例集</span></h2>
+      <div class="container">
+        <div class="tac">
+          <p class="tit_txt">ブランド・アパレルメーカーを指定する</p>
+        </div>
+				<h3 class="tac">ただいまの登録件数：<span>2,036</span>点</h3>
+        <div class="tac">
+          <p>検索したいブランド・アパレルメーカーの頭文字をクリックしてください。</p>
+        </div>
+				<div class="careBrandLine">
+					<ul class="careBrand2 lBox">
+            <?php foreach ($this->get("initial_array") AS $value) { ?>
+              <?php if (!StaticFunction::is_empty($value['mojiname']) AND (preg_match("/^[a-zA-Z0-9]+$/", $value['mojiname']))) { ?>
+                <li><a href="/carementeh_search/form_brand2.html?mojicode=<?php echo $value['mojicode'] ?>&mojiname=<?php echo $value['mojiname'] ?>"><?php echo $value['mojiname'] ?></a></li>
+              <?php } else { ?>
+              <?php } ?>
+
+            <?php } ?>
+					</ul>
+          <ul class="careBrand2 rBox">
+            <?php foreach ($this->get("initial_array") AS $value) { ?>
+              <?php if (!StaticFunction::is_empty($value['mojiname']) AND !(preg_match("/^[a-zA-Z0-9]+$/", $value['mojiname']))) { ?>
+                <li><a href="/carementeh_search/form_brand2.html?mojicode=<?php echo $value['mojicode'] ?>&mojiname=<?php echo $value['mojiname'] ?>"><?php echo $value['mojiname'] ?></a></li>
+              <?php } else { ?>
+              <?php } ?>
+
+            <?php } ?>
+          </ul>
+        </div>
+        <div class="btn btm_btn">
+          <input type="button" id="btn" class="btn" value="戻　る" onclick="location.href = '/carementeh_search/form.html'">
+        </div>
+      </div>
+    </section>
+    <!--　/#case.careBrand -->
+	</div>
+  <!--　/.footer_nav_sp -->
+  <div id="pager_top"><a href="#careSearch">TOP</a></div>
+	
+	<script type="text/javascript" src="../lib/jquery-3.3.1.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+		
+    var menuFlag = true;
+    $('.header_nav_common .header_tab').on('click', function() {
+      menuFlag = !menuFlag;
+      if(menuFlag){
+        $('.header_nav_common').css("top","0");
+      } else {
+        $('.header_nav_common').css("top","-95px");
+      }
+  	});
+
+		
+  });
+  </script>
+	</body>
+</html>

@@ -1,0 +1,149 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>幸 sachi｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sachi.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+		<div id="Container">
+			<?php
+			/* ヘッダーインクルード */
+			include(DIR_PUBLIC . "/include/header_new.php");
+			?>
+			<!--　/header_nav　-->
+
+		<div id="Contents" class="sachi">
+		<div class="content">
+
+        <div class="mainCover">
+		<div class="backnumberLink"><a href="#backnumber"><i class="fa fa-caret-down" aria-hidden="true"></i>バックナンバーはこちら</a></div>
+		<div class="cover">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201805_cover.jpg" alt="日本が育んできた象嵌の美を次世代に伝えたい">
+			<h1><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/sachi_logo.svg" alt="幸 sachi"></h1>
+			<h2><div class="number">Vol. 22</div><br />日本が育んできた象嵌の美を<br>次世代に伝えたい<span>中嶋象嵌</span></h2>
+		</div>
+	</div>
+
+	<div class="main_bottomWrap">
+		<div class="Wrap">
+			<div class="title"><span>WEBマガジン　</span><br class="PCpart" />幸（sachi）とは？</div>
+			<div class="txt">“技”を持つ職人達。華やかな表舞台の裏には人知れず腕を磨き精進する姿がある。<br />
+			職人技と呼ばれる“極み”を完成した人々、&#8221;ケアメンテ&#8221;も縁の下の力持ちに徹し、<br class="PCpart" />
+			静かに&#8221;技&#8221;を研鑽している。伝統工芸の職人技とケアメンテの職人技は共通しており、 <br class="PCpart" />
+			それぞれの技の“極み”を発見してもらうために「幸」がある。<br />
+			長年に渡りご紹介してきたハッピーの季刊誌 「幸（sachi）」が、WEB版に生まれ変わり待望の復刊です。</div>
+		</div>
+	</div>
+
+
+		<section class="mainTxt">
+		<p class="lead">金属の土台に金や銀の模様を打ち込む装飾技術のひとつ、京象嵌。江戸時代に刀や甲冑の装飾として発展し、明治維新後はその繊細で日本的な美しさが海外から脚光を浴びました。伝統的な技術を継承し、新たな世界観を創作する象嵌職人・中嶋龍司さんにお話をうかがいました。</p>
+
+		<div class="imgCenter"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201805_img01.jpg" alt="仕上がりを左右する布目切り"></div>
+
+		<h3>仕上がりを左右する布目切り</h3>
+		<p>「象（かたど）る」「嵌（はめ）る」という漢字から成り立つ字の通り、象嵌は生地に異なる素材を嵌め込んで模様を表す技法のことです。金工象嵌、木工象嵌、陶象嵌などの種類がありますが、金工象嵌の一種である京象嵌は鉄生地に金や銀を嵌め込んで漆で仕上げたもので、優美な模様を生かす繊細な技術が特徴です。その美しさから、長きにわたって武士や貴族などに愛されてきました。<br>
+		そんな伝統を受け継ぐ数少ない工房「中嶋象嵌」を訪ねると、金属を打ち込むカンカンカンという高い音が工房内に響き渡り、職人さんたちが一心に作業を行っていました。「中嶋象嵌」3代目の中嶋龍司さんが行っていたのは、鉄生地の表面に細かな目地を入れる「布目切り」という作業。これは、金や銀の模様を鉄に嵌め込むための下準備に当たるそうです。<br>
+		「1mmの間に7〜8本の溝を鏨（たがね）で彫る作業のことを布目切りと呼んでいて、これが象嵌の基本の技術になります」と中嶋さん。肉眼ではほとんど見えないような布目切りですが、差し出されたルーペを覗くと、鉄生地に縦横斜めの細かな筋が一定間隔で打ち込まれているのがわかります。たしかに布の目のような細かな仕上がりです。<br>
+		「布目切りの作業中に目で確認することはほとんどなく、指先の感覚で切っていきます。筋と筋の間隔がバラバラだったり溝の深さが一定でなかったりすると、模様を打ち込んでもきちんと嵌らず、美しい仕上がりになりません。根気のいる作業ですが、ここをいかに丁寧にしておくかが大事なんです」<br>
+		布目切りを正確に仕上げることが、繊細でありながらも作品としての強度や質感を保つポイントとなるだけに、技術の修得にもっとも時間がかかるそうです。</p>
+
+		<h3>高い技術が求められる球面作品</h3>
+		<div class="imgR"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201805_img02.jpg" alt="高い技術が求められる球面作品"></div>
+		<p>布目切りの作業が終わると、金銀の模様を嵌め込む「入嵌（にゅうがん）」と呼ばれる作業が行われます。薄い板状の金や銀を、あらかじめ花びらや葉、動物などの模様に打ち抜いておき、それを布目切りの終わった鉄生地に小さな金槌で打ち込んでいきます。布目が楔となって模様が生地に嵌め込まれるのですが、打ち方が甘いと浮いてしまう一方で、強く打ち過ぎると布目が表面に見えてしまうことも。一度嵌め込んでしまうとやり直しがきかないため、慎重さが求められます。どこにどの模様を嵌め込むのか、バランスよく考えながらの作業だそうです。<br>
+		入嵌が済むと変色を防ぐための腐食や錆出し、仕上げの色つけ（漆焼き）などを行い、全部で15ほどの工程を経て完成に至ります。<br>
+		「たとえば香炉や花瓶などのような球面の作品は、本体を固定するのも難しく、布目切り、入嵌ともに高い技術が必要になってきます」<br>
+		職人の腕の見せどころでもあり、先人の作品を見るとかつての名工が腕を競ったことがうかがえます。</p>
+
+		<h3>お客様の声から生まれた新技法</h3>
+		<div class="imgL"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201805_img03.jpg" alt="お客様の声から生まれた新技法"></div>
+		<p>象嵌職人だった祖父の姿を見て育った中嶋さんにとって、象嵌は幼い頃から身近なものだったそうです。<br>
+		「学校帰りにいつも祖父の工房に立ち寄っていました。当時は年輩の職人さんもいらして、その作業を間近で見て、時には自分もさせてもらって、放課後を過ごしていたんです」<br>
+		成長しても象嵌への興味は尽きず、二十歳を過ぎた頃に正式に祖父に弟子入り。<br>
+		「祖父にはとにかくやってみろ、失敗をしてもいいからやれ、と言われました。失敗は成功のもとだと。その言葉があったので、今まで続けてくることができたと思います」<br>
+		そんな中嶋さんが試行錯誤の末に生み出したのが、「中嶋象嵌」のオリジナル技法でもある「透かし」の技術です。<br>
+		「あるとき実演販売をしていると、お客様が『象嵌はちょっと重いのよね』とつぶやかれたのが聞こえたんです。その言葉を聞いたときはショックでしたが、どうすれば軽くなるかと考えて金銀を嵌め込んだ模様以外の部分を糸のこぎりで切り抜いてみました」<br>
+		作品を切り抜くという大胆な発想を実現するには、これまでにないリスクを負うことでもあり、一層慎重に作業を行う必要があります。しかし、透かしによって作品が軽くなったことで、現代のファッションに取り入れやすくなり、幅広いお客様からの支持が得らえるようになりました。<br>
+		また、従来の京象嵌は漆を使うため普段づかいには不向きでしたが、漆を使わずにサビに強いステンレス生地のアクセサリーも開発するなど、時代のニーズを敏感に読み取りながら新作の開発を行っています。</p>
+
+		<h3>次世代に技術をつなぐために</h3>
+		<div class="imgR"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201805_img04.jpg" alt="次世代に技術をつなぐために"></div>
+		<p>今、中嶋さんが力を入れているのは、京象嵌の次世代への継承と普及。というのも、「象嵌」の漢字が読めなかったり、それが何を意味するのか知らなかったりする人たちがまだまだ多いというのがその理由です。<br>
+		「やっぱり若い人に象嵌とはどんなものなのか知ってもらうことが大事だと思い、体験教室を行っています。教室では入嵌の作業をしてもらい、ものづくりの楽しさ、難しさに触れていただいています」<br>
+		体験教室を続けることで、「昔、修学旅行で体験をしたことがあります」とか「子どもが作ってくれたのが気に入ったので、今度はオーダーで制作してほしい」などと声をかけられることも増えてきたそうです。リピーターとして再び工房を訪ねる方もいるなど、じわじわと、確実に象嵌の認知度が高まる手応えを感じています。<br>
+		「お客様となってくれる人たちを育てていくのも職人の務め。そのためにはモノを作って終わりではなく、お客様との対話や声を作品作りにつなげていきたいと思っています」</p>
+
+		<div class="happytime">
+			<h4>happy time</h4>
+			<p>職人として幸せな瞬間は？</p>
+			<div class="balloon">自分の作った商品を販売して、お褒めの言葉を直接いただいたときですね。接客ではネガティブな反応を聞くこともありますが、自分で接客することは必ずプラスになると思います。</div>
+		</div>
+	</section>
+
+	<section class="subTxt">
+		<h3>開国後、輸出品として注目された象嵌</h3>
+		<div class="imgR"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201805_img05.jpg" alt="開国後、輸出品として注目された象嵌"></div>
+		<p>象嵌のルーツはシリアのダマスカス。日本に伝わったのは飛鳥時代とされ、当時の技術は四天王寺や正倉院における刀身などの装飾に見られます。江戸時代になると京都・西陣の埋忠家や正阿弥家から名工が生まれ、京都の象嵌技術が全国へ広がっていきました。また、刀の鍔や甲冑といった武具の装飾から時代とともに火鉢や煙管、そして帯留めやかんざしなど身近な装飾品にも用いられるようになります。<br>
+		明治維新後は廃刀令にともない一時期廃れてしまいますが、その繊細な技術が欧米で高く評価され、花瓶など多くの工芸作品が京都から輸出されていきました。さまざまな国を経由して日本に伝わった象嵌の技法ですが、現在でもその技術が受け継がれている国はごくわずかで、貴重な技術となっています。</p>
+	</section>
+
+	<section class="credit">
+		<div class="imgL"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201805_img06.jpg" alt="中嶋象嵌"></div>
+		<div class="creditTop">
+			<h5>中嶋象嵌</h5>
+			<p>嵯峨野を拠点に伝統的な京象嵌の技術を守る。とくに次世代への継承・普及を目指し、製造販売のほか、修学旅行生などへの体験教室や、全国の百貨店などでの実演販売も積極的に行っている。</p>
+		</div>
+		<div class="creditBottom">
+			<h5>店舗</h5>
+			<p>京都市右京区嵯峨天龍寺瀬戸川町10-3<br>電話　075-871-2610<br>営業時間　8:30〜17:30<br>定休日　日・祝日、8/12〜16、12/28〜1/6<br>※体験学習は要予約（約1時間、一般3000円／1個）</p>
+			<p><b>昇龍苑店</b><br>京都市右京区嵯峨天龍寺門前<br>営業時間　10:00〜17:00（季節により18:00まで）<br>定休日　年中無休</p>
+		</div>
+	</section>
+
+
+	<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/sachi/parts-sachi.php");
+				?>
+			</header>
+
+			</div><!--/content-->
+	</div><!--/Contents-->
+
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer_new.php");
+			?>
+		</div>
+		<!--/Container-->
+
+		<?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/body_retargeting_cord.php");
+		?>
+
+
+	</body>
+</html>

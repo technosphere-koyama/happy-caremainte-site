@@ -1,0 +1,9 @@
+<?php
+/*
+ * マイページトップ
+ */
+require '../../../core/PreLoad.inc';
+$aic = new MypageHistoryController(REST_ORDER_PAST);
+$aic->indexediting("DESC");
+$aic->view("mypage".DS."history");
+?>

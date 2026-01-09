@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>Push Demo(Firebase)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="manifest" href="/manifest.json">
+<script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-messaging.js"></script>
+
+<script src="init_firebase.js"></script>
+
+■Push Demo<br>
+Support:<span id="isSupported">unknown</span><br>
+<br>
+・registration token設定<br>
+id:<input id="param1_setRegToken" size="8" type="text" placeholder="number" />
+<button id="btn_setRegToken" type="button">id設定</button><br>
+<span id="setRegToken"></span>
+<br>
+
+・registration token確認<br>
+<button id="btn_getRegToken" type="button">id表示更新</button><br>
+<span id="getRegToken">unknown</span><br>
+<br>
+
+・Push通知送信<br>
+registration token:<br>
+<input id="param1_push" size="8" type="text" placeholder="number" /><br>
+title:<br>
+<input id="param2_push" size="40" type="text" placeholder="title" /><br>
+message:<br>
+<textarea id="param3_push" rows="3" type="text" placeholder="message"></textarea><br>
+schedule:<br>
+<input id="param4_push" size="40" type="text" placeholder="send after" /><br>
+<button id="btn_push" type="button">Push通知送信</button><br>
+<span id="push"></span>
+
+<script>
+	//
+	//
+
+	//
+	function getRegistrationToken() {
+		$( "#getRegToken" ).html( "処理中<br>" );
+
+/*
+// Handle incoming messages. Called when:
+// - a message is received while the app has focus
+// - the user clicks on an app notification created by a service worker
+//   `messaging.setBackgroundMessageHandler` handler.
+messaging.onMessage((payload) => {
+  console.log('Message received. ', payload);
+  // ...
+});
+*/
+
+
+		// Get registration token. Initially this makes a network call, once retrieved
+		// subsequent calls to getToken will return from cache.
+		messaging.getToken({vapidKey: vapidKey}).then((currentToken) => {
+		if (currentToken) {
+			// sendTokenToServer(currentToken);
+			// updateUIForPushEnabled(currentToken);
+
+			$( "#getRegToken" ).html( currentToken );
+		} else {
+			// Show permission request.
+			console.log('No registration token available. Request permission to generate one.');
+			// Show permission UI.
+			// updateUIForPushPermissionRequired();
+			// setTokenSentToServer(false);
+		}
+		}).catch((err) => {
+			console.log('An error occurred while retrieving token. ', err);
+			// showToken('Error retrieving registration token. ', err);
+			// setTokenSentToServer(false);
+		});
+	}
+
+
+	//
+	//
+
+	//
+	window.addEventListener('load', function() {
+		$( "#isSupported" ).html( firebase.messaging.isSupported() ? "true" : "false" );
+	});
+
+
+	//
+	$( document ).on( "click", "#btn_getRegToken", function() {
+		getRegistrationToken();
+	} );
+
+	$( document ).on( "click", "#btn_setRegToken", function() {
+		$( "#setRegToken" ).html( "処理中<br>" );
+		// OneSignal.push(async function() {
+		// 	await OneSignal.setExternalUserId(
+		// 		$( "#param1_setExuid" ).val()
+		// 	);
+		// 	$( "#setExuid" ).html( "完了<br>" );
+		// });
+	} );
+
+	$( document ).on( "click", "#btn_push", function() {
+		$( "#push" ).html( "処理中<br>" );
+
+		// $.ajax( {
+		// 	url : "http://sto01.jcontents.co.jp:10280/create",
+		// 	method: 'POST',
+		// 	data: {
+		// 		id: $( "#param1_push" ).val(),
+		// 		title: $( "#param2_push" ).val(),
+		// 		message: $( "#param3_push" ).val(),
+		// 		send_after: $( "#param4_push" ).val(),
+		// 	},
+		// 	dataType: 'text',
+		// 	// cache: false,	// true: "_={timestamp}"を付与してアクセスする
+		// 	// crossDomain: false,	// domainを解析して自動で付与してくれそう
+		// } )
+		// .done( function( data, textStatus, jqXHR ) {
+		// 	$( "#push" ).html( "完了<br>" );
+		// } )
+		// .fail( function( jqXHR, textStatus, errorThrown ) {
+		// 	$( "#push" ).html( "送信失敗<br>" );
+		// } )
+		// .always(function( data, textStatus, jqXHR ) {
+		// })
+	} );
+
+</script>
+</body>
+</html>

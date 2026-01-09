@@ -1,0 +1,517 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>さがす＜ケアメンテ実例集＞｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/search.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script src="/_assets/js/jquery.js"></script>
+<script src="/_assets/js/common.js"></script>
+<script src="/_assets/js/ga.js"></script>
+
+  <script src="/_assets/js/form.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="/_assets/js/jquery.cookie.js"></script>
+    <script src="/_assets/js/jquery.validationEngine.js"></script>
+		<script src="/_assets/js/jquery.validationEngine-ja.js"></script>
+
+    <script>
+			$(function () {
+
+				//cookieの有効期限を1時間に
+				var date = new Date();
+				date.setTime(date.getTime() + (1 * 60 * 60 * 1000));
+
+				//cookie値にカテゴリがセットされているかチェック
+				function isSetParam(val) {
+					if (typeof val == "undefined") {
+						return false;
+					} else {
+						return true;
+					}
+				}
+
+				//cookie値の各パラメータの値を分割し、対象のチェックボックスをtrueにする
+				function checkFormSingle(target) {
+					if (isSetParam($.cookie(target))) {
+						var list = $.cookie(target);
+						var split_array = list.split(",");
+						for (var i = 0, len = split_array.length; i < len; i++) {
+							$('input[name="' + target + '[]"]input[value=' + split_array[i] + ']').prop('checked', true);
+						}
+					}
+				}
+
+				//対象のチェックボックスをtrueにする（checkFormSingleの統合版）
+				function checkForm() {
+					//アイテム（商品種別）
+					checkFormSingle("item");
+					//シミ汚れの種類
+					checkFormSingle("dirt");
+					//素材
+					checkFormSingle("material");
+					//ブランド
+					checkFormSingle("brand_code");
+					//色
+					checkFormSingle("color");
+					//柄
+					checkFormSingle("pattern");
+				}
+				checkForm();
+
+				//ターゲットのカテゴリのチェックボックスをeachしてチェックされているものをテキスト化
+				function writeSelected(target) {
+
+					$.removeCookie(target);
+//console.log($.cookie(target));
+					var list = '';
+					var check_array = new Array();
+					$('input[name="' + target + '[]"]:checked').each(function () {
+						list += '<li>' + $(this).parent("label").text() + '</li>';
+						check_array.push($(this).val());
+					});
+
+					$.cookie(target, check_array.join(), {expires: date});
+//					console.log($.cookie(target));
+					return list;
+				}
+				//各カテゴリのターゲット要素に選択リストを記述
+				function createListSingle(target) {
+					//アイテム（商品種別）
+					var itemSelect = writeSelected(target);
+					if (itemSelect.length > 0) {
+						$(".selected-" + target).show();
+						$(".selected-" + target + " ul").show().html(itemSelect);
+					} else {
+						$(".selected-" + target + " ul").html();
+						$(".selected-" + target).hide();
+					}
+				}
+				//選択リストを記述（createListSingleの統合版）
+				function createList() {
+					createListSingle("item");
+					createListSingle("dirt");
+					createListSingle("material");
+					createListSingle("brand_code");
+					createListSingle("color");
+					createListSingle("pattern");
+				}
+				createList();
+
+
+				//チェックボックスに変化かある度に選択リスト再描画
+				$('input[name="item[]"],input[name="dirt[]"],input[name="material[]"],input[name="brand_code[]"],input[name="color[]"],input[name="pattern[]"]').change(function () {
+					createList();
+				});
+
+				//リセットボタン押下した時も選択リスト再描画
+				$("#reset1").on("click", function () {
+					$('input[type="checkbox"]').prop('checked', false);
+					$('input[name="brand_code[]"]').parent("label").remove();
+					createList();
+					return false;
+				});
+				$("#reset2").on("click", function () {
+					$('input[type="checkbox"]').prop('checked', false);
+					$('input[name="brand_code[]"]').parent("label").remove();
+					createList();
+					return false;
+				});
+
+			});
+		</script>
+</head>
+<body id="careSearch"  class="careBrandWrap">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	<!--　/header_nav　-->
+
+	<div class="bg">
+    <section id="case" class="careBrand">
+      <div class="container">
+        <div class="tac case_top"><img src="../img/header01.png" alt="さがす"></div>
+        <h2 class="tac"><span>豊富な経験値と、その事例集が物語る確かな技術</span><br>Before＆After 検索<span class="pc"> / </span><br class="sp"> 概算お見積り事例集<br class="sp">「さがす」</h2>
+        <div class="tac case_lead">
+          <p class="case_txt">あなたのご依頼品の概算お見積りが確認できます。
+            Before &amp; Afrer事例集から検索して仕上がり感をイメージできます。</p>
+
+      </div>
+      <h3 class="tac">ただいまの登録件数：<span><?php echo $this->get("care_count") ?></span>点</h3>
+        <br>
+        <br>
+        <p class="case_txt">まずは、お好きな検索条件を「1つだけ」選んで検索してみてください。<br />
+				検索結果の該当が多い場合は検索条件を追加して絞り込み検索してください。<br />
+				条件を何も選択せずに検索するとすべての事例が表示されます。</p>
+				<form method="POST" id="search_form" name="form01" action="form.html">
+          <dl class="searchForm">
+
+            <div class="selected-search SPpart">
+              <dd>
+                <div class="selected-brand_code" style="display: none;">
+                  <ul></ul>
+                </div>
+              </dd>
+            </div>
+            <dt class="contactTxt first">アイテム（商品種別）</dt>
+            <div class="formaco formCategory02">
+              <dd>
+                <div class="search_section Category02main">
+									<div class="Category02main_box">
+                    <p class="search_subtitle"><img src="img/ico_search_form01.png" alt="紳士スーツ">紳士スーツ</p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0101"><span>紳士背広上着</span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0102"><span>紳士ベスト</span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0103"><span>紳士ズボン</span></label></p>
+									</div>
+									<div class="Category02main_box">
+                    <p class="search_subtitle"><img src="img/ico_search_form02.png" alt="婦人スーツ">婦人スーツ</p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0201"><span>婦人上着</span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0202"><span>婦人パンツ</span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0203"><span>婦人スカート</span></label></p>
+									</div>
+									<div class="Category02main_box">
+                    <p class="search_subtitle"><img src="img/ico_search_form03.png" alt="ジャケット ブレザー">ジャケット<br>ブレザー</p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0301"><span>紳士ジャケット・ブレザー</span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0401"><span>婦人ジャケット・ブレザー</span></label></p>
+									</div>
+									<div class="Category02main_box">
+                    <p class="search_subtitle"></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0601"><span>コート・オーバー類</span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0701"><span>ダウン製品類（コート・ジャンパー等を含む）</span></label></p>
+									</div>
+                </div>
+                <div class="search_section Category02other">
+                  <p class="search_subtitle">その他のアイテム：</p>
+									<div class="Category02other_box">
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0801"><span class="itemL_frame"><img src="img/ico_search_form04.png" alt="ベスト"><br><span class="itemL_name">ベスト</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0901"><span class="itemL_frame"><img src="img/ico_search_form05.png" alt="シャツ・ワイシャツ"><br><span>シャツ<br>ワイシャツ</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="0905"><span class="itemL_frame"><img src="img/ico_search_form06.png" alt="ブラウス・カットソー・Ｔシャツ"><br><span>ブラウス・カットソー<br>Ｔシャツ</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1001"><span class="itemL_frame"><img src="img/ico_search_form07.png" alt="セーター・カーディガン"><br><span>セーター<br>カーディガン</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1101"><span class="itemL_frame"><img src="img/ico_search_form08.png" alt="ズボン パンツ"><br><span>ズボン<br>パンツ</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1201"><span class="itemL_frame"><img src="img/ico_search_form09.png" alt="スカート"><br><span class="itemL_name">スカート</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1301"><span class="itemL_frame"><img src="img/ico_search_form10.png" alt="ワンピース"><br><span class="itemL_name">ワンピース</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1401"><span class="itemL_frame"><img src="img/ico_search_form11.png" alt="ドレス"><br><span class="itemL_name">ドレス</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1501"><span class="itemL_frame"><img src="img/ico_search_form12.png" alt="ネクタイ"><br><span class="itemL_name">ネクタイ</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1601"><span class="itemL_frame"><img src="img/ico_search_form13.png" alt="スカーフ・ストール・マフラー"><br><span>スカーフ・ストール<br>マフラー</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1701"><span class="itemL_frame"><img src="img/ico_search_form14.png" alt="バッグ・鞄"><br><span class="itemL_name">バッグ・鞄</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1801"><span class="itemL_frame"><img src="img/ico_search_form15.png" alt="皮革・毛皮製品類（水系洗浄を除く）"><br><span>皮革・毛皮製品類<br>（水系洗浄を除く）</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1805"><span class="itemL_frame"><img src="img/ico_search_form16.png" alt="部分皮革・部分毛皮製品類"><br><span>部分皮革<br>部分毛皮製品類</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="1901"><span class="itemL_frame"><img src="img/ico_search_form17.png" alt="和服類"><br><span class="itemL_name">和服類</span></span></label></p>
+                    <p class="itemL"><label><input type="checkbox" name="item[]" value="2001"><span class="itemL_frame"><img src="img/ico_search_form18.png" alt="その他"><br><span class="itemL_name">その他</span></span></label></p>
+									</div>
+                </div>
+              </dd>
+            </div>
+            <!--
+            <div class="selected-search SPpart">
+              <dd>
+                <div class="selected-item" style="display: none;">
+                  <ul></ul>
+                </div>
+              </dd>
+            </div>
+          -->
+            <dt class="contactTxt">シミ汚れの種類</dt>
+            <div class="formaco formCategory03">
+              <dd>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000002"><span>黄ばみ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000036"><span>黒ずみ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000053"><span>ラーメンスープ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000057"><span>ワイン</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000065"><span>酒</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000096"><span>色焼け</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000104"><span>輪ジミ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000112"><span>コーヒー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000156"><span>はちみつ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000176"><span>色移り</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000231"><span>水ジミ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000244"><span>魚の煮汁</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000246"><span>イチゴ果汁</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000252"><span>アイロンによる焦げ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000330"><span>インクジミ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000387"><span>カレー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000403"><span>ファンデーション</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000425"><span>ジャスミンティー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000527"><span>チョコレート</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000543"><span>醤油</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000544"><span>朱肉</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000571"><span>ガム</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000626"><span>カビ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000728"><span>色やけ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0000933"><span>ビール</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001048"><span>ヘアーカラー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001070"><span>お茶</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001181"><span>ドレッシング</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001311"><span>肉汁</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001473"><span>水性マジック</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001508"><span>皮脂</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001734"><span>シャンパン</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001817"><span>アイスティー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001873"><span>泥はね</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001918"><span>ねずみ取りの粘着物</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001972"><span>口紅</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001980"><span>牛乳</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0001985"><span>ブルーベリータルト</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002025"><span>油ジミ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002027"><span>錆</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002111"><span>アイスクリーム</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002146"><span>プリン</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002234"><span>ヨーグルト</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002298"><span>ウーロン茶</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002311"><span>デミグラスソース</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002326"><span>ミルクティー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002331"><span>ボールペンインク</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002353"><span>靴墨</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002430"><span>血液</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002492"><span>花粉</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002525"><span>ブルーベリー</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002543"><span>グリーンピーススープ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002578"><span>百合の花粉</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002587"><span>ホットコーヒーラテ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002590"><span>カフェオレ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002678"><span>煤</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002719"><span>カラー剤</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002842"><span>マックシェイク</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0002997"><span>蛍光ペン</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="dirt[]" value="0003022"><span>トマトソース</span></label></p>
+              </dd>
+            </div>
+            <!--
+            <div class="selected-search SPpart">
+              <dd>
+                <div class="selected-dirt" style="display: none;">
+                  <ul></ul>
+                </div>
+              </dd>
+            </div>
+            -->
+            <!-- Added by Manjunath -->
+            <!-- ======== START ============== -->
+            <dt class="contactTxt">ブランド・アパレルメーカー</dt>
+            <div class="formaco formCategory01">
+              <dd><a href="form_brand.html">ブランド・アパレルメーカーを選択してください</a>
+                <?php foreach ($this->get("brand_array") AS $key => $val) { ?>
+                  <label><input type="checkbox" name="brand_code[]" value="<?php echo $key ?>" checked="checked"><span><?php echo $val ?></span></label>
+                <?php } ?>
+              </dd>
+            </div>
+            <!-- ============ END ============== -->
+
+            <dt class="contactTxt">素材</dt>
+            <div class="formaco formCategory04">
+              <dd>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="01"><span>ｱｸﾘﾙ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="02"><span>麻</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="03"><span>ｱｾﾃｰﾄ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="04"><span>ｱﾙﾊﾟｶ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="05"><span>ｱﾝｺﾞﾗ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="06"><span>ｳｰﾙ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="07"><span>ｳﾚﾀﾝ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="08"><span>ｶｼﾐｱ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="09"><span>ｷｬﾒﾙ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="10"><span>ｷｭﾌﾟﾗ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="11"><span>金属繊維</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="12"><span>合成皮革</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="13"><span>ｼﾙｸ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="14"><span>人工皮革</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="15"><span>ﾃﾝｾﾙ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="16"><span>ﾄﾘｱｾﾃｰﾄ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="17"><span>ﾅｲﾛﾝ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="18"><span>ﾎﾟﾘｴｽﾃﾙ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="19"><span>綿</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="20"><span>ﾓﾍｱ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="21"><span>ﾚｰﾖﾝ</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="22"><span>皮革</span></label></p>
+                <p class="itemS"><label><input type="checkbox" name="material[]" value="23"><span>毛皮</span></label></p>
+              </dd>
+            </div>
+            <!--
+            <div class="selected-search SPpart">
+              <dd>
+                <div class="selected-material" style="display: none;">
+                  <ul></ul>
+                </div>
+              </dd>
+            </div>
+            -->
+            <dt class="contactTxt">色</dt>
+            <div class="formaco formCategory05">
+              <dd>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="02"><span><span></span></span>白</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="08"><span><span></span></span>グレー</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="03"><span><span></span></span>黒</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="07"><span><span></span></span>茶</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="01"><span><span></span></span>赤</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="04"><span><span></span></span>黄</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="05"><span><span></span></span>緑</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="06"><span><span></span></span>青</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="09"><span><span></span></span>紫</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="11"><span><span></span></span>ピンク</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="10"><span><span></span></span>金・銀</label></p>
+                <p class="itemS"><label><input type="checkbox" name="color[]" value="14"><span><span></span></span>多色</label></p>
+              </dd>
+            </div>
+            <!--
+            <div class="selected-search SPpart">
+              <dd>
+                <div class="selected-color" style="display: none;">
+                  <ul></ul>
+                </div>
+              </dd>
+            </div>
+            -->
+            <dt class="contactTxt">柄</dt>
+            <div class="formaco formCategory06">
+              <dd>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="01"><span><span><img src="img/search_form_pattern01.png" alt="ストライプ"></span></span>ストライプ</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="02"><span><span><img src="img/search_form_pattern02.png" alt="チェック"></span></span>チェック</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="03"><span><span><img src="img/search_form_pattern03.png" alt="横縞"></span></span>横縞</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="04"><span><span><img src="img/search_form_pattern04.png" alt="花柄"></span></span>花柄</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="05"><span><span><img src="img/search_form_pattern05.png" alt="縦縞"></span></span>縦縞</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="06"><span><span><img src="img/search_form_pattern06.png" alt="水玉"></span></span>水玉</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="07"><span><span><img src="img/search_form_pattern07.png" alt="杉織り"></span></span>杉織り</label></p>
+                <p class="itemS"><label><input type="checkbox" name="pattern[]" value="08"><span><span><img src="img/search_form_pattern08.png" alt="千鳥格子"></span></span>千鳥格子</label></p>
+              </dd>
+            </div>
+            <!-- <dt class="contactTxt">ブランド・アパレルメーカー</dt>
+            <div class="formaco formCategory01">
+              <dd><a href="form_brand.html">ブランド・アパレルメーカーを選択してください</a>
+                <php foreach ($this->get("brand_array") AS $key => $val) { ?>
+                  <label><input type="checkbox" name="brand_code[]" value="<?php echo $key ?>" checked="checked"><span><?php echo $val ?></span></label>
+                <php } ?>
+              </dd>
+            </div> -->
+            <!--
+            <div class="selected-search SPpart">
+              <dd>
+                <div class="selected-pattern" style="display: none;">
+                  <ul></ul>
+                </div>
+              </dd>
+            </div>
+            -->
+            <!--
+						<div class="parano">
+              <dt>パラメータ番号検索：</dt>
+              <dd><input name="parano" type="text" value=""></dd>
+						</div>
+            <dt class="btnarea"><input type="button" id="reset2" class="reset" value="リセット"><input type="button" id="btn" class="btn" value="検索する" onclick="document.form01.submit()"></dt>
+            -->
+            <input name="parano" type="hidden" value="">
+          </dl>
+        </form>
+      </div>
+			<div class="searchFilter non-first">
+        <div class="searchFilter_wrap">
+          <dl class="selected-search">
+            <dt>選択した検索条件</dt>
+            <dd>
+              <div class="selected-brand_code">
+                <ul><li></li></ul>
+              </div>
+              <div class="selected-item" style="display: none;">
+                <ul></ul>
+              </div>
+              <div class="selected-dirt" style="display: none;">
+                <ul></ul>
+              </div>
+              <div class="selected-material" style="display: none;">
+                <ul><li>ｱｸﾘﾙ</li></ul>
+              </div>
+              <div class="selected-color" style="display: none;">
+                <ul></ul>
+              </div>
+              <div class="selected-pattern" style="display: none;">
+                <ul></ul>
+              </div>
+            </dd>
+          </dl>
+          <div class="btnarea"><input type="button" id="reset1" class="reset" value="リセット"><input type="button" id="btn2" class="btn" value="検索する" onclick="document.form01.submit()"></div>
+        </div>
+      </div>
+    </section>
+    <!--　/#case.careBrand -->
+
+    <?php if ($this->get('tutorial') == 0) {?>
+      <!--
+    <section id="counseling_txt">
+      <div class="container">
+				<div class="counseling_txt_img">
+          <img src="../img/counseling.png" alt="" width="130" height="206">
+        </div>
+				<div class="counseling_txt_box">
+          <p>ケアメンテの実例をアイテム別、シミ汚れの種別、素材別、ブランド別などで絞り込み検索することができます。</p>
+          <p style="display: none;">全ての実例を表示したい時は、検索条件を何も選択せずに「検索ボタン」をクリックしてください。</p>
+				</div>
+			</div>
+    </section>
+      -->
+    <?php }?>
+	</div>
+  <!--　/.bg -->
+  <?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/footer_new.php");
+  ?>
+  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+
+    var menuFlag = true;
+    $('.header_nav_common .header_tab').on('click', function() {
+      menuFlag = !menuFlag;
+      if(menuFlag){
+        $('.header_nav_common').css("top","0");
+      } else {
+        $('.header_nav_common').css("top","-95px");
+      }
+  	});
+
+    /*メルマガSP アコーディオン*/
+    $( document ).ready(function() {
+      if ($(window).width() < 1024) {
+        $(".contactTxt").click(function () {
+          $(this).toggleClass("active");
+        });
+      }
+    });
+
+    var str_count = 0;
+    $('div.counseling_txt_box').on('click', function() {
+
+      if ($("p", this).get((str_count+1))) {
+        $("p", this).eq(str_count).hide();
+        str_count += 1;
+        $("p", this).eq(str_count).show();
+      }
+
+
+    });
+
+  });
+  </script>
+	</body>
+</html>

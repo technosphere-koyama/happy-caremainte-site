@@ -1,0 +1,1632 @@
+@charset "utf-8";
+/*==================================
+  use
+==================================*/
+body#top:before {
+	content:"";
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+  width:100%;
+  height:100vh;
+  background-size:cover;
+	background-image: url(../img/bg_img/use_bg_sp.jpg);
+}
+.useIndex #order {
+	margin-top: 0;
+  padding: 22vw 0 20vw;
+}
+.useIndex #order .useIndex_top {
+  font-size: 12px;
+  line-height: 1.6;
+	font-weight: 700;
+}
+.useIndex #order .useIndex_top img {
+  width: 18vw;
+}
+.useIndex #order h2 {
+  font-family: 'sawarabi';
+  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
+  font-size: 6vw;
+	margin: 6px auto 0;
+}
+.useIndex #order h2.catch {
+  color: #c4a971;
+}
+.useIndex #order h2 .lead {
+	text-align: left;
+	font-size:4.2vw;
+	margin-bottom:40px;
+	margin-left: 3vw;
+}
+.useIndex #order h2 span {
+	display: inline-block;
+  font-size: 4vw;
+	font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-weight: bold;
+	margin-bottom: 30px;
+}
+.useIndex #order h3 {
+  font-size: 6vw;
+	margin-top: 40px;
+	padding-bottom: 10vw;
+	position: relative;
+	color:#c4a971;
+	font-family: "sawarabi", serif;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+}
+.useIndex #order h3:after {
+  position: absolute;
+  right: 0;
+  bottom: 23px;
+  left: 0;
+  background: #FFF;
+  border-radius: 0.5vw;
+  content: '';
+  margin: auto;
+  width: 15vw;
+  height: 1vw;
+}
+.useIndex #order .number {
+  position: absolute;
+	top: -20vw;
+	left: 0;
+}
+.useIndex #order .number:before {
+	background: #FFF;
+  position: absolute;
+  bottom: -16vw;
+	left: 5vw;
+  width: 1px;
+  height: 18vw;
+  content: '';
+}
+.useIndex #order .number p {
+  border-bottom: 1px solid #FFF;
+  border-width: 1vw;
+  display: inline-block;
+  font-size: 5vw;
+	font-weight: bold;
+  line-height: 1.5;
+  text-align: right;
+  padding: 0 2vw;
+	position: absolute;
+	bottom: 2vw;
+	left: 0;
+}
+.useIndex #order .number img {
+  width: 28vw;
+}
+.useIndex #order p.tit_txt {
+  font-size: 4vw;
+  line-height: 1.5;
+  /*text-align: left;*/
+  display: inline-block;
+}
+.useIndex #order .step01 {
+  position: relative;
+	margin-top: 40vw;
+	padding-bottom: 10vw;
+}
+.useIndex #order .step01 ul {
+  margin: 20px auto 0;
+}
+.useIndex #order .step01 ul:before {
+	background: #FFF;
+  position: absolute;
+  bottom: -1vw;
+  left: 5vw;
+  width: 1px;
+  height: 20vw;
+  content: '';
+}
+.useIndex #order .step01 ul:after {
+  position: absolute;
+  bottom: 0;
+  left: 2.6vw;
+  width: 5vw;
+  height: 5vw;
+  margin: auto;
+  border-top: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  content: '';
+}
+.useIndex #order .step01 ul li {
+	border: 1px solid #FFF;
+  border-radius: 10px;
+  margin-bottom: 10%;
+	padding: 5vw;
+}
+.useIndex #order .step01 ul li h4 {
+	font-size: 5vw;
+  line-height: 1.5;
+}
+.useIndex #order .step01 ul li .btnArea {
+	margin-top: 30px;
+}
+.useIndex #order .step01 ul li .btnArea .btn:last-child{
+	margin-top: 10px;
+}
+.useIndex #order .step01 ul li .btn a {
+	color: #FFF;
+	background: #6a3b93;
+  border-radius: 8vw;
+	display: inline-block;
+	font-size: 4vw;
+	padding: 3vw 0 3vw 10%;
+	position: relative;
+	text-align: left;
+	width: 90%;
+}
+.useIndex #order .step01 ul li .btn a:hover {
+	color: rgba(255,255,255,0.7);
+}
+.useIndex #order .step01 ul li .btn a:after {
+  position: absolute;
+  top: 0;
+  right: 5vw;
+  bottom: 0;
+  width: 2vw;
+  height: 2vw;
+  margin: auto;
+  border-top: 0.5vw solid #FFF;
+  border-right: 0.5vw solid #FFF;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: '';
+}
+.useIndex #order .step01 ul li .btn a:hover:after {
+  opacity: 0.7;
+}
+.useIndex #order .step02 {
+	margin: 100px 0;
+  position: relative;
+}
+.useIndex #order .step02:before {
+	background: #FFF;
+  position: absolute;
+  bottom: -100px;
+  left: 5vw;
+  width: 1px;
+  height: 32vw;
+  content: '';
+}
+.useIndex #order .step02:after {
+  position: absolute;
+  bottom: -96px;
+  left: 2.6vw;
+  width: 5vw;
+  height: 5vw;
+  margin: auto;
+  border-top: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  content: '';
+}
+.useIndex #order .step02 .btnArea {
+	margin-top: 30px;
+}
+.useIndex #order .step02 .btn a {
+	color: #FFF;
+	background: #6a3b93;
+  border-radius: 8vw;
+	display: block;
+	font-size: 4vw;
+	padding: 3vw 12vw;
+	position: relative;
+	text-align: left;
+}
+.useIndex #order .step02 .btn a:hover {
+	color: rgba(255,255,255,0.7);
+}
+.useIndex #order .step02 .btn a:after {
+  position: absolute;
+  top: 0;
+  right: 5vw;
+  bottom: 0;
+  width: 2vw;
+  height: 2vw;
+  margin: auto;
+  border-top: 0.5vw solid #FFF;
+  border-right: 0.5vw solid #FFF;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: '';
+}
+.useIndex #order .step02 .btn a:hover:after {
+  opacity: 0.7;
+}
+.useIndex #order .step03 {
+	margin: 52vw 0 100px;
+  position: relative;
+}
+.useIndex #order .step03 .box > div {
+  border: 1px solid #FFF;
+  border-radius: 10px;
+	margin: 5vw 0 10%;
+	padding: 8vw 5vw;
+}
+.useIndex #order .step03 .box > div h4 {
+  font-size: 5vw;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.useIndex #order .step03 .box > div h5 {
+  font-size: 4.5vw;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+.useIndex #order .step03 .box > div span {
+	display: block;
+  font-size: 3vw;
+  line-height: 1.5;
+  margin-top: 10px;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #order .step03 .box > div p {
+  font-size: 4vw;
+  line-height: 1.5;
+  margin-top: 10px;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #order .step03 .box > div p.small {
+	margin: -15px 0 20px;
+  text-align: center;
+}
+.useIndex #order .step03 .box > div .triangle div {
+	margin: 20px auto;
+	width: 0;
+  height: 0;
+  border-left: 4vw solid transparent;
+  border-right: 4vw solid transparent;
+  border-top: 4vw solid #FFF;
+}
+.useIndex #order .step03 .box:before {
+	background: #FFF;
+  position: absolute;
+  bottom: -20vw;
+  left: 5vw;
+  width: 1px;
+  height: 20vw;
+  content: '';
+}
+.useIndex #order .step03 .box:after {
+  position: absolute;
+  bottom: -19vw;
+  left: 2.6vw;
+  width: 5vw;
+  height: 5vw;
+  margin: auto;
+  border-top: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  content: '';
+}
+.useIndex #order .step03 .box_sub {
+  background: rgba(255,255,255,0.05);
+  margin-top: 20px;
+	padding: 5vw;
+}
+.useIndex #order .step03 .box_sub h5 {
+  font-size: 4.5vw;
+}
+.useIndex #order .step03 .box_sub p {
+  font-size: 4vw;
+	line-height: 1.75;
+	margin-top: 10px;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #order .step03 .box_sub span {
+	display: inline-block;
+  font-size: 3vw;
+	line-height: 1.5;
+	margin: 20px 0 30px;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #order .step04 {
+	margin: 52vw 0 100px;
+  position: relative;
+}
+.useIndex #order .step04:before {
+	background: #FFF;
+  position: absolute;
+  bottom: -100px;
+  left: 5vw;
+  width: 1px;
+  height: 32vw;
+  content: '';
+}
+.useIndex #order .step04:after {
+  position: absolute;
+  bottom: -96px;
+  left: 2.6vw;
+  width: 5vw;
+  height: 5vw;
+  margin: auto;
+  border-top: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  content: '';
+}
+.useIndex #order .step04 p.tit_txt {
+  font-size: 5vw;
+	font-family: 'sawarabi';
+  -webkit-font-smoothing: antialiased;
+}
+.useIndex #order .step04 .box {
+  margin: 50px auto 0;
+}
+.useIndex #order .step02 .box,
+.useIndex #order .step03 .box {
+  margin: 50px auto 0;
+}
+.useIndex #order .step04 .btnArea {
+	margin-top: 30px;
+}
+.useIndex #order .step04 .btn a {
+	color: #FFF;
+	background: #6a3b93;
+  border-radius: 8vw;
+	display: block;
+	font-size: 4vw;
+	padding: 3vw 12vw;
+	position: relative;
+	text-align: left;
+}
+.useIndex #order .step04 .btn a:hover {
+	color: rgba(255,255,255,0.7);
+}
+.useIndex #order .step04 .btn a:after {
+  position: absolute;
+  top: 0;
+  right: 5vw;
+  bottom: 0;
+  width: 2vw;
+  height: 2vw;
+  margin: auto;
+  border-top: 0.5vw solid #FFF;
+  border-right: 0.5vw solid #FFF;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: '';
+}
+.useIndex #order .step04 .btn a:hover:after {
+  opacity: 0.7;
+}
+.useIndex #order .step05 {
+	margin: 52vw 0 100px;
+  position: relative;
+}
+.useIndex #order .step05 .number:before {
+	content: normal;
+}
+.useIndex #order .step05 p.tit_txt {
+  font-size: 5vw;
+	font-family: 'sawarabi';
+  -webkit-font-smoothing: antialiased;
+}
+.useIndex #order .step05 .box {
+  margin: 50px auto 0;
+}
+.useIndex #order .step05 .box p {
+  border: 1px solid #FFF;
+  font-size: 4vw;
+  line-height: 1.5;
+  margin-top: 20px;
+	padding: 5vw;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #order .step05 .box p.bg_w {
+  border: none;
+  background: rgba(255,255,255,0.05);
+}
+.useIndex #order .step05 .box span {
+	display: inline-block;
+  font-size: 3vw;
+	line-height: 1.5;
+	margin: 20px 0 30px;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #order .step05 .btnArea {
+	margin-top: 30px;
+}
+.useIndex #order .step05 .btn a {
+	color: #FFF;
+	background: #6a3b93;
+  border-radius: 8vw;
+	display: block;
+	font-size: 4vw;
+	padding: 3vw 12vw;
+	position: relative;
+	text-align: left;
+}
+.useIndex #order .step05 .btn a:hover {
+	color: rgba(255,255,255,0.7);
+}
+.useIndex #order .step05 .btn a:after {
+  position: absolute;
+  top: 0;
+  right: 5vw;
+  bottom: 0;
+  width: 2vw;
+  height: 2vw;
+  margin: auto;
+  border-top: 0.5vw solid #FFF;
+  border-right: 0.5vw solid #FFF;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: '';
+}
+.useIndex #order .step05 .btn a:hover:after {
+  opacity: 0.7;
+}
+.useIndex #order .step05 .box_sub {
+	display: inline-block;
+  font-size: 3vw;
+	line-height: 1.5;
+	margin-top: 60px;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #use {
+	border-top: 1px solid #FFF;
+}
+#pankuzu-wrapp {
+  display: none
+}
+@media (max-width: 991px) {
+  table.priceTable td{
+  display: block;
+  }
+}
+@media (min-width: 992px) {
+
+	.useIndex #order h2.catch {
+		margin-top:80px;
+	}
+	#pankuzu-wrapp {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #efefef;
+    font-size: 11px
+  }
+
+  #pankuzu-wrapp p.pankuzu {
+    background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/icon_pankuzu.gif) right center no-repeat;
+    background-size: 4px 7px;
+    float: left;
+    padding-right: 16px;
+    margin-right: 10px
+  }
+
+  #pankuzu-wrapp p.no-arrow {
+    background: none
+  }
+
+  #pankuzu-wrapp .pan-border {
+    margin: 0 auto;
+    overflow: hidden
+  }
+	#pankuzu-wrapp a {
+		color:#fff;
+	}
+  #pankuzu-wrapp a:hover {
+    opacity: .5
+  }
+	body#top:before {
+    background-image: url(../img/bg_img/use_bg.jpg);
+  }
+	.useIndex #order {
+    padding: 10vw 0 80px;
+  }
+	.useIndex #order .useIndex_top img {
+    width: 50px;
+  }
+  .useIndex #order h2 {
+    font-size: 28px;
+  }
+	.useIndex #order h2 .lead {
+		font-size: 16px;
+		margin-bottom:40px;
+	}
+  .useIndex #order h2 span {
+    font-size: 16px;
+  }
+  .useIndex #order h3 {
+    font-size: 24px;
+    padding-bottom: 40px;
+  }
+  .useIndex #order h3:after {
+    border-radius: 2px;
+    width: 72px;
+    height: 4px;
+  }
+  .useIndex #order .number {
+    top: 0;
+  }
+  .useIndex #order .number:before {
+    right: 8px;
+    bottom: -73%;
+		left: auto;
+    height: 46px;
+  }
+	.useIndex #order .step02 .number:before {
+		bottom: -730%;
+		height: 600px;
+	}
+  .useIndex #order .number p {
+    border-width: 3px;
+    font-size: 28px;
+		padding: 0 12px;
+    right: -20px;
+    bottom: 0;
+    left: auto;
+  }
+  .useIndex #order .number img {
+    width: 124px;
+  }
+  .useIndex #order p.tit_txt {
+    font-size: 16px;
+  }
+  .useIndex #order .step01 {
+    margin-top: 0;
+		padding-bottom: 0;
+  }
+  .useIndex #order .step01 ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto 0;
+  }
+  .useIndex #order .step01 ul:before {
+    bottom: -100px;
+    left: 115px;
+    height: 100px;
+  }
+  .useIndex #order .step01 ul:after {
+    bottom: -96px;
+    left: 100px;
+    width: 30px;
+    height: 30px;
+  }
+  .useIndex #order .step01 ul li {
+    flex: 1;
+    width: 28%;
+    margin: 0 2.5% 0 0;
+		padding: 5% 2% 4%;
+  }
+  .useIndex #order .step01 ul li h4 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .useIndex #order .step01 ul li:last-child {
+    margin-right: 0;
+  }
+  .useIndex #order .step01 ul li .btn a {
+    border-radius: 22px;
+    font-size: 16px;
+    padding: 6px 7% !important;
+    width: 86%;
+  }
+  .useIndex #order .step01 ul li .btn a:after {
+    right: 20px;
+    border-top: 2px solid #FFF;
+    border-right: 2px solid #FFF;
+    width: 10px;
+    height: 10px;
+  }
+  .useIndex #order .step02 .btn a {
+    border-radius: 22px;
+		display: inline-block;
+    font-size: 16px;
+    padding: 6px 46px 6px 36px;
+  }
+  .useIndex #order .step02 .btn a:after {
+    right: 20px;
+    border-top: 2px solid #FFF;
+    border-right: 2px solid #FFF;
+    width: 10px;
+    height: 10px;
+  }
+  .useIndex #order .step02:before {
+    bottom: -100px;
+    left: 115px;
+    height: 196px;
+  }
+  .useIndex #order .step02:after {
+    bottom: -96px;
+    left: 100px;
+    width: 30px;
+    height: 30px;
+  }
+  .useIndex #order .step03 {
+    margin: 100px 0;
+  }
+  .useIndex #order .step03 .number:before {
+    bottom: -86%;
+    height: 46px;
+  }
+  .useIndex #order .step03 .box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto 0;
+  }
+  .useIndex #order .step03 .box > div {
+    flex: 1;
+		margin: 0 3% 0 0;
+    padding: 5% 4% 4%;
+  }
+  .useIndex #order .step03 .box > div:last-child {
+    margin-right: 0;
+  }
+  .useIndex #order .step03 .box > div:first-child h4 {
+    margin-bottom: 46px;
+  }
+  .useIndex #order .step03 .box > div:first-child img {
+    float: left;
+		margin-right: 40px;
+  }
+  .useIndex #order .step03 .box > div:first-child h5 {
+		text-align: left;
+  }
+  .useIndex #order .step03 .box > div h4 {
+    font-size: 20px;
+  }
+  .useIndex #order .step03 .box > div h5 {
+    font-size: 16px;
+  }
+  .useIndex #order .step03 .box > div span {
+    font-size: 12px;
+  }
+  .useIndex #order .step03 .box > div p {
+    font-size: 14px;
+  }
+  .useIndex #order .step03 .box > div .triangle div {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #FFF;
+  }
+  .useIndex #order .step03 .box:before {
+    bottom: -90px;
+    left: 115px;
+    height: 440px;
+  }
+  .useIndex #order .step03 .box:after {
+    bottom: -85px;
+    left: 100px;
+    width: 30px;
+    height: 30px;
+  }
+  .useIndex #order .step03 .box_sub {
+		margin: 50px auto 0;
+		max-width: 602px;
+    padding: 3% 4% 4%;
+  }
+  .useIndex #order .step03 .box_sub h5 {
+    font-size: 18px;
+  }
+  .useIndex #order .step03 .box_sub p {
+    font-size: 14px;
+		text-align: center;
+  }
+  .useIndex #order .step03 .box_sub span {
+    font-size: 14px;
+  }
+  .useIndex #order .step04 {
+    margin: 100px 0;
+  }
+  .useIndex #order .step04:before {
+    bottom: -100px;
+    left: 115px;
+    height: 420px;
+  }
+  .useIndex #order .step04:after {
+    bottom: -96px;
+    left: 100px;
+    width: 30px;
+    height: 30px;
+  }
+  .useIndex #order .step04 p.tit_txt {
+    font-size: 22px;
+  }
+  .useIndex #order .step04 .btn a {
+    border-radius: 22px;
+		display: inline-block;
+    font-size: 16px;
+    padding: 6px 46px 6px 36px;
+  }
+  .useIndex #order .step04 .btn a:after {
+    right: 20px;
+    border-top: 2px solid #FFF;
+    border-right: 2px solid #FFF;
+    width: 10px;
+    height: 10px;
+  }
+  .useIndex #order .step05 {
+    margin: 100px 0;
+  }
+  .useIndex #order .step05 p.tit_txt {
+    font-size: 22px;
+  }
+  .useIndex #order .step05 .box p {
+    font-size: 14px;
+		margin: 20px auto 0;
+		max-width: 598px;
+    padding: 2% 4%;
+    text-align: center;
+	}
+  .useIndex #order .step05 .box p.bg_w {
+    max-width: 600px;
+  }
+  .useIndex #order .step05 .box span {
+    font-size: 14px;
+		max-width: 680px;
+  }
+  .useIndex #order .step05 .btn a {
+    border-radius: 22px;
+		display: inline-block;
+    font-size: 16px;
+    padding: 6px 46px 6px 36px;
+  }
+  .useIndex #order .step05 .btn a:after {
+    right: 20px;
+    border-top: 2px solid #FFF;
+    border-right: 2px solid #FFF;
+    width: 10px;
+    height: 10px;
+  }
+  .useIndex #order .step05 .box_sub {
+    font-size: 14px;
+  }
+  .useIndex #use {
+    margin-top: 0;
+    padding-bottom: 130px !important;
+  }
+}
+
+.priceList li.first {
+	background-color: #f3f3f3;
+}
+.pricelist h3 {
+	font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif  !important;
+	font-weight: bold !important;
+}
+.pricelist h3 a {
+	color: #c4a971 !important;
+	text-decoration:underline;
+}
+.pricelist a.link_line {
+	color: #c4a971 !important;
+	font-weight: bold;
+	text-decoration:underline;
+}
+.pricelist .btm_img {
+  line-height: 0;
+	position: fixed;
+  bottom: 20vw;
+  left: 3vw;
+	display: none;
+}
+.pricelist .btm_img img {
+  width: 70vw;
+}
+.pricelist .tal {
+	text-align: left;
+}
+.pricelist .souryou {
+	font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+	font-weight: bold;
+}
+.pricelist .souryou_sp {
+	margin: 0 0 20px;
+}
+.pricelist .souryou_sp h3 span {
+  display: inline-block;
+	font-size: 12px;
+  line-height: 1.6;
+	margin-top: 5px;
+}
+.pricelist .souryou_sp .souryou_sp_inner01 {
+	margin: 10px 0;
+}
+.pricelist .souryou_sp .souryou_sp_inner02 span {
+	font-weight: bold;
+}
+@media print, screen and (min-width:641px){
+  .pricelist .btm_img {
+		right: 0;
+    bottom: 60px;
+    left: 0;
+		margin: auto;
+    max-width: 1000px;
+		width: 90vw;
+  }
+  .pricelist .btm_img img {
+    width: 31.65%;
+  }
+}
+@media print, screen and (min-width:641px){
+	/*価格表*/
+	.priceList{
+	margin: 10px 0;
+	width: 100%;
+	}
+	.pricelist .pagettl {
+	margin-bottom: 10px;
+	}
+	.pricelist .pagettl-sub {
+	margin: 0;
+	}
+	.pricelist .revision {
+	font-size: 9px;
+	text-align: right;
+	margin-bottom: 20px;
+	}
+	.pricelist h2 span {
+	font-size: 12px;
+	}
+	.priceList.last{
+	margin-bottom: 40px;
+	}
+	.priceList li.first {
+	border: 1px solid #ccc;
+	background-color: #f3f3f3;
+	}
+	.priceList li {
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	}
+	.priceList span.cell{
+	float: left;
+  font-size: 14px;
+	padding: 5px 10px;
+  width: 70%;
+	}
+	.priceList span.cell2,
+	.priceList span.cell2R{
+	 display: block;
+   font-size: 14px;
+	 margin-left: 70%;
+	 padding: 5px 10px;
+	 border-left: 1px solid #ccc;
+	 text-align: right;
+	 white-space: nowrap;
+	}
+	table.priceTable{
+	width: 100%;
+	margin-bottom: 40px;
+	}
+	table.priceTable td{
+	text-align: left;
+	vertical-align: middle;
+	line-height: 1.6;
+	}
+	table.priceTable td:first-child{
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	font-size: 13px;
+	}
+	table.priceTable td:nth-child(3){
+	margin-top: 5px;
+	margin-bottom: 20px;
+	}
+	table.priceTable.last{
+	margin-bottom: 0;
+	}
+	table.priceTable .PCpart th{
+    background-color: #f3f3f3;
+    font-weight: bold;
+	}
+	table.priceTable td p {
+		font-weight: bold;
+		margin-bottom: 0;
+		text-align: center;
+	}
+}
+@media print, screen and (max-width:640px){
+	table.priceTable td::before{
+	display: block;
+	content: attr(data-label);
+		font-weight: bold;
+	}
+	.priceTable_sp {
+		border: none !important;
+	}
+	.priceTable_sp tr {
+		border: 1px solid gray !important;
+    margin-bottom: 10px;
+	}
+	.priceTable_sp tr:last-child {
+    margin-bottom: 0;
+	}
+	.priceTable_sp tr td {
+    border-bottom: 1px solid gray !important;
+    padding: 4px 10px !important;
+    width: auto !important;
+	}
+	.priceTable_sp tr td:first-child {
+    background-color: #f3f3f3;
+    border-top: none !important;
+    border-bottom: 1px solid gray !important;
+    text-align: center;
+	}
+	.priceTable_sp tr td:last-child {
+    border-bottom: none !important;
+		margin-bottom: 0 !important;
+	}
+}
+/*==================================
+  use 2101追記
+==================================*/
+.useIndex #order .step03 .useStep03_2101hide {
+	display: none !important;
+}
+.useIndex #order .step03 .stepImg {
+	margin-top: 5vw;
+}
+.useIndex #order .step03 .useStep03_2101 {
+	margin-top: 5vw;
+}
+.useIndex #order .step03 .useStep03_2101 ul li {
+	border: 1px solid #FFF;
+  border-radius: 10px;
+	font-size: 4vw;
+	line-height: 1.5;
+	margin-bottom: 60px;
+	padding: 8vw 5vw 8vw 15vw;
+	position: relative;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+.useIndex #order .step03 .useStep03_2101 ul li:last-child {
+	margin-bottom: 10px;
+}
+.useIndex #order .step03 .useStep03_2101 ul li:before {
+	background: #6a3b93;
+	border-radius: 50%;
+	color: #FFF;
+	font-size: 14px;
+	line-height: 30px;
+  position: absolute;
+  top: 8vw;
+  left: 3vw;
+  width: 30px;
+  height: 30px;
+  content: '';
+	text-align: center;
+}
+.useIndex #order .step03 .useStep03_2101 ul li:first-child:before {
+  content: '1';
+}
+.useIndex #order .step03 .useStep03_2101 ul li:nth-child(2):before {
+  content: '2';
+}
+.useIndex #order .step03 .useStep03_2101 ul li:after {
+	border: 20px solid transparent;
+  border-right: 20px solid #6a3b93;
+	color: #FFF;
+	margin: auto;
+  position: absolute;
+	right: 0;
+  bottom: -20vw;
+  left: 0;
+  width: 0;
+  height: 0;
+  content: '';
+	-webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.useIndex #order .step03 .useStep03_2101 ul li:last-child:after {
+  content: normal;
+}
+.useIndex #order .step03 .useStep03_2101 ul li span {
+	display: inline-block;
+	font-size: 3vw;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+.useIndex #order .step03 .box.stepImg {
+	display: block;
+}
+@media (min-width: 992px) {
+	.useIndex #order .step03 .number:before {
+    bottom: -392%;
+    height: 280px;
+  }
+  .useIndex #order .step03 .stepImg {
+    margin-top: 50px;
+  }
+  .useIndex #order .step03 .useStep03_2101 {
+    margin-top: 50px;
+  }
+  .useIndex #order .step03 .useStep03_2101 ul li {
+		font-size: 16px;
+    padding: 3% 3% 3% 6%;
+  }
+  .useIndex #order .step03 .useStep03_2101 ul li:before {
+    top: 17%;
+    left: 2%;
+  }
+  .useIndex #order .step03 .useStep03_2101 ul li:first-child:before {
+    top: 25%;
+  }
+  .useIndex #order .step03 .useStep03_2101 ul li:after {
+    bottom: -49%;
+  }
+  .useIndex #order .step03 .useStep03_2101 ul li span {
+    font-size: 14px;
+  }
+}
+
+/*==================================
+  /use/howtoorder/shop/ 2101追記
+==================================*/
+#use .howtoorderImg {
+  line-height: 0;
+}
+#use .howtoorderImg span.howtoorder_shop_tit {
+	height: 30%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+	left: 5%;
+}
+#use .howtoorderImg span.howtoorder_shop_tit span {
+  display: none;
+}
+#use .howtoorder_shop_2101 ul li {
+	margin-bottom: 8%;
+  position: relative;
+}
+#use .howtoorder_shop_2101 ul li:nth-child(2) img {
+  width: 7vw;
+	-webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+#use .howtoorder_shop_2101 ul li p {
+  font-size: 4vw;
+	line-height: 1.5;
+}
+#use .howtoorder_shop_2101 .howtoorder_shop_note {
+  font-size: 3vw;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+#use .howtoorder_shop_2101 .howtoorder_shop_note a {
+  text-decoration: underline;
+}
+@media (min-width: 992px) {
+	#use .howtoorderImg span.howtoorder_shop_tit {
+    display: block;
+    line-height: 2;
+    margin: auto;
+		width: 100%;
+    height: 27%;
+    top: 0;
+    bottom: 0;
+	}
+	#use .howtoorderImg span.howtoorder_shop_tit span {
+		display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    font-weight: normal;
+	}
+	#use .howtoorder_shop_2101 h3 {
+		font-size: 30px;
+		margin-bottom: 1em;
+	}
+  #use .howtoorder_shop_2101 ul {
+		display: flex;
+		align-items: center;
+    justify-content: center;
+  }
+  #use .howtoorder_shop_2101 ul li {
+		margin: 0 5% 0 0;
+  }
+  #use .howtoorder_shop_2101 ul li:last-child {
+		margin: 0;
+  }
+  #use .howtoorder_shop_2101 ul li:nth-child(2) img {
+    width: 29px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+	#use .howtoorder_shop_2101 ul li h4 {
+    margin-bottom: 10px;
+  }
+  #use .howtoorder_shop_2101 ul li p {
+		font-size: 16px;
+  }
+	#use .howtoorder_shop_2101 .howtoorder_shop_note {
+    font-size: 14px;
+		text-align: center;
+  }
+}
+
+/*==================================
+  /use/howtoorder/mail/ 2101追記
+==================================*/
+#use .howtoorderImg span.howtoorder_mail_tit {
+	height: 30%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+	left: 5%;
+}
+#use .howtoorderImg span.howtoorder_mail_tit span {
+  display: none;
+}
+#use .howtoorder_mail_2101 ul.howtoorder_mail_step {
+	margin-bottom: 30px;
+}
+#use .howtoorder_mail_2101 ul.howtoorder_mail_step li {
+	margin-bottom: 8%;
+	text-align: center;
+}
+#use .howtoorder_mail_2101 ul.howtoorder_mail_step li img {
+	width: 35vw;
+}
+#use .howtoorder_mail_2101 ul.howtoorder_mail_step li.arrow img {
+  width: 7vw;
+	-webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+#use .howtoorder_mail_2101 ul.howtoorder_mail_step li p {
+  font-weight: bold;
+  font-size: 4vw;
+	line-height: 1.5;
+	text-align: center;
+}
+#use .howtoorder_mail_2101 .howtoorder_mail_address .section-imgCenter {
+  border: 1px solid #FFF;
+	line-height: 1.5;
+	padding: 2vw 3vw;
+}
+#use .howtoorder_mail_2101 .howtoorder_mail_note {
+	font-size: 3vw;
+}
+#use .howtoorder_mail_2101 .howtoorder_mail_note p {
+	margin-bottom: 0;
+}
+#use .howtoorder_mail_2101 .howtoorder_mail_note ul {
+  display: inline-block;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+#use .howtoorder_mail_2101 .howtoorder_mail_note ul li {
+  text-indent: -1em;
+  padding-left: 1em;
+}
+@media (min-width: 992px) {
+	#use .howtoorderImg span.howtoorder_mail_tit {
+    display: block;
+    line-height: 2;
+    margin: auto;
+		width: 100%;
+    height: 45%;
+    top: 0;
+    bottom: 0;
+	}
+	#use .howtoorderImg span.howtoorder_mail_tit span {
+		display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    font-weight: normal;
+		line-height: 1.5;
+	}
+	#use .howtoorder_mail_2101 h3 {
+		font-size: 30px;
+		margin-bottom: 1em;
+	}
+  #use .howtoorder_mail_2101 ul.howtoorder_mail_step {
+		display: flex;
+		align-items: center;
+    justify-content: center;
+  }
+  #use .howtoorder_mail_2101 ul.howtoorder_mail_step li {
+		margin: 0 2% 0 0;
+  }
+  #use .howtoorder_mail_2101 ul.howtoorder_mail_step li:last-child {
+		margin: 0;
+  }
+	#use .howtoorder_mail_2101 ul.howtoorder_mail_step li img {
+    width: auto;
+  }
+  #use .howtoorder_mail_2101 ul.howtoorder_mail_step li.arrow {
+    margin: 0 2% 5% 0;
+  }
+  #use .howtoorder_mail_2101 ul.howtoorder_mail_step li.arrow img {
+    width: 29px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  #use .howtoorder_mail_2101 ul.howtoorder_mail_step li p {
+		font-size: 14px;
+		height: 42px;
+  }
+  #use .howtoorder_mail_2101 .howtoorder_mail_address .section-imgCenter {
+    display: inline-block;
+		padding: 12px 100px 12px 24px;
+  }
+  #use .howtoorder_mail_2101 .howtoorder_mail_note {
+    font-size: 14px;
+  }
+}
+/*==================================
+  /use/howtoorder/tel/ 2101追記
+==================================*/
+#use .howtoorderImg span.howtoorder_tel_tit {
+	height: 30%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+	left: 5%;
+}
+#use .howtoorder_tel h2 {
+  margin-bottom: 0;
+}
+#use .howtoorder_tel .useNum img {
+	margin: 0 10px 10px 0;
+	vertical-align: middle;
+  width: 10vw;
+}
+#use .howtoorder_tel .useNum a {
+	font-size: 5vw;
+}
+#use .howtoorder_tel p.tal {
+  display: inline-block;
+}
+#use .howtoorder_fax h2 {
+	margin-top: 4em;
+  margin-bottom: 0;
+}
+#use .howtoorder_fax .useNum img {
+	margin: 0 15px 5px 0;
+	vertical-align: sub;
+  width: 14vw;
+}
+#use .howtoorder_fax .useNum {
+	font-size: 20px;
+}
+#use .howtoorder_fax .useNum span {
+	font-size: 8vw;
+  line-height: 1.2;
+  text-align: left;
+}
+#use .howtoorder_fax .useNum span span {
+  font-size: 4vw;
+	margin: 0;
+}
+#use .howtoorder_fax ul li {
+	border: 1px solid #FFF;
+  border-radius: 5px;
+  line-height: 1.5;
+  margin-bottom: 60px;
+  padding: 5vw;
+  position: relative;
+}
+#use .howtoorder_fax ul li:after {
+  border: 20px solid transparent;
+  border-right: 20px solid #6a3b93;
+  color: #FFF;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  bottom: -20vw;
+  left: 0;
+  width: 0;
+  height: 0;
+  content: '';
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+#use .howtoorder_fax ul li:last-child:after {
+  content: normal;
+}
+@media (min-width: 992px) {
+  #use .howtoorder_tel .useNum img {
+    width: 50px;
+  }
+  #use .howtoorder_tel .useNum a {
+    font-size: 20px;
+  }
+  #use .howtoorder_fax .useNum img {
+    width: 60px;
+  }
+  #use .howtoorder_fax .useNum span {
+    font-size: 150%;
+  }
+  #use .howtoorder_fax .useNum span span {
+    font-size: 14px;
+  }
+  #use .howtoorder_fax ul li {
+		border-radius: 10px;
+		margin: 0 auto 60px;
+    padding: 2%;
+		width: 50%;
+  }
+  #use .howtoorder_fax ul li:after {
+    bottom: -57%;
+  }
+  #use .howtoorder_fax ul li:nth-child(2):after {
+    bottom: -94%;
+  }
+}
+/*==================================
+  /use/howtoorder/tel/ ・/use/howtoorder/web/
+商品のお引き取りと梱包方法について 2101追記
+==================================*/
+#use .howtoorder_packing {
+	margin-top: 4em;
+}
+#use .howtoorder_pickup h2 {
+	margin-top: 5em;
+}
+#use .howtoorder_pickup h3,#use .howtoorder_packing h3 {
+	border: 1px solid #FFF;
+  border-radius: 5px;
+	margin: 2em 0 1em;
+  padding: 2%;
+}
+#use .howtoorder_pickupImg .howtoorder_pickupImgR h4 {
+  color: #c4a971;
+	font-size: 12px;
+	margin-bottom: 3%;
+}
+#use .howtoorder_pickupImg .howtoorder_pickupImgL,#use .howtoorder_packing .howtoorder_packingImgL{
+  margin-bottom: 5%;
+}
+@media (min-width: 992px) {
+	#use .howtoorder_pickup h3,#use .howtoorder_packing h3 {
+    border-radius: 10px;
+  }
+  #use .howtoorder_pickup p.tal,#use .howtoorder_packing p.tal {
+    display: inline-block;
+  }
+  #use .howtoorder_pickupImg,#use .howtoorder_packingImg {
+    display: flex;
+		justify-content: center;
+  }
+  #use .howtoorder_pickupImg .howtoorder_pickupImgL,#use .howtoorder_packing .howtoorder_packingImgL{
+    margin: 0 5% 0 0;
+		width: 28%;
+  }
+	#use .howtoorder_pickupImg  .howtoorder_pickupImgR,#use .howtoorder_packingImg  .howtoorder_packingImgR {
+		width: 40%;
+	}
+	#use .howtoorder_pickupImg  .howtoorder_pickupImgR img {
+		margin-top: 2%;
+	}
+  #use .howtoorder_pickupImg .howtoorder_pickupImgR h4 {
+    font-size: 18px;
+  }
+}
+/*==================================
+  /use/howtoorder/web/ 2101追記
+==================================*/
+#use .howtoorderImg span.howtoorder_web_tit {
+	height: 60%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+	left: 5%;
+}
+#use .howtoorderImg span.howtoorder_web_tit span {
+  display: none;
+}
+#use .howtoorder_web h3 {
+  border: 1px solid #FFF;
+  border-radius: 5px;
+  margin: 2em 0 1em;
+  padding: 2%;
+}
+#use .howtoorder_web ul.howtoorder_pcImg li {
+  margin-bottom: 8%;
+  text-align: center;
+}
+#use .howtoorder_web ul.howtoorder_pcImg li p {
+  margin-bottom: 1em;
+}
+#use .howtoorder_web ul.howtoorder_pcImg li.arrow img {
+  width: 7vw;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+#use .howtoorder_web ul.howtoorder_pcImg li:first-child span {
+  color: #c4a971;
+  display: block;
+  font-weight: bold;
+}
+#use .howtoorder_web ul.howtoorder_spImg li {
+  margin-bottom: 8%;
+  text-align: center;
+}
+#use .howtoorder_web ul.howtoorder_spImg li p {
+  margin-bottom: 1em;
+}
+#use .howtoorder_web ul.howtoorder_spImg li.arrow img {
+  width: 7vw;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+#use .howtoorder_web ul.howtoorder_spImg li:first-child span {
+  color: #c4a971;
+  display: block;
+  font-weight: bold;
+}
+#use .howtoorder_mypage {
+  background: rgba(255, 255, 255, 0.2);
+  margin-top: 4em;
+  padding: 10% 5% 3%;
+}
+#use .howtoorder_mypage img {
+  width: 20vw;
+}
+@media (min-width: 992px) {
+	#use .howtoorderImg span.howtoorder_web_tit {
+    display: block;
+    line-height: 2;
+    margin: auto;
+		width: 100%;
+    height: 27%;
+    top: 0;
+    bottom: 0;
+	}
+	#use .howtoorderImg span.howtoorder_web_tit span {
+		display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    font-weight: normal;
+		line-height: 1.5;
+	}
+  #use .howtoorder_web h3 {
+    border-radius: 10px;
+  }
+  #use .howtoorder_web ul.howtoorder_pcImg {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 6em;
+  }
+  #use .howtoorder_web ul.howtoorder_pcImg li {
+    margin: 0 2% 0 0;
+		position: relative;
+		padding-top: 35px;
+  }
+  #use .howtoorder_web ul.howtoorder_pcImg li.arrow {
+		line-height: 198px;
+    margin: 0 3% 0% 1%;
+  }
+  #use .howtoorder_web ul.howtoorder_pcImg li.arrow img {
+		width: 29px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  #use .howtoorder_web ul.howtoorder_pcImg li:first-child p {
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 110px;
+  }
+  #use .howtoorder_web ul.howtoorder_pcImg li:first-child span {
+    position: absolute;
+    right: -60px;
+  }
+  #use .howtoorder_web ul.howtoorder_pcImg li:last-child {
+    margin-right: 0;
+  }
+  #use .howtoorder_web ul.howtoorder_pcImg li:last-child p {
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 95px;
+  }
+  #use .howtoorder_web ul.howtoorder_spImg {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 80px;
+  }
+  #use .howtoorder_web ul.howtoorder_spImg li {
+    margin: 0 2% 0 0;
+		position: relative;
+		padding-top: 35px;
+  }
+  #use .howtoorder_web ul.howtoorder_spImg li.arrow {
+		line-height: 320px;
+    margin: 0 3% 0% 1%;
+  }
+  #use .howtoorder_web ul.howtoorder_spImg li.arrow img {
+		width: 29px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  #use .howtoorder_web ul.howtoorder_spImg li:first-child p {
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 40px;
+  }
+  #use .howtoorder_web ul.howtoorder_spImg li:first-child span {
+    position: absolute;
+    right: -60px;
+  }
+  #use .howtoorder_web ul.howtoorder_spImg li:last-child {
+    margin-right: 0;
+  }
+  #use .howtoorder_web ul.howtoorder_spImg li:last-child p {
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 22px;
+  }
+  #use .howtoorder_mypage {
+    padding: 4% 5% 2% 20%;
+  }
+  #use .howtoorder_mypage img {
+    float: left;
+    width: 111px;
+  }
+  #use .howtoorder_mypage h4 {
+    margin: 1em 0 0.5em;
+  }
+}
+
+@media (min-width: 992px){
+  #pankuzu-wrapp {
+    display:block;
+    position:static;
+    padding:10px 0px;
+    background:none;
+    margin-bottom:50px;
+  }
+  #pankuzu-wrapp.scl {
+    position:fixed;
+    padding:10px 30px;
+    background:rgba(0, 0, 0, 0.7);
+    border-bottom:none;
+    border-top:1px solid rgb(239, 239, 239);
+    margin-bottom:0;
+    z-index:2;
+    top:91px;
+    left:0px;
+    right:0px;
+    color:#fff;
+  }
+  #review_top #pankuzu-wrapp.scl,
+  #mypage.sns_top #pankuzu-wrapp.scl {
+    top:96px;
+  }
+  #pankuzu-wrapp.scl a {
+    color:#fff;
+  }
+  #pankuzu-wrapp.scl a:hover {
+    opacity: .5
+  }
+  #Contents .content.scl {
+    margin-top:82px;
+  }
+}
+#pankuzu-wrapp.act {
+    top:0;
+    transition:all 0.7s;
+  }

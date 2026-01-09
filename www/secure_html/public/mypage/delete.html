@@ -1,0 +1,10 @@
+<?php
+/*
+ * マイページトップ
+ */
+require '../../core/PreLoad.inc';
+$aic = new SnsController();
+$aic->delete();
+//リダイレクトするのでviewは不要
+//$aic->view('mypage');
+?>

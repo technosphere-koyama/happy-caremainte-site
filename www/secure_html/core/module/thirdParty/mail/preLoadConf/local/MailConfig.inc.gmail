@@ -1,0 +1,85 @@
+<?php
+
+$config["MAIL"] = array(
+	"IS_ACTIVE" => true	//これをfalseにするとメールを送らなくなる
+);
+
+$config["SMTP"] = array(
+	"USER" => "bon8style@gmail.com",
+	"PASSWORD" => "slapbon8",
+	"PORT" => "465",
+	"SERVER" => "smtp.gmail.com"
+);
+
+/* 基幹システムへ送信（会員登録） */
+$config["MAIL_ENTRY"] = array(
+	"RETURN" => "bon8style@gmail.com",
+	"FROM" => "bon8style@gmail.com",
+	"TO" => "bon8style@gmail.com"
+);
+
+/* 管理者へ送信（メルマガ登録） */
+$config["MAIL_MAILMAG"] = array(
+	"RETURN" => "bon8style@gmail.com",
+	"FROM" => "bon8style@gmail.com",
+	"TO" => "bon8style@gmail.com"
+);
+
+/* 基幹システムへ送信（登録情報の変更） */
+$config["MAIL_REGIST"] = array(
+	"RETURN" => "bon8style@gmail.com",
+	"FROM" => "bon8style@gmail.com",
+	"TO" => "bon8style@gmail.com"
+);
+
+/* 管理者へ送信（オーダー系で送信） */
+$config["MAIL_ORDER"] = array(
+	"RETURN" => "bon8style@gmail.com",
+	"FROM" => "bon8style@gmail.com",
+	"TO" => "bon8style@gmail.com"
+);
+/* 管理者へ送信（オーダー系でヤマトへ送信） */
+$config["MAIL_YAMATO"] = array(
+	"RETURN" => "bon8style@gmail.com",
+	"FROM" => "bon8style@gmail.com",
+	"TO" => "bon8style@gmail.com"
+);
+
+/* 管理者へ送信（カタログ請求で送信） */
+$config["MAIL_CATALOG"] = array(
+	"RETURN" => "bon8style@gmail.com",
+	"FROM" => "bon8style@gmail.com",
+	"TO" => "bon8style@gmail.com"
+);
+
+/* 管理者へ送信（お問合せ） */
+$config["MAIL_CONTACT"] = array(
+	"RETURN" => "bon8style@gmail.com",
+	"FROM" => "bon8style@gmail.com",
+	"TO" => "bon8style@gmail.com"
+);
+
+/* 管理者へ送信（友達紹介で送信） */
+$config["MAIL_FRIEND"] = array(
+	"RETURN" => "bon8style@gmail.com",
+	"FROM" => "bon8style@gmail.com",
+	"TO" => "bon8style@gmail.com"
+);
+
+/* 基幹システムへ送信するメール（EnterpriseSystem） */
+$config["MAIL_ES"] = array(
+	"RETURN" => "bon8style@gmail.com",
+	"FROM" => "bon8style@gmail.com",
+	"TO" => "bon8style@gmail.com"
+);
+
+$config["MAIL_ADDRESS"] = array(
+	"BASE" => "bon8style@gmail.com", //return path・sender・reply to に用いる用(名前の連想配列は使わないこと！)
+	"FROM" => "bon8style@gmail.com", //メール送信元(運営のinfoなどのアドレス)
+	"TO" => "bon8style@gmail.com", //メール送信先(お問い合わせなど、お客様からくるものを送信するアドレス)
+	"ADMIN" => "bon8style@gmail.com", //運営の管理者アドレス
+	"BCC" => "bon8style@gmail.com", //メール送信内容チェック用
+	"DIRECTOR" => "bon8style@gmail.com", //ディレクター(運営とやり取りを行っている人)
+	"DEVELOPER" => "bon8style@gmail.com"  //システム開発者(システム関連の通知を行う場合に用いる)
+);
+?>

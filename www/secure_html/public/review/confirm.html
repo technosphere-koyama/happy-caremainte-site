@@ -1,0 +1,9 @@
+<?php
+/*
+ * レビュー確認画面
+ */
+require '../../core/PreLoad.inc';
+$uac = new ReviewController();
+$uac->confirm();
+$uac->view('review');
+?>

@@ -1,0 +1,484 @@
+@charset "utf-8";
+/*==================================
+  つなぐ
+==================================*/
+#mypage {
+  background: #fff;
+}
+.header_nav_common {
+	font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+}
+.footer_nav {
+	font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+}
+.footer_nav_sp #menu_sp_trigger span {
+  background-color: #050505;
+}
+.footer_nav_sp #menu_sp_trigger p {
+  color: #050505;
+}
+.footer_sns ul li a {
+  color: #050505;
+}
+@media (min-width: 768px) {
+  .footer_sns {
+    width: 1100px;
+  }
+  .footer_nav_sp {
+    width: 100%;
+  }
+}
+@media (min-width: 769px) {
+  .footer_sns {
+    width: 50px;
+  }
+}
+@media (min-width: 992px) {
+  .footer_sns ul li a {
+    color: #FFF;
+  }
+}
+/*
+.mypageNavi .current:first-child a {
+  background-color: #6a3b93;
+}
+.mypageNavi li.current:nth-child(2) a {
+  background-color: #6a3b93;
+}
+.mypageNavi li.current:nth-child(3) a {
+  background-color: #6a3b93;
+}
+.mypageNavi ul {
+  border: none;
+}
+*/
+
+@media print, screen and (min-width: 641px){
+/*======================
+PCレイアウト */
+	.header_nav_common #menu_pc_trigger p {
+		color: #FFF;
+	}
+	h1 {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+	}
+  .mypageNavi .current:first-child a {
+    background-color: #6a3b93;
+  }
+	.mypageNavi li.current:nth-child(2) a {
+    background-color: #6a3b93;
+	}
+	.mypageNavi li.current:nth-child(3) a {
+    background-color: #6a3b93;
+	}
+  .mypageNavi ul {
+    border: none;
+  }
+	.mypageArea {
+		width: 1000px;
+	}
+	.mypageArea .mainSide .userCommunityInfo .userCommunityName a, .mypageArea .mainSide .userFriendsInfo .userFriendsName a {
+    color: #6a3b93;
+  }
+	.mypageArea .postingForm .postingBtnArea button {
+		background-color: #6a3b93;
+		-webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 16px;
+		padding: 2px 18px 0;
+	}
+	.mypageArea .mainContents .postingArea .userTxt .userName a {
+		color: #6a3b93;
+	}
+	.mypageArea .mainContents .postingArea .userTxt .userName2 a {
+    color: #6a3b93;
+  }
+	.mypageArea .postingArea .postingComment .btn_entry_community {
+		background: #6a3b93;
+		border-bottom: solid 2px #6a3b93;
+		border-radius: 1.5em;
+	}
+	.mypageArea .postingForm .postingImgBtn input[type="file"]{
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  .mypageArea .postingForm .postingImgBtn input[type="file"]:last-child{
+    margin-bottom: 0;
+  }
+  .mypageArea .postingForm .postingImgBtn.privacy{
+    float: left;
+  }
+	.mypageArea .mainContents .postingArea .postingLike img{
+    width: 100px;
+    margin-right: 5px;
+  }
+	/*ライトカラム*/
+  .mypageArea .mypageSub{
+    display: none;
+  }
+  .mypageArea .mainSide .happyInfo{
+    border: 1px solid #ddd;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 20px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .mypageArea .mainSide .happyInfo h4{
+    font-size: 15px;
+    line-height: 1.5em;
+  }
+  .mypageArea .mainSide .happyInfo h5{
+    font-size: 13px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/mypage/sns_icn06.png) no-repeat left 100px top;
+    background-size: auto 16px;
+  }
+  .mypageArea .mainSide .happyInfo img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  .mypageArea .mainSide .happyInfo p{
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .mypageArea .mainSide .happyOrder{
+    overflow: hidden;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  .mypageArea .mainSide .happyOrder a{
+    display: block;
+    padding: 18px 0 14px 18px;
+    background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow.png) no-repeat 270px 25px;
+  }
+  .mypageArea .mainSide .happyOrder a:hover{
+    color: #6a3b93;
+    background: url(../img/lnavi_arrow_on.png) no-repeat 270px 25px;
+  }
+  .mypageArea .mainSide .happyOrder img,
+  .mypageArea .mainSide .happyOrder2 img{
+    width: 10%;
+    margin-right: 15px;
+    padding-bottom: 3px;
+  }
+  .mypageArea .mypageMain {
+		width: 1000px;
+	}
+	.mypageArea .mainContents {
+		width: 680px;
+	}
+	.mypageArea .mainSide .happyOrder a {
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow.png) no-repeat 270px 25px;
+	}
+	.mainvisual__section {
+		background: none;
+	}
+	.mainvisual__section div {
+		color: #050505;
+		font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+	}
+	.mainvisual__section div img {
+		width: 246px;
+	}
+	.mainvisual__section div p {
+		background: url(../img/ttl_line_b.gif) left center no-repeat;
+	}
+	.mypageArea .postingForm .postingImgBtn.privacy label select {
+		appearance: none;
+		border: 1px solid #ddd;
+    width: 160px;
+    height: 30px;
+    padding: 0 11px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	}
+	.mypageArea .postingForm .postingBtnArea{
+    padding: 15px 15px 0;
+  }
+  .mypageArea .postingForm .postingImgBtn.privacy:before,.mypageArea .postingForm .postingImgBtn.privacy:after {
+		content: '';
+    z-index: 1;
+    display: block;
+    width: 8px;
+    border-bottom: 1px solid #050505;
+    position: absolute;
+    bottom: 32%;
+    right: 24px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+	}
+  .mypageArea .postingForm .postingImgBtn.privacy:after {
+		-webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+	}
+	.mypageArea .postingPagenavi li span.current{
+    background: #6a3b93;
+	}
+	.mypageArea .mainSide .happyInfo h4 {
+		color: #050505;
+	}
+	#mypage .mainContents h2 {
+		border: none;
+		padding-left: 0;
+		padding-bottom: 40px;
+    text-align: center;
+	}
+	#mypage .mainContents h2:after {
+		background-color: #050505;
+		border-radius: 2px;
+		width: 72px;
+		height: 2px;
+		right: 0;
+    bottom: 23px;
+    left: 0;
+    top: auto;
+    margin: auto;
+	}
+	/*コミュニティ*/
+	.mypageArea .mainContents2 {
+		width: 680px;
+    float: left;
+	}
+	.mypageArea .mainContents2 h2 {
+		display: none;
+	}
+	.community_wrap h4 {
+		color: #050505;
+		padding-bottom: 40px;
+		position: relative;
+	}
+	.community_wrap h4:after {
+		background-color: #050505;
+		border-radius: 2px;
+		content: '';
+		width: 72px;
+		height: 2px;
+		position: absolute;
+		right: 0;
+    bottom: 23px;
+    left: 0;
+    top: auto;
+    margin: auto;
+	}
+	.top_community li h5 {
+		color: #6a3b93;
+	}
+	.community_wrap .top_community .follow a {
+		background-color: #6a3b93;
+		border-radius: 13px;
+	}
+	.mypageArea .mainContents2 .communitySearch .commuInfo .commuName a {
+		color: #6a3b93;
+	}
+	.sns_widget .btn a, .community_wrap .btn a {
+		background-color: #6a3b93;
+	}
+	.general_community .category div.active {
+		background-color: #6a3b93;
+	}
+	.community_wrap .top_community .follow a:before {
+		background: url(../img/check_w.png) no-repeat 0% center/contain scroll;
+		margin: 0 8px 5px 0;
+		width: 16px;
+    height: 16px;
+	}
+	.mypageArea .mainContents .postingArea .userAvatar {
+		width: 7%;
+	}
+	.mypageArea .mainContents .postingArea .userTxt {
+		width: 93%;
+	}
+}
+
+@media screen and (max-width:640px){
+/*======================
+SPレイアウト */
+	.header_nav_common #menu_pc_trigger p {
+		color: #FFF;
+	}
+	#pager_top {
+    bottom: 36vw;
+	}
+	#pager_top a{
+    line-height: 2;
+	}
+	.footer_sns {
+		display: block !important;
+    padding-bottom: 50vw;
+  }
+	.snsNavi {
+		bottom: 19.4vw;
+	}
+  .mypageArea .postingForm .postingBottom:nth-child(odd){
+    float: left;
+    width: 65%;
+  }
+  .mypageArea .postingForm .postingBottom:nth-child(even){
+    float: right;
+    width: 30%;
+  }
+  .mypageArea .postingForm .postingBottom .postingImgBtn{
+    float: none;
+    display: inherit;
+    margin-bottom: 5px;
+  }
+	.mypageArea .mainContents .postingArea .postingLike img{
+    width: 21vw;
+		margin-right: 7px;
+		vertical-align: middle;
+  }
+	.mainvisual__section {
+		background: none;
+		padding-bottom: 8vw;
+	}
+	.mainvisual__section div {
+		color: #050505;
+		font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+	}
+	.mainvisual__section div img {
+		width: 50vw;
+	}
+	.mainvisual__section div p {
+		background: url(../img/ttl_line_b.gif) left center no-repeat;
+		padding-left: 53px;
+		width: auto;
+	}
+	.mypageArea .postingPagenavi li span.current{
+    background: #6a3b93;
+  }
+	.mypageArea .postingForm .postingBottom .postingBtnArea button {
+		background-color: #6a3b93;
+		border: 1px solid #6a3b93;
+		border-radius: 15px;
+	}
+	.mypageArea .mainContents .postingArea .userTxt .userName a {
+		color: #6a3b93;
+	}
+	.mypageArea .mainContents .postingArea .userTxt .userName2 a {
+    color: #6a3b93;
+  }
+	.mypageArea .postingArea .postingComment .btn_entry_community {
+		background: #6a3b93;
+		border-radius: 12px;
+	}
+	.mypageArea .postingForm .postingBottom .postingImgBtn.privacy label {
+		background: #FFF;
+	}
+	.mypageArea .postingForm .postingBottom .postingImgBtn.privacy label:before, .mypageArea .postingForm .postingBottom .postingImgBtn.privacy label:after {
+		content: '';
+    z-index: 1;
+    display: block;
+    width: 8px;
+    position: absolute;
+    top: 55%;
+    right: 6px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+		margin: 0;
+    border: none;
+    border-top: 1px solid #050505;
+	}
+	.mypageArea .postingForm .postingBottom .postingImgBtn.privacy label:after {
+		-webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+	.mypageArea .mypageSub .happyOrder {
+		display: none;
+	}
+	.mypageArea .mypageSub .happyInfo h4 {
+		color: #050505;
+	}
+	.logoutBtn {
+		top: -50px;
+	}
+	/*コミュニティ*/
+	.top_community li h5 {
+		color: #6a3b93;
+	}
+	.community_wrap .top_community .follow a {
+		background-color: #6a3b93;
+		border-radius: 13px;
+	}
+	.community_wrap .top_community .follow a:before {
+		background: url(../img/check_w.png) no-repeat 0% center/contain scroll;
+		margin: 0 4px 6px 0;
+    width: 12px;
+    height: 12px;
+	}
+	.sns_widget .btn a, .general_community .btn a {
+		background-color: #6a3b93;
+	}
+	.general_community .category div.active {
+		background-color: #6a3b93;
+	}
+	.mypageArea .mainContents2 .communitySearch .commuInfo .commuName a {
+		color: #6a3b93;
+	}
+	.community_wrap h4 {
+		color: #050505;
+		padding-bottom: 30px;
+    position: relative;
+	}
+	.community_wrap h4:after {
+		background-color: #050505;
+		border-radius: 2px;
+		content: '';
+		width: 50px;
+		height: 2px;
+		position: absolute;
+		right: 0;
+    bottom: 17px;
+    left: 0;
+    top: auto;
+    margin: auto;
+	}
+	.mypageHead h1 {
+		display: block;
+		padding-bottom: 30px;
+    position: relative;
+		text-align: center;
+	}
+	.mypageHead h1:after {
+		background-color: #050505;
+		border-radius: 2px;
+		content: '';
+		width: 50px;
+		height: 2px;
+		position: absolute;
+		right: 0;
+    bottom: 17px;
+    left: 0;
+    top: auto;
+    margin: auto;
+	}
+	.sns_community .mypageHead.SPpart {
+    display: none;
+	}
+	.community_wrap .top_community li {
+		width: 30%;
+	}
+}
+#mypage.sns_top:before {
+  display: none!important;
+}

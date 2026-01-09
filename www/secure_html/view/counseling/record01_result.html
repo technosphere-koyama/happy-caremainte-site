@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>メンテナンス料金 お見積もり｜record01｜カウンセリング｜ハッピー ケアメンテ&reg;</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/counseling.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+</head>
+<body id="counseling">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	<!--　/header_nav　-->
+	
+	<div class="bg">
+    <section id="counseling_record_detail" class="estimate counseling_record_side">
+      <div class="container">
+        <div class="lBox">
+          <ul>
+            <li class="info01"><h2>2020.12.01 ご注文のお預かり品</h2><span class="label">カルテNo.9999999(999999)</span>
+            </li>
+          </ul>
+					<ul class="counseling_record_side_list">
+            <?php foreach ($this->get("counseling_all") AS $key => $val) { ?>
+            <li>
+              <a href="./record01.html?chart_id=<?=$val['chart_id']?>&item_id=<?=$val['item_id']?>">
+              <h2><?=$val['reference_no']?></h2>
+              <div class="counseling_record_img">
+                <img src="<?php echo $val['thumb_url'] ?>" alt="<?php echo $val['item_id'] ?>">
+              </div>
+              <h3><?=$val['reference_name']?></h3>
+              <p><?=$val['status_name']?></p></a>
+            </li>
+            <?php }?>
+          </ul>
+        </div>
+        <div class="rBox">
+          <ul class="list">
+            <li class="info01">
+              <h2>メンテナンス料金 お見積もり</h2>
+              <p>①「必要ケアメンテメニュー」は、ご依頼品のお預かり状態から最適なメンテナンスをご提案させていただいております。 ②「最適ケアメンテメニュー」は、ご依頼品に新たな機能性を持たせるメンテナンスを提案させていただいております。 メンテナンス内容は、カウンセリング時にご相談のうえ決定させていただいております。ご不明な点やご質問、変更のご希望などはご遠慮なくお申しつけください</p>
+            </li>
+            <li class="info02">
+              <h3><span>①</span>必要ケアメンテメニュー</h3>
+              <h4>メンテナンスの内容を選択してください。</h4>
+              <?php foreach ($this->get('caremainte_menu') as $key => $val) {?>
+              <div class="menuArea">
+                <h5><?=$val['name']?></h5>
+                <?php $sub_total = 0; ?>
+                <?php foreach ($val['list'] as $no => $row) {?>
+                  <?php $sub_total += $row['price']; ?>
+                <div class="menuBox <?php if ($no == 0) {?>bordr_top<?php }?> <?php if ($row['subtract_flg'] == 0) {?>bordr_btm<?php }?>">
+                  <div class="check">
+                    <label>
+                      <?php if ($row['check_flg']) {?>
+                        <input type="hidden" name="caremainte_check_flg[<?=$key?>][<?=$no?>]" value="on">
+                        <input type="checkbox" checked disabled="disabled"><span></span>
+                      <?php }?>
+                    </label><?php if ($row['required_flg']) {?>（必須）<?php }?>
+                  </div>
+                  <div class="name"><?=$row['name']?></div>
+                  <div class="txt"></div>
+                  <div class="price"><span><?=number_format($row['price'])?></span>円</div>
+                </div>
+                <?php }?>
+              </div>
+              <?php if (count($val['list']) > 1) {?>
+                <div class="sub_total">小計<span><?=number_format($sub_total)?></span>円</div>
+              <?php }?>
+              <?php }?>
+            </li>
+            <li class="info03">
+              <h3><span>②</span>最適ケアメンテメニュー</h3>
+              <h4>メンテナンスの内容を選択してください。</h4>
+
+              <?php foreach ($this->get('option_menu') as $key => $val) {?>
+              <div class="menuArea">
+                <h5><?=$val['name']?></h5>
+                <?php $sub_total = 0; ?>
+                <?php foreach ($val['list'] as $no => $row) {?>
+                  <?php $sub_total += $row['price']; ?>
+                <div class="menuBox <?php if ($no == 0) {?>bordr_top<?php }?> <?php if ($row['subtract_flg'] == 0) {?>bordr_btm<?php }?>">
+                  <div class="check">
+                    <label>
+                      <?php if ($row['check_flg']) {?>
+                        <input type="hidden" name="option_check_flg[<?=$key?>][<?=$no?>]" value="on">
+                        <input type="checkbox" checked disabled="disabled"><span></span>
+                      <?php }?>
+                    </label><?php if ($row['required_flg']) {?>（必須）<?php }?>
+                  </div>
+                  <div class="name"><?=$row['name']?></div>
+                  <div class="txt">
+                  </div>
+                  <div class="price"><span><?=$row['price']?></span>円</div>
+                </div>
+                <?php }?>
+              </div>
+              <?php if (count($val['list']) > 1) {?>
+                <div class="sub_total">小計<span><?=number_format($sub_total)?></span>円</div>
+              <?php }?>
+              <?php }?>
+              
+            </li>
+            <li class="info04">
+              <h3><span>①</span>必要ケアメンテメニュー</h3>
+              <p>+</p>
+              <h3><span>②</span>最適ケアメンテメニュー</h3>
+              <p class="total">合計<span><?=number_format($this->get('all_total_price'))?></span>円</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!--　/#counseling_record -->
+
+    <section id="counseling_txt">
+      <div class="container">
+        <div class="counseling_txt_img">
+            <?php $image_url = "../img/counseling_1.png"; ?>
+          <img src="<?=$image_url?>" alt="" width="130" height="206">
+        </div>
+		<div class="counseling_txt_box">
+          <p>
+            総額のお見積もりです。問題なければ確定ボタンを押してください。<br>
+            修正する場合は左側のカルテか個別に修正してください。
+          </p>
+          <div class="btnArea">
+            <div class="btn">
+              <form action="./index_comment01.html" method="get">
+                <input type="hidden" name="chart_id" value="<?=$this->get('chart_id')?>">
+                <input type="hidden" name="karte_status" value="1">
+              <button type="submit" class="mt0">確定</button>
+            </form>
+            </div>
+          </div>
+				</div>				
+			</div>
+    </section>
+    <!--　/#counseling_txt -->
+  </div>
+
+  <?php
+	/* ヘッダーインクルード */
+	include(DIR_PUBLIC . "/include/footer_new.php");
+  ?>
+  
+  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+  });
+  </script>
+	</body>
+</html>

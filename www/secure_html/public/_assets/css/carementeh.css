@@ -1,0 +1,1666 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト　トップページ　*/
+
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/carementeh/bg_mv.jpg) center center no-repeat;
+	background-size:cover;
+}
+
+h5{
+	font-weight: bold;
+	text-align: left;
+}
+table{
+	width: 100%;
+	border-collapse: collapse;
+}
+.LColumn{
+	min-height: 720px;
+	margin-bottom: 70px;
+}
+.section-imgCenter img{
+	margin-top: 0;
+}
+.smallTxt{
+	font-size: 11px;
+}
+.LColumn .linkBlankBtn{
+	display: block;
+	position: relative;
+	background: #fff;
+	border: 1px solid #b99867;
+	width: 500px;
+	margin: 0 auto;
+	padding: 6px 0;
+	font-size: 13px;
+	color: #a9803c;
+	text-decoration: none;
+	text-indent: -10px;
+	text-align: center;
+}
+.LColumn .linkBlankBtn:hover{
+	opacity: 0.8;
+}
+.LColumn .linkBlankBtn:after{
+	position: absolute;
+	content: "";
+	width: 13px;
+	height: 11px;
+	margin: 7px 0 0 15px;
+	background-image: url(https://www.kyoto-happy.co.jp:8443/_assets/img/shop/list/icn01.gif);
+	background-repeat: no-repeat;
+	background-size: 13px 11px;
+}
+
+/*ケアメンテとは？*/
+.careIndex h2{
+	text-align:center;
+	font-size:40px;
+	margin-bottom:10px;
+}
+.careIndex h3{
+	text-align:center;
+	font-size:17px;
+	margin-bottom:45px;
+}
+.careIndex h4{
+	text-align:center;
+	margin-bottom:70px;
+}
+.careIndex .movieBtn{
+	text-align: center;
+	margin-bottom: 80px;
+}
+.careIndex .section-imgRight{
+	margin-bottom:100px;
+}
+.careIndex .section-imgRight p{
+	width:560px;
+}
+.careIndex .section-imgRight img{
+	width:500px;
+	height:300px;
+}
+.careIndex .section-imgRight .Rimages{
+	float:right;
+	width:500px;
+}
+.careIndex .promo{
+	text-align:center;
+	margin-bottom:90px;
+	cursor: pointer;
+}
+
+.careIndex .footerguide ul{
+	margin-bottom: 60px;
+}
+.careIndex .footerguide li{
+	height: 240px;
+	margin-bottom: 1px;
+}
+.careIndex .footerguide .fnavi1{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/carementeh/menu1.jpg) right center no-repeat;
+	background-color: #74acc1;
+}
+.careIndex .footerguide .fnavi2{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/carementeh/menu2.jpg) right center no-repeat;
+	background-color: #8da8c4;
+}
+.careIndex .footerguide li .fnaviwrap{
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%); /* Safari用 */
+	transform: translateY(-50%);
+}
+.careIndex .footerguide .fnaviTtl{
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+	font-size: 25px;
+	line-height: 1.3;
+	color: #fff;
+	margin-bottom: 15px;
+}
+.careIndex .footerguide p{
+	width: 400px;
+	font-size: 13px;
+	line-height: 1.6;
+}
+.careIndex .footerguide .fnaviBtn{
+	margin-top: 15px;
+	width: 200px;
+	height: 40px;
+	background-color: #fff;
+	text-align: center;
+	font-size: 13px;
+}
+.careIndex .footerguide .fnaviBtn a{
+	color: #666;
+	line-height: 40px;
+	display: block;
+}
+.careIndex .footerguide .fnaviBtn a:hover{
+	color: #999;
+}
+
+/*サービス概要*/
+.overview h5{
+	font-size: 15px;
+	color: #a93c3c;
+}
+
+.flow h4{
+	margin-bottom: 20px;
+}
+.flow h5{
+	color: #000;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 3px;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+img.karte{
+	width: 250px;
+	height: auto;
+}
+img.karte2{
+	width: 250px;
+	height: auto;
+}
+
+
+/*技術/サービス一覧*/
+.service .ripronLineup{
+	border-top: 1px solid #eee;
+	padding-top: 20px;
+	margin-bottom: 50px;
+}
+.service .ripronLineup .ripronLineupWrap{
+	margin-bottom: 20px;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 20px;
+	overflow: hidden;
+}
+.service .ripronLineup .ripronLineupWrap img{
+	margin-bottom: 0;
+	margin-left: 20px;
+	float: right;
+	clear: right;
+	width: 40%;
+	height: auto;
+}
+.service .ripronLineup .ripronLineupWrap p{
+	margin-bottom: 0;
+	line-height: 1.8;
+}
+
+.service .valueon .valueonWrap{
+	clear: both;
+	border-top: 3px solid #ddd;
+	padding-top: 70px;
+}
+.service .valueon .valueonWrap h3{
+	color: #a9803c;
+	font-size: 19px;
+}
+.valueonWrap p{
+	margin-bottom: 70px;
+}
+.service .valueon .valueonWrap.first{
+	border: none;
+	padding-top: 0;
+}
+.service .valueon .valueonWrap .valueonDetail h5{
+	margin-top: 40px;
+}
+.service .valueon .valueonWrap .valueonDetail .sectionL{
+	float: left;
+	width: 48%;
+	text-align: center;
+}
+.service .valueon .valueonWrap .valueonDetail .sectionR{
+	float: right;
+	width: 48%;
+	text-align: center;
+}
+.service .valueon .valueonWrap .valueonDetail img{
+	margin-bottom: 20px;
+	max-width: 100%;
+	height: auto;
+}
+.service .valueon .valueonWrap .valueonDetail p{
+	font-size: 12px;
+	line-height: 1.8;
+	text-align: left;
+	margin-bottom: 20px;
+}
+.service .valueon .valueonWrap .valueonDetail .sectionL p,
+.service .valueon .valueonWrap .valueonDetail .sectionR p{
+	margin-bottom: 0;
+}
+.service .valueon .valueonWrap .valueonDetail .caution{
+	clear: both;
+	margin-bottom: 70px;
+	padding-top: 20px;
+	text-align: left !important;
+}
+.service .valueon .valueonWrap .valueonDetail .link{
+	clear: both;
+}
+.service .valueon .valueonWrap .valueonDetail.images{
+	overflow: hidden;
+	margin-bottom: 70px;
+}
+.service .valueon .valueonWrap .valueonDetail.images h5{
+	margin-bottom: 20px;
+}
+.service .valueon .valueonWrap .valueonDetail.images img{
+	margin-bottom: 10px;
+}
+.service .valueon .valueonWrap .valueonDetail.images p{
+	text-align: center;
+}
+.service .valueon .valueonWrap .valueonDetail.images .caution{
+	margin-bottom: 0;
+}
+.service .valueon .valueonWrap .valueonDetail.images .movie{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.service .pressVerify h5{
+	color: #000;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 3px;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+.service .pressVerify h5 span{
+	font-weight: normal;
+	margin-left: 20px;
+}
+
+.service table.priceTable{
+	width: 100%;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+.service table.priceTable th{
+	background: #f3f3f3;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	font-weight: normal;
+	text-align: left;
+	padding: 8px 15px;
+	line-height: 1.6;
+}
+.service table.priceTable th:nth-child(3){
+	text-align: right;
+}
+.service table.priceTable td{
+	text-align: left;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	padding: 8px 15px;
+	line-height: 1.6;
+	width: 26%;
+}
+.service table.priceTable td:nth-child(2){
+	width: 46%;
+}
+.service table.priceTable td:nth-child(3){
+	width: 25%;
+	text-align: right;
+}
+
+.service .reform .section-imgRight{
+	padding: 0 0 20px;
+	display: block;
+	clear: both;
+}
+
+.service .wardrobe .ripronLineup{
+	border-top: none;
+}
+.service .wardrobe .ripronLineup .ripronLineupWrap{
+	border-bottom: none;
+	background: #f3f3f3;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.service .wardrobe .ripronLineup .ripronLineupWrap P{
+	padding: 10px 0 10px 10px;
+}
+.service .wardrobe .ripronLineup .ripronLineupWrap img{
+	width: inherit;
+}
+
+.service img.package{
+	width: 350px;
+	height: auto;
+}
+
+
+/*Before & After*/
+.before_after h4{
+	margin-bottom: 20px;
+}
+.before_after .ripronLineup{
+	margin-bottom: 50px;
+}
+.before_after .ripronLineup .ripronLineupWrap{
+	margin-bottom: 50px;
+	overflow: hidden;
+}
+.before_after .ripronLineup .ripronLineupWrap h5{
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+}
+.before_after .ripronLineup .ripronLineupImg{
+	float: right;
+	width: 40%;
+}
+.before_after .ripronLineup .ripronLineupWrap img{
+	margin-bottom: 0;
+	margin-left: 40px;
+	float: right;
+	clear: right;
+	width: 100%;
+	height: auto;
+}
+.before_after .ripronLineup .ripronLineupWrap .ripronLineupTxt{
+	float: left;
+	width: 60%;
+}
+.before_after .ripronLineup .ripronLineupWrap p{
+	margin-bottom: 10px;
+	line-height: 1.8;
+}
+.before_after .ripronLineup .ripronLineupWrap dl{
+	text-align: left;
+	width: 90%;
+	font-size: 12px;
+}
+.before_after .ripronLineup .ripronLineupWrap dt{
+	float: left;
+	clear: left;
+}
+.before_after .ripronLineup .ripronLineupWrap dd{
+	float: right;
+	text-align: right;
+}
+.before_after .ripronLineup .ripronLineupWrap .total{
+	font-style: italic;
+}
+
+.before_after table.leatherTable{
+	margin-bottom: 40px;
+}
+.before_after table.leatherTable th,
+.before_after table.leatherTable td{
+	border: 1px solid #ddd;
+	padding: 4px;
+}
+.before_after table.leatherTable th{
+	background: #f8f8f8;
+	font-weight: normal;
+	text-align: center;
+}
+
+
+/*検証データ*/
+.data table.ma_testTable{
+	width: 32%;
+	margin-right: 2%;
+	float: left;
+	margin-bottom: 20px;
+}
+.data table.ma_testTable th,
+.data table.ma_testTable td{
+	border: 1px solid #ddd;
+	padding: 5px;
+	font-size: 13px;
+	line-height: 1.6;
+	text-align: center;
+	vertical-align: middle;
+}
+.data table.ma_testTable th{
+	background: #f8f8f8;
+	font-weight: normal;
+}
+.data table.ma_testTable td{
+	width: 60%;
+}
+.data table.ma_testTable tr.ma{
+	color: #a93c3c;
+}
+.data table.ma_testTable tr.images{
+	height: 240px;
+}
+.data table.ma_testTable tr.line2{
+	height: 52px;
+}
+.data table.ma_testTable tr.line4{
+	height: 92px;
+}
+.data table.ma_testTable tr.line5{
+	height: 112px;
+}
+.data table.ma_testTable td.item{
+	width: 40%;
+}
+.data table.ma_testTable td img{
+	padding: 5px;
+	width: 135px;
+	height: auto;
+}
+.data table.ma_testTable.last{
+	margin-right: 0;
+}
+
+.data ul.niederrheinList{
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 70px;
+}
+.data ul.niederrheinList li{
+	float: left;
+	width: 17.6%;
+	padding: 1%;
+	text-align: left;
+}
+.data ul.niederrheinList li.head{
+	padding-left: 0;
+}
+.data ul.niederrheinList li.first{
+	padding-top: 44px;
+	padding-left: 0;
+}
+.data ul.niederrheinList li img{
+	width: 100%;
+	margin: 0;
+}
+.data table.niederrheinTable{
+	margin: 10px 0;
+	border: 1px solid #ddd;
+}
+.data table.niederrheinTable th{
+	background: #fff;
+	width: 5%;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	font-weight: normal;
+	text-align: center;
+}
+.data table.niederrheinTable td{
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	padding: 3px;
+	line-height: 1.6;
+}
+
+.data .comparison b{
+	margin-right: 20px;
+}
+.data .comparison div{
+	margin-bottom: 20px;
+}
+.data .comparison p{
+	margin-bottom: 20px;
+}
+.data .comparison p.last{
+	margin-bottom: 0;
+}
+.data .comparison img{
+	margin-bottom: 20px;
+}
+
+.data .brand img{
+	width: 30%;
+	height: auto;
+}
+
+.data .monograph{
+	margin-bottom: 20px;
+}
+.data .monograph .monographWrap{
+	margin-bottom: 50px;
+	overflow: hidden;
+}
+.data .monograph .monographWrap h5{
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+}
+.data .monograph .monographImg{
+	float: left;
+}
+.data .monograph .monographImg img{
+	margin-bottom: 0;
+	margin-right: 30px;
+}
+.data .monograph .monographWrap.last{
+	margin-bottom: 0;
+}
+
+
+/*評価*/
+.evaluate .postingArea{
+	border: 1px solid #ddd;
+	margin-bottom: 10px;
+	padding: 15px;
+}
+.evaluate .postingArea .userAvatar{
+	float: left;
+	width: 8%;
+}
+.evaluate .postingArea .userAvatar img{
+	width: 40px;
+	height: 40px;
+	border: 1px solid #ddd;
+}
+.evaluate .postingArea .userTxt{
+	float: right;
+	width: 92%;
+	padding-top: 3px;
+	position: relative;
+}
+.evaluate .postingArea .userTxt .userName{
+	line-height: 1.5em;
+}
+.evaluate .postingArea .userTxt .userName a{
+	color: #9a7339;
+	font-weight: bold;
+	text-decoration: none;
+}
+.evaluate .postingArea .userTxt .userName a:hover{
+	text-decoration: underline;
+}
+.evaluate .postingArea .userTxt .postingTime{
+	color: #999;
+	font-size: 11px;
+}
+.evaluate .postingArea .userTxt .postingTime a{
+	color: #999;
+}
+.evaluate .postingArea .userTxt .postingTime a:hover{
+	text-decoration: underline;
+}
+.evaluate .postingArea .postingTxt{
+	clear: both;
+	padding-top: 15px;
+	line-height: 1.8;
+	margin-bottom: 15px;
+}
+.evaluate .postingArea .postingTxt a{
+	color: #0000ff;
+}
+.evaluate .postingArea .postingTxt a:hover{
+	text-decoration: underline;
+}
+.evaluate .postingArea .postingImg img{
+	width: 100%;
+	height: auto;
+	margin-bottom: 15px;
+}
+.evaluate .postingArea .postingLike{
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.evaluate .postingArea .postingLike a{
+	color: #999;
+}
+.evaluate .postingArea .postingLike a:hover{
+	text-decoration: underline;
+}
+.evaluate .postingArea .postingLike span{
+	color: #999;
+	margin-left: 10px;
+}
+.evaluate .postingArea .postingLike.on a{
+	color: #9a7339;
+}
+.evaluate .postingArea .postingLike.on span{
+	color: #9a7339;
+}
+.evaluate .postingArea .postingComment{
+	background: #f4f4f4;
+	overflow: hidden;
+	margin: 0 -15px -15px;
+	border-top: 1px solid #ddd;
+	padding: 15px;
+	font-size: 12px;
+}
+.evaluate .postingArea .postingComment .postingCommentArea{
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+.evaluate .postingArea .postingComment .userTxt{
+	padding-top: 0;
+}
+.evaluate .postingArea .postingComment .postingReplay{
+	display: inline-block;
+}
+.evaluate .postingArea .postingComment .postingReplay .userAvatar{
+	margin-right: 15px;
+	width: 40px;
+}
+.evaluate .postingPagenavi{
+	margin-top: 30px;
+}
+.evaluate .postingPagenavi ul{
+	text-align: center;
+}
+.evaluate .postingPagenavi li{
+	display: inline-block;
+	margin: 3px;
+}
+.evaluate .postingPagenavi li a,
+.evaluate .postingPagenavi li span{
+	font-size: 11px;
+	text-decoration: none;
+	line-height: 100%;
+	padding: 13px 15px;
+	background: #bbb;
+	display: block;
+	color: #fff;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+.evaluate .postingPagenavi li span.dots{
+	background: #fff;
+	color: #333;
+	padding: 0 10px;
+}
+.evaluate .postingPagenavi li span.current{
+	background: #9a7339;
+	color: #fff;
+}
+.evaluate .postingPagenavi li a:hover{
+	background: #999;
+}
+
+.evaluate dl{
+	width:　100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 15px;
+}
+.evaluate dt{
+	float: left;
+	clear: left;
+	width: 48%;
+}
+.evaluate dd{
+	float: right;
+	width: 48%;
+}
+}
+
+
+@media screen and (max-width:640px){
+/*======================
+SPレイアウト　トップページ*/
+
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/carementeh/bg_mv.jpg) center center no-repeat;
+	background-size:auto 90px;
+}
+
+
+/*ケアメンテとは？*/
+#Contents.careIndex{
+	margin-bottom:0;
+}
+.careIndex h2{
+	margin-bottom:5px;
+	line-height:1.5;
+	margin-top:30px;
+}
+.careIndex h3{
+	font-size:13px;
+	margin-bottom:5px;
+}
+.careIndex h4{
+	font-size:10px;
+	text-align:center;
+	margin-bottom:30px;
+}
+.careIndex .content p{
+	margin-bottom: 0;
+}
+.careIndex .movieBtn{
+	text-align: center;
+	margin: 20px 0;
+}
+.careIndex .movieBtn img{
+	width: 50%;
+	height: auto;
+}
+.careIndex .section-imgRight{
+	margin-bottom:40px;
+}
+.careIndex .promo{
+	text-align: center;
+	margin-bottom: 40px;
+}
+.careIndex .promo img{
+	width:90%;
+	height:auto;
+}
+
+.careIndex .footerguide ul{
+	margin-bottom: 40px;
+}
+.careIndex .footerguide li{
+	margin-bottom: 1px;
+	height: 120px;
+}
+.careIndex .footerguide a{
+	display: block;
+}
+.careIndex .footerguide .fnavi1{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/carementeh/menu1.jpg) right center no-repeat;
+	background-size: 100%;
+	background-color: #74acc1;
+}
+.careIndex .footerguide .fnavi2{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/carementeh/menu2.jpg) right center no-repeat;
+	background-size: 100%;
+	background-color: #8da8c4;
+}
+.careIndex .footerguide .fnavi3{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/carementeh/menu3.jpg) right center no-repeat;
+	background-size: 100%;
+	background-color: #bdad93;
+}
+.careIndex .footerguide .fnavi4{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/carementeh/menu4.jpg) right center no-repeat;
+	background-size: 100%;
+	background-color: #abb98e;
+}
+.careIndex .footerguide .fnavi5{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/carementeh/menu5.jpg) right center no-repeat;
+	background-size: 100%;
+	background-color: #c3aea0;
+}
+.careIndex .footerguide li .fnaviwrap{
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%); /* Safari用 */
+	transform: translateY(-50%);
+}
+.careIndex .footerguide .fnaviTtl{
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1.3;
+	color: #fff;
+	margin-bottom: 5px;
+}
+.careIndex .footerguide p{
+	width: 60%;
+	font-size: 9px;
+	line-height: 1.5;
+}
+
+
+/*コンテンツ*/
+.pagettl-sub{
+	margin-top: -10px;
+	margin-bottom: 40px;
+	font-weight: bold;
+	line-height: 1.6;
+}
+.section-imgCenter{
+	text-align: center;
+}
+.section-imgCenter .imgTop{
+	margin-top: 0;
+}
+.section-imgCenter p{
+	text-align: left;
+}
+.content p{
+	margin-bottom: 40px;
+}
+.content p.last{
+	margin-bottom:0;
+}
+.section-imgRight img{
+	margin:15px 0;
+}
+.section-imgCenter img{
+	margin:20px 0;
+}
+.section-imgRight img.imgTop{
+	margin-top:0;
+}
+.LColumn a{
+	color: #a9803c;
+	text-decoration: underline;
+}
+.content .smallTxt{
+	font-size: 10px;
+}
+.LColumn .linkBlankBtn{
+	display: block;
+	position: relative;
+	background: #fff;
+	border: 1px solid #b99867;
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+	width: 100%;
+	padding: 10px 0;
+	font-size: 9px;
+	color: #a9803c;
+	text-decoration: none;
+	text-indent: -10px;
+	text-align: center;
+}
+.LColumn .linkBlankBtn:after{
+	position: absolute;
+	content: "";
+	width: 12px;
+	height: 10px;
+	margin: 4px 0 0 5px;
+	background-image: url(https://www.kyoto-happy.co.jp:8443/_assets/img/shop/list/icn01.gif);
+	background-repeat: no-repeat;
+	background-size: 12px 10px;
+}
+
+/*サービス概要*/
+.overview img.style{
+	margin-top: -20px;
+}
+
+.etymology .symbol{
+	width: 40%;
+	height: auto;
+}
+.etymology h5{
+	font-size: 15px;
+	color: #a93c3c;
+	line-height: 1.8;
+	margin-bottom: 10px;
+}
+
+.flow h4{
+	font-size: 18px;
+	line-height:1.6em;
+	margin-bottom: 10px;
+}
+.flow h5{
+	font-size: 14px;
+	margin-top: -10px;
+}
+
+.section-imgRight img.karte{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 40%;
+}
+
+
+/*技術/サービス一覧*/
+.service .weightlessness .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 30%;
+}
+
+.service .aquadry img{
+	margin-top: -25px;
+}
+
+.service .ripronLineupWrap p{
+	margin-bottom: 30px;
+}
+.service .ripronLineupWrap p.last{
+	margin-bottom: 0;
+}
+.service .section-imgCenter .ripronLineupWrap img{
+	margin: 0 0 10px;
+}
+
+.service .valueon h3{
+	color: #a9803c;
+}
+.service .valueon .pagettl-sub{
+	margin: -15px 0 20px;
+	text-align: left;
+}
+.service .valueon .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 30%;
+}
+.service .valueon .section-imgCenter img{
+	margin-top: -20px;
+}
+.service .valueon .valueonWrap{
+	clear: both;
+	border-top: 2px solid #ddd;
+	padding-top: 40px;
+}
+.valueonWrap p{
+	margin-bottom: 50px;
+}
+.service .valueon .valueonWrap.first{
+	border: none;
+	padding-top: 0;
+}
+.service .valueon .valueonWrap.first .section-imgRight{
+	margin-top: 20px;
+}
+.service .valueon .valueonWrap .valueonDetail h5{
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+.service .valueon .valueonWrap .valueonDetail .sectionL,
+.service .valueon .valueonWrap .valueonDetail .sectionR{
+	width: 100%;
+	text-align: center;
+}
+.service .valueon .valueonWrap .valueonDetail .sectionL{
+	margin-bottom: 20px;
+}
+.service .valueon .valueonWrap .valueonDetail img{
+	margin-bottom: 10px;
+	max-width: 100%;
+	height: auto;
+}
+.service .valueon .valueonWrap .valueonDetail p{
+	font-size: 10px;
+	line-height: 1.4;
+	text-align: left;
+	margin-bottom: 20px;
+}
+.service .valueon .valueonWrap .valueonDetail .sectionL p,
+.service .valueon .valueonWrap .valueonDetail .sectionR p{
+	margin-bottom: 0;
+	line-height: 1.6;
+}
+.service .valueon .valueonWrap .valueonDetail .caution{
+	clear: both;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	text-align: left !important;
+}
+.service .valueon .valueonWrap .valueonDetail .link{
+	clear: both;
+}
+.service .valueon .valueonWrap .valueonDetail.images{
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+.service .valueon .valueonWrap .valueonDetail.images h5{
+	margin-bottom: 10px;
+}
+.service .valueon .valueonWrap .valueonDetail.images .sectionL{
+	float: left;
+	width: 48%;
+	text-align: center;
+}
+.service .valueon .valueonWrap .valueonDetail.images .sectionR{
+	float: right;
+	width: 48%;
+	text-align: center;
+}
+.service .valueon .valueonWrap .valueonDetail.images img{
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+.service .valueon .valueonWrap .valueonDetail.images p{
+	text-align: center;
+}
+.service .valueon .valueonWrap .valueonDetail.images .caution{
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 1.8;
+}
+
+
+.service .lecirian .section-imgCenter img{
+	margin-top: -20px;
+}
+
+.service .press .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 32%;
+}
+.service .press h5{
+	color: #000;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 3px;
+	margin-bottom: 10px;
+	font-size: 13px;
+	line-height: 1.8;
+}
+.service .press h5 span{
+	font-weight: normal;
+	margin-left: 10px;
+}
+
+.service .grain .mgB30{
+	margin-bottom: 15px;
+}
+.service .grain img{
+	margin-top: 0;
+}
+
+.service .smallTxt.wardrobe{
+	margin-top: -30px;
+}
+.service table.priceTable td{
+	display: block;
+}
+.service table.priceTable{
+	width: 100%;
+	margin-bottom: 0;
+}
+.service table.priceTable td{
+	text-align: left;
+	vertical-align: middle;
+	line-height: 1.6;
+}
+.service table.priceTable td::before{
+	display: block;
+	content: attr(data-label);
+    font-weight: bold;
+}
+.service table.priceTable td:first-child{
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	font-size: 13px;
+}
+.service table.priceTable td:nth-child(3){
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+.service table.priceTable.last{
+	margin-bottom: 0;
+}
+.service .wardrobe h5 span{
+	display: block;
+	font-weight: normal;
+	font-size: 65%;
+	line-height: 1.5;
+	margin: 0 0 10px;
+}
+.service .wardrobe .section-imgCenter .ripronLineupWrap img{
+	float: right;
+	margin-left: 10px;
+	width: 40%;
+}
+
+.service .reform .pagettl-sub{
+	margin: -15px 0 20px;
+	text-align: center;
+}
+.service .reform .section-imgRight{
+	padding: 0 0 20px;
+	display: block;
+	clear: both;
+}
+
+.service .reform .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 30%;
+}
+.service .reform .section-imgCenter img{
+	margin-top: -20px;
+}
+
+.service .press .wardrobe h5{
+	padding-bottom: 5px;
+}
+.service .press .wardrobe h5 span{
+	margin-left: 0;
+}
+.service .wardrobe .pressVerify p{
+	margin-bottom: 20px;
+}
+.service .wardrobe .ripronLineup{
+	margin-bottom: 50px;
+}
+.service .wardrobe .ripronLineup.last{
+	margin-bottom: 0;
+}
+.service .wardrobe .ripronLineup .ripronLineupWrap{
+	border-bottom: none;
+	background: #f3f3f3;
+	padding: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+.service .wardrobe .ripronLineup .ripronLineupWrap p{
+	margin-bottom: 0;
+	line-height: 1.8;
+}
+
+.service .reasonable .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 30%;
+}
+
+.service .difference .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 30%;
+}
+
+
+/*Before & After*/
+.before_after .ripronLineupWrap{
+	margin-bottom: 40px;
+}
+.before_after .ripronLineupWrap h5{
+	font-size: 12px;
+	line-height: 1.6;
+}
+.before_after .ripronLineupWrap .ripronLineupImg img{
+	margin-bottom: 10px;
+}
+.before_after .ripronLineupWrap .ripronLineupTxt p{
+	margin-bottom: 5px;
+	line-height: 1.6;
+}
+.before_after .ripronLineupWrap .ripronLineupTxt dl{
+	font-size: 12px;
+	line-height: 1.8;
+	text-align: left;
+	overflow: hidden;
+}
+.before_after .ripronLineupWrap .ripronLineupTxt dl:after{
+	clear: both;
+}
+.before_after .ripronLineupWrap .ripronLineupTxt dt{
+	float: left;
+	clear: left;
+}
+.before_after .ripronLineupWrap .ripronLineupTxt dd{
+	float: right;
+	text-align: right;
+}
+.before_after .ripronLineup .ripronLineupWrap .total{
+	font-style: italic;
+}
+.before_after .ripronLineupWrap.mgB0{
+	margin-bottom: 0;
+}
+.before_after .ripron .section-imgCenter.last img{
+	margin-bottom: 0;
+}
+
+.before_after .list .ripronLineupWrap .ripronLineupImg img{
+	margin-top: 10px;
+}
+.before_after .list .ripronLineupWrap.last{
+	margin-bottom: 0;
+}
+
+.before_after .LColumn.suit{
+	margin-top: -10px;
+}
+.before_after .suit .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 30%;
+}
+.before_after .suit .section-imgCenter img{
+	margin-top: -10px;
+	margin-bottom: 30px;
+}
+.before_after .suit h4{
+	font-size: 14px;
+}
+
+.before_after .down{
+	margin-top: -10px;
+}
+.before_after .smallImg img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 30%;
+}
+
+.before_after .shirt h4{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.before_after .shirt h5{
+	text-align: center;
+	margin-bottom: 10px;
+	line-height: 1.6;
+}
+.before_after .shirt .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 30%;
+}
+.before_after .shirtTest .section-imgCenter img{
+	margin-top: 0;
+	margin-bottom: 40px;
+}
+
+.before_after .leather .imgTop{
+	margin-top: -20px;
+}
+.before_after table.leatherTable{
+	width: 100%;
+	margin-bottom: 0;
+	font-size: 13px;
+}
+.before_after table.leatherTable th,
+.before_after table.leatherTable td{
+	display: block;
+	padding: 4px;
+}
+.before_after table.leatherTable th{
+	background: #f8f8f8;
+	font-weight: normal;
+	text-align: center;
+}
+.before_after table.leatherTable td.tableItem{
+	float: left;
+	clear: left;
+}
+.before_after table.leatherTable td.tablePrice{
+	float: right;
+}
+
+.before_after .bag .ripronLineupWrap .ripronLineupImg img{
+	margin-top: 0;
+}
+.before_after .bag .ripronLineupWrap.last{
+	margin-bottom: 0;
+}
+
+.before_after .macintosh .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 30%;
+}
+
+.before_after .lifecare .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 30%;
+}
+
+.before_after .tenpyou .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 30%;
+}
+.before_after .tenpyou .tenpyouBA img{
+	margin: 0 0 30px;
+}
+.before_after .tenpyou .tenpyouBA h3{
+	margin-bottom: 5px;
+}
+.before_after .tenpyou .tenpyouBA .mgB70{
+	margin-bottom: 30px;
+}
+
+
+/*検証データ*/
+.data .ma_test .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 30%;
+}
+.data .ma_test .mgB20{
+	margin-bottom: 10px;
+}
+.data .ma_test table.ma_testTable{
+	width: 100%;
+	margin-right: 2%;
+	margin-bottom: 10px;
+}
+.data .ma_test table.ma_testTable th,
+.data .ma_test table.ma_testTable td{
+	border: 1px solid #ddd;
+	padding: 5px;
+	font-size: 13px;
+	line-height: 1.6;
+	text-align: center;
+	vertical-align: middle;
+}
+.data .ma_test table.ma_testTable th{
+	background: #f8f8f8;
+	font-weight: normal;
+}
+.data .ma_test table.ma_testTable td{
+	width: 60%;
+}
+.data .ma_test table.ma_testTable tr.ma{
+	color: #a93c3c;
+}
+.data .ma_test table.ma_testTable td.item{
+	width: 40%;
+}
+.data .ma_test table.ma_testTable td img{
+	padding: 5px;
+	width: 90%;
+	height: auto;
+}
+.data .ma_test table.ma_testTable.last{
+	margin-right: 0;
+}
+
+.data .hohenstein .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 40%;
+}
+
+.data .niederrhein .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 40%;
+}
+.data .niederrhein .mgB20{
+	margin-bottom: 10px;
+}
+.data ul.niederrheinList{
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+.data ul.niederrheinList li{
+	float: left;
+	width: 17.7%;
+	padding: 1%;
+	text-align: left;
+}
+.data ul.niederrheinList li.head{
+	padding-left: 0;
+}
+.data ul.niederrheinList li.first{
+	padding-left: 0;
+}
+.data ul.niederrheinList li img{
+	width: 100%;
+	margin: 0;
+}
+.data table.niederrheinTable{
+	width: 100%;
+	margin: 10px 0;
+	border: 1px solid #ddd;
+}
+.data table.niederrheinTable th{
+	background: #fff;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	font-weight: normal;
+	text-align: center;
+	padding: 4px;
+}
+.data table.niederrheinTable td{
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	padding: 4px;
+	line-height: 1.3;
+}
+
+.data .comparison .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 40%;
+}
+.data .comparison h5{
+	font-size: 13px;
+	margin-bottom: 5px
+}
+
+.data .tradition .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 40%;
+}
+.data .tradition .smallTxt{
+	margin-top: -10px;
+	margin-bottom: 20px;
+}
+
+.data .brand .section-imgRight{
+	overflow: hidden;
+}
+.data .brand .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 40%;
+}
+.data .brand .section-imgRight .mgB40{
+	margin-bottom: 20px;
+}
+.data .brand .section-imgRight .imgRight2{
+	margin-bottom: 30px;
+}
+
+.data .monograph{
+	margin-bottom: 40px;
+}
+.data .monograph.last{
+	margin-bottom: 0;
+}
+.data .monograph h3{
+	margin-bottom: 10px;
+}
+.data .monograph .monographWrap{
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.data .monograph .monographWrap h5{
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+	text-align: left;
+}
+.data .monograph .monographImg{
+	float: left;
+	text-align: left;
+	overflow: hidden;
+}
+.data .monograph .monographImg img{
+	margin: 0;
+	width: 80%;
+	height: auto;
+}
+.data .monograph .monographWrap p{
+	line-height: 1.6;
+}
+.data .monograph .monographWrap.last{
+	margin-bottom: 0;
+}
+
+.data .similarity .section-imgRight img{
+	float: right;
+	margin: 10px 0 10px 10px;
+	width: 30%;
+}
+
+
+/*評価*/
+.evaluate .postingArea{
+	border: 1px solid #ddd;
+	margin-top: -10px;
+	margin-bottom: 10px;
+	padding: 15px;
+}
+.evaluate .postingArea a{
+	text-decoration: none;
+}
+.evaluate .postingArea .userAvatar{
+	float: left;
+	width: 20%;
+}
+.evaluate .postingArea .userAvatar img{
+	width: 40px;
+	height: 40px;
+	border: 1px solid #ddd;
+}
+.evaluate .postingArea .userTxt{
+	float: right;
+	width: 80%;
+	padding-top: 4px;
+	position: relative;
+}
+.evaluate .postingArea .userTxt .userName a{
+	color: #9a7339;
+	font-weight: bold;
+}
+.evaluate .postingArea .userTxt .postingTime{
+	color: #999;
+	font-size: 11px;
+	margin-top: 3px;
+}
+.evaluate .postingArea .userTxt .postingTime a{
+	color: #999;
+}
+.evaluate .postingArea .postingTxt{
+	clear: both;
+	padding-top: 15px;
+	line-height: 1.8;
+	margin-bottom: 15px;
+	font-size: 13px;
+}
+.evaluate .postingArea .postingTxt a{
+	color: #0000ff;
+}
+.evaluate .postingArea .postingImg img{
+	width: 100%;
+	height: auto;
+	margin-bottom: 15px;
+}
+.evaluate .postingArea .postingLike{
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.evaluate .postingArea .postingLike a{
+	color: #999;
+}
+.evaluate .postingArea .postingLike span{
+	color: #999;
+	margin-left: 10px;
+}
+.evaluate .postingArea .postingLike.on a{
+	color: #9a7339;
+}
+.evaluate .postingArea .postingLike.on span{
+	color: #9a7339;
+}
+.evaluate .postingArea .postingComment{
+	background: #f4f4f4;
+	overflow: hidden;
+	margin: 0 -15px -15px;
+	border-top: 1px solid #ddd;
+	padding: 15px;
+	font-size: 12px;
+}
+.evaluate .postingArea .postingComment .postingCommentArea{
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+.evaluate .postingArea .postingComment .postingCommentArea .userAvatar{
+	width: 13%;
+}
+.evaluate .postingArea .postingComment .postingCommentArea .userAvatar img{
+	width: 70%;
+	height: auto;
+}
+.evaluate .postingArea .postingComment .postingCommentArea .userTxt{
+	width: 87%;
+	padding-top: 0;
+	font-size: 10px;
+	line-height: 1.8;
+}
+.evaluate .postingArea .postingComment .postingCommentArea .userTxt p{
+	font-size: 10px;
+	line-height: 1.8;
+	margin-bottom: 0;
+}
+
+.evaluate .postingPagenavi{
+	margin-top: 15px;
+}
+.evaluate .postingPagenavi ul{
+	text-align: center;
+}
+.evaluate .postingPagenavi li{
+	display: inline-block;
+	margin-right: 8px;
+}
+.evaluate .postingPagenavi li a,
+.evaluate .postingPagenavi li span{
+	font-size: 11px;
+	line-height: 100%;
+	text-decoration: none;
+	padding: 11px 14px;
+	background: #bbb;
+	display: block;
+	color: #fff;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+.evaluate .postingPagenavi li:last-child{
+	margin-right: 0;
+}
+.evaluate .postingPagenavi li span.dots{
+	background: #fff;
+	color: #333;
+	padding: 0 5px;
+}
+.evaluate .postingPagenavi li span.current{
+	background: #9a7339;
+	color: #fff;
+}
+
+.evaluate h5{
+	font-size: 13px;
+	line-height: 1.6;
+}
+
+.evaluate .difference h5{
+	margin-bottom: 20px;
+}
+.evaluate .difference dl{
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+}
+.evaluate .difference dt,
+.evaluate .difference dd{
+	width: 100%;
+	font-size: 15px;
+	line-height: 2;
+}
+.evaluate .difference dt{
+	margin-bottom: 30px;
+}
+.evaluate .differenceBtn{
+	margin-bottom: 10px;
+}
+
+}

@@ -1,0 +1,232 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト　NEWS　*/
+	
+.LColumn {
+    margin-bottom: 70px;
+}
+	
+.newsh {
+	text-align:center;
+	font-size:40px;
+	margin-bottom:10px;
+}
+	
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/bg_mv.jpg) center center no-repeat;
+	background-size:cover;
+}
+
+/*ニュース*/
+.news__section{
+	padding-top: 40px;
+	margin-bottom: 110px;
+}
+
+.news__section .title{
+	text-align: center;
+	margin-bottom: 50px;
+	color:#b99867;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 32px;
+}
+
+.news__section ul{
+	width: 1100px;
+	margin: 0 auto;
+}
+
+.news__section li a{
+	display: block;
+	font-size: 13px;
+	color: #333333;
+	height: 60px;
+	line-height: 60px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.news__section li a .date{
+	display: inline-block;
+	width: 125px;
+}
+
+.news__section li a:hover{
+	background-color: #f8f8f8;
+}
+	
+/*投稿ページ*/
+.news_date {
+	font-size: 11px;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.Lnews img {
+	display: block;
+	margin: 30px 0 0;
+}
+
+.news_link {
+	margin: 30px 0;
+}
+	
+.news_link a {
+	display: block;
+}
+
+.news-return {
+	padding-left: 15px;
+	margin-top: 25px;
+	line-height: 100%;
+}
+.news-return::before {
+	content: "";
+	width: 10px;
+	height: 10px;
+	border-top: 1px solid #a87f42;
+	border-left: 1px solid #a87f42;
+	position: absolute;
+	left: 0;
+	cursor: pointer;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	margin-right: 20px;
+}
+}
+
+@media screen and (max-width:640px){
+/*======================
+SPレイアウト　NEWS*/
+
+.newsh{
+	margin-bottom:5px;
+	line-height:1.5;
+	margin-top:30px;
+}
+	
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/corporate/bg_mv.jpg) center center no-repeat;
+	background-size:auto 90px;
+}
+
+/*ニュース*/
+.news__section{
+	padding-top: 20px;
+	margin-bottom: 35px;
+}
+
+.news__section .title{
+	text-align: center;
+	margin-bottom: 20px;
+	color:#b99867;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 20px;
+}
+
+.news__section ul{
+	width: 90%;
+	margin: 0 5%;
+}
+
+.news__section li{
+	margin-bottom: 13px;
+}
+
+.news__section li a{
+	display: block;
+	font-size: 10px;
+	line-height: 1.7;
+	color: #333333;
+	padding-bottom: 13px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.news__section li a .date{
+	font-size:8px;
+	display: block;
+}
+
+
+/*投稿ページ*/
+h1{
+	margin-bottom: 20px;
+}
+.news_date {
+	display: block;
+	margin: 20px 0 10px;
+}
+
+.news_entry{
+	line-height:1.6em;
+}
+
+.Lnews img {
+	display: block;
+	margin: 30px auto 5px;
+}
+
+.news_link {
+	margin: 30px 0;
+}
+	
+.news_link a {
+	display: block;
+	color: #a9803c;
+	text-decoration: underline;
+	line-height: 2;
+}
+.news_imgp {
+	text-align: center;
+}
+.news-return {
+	padding-left: 15px;
+	margin-top: 15px;
+	line-height: 100%;
+}
+.news-return::before {
+	content: "";
+	width: 10px;
+	height: 10px;
+	border-top: 1px solid #a87f42;
+	border-left: 1px solid #a87f42;
+	position: absolute;
+	left: 5%;
+	cursor: pointer;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	margin-right: 20px;
+	margin-top: 7px;
+}
+	
+.LColumn p a {
+    text-decoration: underline;
+    color: #a9803c;
+}
+.LColumn img {
+	max-width: 100%;
+	height: auto;
+}
+
+.footernavi .link_menu {
+    border-top: 1px solid #eee;
+    background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/icon_arrow.png) 94.5% 14px no-repeat;
+    background-size: 2%;
+}
+	
+.footernavi .link_menu a {
+    display: block;
+    padding: 0 5%;
+}
+
+.footernavi .sub_menu a{
+	width: 85%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+}

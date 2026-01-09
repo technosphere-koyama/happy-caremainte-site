@@ -1,0 +1,42 @@
+# =============================================
+# ログ・一時ファイル
+# =============================================
+www/secure_html/core/tmp/
+www/secure_html/public/images/tmp/
+
+# =============================================
+# WordPress キャッシュ・バックアップ
+# =============================================
+www/secure_html/public/wp/wp-content/cache/
+www/secure_html/public/wp/wp-content/updraft/
+www/secure_html/public/wp/wp-content/backups-dup-lite/
+www/secure_html/public/wp/wp-content/uploads/
+www/secure_html/public/wp/wp-content/ai1wm-backups/
+www/secure_html/public/wp/wp-content/debug.log
+
+# =============================================
+# 大きなバックアップファイル
+# =============================================
+*.wpress
+*.sql.gz
+
+# =============================================
+# 機密設定ファイル (DBパスワード・秘密鍵含む)
+# =============================================
+www/secure_html/public/wp/wp-config.php
+
+# =============================================
+# SSL証明書
+# =============================================
+www/csr/
+
+# =============================================
+# 汎用除外パターン
+# =============================================
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db

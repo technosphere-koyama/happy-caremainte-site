@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト*/
+
+.app,
+#pageback{
+	display:none;
+}
+
+}
+
+@media screen and (max-width:640px){
+/*======================
+アプリレイアウト*/
+
+.app{
+	background-color: rgba(50,50,50,0.95);
+	width: 100%;
+	height: 50px;
+	position:fixed;
+	bottom:0;
+	z-index: 5;
+}
+.app .menu{
+	float:left;
+	width: 20%;
+	padding:8px 0;
+	text-align:center;
+	position:relative;
+}
+.app .menu img{
+	width: 45px;
+}
+
+footer .copyright{
+	margin: 30px 0 80px;
+}
+
+.loadingWrap {
+	width: 100%;/*100%で全画面表示*/
+	height: 100%;/*100%で全画面表示*/
+	background: #fff;/*背景色*/
+	position: fixed;
+	top: 0;/*画面上部からの位置*/
+	left: 0;/*画面左部からの位置*/
+	z-index: 9999;/*レイヤー(この他にpositionを使用していない場合は不要)*/
+}
+.loadingWrap img {
+	position: absolute;
+	top: 50%;/*中央表示*/
+	left: 50%;/*中央表示*/
+	margin: -20px 0 0 -20px;/*画像位置調整(-画像高さの半分 0 0 -画像幅の半分)*/
+	width: auto;/*画像サイズをナチュラルに(レスポンシブデザインでない場合は不要)*/
+}
+
+#pageback{
+  position: fixed;
+  bottom: 17%;
+  left: 5%;
+	width: 40px;
+	z-index: 30;
+}
+#pageback img{
+	width: 100%;
+	height: auto;
+}
+#pagetop{
+	display: none;
+  position: fixed;
+  bottom: 17%;
+  right: 5%;
+	width: 40px;
+	z-index: 30;
+}
+#pagetop img{
+	width: 100%;
+	height: auto;
+}
+
+.snsNavi{
+	margin-bottom: 50px;
+}
+
+/*navi*/
+.gnavi li {
+	float: left;
+	width : 16.6666666%;
+	width : -webkit-calc(100% / 6);
+	width : calc(100% / 6);
+	height: 35px;
+	padding: 8px 0;
+	font-size: 8px;
+	text-align: center;
+}
+.gnavi li.current {
+	background: #666;
+}
+.gnavi li a {
+	display: block;
+	color: #fff;
+}
+.gnavi img {
+	display: block;
+	width: auto;
+	height: 20px;
+	margin: 0 auto 5px;
+}
+
+#synalio-iframe{
+	position: fixed;
+	bottom: 45px!important;
+}
+
+
+}

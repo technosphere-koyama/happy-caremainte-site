@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>record01｜カウンセリング｜ハッピー ケアメンテ&reg;</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/counseling.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+<body id="counseling">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	<!--　/header_nav　-->
+	
+	<div class="bg">
+    <section id="counseling_record_detail">
+      <div class="container">
+        <div class="lBox">
+          <ul>
+            <?php $karte_info = $this->get('karte_info'); ?>
+            <li class="info01"><h2>カウンセリングカルテ</h2>
+              <span class="label">カルテNo.<?=$karte_info['no']?><br>
+                <?=$karte_info['karte_date']?></span>
+            </li>
+            <li class="info03">
+              <div class="label_box">
+                <span class="label">お</span>
+                <span class="label">預</span>
+                <span class="label">り</span>
+                <span class="label">番</span>
+                <span class="label">号</span>
+                <span class="label">：</span>
+              </div>
+              <?=$karte_info['reference_no']?></li>
+            <li class="info04"><span class="label"><?=$karte_info['class']?>／</span><?=$karte_info['half_code']?></li>
+            <li class="info05">
+              <div class="label_box">
+                <span class="label">ブ</span>
+                <span class="label">ラ</span>
+                <span class="label">ン</span>
+                <span class="label">ド</span>
+                <span class="label">：</span>
+              </div>
+              <?=$karte_info['brand_name']?></li>
+            <li class="info06">
+              <div class="label_box">
+                <span class="label">主</span>
+                <span class="label">な</span>
+                <span class="label">素</span>
+                <span class="label">材</span>
+                <span class="label">：</span>
+              </div>
+              <?=$karte_info['material_name']?></li>
+            <li class="info07"><span class="label">お届け予定日：</span><br>
+              <?=$karte_info['delivery_date']?></li>
+          </ul>
+          <?php $http_query = $this->get('http_query'); ?>
+          <?php if ($this->get('is_cansel') == 1) {?>
+          <div class="btn_return">
+            <a href="./record01.html?<?php echo $http_query.'&cansel=0'?>"><img src="../img/icon_return.png" alt="復帰"><span>このお預かり品を復帰</span></a>
+          </div>
+          <?php } else {?>
+					<div class="btn_delete">
+            <a href="./record01.html?<?php echo $http_query.'&cansel=1'?>"><img src="../img/icon_delete.png" alt="キャンセル"><span>このお預かり品をキャンセル</span></a>
+          </div>
+          <?php }?>
+        </div>
+        <div class="rBox <?php if ($this->get('is_cansel') == 1) {?>cansel<?php }?>">
+          <ul class="list">
+            <li class="info01">
+              <img src="<?=$this->get('thumb_url'); ?>">
+            </li>
+            <li class="info02">
+              <div class="status_box">
+                <div class="status_box_inner">
+                  <h3>◎ 汚れの状態</h3>
+                  <div class="status_img">
+                    <div>
+                      <h4>FRONT</h4>
+                      <div class="status_img_figure front">
+                        <img src="<?=$this->get('image_1_url')?>" alt="FRONT">
+                        <!--
+                        <div class="status01">
+                          <img src="../img/status01.svg" alt="シミ"><img src="../img/status01.svg" alt="シミ"><img src="../img/status01.svg" alt="シミ"><img src="../img/status01.svg" alt="シミ"><img src="../img/status01.svg" alt="シミ">
+                        </div>
+                        <div class="status02_01">
+                          <img src="../img/status02.svg" alt="キバミ">
+                        </div>
+                        <div class="status02_02">
+                          <img src="../img/status02.svg" alt="キバミ">
+                        </div>
+                        <div class="status02_03">
+                          <img src="../img/status02.svg" alt="キバミ">
+                        </div>
+                        -->
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4>BACK</h4>
+                      <div class="status_img_figure back">
+                        <img src="<?=$this->get('image_2_url')?>" alt="FRONT">
+                        <!--
+                        <img src="../img/back.png" alt="BACK">
+                        <div class="status01">
+                          <img src="../img/status01.svg" alt="シミ">
+                          <img src="../img/status01.svg" alt="シミ"><img src="../img/status01.svg" alt="シミ"><img src="../img/status01.svg" alt="シミ"><img src="../img/status01.svg" alt="シミ">
+                        </div>
+                        <div class="status02_01">
+                          <img src="../img/status02.svg" alt="キバミ">
+                        </div>
+                        <div class="status02_02">
+                          <img src="../img/status02.svg" alt="キバミ">
+                        </div>
+                        <div class="status02_03">
+                          <img src="../img/status02.svg" alt="キバミ">
+                        </div>
+                        -->
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div style="width: 100%; height: 120px; background-color: #eeeeee;">
+                    <p style="padding: .5em;">
+                      <?=$this->get('dirtscreennote')?>
+                    </p>
+                  </div>
+                </div>
+                <div class="status_box_inner">
+                  <h3>◎ 損傷の状態</h3>
+                  <div class="status_img">
+                    
+                    <div>
+                      <h4>FRONT</h4>
+                      <div class="status_img_figure">
+                        <img src="<?=$this->get('image_3_url')?>" alt="FRONT">
+                      </div>
+                    </div>
+                    <div>
+                      <h4>BACK</h4>
+                      <div class="status_img_figure">
+                        <img src="<?=$this->get('image_4_url')?>" alt="FRONT">
+                      </div>
+                    </div>
+                  </div>
+                  <div style="width: 100%; min-height: 120px; background-color: #eeeeee;">
+                    <p style="padding: .5em; max-width: 240px;">
+                      <?=$this->get('comprehensioncheckscreennote')?>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <ul class="status_guide">
+                <li><img src="../img/status01.svg" alt="シミ">：シミ</li>
+                <li><img src="../img/status02.svg" alt="キバミ">：キバミ</li>
+                <li><img src="../img/status03.svg" alt="変色">：変色</li>
+                <li><img src="../img/status04.svg" alt="脱色">：脱色</li>
+                <li><img src="../img/status05.svg" alt="てかり">：てかり</li>								
+                <li><img src="../img/status06.svg" alt="すり切れ">：すり切れ</li>								
+                <li><img src="../img/status07.svg" alt="破れ">：破れ</li>								
+                <li><img src="../img/status08.svg" alt="穴">：穴</li>
+                <li><img src="../img/status09.svg" alt="キズ">：キズ</li>
+                <li><img src="../img/status10.svg" alt="ほつれ">：ほつれ</li>
+                <li><img src="../img/status11.svg" alt="カビ">：カビ</li>
+                <li><img src="../img/status12.svg" alt="移染">：移染</li>
+                <li><img src="../img/status13.svg" alt="糸引き（長）">：糸引き（長）</li>
+                <li><img src="../img/status14.svg" alt="糸引き（短）">：糸引き（短）</li>
+                <li><img src="../img/status15.svg" alt="毛足が無くなっている">：毛足が無くなっている</li>
+                <li><img src="../img/status16.svg" alt="袖口、裾などの伸び">：袖口、裾などの伸び</li>
+                <li><img src="../img/status17.svg" alt="その他">：その他</li>
+              </ul>
+            </li>
+            <li class="info03 bordr_btm">
+              <h3>お預かり時の状態</h3>
+              <ul class="list_sub">
+                <?php foreach ($this->get('care_condition') AS $key => $val) {?>
+                <li><?=$val?></li>
+                <?php }?>
+              </ul>
+            </li>
+            <li class="info04 bordr_btm">
+              <h3>起こり得る状態変化</h3>
+              <ul class="list_sub">
+                <?php foreach ($this->get('change_condition') AS $key => $val) {?>
+                  <li><?=$val?></li>
+                <?php }?>
+              </ul>
+            </li>
+            <li class="info05 bordr_btm">
+              <h3>確認事項</h3>
+              <ul class="list_sub">
+                <?php foreach ($this->get('confirm_things') AS $key => $val) {?>
+                  <li><?=$val?></li>
+                <?php }?>
+              </ul>
+            </li>
+            <li class="info06 bordr_btm">
+              <h3>備考</h3>
+              <p><?=$this->get('note')?></p>
+            </li>
+            <?php if ($this->get('consentdocumentflg') > 0) {?>
+            <li class="info06 bordr_btm">
+              <h3>弁償不可</h3>
+              <p>
+                <?php if ($this->get('consentdocumentflg')) {?>
+                  <span style="color: #6e98ff">同意済み</span>
+                <?php } else {?>
+                  <span style="color:rgb(255, 110, 110)">未同意</span>
+                <?php }?>
+              </p>
+            </li>
+            <?php }?>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!--　/#counseling_record -->
+
+    <?php if ($this->get('is_cansel') == 0) {?>
+    <section id="counseling_txt">
+      <div class="container">
+        <div class="counseling_txt_img">
+          <img src="img/counseling.png" alt="" width="130" height="206">
+        </div>
+        <div class="counseling_txt_box <?=$this->get('class_sub')?>"></div>
+          
+        </div>
+      </div>
+      <?php }?>
+    </section>
+    <!--　/#counseling_txt -->
+  </div>
+
+  <?php
+	/* ヘッダーインクルード */
+	include(DIR_PUBLIC . "/include/footer_new.php");
+  ?>
+  
+  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+
+    let navi_str = [];
+    <?php foreach($this->get('counseling_navl_list') as $val) {?>
+      navi_str.push("<?=$val?>");
+    <?php }?>     
+
+    let str_count = 0;
+    let max_str = navi_str.length;
+
+    console.log("max_str", max_str);
+
+    $('div.counseling_txt_box').html(htmlEntities(navi_str[0], 'decode'));
+
+    $('div.counseling_txt_box').on('click', function() {
+      str_count += 1;
+
+      if (str_count < max_str) {
+        // location.href = "./record01_estimate.html";
+        $(this).html(htmlEntities(navi_str[str_count], 'decode'));
+      }      
+    });
+
+    $(document).on('click', 'button.mt0', function() {
+      let href = $(this).attr('href');
+      location.href = href;
+    });
+
+  function htmlEntities( str, proc ) {
+    if ( 'encode' === proc ) {
+      str = $('<div/>').text( str ).html();
+      return str.replace( '\'', '&apos;' ).replace( '"', '&quot;' );
+    } else {
+      return $("<div/>").html( str ).text();
+    }
+  }
+  });
+  </script>
+	</body>
+</html>

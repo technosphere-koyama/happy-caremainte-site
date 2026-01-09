@@ -1,0 +1,9 @@
+<?php
+/*
+ * パスワード再設定画面
+ */
+require '../../core/PreLoad.inc';
+$alc = new PasswordReminderController();
+$alc->index();
+$alc->view('reminder');
+?>

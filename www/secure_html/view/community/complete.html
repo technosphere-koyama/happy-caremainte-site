@@ -1,0 +1,79 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>コミュニティを探す｜コミュニティ｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns_dummy.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+
+		<div id="Container">
+			<?php
+			/* ヘッダーインクルード */
+			include(DIR_PUBLIC . "/include/header_new.php");
+			?>
+
+			<div id="Contents">
+				<div class="mainvisual__section">
+					<div>COMMUNITY<br><p>コミュニティの新規作成</p></div>
+				</div>
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu"><a href="/community/">コミュニティ</a></p><p class="pankuzu no-arrow">コミュニティ 新規作成</p></div>
+				</div>
+				<div class="content">
+					<div class="pagettl"><h1>コミュニティの新規作成</h1></div>
+					<?php if (!StaticFunction::is_empty($this->get('error_array'))) { ?>
+						<ul class="error_box">
+							<?php
+							foreach ($this->get('error_array') as $value) {
+								echo '<li>・ ' . $value['message'] . '</li>';
+							}
+							?>
+							<!--<li>・ 現在登録されているパスワードとは異なるパスワードを入力してください。</li>-->
+						</ul>
+					<?php } else { ?>
+						<div class="LColumn formThx">
+							<h2>コミュニティの新規作成が完了しました。</h2>
+							<p></p>
+							<dl class="contactform checkform">
+								<dt class="btnarea2"><input type="button" id="cancelbtn" class="cancelbtn" value="トップへ戻る" onClick="location.href = './'"></dt>
+							</dl>
+						</div>
+					<?php } ?>
+					<div class="RColumn PCpart">
+						<?php $publicGadget->html_verisign_mark() /* SSLバッジ */ ?>
+					</div>
+				</div><!--/content-->
+			</div><!--/Contents-->
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer_nav.php");
+			?>
+		</div>
+		<!--/Container-->
+				
+	</body>
+</html>

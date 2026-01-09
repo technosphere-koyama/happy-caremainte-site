@@ -1,0 +1,346 @@
+<?php 
+    session_start();
+    session_destroy();
+?>
+<!doctype html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script type="text/javascript">
+    if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+    document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+    }else{
+        document.write('<meta name="viewport" content="width=1280" />');
+    }
+    </script>
+    <meta name="format-detection" content="telephone=no">
+    <title>過去のケアメンテご利用履歴｜ハッピー ケアメンテ®</title>
+    <link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+    <link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage_editing.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--[if lt IE 9]>
+    <script src="/common/js/html5shiv.min.js"></script>
+    <![endif]-->
+    <script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+    <script src="/_assets/js/jquery.dependent.js?v=1.1"></script>
+    <style>
+        /* Style param for Logo */
+        .logo-image {
+            height: 300%;
+            width: 120%;
+            /* float: left; */
+            /* margin-left: -17% !important; */
+        }     
+
+        .smt-btn {
+            border-radius: 25px !important;
+            width: 30%;
+            padding: 1%;
+            color: white !important;
+            background-color: #6a3b93;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #mypage .mainContents h2 {
+            padding: 0vw 0 0vw 0vw !important;
+            font-size: 35px !important;
+        }
+
+        .hide_div {
+            display: none;
+        }
+
+        .hide_text {
+            display: none;
+        }
+
+        .hide_month {
+            display: none;
+        }
+
+        .hide_sub_que {
+            display: none;
+        }
+
+        .question2 {
+            display: none;
+        }
+
+        .question3 {
+            display: none;
+        }
+
+        .question4_1 {
+            display: none;
+        }
+
+        .question4_2 {
+            display: none;
+        }
+
+        .pagettl {
+            text-align: left;
+            font-family: "sawarabi", serif;
+            font-weight: normal;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .h2 {
+            color: #c4a971 !important;
+            font-size: 26px !important;
+            text-align: center;
+            margin: 20px 0 1em;
+            line-height: 1.4;
+            font-family: "sawarabi", serif;
+            font-weight: normal;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #mypage .historyTable {
+            margin: none !important;
+            padding: 15px !important;
+        }
+        
+        .sub-que-div {
+            margin-left: 3% !important;
+        }
+
+        .txt-input-div {
+            margin-left: 6% !important;
+            padding: 10px !important;
+            width: 60% !important;
+        }
+
+        .select-input-div {
+            margin-left: 6% !important;
+            padding: 10px !important;
+            width: 15% !important;
+        }
+
+        .main-options-div {
+            margin-left: 0% !important;
+            margin-top: -1% !important;
+            margin-bottom: 1% !important;
+        }
+
+        @media only screen and (max-device-width: 480px) {
+            * {
+                font-size: 12px;
+            }
+
+            .h5_mob {
+                font-size: 12px;
+            }
+
+            .logo-image {
+                height: 150% !important;
+                width: 50% !important;
+                /* float: left; */
+                /* margin-left: -17% !important; */
+            }
+
+            #mypage .mainContents h2 {
+                padding: 0vw 0 2vw 0vw !important;
+                font-size: 24px !important;
+            }
+
+            .main-options-div {
+                margin-left: 9% !important;
+                margin-top: -1% !important;
+                margin-bottom: 1% !important;
+            }
+
+            .select-input-div {
+                margin-left: 8% !important;
+                padding: 3px !important;
+                width: 25% !important;
+            }
+            
+            .container {
+                margin-left: 1px !important;
+            }
+
+            .top-margin-select {
+                margin-top: -7% !important;
+            }
+
+            .smt-btn {
+                border-radius: 25px !important; 
+                width: 65% !important; 
+                color:white !important; 
+                background-color:#6a3b93 !important;
+                padding: 2% !important;
+                font-size: 16px !important;
+                border: none !important;
+                cursor: pointer !important;
+            }
+
+            #mypage .mypageMain .footer_sns {
+                background: none !important;
+            }
+
+            .footer_nav_sp .wrap {
+                background: rgba(0, 0, 0, 0.8);
+                padding: 3vw 5vw 2vw !important;
+                position: relative;
+                z-index: 10;
+            }
+
+            #mypage .mainContents h2 {
+                padding: 0vw 0 0vw 0vw !important;
+                font-size: 18px !important;
+            }
+        }
+    </style>
+    </head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body id="mypage">
+    <!-- <div class="wrapper"> -->
+    <?php // Added by: UKS MS on: 2021-10-06 ?>
+    <?php  
+    $useragent= $_SERVER['HTTP_USER_AGENT']; 
+            $iPod = stripos($useragent, "iPod"); 
+            $iPad = stripos($useragent, "iPad"); 
+            $iPhone = stripos($useragent, "iPhone");
+            $Android = stripos($useragent, "Android"); 
+            $iOS = stripos($useragent, "iOS");
+            $caremate = stripos($useragent, "CareMenteh App User");
+    
+            $DEVICE = ($iPod||$iPhone||$iPad||$iOS||$Android||$caremate);
+    ?>
+        <?php // Added by: UKS MS on: 2021-10-06 ?>
+              
+        <?php
+            /* ヘッダーインクルード */
+            include(DIR_PUBLIC . "/include/header_new.php");
+        ?>
+        <!--　/header_nav　-->           
+        <div class="bg mypageMain">
+            <!-- <h2 class="h2">お客さま回答フォーム</h2> -->
+            <section class="mainContents">
+                <div class="container">
+                    <div class="historyTable" style="margin: none !important;">
+                            <h2 class="h2">ご回答ありがとうございました</h2>
+                        <?php if ($DEVICE) { 
+                                echo "ご回答内容のメールをお送りしましたのでご確認ください。
+                                    <br>";
+                            } else {
+                                echo "<center>ご回答内容のメールをお送りしましたのでご確認ください。
+                                    </center><br>";
+                            }  ?>
+                                <?php if ($DEVICE) { ?>
+                                    <div class="col-lg-12">ご請求額が確定しましたので、お支払い手続きをお願いいたします。<br></div><br>
+                                    <center><div class="col-lg-12"><b style="font-size: 24px;">ご請求金額: <i class="fa fa-yen"></i> <?php echo number_format($this->get("amount")); ?></b></div></center><br>
+                                <?php } else { ?>
+                                    <center>
+                                        ご請求額が確定しましたので、お支払い手続きをお願いいたします。<br><br>
+                                        <div class="col-lg-12"><b style="font-size: 24px;">ご請求金額: <i class="fa fa-yen"></i> <?php echo number_format($this->get("amount")); ?></b></div>
+                                    </center>
+                                <?php } ?>
+                                        <!-- form action -->
+                            <?php 
+                                $chart_no = $this->get("chart_no");
+                                $amount = $this->get("amount");
+                                $visitorno = $this->get("visitor_no");
+                            ?>
+                            <!-- Preparing for payment redirect -->
+                            <form method="POST" action="https://link.paygent.co.jp/v/u/request" accept-charset="UTF-8">
+                                <?php $org_str = $chart_no."02".Null.$amount.Null."28844"."10".Null.Null.Null.$visitorno."1"."SRooDauSt";
+                                    $hc = hash("sha256", $org_str);  
+                                ?>
+                                <!-- common details -->
+                                <input type="hidden" name="trading_id" value="<?php echo $this->get("chart_no"); ?>"/>
+                                <input type="hidden" name="payment_type" value="02" />
+                                <input type="hidden" name="fix_params" value="" />
+                                <input type="hidden" name="id" value="<?php echo $this->get("amount"); ?>" />
+                                <input type="hidden" id="hc" name="hc" value="<?php echo $hc; ?>" /> 
+                            　  <input type="hidden" name="seq_merchant_id" value="28844" />
+                            　  <input type="hidden" name="merchant_name" value="株式会社ハッピー" />
+                                <input type="hidden" name="payment_detail" value="" />
+                                <input type="hidden" name="payment_detail_kana" value="" />
+                                <input type="hidden" name="payment_term_day" value="10" />
+                                <input type="hidden" name="payment_term_min" value="" />
+                                <input type="hidden" name="banner_url" value="" />
+                                <input type="hidden" name="free_memo" value="" />
+                            　  <input type="hidden" name="return_url" value="" />
+                                <input type="hidden" name="stop_return_url" value="" />
+                                <input type="hidden" name="copy_right" value="" />
+                            <!-- 　  <input type="hidden" name="customer_family_name" value="竹内" /> -->
+                                <input type="hidden" name="customer_name" value="<?php echo $this->get("user_name"); ?>" /> 
+                                <!-- <input type="hidden" name="customer_family_name_kana" value="ﾀｹｳﾁ" /> -->
+                                <!-- <input type="hidden" name="customer_name_kana" value="<php echo $user_name_kana; ?>" /> -->
+                                <input type="hidden" name="isbtob" value="0" />
+                                <input type="hidden" name="site_id" value="" />
+                                <input type="hidden" name="stock_card_mode" value="1" />
+                                <input type="hidden" name="company_name" value="" />
+                                <input type="hidden" name="payment_class" value="" /> 
+                                <input type="hidden" name="use_card_conf_number" value="" />
+                                <input type="hidden" name="customer_id" value="<?php echo $this->get("visitor_no"); ?>" />
+                                <input type="hidden" name="threedsecure_ryaku" value="1" />
+                                <?php if($DEVICE) { ?> 
+                                    <center><input type="submit" class ="btn btn-lg smt-btn" value="お支払い手続きへ進む" style="border-radius: 25px !important; 
+                                        width: 65% !important; 
+                                        color:white !important; 
+                                        background-color:#6a3b93 !important;
+                                        padding: 2% !important;
+                                        font-size: 16px !important;
+                                        border: none !important;
+                                        cursor: pointer !important;"></center>
+                                <?php } else { ?>
+                                    <center><input type="submit" class ="btn btn-lg smt-btn" value="お支払い手続きへ進む" style="border-radius: 25px !important; 
+                                        width: 20% !important; 
+                                        color:white !important; 
+                                        background-color:#6a3b93 !important;
+                                        padding: 1% !important;
+                                        font-size: 16px !important;
+                                        border: none !important;
+                                        cursor: pointer !important;"></center>
+                                <?php } ?>
+                            </form>
+                            <br>
+                            <?php if ($DEVICE) { ?>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-12">※PAYGENT(ペイジェント)クレジット決済ページへ遷移します。<br></div>
+                                    <div class="col-lg-12">当社ハッピーでは、三菱UFJニコス×NTTデータの「ペイジェント決済」を導入し、カード情報の非保持を徹底しています。<br></div>
+                                    <div class="col-lg-12">カード情報が当社サーバを通過することのない、安心・安全セキュリティの決済システムです。<br></div>
+                                </div>
+                            <?php } else { ?>
+                                <center>
+                                ※PAYGENT(ペイジェント)クレジット決済ページへ遷移します。<br>
+                                　当社ハッピーでは、三菱UFJニコス×NTTデータの「ペイジェント決済」を導入し、カード情報の非保持を徹底しています。<br>
+                                　カード情報が当社サーバを通過することのない、安心・安全セキュリティの決済システムです。<br>
+                                </center>
+                        <?php   } ?>
+                    </div>
+                </div>
+            </section>
+        <!-- </div> -->
+        <br><br><br><br>
+        <div class="footer_sns">
+            <div class="container">
+                <ul>
+                    <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+      <!--　/.footer_sns -->
+      <?php
+      /* ヘッダーインクルード */
+      include(DIR_PUBLIC . "/include/footer_new.php");
+      ?>
+    </div>
+    <script>
+        //Flat red color scheme for iCheck
+        $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+        checkboxClass: 'icheckbox_flat-green',
+        radioClass: 'iradio_flat-green'
+        });    
+    </script>
+</body>
+</html>

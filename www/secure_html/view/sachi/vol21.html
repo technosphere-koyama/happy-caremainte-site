@@ -1,0 +1,149 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>幸 sachi｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sachi.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+		<div id="Container">
+
+
+			<?php
+			/* ヘッダーインクルード */
+			include(DIR_PUBLIC . "/include/header_new.php");
+			?>
+			<!--　/header_nav　-->
+
+
+		<div id="Contents" class="sachi">
+		<div class="content">
+
+        <div class="mainCover">
+			<div class="backnumberLink"><a href="#backnumber"><i class="fa fa-caret-down"></i>バックナンバーはこちら</a></div>
+			<div class="cover">
+				<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201802_cover.jpg" alt="日本が育んできた象嵌の美を次世代に伝えたい">
+				<h1><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/sachi_logo.svg" alt="幸 sachi"></h1>
+				<h2><div class="number">Vol. 21</div><br />世界に誇る木版技術を後世に残すために<br>いま取り組むべきこと竹中木版<span>竹笹堂</span></h2>
+			</div>
+		</div>
+
+		<div class="main_bottomWrap">
+			<div class="Wrap">
+				<div class="title"><span>WEBマガジン　</span><br class="PCpart" />幸（sachi）とは？</div>
+				<div class="txt">“技”を持つ職人達。華やかな表舞台の裏には人知れず腕を磨き精進する姿がある。<br />
+				職人技と呼ばれる“極み”を完成した人々、&#8221;ケアメンテ&#8221;も縁の下の力持ちに徹し、<br class="PCpart" />
+				静かに&#8221;技&#8221;を研鑽している。伝統工芸の職人技とケアメンテの職人技は共通しており、 <br class="PCpart" />
+				それぞれの技の“極み”を発見してもらうために「幸」がある。<br />
+				長年に渡りご紹介してきたハッピーの季刊誌 「幸（sachi）」が、WEB版に生まれ変わり待望の復刊です。</div>
+			</div>
+		</div>
+
+		<section class="mainTxt">
+		<p class="lead">1300年の歴史を持つ日本の木版画は、江戸時代に一世を風靡した浮世絵をはじめ、現代アートとしても世界で高い評価を受けています。そのトップランナーとして、木版画界を切り拓く竹中木版5代目竹中健司さんに、職人の育成や技術の継承についてうかがいました。</p>
+
+		<div class="imgCenter"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201802_img01.jpg" alt="生き残りをかけた事業拡大" /></div>
+
+		<h3>生き残りをかけた事業拡大</h3>
+		<p>
+		木版の摺り工房・竹中木版が京都で産声をあげたのは明治24年の頃。「いまでいう印刷業ですね。経典などの文字ものであれ浮世絵などの絵画であれ、依頼されたものを摺るのがうちの商売でした」と、5代目の摺師・竹中健司さん。幼い頃から出入りしていた父の工房では、職人さんが和紙をめくると写楽などの絵が現れる様子を眺めながら育った。<br>
+		やがて家業に携わるようになるものの、機械印刷が主流で手仕事の需要は減る一方。「このままではあかん」と強く思うようになった。当時二十代半ば。将来への不安が募ったという。<br>
+		「いままで通りのことをやってたんでは、この先食べていかれへんのは明らかやったから」<br>
+		清水焼や西陣織のようにメディアに取り上げられることもなく、木版に関する知名度は低い。他の伝統工芸の世界はどういう仕組みで動いているのか、木版業で将来もやっていくには何が必要か、何をすべきかを調べ、考える日々。類稀な技術力があるにもかかわらず、対外的なアピールができていない。流通しているものを見渡しても木版の魅力を十分に引き出せているとは思えなかった。木版技術や作品へのプロモーション方法にもどかしさを感じた。もっとうまくできないものか。<br>
+		「ちょうどインターネットが話題になり始めた頃でした。これや！と思って、参考書を片手にオリジナルのホームページを作成するところから始めたんですよ」<br>
+		まずは多くの人に木版とはどんなものかを知ってもらうために、自作のホームページで木版技術や工房の紹介を行っていった。<br>
+		「生き残るためにすべきことは何か、考えられることを一つずつやっていった感じです」<br>
+		「摺る」だけの業態から自社商品の「企画・制作」にも取り組んだ。その後、市内の路地裏に店舗「竹笹堂」を設立して作品の直接販売を開始。徐々に知名度が上がるとともに、作品を見たひとたちの声に押されるように木版画教室を開催するなど、事業が広がっていったという。
+		</p>
+
+		<h3>未来に誇れる仕事の下地作り</h3>
+		<div class="imgR"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201802_img02.jpg" alt="未来に誇れる仕事の下地作り" /></div>
+		<p>
+		竹中さんの積極的な活動によって、木版の魅力に引き寄せられるように20代の弟子入り希望者も増えている。<br>
+		「日本中を見ると木版に従事するひとは減っています。だからこそ自分たちの技術さえしっかり磨いていたら世界で唯一無二の存在、世界一になることができると若い職人たちには言っています。近年木版は海外の美術館や博物館でも注目されていて、アートとしても高く評価されています。そういう仕事をすることで、彼らはこの仕事に誇りを持てるだろうし、子孫もこの仕事を誇れるように、いまその下地を作っておきたい。それがひいては日本のためにもなると信じています」<br>
+		そのために、技術を学び身につけてもらうための環境や、楽しく働き続けられる職場作りにも心を配っている。<br>
+		「うちは摺りの工房なので、彫りの職人に関しては著名な先生のもとで技術を学ばせています。今後こういう流れが増えると考えています」<br>
+		ユニークなのが、職人・スタッフともに三味線や武道などに取り組んでいる点だ。日本の文化を学ぶことは少なからず仕事に役立つという思いがあるから。<br>
+		「自分たちが魅力的であれば商品も魅力的になるし、魅力的なものであればみんなが欲しがってくれるというのが僕の考え。だから仕事以外の時間も充実させてほしいんです」<br>
+		アットホームな雰囲気の工房で、商品企画やアイデアが次々に提案され、商品化につながるという好循環も生んでいる。
+		</p>
+
+		<h3>技術継承のために</h3>
+		<div class="imgL"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201802_img03.jpg" alt="技術継承のために" /></div>
+		<p>
+		伝統工芸の世界では職人の高齢化や後継者問題など多くの課題があるのは周知のとおり。そこで竹中さんが現在取り組んでいるのは、失われゆく技術の集約だ。<br>
+		「木版に限らずかつては多くの業界で分業が行われていました。それが効率的だったからです。でもいまは分業でやっていけるだけの仕事量がないところも多く、収入が伴わない。じゃあ、一人の職人が複数の技術を身につければ、技術も残っていくんやないかなと思ったんです」<br>
+		たとえば干菓子などの木型を彫る需要はもうそんなにないかもしれないけれど、版木を彫る職人が木型の技術を学べば兼任できるのではないか。木箱も作れるかもしれない。それぞれの仕事量は多くなくても、それらの「彫り」の高度な技術を身につけた職人を養成して受注すれば十分な仕事量になる……。木版の技術に留まらず、木版に欠かせない和紙作り（紙漉き）などにも関心が広がる。<br>
+		「関連する技術がなくなると、うちらもいい仕事ができなくなるんです。だからなくなる前に、自分たちのなかで継承できるような仕組みをつくっておきたいんです」<br>
+		<br>
+		木版に使われる版木の多くは桜の木。硬くて耐久性が高いことから好まれている。そこで数年前から桜の植林プロジェクトも進めている。自分たちで植えた桜の木がやがて大きく育ち、後世の職人たちの一助となればという思いがある。版木に適した節のない木を自社で賄うこともできる。もちろん、花が咲けば見るひとの心を潤し癒してくれる。<br>
+		「ほんまは木版を口実にして楽しいことがしたいだけ」（笑）と軽口をたたきながらも、木版継承の筋道を着実につけている。
+		</p>
+
+		<div class="happytime">
+			<h4>happy time</h4>
+				<p>職人として幸せな瞬間は？</p>
+				<div class="balloon">目指した時間と目指した状況で目指した仕事ができたとき、その一瞬に職人としての幸せを感じます。</div>
+		</div>
+		</section>
+
+		<section class="subTxt">
+		<h3>仏典とともに伝わった日本の木版</h3>
+		<div class="imgR"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201802_img04.jpg" alt="仏典とともに伝わった日本の木版" /></div>
+		<p>木版印刷が日本に伝わったのは、いまから約1300年前のこと。当初は仏教書や経典を僧侶らが彫っていたそうで、やがて書物を印刷するための木版印刷業を営む人たちが現れました。その技術がもっとも発展したのは江戸時代。大衆文化の開花にともなって時代風俗や流行を描いた浮世絵が多く作られるようになり、とくに多色摺の錦絵が主流となってからは爆発的人気を呼び、日本独自の進化を遂げていきます。それは、ヨーロッパアート界にジャポニズムをもたらすきっかけにもなりました。<br>
+		同時に、下絵を描く絵師、その絵を版木に彫る彫師、紙に摺って絵を完成させる摺師、それぞれが腕を磨いて一枚の作品を仕上げるという分業化が進むことで作品が洗練されるとともに、生産性が向上したのです。</p>
+
+		</section><section class="credit">
+			<div class="imgL"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201802_img05.jpg" alt="竹中木版　竹笹堂" /></div>
+			<div class="creditTop">
+				<h5>竹中木版　竹笹堂</h5>
+				<p>明治24年、中京区に木版印刷工房「竹中木版」創業。平成11年に同区内で移転し、木版印刷振興・プロモーションを行う「竹笹堂」を設立、自社製品の開発、販売を開始する。平成21年、工房・店舗を下京区新釜座町に移し事業拡大。企業広告やクリエイターらとのコラボ作品の制作、貴重な木版画古版木の修復保全など、活動は多岐にわたっている。昨年はJR西日本の「TWILIGHT EXPRESS 瑞風」車内木版画ポスター制作でも話題になった。</p>
+				</div>
+			<div class="creditBottom">
+				<h5>店舗</h5>
+				<p>京都市下京区綾小路通西洞院東入ル新釜座町737<br>
+				075-353-8585<br>
+				11:00〜18:00（日祝日除く）</p>
+			</div>
+		</section>
+
+
+	<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/sachi/parts-sachi.php");
+				?>
+			</header>
+
+			</div><!--/content-->
+	</div><!--/Contents-->
+
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer_new.php");
+			?>
+		</div>
+		<!--/Container-->
+
+	</body>
+</html>

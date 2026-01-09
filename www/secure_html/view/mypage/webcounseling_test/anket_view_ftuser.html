@@ -1,0 +1,994 @@
+<?php 
+    session_set_cookie_params(0);
+    session_start();
+    $_SESSION['timeout'] = time();
+    
+    $publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script type="text/javascript">
+    if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+    document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+    }else{
+        document.write('<meta name="viewport" content="width=1280" />');
+    }
+    </script>
+    <meta name="format-detection" content="telephone=no">
+    <title>ウェブカウンセリング｜ハッピー ケアメンテ®</title>
+    <link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+    <link href="/wp/wp-content/themes/HAPPY_Dark/css/jquery-ui.css" rel="stylesheet">
+    <link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage_editing.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--[if lt IE 9]>
+    <script src="/common/js/html5shiv.min.js"></script>
+    <![endif]-->
+    <script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+    <script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/js/jquery-ui.js'></script>
+    <script src="/_assets/js/jquery.dependent.js?v=1.1"></script>
+    <style>
+        /* Style param for Logo */
+        .logo-image {
+            height: 300%;
+            width: 120%;
+            /* float: left; */
+            /* margin-left: -17% !important; */
+        }     
+
+        .smt-btn {
+            border-radius: 25px !important;
+            width: 30%;
+            padding: 1%;
+            color: white !important;
+            background-color: #6a3b93;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .hide_div {
+            display: none;
+        }
+
+        .hide_text {
+            display: none;
+        }
+
+        .hide_month {
+            display: none;
+        }
+
+        .hide_sub_que {
+            display: none;
+        }
+
+        .question2 {
+            display: none;
+        }
+
+        .question3 {
+            display: none;
+        }
+
+        .question4_1 {
+            display: none;
+        }
+
+        .question4_2 {
+            display: none;
+        }
+
+        .pagettl {
+            text-align: left;
+            font-weight: normal;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .h2 {
+            color: #c4a971 !important;
+            font-size: 26px !important;
+            text-align: center;
+            margin: 20px 0 1em;
+            line-height: 1.4;
+            font-family: "sawarabi", serif;
+            font-weight: normal;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .h2_war { 
+            font-size: 24px !important;
+            color: #c4a971 !important;
+            text-align: center;
+            margin: 20px 0 1em;
+            line-height: 1.4;
+            font-family: "sawarabi", serif;
+            font-weight: normal;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #mypage .historyTable {
+            margin: none !important;
+            padding: 15px !important;
+        }
+        
+        .sub-que-div {
+            margin-left: 3% !important;
+        }
+
+        .txt-input-div {
+            margin-left: 2% !important;
+            padding: 10px !important;
+            width: 60% !important;
+        }
+
+        .select-input-div {
+            margin-left: 3% !important;
+            padding: 10px !important;
+            width: 15% !important;
+        }
+
+        .main-options-div {
+            margin-left: 8% !important;
+            margin-top: -1% !important;
+            margin-bottom: 1% !important;
+        }
+
+        #mypage .mainContents h2 {
+            padding: 0vw 0 0vw 0vw !important;
+            font-size: 35px !important;
+        }
+        
+        .move-right {
+            margin-left: 6%;
+            margin-top: -2%;
+        }
+
+        .que-border {
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 1px;
+            padding: 2%;
+        }
+
+        .mondai-no-div {
+            background-color: #A772D6;
+            padding: 1%;
+            width: 10%;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .mondai-div {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 1%;
+            margin-top: 0%;
+            margin-left: 0%;
+        }
+
+        .sub-que {
+            background-color: #EBEBEB;
+            padding: 1%;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-top: 6px;
+        }
+
+        .info-box-payment {
+            font-size: 14px;
+            border-style: solid;
+            border-width: thin;
+            border-radius: 49px;
+            width: 41%;
+            height: 20px;
+            text-align: center;
+            padding: 1%;
+        }
+
+        .fa-icon {
+            background-color: #A772D6;
+            width: 4%;
+            padding: 1%;
+            border-radius: 50%;
+            color: white;
+            margin-top: -1%;
+            margin-left: 1%;
+        }
+
+        .fa-icon-payment {
+            background-color: #A772D6;
+            width: 5%;
+            padding: 2%;
+            border-radius: 50%;
+            color: white;
+            margin-top: -1%;
+            margin-left: 3%;
+            float: right;
+        }
+
+        .delivery-div {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: left;
+            padding: 2%;
+        }
+
+        .info-box-mar {
+            margin-left: -4% !important;
+            width: 43% !important;
+        }
+
+        .wardrobe-title {
+            margin-top: -24px;
+            margin-left: 8%;
+        }
+
+        .grey-border {
+            margin-bottom: -33px;
+        }
+
+        .text-align-deli {
+            text-align: center;
+        }
+
+        .calandaer_view {
+            width: 30% !important; 
+            padding: 1% !important; 
+            border-radius: 5px !important;
+            margin-left: 1% !important;
+        }
+
+        .calender_text {
+            font-size: 16px;
+            padding: 1%;
+        }
+
+        .timeout_info {
+            color: #d78795;
+            text-align: center;
+            padding: 0% 0% 2% 0%;
+            margin-top: -90px;
+        }
+
+        .img-prop {
+            width: 6%;
+            margin-top: -1%;
+        }
+
+        .timeout-info-bg {
+            background-color: #E9D6EA;
+            padding: 0% 0% 1% 5%;
+            margin-top: -3%;
+        }
+
+        @media only screen and (max-device-width: 480px) {
+            * {
+                font-size: 12px;
+            }
+
+            .h5_mob {
+                font-size: 12px;
+            }
+
+            .logo-image {
+                height: 150% !important;
+                width: 50% !important;
+                /* float: left; */
+                /* margin-left: -17% !important; */
+            }
+            
+            /* .col-lg-12 {
+                padding-left: 0px !important;
+            } */
+
+            .smt-btn {
+                border-radius: 25px !important; 
+                width: 50%; 
+                color:white !important; 
+                background-color:#6a3b93;
+                padding: 3%;
+                font-size: 18px;
+                border: none !important;
+                cursor: pointer;
+                margin-left: 8%;
+            }
+            
+            b {
+                font-size: 18px !important;
+            }
+
+            #mypage .mypageMain .footer_sns {
+                background: none !important;
+            }
+
+            #mypage .mainContents .historyTable input {
+                width: 5%;
+                padding: 3px 0 !important;
+                border: 1px solid #333 !important;
+                background: #fff !important;
+            }
+
+            #mypage .mainContents h2 {
+                padding: 0vw 0 2vw 0vw !important;
+                font-size: 24px !important;
+            }
+
+            .main-options-div {
+                margin-left: 9% !important;
+                margin-top: -1% !important;
+                margin-bottom: 1% !important;
+            }
+
+            .select-input-div {
+                margin-left: 6% !important;
+                padding: 3px !important;
+                width: 28% !important;
+            }
+
+            .container {
+                margin-left: 1px !important;
+            }
+
+            .footer_nav_sp .wrap {
+                background: rgba(0, 0, 0, 0.8);
+                padding: 3vw 5vw 2vw !important;
+                position: relative;
+                z-index: 10;
+            }
+
+            .move-right {
+                margin-left: 0% !important;
+                margin-top: -2%;
+            }
+
+            .que-border {
+                border-style: solid;
+                border-radius: 10px;
+                border-width: 1px;
+                padding: 2%;
+            }
+
+            .mondai-no-div {
+                background-color: #A772D6;
+                padding: 3%;
+                width: 28%;
+                border-radius: 10px;
+                text-align: center;
+                font-size: 16px;
+                color: white;
+                font-weight: bold;
+            }
+
+            .mondai-div {
+                font-size: 16px;
+                font-weight: bold;
+                padding: 1%;
+                margin-top: 0%;
+                margin-left: 0%;
+            }
+
+            .sub-que {
+                background-color: #EBEBEB;
+                padding: 1%;
+                border-radius: 10px;
+                font-size: 16px;
+                margin-top: 6px;
+            }
+            
+            .info-box-mar {
+                margin-left: -4% !important;
+                width: 101% !important;
+            }
+
+            .info-box-payment {
+                font-size: 9px;
+                border-style: solid;
+                border-width: thin;
+                border-radius: 50px;
+                width: 96%;
+                height: 22px;
+                text-align: center;
+                padding: 2%;
+            }
+
+            .fa-icon {
+                background-color: #A772D6;
+                width: 4%;
+                padding: 1%;
+                border-radius: 50%;
+                color: white;
+                margin-top: 1%;
+                margin-left: 6%;
+            }
+
+            .fa-icon-payment {
+                background-color: #A772D6;
+                width: 5%;
+                padding: 2%;
+                border-radius: 50%;
+                color: white;
+                margin-top: 0%;
+                margin-left: 0%;
+                float: right;
+            }
+
+            .delivery-div {
+                font-size: 13px;
+                font-weight: bold;
+                text-align: left;
+                padding: 2%;
+            }
+
+            .wardrobe-title {
+                margin-top: -8%;
+                margin-left: 9%;
+            } 
+
+            .grey-border {
+                margin-bottom: -18px;
+            }
+
+            .text-align-deli {
+                text-align: left;
+            }
+
+            .h2_war { 
+                font-size: 18px !important;
+            }
+
+            .calandaer_view {
+                width: 70% !important; 
+                height: 25px !important;
+                border-radius: 5px;
+            }
+
+            .calender_text {
+                font-size: 13px;
+                padding: 1%;
+            }
+
+            .timeout_info {
+                color: #d78795;
+                text-align: left;
+                padding: 2% 1% 5% 17%;
+                margin-top: -34%;
+                font-size: 9px;
+            }
+
+            .img-prop {
+                width: 18%;
+                margin-top: -2%;
+            }
+
+            .timeout-info-bg {
+                background-color: #E9D6EA;
+                padding: 0% 0% 2% 2%;
+                margin-top: -5%;
+            }
+        }
+    </style>
+</head>
+<body id="mypage">
+    <?php // Added by: UKS MS on: 2021-10-06 ?>
+          
+    <?php
+        /* ヘッダーインクルード */
+        include(DIR_PUBLIC . "/include/header_new.php");
+    ?>
+    <!--　/header_nav　-->
+                
+    <div class="bg mypageMain">
+        <!--　/#banner -->
+        <!-- <h2 class="h2">お客さま回答フォーム</h2> -->
+        <section class="mainContents">
+            <div class="container">
+            <?php $useragent= $_SERVER['HTTP_USER_AGENT'];
+                $Android = stripos($useragent, "Android"); 
+            ?>
+                <?php if($this->get("link_status") == '1') { ?>
+                <form method="POST" name="form01" action="/mypage/webcounseling_test/anket_view_confirm.html">
+                    <div class="historyTable" style="margin: none !important;">            
+                        <div class="col-lg-12">お客様番号 : <?php echo $this->get("visitor_no"); ?></div>
+                        <div class="col-lg-12"><b style="font-size: 23px;"><?php echo $this->get("user_name"); ?>　様</b></div>
+                        <h2 class="h2">お客さま回答フォーム</h2>
+                        <div class="col-lg-12 timeout-info-bg">
+                            <div class="col-lg-2">
+                                <img src="/wp/wp-content/themes/HAPPY_Dark/img/timeout_info_icon.png" alt="タイムアウト" class="img-prop"> 
+                            </div>
+                            <?php if($Android) { ?> 
+                                <div class="col-lg-10 timeout_info" style="font-size: 10.5px !important;">
+                            <?php } else { ?>
+                                <div class="col-lg-10 timeout_info">
+                            <?php } ?>
+                                回答を送信しないまま「10分」経過すると自動的にタイムアウトしますのでご注意ください。<br>
+                                タイムアウトした場合は、画面を閉じて、もういちど回答フォームにアクセスし直してください。
+                            </div>
+                        </div>
+                        <div class="col-lg-12">カルテNo. : <?php echo $this->get("chart_no"); ?></div>
+                        <!-- <center> -->
+                        <div class="col-lg-12">
+                            <input type="hidden" name="chartno" value='<?php echo $this->get("chart_no"); ?>'>
+                            <input type="hidden" name="visitorno" value='<?php echo $this->get("visitor_no"); ?>'>
+                            <input type="hidden" name="amount" value='<?php echo $this->get("amount"); ?>'>
+                            <input type="hidden" id="SA001_ses" value='<?php echo isset($_SESSION['SA001']) ? $_SESSION['SA001'] : ''; ?>'>
+                            <input type="hidden" id="SA002_ses" value='<?php echo isset($_SESSION['SA002']) ? $_SESSION['SA002'] : ''; ?>'>
+                            <input type="hidden" id="AK006_ses" value='<?php echo isset($_SESSION['AK006']) ? $_SESSION['AK006'] : ''; ?>'>
+                            <input type="hidden" id="AK007_ses" value='<?php echo isset($_SESSION['AK007']) ? $_SESSION['AK007'] : ''; ?>'>
+                            <input type="hidden" id="AK008_ses" value='<?php echo isset($_SESSION['AK008']) ? $_SESSION['AK008'] : ''; ?>'>
+                            <input type="hidden" id="AK010_ses" value='<?php echo isset($_SESSION['AK010']) ? $_SESSION['AK010'] : ''; ?>'>
+                            <input type="hidden" id="AK011_ses" value='<?php echo isset($_SESSION['AK011']) ? $_SESSION['AK011'] : ''; ?>'>
+                            <?php $html_no_code = 9312; ?>
+                            <?php foreach($this->get("final_list") as $keys => $values) { ?>
+                                <div class="container pagettl" id='anket_<?php echo $keys; ?>'>
+                                    <div class ="col-lg-12 que-border">
+                                        <?php  $set_question = false; 
+                                            foreach($values as $key => $val) {  
+                                                if($keys == $val['anket_id']) { 
+                                                    if(!$set_question) { ?>
+                                                        <div class="col-lg-12">
+                                                            <div class="col-lg-2 mondai-no-div">質問<?php echo "&#".$html_no_code; ?></div>
+                                                            <div class="col-lg-10 mondai-div"><?php echo $val['anket_details']; ?> </div>
+                                                            <?php $set_question = true; 
+                                                            $html_no_code = $html_no_code + 1; ?> 
+                                                        </div>
+                                                    <?php } ?>   
+                                                    <div class="col-lg-12" style="font-size: 18px; padding: 1%;">
+                                                        <?php if($val['anket_id'] == "AK007" && $val['answer_id'] == "AR002") { ?>
+                                                            <div class="col-lg-12"><input type='<?php echo $val['field_type'] ?>'  class="flat-red h5_mob" id='<?php echo $val['anket_id']."_".$val['answer_id'] ?>' name='<?php echo $val['anket_id'] ?>' value='<?php echo $val['answer_id']; ?>' onclick="show_sub_que();">
+                                                        <?php } else if($val['anket_id'] == "AK007" && $val['answer_id'] == "AR001") { ?>
+                                                            <div class="col-lg-12"><input type='<?php echo $val['field_type'] ?>'  class="flat-red h5_mob" id='<?php echo $val['anket_id']."_".$val['answer_id'] ?>' name='<?php echo $val['anket_id'] ?>' value='<?php echo $val['answer_id']; ?>' onclick="hide_sub_que();">
+                                                        <?php } else if($val['anket_id'] == "AK010" && $val['answer_id'] == "AR004") { ?>
+                                                            <input type="hidden" disabled id="From" name="From" class="form-control" value = <?php echo json_encode($this->get("delivery_date_list")); ?> >
+                                                            <input type="hidden" disabled id="first_date" name="first_date" class="form-control" value = <?php echo $this->get("first_date"); ?> >
+                                                            <!-- <div class="mondai-div">お届け希望日</div> -->
+                                                            <div class="col-lg-12 calender_text">※下記カレンダーに表示されている「お届け可能日」より選択してください。</div>
+                                                            <div class="col-lg-12"><input type="text" id="for_month" class="calandaer_view" autocomplete="off" placeholder="お届け希望日" disabled name="AK010" readonly></div>    
+                                                        <?php } else if($val['anket_id'] == "AK006") { ?>
+                                                            <div class="col-lg-12"><input type='<?php echo $val['field_type'] ?>'  class="flat-red h5_mob" id='<?php echo $val['anket_id']."_".$val['answer_id'] ?>' name='<?php echo $val['anket_id'] ?>' value='<?php echo $val['answer_id']; ?>'>
+                                                            <?php } else { ?>
+                                                            <div class="col-lg-12"><input type='<?php echo $val['field_type'] ?>'  class="flat-red h5_mob" id='<?php echo $val['anket_id']."_".$val['answer_id'] ?>' name='<?php echo $val['anket_id'] ?>' value='<?php echo $val['answer_id']; ?>'>
+                                                        <?php } ?>
+                                                        <?php if($val['anket_id'] == "AK010" && $val['answer_id'] == "AR004") { ?>
+                                                            <div class="col-lg-12 calender_text">※お届け日に関して上記日程以外のご要望がある場合は、<a href="tel:0120-88-6868" style="text-decoration: underline;">電話</a>または<a href = "mailto:counseling@kyoto-happy.co.jp" style="text-decoration: underline;">メール</a>にてご相談ください。</div>
+                                                        <?php } else { ?>
+                                                        <?php echo $val['answer_details']; ?>
+                                                            </div>
+                                                         <?php } ?>
+                                                        <?php if($val['anket_id'] == "AK007" && $val['answer_id'] == "AR002") { ?>
+                                                            <div class ="col-lg-12 hide_sub_que sub-que-div" id="hide_sub_que">
+                                                                <div class="col-lg-12 sub-que">
+                                                                    <div class="col-lg-12"><input type="checkbox" class="flat-red" id="text_1" name="メンテナンス内容を変更したい" onclick="addbox();">
+                                                                        メンテナンス内容を変更したい。
+                                                                    </div>
+                                                                    <div class="col-lg-12 main-options-div">
+                                                                        <div class="col-lg-12 hide_text" id="texthide">
+                                                                            <div></div>
+                                                                            <div class="col-lg-12" style="line-height: 1 !important; margin-top: 2% !important;">
+                                                                                <div class="col-lg-12">ご希望:<input type="text" class ="txt-input-div" name="SA001" maxlength="500" id="text_box"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12 sub-que">
+                                                                    <div class="col-lg-12 grey-border"><div class="col-lg-2"><input type="checkbox" class="flat-red" id="month" name="保管・お預かりサービス「ハッピーワードローブ」を利用したい" onclick="adddrop();"></div>
+                                                                    <div class="col-lg-10 wardrobe-title">保管・お預かりサービス「ハッピーワードローブ」を利用したい。</div>    　
+                                                                    </div>
+                                                                    <div class="col-lg-12 main-options-div">
+                                                                        <div class="col-lg-12 hide_month" id="monthhide">
+                                                                            <div class="col-lg-12" style="line-height: 1 !important; margin-top: 2% !important;">
+                                                                                <div class="col-lg-12">月間:
+                                                                                    <select class ="form-group select-input-div" name="SA002" id="month_drop">
+                                                                                        <option value="1">1ヶ月</option>
+                                                                                        <option value="2">2ヶ月</option>
+                                                                                        <option value="3">3ヶ月</option>
+                                                                                        <option value="4">4ヶ月</option>
+                                                                                        <option value="5">5ヶ月</option>
+                                                                                        <option value="6">6ヶ月</option>
+                                                                                        <option value="7">7ヶ月</option>
+                                                                                        <option value="8">8ヶ月</option>
+                                                                                        <option value="9">9ヶ月</option>
+                                                                                        <option value="10">10ヶ月</option>
+                                                                                        <option value="11">11ヶ月</option>
+                                                                                        <option value="12">12ヶ月</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <center>
+                                                                    <br>
+                                                                    <div class="col-lg-12 info-box-payment info-box-mar">
+                                                                        「ハッピーワードローブ」の詳細や価格表はコチラ。<a href="https://www.kyoto-happy.co.jp/carementeh/service/wardrobe/" target="#"><i class="fa fa-angle-right fa-icon-payment"></i></a>
+                                                                    </div>
+                                                                </center>
+                                                            </div>
+                                                        <?php } ?>
+                                                    </div>
+                                                <?php } 
+                                            } ?>
+                                            <?php if($keys == "AK010") { ?>
+                                                <div class="col-lg-12 hide_div" id="question_<?php echo $val['anket_id'] ?>">
+                                                    <div class="col-lg-1"></div>
+                                                    <div class="col-lg-11"><p class="pagettl" style="color:red;">「お届け希望日」を選択してください。</p></div>
+                                                </div>
+                                            <?php } else { ?>
+                                                <div class="col-lg-12 hide_div" id="question_<?php echo $val['anket_id'] ?>">
+                                                    <div class="col-lg-1"></div>
+                                                    <div class="col-lg-11"><p class="pagettl" style="color:red;">選択肢から一つ選んでください。</p></div>
+                                                </div>
+                                            <?php } ?>
+                                            
+                                            <?php if($keys == "AK008") { ?>
+                                                <center>
+                                                    <br>
+                                                    <div class="col-lg-12 info-box-payment">
+                                                        お支払方法について詳しくはコチラ。<a href="https://www.kyoto-happy.co.jp/use/howtoorder/payment/" target="#"><i class="fa fa-angle-right fa-icon-payment"></i></a>
+                                                    </div>
+                                                </center>
+                                            <?php } ?>
+                                        <?php if($val['anket_id'] == "AK011") { ?>
+                                            <div class="col-lg-12 text-align-deli">
+                                                配送業者は［ヤマト運輸］または［佐川急便］となります
+                                            </div>
+                                        <?php } ?>
+                                    </div>
+                                    <br>
+                                </div>
+                                
+                                <?php if($val['anket_id'] == "AK008") { ?>
+                                    <div class="col-lg-12 delivery-div" id="d_title">
+                                        仕上がり品の【お届け希望日】と、【お届け希望時間帯】をお選びください。
+                                    </div>
+                                <?php } ?>
+                            <?php } ?>
+                        </div>
+                    </div>
+                <!-- </center> -->
+                             <!-- /.box -->
+                        <div class="col-lg-12">
+                            <center><input type="submit" class ="btn btn-lg h5_mob smt-btn" value="確認" onclick="validate();"></center><br>
+                        </div>
+                    </form>
+                <!-- </div> -->
+                <?php } else { ?>
+                    <div class="historyTable" style="margin: none !important;">
+                        <div class="h2_war">ご回答ありがとうございました</div>
+                        <div class="col-lg-12 text-align-deli">ご回答内容のメールをお送りしましたのでご確認ください。</div>
+                    </div>
+                <?php } ?>
+            </div>
+        </section>
+        <br><br><br><br>
+        <div class="footer_sns">
+            <div class="container">
+              <ul>
+                <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+        </div>
+          <!--　/.footer_sns -->
+          <?php
+          /* ヘッダーインクルード */
+          include(DIR_PUBLIC . "/include/footer_new.php");
+          ?>
+    </div>
+    <script>
+        $(window).on('beforeunload', function(){
+            sessionStorage.clear();
+        });
+        // Hide Question 3 to 5 on page load
+        $( document ).ready(function() {
+            if (document.getElementById('AK007_AR001').checked) {
+                $('#for_month').prop('disabled', false);
+            } else {
+                $("#anket_AK008").addClass( "hide_sub_que" );
+                $("#anket_AK010").addClass( "hide_sub_que" );
+                $("#anket_AK011").addClass( "hide_sub_que" );
+                $("#d_title").addClass( "hide_sub_que" );
+            }
+        });
+
+        // if mobiles/smart devices
+        if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+            $( function() {
+                var first_date = $("#first_date").val(); 
+                var disablethese = JSON.parse($("#From").val()); //this will auto-decode JSON to Array
+                $("#for_month").datepicker({
+                    dateFormat: 'yy/mm/dd',
+                    numberOfMonths: 1,
+                    defaultDate: new Date(first_date),
+                    beforeShowDay: function(date){
+                        var string = jQuery.datepicker.formatDate('yy/mm/dd', date);
+                        return [ disablethese.indexOf(string) !== -1 ]
+                    }
+
+                });
+            } );
+
+            $(document).on('swipeleft', 'body', function(event){    
+                $(".ui-datepicker-next").click();         
+            });
+
+            $(document).on('swiperight', 'body', function(event){     
+                $(".ui-datepicker-prev").click();                
+            });
+
+        } else {
+            $( function() {
+                var ak010_session = $('#AK010_ses').val();
+                if(ak010_session == '') {
+                    var first_date = $("#first_date").val();
+                } else {
+                    var first_date = ak010_session;
+                }
+                 
+                var disablethese = JSON.parse($("#From").val()); //this will auto-decode JSON to Array
+                $("#for_month").datepicker({
+                    dateFormat: 'yy/mm/dd',
+                    numberOfMonths: 3,
+                    defaultDate: new Date(first_date),
+                    beforeShowDay: function(date){
+                        var string = jQuery.datepicker.formatDate('yy/mm/dd', date);
+                        return [ disablethese.indexOf(string) !== -1 ]
+                    }
+
+                });
+            } );
+        }
+        // to hide option of "NO" in question 2
+        function hide_sub_que(){
+            $("#hide_sub_que").addClass( "hide_sub_que" );
+            $('#text_1').prop('checked', false); // Unchecks it
+            $('#month').prop('checked', false); // Unchecks it
+            addbox();
+            adddrop();
+            
+            // Show question 3 to 5
+            $("#anket_AK008").removeClass( "hide_sub_que" );
+            $("#anket_AK010").removeClass( "hide_sub_que" );
+            $("#anket_AK011").removeClass( "hide_sub_que" );
+            $("#d_title").removeClass( "hide_sub_que" );
+            $('#for_month').prop('disabled', false);
+            // document.getElementById('hide_div').style.display ='none';
+        }
+    //     //// to show option of "NO" in question 2
+        function show_sub_que(){ 
+            $("#hide_sub_que").removeClass( "hide_sub_que" );
+            
+            // Hide question 3 to 5
+            $("#anket_AK008").addClass( "hide_sub_que" );
+            $('input[name="AK008"]').prop('checked',false);
+            $("#anket_AK010").addClass( "hide_sub_que" );
+            $("#anket_AK011").addClass( "hide_sub_que" );
+            $('input[name="AK011"]').prop('checked',false);
+            $("#d_title").addClass( "hide_sub_que" );
+            $('#for_month').prop('disabled', true);
+            // document.getElementById('hide_div').style.display = 'block';
+        }
+    //     // to hide show text box if checkbox is chkecd of "NO" in question 2
+        function addbox() {
+            if (document.getElementById('text_1').checked) {
+                $("#texthide").removeClass( "hide_text" );
+                $("#text").prop('disabled',false);
+                //$("#text_box").prop('required',true);
+            } else {
+                $("#texthide").addClass( "hide_text" );
+                $("#text").prop('disabled',true);
+                //$("#text_box").prop('required',false);
+            }
+        }
+    // // to hide show text box if checkbox is chkecd of "NO" in question 2
+        function adddrop() {
+            if (document.getElementById('month').checked) {
+                $("#monthhide").removeClass( "hide_month" );
+            } else {
+                $("#monthhide").addClass( "hide_month" );
+            }
+        }
+
+        // $(document).on( "click", '.view_data',function(e) { 
+
+        // });
+        function validate() {
+            // var missed;
+            // var missed = "Please answer all questions. \nYou have not answered the following questions:";
+            // var inputs = document.getElementsByTagName('input'); 
+            // for(i=0;i<inputs.length;i++) {
+            //     if (inputs[i].type=="radio") { //|| inputs[i].type=="checkbox") { 
+            //         var rad = document.getElementsByName(inputs[i].name);
+            //         var check=0
+            //         for (z=0;z<rad.length;z++) {
+            //             if (rad[z].checked) check = 1;
+            //         }
+                    
+            //         if (check==0) {
+            //             if (missed.indexOf(" " + inputs[i].name +" ") == -1) {
+            //                 var anket_ids_check = "anket_"+inputs[i].name;
+            //                 if($("#"+anket_ids_check).hasClass("hide_sub_que")) {
+            //                     // Not required
+            //                     console.log(anket_ids_check);
+            //                 } else {
+            //                     var id_name = "question_"+inputs[i].name;
+            //                     $("#"+id_name).removeClass( "hide_div" );
+            //                     event.preventDefault();
+            //                 }
+            //             } else {
+            //                 $("#"+id_name).addClass( "hide_div" );
+            //             } 
+            //         }  
+            //     }    
+            // } 
+            
+            // New validation rules
+            // -------------------- START --------------------
+            // question 2
+            if ($('input[name="AK007"]:checked').length == 0) {
+                $("#question_AK007").removeClass( "hide_div" );
+                event.preventDefault();
+            }
+
+            // question 3
+            if($("#anket_AK008").hasClass("hide_sub_que")) {
+                // hidden div 
+            } else {
+                if ($('input[name="AK008"]:checked').length == 0) {
+                    $("#question_AK008").removeClass( "hide_div" );
+                    event.preventDefault();
+                }
+            }
+
+            // question 3
+            if($("#anket_AK011").hasClass("hide_sub_que")) {
+                // Hiddedn div
+            } else {
+                if ($('input[name="AK011"]:checked').length == 0) {
+                    $("#question_AK011").removeClass( "hide_div" );
+                    event.preventDefault();
+                }
+            }
+            // -------------------- END ------------------------
+            
+            // 問題１選んでいない場合
+            if ($('#AK006_AR001').is(":checked")) {
+                // it is checked
+            } else {
+                $("#question_AK006").removeClass( "hide_div" );
+                event.preventDefault();
+            }
+            
+            // question 3
+            if($("#anket_AK010").hasClass("hide_sub_que")) {
+                // Hiddedn div
+            } else {
+                var d_date = $('#for_month').val();
+                if ( d_date == '') {
+                    $("#question_AK010").removeClass( "hide_div" );
+                    event.preventDefault();
+                }
+            }
+
+            if ($('#text_1').is(":checked")) {
+                // it is checked
+                //$("#text_box").prop('required', true);
+            } else {
+                $("#text_box").prop('disabled', true);
+                //$("#text_box").prop('required', false);
+            }
+            $('#text_1').change(function() {
+                if ($('#text_1').is(":checked")) {
+                    $("#text_box").prop('disabled', false);
+                    //$("#text_box").prop('required', true);
+                }
+            });
+
+            $('#month').change(function() {
+                if ($('#month').is(":checked")) {
+                    $("#month_drop").prop('disabled', false);
+                }               
+            });
+
+            if ($('#month').is(":checked")) {
+                // it is checked
+            } else {
+                $("#month_drop").prop('disabled', true);
+            }
+        }
+
+        // question1
+        var ak006 = $('#AK006_ses').val();
+        $('#AK006_'+ak006).prop('checked', true);
+        // question2
+        var ak007 = $('#AK007_ses').val();
+        $('#AK007_'+ak007).prop('checked', true);
+        // question3
+        var ak008 = $('#AK008_ses').val();
+        $('#AK008_'+ak008).prop('checked', true);
+        // question4
+        var ak010 = $('#AK010_ses').val();
+        $('#for_month').val(ak010);
+        // question5  
+        var ak011 = $('#AK011_ses').val();
+        $('#AK011_'+ak011).prop('checked', true);
+        // hope content retention 
+        var sa001 = $('#SA001_ses').val();
+        if(sa001 == '') {
+        } else {
+            show_sub_que();
+            $('#text_1').prop('checked', true);
+            addbox();
+            $('#text_box').val(sa001);
+        }
+        // wadrobe details retention
+        var sa002 = $('#SA002_ses').val();
+        if(sa002 == '') {
+        } else {
+            show_sub_que();
+            $('#month').prop('checked', true);
+            adddrop();
+            $('#month_drop').val(sa002);
+        }
+
+        // added for iphone click even triggering
+        // By: UKS MS on: 2021-09-28
+        // document.addEventListener('touchstart', function() {});
+        $(document).on("click touchstart", function(event) {
+            if ($(event.target).has('.ui-datepicker').length) {
+                $('.ui-datepicker').attr("display", "none");
+            }
+        });
+
+        document.addEventListener('touchstart', handleTouchStart, false);        
+        document.addEventListener('touchmove', handleTouchMove, false);
+
+        var xDown = null;                                                        
+        var yDown = null;
+
+        function getTouches(evt) {
+        return evt.touches ||             // browser API
+                evt.originalEvent.touches; // jQuery
+        }                                                     
+                                                                                
+        function handleTouchStart(evt) {
+            const firstTouch = getTouches(evt)[0];                                      
+            xDown = firstTouch.clientX;                                      
+            yDown = firstTouch.clientY;                                      
+        };                                                
+                                                                                
+        function handleTouchMove(evt) {
+            if ( ! xDown || ! yDown ) {
+                return;
+            }
+
+            var xUp = evt.touches[0].clientX;                                    
+            var yUp = evt.touches[0].clientY;
+
+            var xDiff = xDown - xUp;
+            var yDiff = yDown - yUp;
+                                                                       
+            if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+                if ( xDiff > 0 ) {
+                    $(".ui-datepicker-next").click();
+                    /* right swipe */ 
+                } else {
+                    $(".ui-datepicker-prev").click();
+                    
+                    /* left swipe */
+                }                       
+            }
+            /* reset values */
+            xDown = null;
+            yDown = null;                                             
+        };
+    </script>
+</body>
+</html>

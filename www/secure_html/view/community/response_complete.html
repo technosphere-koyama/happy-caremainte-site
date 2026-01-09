@@ -1,0 +1,194 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>コメント投稿　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+		<meta name="format-detection" content="telephone=no">
+		<?php if(preg_match("/(Android|iPhone|CareMenteh)/", $_SERVER["HTTP_USER_AGENT"])): ?><meta name="viewport" content="width=320, user-scalable=no" /><?php else: ?><meta name="viewport" content="width=1280" />
+		<?php endif; ?>
+
+		<link rel="stylesheet" href="/_assets/css/default.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/common.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/mypage.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="/_assets/css/tooltipster.bundle.min.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+		<script src="/_assets/js/jquery.js"></script>
+		<script src="/_assets/js/jquery.bxslider.min.js"></script>
+		<script src="/_assets/js/common.js"></script>
+		<script src="/_assets/js/form.js"></script>
+		<script src="/_assets/js/ga.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="/_assets/js/jquery.validationEngine.js"></script>
+		<script src="/_assets/js/jquery.validationEngine-ja.js"></script>
+        <script src="/_assets/js/tooltipster.bundle.min.js"></script>
+
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+
+	</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+		<div id="Container">
+			<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/include/header.php");
+				?>
+			</header>
+			<div id="Contents">
+				<div class="mainvisual__section">
+					<div>COMMUNITY<br><p>コミュニティ</p></div>
+				</div>
+				<div class="logoutArea">
+					<div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+				</div>
+
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu"><a href="/community/">コミュニティ</a></p><p class="pankuzu no-arrow">コメント投稿</p></div>
+				</div>
+
+				<div class="mypageNavi PCpart">
+					<ul>
+						<li><a href="/mypage/sns.html">トップ</a></li>
+						<li><a href="/mypage/friend/">フレンド</a></li>
+						<li class="current"><a href="/community/">コミュニティ</a></li>
+						<li><a href="/mypage/message/">メッセージ</a><?php if ($this->get("count_unread") > 0) { ?><div class="unreadMsgNumber"><span><?php echo $this->get("count_unread"); ?></span></div><?php } ?></li>
+						<li><a href="<?php echo $this->get("user_link"); ?>">プロフィール</a></li>
+					</ul>
+				</div>
+                <div class="snsNavi SPpart">
+                	<ul>
+                    	<?php $publicGadget->html_mypage_navi_sp() /* .html_mypage_navi_sp */ ?>
+                    </ul>
+                </div>
+				<div class="mypageHead SPpart">
+					<h1>コメント投稿</h1>
+				</div>
+
+				<div class="mypageArea">
+					<?php if (!StaticFunction::is_empty($this->get('error'))) { ?>
+						<div id="mypagetab" class="mypageMain">
+							<p class="error_box">
+								<?php echo $this->get('error'); ?>
+							</p>
+						</div>
+					<?php } else { ?>
+
+						<div id="mypagetab" class="mypageMain">
+
+							<ul class="tab_menu SPpart">
+								<li class="active"><a href="#post">投稿</a></li><li><a href="#profile">プロフィール</a></li>
+							</ul>
+
+							<div id="profile" class="mainSide tab_contents">
+								<div class="userProfile">
+									<div class="userAvatar"><img src="<?php echo $this->get("avatar"); ?>" alt="<?php echo $this->get("community_name") ?>"></div>
+									<div class="userTxt">
+										<div class="userName"><?php echo $this->get("community_name") ?></div>
+									</div>
+								</div>
+								<div class="userCommunity">
+									<?php if ($this->get("entry_view")) { ?>
+										<div class="userCommunityBtn2"><a href="/community/detail.html/?tid=<?php echo $this->get("thread_id") ?>&mode=entry">このコミュニティに参加する</a></div>
+									<?php } ?>
+									<?php if ($this->get("leave_view")) { ?>
+										<div class="userCommunityBtn2"><a href="/community/leave.html/?tid=<?php echo $this->get("thread_id") ?>">このコミュニティから外れる</a></div>
+									<?php } ?>
+								</div>
+
+								<div class="userCommunity">
+									<h5>管理人</h5>
+									<div class="userCommunityInfo">
+										<div class="userCommunityImg"><a href=""><img src="<?php echo $this->get("avatar_user") ?>" alt="<?php echo $this->get("nickname") ?>"></a></div>
+										<div class="userCommunityName"><a href="/profile/?uid=<?php echo $this->get("system_id") ?>"><?php echo $this->get("nickname") ?></a></div>
+									</div>
+								</div>
+
+								<div class="userCommunity">
+									<h5>メンバー:<?php echo $this->get("match_num"); ?></h5>
+									<?php foreach ($this->get("match_array") AS $match_val) { ?>
+										<div class="userCommunityInfo">
+											<div class="userCommunityImg"><a href="/profile/?uid=<?php echo $match_val['system_id']; ?>"><img src="<?php echo $match_val["avatar"]; ?>" alt="コミュニティ"></a></div>
+											<div class="userCommunityName"><a href="/profile/?uid=<?php echo $match_val["system_id"]; ?>"><?php echo $match_val["nickname"]; ?></a></div>
+										</div>
+									<?php } ?>
+								</div>
+								<div class="userCommunity">
+									<h5>コミュニティの説明</h5>
+									<div class="userCommunityInfo">
+										<div class="userCommunityName"><a href=""><?php echo nl2br($this->get("community_detail")) ?></a></div>
+									</div>
+								</div>
+								<div class="userCommunity">
+									<h5>コミュニティのカテゴリー</h5>
+									<div class="userCommunityInfo"><?php echo nl2br($this->get("category_name")) ?></div>
+								</div>
+							</div><!--/mainSide-->
+
+							<div id="post" class="mainContents tab_contents active">
+
+								<?php if (!StaticFunction::is_empty($this->get('error_array'))) { ?>
+									<ul class="error_box">
+										<?php
+										foreach ($this->get('error_array') as $value) {
+											echo '<li>・ ' . $value['message'] . '</li>';
+										}
+										?>
+									</ul>
+								<?php } ?>
+
+							</div><!--/mainContents-->
+						</div>
+
+						<div class="mypageSub">
+						<?php $publicGadget->get_news(); /* 右カラムのお知らせ */ ?>
+					</div><!--/mypageSub-->
+					<?php } ?>
+				</div>
+
+
+			</div><!--/Contents-->
+            <?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer.php");
+			?>
+            </div>
+		<!--/Container-->
+	</body>
+	<script type="text/javascript">
+		$(function () {
+			$('.tab_menu a').click(function (e) {
+				$('.tab_menu .active').removeClass('active');
+				$(this).parent().addClass('active');
+				$('.tab_contents').each(function () {
+					$(this).removeClass('active');
+				});
+				$(this.hash).addClass('active');
+				e.preventDefault();
+			});
+		});
+	</script>
+	<script>
+		$('.menu_button').click(function () {
+			$(this).next('.nav').slideToggle('slow').siblings('.nav').slideUp('slow');
+			$(this).siblings('.menu_button').removeClass('active');
+			$(this).toggleClass('active');
+		});
+	</script>
+
+	<?php
+			$webroot = $_SERVER['DOCUMENT_ROOT'];
+			include($webroot."/include/body_retargeting_cord.php");
+			?>
+
+
+</html>

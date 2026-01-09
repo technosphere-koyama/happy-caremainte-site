@@ -1,0 +1,9 @@
+<?php
+/*
+ * 登録 完了画面
+ */
+require '../../core/PreLoad.inc';
+$uac = new RegisterController();
+$uac->complete();
+$uac->view('entry');
+?>

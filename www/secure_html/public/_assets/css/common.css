@@ -1,0 +1,1667 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px) {
+/*======================
+PCレイアウト */
+	.SPpart {display: none !important;}
+
+	#Container {
+		width: 100%;
+		min-height: 1000px;
+		min-width: 1100px;
+		font-size: 110%;
+		overflow: hidden;
+	}
+	#Contents {
+		min-height: 680px;
+	}
+	h1 {
+		font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+		color:#333;
+		font-size:24px;
+		line-height: 1.2;
+		border-bottom:3px solid #a87f42;
+		padding-bottom:18px;
+		margin-bottom:50px;
+	}
+	h2 {
+		font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+		color:#a9803c;
+		font-size:28px;
+		letter-spacing:0.05em;
+		line-height:1.5;
+		margin-bottom:40px;
+	}
+	h3 {
+		color:#333333;
+		font-size:17px;
+		font-weight:bold;
+		letter-spacing:0.05em;
+		line-height:1.8;
+		margin-bottom:30px;
+	}
+	h4 {
+		font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+		color:#a9803c;
+		font-size:18px;
+		letter-spacing:0.06em;
+		line-height:1.8em;
+	}
+
+	/*ヘッダー*/
+	.top_head {
+		overflow: hidden;
+		background: #f6f6f6;
+		border-bottom: 1px solid #ddd;
+		padding: 9px 40px 7px;
+		color: #333;
+	}
+	.seo_txt {
+		float: left;
+		font-size: 10px;
+	}
+	header .submenu {
+		float: right;
+		font-size: 12px;
+	}
+	header .submenu ul {
+		display: inline-block;
+	}
+	header .submenu li {
+		display: inline-block;
+		margin-left: 15px;
+	}
+	header .submenu i {
+		font-size: 15px;
+	}
+	header .submenu i.fa-user {
+		padding-right: 6px;
+	}
+	header .submenu a.signin {
+		display: block;
+		width: 98px;
+		height: 19px;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/header/signin.png) no-repeat 0 0;
+		float: right;
+		margin-top: -1px;
+		margin-left: 5px;
+	}
+	header .submenu a.signin:hover {
+		background-position: 0 bottom;
+	}
+	header .submenu a.logout {
+		display: block;
+		width: 91px;
+		height: 19px;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/header/logout.png) no-repeat 0 0;
+		float: right;
+		margin-top: -1px;
+		margin-left: 5px;
+	}
+	header .submenu a.logout:hover {
+		background-position: 0 bottom;
+	}
+	header .submenuSNS {
+		border-left: 1px solid #ddd;
+		margin-left: 20px;
+		font-size: 15px;
+		line-height: 1;
+	}
+	header .submenuSNS li:first-child {
+		margin-left: 30px;
+	}
+
+	header .wrap {
+		height: 132px;
+		position: relative;
+		margin: 0 40px;
+	}
+	header .wrapSP {
+		display: none;
+	}
+	header .title {
+		position: relative;
+		top: 29px;
+		left: 0px;
+	}
+	header .title .logo {
+		border-bottom: none;
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+	header .sublink {
+		position: absolute;
+		top: 26px;
+		right: 0px;
+	}
+	header .sublink li {
+		display: inline-block;
+		margin-left: 25px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	header .sublink dt img {
+		height: 27px;
+		margin-bottom: 12px;
+	}
+	header .sublink span {
+		display: block;
+		color: #999;
+		font-size: 10px;
+		margin-bottom: 3px;
+	}
+	header .sublink a {
+		display: block;
+		font-size: 12px;
+		line-height: 1.3;
+		color: #333;
+	}
+	header .sublink .tel {
+		margin-left: 30px;
+	}
+	header .sublink .tel_top img {
+		width: 307px;
+	}
+	header .sublink .tel_bottom a {
+		display: block;
+		width: 100%;
+		margin-top: 10px;
+		padding: 8px 0;
+		border: 1px solid #f57539;
+		box-sizing: border-box;
+	}
+	header .sublink .OrderBtn {
+		margin-left: 10px;
+	}
+	header .sublink .OrderBtn a {
+		background-color: #a9803c;
+		border: 1px solid #a9803c;
+		border-radius: 3px;
+		color: #fff;
+		font-size: 14px;
+		line-height: 1.4;
+		padding: 22px 16px;
+		box-shadow: 0 1px 5px 0 rgba(102, 102, 102, .5);
+	}
+	header .sublink .OrderBtn a:hover {
+		background-color: #8f642f;
+		border-color: #ccb287;
+		opacity: 1;
+	}
+	#tooltip_content ul {
+		padding: 6px 5px;
+	}
+	#tooltip_content li {
+		display: inline-block;
+		margin-right: 20px;
+	}
+	#tooltip_content li:last-child {
+		margin-right: 0;
+	}
+	#tooltip_content a:hover {
+		color: #999;
+	}
+
+	/*グローバルナビ*/
+	header .navi {
+		min-width: 1200px;
+		text-align: center;
+		background: #c7c7c7;
+	}
+	header .navi .PCmenu {
+		position: relative;
+		display: flex;
+		margin: 0 40px;
+		letter-spacing: -.40em;
+	}
+	header .navi li.menu__mega {
+		display: inline-block;
+		align-items: center;
+		justify-content: center;
+	}
+	header .navi .PCmenu > li {
+		letter-spacing: normal;
+		width: 20%;
+	}
+	header .navi .PCmenu > li > a {
+		display: block;
+		background: #fff;
+		margin: 9px 5px;
+		padding: 11px 0;
+		border-radius: 5px;
+	}
+	header .navi li a {
+		font-size: 13px;
+		line-height: 1.6;
+		color: #333;
+	}
+	header .navi li a.on {
+		color: #000;
+	}
+	header .menu__second-level {
+		visibility: hidden;
+		z-index: 99999;
+	}
+	header .PCmenu > li:hover a {
+		color: #fff;
+		background: #351c19;
+		opacity:0.9;
+		filter: alpha(opacity=90);
+		-ms-filter: "alpha(opacity=90)";
+		-moz-opacity:0.9;
+		-khtml-opacity: 0.9;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-ms-transition: all 0.3s;
+		-o-transition: all 0.3s;
+		transition: all 0.3s;
+	}
+	header .menu__second-level li a:hover {
+		color: #a87f42;
+	}
+	header li.menu__mega .menu__second-level {
+		position: absolute;
+		top: 0;
+		margin-top: 60px;
+		box-sizing: border-box;
+		padding: 35px 40px 17px;
+		color: #fff;
+		opacity:0.9;
+		filter: alpha(opacity=90);
+		-ms-filter: "alpha(opacity=90)";
+		-moz-opacity:0.9;
+		-khtml-opacity: 0.9;
+		text-align: left;
+		border-radius: 5px;
+	}
+	header li.menu__mega .menu__second-level.gnavi01 {width:1027px; background:#351c19 url(https://www.kyoto-happy.co.jp:8443/_assets/img/header/gnavi01_line.png) top left no-repeat}
+	header li.menu__mega .menu__second-level.gnavi02 {width:1082px; left:9px; background:#351c19 url(https://www.kyoto-happy.co.jp:8443/_assets/img/header/gnavi02_line.png) top left no-repeat}
+	header li.menu__mega .menu__second-level.gnavi03 {width:1140px; right:0px; background:#351c19 url(https://www.kyoto-happy.co.jp:8443/_assets/img/header/gnavi03_line.png) top left no-repeat}
+	header li.menu__mega .menu__second-level.gnavi04 {width:800px; right:164px; background:#351c19 url(https://www.kyoto-happy.co.jp:8443/_assets/img/header/gnavi04_line.png) top left no-repeat}
+	header li.menu__mega .menu__second-level.gnavi05 {width:988px; right:1px; background:#351c19 url(https://www.kyoto-happy.co.jp:8443/_assets/img/header/gnavi05_line.png) top left no-repeat}
+	header li.menu__mega .menu__second-level ul > li {
+		margin-right: 0;
+		margin-bottom: 18px;
+	}
+	header li.menu__mega .headline {
+		font-size: 14px;
+		color: #fff;
+		letter-spacing: 0;
+		margin-bottom: 15px;
+	}
+	header li.menu__mega .menu__second-level a {
+		display: inline;
+		font-size: 12px;
+		padding: 0;
+		opacity:0.7;
+		filter: alpha(opacity=70);
+		-ms-filter: "alpha(opacity=70)";
+		-moz-opacity:0.7;
+		-khtml-opacity: 0.7;
+	}
+	header li.menu__mega:hover .menu__second-level {
+		margin-top: 60px;
+		visibility: visible;
+		-webkit-transition: all 0.3s ease-out;
+		-moz-transition: all 0.3s ease-out;
+		-ms-transition: all 0.3s ease-out;
+		-o-transition: all 0.3s ease-out;
+		transition: all 0.3s ease-out;
+	}
+	header li.menu__mega .menu__second-level div {
+		display: inline-block;
+		vertical-align: top;
+	}
+	header li.menu__mega .menu__second-level.gnavi01 .menu__1st ul {width:156px;}
+	header li.menu__mega .menu__second-level.gnavi01 .menu__2nd ul {width:367px;}
+	header li.menu__mega .menu__second-level.gnavi01 .menu__3rd ul {width:215px;}
+	header li.menu__mega .menu__second-level.gnavi01 .menu__3rd ul.row {margin-bottom:50px;}
+	header li.menu__mega .menu__second-level.gnavi02 .menu__1st ul {width:180px;}
+	header li.menu__mega .menu__second-level.gnavi02 .menu__2nd ul {width:300px;}
+	header li.menu__mega .menu__second-level.gnavi02 .menu__3rd ul {width:242px;}
+	header li.menu__mega .menu__second-level.gnavi03 .menu__1st ul {width:335px;}
+	header li.menu__mega .menu__second-level.gnavi03 .menu__2nd ul {width:135px;}
+	header li.menu__mega .menu__second-level.gnavi03 .menu__3rd {position:relative; left:-90px;}
+	header li.menu__mega .menu__second-level.gnavi04 .menu__1st ul {width:257px;}
+	header li.menu__mega .menu__second-level.gnavi04 .menu__2nd ul {width:235px;}
+	header li.menu__mega .menu__second-level.gnavi04 .menu__3rd ul {width:213px;}
+	header li.menu__mega .menu__second-level.gnavi05 .menu__1st ul {width:244px;}
+	header li.menu__mega .menu__second-level.gnavi05 .menu__2nd ul {width:205px;}
+	header li.menu__mega .menu__second-level.gnavi05 .menu__2nd ul.row {margin-bottom:62px;}
+	header li.menu__mega .menu__second-level.gnavi05 .menu__3rd ul {width:222px;}
+	header li.menu__mega .menu__second-level.gnavi05 .menu__3rd ul.row {margin-bottom:139px;}
+	header li.menu__mega .menu__second-level.gnavi05 .menu__4th ul {width:220px;}
+	header li.menu__mega .menu__second-level.gnavi05 .menu__4th ul.row {margin-bottom:62px;}
+	header li.menu__mega .menu__second-level div.noHeadline {
+		position: relative;
+		top: 40px;
+	}
+	header .navi .PCmenu:before,
+	header .navi .PCmenu:after {
+		content: " ";
+		display: table;
+	}
+	header .navi .PCmenu:after {
+		clear: both;
+	}
+	header .navi .PCmenu {
+		*zoom: 1;
+	}
+
+	/*下層コンテンツ*/
+	.content {
+		width:1100px;
+		margin:0 auto;
+		padding-top:70px;
+		position:relative;
+	}
+	.LColumn, .RColumn {
+		text-align:left;
+		line-height:2;
+	}
+	.LColumn {
+		float:right;
+		width:720px;
+		padding-left:50px;
+	}
+	.RColumn {
+		float:left;
+		width:330px;
+	}
+	.LColumn a {
+		color: #a9803c;
+		text-decoration: underline;
+	}
+	.LColumn a:hover {
+		text-decoration: none;
+	}
+	.section-imgLeft,
+	.section-imgRight,
+	.section-imgCenter {
+		overflow:hidden;
+	}
+	.section-imgLeft p,
+	.section-imgRight p,
+	.section-imgCenter p {
+		line-height:2.3;
+		margin-bottom:70px;
+	}
+	.section-imgLeft p.last,
+	.section-imgRight p.last,
+	.section-imgCenter p.last {
+		margin-bottom:0;
+	}
+	.section-imgLeft img {
+		float:left;
+		margin: 5px 30px 10px 0;
+	}
+	.section-imgRight img {
+		float:right;
+		margin: 5px 0 10px 30px;
+	}
+	.section-imgCenter {
+		text-align:center;
+	}
+	.section-imgCenter img {
+		margin:40px 0;
+	}
+	.section-imgCenter p {
+		text-align:left;
+	}
+	.pagettl-sub {
+		margin-top: -30px;
+		margin-bottom: 60px;
+		font-weight: bold;
+	}
+	.LColumn .linkBtnCommon {
+		background-color: #a9803c;
+		color: #fff;
+		font-size: 12px;
+		text-decoration: none;
+		line-height: 5;
+		margin-right: 10px;
+		padding: 10px 35px 10px 22px;
+		position: relative;
+		-webkit-border-radius:2px;
+		-moz-border-radius:2px;
+		border-radius:2px;
+	}
+	.LColumn .linkBtnCommon::before,
+	.LColumn .linkBtnCommon::after {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		content: "";
+		vertical-align: middle;
+	}
+	.LColumn .linkBtnCommon::after {
+		right: 22px;
+		width: 4px;
+		height: 4px;
+		border-top: 1px solid #fff;
+		border-right: 1px solid #fff;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+	.LColumn .linkBtnCommon:hover {
+		background-color: #936e30;
+	}
+
+	/*メインビジュアル*/
+	.mainvisual__section {
+		width: 100%;
+		height: 250px;
+		position:relative;
+	}
+	.mainvisual__section div {
+		width:1100px;
+		font-family: 'Libre Baskerville', serif;
+		font-size:32px;
+		color:#ffffff;
+		margin:0 auto;
+		letter-spacing:0.2em;
+		position:absolute;
+		top:135px;
+		left:0;
+		right:0;
+	}
+	.mainvisual__section div p {
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/ttl_line.gif) left center no-repeat;
+		width:1100px;
+		font-size:14px;
+		margin-top:15px;
+		padding-left:57px;
+		letter-spacing:0.1em;
+	}
+	.mainvisual__section .SDGs-logo {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+	.mainvisual__section img.SDGs-logo {
+		width: 240px;
+		height: auto;
+	}
+
+
+	/*パンくず*/
+	#pankuzu-wrapp {
+		width:100%;
+		padding: 10px 0;
+		border-bottom:1px solid #efefef;
+		font-size:11px;
+	}
+	#pankuzu-wrapp p.pankuzu {
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/icon_pankuzu.gif) right center no-repeat;
+		background-size:4px 7px;
+		float:left;
+		padding-right:16px;
+		margin-right:10px;
+	}
+	#pankuzu-wrapp p.no-arrow {
+		background:none;
+	}
+	#pankuzu-wrapp .pan-border {
+		width:1100px;
+		margin: 0 auto;
+		overflow:hidden;
+	}
+	#pankuzu-wrapp a:hover {
+		opacity:0.5;
+	}
+
+	/*ローカルナビ*/
+	.localNav {
+		width:330px;
+		border:1px solid #ddd;
+		color:#333;
+	}
+	.localNav li {
+		border-top:1px solid #ddd;
+	}
+	.localNav li a {
+		margin-left:20px;
+		padding-left:20px;
+		font-size: 13px;
+		line-height:3.2;
+		display:block;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow_down.png) no-repeat 0 17px;
+	}
+	.localNav li a:hover {
+		color:#a87f42;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow_down.png) no-repeat 0 17px;
+	}
+	.localNav li.firstRow {
+		border-top:5px solid #a87f42;
+	}
+	.localNav li.down a {
+		color:#a87f42;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow_up.png) no-repeat 0 17px;
+	}
+	.localNav ul.open {
+		background-color:#f4f4f4;
+	}
+	.localNav ul.open a {
+		color:#333;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow.png) no-repeat 12px 12px;
+		background-size: 2%;
+		font-size: 11px;
+		padding:0 0 0 30px;
+	}
+	.localNav ul.open a:hover {
+		color:#fff;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow_stay.png) no-repeat 12px 12px;
+		background-size: 2%;
+	}
+	.localNav ul .stay {
+		background-color:#c9ad82;
+	}
+	.localNav ul .stay a {
+		color:#fff;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow_stay.png) no-repeat 0 14px;
+	}
+	.localNav ul .open .stay a {
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow_stay.png) no-repeat 12px 12px;
+		background-size: 2%;
+	}
+	.localNav ul.open li:hover {
+		background-color:#c9ad82;
+	}
+	.localNav ul.open li.down2 {
+		background:#f4f4f4;
+	}
+	.localNav ul.open li.down2 a {
+		color:#a87f42;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow_down.png) no-repeat 12px 16px;
+		background-size: 2.5%;
+	}
+	.localNav ul.open li.down2 .open2 {
+		background-color:#e1e1e1;
+	}
+	.localNav ul.open li.down2 .open2 a {
+		color: #333;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow.png) no-repeat 22px 12px;
+		background-size: 2%;
+		padding:0 0 0 40px;
+	}
+	.localNav ul.open li.down2 .open2 a:hover {
+		color:#fff;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow_stay.png) no-repeat 22px 12px;
+		background-size: 2%;
+	}
+	.localNav ul.open li.down2 .stay a {
+		color:#fff;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow_stay.png) no-repeat 22px 12px;
+		background-size: 2%;
+	}
+	.localNav ul.open2 .stay a {
+		color:#fff;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/lnavi_arrow_stay.png) no-repeat 1px 12px;
+		background-size: 2%;
+	}
+
+	/*吹き出しメッセージ*/
+	.pickupMessage {
+		position: fixed;
+		bottom: 30px;
+		left: 30px;
+		z-index: 20;
+		filter:alpha(opacity=90);
+		-moz-opacity: 0.9;
+		opacity: 0.9;
+	}
+	.pickupMessage:after {
+		left: 100%;
+		top: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(169, 128, 60, 0);
+		border-left-color: #a9803c;
+		border-width: 8px;
+		margin-top: -8px;
+	}
+	.pickupMessage:hover {
+		filter:alpha(opacity=100);
+		-moz-opacity: 1.0;
+		opacity: 1.0;
+	}
+	.messageClose {
+		position: absolute;
+		top: -25px;
+		right: 0;
+		cursor: pointer;
+	}
+	.messageClose img {
+		width: 14px;
+		height: 14px;
+	}
+	.messageClose:hover {
+		filter:alpha(opacity=50);
+		-moz-opacity: 0.5;
+		opacity: 0.5;
+	}
+	.messageBox {
+		background-color: #a9803c;
+		border: 1px solid #a9803c;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		color: #fff;
+		font-size: 12px;
+		font-weight: normal;
+		text-align: center;
+		padding: 12px;
+		max-width: 254px;
+	}
+	.messageBox a {
+		color: #fff;
+		text-decoration: none;
+	}
+
+	/*フリー汎用ページ*/
+	#Contents.general {
+		width: 100%;
+		margin:0 auto;
+		padding: 0 0 70px;
+		text-align: center;
+	}
+	#Contents.general .general_top {
+		width: 100%;
+	}
+	#Contents.general .general_top img {
+		width: 100%;
+		height: auto:
+	}
+	#Contents section.general-sec {
+		width:1100px;
+		margin:0 auto;
+		padding-top:50px;
+		text-align: center;
+	}
+	#Contents section.general-sec .link_button {
+		min-width: 300px;
+		max-width: 400px;
+		text-align: center;
+		margin: 20px auto;
+	}
+	#Contents section.general-sec .link_button a {
+		display: block;
+		background: #a9803c;
+		border-radius: 30px;
+		color: #fff;
+		font-size: 12px;
+		font-weight: bold;
+		width: 100%;
+		padding: 13px 0 12px;
+		text-align: center;
+	}
+	#Contents section.general-sec .link_button img {
+		width: 25px;
+		margin-left: 10px;
+		vertical-align: 3px;
+	}
+	#Contents section.general-sec .inner_button-white {
+		min-width: 300px;
+		max-width: 400px;
+		margin-top: 25px;
+		text-align: center;
+		margin: 20px auto;
+	}
+	#Contents section.general-sec .inner_button-white a {
+		display: block;
+		background: #fff;
+		border: #666 solid 1px;
+		border-radius: 30px;
+		color: #333;
+		font-size: 12px;
+		font-weight: bold;
+		width: 100%;
+		padding: 13px 0 12px;
+		text-align: center;
+	}
+	#Contents section.general-sec .inner_button-white img {
+		width: 25px;
+		margin-left: 10px;
+		vertical-align: 3px;
+	}
+
+	/*ページトップ*/
+	#pagetop {
+		display: none;
+		position: fixed;
+		bottom: 60px;
+		right: 30px;
+		width: 56px;
+		cursor: pointer;
+	}
+	#pagetop img {
+		width: 100%;
+		height: auto;
+	}
+	#pagetop:hover {
+		filter:alpha(opacity=50);
+		-moz-opacity: 0.5;
+		opacity: 0.5;
+	}
+	#pageback {
+		display: none;
+	}
+
+	/*フッター*/
+	footer {
+		clear: both;
+		border-top:1px solid #eee;
+		overflow: hidden;
+		background: #f6f6f6;
+	}
+	footer section .wrap {
+		width: 1100px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	/*フッターナビ*/
+	.fnavi {
+		background: #f6f6f6;
+	}
+	.fnavi > div {
+		width: 1100px;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+	}
+	.fnavi_main {
+		padding-top: 50px;
+		margin-bottom: 30px;
+	}
+	.fnavi_main ul {
+		height: 170px;
+	}
+	.fnavi_main li {
+		display: inline-block;
+		vertical-align: top;
+		width: 180px;
+		margin: 0px;
+		margin-bottom: 8px;
+		padding-right: 20px;
+		padding-left: 10px;
+		border-left: 1px solid #ddd;
+		text-align: left;
+	}
+	.fnavi_main li:first-child {
+		border-left: none;
+	}
+	.fnavi_main .headline a {
+		font-size: 13px;
+		color: #333;
+		margin: 8px 0 15px;
+	}
+	.fnavi_main li a {
+		font-size: 12px;
+		color: #6f6f6f;
+	}
+	.fnavi_main li a:hover {
+		text-decoration: underline;
+		opacity: 1;
+	}
+	.fnavi_main li ul li {
+		border-left: none;
+	}
+	.fnavi_sub {
+		margin-bottom: 40px;
+	}
+	.fnavi_sub ul {
+		overflow: hidden;
+		text-align: left;
+	}
+	.fnavi_sub li {
+		float: left;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	.fnavi_sub li:nth-child(5n) {
+		margin-right: 0;
+	}
+	.fnavi_sub li a {
+		display: block;
+		font-size: 12px;
+		color: #333;
+		background: #eee;
+		width: 212px;
+		padding: 9px 0;
+	}
+	.fnavi_sub li a::after {
+		content: "\f105";
+		font-family: "FontAwesome";
+		font-size: 14px;
+		vertical-align: middle;
+		margin-left: 5px;
+	}
+
+	.footer_sns {
+		text-align: center;
+	}
+	.footer_sns .wrap {
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		padding: 15px 0;
+	}
+	.footer_sns li {
+		display: inline-block;
+		margin-left: 40px;
+	}
+	.footer_sns li:first-child {
+		margin-left: 0;
+	}
+	.footer_sns li a {
+		color: #333;
+		font-size: 26px;
+	}
+
+	.footer_info {
+		margin: 30px 0;
+	}
+	.footer_submenu {
+		float: left;
+	}
+	.footer_submenu li {
+		display: inline-block;
+		margin-right: 20px;
+	}
+	.footer_submenu a {
+		font-size: 12px;
+	}
+	.copyright {
+		font-size: 11px;
+		font-family: quasimoda, sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		color: #333;
+		text-align: right;
+	}
+
+	/*404ページ*/
+	.notfound h2 {
+		text-align: center;
+		font-size: 36px;
+		margin-bottom: 30px;
+	}
+	.notfound .backBtn {
+		width: 240px;
+		margin: 60px auto 0;
+		font-size: 13px;
+		background: #fafafa;
+		border: 1px solid #ddd;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+	}
+	.notfound .backBtn a {
+		display: block;
+		color: #333;
+		text-align: center;
+		padding: 10px 0 10px 20px;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/mypage/back_arrow.png) no-repeat 65px 13px;
+	}
+	.notfound .backBtn a:hover {
+		color: #9a7339;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/mypage/back_arrow_on.png) no-repeat 60px 13px;
+	}
+
+	/* Tel Popup */
+	.cbox_popup a {
+		text-decoration: underline;
+		color: #005bd6;
+	}
+	#telPopup {
+		width: 600px;
+		padding: 20px;
+		font-size: 12px;
+		line-height: 1.6;
+	}
+	#telPopup h3 {
+		font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+		color: #a9803c;
+		font-size: 24px;
+		line-height: 1.5;
+		margin-bottom: 20px;
+		border-bottom: 2px solid #a9803c;
+		padding-bottom: 5px;
+	}
+	#itelPopup p {
+		margin: 14px 0;
+		font-size: 10px;
+	}
+}
+
+
+@media screen and (max-width:767px) {
+/*======================
+SPレイアウト */
+	.PCpart {display: none !important;}
+
+	html, body {
+		-webkit-text-size-adjust:none; /*文字の大きさを変えない*/
+		-webkit-tap-highlight-color:rgba(0,0,0,0.4); /*クリック時の色*/
+	}
+	html { font-size: 62.5%; }
+	body { font-size: 2.8rem; } /* 1.0remで10px 以降1.2remであれば12px */
+	body { line-height: 1.3; }
+	body { font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',Osaka,sans-serif; }
+
+	input:focus, select:focus, textarea:focus { outline: 0;}
+	a { color: #333; }
+
+	#Container {
+		overflow: hidden;
+		width: 100%;
+		margin: 0 auto;
+	}
+	#Contents {
+		margin-bottom:40px;
+	}
+	h1 {
+		font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+		color:#333;
+		font-size:12px;
+		border-left:2px solid #a87f42;
+		padding-left:9px;
+	}
+	.pagettl {
+		background-color:#f4f4f4;
+		margin: 0px -500%;
+		padding: 14px 500%;
+		margin-bottom:20px;
+	}
+	h2 {
+		font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+		color:#a9803c;
+		font-size:18px;
+		letter-spacing:0.05em;
+		/*text-align:center;*/
+		line-height:1.6;
+		margin-bottom:20px;
+	}
+	h3 {
+		color:#333;
+		font-size:14px;
+		font-weight:bold;
+		/*text-align:center;*/
+		line-height:1.8;
+		margin-bottom:20px;
+	}
+	h4 {
+		font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+		color:#a9803c;
+		font-size:20px;
+		letter-spacing:0.06em;
+		line-height:1.8em;
+	}
+	.LColumn .linkBtnCommon {
+		display: block;
+		background-color: #a9803c;
+		color: #fff;
+		font-size: 12px;
+		line-height: 1.4;
+		text-decoration: none;
+		margin-top: 10px;
+		padding: 10px 0 10px 15px;
+		position: relative;
+	}
+	.LColumn .linkBtnCommon::before,
+	.LColumn .linkBtnCommon::after {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		content: "";
+		vertical-align: middle;
+	}
+	.LColumn .linkBtnCommon::after {
+		right: 15px;
+		width: 4px;
+		height: 4px;
+		border-top: 1px solid #fff;
+		border-right: 1px solid #fff;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
+	/*ヘッダー*/
+	header {
+		position: relative;
+		height: 116px;
+	}
+	header .top_head {
+		background: #f6f6f6;
+		border-bottom: 0.5px solid #ddd;
+		height: 18px;
+		padding: 0 5%;
+		color: #333;
+		font-size: 6px;
+		line-height: 18px;
+	}
+	.android .seo_txt {
+		font-size: 6px;
+		-webkit-transform: scale(1);
+    	-webkit-transform-origin: 0 20px;
+		white-space: nowrap;
+	}
+	header .wrap {
+		width: 90%;
+		margin: 8px auto;
+	}
+	header .title {
+		float: left;
+		margin: 4px 0;
+	}
+	header .title img {
+		width: 58px;
+	}
+	header .title .logo {
+		border-left: none;
+		padding-left: 0;
+	}
+	.wrapSP {
+		text-align: right;
+	}
+	header .submenu {
+		font-size: 10px;
+		margin: 6px 0;
+	}
+	header .submenu ul {
+		display: inline-block;
+	}
+	header .submenu li {
+		display: inline-block;
+		vertical-align: top;
+	}
+	header .submenu i.fa-user {
+		font-size: 12px;
+		padding-right: 5px;
+	}
+	header .submenu .recruit {
+		border-left: 1px solid #ddd;
+		margin-left: 6px;
+		padding-left: 8px;
+		line-height: 1;
+	}
+	header .submenuSNS {
+		overflow: hidden;
+		font-size: 16px;
+	}
+	header .submenuSNS li {
+		display: inline-block;
+		margin-left: 8px;
+	}
+	header .mainmenu .OrderBtn,
+	header .mainmenu .menu {
+		display: inline-block;
+		line-height: 1;
+		margin-left: 5px;
+	}
+	header .OrderBtn a {
+		background: #a9803c;
+		color: #fff;
+		border-radius: 2px;
+		padding: 9px 24px;
+		font-size: 10px;
+		font-weight: bold;
+		line-height: 28px;
+		vertical-align: top;
+	}
+	header .OrderBtn i {
+		margin-left: 5px;
+		font-size: 13px;
+		line-height: 26px;
+		vertical-align: top;
+	}
+	header .mainmenu .menu .menu_closeBtn {
+		display: none;
+	}
+	.SPGnaviOpen {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: #fff;
+		z-index: 9999;
+	}
+	.SPGnaviOpen .mainmenu .menu .menu_triggerBtn {
+		display: none;
+	}
+	.SPGnaviOpen .mainmenu .menu .menu_closeBtn {
+		display: block;
+	}
+	.SPGnaviOpen + #Contents {
+		padding-top: 116px;
+	}
+
+	/*メニュー展開部分*/
+	.menu_bg {
+		display: none;
+		position: fixed;
+		z-index: 99998;
+		top: 116px;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #333;
+	}
+	.menu_over {
+		display: none;
+		position: absolute;
+		z-index: 99999;
+		top: 116px;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		overflow-y: scroll;
+	}
+	#SPGnavi {
+		position: relative;
+		top: 30px;
+		left: 0;
+		width: 90%;
+		height: 1000vh;
+		margin: auto;
+		color: #fff;
+		font-size: 3.5vw;
+		text-align: left;
+	}
+	#SPGnavi .menu1 {
+		margin-bottom: 20px;
+	}
+	.SPGnavi_menu {
+		display: block;
+		position: relative;
+		border-bottom: 1px solid #999;
+		line-height: 3;
+	}
+	.SPGnavi_menu:first-child {
+		border-top: 1px solid #999;
+	}
+	.SPGnavi_menu:before,
+	.SPGnavi_menu:after {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		content: "";
+		vertical-align: middle;
+	}
+	.SPGnavi_menu:after {
+		top: -7px;
+		right: 1%;
+		width: 8px;
+		height: 8px;
+		border-top: 1px solid #fff;
+		border-right: 1px solid #fff;
+		-webkit-transform: rotate(135deg);
+		transform: rotate(135deg);
+	}
+	.SPGnavi_menu.open:after {
+		top: 7px;
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+	#SPGnavi .menu1 h3 {
+		color: #fff;
+		font-size: 3.5vw;
+		padding: 4px 3%;
+		margin: 0;
+		background: #999;
+	}
+	#SPGnavi .menu1 a {
+		display: block;
+		color: #fff;
+		font-size: 3.5vw;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/menu/bg_arrow-white.png) right 3% center no-repeat;
+		background-size: 4px 7px;
+		padding: 10px 3%;
+	}
+	#SPGnavi .menu1 li {
+		background: #555;
+		border-bottom: 1px solid #666;
+	}
+	#SPGnavi .menu1 li:last-child {
+		margin-bottom: 8px;
+		border-bottom: none;
+	}
+
+	.menu_over .menu2 {
+		overflow: hidden;
+		margin-bottom: 20px;
+	}
+	.menu_over .menu2 ul {
+		display: block !important;
+	}
+	.menu_over .menu2 li {
+		overflow: hidden;
+		float: left;
+		background: #a9803c;
+		width: 49%;
+		height: 44px;
+		box-sizing: border-box;
+		margin-left: 2%;
+		margin-bottom: 2%;
+		border-radius: 2px;
+	}
+	.menu_over .menu2 li:nth-child(odd) {
+		margin-left: 0;
+	}
+	.menu_over .menu2 a {
+		display: block;
+		padding: 10px 0 10px 15%;
+	}
+	.android .menu_over .menu2 a {
+		padding-left: 12%;
+	}
+	.menu_over .menu2 img {
+		float: left;
+		height: 24px;
+		margin-right: 5%;
+	}
+	.menu_over .menu2 h2 {
+		color: #fff;
+		font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', Osaka, sans-serif;
+		font-size: 12px;
+		font-weight: normal;
+		margin: 0;
+		line-height: 1.3;
+	}
+	.menu_over .menu2 h2 span {
+		display: block;
+		font-size: 2.2vw;
+		letter-spacing: 0;
+	}
+	.android .menu_over .menu2 h2 span {
+		-webkit-transform: scale(0.8);
+    	-webkit-transform-origin: 25% center;
+	}
+	.menu_over .menu2 li:last-child img {
+		margin-right: 7%;
+		margin-left: 3%;
+	}
+
+	.menu_over .menu3 {
+		clear: both;
+	}
+	.menu_over .menu3 ul {
+		display: block !important;
+		text-align: center;
+		line-height: 0;
+	}
+	.menu_over .menu3 li {
+		display: inline-block;
+		margin: 0 8px;
+	}
+	.menu_over .menu3 li a {
+		color: #999;
+		font-size: 20px;
+	}
+	.menu_over .menu4 ul {
+		display: block !important;
+		text-align: center;
+		font-size:0;
+		margin-top:20px;
+	}
+	.menu_over .menu4 li {
+		display: inline-block;
+		margin-right: 10px;
+	}
+	.menu_over .menu4 li a {
+		display: inline-block;
+		font-size: 10px;
+		line-height:2.5;
+		color: #999;
+		padding-right: 10px;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/menu/bg_dot.png) right center no-repeat;
+		background-size: 2px;
+	}
+	.menu_over .menu4 li:last-child a {
+		padding-right: 0;
+		background: none;
+		margin-right: -10px;
+	}
+
+	/*下層コンテンツ*/
+	.content {
+		width:90%;
+		margin:0 5%;
+		font-size:11px;
+		color:#333;
+	}
+	.content p {
+		font-size:13px;
+		line-height:2;
+	}
+	.section-imgLeft,
+	.section-imgRight {
+		font-size:22px;
+		color:#333333;
+		line-height:2em;
+	}
+	.section-imgLeft img,
+	.section-imgRight img,
+	.section-imgCenter img {
+		width:100%;
+		max-width: 100%;
+		height:auto;
+	}
+	.RColumn {
+		overflow:hidden;
+	}
+	.tooltipster-box {
+		position: relative;
+		right: 10%;
+	}
+	#tooltip_content a {
+		display: block;
+		font-size: 12px;
+		line-height: 2.2;
+	}
+
+	/*メインビジュアル*/
+	.mainvisual__section {
+		width: 100%;
+		height: 90px;
+		background-size: cover;
+		position:relative;
+	}
+	.mainvisual__section div {
+		width:90%;
+		font-family: 'Libre Baskerville', serif;
+		font-size:16px;
+		color:#ffffff;
+		margin:0 5%;
+		letter-spacing:0.1em;
+		position:absolute;
+		top:40px;
+	}
+	.mainvisual__section div p {
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/ttl_line.gif) left center no-repeat;
+		width:90%;
+		font-size:8px;
+		font-weight:bold;
+		margin-top:4px;
+		padding-left:38px;
+		letter-spacing:0.1em;
+	}
+	.mainvisual__section .SDGs-logo {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+	.mainvisual__section img.SDGs-logo {
+		width: 140px;
+		height: auto;
+	}
+
+	/*パンくず*/
+	div#pankuzu-wrapp {
+		width:100%;
+		padding: 8px 0;
+		border-bottom:1px solid #efefef;
+		font-size:8px;
+		line-height:1.9;
+	}
+	div#pankuzu-wrapp p.pankuzu {
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/icon_pankuzu.gif) right center no-repeat;
+		background-size:3px;
+		float:left;
+		padding-right:12px;
+		margin-right:7px;
+	}
+	div#pankuzu-wrapp p.no-arrow {
+		background:none;
+	}
+	div#pankuzu-wrapp .pan-border {
+		width:90%;
+		margin: 0 5%;
+		overflow:hidden;
+	}
+
+	.pickupMessage {
+		display: none;
+	}
+	#pagetop {
+		display: none;
+		position: fixed;
+		bottom: 2%;
+		right: 5%;
+		width: 42px;
+		z-index: 30;
+	}
+	#pagetop img {
+		width: 100%;
+		height: auto;
+	}
+	#pageback {
+		position: fixed;
+		bottom: 2%;
+		left: 5%;
+		width: 42px;
+		z-index: 30;
+	}
+	#pageback img {
+		width: 100%;
+		height: auto;
+	}
+
+	/*フリー汎用ページ*/
+	#Contents.general {
+		width: 100%;
+		margin:0 auto;
+		padding: 0 0 10px;
+		text-align: center;
+	}
+	#Contents.general .general_top {
+		width: 100%;
+	}
+	#Contents.general .general_top img {
+		width: 100%;
+		height: auto:
+	}
+	#Contents section.general-sec {
+		margin:0 auto;
+		padding-top:20px;
+		text-align: center;
+	}
+	#Contents section.general-sec .link_button {
+		width: 90%;
+		text-align: center;
+		margin: 15px auto;
+	}
+	#Contents section.general-sec .link_button a {
+		display: block;
+		background: #a9803c;
+		border-radius: 30px;
+		color: #fff;
+		font-size: 11px;
+		width: 100%;
+		padding: 13px 0 12px;
+		text-align: center;
+	}
+	#Contents section.general-sec .link_button img {
+		width: 25px;
+		margin-left: 10px;
+		vertical-align: 3px;
+	}
+	#Contents section.general-sec .inner_button-white {
+		width: 90%;
+		margin-top: 25px;
+		text-align: center;
+		margin: 15px auto;
+	}
+	#Contents section.general-sec .inner_button-white a {
+		display: block;
+		background: #fff;
+		border: #666 solid 1px;
+		border-radius: 30px;
+		color: #333;
+		font-size: 11px;
+		width: 100%;
+		padding: 13px 0 12px;
+		text-align: center;
+	}
+	#Contents section.general-sec .inner_button-white img {
+		width: 25px;
+		margin-left: 10px;
+		vertical-align: 3px;
+	}
+
+
+	/*フッタナビ*/
+	.footernavi {
+		width:100%;
+		color:#333;
+		font-size:12px;
+		line-height: 3.3em;
+		display:block;
+		margin-bottom: -20px;
+	}
+	.footernavi .main_menu {
+		border-top:1px solid #eee;
+		padding: 0 5%;
+		background:url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/icon_arrow_off.png) 95% 16px no-repeat;
+		background-size:3.5%;
+	}
+	.footernavi .main_menu.active {
+		background:url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/icon_arrow_on.png) 95% 16px no-repeat;
+		background-size:3.5%;
+	}
+	.footernavi .sub_menu {
+		background-color:#f4f4f4;
+		font-size:10px;
+		line-height: 3.3em;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	.footernavi .sub_menu.local {
+		background-color:#fff;
+	}
+	.footernavi .sub_menu li,
+	.footernavi .sub_menu2 li {
+		border-top:1px solid #eee;
+		background:url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/icon_arrow.png) 94.5% 10px no-repeat;
+		background-size:2%;
+	}
+	.footernavi .sub_menu a,
+	.footernavi .sub_menu2 a {
+		padding: 0 5%;
+		display:block;
+	}
+	.footernavi .main_menu.on {
+		color:#a87f42;
+	}
+	.footernavi .sub_menu li.on {
+		background:url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/icon_arrow_white.png) 94.5% 10px no-repeat;
+		background-size:2%;
+		background-color:#c9ad82;
+	}
+	.footernavi .sub_menu li.on a {
+		color:#fff;
+	}
+	.footernavi .sub_menu .main_menu {
+		background-position: 95% 13px;
+	}
+	.footernavi .sub_menu .main_menu.active {
+		background-position: 95% 13px;
+	}
+	.footernavi .sub_menu2 .main_menu.on {
+		padding: 0;
+	}
+	.footernavi .sub_menu2 {
+		background-color:#ddd;
+	}
+
+	/*フッター*/
+	footer {
+		width: 100%;
+		margin-top: 20px;
+	}
+	.fnavi {
+		display: none;
+	}
+
+	.footer_sns {
+		text-align: center;
+	}
+	.footer_sns .wrap {
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		padding: 12px 0;
+		line-height: 0;
+	}
+	.footer_sns li {
+		display: inline-block;
+		margin-left: 5%;
+	}
+	.footer_sns li:first-child {
+		margin-left: 0;
+	}
+	.footer_sns li a {
+		color: #333;
+		font-size: 20px;
+	}
+
+	.footer_submenu li {
+		display: none;
+	}
+	.copyright {
+		font-size: 3vw;
+		font-family: quasimoda, sans-serif;
+		font-weight: 400;
+		color: #666;
+		text-align: center;
+		margin: 15px 0;
+	}
+
+	#chatplusview{
+		bottom: 50px!important;
+	}
+	#chatplusview, #chatplusview #outline, #chatplusview #outline #chatpluscontent{
+		max-height: 76vh!important;
+	}
+
+	/*404ページ*/
+	.notfound h2 {
+		text-align: center;
+		font-size: 24px;
+		margin: 20px 0 10px;
+	}
+	.notfound .backBtn {
+		width: 100%;
+		margin: 30px auto 0;
+		font-size: 12px;
+		background: #fafafa;
+		border: 1px solid #ddd;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+	}
+	.notfound .backBtn a {
+		display: block;
+		color: #333;
+		text-align: center;
+		padding: 8px 0;
+	}
+}
+
+
+@media screen and (max-width: 320px) {
+	.menu_over .menu2 a {
+		padding-left: 12%;
+	}
+}

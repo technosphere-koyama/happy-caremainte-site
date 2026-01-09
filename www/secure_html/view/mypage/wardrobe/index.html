@@ -1,0 +1,357 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="format-detection" content="telephone=no">
+<script type="text/javascript">
+  if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+          document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+      }else{
+          document.write('<meta name="viewport" content="width=1280" />');
+      }
+  </script>
+<title>ワードローブお預かり品｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+<link href="../../css/form.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+<body id="mypage">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	<!--　/header_nav　-->
+	
+	<div class="bg mypageMain">
+    <!--　/#banner -->
+    <section id="mypage_nav">
+      <div class="container">
+        <ul>
+					<li><a href="/mypage/"><img src="../img/header04.png" alt="マイページ"><span>マイページ<br>トップ</span></a></li>
+					<li class="linkoff"><a><img src="../img/mypage01.png" alt="カウンセリング"><span>カウンセリング</span></a></li>
+					<li><a href="../ordered/index.html"><img src="../img/mypage02.png" alt="ただいまのお預かり品">
+              <span>ただいまの<br>お預かり品</span>
+          </a></li>
+          <li><a href="../history/index.html"><img src="../img/mypage05.png" alt="過去のケアメンテご利用履歴">
+              <span>過去のケアメンテ<br>ご利用履歴</span>
+            </a></li>
+          <li><a class="on" href="../wardrobe/index.html"><img src="../img/mypage04.png" alt="ワードローブお預かり品">
+              <span>ワードローブ<br>お預かり品</span>
+          </a></li>
+					<li><a href="/sale/"><img src="../img/mypage03.png" alt="セール情報（会員ご優待）"><span>セール情報<br>（会員ご優待）</span></a></li>
+				</ul>
+			</div>
+    </section>
+		
+    <section class="mainContents">
+      <div class="container">
+        <h2><img src="../img/mypage04.png" alt="ワードローブ お預かり品">ワードローブお預かり品</h2>
+				<p>クリーンルームでの保管・お預かりサービスをご利用いただいてるアイテムがご覧いただけます。</p>
+				<div class="karteSearch">
+          <h3>お預かり品別の検索</h3>
+          <div class="accordionBtn">
+            <p class="accordionTxt">開く</p>
+            <p class="accordionIcon"><span></span><span></span></p>
+          </div>
+					<dl>
+            <form method="GET" name="form01" action="/mypage/wardrobe/chart_list.html">
+              <dt>アイテム：</dt>
+              <dd>
+                <div class="selectform">
+                  <?php $publicGadget->html_wardrobe_select_item() ?>
+                </div>
+                <div class="selectform">
+                  <?php $publicGadget->html_wardrobe_subselect_item() ?>
+                </div>
+              </dd>
+              <dt>ブランド：</dt>
+              <dd>
+                <div class="selectform">
+                  <select name="select" id="select">
+                    <option value="">選択してください</option>
+                    <?php foreach ($this->get("brand_array") AS $brand_val) { ?>
+                      <?php $selected = ($brand_val == REQUEST::get_data('select')) ? 'selected="selected"' : ''; ?> 
+                      <option value="<?php echo $brand_val ?>" <?php echo $selected ?>><?php echo $brand_val ?></option>
+                    <?php } ?>
+                  </select>
+                </div>
+              </dd>
+              <dt>色・柄：</dt>
+              <dd>
+                <div class="selectform">
+                  <?php $publicGadget->html_wardrobe_select_color() ?>
+                </div>
+                <div class="selectform">
+                  <?php $publicGadget->html_wardrobe_subselect_color() ?>
+                </div>
+              </dd>
+              <dt>カウンセリング日：</dt>
+              <dd>
+                <div class="dateselect">
+                  <select name="year" onchange="dateCheckXc('year', 'month', 'day')">
+                    <option value="">年</option>
+                    <?php for ($i = CONF::read('INPUTVALI.HISTORY_Y_START'); $i <= date("Y"); $i++) { ?>
+                      <?php $selected = ($i == $this->get("year") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>年</option>
+                    <?php } ?>
+                  </select>
+                </div>
+                <div class="dateselect">
+                  <select name="month" onchange="dateCheckXc('year', 'month', 'day')">
+                    <option value="">月</option>
+                    <?php for ($i = 1; $i <= 12; $i++) { ?>
+                      <?php $selected = ($i == $this->get("month") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>月</option>
+                    <?php } ?>			
+                  </select>
+                </div>
+                <div class="dateselect">
+                  <select name="day">
+                    <option value="">日</option>
+                    <?php for ($i = 1; $i <= 31; $i++) { ?>
+                      <?php $selected = ($i == $this->get("day") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>日</option>
+                    <?php } ?>
+                  </select>
+                </div>
+                <div class="dateselectTxt">〜</div>
+                <div class="dateselect">
+                  <select name="year_b" onchange="dateCheckXc('year_b', 'month_b', 'day_b')">
+                    <option value="">年</option>
+                    <?php for ($i = CONF::read('INPUTVALI.HISTORY_Y_START'); $i <= date("Y"); $i++) { ?>
+                      <?php $selected = ($i == $this->get("year_b") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>年</option>
+                    <?php } ?>
+                  </select>
+                </div>
+                <div class="dateselect">
+                  <select name="month_b" onchange="dateCheckXc('year_b', 'month_b', 'day_b')">
+                    <option value="">月</option>
+                    <?php for ($i = 1; $i <= 12; $i++) { ?>
+                      <?php $selected = ($i == $this->get("month_b") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>月</option>
+                    <?php } ?>			
+                  </select>
+                </div>
+                <div class="dateselect">
+                  <select name="day_b">
+                    <option value="">日</option>
+                    <?php for ($i = 1; $i <= 31; $i++) { ?>
+                      <?php $selected = ($i == $this->get("day_b") ? 'selected="selected"' : ''); ?>
+                      <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>日</option>
+                    <?php } ?>
+                  </select>
+                </div>
+              </dd>
+              <dt class="btnarea"><input type="button" id="btn" class="btn" value="検索開始" onclick="document.form01.submit()"></dt>
+            </form>
+					</dl>
+				</div>
+			</div>
+      <div id="mypagetab" class="historyArea">
+				<div class="container">
+          <ul class="tab_menu">
+            <li class="active"><a href="/mypage/wardrobe/">保管中アイテム一覧</a></li><li><a href="/mypage/wardrobe/chart_list.html">カルテ番号別一覧</a></li>
+          </ul>
+        </div>
+        <div id="tab1" class="karteWrap tab_contents active">
+          <div class="container">
+						<form id="form_1" name="form02" method="POST" action="./confirm.html">
+              <div class="wardrobeItem">
+                <h3 class="tac">アイテム選択</h3>
+                <p>・ お届け日時などを変更するアイテムにチェックを入れて確認ボタンをクリックしてください。<br>
+                  ・ 画像をクリックするとカウンセリングカルテ詳細がご覧いただけます。</p>
+                <div class="chkAll">
+									<label for="chkAll"><input type="checkbox" id="chkAll" name="chkAll" value="all"><span></span></label>全アイテム（点）を選択
+                </div>
+                <?php if (count($this->get("itemAllArray")) == 0) {?>
+                  <div style="color: red;">現在、ワードローブでのお預かり品はありません。</div>
+                <?php } else {?>
+                <ul class="karteItem wardrobe">
+                  <!-- ワードローブのアイテム一覧　-->	
+                  <?php foreach ($this->get("itemAllArray") AS $item) { ?>
+                    <li class="first">
+                      <div class="itemNo"><?php echo $item['format_item_id']; ?></div>
+                      <div class="itemImg"><a href="<?php echo $item['item_link']; ?>"><img src="<?php echo $item['thumb_url']; ?>" alt="<?php echo $item['item_id']; ?>"></a></div>
+                      <div class="itemName pc">
+												<?php echo $item['brand_name'];?>
+											</div>
+											<div class="itemName sp">
+											<?php 
+												$limit = 12;
+												if(mb_strlen($item['brand_name']) > $limit) { 
+												$title = mb_substr($item['brand_name'],0,$limit);
+												echo $title. "..." ;
+												} else {
+												echo $item['brand_name'];
+												}?>
+											</div>
+                      <div class="itemType"><?php echo $item['item_name']; ?></div>
+                      <div class="itemDate">保管期限：<?php echo $item['medkaterm']; ?></div>
+                      <div class="itemStatus"><span><?php echo $item['status_text']; ?></span></div>
+                      <div class="itemCheck"><label for="change<?php echo $item['item_id']; ?>"><input type="checkbox" id="change<?php echo $item['item_id']; ?>" name="item_order[]" value="<?php echo $item['chart_id']; ?>_<?php echo $item['item_id']; ?>" ><span></span>変更を予約する</label></div>
+                      <div class="itemChange">変更後お届け日：<?php echo $item['date']; ?></div>
+                    </li>
+                  <?php } ?>
+                </ul>
+                <?php } ?>
+              </div>
+              <div class="postingPagenavi">
+                <ul class="pageNumbers">
+                </ul>
+              </div>
+              <div id="delivery" class="wardrobeDelive">
+                <h3 class="tac">お届け日時・お届け先の変更予約</h3>
+                <p>お届け先・お届け希望日を変更する場合は、変更するアイテムを上記より選択し、登録内容を変更してください。</p>
+                <p class="attention" style="color:red; font-size: 90%;">ただいまシステム調整中のため、「お届け日時・お届け先の変更予約」機能につきましては、ご利用いただけない状態となっております。<br>
+                お客様にはご迷惑をおかけいたしますことを深くお詫び申し上げ ます。<br>
+                大変お手数ですがフリーダイヤル「<span class="pc">0120-88-6868</span><a href="tel:0120-88-6868" style="color:red; text-decoration: underline;" class="sp">0120-88-6868</a>」までご連絡いただくか、<a href="/contact/" style="color:red; text-decoration: underline;">メール</a>にてお問い合わせくださいますようお願いいたします。</p>
+                <dl class="contactform">
+                  <dt>住所</dt>
+                  <dd class="addressform"><p>〒</p><input type="tel" id="zip" name="zip" value="567-0802" class="postal" autocomplete="postal-code"><input type="button" id="zipbtn" name="zipbtn" class="zipbtn" value="郵便番号から住所検索"></dd>
+                  <dd class="addressform">
+										<div class="addressselect">
+                      <select id="pref" name="state" autocomplete="address-level1">
+                        <option value="">都道府県</option>
+                        <?php foreach (CONF::read('PREFECTURE') AS $key => $val) { ?>
+                          <?php $selected = ($key == $this->get("state") ? 'selected="selected"' : '') ?>
+                          <OPTION VALUE="<?php echo $key ?>" <?php echo $selected ?>><?php echo $val ?></OPTION>
+                        <?php } ?>
+                      </select>
+                    </div>
+                    <input type="text" id="address" name="addr1" class="addressform2" value="<?php echo $this->get("addr1") ?>" placeholder="市区郡">
+                  </dd>
+                  <dd class="addressform"><input type="text" id="address2" name="addr2" value="<?php echo $this->get("addr2") ?>" placeholder="町村・番地"></dd>
+                  <dd class="border"><input type="text" name="addr3" value="<?php echo $this->get("addr3") ?>" placeholder="ビル・マンション名"></dd>
+                  <dt>電話番号</dt>
+                  <dd class="contactnum border pb16"><input type="tel" name="telephone" value="<?php echo $this->get("telephone") ?>"><p>ー</p><input type="tel" name="telephone2" value="<?php echo $this->get("telephone2") ?>"><p>ー</p><input type="tel" name="telephone3" value="<?php echo $this->get("telephone3") ?>"></dd>
+                  <dt>お名前</dt>
+                  <dd class="border pb16"><input type="text" name="name1" value="<?php echo $this->get("name1") ?>" aria-required="true" autocomplete="name" class="validate[required] name_sei" placeholder="姓"><input type="text" name="name2" value="<?php echo $this->get("name2") ?>" aria-required="true" autocomplete="name" class="validate[required] name_mei" placeholder="名"></dd>
+                  <dt>お届け希望</dt>
+                  <dd class="border pb21">
+                    <div class="dateselect">
+                      <select name="year_c" onchange="dateCheckXc('year_c', 'month_c', 'day_c')">
+                        <option value="">年</option>
+                        <?php for ($i = date("Y"); $i <= date("Y") + 1; $i++) { ?>
+                          <?php $selected = ($i == $this->get("year_c") ? 'selected="selected"' : ''); ?>
+                          <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>年</option>
+                        <?php } ?>
+                      </select>
+                    </div>
+                    <div class="dateselect">
+                      <select name="month_c" onchange="dateCheckXc('year_c', 'month_c', 'day_c')">
+                        <option value="">月</option>
+                        <?php for ($i = 1; $i <= 12; $i++) { ?>
+                          <?php $selected = ($i == $this->get("month_c") ? 'selected="selected"' : ''); ?>
+                          <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>月</option>
+                        <?php } ?>	
+                      </select>
+                    </div>
+                    <div class="dateselect">
+                      <select name="day_c">
+                        <option value="">日</option>
+                        <?php for ($i = 1; $i <= 31; $i++) { ?>
+                          <?php $selected = ($i == $this->get("day_c") ? 'selected="selected"' : ''); ?>
+                          <option value="<?php echo $i ?>" <?php echo $selected ?>><?php echo $i ?>日</option>
+                        <?php } ?>
+                      </select>
+                    </div>
+                  </dd>
+                  <dt>お届け時間指定</dt>
+                  <dd class="border pb21">
+                    <div class="addressselect">
+                      <select name="time">
+                        <?php foreach (CONF::read('SHIPPING_TIMEZONE') AS $key => $val) { ?>
+                          <?php $selected = ($val == $this->get("time") ? 'selected="selected"' : ''); ?>
+                          <option value="<?php echo $val ?>" <?php echo $selected ?>><?php echo $val ?></option>
+                        <?php } ?>
+                      </select>
+                    </div>
+                  </dd>
+                  <p>「同時引取サービス」は、ご依頼品をお届けする際に、新たなご依頼品をお引き取りさせていただくサービスです。<br>一度でお届けとお引き取りがすみますので、便利で簡単！時間短縮「同時引取サービス」の場合でもハッピーへの送り状はヤマト運輸のドライバーがお客様のお名前、ご住所を記入してお持ちしますので、送り状の記入も不要です。</p>
+                  <dt class="pb23">同時引取り</dt>
+                  <dd class="border">
+                    <div class="addressselect">
+                      <select name="hikitori">
+                        <option value="" selected=""></option>
+                        <?php foreach (CONF::read('ORDER_PICKUP') AS $key => $val) { ?>
+                          <?php $selected = ($val == $this->get("hikitori") ? 'selected="selected"' : ''); ?>
+                          <option value="<?php echo $val ?>" <?php echo $selected ?>><?php echo $val ?></option>
+                        <?php } ?>
+                      </select>
+                    </div>
+                  </dd>
+                  <p>お届け希望日が保管お預かり期限日の翌日以降で設定されている場合、延長料金が発生しますので、下記よりお支払い方法をお選びください。<br>（保管お預り期限内のお届け日変更については「-」のままで結構です。)</p>
+                  <dt class="pb23">お支払い方法</dt>
+                  <dd class="border">
+                    <div class="addressselect">
+                      <select name="pays">
+                        <option value="" selected=""></option>
+                        <?php foreach (CONF::read('PAY_METHOD') AS $key => $val) { ?>
+                          <?php $selected = ($val == $this->get("pays") ? 'selected="selected"' : ''); ?>
+                          <option value="<?php echo $val ?>" <?php echo $selected ?>><?php echo $val ?></option>
+                        <?php } ?>
+                      </select>
+                    </div>
+                  </dd>
+                  <div class="btnarea"><input type="button" id="btnchk" class="btn" value="確　認" onclick="if(validate(document.form02))document.forms.form02.submit()"></div>
+                </dl>
+              </div>
+            </form>
+          </div>
+				</div>
+      </div>
+    </section>
+    <!--　/.mainContents -->
+		
+    <div class="footer_sns">
+      <div class="container">
+        <ul>
+          <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!--　/.footer_sns -->
+    <?php
+    /* フッターインクルード */
+    include(DIR_PUBLIC . "/include/footer_new.php");
+      ?>
+	</div>
+  <!--　/.bg -->
+  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+		
+    var menuFlag = true;
+    $('.header_nav_common .header_tab').on('click', function() {
+      menuFlag = !menuFlag;
+      if(menuFlag){
+        $('.header_nav_common').css("top","0");
+      } else {
+        $('.header_nav_common').css("top","-95px");
+      }
+  	});
+		
+  });
+  </script>
+	</body>
+</html>

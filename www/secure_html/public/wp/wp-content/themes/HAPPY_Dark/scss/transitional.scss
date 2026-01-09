@@ -1,0 +1,922 @@
+@import 'mixin';
+
+.fz-small {
+  font-size: 13px !important;
+}
+.smallTxt {
+  font-size: 10px;
+  @include for-pc {
+    font-size: 11px;
+  }
+}
+img.nozoom {
+  width: auto;
+}
+.tright {
+  text-align: right !important;
+}
+.tleft {
+  text-align: left !important;
+}
+.tcntr {
+  text-align: center !important;
+}
+.serif {
+  @include sawarabi;
+}
+.lh-double {
+  line-height: 2;
+}
+.clearfix {
+  @include clearfix;
+}
+.mgB0 {
+  margin-bottom: 0 !important;
+}
+.mgB10 {
+  margin-bottom: 10px !important;
+}
+.mgB40 {
+  margin-bottom: 40px !important;
+}
+.mgB70 {
+  margin-bottom: 70px !important;
+}
+.mgB1em {
+  margin-bottom: 1em !important;
+}
+.mgB4em {
+  margin-bottom: 4em !important;
+}
+.serviceBorderBox {
+  @extend .fz-small;
+  @include clearfix;
+  border: 1px solid white;
+  padding: 20px 3.75%;
+  > h3:nth-child(1) {
+    margin-top: 0;
+  }
+}
+.roundedBox {
+  border-radius: 10px;
+}
+.dl-horizontal {
+  text-align: left;
+  @include clearfix;
+  dt {
+    float: left;
+    clear: left;
+  }
+  dd {
+    float: right;
+    text-align: right;
+  }
+}
+
+@mixin contentButton {
+  /* ref: #use .btn a */
+  color: #FFF;
+  background: $purple;
+  display: inline-block;
+  border-radius: 8vw;
+  font-size: 13px;
+  font-size: min(4vw, 13px);
+  padding: 3vw 6vw;
+  margin-right: 1ex;
+  text-decoration: none;
+
+  &:hover {
+    color: rgba(255,255,255,0.7);
+  }
+
+  @include for-pc {
+    & {
+      border-radius: 22px;
+      font-size: 16px;
+      padding: 6px 41px;
+    }
+  }
+}
+
+@include for-sp {
+  .btns {
+    text-align: center;
+    > a {
+      margin-top: 1em;
+    }
+  }
+}
+
+// 既存のCSSからコピー + 編集
+.footerguide {
+  color: #fff;
+  .fnaviwrap {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%); /* Safari用 */
+    transform: translateY(-50%);
+  }
+  .fnaviTtl {
+    font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+    line-height: 1.3;
+  }
+}
+
+#pankuzu-wrapp {/* sp版パンクズナビ削除 */
+  display: none;
+}
+@include for-pc {
+  /* common.css L:6 */
+  .SPpart {display: none !important;}
+
+  /* common.css L:490-513 */
+  #pankuzu-wrapp {
+    display: block;
+    /* width:100%; */
+    padding: 10px 0;
+    border-bottom:1px solid #efefef;
+    font-size:11px;
+  }
+  #pankuzu-wrapp p.pankuzu {
+    background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/icon_pankuzu.gif) right center no-repeat;
+    background-size:4px 7px;
+    float:left;
+    padding-right:16px;
+    margin-right:10px;
+  }
+  #pankuzu-wrapp p.no-arrow {
+    background:none;
+  }
+  #pankuzu-wrapp .pan-border {
+    /* width:1100px; */
+    margin: 0 auto;
+    overflow:hidden;
+  }
+  #pankuzu-wrapp a:hover {
+    opacity:0.5;
+  }
+
+  /* carementeh.css L:97-147 */
+  .footerguide {
+    ul {
+      margin-bottom: 60px;
+    }
+
+    li {
+      font-size: 13px;
+      /* height: 240px; */
+      height: 140px;
+      background-size: cover !important;
+      margin-bottom: 1em;
+    }
+
+    .fnaviTtl {
+      font-size: 190%;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .fnaviBtn {
+      margin-top: 15px;
+      width: 200px;
+      height: 40px;
+      background-color: #fff;
+      text-align: center;
+      a {
+        color: #666;
+        line-height: 40px;
+        display: block;
+
+        &:hover {
+          color: #999;
+        }
+      }
+    }
+  }
+}
+
+@include for-sp {
+  /* common.css L:948 */
+  .PCpart {display: none !important;}
+
+  /* common.css L:1354-1360 */
+  [class*='section-img'] {
+    img:not(.nozoom) {
+      width:100%;
+      max-width: 100%;
+      height:auto;
+    }
+  }
+  .section-imgCenter {
+    img.nozoom {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .section-imgLeft {
+    img.nozoom {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+
+  /* common.css L:1411-1432 */
+  div#pankuzu-wrapp {
+    width:100%;
+    padding: 8px 0;
+    border-bottom:1px solid #efefef;
+    font-size:8px;
+    line-height:1.9;
+  }
+  div#pankuzu-wrapp p.pankuzu {
+    background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/icon_pankuzu.gif) right center no-repeat;
+    background-size:3px;
+    float:left;
+    padding-right:12px;
+    margin-right:7px;
+  }
+  div#pankuzu-wrapp p.no-arrow {
+    background:none;
+  }
+  div#pankuzu-wrapp .pan-border {
+    width:90%;
+    margin: 0 5%;
+    overflow:hidden;
+  }
+
+  /* carementeh.css L:761-816 */
+  .footerguide {
+    ul {
+      margin-bottom: 40px;
+    }
+
+    li {
+      margin-bottom: 1px;
+      height: 120px;
+      font-size: 9px;
+    }
+
+    a {
+      display: block;
+    }
+
+
+    .fnaviwrap {
+      width: 90%;
+    }
+
+    .fnaviTtl {
+      font-weight: bold;
+      font-size: 130%;
+      margin-bottom: 5px;
+    }
+
+    p {
+      width: 60%;
+      line-height: 1.5;
+    }
+  }
+}
+
+.footerguide li .fnaviwrap {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.footerguide-bicolor {
+  margin-top: 40px;
+  li.fnavi-banner {
+    font-size: 10px;
+    margin-bottom: 20px;
+    height: 120px;
+    background-position: right center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: white;
+    > a {
+      display: block;
+      height: 100%;
+    }
+  }
+  li.fnavi-text {
+    background: none;
+    height: auto;
+    a {
+      font-weight: normal;
+      text-decoration: underline;
+    }
+  }
+  .fnaviwrap {
+    color: #4c4c4c;
+  }
+  .fnaviTtl {
+    margin-bottom: 1ex;
+    font-size: 150%;
+  }
+  .fnaviBtn {
+    color: white;
+    background: $purple;
+    border-radius: 8vw;
+    padding: 3px 2em;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  @include for-pc {
+    .fnaviwrap {
+      padding-bottom: 25px; // height of fnaviBtn + margin
+    }
+    .fnaviwrap p {
+      max-width: 50%;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* == バナー == */
+.footerguide-bicolor {
+  // 複数ページにまたがって使われるものはこちら
+  li.fnavi-package {
+    // background-image: url('/_assets/img/detail/menu1.jpg');
+  }
+  li.fnavi-aquadry {
+    // background-image: url('/_assets/img/detail/menu1.jpg');
+  }
+  li.fnavi-press {
+    // background-image: url('/_assets/img/detail/menu1.jpg');
+  }
+  li.fnavi-weightlessness {
+    background-image: url('/_assets/img/carementeh/menu1.jpg');
+  }
+  li.fnavi-ripron {
+    background-image: url('/_assets/img/technology/menu2.jpg');
+  }
+  li.fnavi-ma_test {
+    background-image: url('/_assets/img/technology/menu3.jpg');
+  }
+}
+
+/* == 新デザインに合わせて上書き == */
+#cboxOverlay,
+#cboxLoadedContent {
+  background: black;
+}
+dt, dd {
+  margin-left: 0;
+  padding-left: 0;
+}
+.LColumn .linkBtnCommon {
+  @include contentButton;
+}
+.LColumn .linkBtnArrow {
+  &::after {
+    content: " >";
+    font-weight: normal;
+  }
+}
+.bg  > #Contents {
+  /* @extend .container */
+  margin: auto;
+  width: 80vw;
+}
+
+.content, #pankuzu-wrapp {
+  a {
+    color: white;
+  }
+}
+
+
+/* ブロック間のマージン */
+.content > *, .content + * {
+  margin-bottom: $verticalGap;
+}
+.section-imgCenter {
+  img + p {
+    margin-top: $verticalGap;
+  }
+}
+.LColumn p {
+  margin-bottom: $verticalGap;
+}
+[class*='section-img'] {
+  @include clearfix;
+  clear: both;
+  margin-bottom: $verticalGap;
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.ripronLineupWrap p {
+  margin-top: 0;
+}
+
+/* 見出しデザイン */
+#Contents .mainvisual__section {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 55px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding-top: 55px;
+}
+
+.mainvisual__section p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  &:before {
+    content: "［  ";
+    font-weight: 400;
+  }
+  &:after {
+    content: " ］";
+    font-weight: 400;
+  }
+}
+#pankuzu-wrapp {
+  margin-bottom: 50px;
+}
+.pagettl {
+  text-align: center;
+  @include sawarabi;
+  h1 {
+    font-size: 16px;
+    padding-bottom: 12px;
+    display: inline-block;
+    border-bottom: 3px solid white;
+  }
+}
+.pagettl-sub {
+  margin: 20px 0 25px;
+  text-align: center;
+}
+.pagettl-lead {
+  text-align: center;
+  @include sawarabi;
+}
+.pagettl-large {
+  font-size: 18px;
+  @include sawarabi;
+  text-align: center;
+  @include for-pc {
+    .pagettl-large-main {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+/* 一般的な要素 */
+.content {
+  font-size: 16px;
+  h2 {
+    font-size: 26px;
+    text-align: center;
+    margin: 45px 0 1em;
+    line-height: 1.4;
+    @include sawarabi;
+  }
+  h3 {
+    font-size: 18px;
+    margin: 4em 0 $verticalGap;
+    line-height: 1.4;
+    @include sawarabi;
+  }
+  h2 + h3 {
+    margin-top: 2em;
+  }
+  h4 {
+    font-size: 17px;
+  }
+  h5, h6 {
+    font-size: 16px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+  }
+  th {
+    font-weight: normal;
+  }
+  th, td {
+    padding: 4px 10px;
+  }
+  table:not(.noborder) {
+    border: $tableBorder;
+    th, td {
+      border: $tableBorder;
+    }
+  }
+  figure {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.75rem;
+    box-sizing: border-box;
+    img {
+      margin-bottom: 10px;
+    }
+    .figure-ttl {
+      background: white;
+      color: black;
+      border-radius: 22px;
+      margin-bottom: 1ex;
+    }
+  }
+}
+
+.priceTable {
+  th, td {
+    &:nth-child(1) {
+      width: 24%;
+    }
+    &:nth-child(3) {
+      text-align: right;
+    }
+  }
+}
+.howtoorderImg{
+  width: 100%;
+  position: relative;
+  img{
+    width: 100%;
+    height: auto;
+  }
+  span{
+    position: absolute;
+    top: 47%;
+    left: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #4c4c4c;
+    line-height: 1.2
+  }
+}
+
+/* YouTubeプレーヤーをレスポンシブ対応 */
+.movie-responsive {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  margin-top: $verticalGap;
+  margin-bottom: $verticalGap;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.linkCarementehSearch {
+  /* == /technology/before_after/list/ など == */
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  margin-bottom: $verticalGap*2;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  img {
+    vertical-align: bottom;
+    width: 40px;
+  }
+  strong {
+    font-size: 22px;
+  }
+  .btn {
+    margin-top: 1ex;
+    a {
+      @include contentButton;
+    }
+  }
+}
+
+/* 背景画像を追加 */
+.header_nav_common + .bg {
+  padding-top: 10vw;
+  padding-bottom: 150px;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+body[id] {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+@mixin variableImg($body, $iconNo, $ext: 'jpg') {
+  background-image: url("../img/bg_img/#{$body}_bg.#{$ext}");
+  .mainvisual__section {
+    background-image: url("../img/footer#{$iconNo}.png");
+  }
+}
+body {
+  @include variableImg('use', '01');
+}
+body#shop {
+  @include variableImg('shop', '01');
+}
+body#carementeh {
+  @include variableImg('carementeh', '02', $ext: 'png');
+}
+body#technology {
+  @include variableImg('technology', '02', $ext: 'png');
+}
+body#review {
+  @include variableImg('review', '03', $ext: 'png');
+}
+body#knowledge,
+body#detail {
+  @include variableImg('knowledge', '04', $ext: 'png');
+}
+body#corporate {
+  @include variableImg('corporate', '05');
+}
+
+@include for-pc {
+  .LColumn .linkBtnCommon {
+    border-radius: 22px;
+    font-size: 16px;
+    padding: 6px 32px;
+    margin-top: 0.5em;
+    margin-right: 0.5em;
+  }
+
+  .section-imgLeft,
+  .section-imgRight {
+    @include clearfix;
+    img + h3 {
+      margin-top: 0;
+    }
+  }
+  .section-imgLeft img {
+    float: left;
+    display: block;
+    margin: 5px 10px 10px 0;
+  }
+  // imgRightは直下だけ
+  .section-imgRight > img {
+    float: right;
+    display: block;
+    margin: 5px 0 10px 10px;
+  }
+  .section-imgCenter img {
+    display: block;
+    margin: 0 auto;
+  }
+  [class*='section-img'] {
+    .width-1-1 {
+      width: 100%;
+    }
+    .width-1-2 {
+      width: 50%;
+    }
+    .width-1-3 {
+      width: 33.3%;
+    }
+    .width-2-3 {
+      width: 66.6%;
+    }
+  }
+  .section-imgCenter {
+    .width-1-2, .width-1-3 { // たぶん誤用してるsectionがあるので
+      float: left;
+    }
+  }
+
+  /* 2枚続きで右寄せの画像は半分ずつ */
+  .Rimages {
+    display: flex;
+  }
+  .Rimages img {
+    max-width: 50%;
+  }
+  .Rimages + p {
+    margin-top: 1em;
+  }
+
+
+  .sectionL, .sectionR {
+    text-align: center;
+    width: 49%;
+    p {
+      text-align: left;
+    }
+  }
+  .sectionL {
+    float: left;
+  }
+  .sectionR {
+    float: right;
+  }
+  .sectionL, .sectionR {
+    &.width-1-3 {
+      width: 33%;
+    }
+    &.width-2-3 {
+      width: 66%;
+    }
+  }
+  .sectionL + .sectionR {
+    margin-left: 1%;
+  }
+  .sectionR + .sectionL {
+    margin-right: 1%;
+  }
+  .sectionR + :not(.sectionL), .sectionL + :not(.sectionR) {
+    clear: both;
+  }
+
+  #Contents .content {
+    width: 100%;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .priceList {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+  }
+}
+@include for-sp {
+  .pagettl-sub {
+    font-size: 13px;
+  }
+
+  dl {
+    margin-bottom: $verticalGap;
+  }
+  dt {
+    width: 100%;
+  }
+
+  .content {
+    font-size: 12px;
+    h2 {
+      font-size: 16px;
+    }
+    h3 {
+      font-size: 14px;
+    }
+    h4 {
+      font-size: 13px;
+    }
+    h5, h6, p {
+      line-height: 2;
+      font-size: inherit;
+    }
+  }
+}
+
+.head_underline {
+  position: relative;
+  padding-bottom: 10vw;
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 23px;
+    left: 0;
+    background: #FFF;
+    border-radius: 0.5vw;
+    content: '';
+    margin: auto;
+    width: 15vw;
+    height: 1vw;
+  }
+  @include for-pc {
+    padding-bottom: 70px;
+    &::after {
+      border-radius: 2px;
+      width: 72px;
+      height: 4px;
+      margin-bottom:30px;
+    }
+  }
+}
+
+.case_list_wrapper {
+  .case_title {
+    text-align: center;
+  }
+  p.tit_txt {
+    font-size: 4vw;
+    line-height: 1.5;
+    text-align: center;
+    @include for-pc {
+      font-size: 16px;
+    }
+  }
+
+  .slide-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -34px;
+    transition: all .2s ease;
+    cursor: pointer;
+    padding-right: 0px;
+    padding-left: 10px;
+    width: 20px;
+    height: 34px;
+  }
+  .slide-arrow:hover {
+    transition: all .2s ease;
+    opacity: 0.7;
+  }
+  .prev-arrow {
+    left: -70px;
+  }
+  .next-arrow {
+    right: -70px;
+  }
+  .slick_case_list {
+    margin: 20px auto 0;
+    font-size: 3vw;
+    li {
+      color: #050505;
+      margin: 0 2vw;
+
+      img {
+        width: 100%;
+      }
+
+      .case_list_txt {
+        background: #FFF;
+        border-radius: 0 0 5px 5px;
+        padding: 10px 15px 15px 15px;
+      }
+
+      .case_list_ttl {
+        font-size: 4vw;
+        font-weight: bold;
+        span {
+          display: block;
+          font-size: 77%;
+          line-height: 1.3;
+        }
+      }
+
+      p {
+        line-height: 1.5;
+        margin-top: 5px;
+        text-align: justify;
+        text-justify: inter-ideograph;
+      }
+    }
+
+    @include for-pc {
+      & {
+        margin-top: 30px;
+        /* font-size: 18px; */
+        font-size: 10px;
+        li {
+          margin: 0 10px;
+          outline: none;
+          .case_list_txt {
+            padding: 7px 13px 13px 13px;
+          }
+
+          .case_list_ttl {
+            font-size: 128%;
+          }
+
+          p {
+            margin-top: 0.83em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "use";
+@import "carementeh";
+@import "corporate";
+@import "technology";
+@import "detail";
+@import "knowledge";
+@import "shop";
+@import "faq";
+@import "news";
+@import "privacy";
+@import "sale";
+@import "support-service";

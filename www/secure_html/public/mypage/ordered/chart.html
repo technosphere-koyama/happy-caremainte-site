@@ -1,0 +1,9 @@
+<?php
+/*
+ * マイページトップ
+ */
+require '../../../core/PreLoad.inc';
+$aic = new MypageHistoryController(REST_ORDER_HOLD);
+$aic->chart();
+$aic->view("mypage".DS."ordered");
+?>

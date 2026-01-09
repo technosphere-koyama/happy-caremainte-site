@@ -1,0 +1,2546 @@
+@charset "UTF-8";
+
+/*キービジュアル*/
+.keyvisual_section {
+	position: relative;
+	width: 100%;
+	height: 650px;
+}
+.kv_slide {
+	position: relative;
+}
+.kv_slide li {
+	position: relative;
+	width: 100%;
+}
+.kv_slide li:not(:first-child) {
+	opacity: 0;
+}
+.kv_slide .slick-prev,
+.kv_slide .slick-next {
+	width: 40px;
+	height: 40px;
+	z-index: 999;
+}
+.kv_slide .slick-prev:before,
+.kv_slide .slick-next:before {
+	font-size: 40px;
+}
+.kv_slide .slick-prev {
+	left: 20px;
+}
+.kv_slide .slick-next {
+	right: 20px;
+}
+.kv_slide li .kv_slide_img img {
+	width: 100%;
+	max-width: 100%;
+	height: 650px;
+	object-fit: cover;
+}
+.keyvisual_section > .bx-wrapper .bx-controls {
+	display: none !important;
+}
+.keyvisual_section .bxslider, .keyvisual_section .bxslider * {
+	transition: initial;
+}
+
+.keyvisual_section .topics {
+	position: absolute;
+	bottom: 30px;
+	right: 0;
+	left: 0;
+	width: 1100px;
+	margin: auto;
+	background: #fff;
+	transform: skewX(10deg);
+	overflow: hidden;
+}
+.keyvisual_section .topics_wrap {
+	position: relative;
+	transform: skewX(-10deg);
+	padding: 9px 0;
+}
+.keyvisual_section .topics_wrap > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+.keyvisual_section .topics h2 {
+	color: #222;
+	font-size: 18px;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", 'メイリオ', Meiryo, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	letter-spacing: 0;
+	margin-bottom: 0;
+	padding: 0 30px;
+	border-right: 1px solid #333;
+	transform: skewX(10deg);
+}
+.keyvisual_section .topics h2 span {
+	display: inline-block;
+	transform: skewX(-10deg);
+}
+.keyvisual_section .topics p {
+	padding: 0 25px;
+}
+.keyvisual_section .topics_more {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #a9803b;
+	height: 45px;
+	line-height: 45px;
+}
+.keyvisual_section .topics_more a {
+	display: block;
+	padding: 0 30px;
+	color: #fff;
+	transform: skewX(-10deg);
+}
+.keyvisual_section .topics_more a i {
+	margin-right: 8px;
+	font-size: 22px;
+	vertical-align: -3px;
+}
+.topics_detail {
+	overflow: hidden;
+	opacity: 0;
+	height: 0;
+	position: relative;
+	top: -30px;
+	background: #fff;
+	color: #333;
+	font-size: 13px;
+	z-index: 1;
+	transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+}
+.topics_detail.open {
+	overflow: visible;
+	opacity: 1;
+	height: auto;
+	padding: 50px 0;
+}
+.topics_detail a {
+	color: #333;
+}
+.topics_detail_wrap {
+	width: 1100px;
+	margin: auto;
+}
+.topics_detail_wrap .section_ttl {
+	display: none;
+}
+.topics_pickup {
+	overflow: hidden;
+}
+.topics_pickup li {
+	float: left;
+	width: 245px;
+	margin-left: 40px;
+	text-align: center;
+}
+.topics_pickup li:first-child {
+	margin-left: 0;
+}
+.topics_pickup li a {
+	overflow: hidden;
+	display: block;
+}
+.topics_pickup li .topics_list_img {
+	position: relative;
+}
+.topics_pickup li .topics_list_new {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 49px;
+	z-index: 1;
+}
+.topics_pickup li .topics_list_img img {
+	width: 100%;
+}
+.topics_pickup li p {
+	margin-top: 20px;
+}
+.topics_list {
+	margin: 10px 0 40px;
+}
+.topics_list li {
+	border-bottom: 1px solid #d2d2d2;
+}
+.topics_list li:first-child {
+	border-top: 1px solid #d2d2d2;
+}
+.topics_list li a {
+	display: block;
+	padding: 15px 20px;
+}
+.topics_list li a::before {
+	content: "\f105";
+	font-family: FontAwesome;
+	color: #666;
+	font-size: 20px;
+	margin-right: 13px;
+}
+
+.tel_section {
+	display: none;
+}
+.sale_section {
+	display: none;
+}
+
+/*コンテンツ共通*/
+.section_ttl {
+	color: #000;
+	font-size: 25px;
+	font-weight: normal;
+	margin-bottom: 0;
+}
+.section_ttl span {
+	display: block;
+	font-size: 17px;
+}
+#Contents sup {
+	font-size: 60%;
+	vertical-align: super;
+}
+.section_ttl::after {
+	content: "";
+	display: block;
+	width: 48px;
+	height: 2px;
+	background: #6a3b93;
+	margin: 15px auto 30px;
+}
+
+/*ケアメンテを支えるテクノロジー*/
+.technology_section {
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/index2019/technology_bg.jpg) no-repeat center center / cover;
+	padding: 50px 0;
+	text-align: center;
+}
+.technology_list {
+	overflow: hidden;
+	width: 1100px;
+	margin: auto;
+}
+.technology_list li {
+	float: left;
+	overflow: hidden;
+	background: #fff;
+	width: 190px;
+	margin-left: 6px;
+	text-align: left;
+	border-radius: 5px;
+}
+.technology_list li:first-child {
+	margin-left: 0;
+}
+.technology_list_img h3 {
+	display: none;
+}
+.technology_list_img img {
+	width: 100%;
+}
+.technology_list_txt {
+	margin: 20px auto 15px;
+	padding: 0 12px;
+}
+.technology_list h3 {
+	height: 60px;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 1.3;
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+	border-bottom: 1px solid #6a3b93;
+}
+.technology_list h3 span {
+	display: block;
+	font-size: 12px;
+	font-weight: normal;
+	margin-top: 4px;
+}
+.technology_list_txt p {
+	font-size: 11px;
+	line-height: 1.6;
+}
+.technology_list_more {
+	font-size: 12px;
+	text-align: center;
+}
+.technology_list_more a {
+	display: block;
+	padding: 8px 0;
+	color: #fff;
+	background: #6a3b93;
+	border-radius: 0 0 5px 5px;
+}
+.technology_list i.fa-angle-right {
+	margin-right: 10px;
+	font-size: 18px;
+	vertical-align: -1px;
+}
+.technology_list .technology_list_sub {
+	width: 120px;
+	background: none;
+}
+.technology_list_sub li {
+	width: 100%;
+	margin-top: 6px;
+	margin-left: 0;
+	text-align: center;
+}
+.technology_list_sub li:first-child {
+	margin-top: 0;
+}
+.technology_list_sub li a {
+	display: block;
+	height: 108px;
+	line-height: 108px;
+	color: #fff;
+	background: #6a3b93;
+	border-radius: 5px;
+}
+
+/*ケアメンテ コンテンツ*/
+.contents_section {
+	margin-top: 60px;
+}
+.contents_section > div {
+	overflow: hidden;
+	padding: 10px 0;
+	margin-bottom: 30px;
+}
+.contents_section .left {
+	float: left;
+}
+.contents_section .right {
+	float: right;
+}
+.contents_section > div > div {
+	position: relative;
+	height: 368px;
+}
+.contents_section .contents_txt {
+	width: 30%;
+	text-align: center;
+}
+.contents_section .contents_txt.left {
+	margin-left: 10%;
+}
+.contents_section .contents_txt.right {
+	margin-right: 10%;
+}
+.contents_section .contents_txt_wrap {
+	position: absolute;
+	top: 50%;
+	margin: auto;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+.contents_section .contents_txt .section_ttl {
+	letter-spacing: 0;
+}
+.contents_section .contents_txt p {
+	color: #333;
+	font-size: 15px;
+	line-height: 2;
+	text-align: left;
+}
+.contents_section .contents_img {
+	width: 57%;
+	box-shadow: 0 1px 5px 0 rgba(102, 102, 102, .3);
+}
+.contents_section .contents_img.right {
+	margin-left: 3%;
+	border-radius: 10px 0 0 10px;
+}
+.contents_section .contents_img.left {
+	margin-right: 3%;
+	border-radius: 0 10px 10px 0;
+}
+.contents_section .contents_img .contents_boldtxt {
+	position: absolute;
+	top: 110px;
+	right: 0;
+	left: 0;
+	margin: auto;
+	text-align: center;
+}
+.contents_section .contents_img .contents_boldtxt img{
+	width: 40%;
+	height: auto;
+}
+.contents_btn {
+	position: absolute;
+	bottom: 30px;
+	right: 0;
+	left: 0;
+	width: 336px;
+	margin: auto;
+	background: #a9803c;
+	text-align: center;
+	border-radius: 7px;
+	box-shadow: 0 1px 5px 0 rgba(102, 102, 102, .5);
+}
+.contents_btn a {
+	display: block;
+	padding: 13px 0;
+	color: #fff;
+	font-size: 14px;
+}
+.contents_btn a i {
+	margin-right: 15px;
+	font-size: 20px;
+	vertical-align: -1px;
+}
+.contents_section::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/*ケアメンテ コンテンツ - 違い*/
+.contents_carementeh .contents_txt_wrap {
+	padding-bottom: 60px;
+}
+.contents_carementeh .contents_img {
+	background: linear-gradient(135deg, #fafdff, #f2fafe);
+}
+.carementeh_slide > li {
+	height: 368px;
+	padding: 60px 40px 30px;
+	box-sizing: border-box;
+}
+.carementeh_slide h2 {
+	color: #454545;
+	font-size: 22px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.carementeh_slide p {
+	font-size: 15px;
+	line-height: 2.1;
+}
+.contents_carementeh .contents_btn {
+	background: #0a8cb6;
+}
+.carementeh_about_slide li a {
+	display: block;
+	background: #e5f6fe;
+	padding: 30px 35px;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+.carementeh_about_slide li a div {
+	color: #694b83;
+	text-decoration: underline;
+	margin-top: 5px;
+}
+.carementeh_about_slide li a div i {
+	margin-right: 5px;
+}
+.carementeh_about_slide li a:hover div {
+	text-decoration: none;
+}
+.carementeh_slide .carementeh_slide_solution {
+	padding-top: 30px;
+	text-align: center;
+}
+.carementeh_solution_list li {
+	display: inline-block;
+	overflow: hidden;
+	margin-left: 10px;
+	padding: 0;
+	border-radius: 5px;
+	vertical-align: top;
+}
+.carementeh_solution_list li:first-child {
+	margin-left: 0;
+}
+.carementeh_solution_list li a {
+	display: block;
+	width: 210px;
+	height: 255px;
+	background: #e5f6fe;
+}
+.carementeh_solution_list li img {
+	max-width: 100%;
+	border-radius: 5px 5px 0 0;
+}
+.solution_list_txt {
+	padding: 10px;
+}
+.solution_list_txt h3 {
+	height: 40px;
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+	font-size: 14px;
+	line-height: 1.4;
+	letter-spacing: 0;
+	margin-bottom: 2px;
+}
+.solution_list_txt p {
+	font-size: 13px;
+	line-height: 1.4;
+}
+.solution_list_btn {
+	color: #fff;
+	background: #0a8cb6;
+	width: 90%;
+	margin: 8px auto 0;
+	padding: 6px 0;
+	border-radius: 2px;
+}
+.solution_list_btn i {
+	font-size: 18px;
+	margin-right: 10px;
+	vertical-align: -1px;
+}
+.contents_carementeh .carementeh_slide_similarity .contents_btn {
+	width: 460px;
+}
+.contents_carementeh .contents_img .bx-has-pager {
+	position: absolute;
+	bottom: 100px;
+	left: -22vw;
+	width: 116px;
+}
+.contents_carementeh .contents_img .bx-wrapper .bx-pager.bx-default-pager a {
+	background: #9dd1e2;
+	width: 15px;
+	height: 15px;
+	margin: 0 7px;
+	border-radius: 100%;
+}
+.contents_carementeh .contents_img .bx-wrapper .bx-pager.bx-default-pager a:hover,
+.contents_carementeh .contents_img .bx-wrapper .bx-pager.bx-default-pager a.active {
+	background: #0a8cb6;
+}
+.contents_carementeh .contents_img .bx-wrapper .bx-prev{
+	left: 0;
+	margin: -3px 0 0 0;
+}
+.contents_carementeh .contents_img .bx-wrapper .bx-next{
+	right: 0;
+	margin: -3px 0 0 0;
+}
+
+/*ケアメンテ コンテンツ - 実例*/
+.contents_example .contents_img {
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/index2019/example_bg.jpg) no-repeat center center / cover;
+}
+
+/*ケアメンテ コンテンツ - 業務提携先*/
+.contents_section .contents_partner-hermes {
+	margin: -10px auto 40px;
+	padding: 0;
+}
+.contents_partner .contents_img {
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/index2019/partner_bg.jpg) no-repeat top center / cover;
+	text-align: center;
+}
+.contents_reuse .contents_img {
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/index2019/reuse_bg.jpg) no-repeat top center / cover;
+	background-position : 50% 50%;
+	text-align: center;
+}
+.contents_section .contents_partner-hermes > div {
+	height: auto;
+}
+.contents_partner-hermes .contents_img{
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	text-align: center;
+	margin: auto;
+}
+
+.partner_wrap {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	left: 0;
+	margin: auto;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+.partner_list {
+	font-size: 0;
+	width: 627px;
+	margin: auto;
+	text-align: left;
+}
+.partner_list .contents_btn{
+	display: none;
+}
+.partner_list li {
+	display: inline-block;
+	width: 175px;
+	margin: 14px 17px;
+	text-align: center;
+}
+.partner_list li a {
+	display: block;
+	padding: 3px 0;
+	background: #fff;
+	border-radius: 2.5px;
+}
+.partner_list li a img {
+	width: 156px;
+}
+.partner_hermes a {
+	display: block;
+	width: 593px;
+	margin: 0 auto;
+	background: #f57539;
+	padding: 15px 30px;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+.partner_hermes a img{
+	width: 100%;
+	height: auto;
+}
+
+/*ケアメンテ コンテンツ - ワードローブ*/
+.contents_wardrobe .contents_img {
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/index2019/wardrobe_bg.jpg) no-repeat top -40px center / cover;
+}
+
+/*ご支援サービス コンテンツ*/
+.support_service {
+	width: 1140px;
+	margin: 40px auto 20px;
+	padding: 30px 0;
+	background: #e4edf2;
+	border-radius: 5px;
+	text-align: center;
+}
+.support_service h2 {
+	color: #000;
+	font-size: 20px;
+	font-weight: normal;
+	margin: 0 0 10px;
+}
+
+/*動画（PV）コンテンツ*/
+.PV_section {
+	width: 1140px;
+	margin: 50px auto 60px;
+	padding: 40px 0 0 0;
+	background: #f2f0e4;
+	border-radius: 5px;
+	text-align: center;
+}
+.PV_section h2 {
+	color: #000;
+	font-size: 20px;
+	font-weight: normal;
+	margin: 0 0 10px;
+}
+.PV_section ul {
+	display: inline-block;
+}
+.PV_section li.general  {
+	position: relative;
+	float: left;
+	width: 540px;
+	padding: 30px 0;
+	text-align: center;
+	box-sizing: border-box;
+}
+.PV_section  li.general video {
+	width: 480px;
+	height: auto;
+	border-radius: 5px;
+}
+.PV_section li.btn-area {
+	position: relative;
+	float: right;
+	width: 600px;
+	padding: 30px 10px 30px 0;
+	text-align: center;
+	box-sizing: border-box;
+}
+.PV_section li.btn-area li {
+	float: left;
+	display:inline-block;
+	width: 46%;
+	text-align: left;
+	font-size: 85%;
+	line-height: 1.7em;
+	margin: 0 1% 2%;
+	padding: 1%;
+	background: #cfbfaa;
+	border-radius: 2px;
+}
+.PV_section li.btn-area li:hover{
+	opacity: 0.9;
+	background: #e0d3c1;
+}
+.PV_section li.btn-area li a{
+  display:block;
+  width:100%;
+}
+.PV_section li.btn-area img {
+	float: left;
+	width: 80px;
+	height: auto;
+	margin: 0 10px 0 0;
+	border-radius: 2px;
+}
+.PV_section li.btn-area li .time{
+	color: #333;
+}
+
+
+/*動画コンテンツ*/
+.movie_section {
+	width: 1140px;
+	margin: 50px auto 60px;
+}
+.movie_section li {
+	position: relative;
+	float: left;
+	width: 540px;
+	height: 440px;
+	padding: 30px;
+	text-align: center;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+.movie_section li:first-child {
+	margin-right: 60px;
+}
+.movie_section::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.movie_section .general {
+	background: #e4f0f2;
+}
+.movie_section li h2 {
+	color: #000;
+	font-size: 20px;
+	font-weight: normal;
+	margin: 0 0 10px;
+}
+.movie_section li a.link {
+	position: relative;
+}
+.movie_section li a h3 {
+	position: absolute;
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+	line-height: 1.2em;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 1000;
+}
+.movie_section li a p {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	padding: 16px 12px;
+	color: #fff;
+	z-index: 1100;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 0 0 5px 5px;
+}
+.movie_section li img {
+	width: 480px;
+	height: auto;
+	border-radius: 5px 5px 0 0 ;
+}
+.movie_section li video {
+	width: 480px;
+	height: auto;
+	border-radius: 5px;
+}
+.movie_section .subcopy {
+	font-size: 110%;
+	margin: 15px 0;
+}
+
+/*注文*/
+.order_section {
+	width: 1100px;
+	margin: 50px auto 60px;
+}
+.order_section li {
+	position: relative;
+	float: left;
+	width: 540px;
+	height: 330px;
+	padding: 30px;
+	text-align: center;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+.order_section li:first-child {
+	margin-right: 20px;
+}
+.order_section::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.order_section li h2 {
+	display: inline;
+	color: #000;
+	font-size: 20px;
+	font-weight: normal;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #000;
+}
+.order_section li h3 {
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.2;
+	margin: 25px 0 10px;
+}
+.order_section li p {
+	color: #333;
+	line-height: 1.7;
+}
+.order_link {
+	margin-top: 15px;
+}
+.order_link a {
+	margin: 0 13px;
+	font-size: 14px;
+}
+.order_link a i {
+	margin-right: 10px;
+	font-size: 20px;
+	vertical-align: -1px;
+}
+
+.order_section .order_general {
+	background: #f2f0e4;
+}
+.order_section .order_general h3 {
+	color: #7d4d07;
+}
+.order_section .order_company {
+	background: #f2ebe4;
+}
+.order_section .order_company h3 {
+	color: #7d2707;
+}
+.order_section .order_company .contents_btn {
+	background: #ae664c;
+}
+
+/*バナー*/
+.banner_section {
+	background: #f4f4f4;
+	padding: 60px 0;
+}
+.banner_section ul {
+	overflow: hidden;
+	width: 1100px;
+	margin: auto;
+}
+.banner_section li {
+	position: relative;
+	float: left;
+	width: 219.2px;
+	height: 350px;
+	margin-left: 1px;
+	text-align: center;
+}
+.banner_section li:first-child {
+	margin-left: 0;
+}
+.banner_section li .banner_bg img {
+	width: 100%;
+	border-radius: 5px;
+}
+.banner_section li h3 span {
+	display: block;
+	font-size: 12px;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+.banner_section li h3 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	padding: 20px 0 15px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height: 1;
+	background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.8) 100%);
+	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.8) 100%);
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.8) 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000', GradientType=0 );
+	border-radius: 0 0 5px 5px;
+}
+
+#userVoice {
+	width: 640px;
+	padding: 20px 0 0;
+	margin: 10px 40px 30px;
+	font-size: 14px;
+	line-height: 1.8;
+	text-align:center;
+}
+#userVoice h3 {
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+	color: #a9803c;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 1.5;
+	margin-bottom: 30px;
+}
+#userVoice ul {
+	text-align: left;
+	line-height: 1;
+	list-style:disc;
+	padding-left: 24px;
+	margin-bottom: 30px;
+}
+#userVoice li {
+	margin: 14px 0;
+	line-height: 1.6;
+}
+#userVoice span {
+	font-size: 110%;
+	color: #a9803c;
+}
+#userVoice p {
+	line-height: 1.6;
+	margin: 20px 0 5px;
+}
+#userVoice p img {
+	margin: 10px 0 0;
+}
+#userVoice a {
+	color: #005bd6;
+	text-decoration: underline;
+}
+#userVoice a:hover {
+	text-decoration: none;
+}
+#userVoice .block {
+	overflow: hidden;
+	list-style: none;
+	text-align: center;
+	padding:0;
+}
+#userVoice .block li {
+	width: 49%;
+}
+#userVoice .block li:first-child {
+	float: left;
+}
+#userVoice .block li:last-child {
+	float: right;
+}
+#userVoice .block h5 {
+	font-size: 110%;
+	color: #a9803c;
+	margin-bottom: 5px;
+}
+#userVoice .block div {
+	border: 1px solid #e2d4bf;
+	border-radius: 2px;
+	padding: 15px;
+}
+#userVoice .block div img {
+	width: auto;
+	height: 20px;
+	margin-right: 5px;
+	padding-bottom: 5px;
+}
+#userVoice .block div p {
+	text-align: left;
+	margin: 10px 0 0;
+}
+
+/*読み物コンテンツ*/
+.more_section {
+	width: 1100px;
+	margin: 50px auto 80px;
+}
+.contents_reading {
+	overflow: hidden;
+}
+.contents_reading li {
+	position: relative;
+	float: left;
+	width: 545px;
+	padding: 12px 10px;
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+.contents_reading li:first-child {
+	margin-right: 10px;
+}
+.contents_reading .reading_img {
+	position: relative;
+	float: left;
+}
+.contents_reading .reading_img > img {
+	width: auto;
+	height: 276px;
+}
+.contents_reading .reading_txt {
+	position: relative;
+	height: 276px;
+	margin-left: 215px;
+}
+.contents_reading .reading_txt h2 {
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+.contents_reading .reading_txt h2 span {
+	display: block;
+	font-size: 16px;
+	font-weight: normal;
+}
+.contents_reading .reading_txt h3 {
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+	/*font-size: 20px;*/
+	font-weight: 600;
+	letter-spacing: 0;
+	line-height: 1.4;
+	margin-left: 10px;
+}
+.contents_reading .reading_txt h3 span {
+	display: block;
+	font-size: 16px;
+	font-weight: normal;
+	margin-bottom: 3px;
+}
+.contents_reading .reading_txt p {
+	color: #333;
+	font-size: 13px;
+	line-height: 1.5;
+}
+.contents_reading .contents_btn {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	border-radius: 4px;
+	box-shadow: none;
+}
+
+.reading_comic .reading_txt h2 {
+	color: #6a3cc9;
+	font-size: 150%;
+	padding-top: 44px;
+}
+.reading_comic .reading_txt h2 span {
+	color: #666;
+	font-size: 55%;
+	margin-left: 0!important;
+	margin-left: 16px;
+}
+.reading_sachi .reading_img_new {
+	position: absolute;
+	top: 7.5px;
+	right: 7.5px;
+}
+.reading_sachi .reading_img_new img {
+	width: 60px;
+}
+.reading_sachi .reading_txt h2 {
+	padding-top: 17.5px;
+	margin-bottom: 20px;
+}
+.reading_sachi .reading_txt h2 img {
+	width: 297px;
+}
+
+/*アプリ*/
+.contents_app {
+	margin-top: 15px;
+}
+.contents_app a {
+	display: block;
+	overflow: hidden;
+	height: 150px;
+	padding: 20px 40px 0;
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+.contents_app .app_img {
+	float: left;
+	margin-right: 40px;
+}
+.contents_app .app_img img {
+	width: 150px;
+}
+.contents_app .app_txt {
+	position: relative;
+}
+.contents_app .app_txt h2 {
+	margin-bottom: 10px;
+}
+.contents_app .app_txt h2 img {
+	width: 136px;
+}
+.contents_app .app_txt .app_store {
+	position: absolute;
+	top: 10px;
+	right: 0;
+}
+.contents_app .app_txt .app_store img {
+	width: 66px;
+}
+.contents_app .app_txt p {
+	color: #333;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+/*SNS*/
+.contents_sns {
+	margin-top: 60px;
+}
+.sns_list {
+	width: 1100px;
+	margin: auto;
+}
+.sns_list li {
+	float: left;
+	width: 266px;
+	margin-left: 12px;
+	text-align: left;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px 0 rgba(102, 102, 102, .5);
+}
+.sns_list li:first-child {
+	margin-left: 0;
+}
+.sns_list li a {
+	overflow: hidden;
+	display: block;
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/index2019/sns_bg.png) #e7e7e7 no-repeat bottom right / 23px auto;
+	border-radius: 5px;
+}
+.sns_list_img img {
+	width: 100%;
+	border-radius: 5px 5px 0 0;
+}
+.sns_list_txt {
+	margin-top: 20px;
+	padding: 0 20px 25px;
+}
+.sns_list_txt h3 {
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 1.3;
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+	border-bottom: 1px solid #bb924d;
+	color: rgb(172, 26, 57);
+	text-align: center;
+}
+.sns_list_txt h3 span {
+	display: block;
+	font-size: 12px;
+	font-weight: normal;
+	margin-top: 4px;
+	color: rgb(60, 60, 60);
+}
+.sns_list_txt p {
+	color: #333;
+	font-size: 12px;
+	line-height: 1.6;
+}
+.sns_list::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/*ニュース & FAQ*/
+.article_section {
+	width: 1100px;
+	margin: 0 auto 80px;
+	overflow: hidden;
+}
+.article_section > div {
+	float: left;
+	width: 520px;
+}
+.article_section h2 {
+	color: #222;
+	font-size: 30px;
+	font-family: quasimoda, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+.article_section li a {
+	display: block;
+	color: #333;
+	margin: 15px 0;
+}
+.article_section a > span {
+	display: inline-block;
+	vertical-align: top;
+}
+.article_section li .title {
+	font-size: 15px;
+	font-family: quasimoda, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	letter-spacing: 0.05em;
+}
+.article_section li .text {
+	font-size: 14px;
+	line-height: 1.5;
+}
+.more_link {
+	margin-top: 20px;
+	text-align: right;
+}
+.more_link i {
+	margin-right: 15px;
+	font-size: 20px;
+	vertical-align: -1px;
+}
+
+.contents_news {
+	margin-right: 60px;
+}
+.news_list .title {
+	width: 22%;
+}
+.news_list .text {
+	width: 78%;
+}
+
+.faq_list .title {
+	width: 9%;
+}
+.faq_list .text {
+	width: 91%;
+}
+
+/*リンク*/
+.link_section {
+	width: 1100px;
+	margin: 0 auto 70px;
+}
+.link_section .bx-viewport {
+	background: transparent;
+	border: 0;
+	overflow: visible !important;
+	height: 85px !important;
+	z-index: 1;
+}
+.link_section .bx-wrapper .bx-controls-direction a {
+	top: 23px;
+	width: 38px;
+	height: 38px;
+	opacity: .3;
+}
+.link_section .bx-wrapper .bx-controls-direction a:hover {
+	opacity: 1;
+}
+.link_section .bx-wrapper .bx-prev {
+	left: -50px;
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/index2019/pickup_arw_left.png) no-repeat center center / 38px auto;
+}
+.link_section .bx-wrapper .bx-next {
+	right: -50px;
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/index2019/pickup_arw_right.png) no-repeat center center / 38px auto;
+}
+.link_section .bx-wrapper img {
+	max-width: 100%;
+}
+.link_slide li img {
+	border: 1px solid #ccc;
+}
+.link_slide a span {
+	display: none;
+}
+
+/*受賞一覧*/
+.award_section {
+	margin-bottom: 50px;
+	text-align: center;
+}
+.award_section li {
+	display: inline-block;
+	margin-left: 40px;
+}
+.award_section li:first-child {
+	margin-left: 0;
+}
+
+/*フッターリンク*/
+.link_bottom_txt {
+	background-color: #fff;
+	padding: 10px 0;
+	margin: 0 0 15px;
+	text-align: center;
+}
+.link_bottom_txt li {
+	display: inline-block;
+	margin-left: 30px;
+}
+.link_bottom_txt li:first-child {
+	margin-left: 0;
+}
+.link_bottom_txt a {
+	font-size: 12px;
+	color: #333;
+	will-change: opacity;
+	transition: opacity 0.2s ease-out;
+	-webkit-transition: opacity 0.2s ease-out;
+}
+.link_bottom_txt a:hover {
+	opacity: .5;
+}
+.link_bottom_txt i {
+	margin-left: 10px;
+}
+
+
+
+@keyframes marquee {
+	from { transform: translate(0%);}
+	99%,to { transform: translate(-100%);}
+}
+
+@media screen and (max-width:767px){
+/*======================
+SPレイアウト トップページ*/
+
+	/*キービジュアル*/
+	.keyvisual_section {
+		height: auto;
+	}
+	.kv_slide .slick-prev,
+	.kv_slide .slick-next {
+		width: 8vw;
+		height: 8vw;
+		z-index: 999;
+	}
+	.kv_slide .slick-prev:before,
+	.kv_slide .slick-next:before {
+		font-size: 8vw;
+	}
+	.kv_slide .slick-prev {
+		left: 2vw;
+	}
+	.kv_slide .slick-next {
+		right: 2vw;
+	}
+	.kv_slide li .kv_slide_img img {
+		height: auto;
+	}
+	.keyvisual_section .topics {
+		position: relative;
+		bottom: 0;
+		width: 100%;
+		transform: none;
+		font-size: 3.5vw;
+	}
+	.keyvisual_section .topics_wrap {
+		height: 34px;
+		transform: none;
+		box-sizing: border-box;
+	}
+	.keyvisual_section .topics h2 {
+		display: none;
+	}
+	.keyvisual_section .topics p {
+		padding: 0 0 0 100%;
+		white-space: nowrap;
+		animation: marquee linear 15s infinite;
+	}
+	.keyvisual_section .topics_more {
+		overflow: hidden;
+		right: -1vw;
+		height: 34px;
+		line-height: 34px;
+		margin-right: 0;
+		transform: skewX(10deg);
+	}
+	.keyvisual_section .topics_more a {
+		padding: 0 3vw;
+	}
+	.topics_detail {
+		top: 0;
+		font-size: 2.8vw;
+	}
+	.topics_detail.open {
+		padding: 10px 0 30px;
+	}
+	.topics_detail_wrap {
+		width: 94%;
+	}
+	.topics_detail_wrap .section_ttl {
+		display: block;
+		text-align: center;
+	}
+	.topics_list {
+		width: 100%;
+		margin: 10px auto 30px;
+	}
+	.topics_pickup li {
+		margin-left: 0;
+	}
+	.topics_pickup li p {
+		margin-top: 10px;
+		line-height: 1.4;
+	}
+	.topics_detail_wrap .bx-wrapper .bx-pager,
+	.topics_detail_wrap .bx-wrapper .bx-controls-auto {
+		bottom: -6vw;
+	}
+	.topics_detail_wrap .bx-wrapper .bx-pager .bx-pager-item {
+		background: #ccc;
+	}
+	.topics_detail_wrap .bx-wrapper .bx-pager .bx-pager-item:first-child {
+		border-radius: 21vw 0 0 21vw;
+	}
+	.topics_detail_wrap .bx-wrapper .bx-pager .bx-pager-item:last-child {
+		border-radius: 0 21vw 21vw 0;
+	}
+	.topics_detail_wrap .bx-wrapper .bx-pager.bx-default-pager a {
+		background: none;
+		width: 8vw;
+		height: 6px;
+		margin: 0;
+		border-radius: 21vw;
+	}
+	.topics_detail_wrap .bx-wrapper .bx-pager.bx-default-pager a.active {
+		position: relative;
+		z-index: 1;
+	}
+
+	.topics_list li a {
+		padding: 10px 5% 10px 8vw;
+	}
+	.topics_list li a::before {
+		font-size: 4vw;
+		margin-right: 2vw;
+		margin-left: -3.5vw;
+	}
+
+	.tel_section  {
+		display: block;
+	}
+	.tel_section img {
+		width: 96%;
+		margin: 2%;
+	}
+	.tel_section .contents_btn {
+		width: 96%;
+		margin: 2% 2% 0;
+	}
+
+	.sale_section {
+		position: relative;
+		display: block;
+		width: 96%;
+		margin: 3% 2% 4%;
+		padding: 2% 0;
+		text-align: center;
+		font-size: 14px;
+		font-weight: bold;
+		border-top: solid 1px #aaa;
+		border-bottom: solid 1px #999;
+	}
+	.sale_section img {
+		width: 26%;
+		height: auto;
+		margin: 0 0 1%;
+	}
+	.sale_section i {
+		position: absolute;
+		left: 5%;
+		top: 30%;
+		font-size: 6vw;
+		margin-right: 2vw;
+	}
+
+	.sale_section span {
+		font-size: 11px;
+		font-weight: normal;
+	}
+
+	/*コンテンツ共通*/
+	.section_ttl {
+		font-size: 6vw;
+		letter-spacing: -0.2vw;
+	}
+	.section_ttl span {
+		font-size: 3.5vw;
+	}
+	.section_ttl::after {
+		width: 10vw;
+		margin: 15px auto 20px;
+	}
+
+	/*ケアメンテを支えるテクノロジー*/
+	.technology_section {
+		padding: 30px 0;
+		margin: 2% 0 0 0;
+	}
+	.technology_list {
+		overflow: visible;
+		width: 94%;
+	}
+	.technology_list li {
+		position: relative;
+		float: none;
+		width: 100%;
+		margin-left: 0;
+		border-radius: 0;
+	}
+	.technology_list > li:not(.technology_list_sub) {
+		box-shadow: 0 1px 5px 0 rgba(102, 102, 102, .5);
+		margin: 3px 0 0 0;
+		border-radius: 2vw;
+	}
+	.technology_list li:first-child {
+		border-radius: 2vw;
+	}
+	.technology_list li:nth-child(5) {
+		border-radius: 2vw;
+		margin-bottom: 10px;
+	}
+	.technology_list_img {
+		position: relative;
+		overflow: hidden;
+		height: 17vw;
+		transition: height 0.4s ease-out;
+		-webkit-transition: height 0.4s ease-out;
+		text-align: right;
+	}
+	.technology_list .technology_list_img.active {
+		height: 38vw;
+	}
+	.technology_list_img::after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 10px;
+		right: 3%;
+		width: 8vw;
+		height: 8vw;
+		margin: auto;
+		background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/index2019/technology_arw_down.png) no-repeat center center / contain;
+		vertical-align: middle;
+		opacity: .85;
+	}
+	.technology_list .technology_list_img.active::after {
+		background-image: url(https://www.kyoto-happy.co.jp:8443/_assets/img/index2019/technology_arw_up.png);
+	}
+	.technology_list li .technology_list_img h3 {
+		display: block;
+		position: absolute;
+		top: 10px;
+		left: 3%;
+		border-bottom: none;
+		padding-bottom: 0;
+		margin-bottom: 0;
+		font-size: 4.5vw;
+		text-align: left;
+	}
+	.technology_list li .technology_list_img.active h3 {
+		display: none;
+	}
+	.technology_list li .technology_list_img h3 span {
+		margin-top: 2px;
+		font-size: 3vw;
+	}
+	.technology_list_img img {
+		width: 70%;
+		border-radius: 0;
+	}
+	.technology_list_img.active img {
+		width: 100%;
+	}
+	.technology_list li:first-child .technology_list_img.active img {
+		margin-top: -15vw;
+	}
+	.technology_list li:nth-child(3) .technology_list_img img {
+		margin-top: -10vw;
+	}
+	.technology_list li:nth-child(5) .technology_list_img img {
+		margin-top: -18vw;
+	}
+	.technology_list_img::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+	.technology_list li:first-child .technology_list_img::before {
+		background: linear-gradient(to right, #c2cdd5 30%, rgba(255, 255, 255, 0.01) 80%);
+	}
+	.technology_list li:nth-child(2) .technology_list_img::before {
+		background: linear-gradient(to right, #98acc5 30%, rgba(255, 255, 255, 0.01) 80%);
+	}
+	.technology_list li:nth-child(3) .technology_list_img::before {
+		background: linear-gradient(to right, #d3d2df 30%, rgba(255, 255, 255, 0.01) 80%);
+	}
+	.technology_list li:nth-child(4) .technology_list_img::before {
+		background: linear-gradient(to right, #cde6eb 30%, rgba(255, 255, 255, 0.01) 80%);
+	}
+	.technology_list li:nth-child(5) .technology_list_img::before {
+		background: linear-gradient(to right, #b6d9e9 30%, rgba(255, 255, 255, 0.01) 80%);
+	}
+	.technology_list li .technology_list_img.active::before {
+		background: none;
+	}
+	.technology_list_txt {
+		margin: 15px auto 10px;
+		padding: 0 5%;
+	}
+	.technology_list li h3 {
+		height: auto;
+		padding-bottom: 8px;
+		margin-bottom: 8px;
+		font-size: 5.2vw;
+		font-weight: 600;
+	}
+	.technology_list li h3 span {
+		font-size: 3.5vw;
+	}
+	.technology_list li h3 span br {
+		display: none;
+	}
+	.technology_list_txt p {
+		font-size: 3.5vw;
+	}
+	.technology_list_more {
+		width: 90%;
+		margin: 0 auto 20px;
+	}
+	.technology_list_more a {
+		padding: 10px 0;
+		border-radius: 1vw;
+	}
+	.technology_list i.fa-angle-right {
+		font-size: 5vw;
+		margin-right: 2vw;
+	}
+
+	.technology_list .technology_list_sub {
+		width: 100%;
+	}
+	.technology_list_sub li {
+		float: left;
+		background: none;
+		width: 32%;
+		margin-left: 2%;
+		margin-top: 0;
+		border-radius: 2vw;
+		box-shadow: none;
+	}
+	.technology_list_sub li:first-child {
+		margin-left: 0;
+	}
+	.technology_list li.technology_list_sub li a {
+		height: auto;
+		line-height: 1;
+		padding: 20px 0;
+		font-size: 3.5vw;
+		border-radius: 2vw;
+	}
+
+	/*ケアメンテ コンテンツ*/
+	.contents_section {
+		margin-top: 20px;
+	}
+	.contents_section > div {
+		clear: both;
+		position: relative;
+		margin-bottom: 5vw;
+	}
+	.contents_section > div > div {
+		position: static;
+		height: auto;
+	}
+	.contents_section .contents_txt {
+		float: none;
+		width: 94%;
+		margin: auto;
+	}
+	.contents_section .contents_img {
+		float: none;
+		width: 94%;
+		margin: auto;
+		border-radius: 2vw;
+	}
+	.contents_section .contents_img.left {
+		border-radius: 2vw;
+	}
+	.contents_section .contents_txt.left {
+		margin-left: 3%;
+	}
+	.contents_section .contents_txt.right {
+		margin-right: 3%;
+	}
+	.contents_section .contents_txt_wrap {
+		position: static;
+		padding-bottom: 15px;
+		transform: none;
+		-webkit-transform: none;
+	}
+	.contents_section .contents_txt p {
+		font-size: 3.5vw;
+		line-height: 1.7;
+		text-align: center;
+	}
+
+	.contents_section .contents_carementeh {
+		margin-bottom: 8vw;
+	}
+	.contents_section .contents_carementeh > div,
+	.contents_section .contents_partner > div {
+		height: auto;
+	}
+	.contents_section .contents_carementeh .contents_img.right,
+	.contents_section .contents_partner .contents_img.right {
+		border-radius: 2vw;
+	}
+	.contents_section .contents_partner {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+
+	/*.contents_section .contents_example,
+	.contents_section .contents_wardrobe {
+		overflow: visible;
+		padding-bottom: 25vw;
+		margin-bottom: 18vw;
+	}
+	.contents_section .contents_example .contents_txt,
+	.contents_section .contents_wardrobe .contents_txt {
+		display: inline;
+	}
+	.contents_section .contents_example .contents_txt h2,
+	.contents_section .contents_wardrobe .contents_txt h2 {
+		padding-bottom: 10px;
+	}
+	.contents_section .contents_example .contents_txt p,
+	.contents_section .contents_wardrobe .contents_txt p {
+		float: right;
+		width: 44%;
+		margin-right: 3%;
+		text-align: left;
+	}
+	.contents_section .contents_example .contents_btn,
+	.contents_section .contents_wardrobe .contents_btn {
+		position: absolute;
+		bottom: -12vw;
+		width: 88%;
+	}*/
+	.contents_carementeh .carementeh_slide_similarity .contents_btn {
+		width: auto;
+	}
+	.contents_carementeh .contents_img .bx-wrapper .bx-prev{
+		left: 0;
+		margin: 0;
+	}
+	.contents_carementeh .contents_img .bx-wrapper .bx-next{
+		right: 0;
+		margin: 0;
+	}
+
+	/*ケアメンテ コンテンツ - 違い*/
+	.contents_section .contents_carementeh .contents_img.right {
+		margin-bottom: 30px;
+	}
+	.carementeh_slide > li {
+		height: 110vw;
+		padding: 20px 4vw;
+	}
+	.carementeh_slide h2 {
+		font-size: 4.8vw;
+		line-height: 1.4;
+		margin-bottom: 15px;
+	}
+	.carementeh_slide p {
+		font-size: 3.8vw;
+		line-height: 1.8;
+		margin-bottom: 15px;
+	}
+	.carementeh_slide .carementeh_slide_verify p{
+		height: 58vw;
+	}
+	.carementeh_slide .carementeh_slide_similarity p{
+		height: 60vw;
+	}
+
+	.contents_carementeh .contents_img .bx-has-pager {
+		position: relative;
+		bottom: -5vw;
+		left: 0;
+		width: 100%;
+	}
+	.contents_carementeh .contents_img .bx-wrapper .bx-pager.bx-default-pager a {
+		width: 3.8vw;
+		height: 3.8vw;
+		margin: 0 1.5vw;
+	}
+
+	.carementeh_about_slide li a {
+		margin-bottom: 20px;
+		padding: 15px 6% 20px;
+		border-radius: 2vw;
+	}
+	.carementeh_slide .carementeh_about_slide p {
+		margin-bottom: 5px;
+	}
+	.carementeh_about_slide li a div {
+		font-size: 3.8vw;
+	}
+
+	.carementeh_solution_list li {
+		display: block;
+		margin-left: 0;
+		margin-bottom: 10px;
+		border-radius: 2vw;
+	}
+	.carementeh_solution_list li a {
+		width: 100%;
+		height: 35vw;
+	}
+	.solution_list_img {
+		float: left;
+		width: 40%;
+		height: 35vw;
+		overflow: hidden;
+	}
+	.carementeh_solution_list li img {
+		width: 100%;
+		height: 35vw;
+		max-width: none;
+		border-radius: 0;
+		object-fit: cover;
+	}
+	.solution_list_txt {
+		float: left;
+		width: 60%;
+		box-sizing: border-box;
+	}
+	.solution_list_txt h3 {
+		height: auto;
+		font-size: 3.5vw;
+	}
+	.carementeh_slide .solution_list_txt p {
+		font-size: 3.5vw;
+		line-height: 1.4;
+		margin-bottom: 0;
+	}
+	.solution_list_btn {
+		padding: 4px 0;
+		font-size: 3.5vw;
+	}
+	.solution_list_btn i {
+		font-size: 4vw;
+		margin-right: 2vw;
+		vertical-align: middle;
+		margin-top: -3px;
+	}
+
+	/*ケアメンテ コンテンツ - 業務提携先*/
+	.partner_wrap {
+		position: static;
+		transform: none;
+		-webkit-transform: none;
+		padding: 20px 4%;
+	}
+	.partner_list {
+		width: 100%;
+		text-align: left;
+	}
+	.partner_list .contents_btn{
+		display: contents;
+	}
+	.partner_list .contents_btn span{
+		font-size: 85%;
+		margin: 0 0 0.5% 3%;
+	}
+	.partner_list .contents_btn a{
+		background-color: #bb924d;
+		width: 86%;
+		margin: 0 7% 2%;
+		border-radius: 1vw;
+	}
+	.partner_list li {
+		width: 46%;
+		margin: 1.5% 2% 1.5%;
+		text-align: center;
+	}
+	.partner_list li a {
+		border-radius: 1vw;
+	}
+	.partner_list li a img {
+		width: 90%;
+	}
+	.contents_section .contents_partner-hermes {
+		width: 94%;
+		margin: 10px auto 30px;
+		font-size: 0;
+	}
+	.contents_section .contents_partner-hermes .contents_img {
+		width: 100%;
+		margin: 0;
+		border-radius: 0;
+	}
+	.partner_hermes a {
+		width: 100%;
+		padding: 14px 0;
+		border-radius: 1.5vw;
+		line-height: 1;
+	}
+	.partner_hermes a img {
+		width: 92%;
+		vertical-align: baseline;
+	}
+
+	/*ケアメンテ コンテンツ - 自然循環型産業の創出*/
+	.contents_section .contents_reuse {
+		margin-bottom: 10vw;
+	}
+	.contents_reuse .contents_img {
+		position: relative;
+		height: 80vw;
+		padding: 20px 4%;
+		box-sizing: border-box;
+		background-position: top center;
+	}
+	.contents_reuse .contents_img.right {
+		border-radius: 10px;
+	}
+	.contents_reuse .contents_btn {
+		position: absolute;
+		bottom: 20px;
+		width: 94%;
+	}
+
+	/*ケアメンテ コンテンツ - ワードローブ*/
+	.contents_section .contents_wardrobe {
+		margin-bottom: 10vw;
+	}
+	.contents_wardrobe .contents_img {
+		position: relative;
+		height: 80vw;
+		padding: 20px 4%;
+		box-sizing: border-box;
+		background-position: top center;
+	}
+	.contents_section .contents_img .contents_boldtxt {
+		position: relative;
+		top: 23vw;
+	}
+	.contents_section .contents_img .contents_boldtxt img {
+		width: 70vw;
+	}
+	.contents_wardrobe .contents_btn {
+		position: absolute;
+		bottom: 20px;
+		width: 94%;
+	}
+
+
+/*ご支援サービス コンテンツ*/
+.support_service {
+	width: 94%;
+	margin: 20px auto 10px;
+	padding: 15px 0;
+	background: #e4edf2;
+	border-radius: 5px;
+	text-align: center;
+}
+.support_service h2 {
+	color: #000;
+	margin: 0 0 5px;
+	font-size: 4.5vw;
+	font-weight: normal;
+}
+.support_service p {
+	font-size: 2.8vw;
+}
+
+/*動画（PV）コンテンツ*/
+.PV_section {
+	width: 94%;
+	margin: 0 auto 20px;
+	padding: 20px 0 5px;
+}
+.PV_section h2 {
+	display: block;
+	font-size:4.5vw;
+	line-height: 1.2;
+	border-bottom: none;
+	margin-bottom: 5px;
+	padding-bottom: 0;
+}
+.PV_section ul {
+	display: inline-block;
+}
+.PV_section li.general {
+	float: none;
+	width: 100%;
+	height: auto;
+	padding: 10px 4%;
+}
+.PV_section  li.general video {
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+}
+.PV_section li.btn-area {
+	float: none;
+	width: 100%;
+	height: auto;
+	padding: 0% 3%;
+}
+.PV_section li.btn-area li {
+	float: left;
+	display:inline-block;
+	width: 94%;
+	text-align: left;
+	font-size: 40%;
+	margin: 0 1% 2%;
+	padding: 3% 2%;
+	background: #cfbfaa;
+	border-radius: 2px;
+	line-height: 1.5em;
+}
+.PV_section li.btn-area li a{
+  display:block;
+  width: 100%;
+}
+.PV_section li.btn-area img {
+	float: left;
+	width: 20%;
+}
+.PV_section .subcopy {
+	font-size: 40%;
+	margin: 0 0 5px;
+}
+.movie-wrap iframe{
+	width: 284px!important;
+	height: 160px!important;
+}
+
+	/*動画コンテンツ*/
+	.movie_section {
+		width: 94%;
+		margin: 0 auto 20px;
+	}
+	.movie_section li {
+		float: none;
+		width: 100%;
+		height: auto;
+		padding: 20px 4%;
+		margin-bottom: 10px;
+	}
+	.movie_section li:first-child {
+		margin-right: 0;
+	}
+	.movie_section li h2 {
+		display: block;
+		font-size: 5vw;
+		line-height: 1.2;
+		border-bottom: none;
+		margin-bottom: 5px;
+		padding-bottom: 0;
+	}
+	.movie_section li a.link {
+		display: block;
+		position: relative;
+	}
+	.movie_section li a h3 {
+		position: absolute;
+		font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+		line-height: 1.2em;
+		left: 0;
+		right: 0;
+		top: 6vw;
+		margin: auto;
+		z-index: 1000;
+	}
+	.movie_section li a p {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		padding: 4vw;
+		color: #fff;
+		font-size: 3vw;
+		z-index: 1100;
+		background-color: rgba(0,0,0,0.5);
+		border-radius: 0 0 5px 5px;
+	}
+	.movie_section li img {
+		width: 100%;
+		height: auto;
+		border-radius: 5px;
+	}
+	.movie_section li video {
+		width: 100%;
+		height: auto;
+		border-radius: 5px;
+		margin-bottom: 4px;
+	}
+	.movie_section .subcopy {
+		font-size: 45%;
+		margin: 10px 0;
+		line-height: 1.8em;
+	}
+
+	/*注文*/
+	.order_section {
+		width: 94%;
+		margin: 0 auto 20px;
+	}
+	.order_section li {
+		float: none;
+		width: 100%;
+		height: auto;
+		padding: 20px 4%;
+		margin-bottom: 10px;
+	}
+	.order_section li:first-child {
+		margin-right: 0;
+	}
+	.order_section li h2 {
+		display: block;
+		font-size: 5vw;
+		line-height: 1.2;
+		border-bottom: none;
+		margin-bottom: 5px;
+		padding-bottom: 0;
+	}
+	.order_section li h3 {
+		font-size: 3.8vw;
+		line-height: 1.4;
+		margin-top: 0;
+	}
+	.order_section li p {
+		font-size: 3.5vw;
+	}
+	.order_link {
+		overflow: hidden;
+	}
+	.order_link a {
+		float: left;
+		display: block;
+		color: #a9803c;
+		background: #fff;
+		width: 49%;
+		margin: 0;
+		padding: 8px 0;
+		border-radius: 1.5vw;
+		font-size: 3.8vw;
+	}
+	.order_link a i {
+		font-size: 6vw;
+		margin-right: 2.5vw;
+		vertical-align: middle;
+		margin-top: -2px;
+	}
+	.order_link a:first-child {
+		margin-right: 2%;
+	}
+	.contents_btn {
+		position: static;
+		width: 100%;
+		border-radius: 1.5vw;
+	}
+	.contents_btn a {
+		padding: 12px 0;
+		font-size: 3.8vw;
+	}
+	.contents_btn a i {
+		margin-right: 3vw;
+		font-size: 6vw;
+		vertical-align: middle;
+		margin-top: -2px;
+	}
+	.order_section .contents_btn {
+		margin-top: 10px;
+	}
+
+	/*バナー*/
+	.banner_section {
+		padding: 30px 0;
+	}
+	.banner_section ul {
+		width: 94%;
+	}
+	.banner_section li {
+		overflow: hidden;
+		width: 49.5%;
+		height: 50vw;
+		margin-left: 1%;
+		margin-bottom: 1%;
+		border-radius: 1.5vw;
+	}
+	.banner_section li:first-child {
+		width: 100%;
+		margin-left: 0;
+	}
+	.banner_section li:nth-child(n+1):nth-child(even) {
+		margin-left: 0;
+	}
+	.banner_section li .banner_bg img {
+		border-radius: 1.5vw;
+	}
+	.banner_section li:first-child .banner_bg img {
+		height: 50vw;
+		object-fit: cover;
+		object-position: 100% 100%;
+	}
+	.banner_section li h3 {
+		font-size: 4vw;
+		border-radius: 0 0 1.5vw 1.5vw;
+	}
+	.banner_section li h3 span {
+		font-size: 2.5vw;
+		margin-bottom: 8px;
+	}
+	.banner_section li:nth-child(4) img {
+		margin-top: -15vw;
+	}
+
+	#userVoice {
+		width: 94%;
+		margin: 20px auto;
+		padding: 0;
+		font-size: 3.5vw;
+	}
+	#userVoice h3 {
+		font-size: 5vw;
+		margin-bottom: 15px;
+	}
+	#userVoice p {
+		margin-top: 10px;
+	}
+	#userVoice p img {
+		margin-top: 5px;
+	}
+	#userVoice ul {
+		margin-bottom: 20px;
+	}
+	#userVoice li {
+		margin: 10px 0;
+	}
+	#userVoice .block li:first-child {
+		float: none;
+	}
+	#userVoice .block li {
+		width: 100%;
+		margin: 0 0 10px;
+	}
+	#userVoice .block div img {
+		height: 4.4vw;
+		margin-right: 1.5vw;
+		margin-bottom: 1vw;
+	}
+
+	/*読み物コンテンツ*/
+	.more_section {
+		width: 94%;
+		margin: 30px auto;
+	}
+	.contents_reading li {
+		float: none;
+		width: 100%;
+		padding: 2%;
+		margin-bottom: 10px;
+	}
+	.contents_reading li:first-child {
+		margin-right: 0;
+	}
+	.contents_reading .reading_img > img {
+		height: 50vw;
+	}
+	.contents_reading .reading_txt {
+		height: 50vw;
+		margin-left: 40vw;
+	}
+	.contents_reading .reading_txt h2 {
+		font-size: 5.2vw;
+		margin-bottom: 5px;
+	}
+	.contents_reading .reading_txt h2 span {
+		font-size: 3vw;
+	}
+	.contents_reading .reading_txt h3 {
+		font-size: 3vw;
+		margin-left: 0;
+	}
+	.contents_reading .reading_txt h3 span {
+		font-size: 3vw;
+	}
+	.contents_reading .reading_txt p {
+		font-size: 2.8vw;
+	}
+	.contents_reading .contents_btn a {
+		padding: 6px 0;
+		font-size: 3.5vw;
+	}
+	.contents_reading .contents_btn a i {
+		font-size: 5vw;
+	}
+	.reading_comic .reading_txt h2 {
+		padding-top: 5vw;
+		font-size: 45%
+	}
+	.reading_comic .reading_txt h2 span {
+		font-size: 50%
+	}
+	.reading_sachi .reading_img_new {
+		top: 1vw;
+		right: 1vw;
+	}
+	.reading_sachi .reading_img_new img {
+		width: 12vw;
+	}
+	.reading_sachi .reading_txt h2 {
+		padding-top: 4vw;
+		margin-bottom: 10px;
+	}
+	.reading_sachi .reading_txt h2 img {
+		width: 95%;
+	}
+
+	/*アプリ*/
+	.contents_app {
+		margin-top: 0;
+	}
+	.contents_app a {
+		position: relative;
+		height: auto;
+		padding: 3%;
+	}
+	.contents_app .app_img {
+		position: absolute;
+		top: 2vw;
+		width: 30%;
+		margin-right: 0;
+	}
+	.contents_app .app_img img {
+		width: 100%;
+	}
+	.contents_app .app_txt {
+		float: right;
+		width: 65%;
+	}
+	.contents_app .app_txt h2 {
+		width: 40%;
+		margin-bottom: 5px;
+	}
+	.contents_app .app_txt h2 img {
+		width: 100%;
+	}
+	.contents_app .app_txt .app_store {
+		top: 1vw;
+		width: 22%;
+	}
+	.contents_app .app_txt .app_store img {
+		width: 100%;
+	}
+	.contents_app .app_txt p {
+		font-size: 3vw;
+		line-height: 1.3;
+	}
+
+	/*SNS*/
+	.contents_sns {
+		margin-top: 20px;
+	}
+	.sns_list {
+		width: 100%;
+	}
+	.sns_list li {
+		width: 48.5%;
+		margin-left: 3%;
+		margin-bottom: 3%;
+		border-radius: 2vw;
+	}
+	.sns_list li:nth-child(odd) {
+		margin-left: 0;
+	}
+	.sns_list li a {
+		background-size: 5vw auto;
+	}
+	.sns_list_txt {
+		margin-top: 12px;
+		padding: 0 6% 20px;
+	}
+	.sns_list_txt h3 {
+		font-size: 4.5vw;
+		font-weight: 600;
+		padding-bottom: 8px;
+	}
+	.sns_list_txt h3 span {
+		font-size: 2.5vw;
+	}
+	.sns_list_txt p {
+		font-size: 2.2vw;
+	}
+
+	/*ニュース & FAQ*/
+	.article_section {
+		width: 94%;
+		margin-bottom: 30px;
+	}
+	.article_section > div {
+		position: relative;
+		float: none;
+		width: 100%;
+	}
+	.contents_news {
+		margin-right: 0;
+		margin-bottom: 30px;
+	}
+	.article_section h2 {
+		font-size: 7vw;
+		margin-bottom: 10px;
+	}
+	.article_section a > span {
+		display: block;
+	}
+	.article_section li a {
+		margin: 10px 0;
+	}
+	.article_section li .title {
+		font-size: 3.8vw;
+		margin-bottom: 2px;
+	}
+	.article_section li .text {
+		font-size: 3.5vw;
+	}
+	.news_list .title, .news_list .text,
+	.faq_list .title, .faq_list .text {
+		width: 100%;
+	}
+	.more_link {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin-top: 0;
+	}
+	.more_link a {
+		font-size: 3.5vw;
+	}
+	.more_link i {
+		font-size: 5vw;
+		margin-right: 2vw;
+	}
+
+	/*リンク*/
+	.link_section {
+		width: 100%;
+		background: #f6f6f6;
+		margin-bottom: 30px;
+	}
+	.link_slide {
+		overflow: hidden;
+		margin: 0 5%;
+		padding: 0 0 20px;
+	}
+	.link_slide li {
+		float: left;
+		width: 47.5%;
+		margin: 15px 5% 0 0;
+		font-size: 3vw;
+		border-bottom: 0.5px solid #333;
+	}
+	.link_slide li a {
+		position: relative;
+		display: block;
+		padding-bottom: 8px;
+	}
+	.link_slide a:after {
+		content: "\f105";
+		font-family: FontAwesome;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	.link_slide li:nth-child(even) {
+		margin-right: 0;
+	}
+	.link_slide a img {
+		display: none;
+	}
+	.link_slide a span {
+		display: block;
+	}
+
+	/*受賞一覧*/
+	.award_section {
+		margin-bottom: 0;
+	}
+	.award_section ul {
+		width: 90%;
+		margin: 0 5%;
+		text-align: center;
+	}
+	.award_section li {
+		display: inline-block;
+		margin-bottom: 10px;
+		margin-left: 7px;
+	}
+	.award_section li:first-child {
+		margin-left: 0;
+	}
+	.award_section img {
+		width: auto;
+		height: 14vw;
+	}
+
+	/*フッターリンク*/
+	.link_bottom_txt {
+		padding: 0;
+		margin: 10px 0 30px;
+	}
+	.link_bottom_txt ul {
+		line-height: 0;
+	}
+	.link_bottom_txt li {
+		margin-left: 1%;
+	}
+	.link_bottom_txt a {
+		font-size: 2.5vw;
+	}
+	.link_bottom_txt i {
+		margin-left: 5px;
+	}
+	.android .link_bottom_txt {
+		-webkit-transform: scale(0.8);
+	}
+
+	#pageback {
+		display: none;
+	}
+}

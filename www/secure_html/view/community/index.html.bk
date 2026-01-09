@@ -1,0 +1,235 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>コミュニティを探す｜コミュニティ｜ハッピー ケアメンテR</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns_dummy.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+<body class="sns_community">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	<!--　/header_nav　-->
+	
+  <div id="Contents">
+          <div class="mainvisual__section">
+              <div><img src="../mypage/img/sns_tit_b.png" alt="Happy_SNS"><br>
+                  <p>コミュニティ</p></div>
+          </div>
+          <div class="logoutArea">
+              <div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+          </div>
+
+          <div id="pankuzu-wrapp">
+              <div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p>
+                  <p class="pankuzu"><a href="/community/">コミュニティ</a></p>
+                  <p class="pankuzu no-arrow">コミュニティ</p></div>
+          </div>
+
+          <div class="mypageNavi PCpart">
+              <ul>
+                  <li><a href="/mypage/sns.html">トップ</a></li>
+                  <li><a href="/mypage/friend/">フレンド</a></li>
+                  <li class="current"><a href="/community/">コミュニティ</a></li>
+                  <li><a href="/mypage/message/">メッセージ</a></li>
+                  <li><a href="<?php echo $this->get("user_link"); ?>">プロフィール</a></li>
+              </ul>
+          </div>
+
+          <div class="mypageHead SPpart">
+            <ul>
+              <li><a href="/mypage/sns.html"><span>トップ</span></a></li>
+              <li><a href="/mypage/friend/"><span>フレンド</span></a></li>
+              <li class="current"><a href="/community/"><span>コミュニティ</span></a></li>
+              <li><a href="/mypage/message/"><span>メッセージ</span></a></li>
+              <li><a href="<?php echo $this->get("user_link"); ?>"><span>プロフィール</span></a></li>
+            </ul>
+          </div>
+
+          <div class="mypageArea">
+              <div class="mypageMain">
+                <div id="profile" class="mainSide tab_contents PCpart">
+                  <div class="happyInfo">
+                    <h5>Happy 掲示板</h5>
+                    <p></p><h4 class="forecaster_diary_sub_title">WEBマガジン季刊誌『幸（sachi）』のご案内</h4><br>
+                      長年にわたり職人技と呼ばれる“極み”を完成した人々を長年にわたりご紹介しているハッピーのオリジナル季刊誌「幸-sachi-」。<br>
+                      バックナンバーもございますので、ぜひご覧ください！<br>
+                      ■季刊誌『幸-sachi-』VOL.25<br>
+                      中村藤吉本店 “甘味や旨味の中に苦渋味を感じるお茶本来の味わいを楽しんでほしい”<br>
+                      <a href="/wp/sachi/"><u>『幸（sachi）』ページはコチラ</u></a><br>
+                      <br>
+                      こちらもオススメです♪<br>
+                      ●<a href="http://happy-carementeh.com/" target="_blank"><u>「ハッピーケアメンテ事例紹介」サイト</u></a><br>
+                      ●<a href="https://www.raptorjs.org/"><u>「ハッピーケアメンテ最新情報（メールマガジンバックナンバー）」サイト</u></a><br>
+                      ●<a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><u>「ハッピーを動画で見るYouTube」</u></a><p></p>
+                  </div>
+                  <div class="happyOrder"><a href="/carementeh_search/"><img src="../img/header01.png" alt="さがす" title="さがす">さがす</a></div>
+                  <div class="happyOrder"><a href="/review/"><img src="../img/header02.png" alt="きづく" title="きづく">きづく</a></div>
+                  <div class="happyOrder"><a href="/mypage/"><img src="../img/header04.png" alt="マイページ" title="マイページ">マイページ</a></div>
+                  <div class="happyOrder"><a href="/order/"><img src="../img/order_b.png" alt="ご注文" title="ご注文">ご注文</a></div>
+                </div><!--/mainSide-->
+                <div class="mainContents2">
+                    <h2 class="PCpart">コミュニティ</h2>
+                    <?php $thread_ids = $this->get("community_match"); ?>
+                    <div class="community_wrap">
+                        <div class="top_community">
+                            <h4>トップコミュニティー</h4>
+                            <p>ハッピー公認のトップコミュニティーで、<br class="SPpart">話題の情報をキャッチしよう！</p>
+                            <ul>
+                                <?php foreach ($this->get("top_community_array") AS $key => $values) { ?>
+                                    <li>
+                                        <a href="<?php echo $values['thread_link'] ?>"><!--
+                                        --><img src="<?php echo $values['avatar'] ?>" alt="<?php echo $values['community_name'] ?>"><!--
+                                        --><h5><?php echo $values['community_name'] ?></h5><!--
+                                        --><span><?php echo $values['category_name'] ?></span><!--
+                                        --></a>
+                                        <?php if (in_array($values['thread_id'],$thread_ids)) { ?>
+                                        <div class="followset"><a href="<?php echo $values['thread_link'] ?>&mode=entry">フォロー済</a></div>
+                                        <?php } else { ?>
+                                            <div class="follow"><a href="<?php echo $values['thread_link'] ?>&mode=entry">フォローする</a></div>
+                                        <?php } ?>
+                                    </li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                        <div class="general_community">
+                            <h4>一般コミュニティー</h4>
+                            <p>簡単に誰でもコミュニティを作成することができます。</p>
+                            <div class="btn"><a href="/community/form.html">新たにコミュニティーを作成する</a></div>
+                            <div class="search">
+                                <h5>今あるコミュニティから探す</h5>
+                                <p>みんなが作ったコミュニティを以下より探すことができます。</p>
+                                <ul class="category">
+                                    <?php foreach ($this->get("communityCategoryParentArray") AS $key => $values) { ?>
+                                        <li><a href="<?php echo $values['category_url'] ?>"><img
+                                                        src="<?php echo $values['category_icon'] ?>"
+                                                        alt="<?php echo $values['category_name'] ?>">
+                                                <div class="<?php echo $values['is_active'] ?>"><?php echo $values['category_name'] ?></div>
+                                            </a></li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <?php if (!StaticFunction::is_empty($this->get("communityAllArray"))) { ?>
+                        <?php foreach ($this->get("communityAllArray") AS $value) { ?>
+                            <div class="communitySearch">
+                                <div class="commuAvatar"><img src="<?php echo $value['avatar']; ?>"
+                                                              alt="<?php echo $value['community_name']; ?>"></div>
+                                <div class="commuInfo">
+                                    <div class="commuName"><a
+                                                href="/community/detail.html?tid=<?php echo $value['thread_id']; ?>"><?php echo $value['community_name']; ?></a>
+                                    </div>
+                                    <div class="commuCat"><a
+                                                href="/community/?c=<?php echo $value['category_id']; ?>"><?php echo $value['category_name']; ?><?php echo $value['topcom'] ?></a>
+                                    </div>
+                                </div>
+                                <div class="commuTxt"><?php echo nl2br($value['community_detail']); ?></div>
+                            </div>
+                        <?php } ?>
+                    <?php } else { ?>
+                        <p>このカテゴリにはコミュニティがありません。</p>
+                    <?php } ?>
+                    <div class="postingPagenavi">
+                        <ul class="pageNumbers">
+                            <?php echo $this->get("pageng_html"); ?>
+                        </ul>
+                    </div>
+                </div><!--/mainContents2-->
+              </div>
+              <div class="mypageSub">
+                <?php $publicGadget->get_news(); /* 右カラムのお知らせ */ ?>
+              </div><!--/mypageSub-->
+          </div>
+      </div>
+	<!--　/#Contents -->
+	
+  <div class="footer_sns">
+    <div class="container">
+      <ul>
+        <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <!--　/.footer_sns -->
+  <?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/footer_new.php");
+  ?>
+  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+		
+    var menuFlag = true;
+    $('.header_nav_common .header_tab').on('click', function() {
+      menuFlag = !menuFlag;
+      if(menuFlag){
+        $('.header_nav_common').css("top","0");
+      } else {
+        $('.header_nav_common').css("top","-95px");
+      }
+  	});
+		
+  });
+  </script>
+	<script type="text/javascript"
+ src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+	<script>
+  var ctx = document.getElementById("DoughnutChart");
+  var DoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+          backgroundColor: [
+              "#6a3b93",
+              "#e0e0e0",
+          ],
+          data: [25, 75],
+          borderWidth: [0],
+          borderColor: 'transparent'
+      }]
+    },
+    options: {
+			legend: {
+        display: false
+      },
+			tooltips: { enabled: false },
+			cutoutPercentage : 90
+			
+    }
+  });
+  </script>
+	</body>
+</html>

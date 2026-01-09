@@ -1,0 +1,477 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>コミュニティを探す｜コミュニティ｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns_dummy.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+<body class="sns_community">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	<!--　/header_nav　-->
+	
+  <div id="Contents">
+          <div class="mainvisual__section">
+              <div><img src="../mypage/img/sns_tit_b.png" alt="Happy_SNS"><br>
+                  <p>コミュニティ</p></div>
+          </div>
+          <div class="logoutArea">
+              <div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+          </div>
+
+          <div id="pankuzu-wrapp">
+              <div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p>
+                  <p class="pankuzu"><a href="/community/">コミュニティ</a></p>
+                  <p class="pankuzu no-arrow">コミュニティ</p></div>
+          </div>
+
+          <div class="mypageNavi PCpart">
+              <ul>
+                  <li><a href="/mypage/sns.html">トップ</a></li>
+                  <li><a href="/mypage/friend/">フレンド</a></li>
+                  <li class="current"><a href="/community/">コミュニティ</a></li>
+                  <li><a href="/mypage/message/">メッセージ</a></li>
+                  <li><a href="<?php echo $this->get("user_link"); ?>">プロフィール</a></li>
+              </ul>
+          </div>
+
+          <div class="mypageHead SPpart">
+              <h1>コミュニティ</h1>
+          </div>
+
+          <div class="mypageArea">
+              <div class="mypageMain">
+                <div id="profile" class="mainSide tab_contents PCpart">
+                  <div class="happyInfo">
+                    <h5>Happy 掲示板</h5>
+                    <p></p><h4 class="forecaster_diary_sub_title">WEBマガジン季刊誌『幸（sachi）』のご案内</h4><br>
+                      長年にわたり職人技と呼ばれる“極み”を完成した人々を長年にわたりご紹介しているハッピーのオリジナル季刊誌「幸-sachi-」。<br>
+                      バックナンバーもございますので、ぜひご覧ください！<br>
+                      ■季刊誌『幸-sachi-』VOL.25<br>
+                      中村藤吉本店 “甘味や旨味の中に苦渋味を感じるお茶本来の味わいを楽しんでほしい”<br>
+                      <a href="/wp/sachi/"><u>『幸（sachi）』ページはコチラ</u></a><br>
+                      <br>
+                      こちらもオススメです♪<br>
+                      ●<a href="http://happy-carementeh.com/" target="_blank"><u>「ハッピーケアメンテ事例紹介」サイト</u></a><br>
+                      ●<a href="https://www.raptorjs.org/"><u>「ハッピーケアメンテ最新情報（メールマガジンバックナンバー）」サイト</u></a><br>
+                      ●<a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><u>「ハッピーを動画で見るYouTube」</u></a><p></p>
+                  </div>
+                  <div class="happyOrder"><a href="/carementeh_search/"><img src="../img/header01.png" alt="さがす" title="さがす">さがす</a></div>
+                  <div class="happyOrder"><a href="/review/"><img src="../img/header02.png" alt="きづく" title="きづく">きづく</a></div>
+                  <div class="happyOrder"><a href="/mypage/"><img src="../img/header04.png" alt="マイページ" title="マイページ">マイページ</a></div>
+                  <div class="happyOrder"><a href="/order/"><img src="../img/order_b.png" alt="ご注文" title="ご注文">ご注文</a></div>
+                </div><!--/mainSide-->
+                <div class="mainContents2">
+                    <h2 class="PCpart">コミュニティ</h2>
+                                        <div class="community_wrap">
+                        <div class="top_community">
+                            <h4>トップコミュニティー</h4>
+                            <p>ハッピー公認のトップコミュニティーで、<br class="SPpart">話題の情報をキャッチしよう！</p>
+                            <ul>
+                              <?php foreach ($this->get("communityArray") AS $community) { ?>
+                                <li>
+                                  <a href="<?php echo $community['thread_link'] ?>">
+                                    <img src="<?php echo $community['avatar'] ?>" alt="<?php echo $community['community_name'] ?>">
+                                  </a>
+                                  <h5></h5>
+                                <div class="userCommunityInfo">
+                                  <div class="userCommunityImg"><a href="<?php echo $community['thread_link'] ?>"><img src="<?php echo $community['avatar'] ?>" alt="<?php echo $community['community_name'] ?>"></a></div>
+                                  <div class="userCommunityName"><a href="<?php echo $community['thread_link'] ?>"><?php echo $community['community_name'] ?></a></div>
+                                </div>
+                                </li>
+                              <?php } ?>
+                                                                    <li>
+                                        <a href="/community/detail.html?tid=1000041"><!--
+                                        --><img src="//images/community/1000041/6ff135d6875031b5a41713993da1d81ea945271d4a1e959424f12144321f93b4.jpg" alt="松久 由宇" title="松久 由宇"><!--
+                                        --><h5>松久 由宇</h5><!--
+                                        --><span>アート</span><!--
+                                        --></a>
+                                                                                    <div class="follow"><a href="/community/detail.html?tid=1000041&amp;mode=entry">フォローする</a></div>
+                                                                            </li>
+                                                                    <li>
+                                        <a href="/community/detail.html?tid=1000032"><!--
+                                        --><img src="//images/community/1000032/5f06767c9fbe466151e72ea7e144f8f38f4a040fa552bb4a87fc4a0d28de5e60.jpg" alt="TOMORROWLAND" title="TOMORROWLAND"><!--
+                                        --><h5>TOMORROWLAND</h5><!--
+                                        --><span>ファッション</span><!--
+                                        --></a>
+                                                                                    <div class="follow"><a href="/community/detail.html?tid=1000032&amp;mode=entry">フォローする</a></div>
+                                                                            </li>
+                                                                    <li>
+                                        <a href="/community/detail.html?tid=1000040"><!--
+                                        --><img src="//images/community/1000040/9b5f5e816829db7c17001f099df74eac9dc7c34af8b993b9e49dfcbafef5275e.jpg" alt="政道 徳門" title="政道 徳門"><!--
+                                        --><h5>政道 徳門</h5><!--
+                                        --><span>その他</span><!--
+                                        --></a>
+                                                                                    <div class="follow"><a href="/community/detail.html?tid=1000040&amp;mode=entry">フォローする</a></div>
+                                                                            </li>
+                                                                    <li>
+                                        <a href="/community/detail.html?tid=1000038"><!--
+                                        --><img src="//images/community/1000038/02e0b4c4daa5ee45f3c4a08efb67759a363101a92d1ebf2b30eff97f3fca57b7.jpg" alt="Happyケアメンテ" title="Happyケアメンテ"><!--
+                                        --><h5>Happyケアメンテ</h5><!--
+                                        --><span>ファッション</span><!--
+                                        --></a>
+                                                                                    <div class="follow"><a href="/community/detail.html?tid=1000038&amp;mode=entry">フォローする</a></div>
+                                                                            </li>
+                                                                    <li>
+                                        <a href="/community/detail.html?tid=1000037"><!--
+                                        --><img src="//images/community/1000037/32275026ead332065a362de4e24143f1589ca3f73678abc1f7173046efa92a85.jpg" alt="橋本 英夫" title="橋本 英夫"><!--
+                                        --><h5>橋本 英夫</h5><!--
+                                        --><span>その他</span><!--
+                                        --></a>
+                                                                                    <div class="follow"><a href="/community/detail.html?tid=1000037&amp;mode=entry">フォローする</a></div>
+                                                                            </li>
+                                                                    <li>
+                                        <a href="/community/detail.html?tid=1000036"><!--
+                                        --><img src="//images/community/1000036/f19ad631aec7ccd1a09265470832e84dcf4a5900ba0d2a4078b70d79b6a240d3.jpg" alt="樋口 健夫" title="樋口 健夫"><!--
+                                        --><h5>樋口 健夫</h5><!--
+                                        --><span>ビジネス</span><!--
+                                        --></a>
+                                                                                    <div class="follow"><a href="/community/detail.html?tid=1000036&amp;mode=entry">フォローする</a></div>
+                                                                            </li>
+                                                                    <li>
+                                        <a href="/community/detail.html?tid=1000031"><!--
+                                        --><img src="//images/community/1000031/19d316f069913a2ce7ecfccc33bdd2c85f46acf5b8e5f6798a8d7210a6280690.jpg" alt="遠山 周平" title="遠山 周平"><!--
+                                        --><h5>遠山 周平</h5><!--
+                                        --><span>ファッション</span><!--
+                                        --></a>
+                                                                                    <div class="follow"><a href="/community/detail.html?tid=1000031&amp;mode=entry">フォローする</a></div>
+                                                                            </li>
+                                                                    <li>
+                                        <a href="/community/detail.html?tid=1000030"><!--
+                                        --><img src="//images/community/1000030/a02bca4edff050ba45ace805b8f476df9dd47b26d51a04f317593b1bd32381ac.jpg" alt="菊田 あや子" title="菊田 あや子"><!--
+                                        --><h5>菊田 あや子</h5><!--
+                                        --><span>グルメ</span><!--
+                                        --></a>
+                                                                                    <div class="follow"><a href="/community/detail.html?tid=1000030&amp;mode=entry">フォローする</a></div>
+                                                                            </li>
+                                                                    <li>
+                                        <a href="/community/detail.html?tid=1000029"><!--
+                                        --><img src="//images/community/1000029/9c5ab65f540567d044f67a386c8e64df3c62c045980e6ccdc37a5dc1111c99e9.jpg" alt="高野 雲" title="高野 雲"><!--
+                                        --><h5>高野 雲</h5><!--
+                                        --><span>音楽</span><!--
+                                        --></a>
+                                                                                    <div class="follow"><a href="/community/detail.html?tid=1000029&amp;mode=entry">フォローする</a></div>
+                                                                            </li>
+                                                            </ul>
+                        </div>
+                        <div class="general_community">
+                            <h4>一般コミュニティー</h4>
+                            <p>簡単に誰でもコミュニティを作成することができます。</p>
+                            <div class="btn"><a href="/community/form.html">新たにコミュニティーを作成する</a></div>
+                            <div class="search">
+                                <h5>今あるコミュニティから探す</h5>
+                                <p>みんなが作ったコミュニティを以下より探すことができます。</p>
+                                <ul class="category">
+                                                                            <li><a href="/community/"><img src="/_assets/img/mypage/ico_category01.gif" alt="新着" title="新着">
+                                                <div class="active">新着</div>
+                                            </a></li>
+                                                                            <li><a href="/community/?c=1"><img src="/_assets/img/mypage/ico_category02.gif" alt="ファッション" title="ファッション">
+                                                <div class="">ファッション</div>
+                                            </a></li>
+                                                                            <li><a href="/community/?c=2"><img src="/_assets/img/mypage/ico_category03.gif" alt="音楽" title="音楽">
+                                                <div class="">音楽</div>
+                                            </a></li>
+                                                                            <li><a href="/community/?c=3"><img src="/_assets/img/mypage/ico_category04.gif" alt="アート" title="アート">
+                                                <div class="">アート</div>
+                                            </a></li>
+                                                                            <li><a href="/community/?c=4"><img src="/_assets/img/mypage/ico_category05.gif" alt="地域" title="地域">
+                                                <div class="">地域</div>
+                                            </a></li>
+                                                                            <li><a href="/community/?c=5"><img src="/_assets/img/mypage/ico_category06.gif" alt="旅行" title="旅行">
+                                                <div class="">旅行</div>
+                                            </a></li>
+                                                                            <li><a href="/community/?c=6"><img src="/_assets/img/mypage/ico_category07.gif" alt="グルメ" title="グルメ">
+                                                <div class="">グルメ</div>
+                                            </a></li>
+                                                                            <li><a href="/community/?c=7"><img src="/_assets/img/mypage/ico_category08.gif" alt="ペット" title="ペット">
+                                                <div class="">ペット</div>
+                                            </a></li>
+                                                                            <li><a href="/community/?c=8"><img src="/_assets/img/mypage/ico_category09.gif" alt="ビジネス" title="ビジネス">
+                                                <div class="">ビジネス</div>
+                                            </a></li>
+                                                                            <li><a href="/community/?c=9"><img src="/_assets/img/mypage/ico_category10.gif" alt="その他" title="その他">
+                                                <div class="">その他</div>
+                                            </a></li>
+                                                                    </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                                                                        <div class="communitySearch">
+                                <div class="commuAvatar"><img src="//images/community/1000041/6ff135d6875031b5a41713993da1d81ea945271d4a1e959424f12144321f93b4.jpg" alt="松久 由宇" title="松久 由宇"></div>
+                                <div class="commuInfo">
+                                    <div class="commuName"><a href="/community/detail.html?tid=1000041">松久 由宇</a>
+                                    </div>
+                                    <div class="commuCat"><a href="/community/?c=3">アート<span class="top-community">&lt;トップコミュニティ&gt;</span></a>
+                                    </div>
+                                </div>
+                                <div class="commuTxt">松久由宇（本名、松久壽仁）<br>
+1949年北海道・置戸町生まれ。<br>
+父が地方公務員だったこともあり、道内で移住地を変えること6度。 <br>
+それぞれの地にはそれぞれの想いと匂いがあり、何れも故郷の感。<br>
+<br>
+生まれつき絵が好きだったのか、地元の公民館で4歳当時の私の絵の展覧会があり、天才少年として新聞に掲載される。<br>
+中学生の初めての美術で、先生自らがモデルとなったクロッキーの授業の際、「この人は画家になれる！」と評価してくださり、以来「必ず芸大に行け！くれぐれも漫画だけは描くな！」と強く念を押されたにもかかわらず、何故か漫画に傾倒し・・1968年に上京。漫画プロダクション に就職。4ヶ月で退社して、桑田次郎 （『月光仮面』でお馴染みの）先生のアシスタントとなる。   <br>
+<br>
+1970年～漫画家としてデビューし、依頼に応じて、当時の青年誌に様々な作品を発表する。分野は多岐にわたり、女性像、作品表現の詩情が評価され、個人的にはＳＦ分野のオリジナルを好みとしていた。<br>
+<br>
+漫画ブームだったこともあり、多くの作家がデビューし勢いを見せるも時代は流れ、出版業界の不調と共に人の流れもその姿を変えた。<br>
+昭和から平成、令和と時代は変わっても、少年の心や魂の輝きを持ち続けたいと願う・・今日この頃です。</div>
+                            </div>
+                                                    <div class="communitySearch">
+                                <div class="commuAvatar"><img src="//images/community/1000032/5f06767c9fbe466151e72ea7e144f8f38f4a040fa552bb4a87fc4a0d28de5e60.jpg" alt="TOMORROWLAND" title="TOMORROWLAND"></div>
+                                <div class="commuInfo">
+                                    <div class="commuName"><a href="/community/detail.html?tid=1000032">TOMORROWLAND</a>
+                                    </div>
+                                    <div class="commuCat"><a href="/community/?c=1">ファッション<span class="top-community">&lt;トップコミュニティ&gt;</span></a>
+                                    </div>
+                                </div>
+                                <div class="commuTxt">1979年にニットメーカーとしてスタートした、 株式会社トゥモローランドが運営するセレクトショップです。<br>
+自分たちが創った上質でエレガントなオリジナルブランドを自分たちで考えたショップでお客様にお渡しする。<br>
+そこに常に「トゥモローランドらしさ」を求めて歩んできました。<br>
+洗練されていてエレガントなスタイルのアイテム・ショップを、オリジナルブランドを中心に、展開しています。<br>
+また、世界中のブランドやアーティストとコラボレーションを行い、商品を展開。<br>
+昨今では&lt;ACNE STUDIOS&gt;&lt;DRIES VAN NOTEN&gt;&lt;ISABEL MARANT&gt;<br>
+&lt;JAMES PERSE&gt;&lt;JEANPAULKNOTT&gt;とパートナーショップを結び日本国内でのショップ展開を行っています。</div>
+                            </div>
+                                                    <div class="communitySearch">
+                                <div class="commuAvatar"><img src="//images/community/1000040/9b5f5e816829db7c17001f099df74eac9dc7c34af8b993b9e49dfcbafef5275e.jpg" alt="政道 徳門" title="政道 徳門"></div>
+                                <div class="commuInfo">
+                                    <div class="commuName"><a href="/community/detail.html?tid=1000040">政道 徳門</a>
+                                    </div>
+                                    <div class="commuCat"><a href="/community/?c=9">その他<span class="top-community">&lt;トップコミュニティ&gt;</span></a>
+                                    </div>
+                                </div>
+                                <div class="commuTxt">1973年綾部市生まれ。同志社大学文学部卒業後、1997年より圓福寺僧堂にて修行に入る。現在、圓福寺僧堂師家。<br>
+「圓福寺」は、京都府八幡市と大阪府枚方市にまたがる小高い森の中にあります。深い木々に囲まれた境内地は約3万坪にもおよび、山門、本堂、庫裡、禅堂のほか、有栖川宮旧御殿など多くの建物が並び立つ歴史ある禅宗寺院です。<br>
+天明3年（1783）の創建時より石清水八幡宮別当の田中家から託された達磨像（重要文化財）を奉安していることから、一般に「達磨堂」の名前で親しまれています。<br>
+</div>
+                            </div>
+                                                    <div class="communitySearch">
+                                <div class="commuAvatar"><img src="//images/community/1000038/02e0b4c4daa5ee45f3c4a08efb67759a363101a92d1ebf2b30eff97f3fca57b7.jpg" alt="Happyケアメンテ" title="Happyケアメンテ"></div>
+                                <div class="commuInfo">
+                                    <div class="commuName"><a href="/community/detail.html?tid=1000038">Happyケアメンテ</a>
+                                    </div>
+                                    <div class="commuCat"><a href="/community/?c=1">ファッション<span class="top-community">&lt;トップコミュニティ&gt;</span></a>
+                                    </div>
+                                </div>
+                                <div class="commuTxt">上質な無地の反物を買い、仕立て、着古すたびに徐々に濃い色に染め直して一着の着物を最後まで楽しむ。これが京都特有の「衣」に対するこだわりであり、且つ“美意識”と“もったいない精神”を融合させた「着倒れ」の語源といわれている。<br>
+ ハッピーは、この「着倒れ」の精神と伝統を現代に受け継ぐ『ケアメンテサービス®』を、京都から全国に向けて提供している。<br>
+ 日本人の衣服が着物から洋服へと移り変わり、デリケートな衣服のお手入れは、繊維にダメージを与えてしまう水洗いからドライクリーニングに移行した。しかし、衣服の汚れの約８～９割が汗などの水性の汚れであり、ドライクリーニングは水性の汚れを除去できないため繊維の奥に残った汚れが酸化して黄ばみ、数年も経たずに着用できなくなるという欠点がある。<br>
+ そこでハッピーは、創業当時から長年にわたり水系洗浄の技術開発に取組み、上質でデリケートな繊維素材は“水洗い不可”という洗浄理論の常識を覆すことに成功した。京都の伝統技法「友禅流し」にヒントを得た「無重力バランス洗浄技法®」（方法論・装置ともに国内特許取得、海外特許取得）という世界発の洗浄原理である。<br>
+ この洗浄原理は、有史以来の「ねじる・たたく・もむ」という物理的機械力を加えず、ドラム槽内に擬似無重力状態をつくり、位相圧力差による緩やかな水流によって、水性と油性の汚れを同時に除去する。水洗いは難しいとされる羊毛やシルク等の動物繊維やレーヨン等の再生繊維を傷めることなくシルエットも崩さず洗い上げる。<br>
+「無重力バランス洗浄技法®」は、国内の洗浄学会で発表されており、アパレルメーカーはもとより、海外のビッグブランドやドイツの繊維専門のニーダーライン大学、さらにテキスタイル研究で世界的に著名なホーエンシュタイン研究所等で高く評価され、ハッピー独自の衣服再現技術である「アクアドライ®」「リプロン®」「シルエットプレス®」等のコア技術を支えている。<br>
+ ハッピーは、大量消費・大量廃棄という現代を見直し、衣服を長く愛用するという上質・本物志向のライフスタイルを提案するとともに、「価値」の再生産技術を提供することで、環境保全を視野に入れた社会貢献に寄与するという、従来のクリーニングの概念とは全く異なる『ケアメンテサービス®』新市場を創出している。<br>
+</div>
+                            </div>
+                                                    <div class="communitySearch">
+                                <div class="commuAvatar"><img src="//images/community/1000037/32275026ead332065a362de4e24143f1589ca3f73678abc1f7173046efa92a85.jpg" alt="橋本 英夫" title="橋本 英夫"></div>
+                                <div class="commuInfo">
+                                    <div class="commuName"><a href="/community/detail.html?tid=1000037">橋本 英夫</a>
+                                    </div>
+                                    <div class="commuCat"><a href="/community/?c=9">その他<span class="top-community">&lt;トップコミュニティ&gt;</span></a>
+                                    </div>
+                                </div>
+                                <div class="commuTxt">1949年、兵庫県高砂市生まれ。高校卒業後、大型プラントで使用するバルブや弁のメーカーにエンジニアとして従事。蒸気の流体制御機器の設計等に携わり、20歳代半ばで独立。1979年にＥＣＣハシモトを設立し、ドライクリーニングの石油系溶剤浄油再生装置の開発製造を依頼されたことをきっかけに、装置のランニングテストをおこなうため株式会社京都産業を設立し、「ハッピークリーニング」の名称でクリーニング店の経営に乗り出す。取次店を50店舗まで拡大させたが、業界を知れば知るほど改革の必要性を痛感。<br>
+拡大させた取次店を全て閉鎖し、2002年に株式会社ハッピーを設立。従来のクリーニングの常識を覆し、衣服を“再現”する『ケアメンテ』という新業態を創造し、業界から逸脱した独自の道を歩み始める。<br>
+インターネットと全国宅配を利用した無店舗型全国対応システムに切り替え、「アクアドライ」「リプロン」をはじめとする独自の衣服再生産技術と、自社開発のＩＴシステムによって、全国のお客様へのサービス普及に尽力している。<br>
+2006年、従来の洗浄理論を覆す世界初の「無重力バランス洗浄」を発明し、方法論特許・装置特許を取得。シルエットや風合いを保ったままの水洗いを実現し、そのインダストリアル化に成功。地球環境に優しく人体に悪影響を及ぼさない画期的な洗浄方法として、有名アパレルブランドメーカーからも絶大な信頼を得ている。<br>
+2011年、経済産業省「サービス工学推進委員会」委員に就任し、自らの経営経験に基づき、日本のサービス産業における生産性向上とイノベーションの促進を実現するサービス工学の研究開発を推進する取組みに協力。<br>
+現在も『ケアメンテ』を通して大切な衣服を長く楽しみ最後まで着尽くすという京都の「着だおれ」の精神を、国内のみならず世界へ発信するため鋭意活動中。<br>
+おもな著書に『おもてなしIoTが日本経済を元気にする』（ハッピー社）、『サービス生産性向上への道』（ハッピー社）、『「捨てない」生き方』（ダイヤモンド社）、『サービス業の底力』（ダイヤモンド社）、『小さな会社の負けない発想』（致知出版社）、『クリーニング店の秘密』（東邦出版）、『クリーニング 深・進化論』（近代文芸社）などがある。<br>
+</div>
+                            </div>
+                                                    <div class="communitySearch">
+                                <div class="commuAvatar"><img src="//images/community/1000036/f19ad631aec7ccd1a09265470832e84dcf4a5900ba0d2a4078b70d79b6a240d3.jpg" alt="樋口 健夫" title="樋口 健夫"></div>
+                                <div class="commuInfo">
+                                    <div class="commuName"><a href="/community/detail.html?tid=1000036">樋口 健夫</a>
+                                    </div>
+                                    <div class="commuCat"><a href="/community/?c=8">ビジネス<span class="top-community">&lt;トップコミュニティ&gt;</span></a>
+                                    </div>
+                                </div>
+                                <div class="commuTxt">1946年京都生まれ。<br>
+大阪外大英語在学中にオーストラリアの大学に二年間留学。資金無く船で往復、学費はシドニーで働いて稼いだ。帰国後、外大に復帰。最初の授業の日、始まる前に婚活<br>
+してヨメサンを内定。<br>
+三井物産入社後、ことあるごとに「どこでもよいから海外に出たい」と主張。<br>
+結婚後、すぐ長男が生まれ、みんなが断った西アフリカ・ナイジェリアに家族同伴で赴任して3年半。ヨルバ族の名誉酋長就任。通信機、鉄道貨車の売り込みを楽しんだ。そのあと希望してサウジアラビア・リヤドに家族で転勤8年半。<br>
+独自にアイデアマラソン発想法（通称アイデアマラソン、1984年開始）を開始しエッセイに目覚めた。「体験を、読みやすく、面白く、少しびっくり、必ず役に立つ」を信条で、エッセイ、紀行文、海外実業書を書き続けた。<br>
+帰国後10年で再び海外駐在の虫が騒ぎ、ベトナム2年、最後は世界最親日国民のネパール・カトマンドゥ事務所長(邦人一人駐在)に栄転、4年半滞在したら、もう定年になった。商社マンと海外と旅を楽しんでいたので、時は早く進んだ。<br>
+定年後、私の創意と工夫の記録法アイデアマラソンの普及に人生を賭け、アイデアマラソン研究所を設立した。大工大、筑波、電通大（東京）、就実大学などで講義し、<br>
+2006年から10年間ジャパネットたかた全社員、アサヒビール、ダイキン、ドコモ、富士通PFU、日立、セキ薬品全社員など多数。<br>
+2010年、描画と創造性を組み合わせた幼稚園・保育園と小学生のアイデアマラソンも独自開発し全国15か所にて実施中。<br>
+私のノート数は472冊、記録発想数は45万個。すべてPFUのScanSnapにてpdf化。16.5ギガに及ぶ。2010年に国立北陸先端科学技術大学院大学の博士課程に入学し、アイデアマラソンの定量的効果の測定で博士号(知識科学)を取得。アイデアマラソンの効果には絶対の自信がある。<br>
+著書は「仕事のできる人のノート術」（東洋経済）、「一冊のノートで始める力、続ける力をつける」（こう書房）など約50冊。世界中の親友たちを毎年訪問している。エッセイ、小説、発明とものづくりにも励む予定。<br>
+【信念】<br>
+１.アイデアマラソン普及を進め日本企業の競争力を高める。<br>
+２.ヨメサンが現在博士課程にいるのを精神的に支援。<br>
+３.今まで溜めてきた様々な発明を実現したい。<br>
+</div>
+                            </div>
+                                                    <div class="communitySearch">
+                                <div class="commuAvatar"><img src="//images/community/1000031/19d316f069913a2ce7ecfccc33bdd2c85f46acf5b8e5f6798a8d7210a6280690.jpg" alt="遠山 周平" title="遠山 周平"></div>
+                                <div class="commuInfo">
+                                    <div class="commuName"><a href="/community/detail.html?tid=1000031">遠山 周平</a>
+                                    </div>
+                                    <div class="commuCat"><a href="/community/?c=1">ファッション<span class="top-community">&lt;トップコミュニティ&gt;</span></a>
+                                    </div>
+                                </div>
+                                <div class="commuTxt">1951年東京生まれ。<br>
+新聞記者、雑誌編集者を経て服飾評論家に。<br>
+フリージャーナリストとしての立場を堅持するため、海外でのメンズコレクション取材から欧米のビスポークテーラー体験記まで、そのほとんどの執筆活動を自費で捻出してきた。<br>
+「思索なき多見に益なし」が信条。<br>
+最近は『ファドと革新者』、『モダニズムとクラスウエア』、『テクノロジーとサスティナビリティー』といったテーマに興味を持ち評論活動を続けている。<br>
+著書に『背広のプライド』(亀鑑書房)、『洒脱自在』(中央公論新社)などがある。<br>
+天皇陛下ご用達テーラー服部晋氏が主催する『キン・テーラーリング・アカデミー』で紳士服の仕立て法を学び、現在もスーツの機能とデザインの研究をする。『洋裁男子ダイアリー』は、そんな筆者の趣味と実益を兼ねた日常生活から生まれたものといえよう。<br>
+現在ウエッブマガジＢＹＲＯＮで連載中の『モード逍遥』は著者初めての月刊誌連載（メンズＥＸ 1993年から1996年）の題名のリバイバル。名付け親は当時担当編集者だった故山口淳氏であった。</div>
+                            </div>
+                                                    <div class="communitySearch">
+                                <div class="commuAvatar"><img src="//images/community/1000030/a02bca4edff050ba45ace805b8f476df9dd47b26d51a04f317593b1bd32381ac.jpg" alt="菊田 あや子" title="菊田 あや子"></div>
+                                <div class="commuInfo">
+                                    <div class="commuName"><a href="/community/detail.html?tid=1000030">菊田 あや子</a>
+                                    </div>
+                                    <div class="commuCat"><a href="/community/?c=6">グルメ<span class="top-community">&lt;トップコミュニティ&gt;</span></a>
+                                    </div>
+                                </div>
+                                <div class="commuTxt">アナウンサーになりたくて、日本大学芸術学部放送学科に入り、在学中二十歳よりラジオでデビュー。司会、ナレーション、リポートと活躍の場を広げ、大好きな仕事のキャリアは37年を経ました。<br>
+<br>
+正しい日本語の使い手、喋り手として、後進の指導や、講演会で全国にも伺っています。<br>
+2017年４月からは、新潟放送(BSN)、毎週土曜日の昼の二時間生放送【なじラテ】の司会者として、フレッシュな皆さんと一緒に、新潟の魅力を探求する幸せな日々です。<br>
+<br>
+《言葉は人を表します、その人の心の中から言葉は生まれます》<br>
+多くの方々との出逢いがあってこそのコンニチの菊田あや子です♫<br>
+常に感謝の気持ちを忘れず、生涯現役で、世のため人のためにずっとpowerfulに生きて行きたいですね＼(^o^)／</div>
+                            </div>
+                                                    <div class="communitySearch">
+                                <div class="commuAvatar"><img src="//images/community/1000029/9c5ab65f540567d044f67a386c8e64df3c62c045980e6ccdc37a5dc1111c99e9.jpg" alt="高野 雲" title="高野 雲"></div>
+                                <div class="commuInfo">
+                                    <div class="commuName"><a href="/community/detail.html?tid=1000029">高野 雲</a>
+                                    </div>
+                                    <div class="commuCat"><a href="/community/?c=2">音楽<span class="top-community">&lt;トップコミュニティ&gt;</span></a>
+                                    </div>
+                                </div>
+                                <div class="commuTxt">ジャズをガソリンに音と活字を遊び倒す雑文屋。横浜本牧生まれの東京下町育ち。<br>
+10代後半ジャズに目覚め、勉強そっちのけでジャズ喫茶に入り浸る日々を送る。<br>
+ジャズベーシストに師事し、「ジャズ研」ではベースを弾きまくり、バイト先の老舗ジャズ喫茶ではコーヒーを出しながら「ジャズ耳」を鍛え、「ジャズ」と名のつく書籍・雑誌は片っぱしから読み漁る学生時代を過ごす。<br>
+出版社に就職後は、仕事の傍らジャズのレビューを自サイトや、音楽系Webサイト、フリーペーパーなどに書き散らし、2005年に邱永漢氏の公式ウェブサイト「Hi-Q」に「JAZZが好きだと答えてみたい～ダテから入ってツウになれ」への連載をきっかけに、『Swing Journal』や『ジャズ批評』などのジャズ専門誌にも寄稿を開始。<br>
+2008年に独立、フリーとなり、東京FMミュージックバードでラジオ番組「高野雲の快楽ジャズ通信〜What Is This Thing Called Jazz?」にて２年間メ インパーソナリティを務めジャズの魅力を発信。同時に、都内複数のイベントスポットやミュージックラウンジにて不定期にジャズ鑑賞会「音聴き会」を催す。趣味は映画鑑賞とガンプラ作り、電信柱＆クレーンのウォッチング。<br>
+主著に『超！音楽鑑賞術』（ヤマハ・ミュージックメディア）、『ビジネスマンのための（こっそり）ジャズ入門』（シンコーミュージック・エンタテイメント）がある。<br>
+個人サイト「カフェモンマルトル」http://cafemontmartre.tokyo/<br>
+は、ほぼ毎日更新。気軽に遊びにいらしてくださいね。<br>
+■ 「快楽ジャズ通信」http://jazzpleasure.seesaa.net/</div>
+                            </div>
+                                                                <div class="postingPagenavi">
+                        <ul class="pageNumbers">
+                            <li><span class="current">1</span></li>                        </ul>
+                    </div>
+                </div><!--/mainContents2-->
+              </div>
+              <div class="mypageSub">
+                      <div class="happyInfo">
+        <h5>Happy 掲示板</h5>
+        <p></p><h4 class="forecaster_diary_sub_title">WEBマガジン季刊誌『幸（sachi）』のご案内</h4><br>
+  長年にわたり職人技と呼ばれる“極み”を完成した人々を長年にわたりご紹介しているハッピーのオリジナル季刊誌「幸-sachi-」。<br>
+  バックナンバーもございますので、ぜひご覧ください！<br>
+  ■季刊誌『幸-sachi-』VOL.25<br>
+  中村藤吉本店 “甘味や旨味の中に苦渋味を感じるお茶本来の味わいを楽しんでほしい”<br>
+  <a href="/wp/sachi/"><u>『幸（sachi）』ページはコチラ</u></a><br>
+  <br>
+  こちらもオススメです♪<br>
+  ●<a href="http://happy-carementeh.com/" target="_blank"><u>「ハッピーケアメンテ事例紹介」サイト</u></a><br>
+  ●<a href="https://www.raptorjs.org/"><u>「ハッピーケアメンテ最新情報（メールマガジンバックナンバー）」サイト</u></a><br>
+  ●<a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><u>「ハッピーを動画で見るYouTube」</u></a><p></p>
+      </div>
+              <div class="happyOrder"><a href="/carementeh_search/"><img src="../img/header01.png" alt="さがす" title="さがす">さがす</a></div>
+              <div class="happyOrder"><a href="/review/"><img src="../img/header02.png" alt="きづく" title="きづく">きづく</a></div>
+              <div class="happyOrder"><a href="/mypage/"><img src="../img/header04.png" alt="マイページ" title="マイページ">マイページ</a></div>
+              <div class="happyOrder"><a href="/order/"><img src="../img/order_b.png" alt="ご注文" title="ご注文">ご注文</a></div>
+                  </div><!--/mypageSub-->
+          </div>
+      </div>
+	<!--　/#Contents -->
+	
+  <div class="footer_sns">
+    <div class="container">
+      <ul>
+        <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <!--　/.footer_sns -->
+  <?php
+	/* ヘッダーインクルード */
+	include(DIR_PUBLIC . "/include/footer_new.php");
+  ?>
+  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+		
+    var menuFlag = true;
+    $('.header_nav_common .header_tab').on('click', function() {
+      menuFlag = !menuFlag;
+      if(menuFlag){
+        $('.header_nav_common').css("top","0");
+      } else {
+        $('.header_nav_common').css("top","-95px");
+      }
+  	});
+		
+  });
+  </script>
+	<script type="text/javascript"
+ src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+	<script>
+  var ctx = document.getElementById("DoughnutChart");
+  var DoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+          backgroundColor: [
+              "#6a3b93",
+              "#e0e0e0",
+          ],
+          data: [25, 75],
+          borderWidth: [0],
+          borderColor: 'transparent'
+      }]
+    },
+    options: {
+			legend: {
+        display: false
+      },
+			tooltips: { enabled: false },
+			cutoutPercentage : 90
+			
+    }
+  });
+  </script>
+	</body>
+</html>

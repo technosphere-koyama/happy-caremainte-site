@@ -1,0 +1,91 @@
+@use 'mixin';
+
+#privacy {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    div {
+      padding: 10px;
+      margin: 10px 0;
+    }
+    span {
+      background: #ccc;
+    }
+  }
+  .privacy2 {
+    margin: 40px auto;
+  }
+  @include for-pc {
+    .privacy {
+      table {
+        border: 1px solid #ddd;
+        border-top: none;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      th, td {
+        padding: 10px 20px;
+      }
+
+      th {
+        border-top: 1px solid #ddd;
+        width: 25%;
+        font-weight: normal;
+        text-align: left;
+        vertical-align: middle;
+      }
+
+      td {
+        border-left: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        width: 75%;
+      }
+
+      table {
+        div {
+          border: 1px solid #999;
+        }
+      }
+    }
+
+    .privacy2 {
+      margin-bottom: 70px;
+    }
+  }
+
+  @include for-sp {
+    .privacy {
+      table {
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      th, td {
+        display: block;
+        text-align: left;
+      }
+
+      th {
+        font-weight: normal;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 5px;
+      }
+
+      td {
+        margin-bottom: 20px;
+      }
+
+      table {
+        div {
+          border: 1px solid #ccc;
+        }
+
+      }
+    }
+
+    .privacy2 {
+      margin-bottom: 60px;
+    }
+  }
+}

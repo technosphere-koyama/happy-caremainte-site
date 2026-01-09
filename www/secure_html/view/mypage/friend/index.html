@@ -1,0 +1,193 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>フレンド一覧｜つなぐ ＜Happy SNS＞｜ハッピー ケアメンテ&reg;</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+<!--<link href="../../css/form.css" rel="stylesheet">-->
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns_dummy.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+<body id="mypage" class="sns_top">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	<!--　/header_nav　-->
+	
+	<div id="Contents">
+				<div class="mainvisual__section">
+					<div><img src="../img/sns_tit_b.png" alt="Happy_SNS"><br><p>つなぐ</p></div>
+				</div>
+				<div class="logoutArea">
+					<div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+				</div>
+
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu"><a href="/mypage/sns.html">つなぐ ＜Happy SNS＞</a></p><p class="pankuzu no-arrow">フレンド一覧</p></div>
+				</div>
+
+				<div class="mypageNavi PCpart">
+					<ul>
+						<li><a href="/mypage/sns.html">トップ</a></li>
+						<li class="current"><a href="/mypage/friend/">フレンド</a></li>
+						<li><a href="/community/">コミュニティ</a></li>
+						<li><a href="/mypage/message/">メッセージ</a></li>
+						<li><a href="<?php echo $this->get("user_link"); ?>">プロフィール</a></li>
+					</ul>
+				</div>
+
+				<div class="mypageHead SPpart">
+					<ul>
+					  <li><a href="/mypage/sns.html"><span>トップ</span></a></li>
+					  <li class="current"><a href="/mypage/friend/"><span>フレンド</span></a></li>
+					  <li><a href="/community/"><span>コミュニティ</span></a></li>
+					  <li><a href="/mypage/message/"><span>メッセージ</span></a></li>
+					  <li><a href="<?php echo $this->get("user_link"); ?>"><span>プロフィール</span></a></li>
+					</ul>
+				</div>
+
+				<div class="mypageArea">
+					<div class="mypageMain">
+						<!-- mainSide -->
+						<div id="profile" class="mainSide tab_contents PCpart">
+							<div class="userProfile">
+								<div class="userAvatar"><a href="<?php echo $this->get("user_link"); ?>"><img src="<?php echo $this->get("g_avatar"); ?>?t=<?php echo time() ?>" alt="<?php echo $this->get("g_nickname") ?>"></a></div>
+								<div class="userTxt">
+									<div class="userName"><?php echo $this->get("g_nickname") ?></div>
+                  <div class="userIntro"><?php echo $this->get("g_comment") ?></div>
+									<!--<div class="userNumber">お客様番号：085479</div>
+									<div class="userPoint">ハッピーポイント：0ポイント</div>
+									<div class="userNumber">デポジット残高：0円</div>-->
+								</div>
+							</div>
+							<!--<div class="userKarte">
+								<h5>あなたの電子カルテ</h5>
+									<div><a href="/mypage/history/">過去のケアメンテご利用履歴</a></div>
+		<div><a href="/mypage/ordered/">ただいまのお預かり品</a></div>
+		<div><a href="/mypage/wardrobe/">ワードローブお預かり品</a></div>
+		<br />
+<b>Warning</b>:  Use of undefined constant html_mypage_navi_sp - assumed 'html_mypage_navi_sp' (this will throw an Error in a future version of PHP) in <b>/var/www/html/happy-dev/view/mypage/friend/index.html</b> on line <b>89</b><br />
+							</div>-->
+                            <div class="userFriends">
+								<h5>フレンド</h5>
+								<?php foreach ($this->get("friendArray") AS $friends) { ?>
+									<div class="userFriendsInfo">
+										<div class="userFriendsImg"><a href="/profile/?uid=<?php echo $friends['system_id']; ?>"><img src="<?php echo $friends['avatar']; ?>" alt="<?php echo $friends['nickname']; ?>"></a></div>
+										<div class="userFriendsName"><a href="/profile/?uid=<?php echo $friends['system_id']; ?>"><?php echo $friends['nickname']; ?></a></div>
+									</div>
+								<?php } ?>
+								<div class="userFriendsBtn"><a href="/mypage/friend/">フレンド一覧</a></div>
+							</div>
+							<div class="userCommunity">
+                <h5>コミュニティ</h5>
+                <?php foreach ($this->get("communityArray") AS $community) { ?>
+
+									<div class="userCommunityInfo">
+										<div class="userCommunityImg"><a href="<?php echo $community['thread_link'] ?>"><img src="<?php echo $community['avatar'] ?>" alt="<?php echo $community['community_name'] ?>"></a></div>
+										<div class="userCommunityName"><a href="<?php echo $community['thread_link'] ?>"><?php echo $community['community_name'] ?></a></div>
+									</div>
+								<?php } ?>
+								
+								<div class="userCommunityBtn1"><a href="/mypage/community/">参加コミュニティ一覧</a></div>
+								<div class="userCommunityBtn2"><a href="/community/">コミュニティを探す</a></div>
+							</div>
+                            <div class="unreadMsg">
+								<div class="unreadMsgTxt"><a href="/mypage/message/">メッセージ</a></div>
+															</div>
+
+<?php $publicGadget->get_news(); /* 右カラムのお知らせ */ ?>
+						</div><!--/mainSide-->
+
+						<div class="mainContents">
+              <h2 class="PCpart">フレンド一覧</h2>
+              <?php foreach ($this->get("friendAllArray") AS $friendsList) { ?>
+                <div class="postingArea friendBlock">
+									<div class="userAvatar"><img src="<?php echo $friendsList['avatar']; ?>" alt="<?php echo $friendsList['nickname']; ?>"></div>
+									<div class="userTxt">
+										<div class="userName"><a href="/profile/?uid=<?php echo $friendsList['system_id']; ?>"><?php echo $friendsList['nickname']; ?></a></div>
+									</div>
+									<div class="postingLike friendCount">フレンド数：<?php echo $friendsList['friend_count']; ?></div>
+									<?php if ($friendsList['friend_status'] === 'commit') { ?>
+										<div class="sendBtn"><a href="/mypage/message/detail.html?uid=<?php echo $friendsList['system_id']; ?>">メッセージを送る</a></div>
+									<?php } ?>
+									<?php if ($friendsList['friend_status'] === 'confirm') { ?>
+										<div class="sendBtn"><a href="/mypage/friend/complete.html?fid=<?php echo $friendsList['match_id']; ?>">承認する</a></div>
+									<?php } ?>
+									<?php if ($friendsList['friend_status'] === 'request') { ?>
+										<div class="sendBtn"><p>承認待ち</p></div>
+									<?php } ?>
+								</div>
+              <?php }?>
+							
+							<div class="postingPagenavi">
+								<ul class="pageNumbers">
+									<?php echo $this->get("pageng_html"); ?>
+								</ul>
+							</div>
+						</div><!--/mainContents-->
+					</div>
+		            <div class="mypageSub">
+<?php $publicGadget->get_news(); /* 右カラムのお知らせ */ ?>
+		            </div><!--/mypageSub-->
+				</div>
+			</div>
+  <!--　/#Contents -->
+
+  <div class="footer_sns">
+    <div class="container">
+      <ul>
+        <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <!--　/.footer_sns -->
+  <?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/footer_new.php");
+  ?>
+  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+		
+    var menuFlag = true;
+    $('.header_nav_common .header_tab').on('click', function() {
+      menuFlag = !menuFlag;
+      if(menuFlag){
+        $('.header_nav_common').css("top","0");
+      } else {
+        $('.header_nav_common').css("top","-95px");
+      }
+  	});
+		
+  });
+  </script>
+	</body>
+</html>

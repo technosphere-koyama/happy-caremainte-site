@@ -1,0 +1,350 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>幸 sachi　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+		<meta name="description" content="過去にケアメンテをご利用いただいたお客様から、サービスのレビューをいただいています。">
+		<meta name="keywords" content="クリーニング,シミ,しみ,着物,宅配,ウェットクリーニング,水洗い,高級,黄ばみ">
+		<meta name="format-detection" content="telephone=no">
+		<?php if(preg_match("/(Android|iPhone|CareMenteh)/", $_SERVER["HTTP_USER_AGENT"])): ?><meta name="viewport" content="width=320, user-scalable=no" /><?php else: ?><meta name="viewport" content="width=1280" />
+		<?php endif; ?>
+
+		<!-- Open Graph Protocol -->
+		<meta property="og:url" content="https://www.kyoto-happy.co.jp/sachi/">
+		<meta property="og:title" content="幸 sachi　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?>">
+		<meta property="og:description" content="過去にケアメンテをご利用いただいたお客様から、サービスのレビューをいただいています">
+		<meta property="og:image" content="https://www.kyoto-happy.co.jp/_assets/img/header/logo.png">
+		<!-- Open Graph Protocol -->
+
+		<link rel="stylesheet" href="/_assets/css/default.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/common.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="/_assets/css/tooltipster.bundle.min.css">
+
+		<link rel="stylesheet" href="/_assets/css/sachi.css?<?php echo date('YmdHis');?>">
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+		<script src="/_assets/js/jquery.js"></script>
+		<script src="/_assets/js/jquery.bxslider.min.js"></script>
+		<script src="/_assets/js/common.js"></script>
+		<script src="/_assets/js/common_3rd.js"></script>
+		<script src="/_assets/js/ga.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="/_assets/js/tooltipster.bundle.min.js"></script>
+
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+
+	</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+		<div id="Container">
+			<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/include/header.php");
+				?>
+			</header>
+
+		<div id="Contents" class="sachi">
+		<div class="content">
+
+        <div class="mainCover">
+		<div class="backnumberLink"><a href="#backnumber"><i class="fa fa-caret-down" aria-hidden="true"></i>バックナンバーはこちら</a></div>
+		<div class="cover">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_cover.jpg" alt="有栖川宮家と京都・圓福寺のゆかりを温ねて">
+			<h1><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/sachi_logo.svg" alt="幸 sachi"></h1>
+			<h2 class="title"><div class="number">Vol. 24 特別号</div><br>有栖川宮家と京都・圓福寺の<br>ゆかりを温ねて</h2>
+		</div>
+	</div>
+
+	<div class="main_bottomWrap">
+		<div class="Wrap">
+			<div class="title"><span>WEBマガジン　</span><br class="PCpart">幸（sachi）とは？</div>
+			<div class="txt">“技”を持つ職人達。華やかな表舞台の裏には人知れず腕を磨き精進する姿がある。<br>
+			職人技と呼ばれる“極み”を完成した人々、&#8221;ケアメンテ&#8221;も縁の下の力持ちに徹し、<br class="PCpart">
+			静かに&#8221;技&#8221;を研鑽している。伝統工芸の職人技とケアメンテの職人技は共通しており、 <br class="PCpart">
+			それぞれの技の“極み”を発見してもらうために「幸」がある。<br>
+			長年に渡りご紹介してきたハッピーの季刊誌 「幸（sachi）」が、WEB版に生まれ変わり待望の復刊です。</div>
+		</div>
+	</div>
+
+
+		<section class="mainTxt">
+
+		<h3>無形・有形文化を後世に伝えるために</h3>
+		<div class="imgCenter"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img01.jpg" alt="仕上がりを左右する布目切り"></div>
+		<p>圓福寺の伽藍の最も西側に、東京から移築したと伝わる有栖川宮家の旧御殿と「臥龍庵」という二層の楼閣が並んで建っています。今から４年前、この「臥龍庵」の修復工事を進めていく中で、長らく開けられることのなかった収蔵棚から明治天皇の浴衣や有栖川宮家ゆかりの装束、御着物、書画や調度などが次々と出てまいりました。どれも埃が積もっており保存状態は最悪で、風化・劣化がかなり進んでいます。軸箱や調度品などは埃を払えばそれで済むことですが、着物については全く手の施しようがありません。思い切って、かねてよりご縁をいただいている株式会社ハッピーの橋本社長に相談したところ、「なんとかしましょう」という心強いお言葉を得て、さらに有栖川宮家と圓福寺にまつわる記録を「幸―特別号―」にまとめていただくこととなりました。<br>
+		仏法を守り伝えていくのは勿論、このように無形・有形の文化的価値のある財産を修復再生して寺宝として後世に引き継いでいくこともまた、住持の大切な役割であると考えております。この度のご協力に対し厚く御礼申し上げます。<br>
+		<div class="txtR">臨済宗妙心寺派  圓福寺専門道場<br>
+		師家  政道徳門</div></p>
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img02.jpg" alt="長年、手つかずのままに置かれていた書画等の文化財とともに見つかった着物の数々は、禅宗の修行道場に不釣り合いなほどの煌びやかさ。金糸を用いた刺繍が贅沢に施されている。">
+			<p>長年、手つかずのままに置かれていた書画等の文化財とともに見つかった着物の数々は、禅宗の修行道場に不釣り合いなほどの煌びやかさ。金糸を用いた刺繍が贅沢に施されている。</p>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img03.jpg" alt="淡い桃色の絽の着物には艶やかな刺繍が施されている。肩上げがされた女児のもので、喜久子殿下が幼い頃にお召しになったものか。">
+			<p>（左）淡い桃色の絽の着物には艶やかな刺繍が施されている。肩上げがされた女児のもので、喜久子殿下が幼い頃にお召しになったものか。<br>
+			（右上）有栖川宮家の「三つ寄せ  横見菊」や徳川家の「丸に三つ葉葵」の家紋が入った着物も。徳川家の家紋は有栖川宮威仁親王の次女・實枝子女王が徳川家に嫁いだことに由来。着物の持ち主は實枝子女王または、その息女でのちに高松宮宣仁親王妃となった喜久子殿下と考えられる。<br>
+			（右下）畳紙に包まれていたものや、そうでないものもあり、どのような経緯で寺に残されたかは伝わっていない。</p>
+		</div>
+
+		<h3>圓福寺と有栖川宮家とのご縁</h3>
+		<div class="sectionBox">
+			<p class="txtBox">圓福寺は臨済宗最初の専門道場で、多くの雲水が日夜坐禅や托鉢などの修行を行う洛南の一大道場です。天明３年（1783）の創建以来、歴代の住持は孜々汲々としてこの道場を護持してまいりました。明治41年（1908）には圓福寺14世であった見性宗般老師（1848〜1922）が大徳寺派管長に就任、有栖川宮威仁親王（1862〜1913）と親しく交流し、親王の帰依を受けました。そのご縁から、圓福寺には有栖川宮家ゆかりの品々が今も残されています。<br>
+			威仁親王は刀剣に造詣があり、神戸・舞子の別邸に鍛錬道場「如神殿」を設けるとともに、刀工・桜井正次（1868〜1950）を招来、自らも刀を鍛えられました。宗般老師は、説法や刀剣の入魂のためにしばしば舞子別邸へ参上したようで、殿下薨去ののちは、御遺言により東京三年町にあった有栖川宮家本邸の御座所と舞子の鍛錬道場が圓福寺に下賜されました。また、このときに威仁親王妃慰子殿下からも殿下ご生前の御自筆になる大額や刀剣等が寄贈されています。</p>
+			<div class="imgBox">
+				<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img04.jpg" alt="有栖川威仁親王妃慰子殿下と次女・實枝子女王が、圓福寺を訪れた様子が写真に残されている。上の写真では参道から直接「臥龍庵」のある方へ向かっている。">
+				<p>有栖川威仁親王妃慰子殿下と次女・實枝子女王が、圓福寺を訪れた様子が写真に残されている。上の写真では参道から直接「臥龍庵」のある方へ向かっている。</p>
+			</div>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img05.jpg" alt="有栖川宮家・高松宮家略系図">
+			<p>　</p>
+		</div>
+
+		<h4 class="vol24">「今西行」「今一休」と呼ばれた見性宗般老師</h4>
+		<div class="sectionBox">
+			<p class="txtBox">見性宗般老師は嘉永元年（1848）に石川県小松に生まれ、諸方歴参ののち圓福寺12世河野伽山老師のもとに参じ、14世を継承しました。明治31年（1898）には中国大陸各地へ出向き、１年半にわたって現地の宗教事情を視察して帰国。のちに大徳寺派５代管長を務めています。幼少の頃から書や漢詩にすぐれ、仏像など美術品への造詣も深かったようで、圓福寺には老師の書画だけでなく、各地で求められた骨董品等が残されています。また、平素歌を詠んだり、麻衣で質素な生活に甘んじていたことから「今西行」あるいは「今一休」と呼ばれ、その大らかな人柄は多くの人々に慕われました。</p>
+			<div class="imgBox">
+				<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img06.jpg" alt="「今西行」「今一休」と呼ばれた見性宗般老師">
+			</div>
+		</div>
+
+		<h4 class="vol24">明治の名工・桜井正次</h4>
+		<p>桜井正次は明治元年（1868）に田中正竜斎正久の子として生まれ、桜井家の養子になり鍛刀を学びました。岡倉天心が東京美術学校（現在の東京芸大）に鍛金科を創設した際にはその腕を買われ教職として迎えられましたが、校内の騒動によって天心が退任するにともない明治31年に辞職。陽の目を見ない時代を過ごします。<br>
+		明治42年頃になってようやく転機が訪れ、日本刀の歴史や刀工の活動に深く心を寄せておられた有栖川宮威仁親王の知遇を得て、舞子別邸内に住まいを与えられ、「如神殿」にて鍛刀に従事する日々を送りました。正次は刀の銘に「卍」を切ることから「卍正次」と呼ばれるなど、仏心の厚い人物だったとされます。慰子妃殿下から圓福寺に寄贈された品の中には、正次の刀もあります。</p>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img08.jpg" alt="圓福寺内にある「臥龍庵」は、威仁親王薨去ののち、追悼施設として建てられたもの（大正７年完成）。「臥龍庵」は、威仁親王が舞子の正次の住居につけた名前で、楼閣の上階には、正次の実弟・田中百嶺筆の雲龍図が描かれている。">
+			<p>圓福寺内にある「臥龍庵」は、威仁親王薨去ののち、追悼施設として建てられたもの（大正７年完成）。「臥龍庵」は、威仁親王が舞子の正次の住居につけた名前で、楼閣の上階には、正次の実弟・田中百嶺筆の雲龍図が描かれている。</p>
+		</div>
+
+		<h4 class="vol24">有栖川宮記念公園</h4>
+		<div class="sectionBox">
+			<p class="txtBox">東京メトロ日比谷線「広尾」駅から歩いて３分のところにある「有栖川宮記念公園」。江戸時代には盛岡南部藩の下屋敷がありましたが、明治29年（1896）に有栖川宮威仁親王第一王子・栽人王新邸造成の御用地となりました。有栖川宮家廃絶後、有栖川宮の旧称である高松宮の称号を賜った、大正天皇の第三皇子・光宮宣仁親王がご祭祀をお継ぎになります。児童福祉を目的とする遊び場に関心を持たれていた高松宮殿下は、威仁親王の20周忌にあたる昭和9年（1934）、この地の一部を東京市に賜与。記念公園として一般開放されました。6万7000m<sup>2</sup>を超える広い園内には水鳥が遊ぶ渓流や池が残り、威仁親王の異母兄である熾仁親王の騎馬像が公園に遊ぶ子どもたちを見守っています。</p>
+			<div class="imgBox">
+				<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img09.jpg" alt="有栖川宮記念公園">
+			</div>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img10.jpg" alt="伏虎窟（有栖川宮旧御殿）">
+			<p>伏虎窟（有栖川宮旧御殿）<br>
+				有栖川宮家が廃絶したのち、東京の有栖川宮家の御座所を高松宮殿下から御下賜され、昭和元年（1926）より圓福寺境内に移築（昭和３年落慶）。内部には、熾仁親王御筆の大額「真是偉観」、徳川實枝子女王御筆の「伏虎窟」の大額が掲げられている。また、内部には有栖川宮家の家紋を象った釘隠や戸襖の引手を見ることができる。</p>
+		</div>
+
+		<h3>達磨堂圓福寺のご案内</h3>
+		<div class="imgCenter"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img11.jpg" alt="達磨堂圓福寺のご案内"></div>
+		<p>京都府八幡市と大阪府枚方市にまたがる小高い森の中に、雄徳山 圓福寺があります。深い木々に囲まれた境内地は約３万坪にもおよび、山門、本堂、庫裡、禅堂のほか、有栖川宮旧御殿など多くの建物が並び立ち、歴史ある禅宗寺院としての風格が漂っています。禅堂の本尊として石清水八幡宮別当の田中家から託された達磨像（重要文化財）を奉安していることから、一般に「達磨堂」の名前で親しまれてきました。達磨像の目を大きく見開いた気迫みなぎる姿は圧倒的で、古くから多くの人々の信仰を集めています。</p>
+
+		<div class="sectionBox">
+			<h4 class="vol24">〈圓福寺縁起〉</h4>
+			<p class="txtBox">圓福寺の創建は、臨済宗中興の祖として知られる白隠禅師の高弟の一人・斯経慧梁禅師の発願に始まります。斯経禅師は、享保７年（1722）播州姫路生まれ。全国を行脚し研鑽を積んだのち、36歳のときに妙心寺塔頭海福院に入ります。晩年、自らの行脚の経験をもとに、雲水が安心して修行に専念できる道場を整える必要性を訴え、やがてその機運が高まっていきます。そのような中で、天明３年（1783）大坂の豪商浅井周斎居士から幣原谷の土地の寄進を受けるとともに、石清水八幡宮田中家から達磨像を譲り受け、堂宇が建ち、ここに道場の基礎が確立されました。圓福寺では、斯経禅師を道場建立の大願を発起された「願起和尚」として崇め、その遺骨と木像を達磨堂内にて大切に祀っています。</p>
+			<div class="imgBox">
+				<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img12.jpg" alt="中興の祖・海門禅恪禅師筆による「江湖道場」の木額が掛かる山門。">
+				<p>中興の祖・海門禅恪禅師筆による「江湖道場」の木額が掛かる山門。江湖とは中国の揚子江と洞庭湖、また江西省と湖南省の地域一帯を表す言葉に由来し、禅僧が躍動する世界のことを言う。山門は平成３年（1991）再建。</p>
+			</div>
+		</div>
+
+		<div class="sectionBox">
+			<h4 class="vol24">〈圓福寺の堂宇〉</h4>
+			<p class="txtBox">本堂庫裡や禅堂、山門などの主要な堂宇は、中興の祖・海門禅恪禅師（1743〜1813）によって整えられました。その後、明治時代に諸堂を改修するも阪神大震災の影響もあって再び老朽化、平成15年（2003）に京セラ株式会社名誉会長稲盛和夫氏の寄進により、本堂と庫裡が再建されました。<br>
+			中興の祖・海門禅恪禅師筆による「江湖道場」の木額が掛かる山門。江湖とは中国の揚子江と洞庭湖、また江西省と湖南省の地域一帯を表す言葉に由来し、禅僧が躍動する世界のことを言う。山門は平成３年（1991）再建。</p>
+			<div class="imgBox">
+				<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img13.jpg" alt="本堂の本尊は十六善神。中央壇に釈迦三尊像とともに安置されている。">
+				<p>本堂の本尊は十六善神。中央壇に釈迦三尊像とともに安置されている。本尊に向かって右側には勧請開山の大應国師像、左側には鎌倉時代の禅僧で大徳寺開山の大燈国師（宗峰妙超）像を奉安。また、東方の位牌壇には釈迦十大弟子像、西方の祀堂には地蔵菩薩立像が安置されている。</p>
+			</div>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img14.jpg" alt="圓福寺">
+			<p>　</p>
+		</div>
+
+		<div class="imgCenter"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img15.jpg" alt="大書院「蒼龍窟」"></div>
+		<p>大書院「蒼龍窟」には、京セラ株式会社および同社名誉会長稲盛和夫氏から建物と共に寄進された襖絵「法界虚空図」（伊藤紫虹画伯筆）が納められています。「法界虚空」とは、道元禅師が著した『正法眼蔵』にある言葉で、「恁麼功夫するとき、生死去来はことごとく画図なり。無上菩提すなはち画図なり。おほよそ法界虚空、いづれも画図にあらざるなし」に由来します。</p>
+
+		<div class="sectionBox">
+			<h4 class="vol24">伊藤紫虹</h4>
+			<p class="txtBox">1935年東京生まれ。明治大学文学部在学中に、中国で「南張北溥」と並び称される溥儒（号  心畬）と張大千に師事、東洋画の基本と中国文学を学ぶ。その後、イタリアでマリノ・マリーニのもとでしばらく油彩画を描く。そして、東洋画の伝統をもって西洋からのものを融合しながら新しい「水墨画」を切り拓く。独自の作品は高く評価され、フランス、ドイツ、中国など各地での作品展は大成功を収めている。（現在 フランス サロン・ドートンヌ会員）</p>
+			<div class="imgBox">
+				<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img16.jpg" alt="天袋には、四君子の蘭と竹が描かれている。">
+				<p>天袋には、四君子の蘭と竹が描かれている。</p>
+			</div>
+		</div>
+
+		<div class="sectionBox">
+			<h4 class="vol24">〈修行の場〉</h4>
+			<p class="txtBox">禅堂は雲水が坐禅や寝起きをする空間で、堂内の周囲に畳上の生活空間がめぐらされています。また、通常禅堂の本尊は文殊菩薩ですが、圓福寺の禅堂の奥には本尊として達磨大師が安置されています（達磨堂）。平成24年（2012）会下和尚ならびに檀信徒の信施によって再建されました。</p>
+			<div class="imgBox">
+				<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img17.jpg" alt="修行の場">
+			</div>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img18.jpg" alt="禅堂">
+			<p>（上）禅堂の畳上は雲水の空間で、布団の上には「単票」と呼ばれる名札が掛けられている。寝袋状の布団は柏餅のようにくるまって寝ることから「柏布団」とも。<br>
+			（右下）中央奥が達磨堂。達磨像に向かって右側には斯経禅師、左側には海門禅師の木像が安置されている。<br>
+			（左下）時を知らせる木板の甲高い音が山中に響く。毎日何度も木槌で打ち続けられるため、中央には大きな窪みが生じている。</p>
+		</div>
+
+		<h3>托鉢修行</h3>
+		<div class="imgCenter"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img19.jpg" alt="托鉢修行"></div>
+		<p>1日と15日は連鉢の日。網代笠をかぶり「ほーっ」と大きな声を上げながら家々を歩く。<br>
+		毎月決まった家々をまわり、お米やご志納をいただく「日供合米」や「連鉢」は、雲水にとって重要な修行のひとつです。</p>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img20.jpg" alt="托鉢は地域の人々とつながり、縁を結ぶ役割もある。">
+			<p>托鉢は地域の人々とつながり、縁を結ぶ役割もある。雲水は日々の糧をいただく一方、喜捨する人はお布施することで功徳を積む。帰山後、雲水が本堂に向かって大声でお経を唱えて回向する様子は壮観だ。</p>
+		</div>
+
+		<h3>日本最古の達磨像ご開帳の日　萬人講（春・秋）</h3>
+		<div class="imgCenter"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img21.jpg" alt="萬人講"></div>
+
+		<div class="sectionBox">
+			<p class="txtBox">圓福寺に安置されている達磨像は、日本最古の木造達磨像とされ、重要文化財に指定されています。その由来は、聖徳太子が飢えた人に食糧と衣服を与えて助けたものの、その人が亡くなったことを悲しんで太子が墓を作って葬ったという、『日本書紀』の片岡山伝説にさかのぼります。やがて飢えた人は達磨大師の化身だったと考えられるようになり、その地（奈良県王寺町）にお堂が建てられ、聖徳太子御自作と伝わる達磨尊像が奉安されました。これが片岡山達磨寺のはじまりです。<br>
+			しかしその後、興福寺の衆徒によって同寺が焼失すると、達磨像の行方もわからなくなりました。そこで達磨像を再刻して達磨寺に奉安しましたが、再び襲った火災によって守護・片岡家に安置されることになったのです。片岡家は一族分散の運命を辿りますが、片岡氏は達磨像を背負って各地を転々としたのち、寛正年間（1461〜1466年）に現在の八幡の地に至り、石清水八幡宮の別当・田中家に託されました。後年、田中家延焼の際にも尊像は災難を逃れるなど、度々災厄を逃れてきました。<br>
+			天明３年（1783）の圓福寺創建に際して境内の堂中に安置されることになり、度重なる災禍をくぐり抜けてきた因縁から、「七転び八起き」「厄災消除」のシンボルとして多くの信仰を集めるようになります。現在は春と秋に行われる「萬人講」の際に特別に御開帳され、「一願祈願  一願成就」のご祈祷を行っています。</p>
+			<div class="imgBox">
+				<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img22.jpg" alt="大勢の参拝者でにぎわう">
+				<p>普段は修行道場として非公開の圓福寺も、年に二度の「萬人講」の日には大勢の参拝者でにぎわう。</p>
+			</div>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img23.jpg" alt="本堂では重要文化財の達磨像を正面に安置して「一願祈願  一願成就」のご祈祷が行われる">
+			<p>本堂では重要文化財の達磨像を正面に安置して「一願祈願  一願成就」のご祈祷が行われるほか、禅堂では警策を持った僧侶による「肩のこらないおまじない」「心のこらないおまじない」など、多くの催しが行われている。</p>
+		</div>
+
+		<div class="sectionBox">
+			<h4 class="vol24">萬人講とは</h4>
+			<p class="txtBox">多くの臨済宗の専門道場では、托鉢などで支援してくださっている日供講の方をお寺に招待して法要を営み、お斎（精進料理）を召し上がっていただく「講中斎」を、半年に一回程度の割合で行っています。圓福寺ではこの伝統的な行事がより地域に根ざしたものになるようにとの思いから、日供講以外の方々にも広く門戸を開けています。それが現在の「萬人講」というお祭りになりました。「萬人講」当日は、参道や境内に露店や手作り市が並び、いつもと違ったにぎやかな雰囲気を楽しむことができます。</p>
+			<div class="imgBox">
+				<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img24.jpg" alt="萬人講とは">
+			</div>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img25.jpg" alt="参道や臥龍庵前の広場">
+			<p>（上）参道や臥龍庵前の広場では、地元の産品を販売する露店や手づくり市が開かれていて、老若男女が集う催しになっている。<br>
+			（左）参拝者にはお斎として精進弁当とともにお札の授与も。お弁当は、有栖川宮家から移築された「伏虎窟（御殿）」内でいただくことができる。</p>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img26.jpg" alt="アクセスマップ">
+			<p>　</p>
+		</div>
+
+		<h3>冬の風物詩  大根干し</h3>
+		<div class="imgCenter"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img27.jpg" alt="大根干し"></div>
+		<p>圓福寺の山門前には大きな銀杏の木がそびえ立っています。秋になると葉は黄金色に輝き、門前のシンボルになっていますが、すべての葉が落ちた12月の中頃になると不思議な姿に様変わり。まるで木に大根が成っているかのような光景が現れるのです。<br>
+		これは、雲水らの食事に欠かせない沢庵を作るために行われている大根干し。一般的な竿ではなく、なぜ銀杏の木に干すようになったのか、歴史を含めて定かではないそうですが、今ではすっかり圓福寺の冬の風物詩「大根ツリー」としてお馴染みになっています。<br>
+		木に掛けられた大根は１ヶ月ほどかけて冬の風に晒します。その後は樽に漬けて、漬け直しを繰り返しながら約３年かけて発酵。少しずつ樽から出して日々の食事に出されるだけでなく、萬人講で供されるお弁当にも用いられています。塩と糠だけで漬けた沢庵は、塩がしっかり利いた昔懐かしい味。一切れあればお茶碗一杯のご飯を食べられるくらい塩辛く、普段一汁一菜の粗食で過ごす雲水らにとって欠かせないものでもあるのです。</p>
+
+		<h4 class="vol24">大根鉢の一日</h4>
+		<div class="sectionBox">
+			<p class="txtBox">大根干しに使われる大根は、毎年12月半ばに行われる大根の托鉢「大根鉢」を通じて近在の家々からいただいたもの。大根鉢当日は家々の門前に用意された大根を、雲水らが駆け足で受け取って回り、まさに「師走」といった風景が見られます。<br>
+			大根鉢の後は、その地域の世話人宅でお経を唱え、食事の供養を受けるのがならわしだ。</p>
+			<div class="imgBox">
+				<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img29.jpg" alt="大根干し">
+			</div>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img30.jpg" alt="大根干し"><br><br>
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img31.jpg" alt="大根干し"><br><br>
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img32.jpg" alt="大根干し">
+			<p>　</p>
+		</div>
+
+		<div id="Shortcut">
+		</div>
+
+		<h3>明治天皇・有栖川宮家の「着物」の遺品をケアメンテする</h3>
+		<div class="imgCenter"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img33.jpg" alt="明治天皇・有栖川宮家の「着物」の遺品をケアメンテする"></div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img33_2.jpg" alt="事例">
+			<p>　</p>
+		</div>
+		
+		<p>今回のご依頼品は100年ほどの眠りから覚めた貴重な明治天皇・有栖川宮家の遺品です。大量の塵や埃を吸い込み、汚れが繊維の奥まで入り込んで、繊維が風化するほど劣化・変性（たんぱく質を構成する分子間の結合形成が湿気や熱によって分解した状態・加水分解）しており、これまで数多くの修復再生が難しい衣服を手がけてきたケアメンテの技術者も頭を抱えるほどの状態でした。そのため、作業にあたっては、着物を解くことなく一点一点、部分部分の状態を厳しく見極めながら、生地や染料、刺繍への影響を最小限に留める慎重な判断と技が求められました。新品のようにするのではなく、新たな洗浄技術の開発と染色技術の考案によって「着古し感と時代感」の表現を深化させました。<br>
+		ここではその一部の作業状況を、ビフォーアフターの画像とともにご紹介します。</p>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img34.jpg" alt="事例">
+			<p>麻の浴衣は、「明治天皇様  御浴衣」と書かれた畳紙に包まれて見つかった。黄ばみが赤茶けて繊維の劣化が激しい。畳紙には「明石くに」の名も。</p>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img35.jpg" alt="事例">
+			<p>「御振袖  御色かをり  御所車の御模様」と書かれた畳紙に保存されていた綿入りの縮緬の着物。裏地部分が風化したかのように切れぎれで、染料が変質しているために、物理的な機械力を加えることができなかった。汚れを除去するために、新たな洗浄方法を考案した。<br>
+			染色については可能な限り復元方法を考案し、「着古し感」を表現できる処理をしている。</p>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img36.jpg" alt="事例">
+			<p>立涌に丸紋が刺繍された品格漂う一枚。全体に黄ばみが浮いているだけでなく、長年の折りじわ部分から風化・変性が広がって糸が切れている様子がうかがえる。</p>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img37.jpg" alt="事例">
+			<p>絽に柳と撫子、鷺が刺繍された可憐な着物。背中部分に強烈な汚れが付着しており、これ以上の処理には繊維が耐えられない状態だった。</p>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img38.jpg" alt="事例">
+			<p>地模様に柳沢花菱が織り込まれた緋色の着物。こちらも風化が進んで変性してしまい、生地の体をなしていない部分が随所に見られたため、部分的に補強を施した。</p>
+		</div>
+
+		<div class="imgC">
+			<img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201902_img39.jpg" alt="事例">
+			<p>麻地に五つ紋（丸に三つ葉葵）が入り、金糸で鯉の滝登りが描かれるなど、格式の高さを誇る一枚。金糸が緩むなど、刺繍のほつれが目立っている。赤茶化た汚れもキレイにした。</p>
+		</div>
+
+		<h3>明治天皇・有栖川宮家の文化財的「着物」を今に蘇らせる「ハッピーケアメンテ」</h3>
+		<p>ハッピーのケアメンテの技術は、京都に古くから伝わる京友禅の技術をヒントに誕生しました。和服のモノづくりを洋服の再生産に生かし、洋服で培ってきた再生産技術を和服に応用する――。古くなって捨てられる運命の衣服を新品のように蘇らせ、また、新しい衣服を新しい状態のままで、いつまでも長く新品気分を味わってもらえるようにすることが私たちのミッションです。<br>
+		そのような想いのもと、人に優しく、地球環境を大切にした仕事スタイルを貫いているのが、「ハッピーケアメンテ＝再生産サービス」です。<br>
+		この度、圓福寺・臥龍庵に伝わる明治天皇、有栖川宮家の文化財的価値のある着物を、ハッピーケアメンテが独自に創りあげてきた技術で今に蘇らせることができ、なによりもハッピーです。<br>
+		ただ、残念なことに、あまりにも劣化が激しく風化・変性している部分が随所にあり、手を付けられない状態のモノ、これ以上手を加えると元のカタチがなくなってしまう恐れがあるものもありました。そのため、残念ながら途中で作業をやめざるを得なかった箇所もあります。<br>
+		しかしながら、保存状態の検査や修復再生の工程と方法の構築、準備期間も含めて約３年近くかけ、ケアメンテ技術を存分に生かし、お堂に眠っていた価値ある着物を皆さまにご覧いただける状態にできたことは、私たち「ハッピー」の誇りです。</p>
+
+
+	</section>
+
+
+	<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/wp/wp-content/themes/HAPPY/parts-sachi.php");
+				?>
+			</header>
+
+			</div><!--/content-->
+	</div><!--/Contents-->
+
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer.php");
+			?>
+		</div>
+		<!--/Container-->
+
+		<?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/body_retargeting_cord.php");
+		?>
+
+
+	</body>
+</html>

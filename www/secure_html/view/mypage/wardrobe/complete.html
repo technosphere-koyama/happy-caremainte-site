@@ -1,0 +1,129 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>ワードローブお預かり品　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+		<meta name="format-detection" content="telephone=no">
+		<?php if(preg_match("/(Android|iPhone|CareMenteh)/", $_SERVER["HTTP_USER_AGENT"])): ?><meta name="viewport" content="width=320, user-scalable=no" /><?php else: ?><meta name="viewport" content="width=1280" />
+		<?php endif; ?>
+
+		<link rel="stylesheet" href="/_assets/css/default.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/common.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/form.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/mypage.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="/_assets/css/tooltipster.bundle.min.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+		<script src="/_assets/js/jquery.js"></script>
+		<script src="/_assets/js/common.js"></script>
+		<script src="/_assets/js/gs.js"></script>
+		<script src="/_assets/js/jquery-1.8.2.min.js"></script>
+		<script src="/_assets/js/form.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
+		<script src="/_assets/js/jquery.validationEngine.js"></script>
+		<script src="/_assets/js/jquery.validationEngine-ja.js"></script>
+        <script src="/_assets/js/tooltipster.bundle.min.js"></script>
+        
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+
+	</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+		<div id="Container">
+			<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/include/header.php");
+				?>
+			</header>
+			<div id="Contents">
+				<div class="mainvisual__section">
+					<div>MY PAGE<br><p>マイページ</p></div>
+				</div>
+				<div class="logoutArea">
+					<div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+				</div>
+
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu"><a href="/mypage/">マイページ</a></p><p class="pankuzu no-arrow">ワードローブお預かり品</p></div>
+				</div>
+
+				<div class="mypageArea connect">
+					<div class="mypageMain2">
+						<div class="mainSide">
+							<div class="userProfile">
+								<div class="userTxt">
+									<div class="userName"><?php echo $this->get("g_name") ?>　様</div>
+									<div class="userNumber">お客様番号：<?php echo $this->get("g_suid") ?></div>
+									<div class="userPoint">ハッピーポイント：<?php echo $this->get("g_point") ?>ポイント</div>
+									<div class="userNumber">デポジット残高：<?php echo $this->get("g_depo") ?>円</div>
+								</div>
+							</div>
+                            <div class="userKarte PCpart">
+                                <div><a href="/mypage/history/">過去のケアメンテご利用履歴</a></div>
+                                <div><a href="/mypage/ordered/">ただいまのお預かり品</a></div>
+                                <div class="on"><a href="/mypage/wardrobe/">ワードローブお預かり品</a></div>
+                            </div>
+							<div class="connectLink PCpart">
+								<ul class="localNavigation_list">
+									<li><a href="/sale/">ご注文／セール情報（会員ご優待）</a></li>
+									<li><a href="/mypage/registration/">登録情報の変更</a></li>
+									<li><a href="/use/howtoorder/reparation/" target="_blank">事故賠償制度</a></li>
+								</ul>
+							</div>
+                            <div class="userKarte noicon PCpart">
+                                <div><a href="/carementeh_search/"><img src="/_assets/img/mypage/ico_search.png" alt="つなぐ">さがす</a></div>
+                                <div><a href="/mypage/sns.html"><img src="/_assets/img/mypage/ico_review.png" alt="きづく">きづく</a></div>
+                                <div><a href="/review/"><img src="/_assets/img/mypage/ico_sns.png" alt="つなぐ">つなぐ</a></div>
+                            </div>
+							<div class="mypageBackBtn PCpart"><a href="/mypage/">マイページトップへ</a></div>
+						</div><!--/mainSide-->
+
+						<div class="mainContents3">
+							<h2 class="PCpart">ワードローブお預かり品</h2>
+							<div id="mypagetab" class="historyArea">
+								<div id="tab1" class="karteWrap tab_contents active">
+									<?php $publicGadget->html_error_array($this->get('error_array')); ?>
+
+									<?php if (StaticFunction::is_empty($this->get('error_array'))) { ?>
+										<p>配送オーダーが完了しました。</p>
+									<?php } ?>
+								</div>
+							</div>
+                            <div class="mainSide SPpart">
+                                <div class="userKarte">
+                                    <div><a href="/mypage/history/">過去のケアメンテご利用履歴</a></div>
+                                    <div><a href="/mypage/ordered/">ただいまのお預かり品</a></div>
+                                    <div class="on"><a href="/mypage/wardrobe/">ワードローブお預かり品</a></div>
+                                </div>
+                            </div>
+                            <div class="mypageBackBtn SPpart"><a href="/mypage/">マイページトップへ</a></div>
+						</div><!--/mainContents3-->
+					</div>
+				</div>
+			</div><!--/Contents-->
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer.php");
+			?>
+		</div>
+		<!--/Container-->
+		<script>
+			$('.menu_button').click(function () {
+				$(this).next('.nav').slideToggle('slow').siblings('.nav').slideUp('slow');
+				$(this).siblings('.menu_button').removeClass('active');
+				$(this).toggleClass('active');
+			});
+		</script>
+	</body>
+</html>

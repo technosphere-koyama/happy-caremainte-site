@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>TOMORROWLAND　|　コミュニティ　|　ハッピー ケアメンテ&reg;</title>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=320, user-scalable=no" />
+
+		<link rel="stylesheet" href="/_assets/css/default.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/common.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/mypage.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="https://www.kyoto-happy.co.jp/_assets/css/tooltipster.bundle.min.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+		<script src="https://www.kyoto-happy.co.jp/_assets/js/jquery.js"></script>
+		<script src="https://www.kyoto-happy.co.jp/_assets/js/jquery.bxslider.min.js"></script>
+		<script src="https://www.kyoto-happy.co.jp/_assets/js/common.js"></script>
+		<script src="https://www.kyoto-happy.co.jp/_assets/js/form.js"></script>
+		<script src="https://www.kyoto-happy.co.jp/_assets/js/ga.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="https://www.kyoto-happy.co.jp/_assets/js/jquery.validationEngine.js"></script>
+		<script src="https://www.kyoto-happy.co.jp/_assets/js/jquery.validationEngine-ja.js"></script>
+		<script src="https://www.kyoto-happy.co.jp/_assets/js/jquery.darktooltip.js"></script>
+
+		<link rel="stylesheet" href="https://www.kyoto-happy.co.jp/_assets/css/lightbox.css">
+		<script src="https://www.kyoto-happy.co.jp/_assets/js/lightbox.js"></script>
+
+        <script src="https://www.kyoto-happy.co.jp/_assets/js/tooltipster.bundle.min.js"></script>
+
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+
+	</head>
+
+	<body id="pTop">
+		<span class="RColumn"></span>
+        <?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+        <?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+				<div id="Container">
+			<header>
+                <?php
+                /* ヘッダーインクルード */
+                include(DIR_PUBLIC . "/include/header.php");
+                ?>
+			</header>
+
+			<div id="Contents" class="TopCommunity">
+				<div class="mainvisual__section">
+					<div>COMMUNITY<br><p>コミュニティ</p></div>
+				</div>
+				<div class="logoutArea">
+					<div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+				</div>
+
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu"><a href="/community">コミュニティ</a></p><p class="pankuzu no-arrow">TOMORROWLAND</p></div>
+				</div>
+
+				<div class="mypageNavi PCpart">
+					<ul>
+						<li><a href="/mypage/sns.html">トップ</a></li>
+						<li><a href="/mypage/friend/">フレンド</a></li>
+						<li class="current"><a href="/community/">コミュニティ</a></li>
+						<li><a href="/mypage/message/">メッセージ</a></li>
+						<li><a href="/profile/?uid=7bdb57c2a07939d37d6d2138b30f775a1255515796a9d91142c97b0c9ed08eac">プロフィール</a></li>
+					</ul>
+				</div>
+                <div class="snsNavi SPpart">
+                	<ul>
+                        <?php $publicGadget->html_mypage_navi_sp() /* .html_mypage_navi_sp */ ?>
+                    </ul>
+                </div>
+
+				<div class="tc_cover"></div>
+				<div class="tc_head">
+					<img src="avatar.jpg" alt="TOMORROWLAND">
+					<h1><span>TOMORROWLAND</span></h1>
+					<span class="category">ファッション</span>
+					<p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+				</div>
+
+				<div class="mypageArea">
+
+						<div id="mypagetab" class="mypageMain">
+
+							<ul class="tab_menu SPpart">
+								<li class="active"><a href="#post">投稿</a></li><li><a href="#profile">プロフィール</a></li>
+							</ul>
+
+							<div id="profile" class="mainSide tab_contents">
+								<div class="tc_information SPpart">
+									<p>ホームページ</p>
+									<a href="www.tomorrowland.co.jp" target="_blank">www.tomorrowland.co.jp</a>
+									<ul class="sns">
+										<li><a href="#" target="_blank"><img src="_assets/img/mypage/ico_sns01.gif" alt="Twitter"></a></li>
+										<li><a href="#" target="_blank"><img src="_assets/img/mypage/ico_sns02.gif" alt="Facebook"></a></li>
+										<li><a href="#" target="_blank"><img src="_assets/img/mypage/ico_sns03.gif" alt="Instagram"></a></li>
+										<li><a href="#" target="_blank"><img src="_assets/img/mypage/ico_sns04.gif" alt="YouTube"></a></li>
+									</ul>
+								</div>
+
+								<div class="userCommunity">
+									<h5>管理人</h5>
+									<div class="userCommunityInfo">
+										<div class="userCommunityImg"><a href=""><img src="avatar.jpg" alt="TOMORROWLAND"></a></div>
+										<div class="userCommunityName"><a href="/profile/?uid=happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhapp">TOMORROWLAND</a></div>
+									</div>
+								</div>
+
+								<div class="userCommunity">
+									<h5>メンバー:5人</h5>
+																			<div class="userCommunityInfo">
+											<div class="userCommunityImg"><a href="/profile/?uid=happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhapp"><img src="https://www.kyoto-happy.co.jp//images/user/happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhapp/avatar.jpg" alt="コミュニティ"></a></div>
+											<div class="userCommunityName"><a href="/profile/?uid=happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhapp">Ｈａｐｐｙケアメンテ</a></div>
+										</div>
+																			<div class="userCommunityInfo">
+											<div class="userCommunityImg"><a href="/profile/?uid=4093607680537ba373e77437f12851d155bcb458056b19d8dd3f4a9bd3bba3bf"><img src="https://www.kyoto-happy.co.jp//images/user/4093607680537ba373e77437f12851d155bcb458056b19d8dd3f4a9bd3bba3bf/avatar.jpg" alt="コミュニティ"></a></div>
+											<div class="userCommunityName"><a href="/profile/?uid=4093607680537ba373e77437f12851d155bcb458056b19d8dd3f4a9bd3bba3bf">マグカップ★</a></div>
+										</div>
+																			<div class="userCommunityInfo">
+											<div class="userCommunityImg"><a href="/profile/?uid=b880b076621890776b0fd89e6c546e13778aab9b360bdd9940bd1d49a7b63ad2"><img src="https://www.kyoto-happy.co.jp/_assets/img/mypage/avatar_no.jpg" alt="コミュニティ"></a></div>
+											<div class="userCommunityName"><a href="/profile/?uid=b880b076621890776b0fd89e6c546e13778aab9b360bdd9940bd1d49a7b63ad2">Raigu</a></div>
+										</div>
+																			<div class="userCommunityInfo">
+											<div class="userCommunityImg"><a href="/profile/?uid=b0d6a2b96aad0556ae0bdd871a077c4c962f6dac2ac7f126ef35001429805eaa"><img src="https://www.kyoto-happy.co.jp//images/user/b0d6a2b96aad0556ae0bdd871a077c4c962f6dac2ac7f126ef35001429805eaa/avatar.jpg" alt="コミュニティ"></a></div>
+											<div class="userCommunityName"><a href="/profile/?uid=b0d6a2b96aad0556ae0bdd871a077c4c962f6dac2ac7f126ef35001429805eaa">ビューティフルライフ</a></div>
+										</div>
+																			<div class="userCommunityInfo">
+											<div class="userCommunityImg"><a href="/profile/?uid=74a191b706c66fe84d52bbdfe0553182a9510dcbddc9b3ea31c9e1f6e2a37375"><img src="https://www.kyoto-happy.co.jp//images/user/74a191b706c66fe84d52bbdfe0553182a9510dcbddc9b3ea31c9e1f6e2a37375/avatar.jpg" alt="コミュニティ"></a></div>
+											<div class="userCommunityName"><a href="/profile/?uid=74a191b706c66fe84d52bbdfe0553182a9510dcbddc9b3ea31c9e1f6e2a37375">★スリーさん</a></div>
+										</div>
+																	</div>
+								<div class="userCommunity">
+									<h5>コミュニティの説明</h5>
+									<div class="userCommunityInfo infoTxt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>
+									<br>
+									テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</div>
+								</div>
+								<div class="userCommunity">
+									<h5>コミュニティのカテゴリー</h5>
+									<div class="userCommunityInfo infoTxt">トップコミュニティー</div>
+								</div>
+							</div><!--/mainSide-->
+
+							<div id="post" class="mainContents tab_contents active">
+
+
+																	<div class="postingArea">
+										<div class="userAvatar"><img src="https://www.kyoto-happy.co.jp//images/user/happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhapp/avatar.jpg" alt="Ｈａｐｐｙケアメンテ"></div>
+										<div class="userTxt">
+											<div class="userName"><a href="/profile/?uid=happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhapp">Ｈａｐｐｙケアメンテ</a></div>
+											<div class="postingTime">2016.12.17</div>
+
+																					</div>
+										<div class="target_response_8">
+											<div class="postingTxt">Raiguさま　早速の投稿ありがとうございます。<br />
+<br />
+<br />
+皆様も気軽にご意見・ご感想を投稿してください。<br />
+お友達やご家族にもぜひご覧いただいてください。</div>
+																					</div>
+
+										<div class="postingLike">
+											<a href="javascript:void(0)" rel="response:8" role="button">いいね:<span class="like_count">0</span></a>
+										</div>
+									</div>
+																	<div class="postingArea">
+										<div class="userAvatar"><img src="https://www.kyoto-happy.co.jp/_assets/img/mypage/avatar_no.jpg" alt="Raigu"></div>
+										<div class="userTxt">
+											<div class="userName"><a href="/profile/?uid=b880b076621890776b0fd89e6c546e13778aab9b360bdd9940bd1d49a7b63ad2">Raigu</a></div>
+											<div class="postingTime">2016.12.17</div>
+
+																					</div>
+										<div class="target_response_7">
+											<div class="postingTxt">続きです<br />
+<br />
+～～～<br />
+ただハッピーを知らない新規顧客の立場になった場合、<br />
+いきなり「注文/価格表」というのはいやらしい感じを受けます。<br />
+<br />
+恐らくですが、新規顧客がハッピーを使ってみたい、と思うまでのプロセスは<br />
+i.ハッピーケアメンテとはどういったサービスなのか？<br />
+（サービス概要・メニュー一覧）＆（ケアメンテの技術）のコンテンツ<br />
+↓<br />
+ii.口コミの確認<br />
+（評価）のコンテンツ<br />
+↓<br />
+iii.価格の確認<br />
+（価格表）のコンテンツ<br />
+↓<br />
+iv.注文<br />
+※iiとiiiは人によって順番が入れ替わることもあるかと思いますが。。<br />
+<br />
+といったものになると思うので、コンテンツ誘導できるように<br />
+配置を見直されると良いかと思いました。</div>
+																					</div>
+
+										<div class="postingLike">
+											<a href="javascript:void(0)" rel="response:7" role="button">いいね:<span class="like_count">1</span></a>
+										</div>
+									</div>
+																	<div class="postingArea">
+										<div class="userAvatar"><img src="https://www.kyoto-happy.co.jp/_assets/img/mypage/avatar_no.jpg" alt="Raigu"></div>
+										<div class="userTxt">
+											<div class="userName"><a href="/profile/?uid=b880b076621890776b0fd89e6c546e13778aab9b360bdd9940bd1d49a7b63ad2">Raigu</a></div>
+											<div class="postingTime">2016.12.17</div>
+
+																					</div>
+										<div class="target_response_6">
+											<div class="postingTxt">続きです。<br />
+<br />
+３．「２」のコメントに関連しますが、サイト上部のメニューで左から<br />
+「ご注文/価格表」、「サービス概要・メニュー一覧」、「ケアメンテの技術」、「提携～」<br />
+と並んでいるが、既存顧客と新規顧客どちらに重きを置くかで並びを変えた方が良いかと思います。<br />
+私は10年以上ケアメンテを利用していますが、特にWebサイトのコンテンツを見ることはないので<br />
+すぐに「注文」にアクセスできると嬉しいです。<br />
+⇒現状のままで違和感なし。<br />
+</div>
+																					</div>
+
+										<div class="postingLike">
+											<a href="javascript:void(0)" rel="response:6" role="button">いいね:<span class="like_count">1</span></a>
+										</div>
+									</div>
+																	<div class="postingArea">
+										<div class="userAvatar"><img src="https://www.kyoto-happy.co.jp/_assets/img/mypage/avatar_no.jpg" alt="Raigu"></div>
+										<div class="userTxt">
+											<div class="userName"><a href="/profile/?uid=b880b076621890776b0fd89e6c546e13778aab9b360bdd9940bd1d49a7b63ad2">Raigu</a></div>
+											<div class="postingTime">2016.12.17</div>
+
+																					</div>
+										<div class="target_response_5">
+											<div class="postingTxt">初めまして、Raiguと申します。<br />
+<br />
+①：良い<br />
+②：やや悪い<br />
+③：良い<br />
+④：良い<br />
+⑤：良い<br />
+⑥：やや悪い<br />
+⑦：良い<br />
+⑧：良い<br />
+⑨：ふつう<br />
+⑩：以下に記載します<br />
+<br />
+<br />
+１．今までのサイトより高級感ある上品なサイトになったと思います。<br />
+<br />
+２．「ご注文/価格表」の中に「評価」があるがわかりにくいのではないでししょうか？<br />
+⇒評価は注文、価格表どちらに関するものでも無いため。<br />
+どちらかというと「サービス概要」か「ケアメンテの技術」に関するものではないでしょうか？</div>
+																					</div>
+
+										<div class="postingLike">
+											<a href="javascript:void(0)" rel="response:5" role="button">いいね:<span class="like_count">1</span></a>
+										</div>
+									</div>
+																	<div class="postingArea">
+										<div class="userAvatar"><img src="https://www.kyoto-happy.co.jp//images/user/happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhapp/avatar.jpg" alt="Ｈａｐｐｙケアメンテ"></div>
+										<div class="userTxt">
+											<div class="userName"><a href="/profile/?uid=happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhapp">Ｈａｐｐｙケアメンテ</a></div>
+											<div class="postingTime">2016.12.16</div>
+
+																					</div>
+										<div class="target_response_4">
+											<div class="postingTxt">Ｈａｐｐｙホームページに対する、ご意見・ご指摘・ご要望など、<br />
+たくさんのご意見をおまちしております。<br />
+<br />
+<br />
+【5段階評価】でお答えください。<br />
+<br />
+良い・やや良い・ふつう・やや悪い・悪い<br />
+<br />
+①全体の印象はいかがですか。<br />
+②デザイン・レイアウトは、どのように感じましたか。<br />
+③文章表現はわかりやすいですか。<br />
+④情報の内容にご満足いただけましたか。<br />
+⑤申し込みフォームなどの機能性はいかがですか。<br />
+⑥知りたい情報へすぐにたどりつけましたか。<br />
+⑦「さがす」ケアメンテ検索エンジンの操作性はいかがですか。<br />
+⑧「さがす」ケアメンテ検索エンジンで<br />
+　仕上がり感はイメージできましたか。<br />
+⑨「つなぐ」HappySNSの操作性はいかがですか。<br />
+⑩その他：ご意見・ご感想・ご要望など自由にご記入ください。</div>
+																					</div>
+
+										<div class="postingLike">
+											<a href="javascript:void(0)" rel="response:4" role="button">いいね:<span class="like_count">1</span></a>
+										</div>
+									</div>
+																<div class="postingPagenavi">
+									<ul class="pageNumbers">
+										<li><span class="current">1</span></li>									</ul>
+								</div>
+							</div><!--/mainContents-->
+						</div>
+						<div class="mypageSub">
+							<div class="tc_information PCpart">
+								<p>ホームページ</p>
+								<a href="www.tomorrowland.co.jp" target="_blank">www.tomorrowland.co.jp</a>
+								<ul class="sns">
+									<li><a href="#" target="_blank"><img src="_assets/img/mypage/ico_sns01.gif" alt="Twitter"></a></li>
+									<li><a href="#" target="_blank"><img src="_assets/img/mypage/ico_sns02.gif" alt="Facebook"></a></li>
+									<li><a href="#" target="_blank"><img src="_assets/img/mypage/ico_sns03.gif" alt="Instagram"></a></li>
+									<li><a href="#" target="_blank"><img src="_assets/img/mypage/ico_sns04.gif" alt="YouTube"></a></li>
+								</ul>
+							</div>
+							<div class="tc_connect">
+								<h4>「TOMORROWLAND」に<br class="PCpart">関連するアカウント</h4>
+								<div class="accout_wrap">
+									<h5>トゥモローランド 札幌ステラプレイス店</h5>
+									<ul class="account">
+										<li><a href="#"><img src="user.jpg" alt="アカウント名が入ります"><span>アカウント名が入ります</span></a></li>
+									</ul>
+								</div>
+								<div class="accout_wrap">
+									<h5>トゥモローランド 丸の内店</h5>
+									<ul class="account">
+										<li><a href="#"><img src="user.jpg" alt="アカウント名が入ります"><span>アカウント名が入ります</span></a></li>
+										<li><a href="#"><img src="user.jpg" alt="アカウント名が入ります"><span>アカウント名が入ります</span></a></li>
+									</ul>
+								</div>
+								<div class="accout_wrap">
+									<h5>トゥモローランド 京都店</h5>
+									<ul class="account">
+										<li><a href="#"><img src="user.jpg" alt="アカウント名が入ります"><span>アカウント名が入ります</span></a></li>
+										<li><a href="#"><img src="user.jpg" alt="アカウント名が入ります"><span>アカウント名が入ります</span></a></li>
+										<li><a href="#"><img src="user.jpg" alt="アカウント名が入ります"><span>アカウント名が入ります</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="tc_connect">
+								<h4>管理人のフレンド</h4>
+								<div class="accout_wrap">
+									<ul class="account">
+										<li><a href="#"><img src="user.jpg" alt="アカウント名が入ります"><span>アカウント名が入ります</span></a></li>
+										<li><a href="#"><img src="user.jpg" alt="アカウント名が入ります"><span>アカウント名が入ります</span></a></li>
+										<li><a href="#"><img src="user.jpg" alt="アカウント名が入ります"><span>アカウント名が入ります</span></a></li>
+										<li><a href="#"><img src="user.jpg" alt="アカウント名が入ります"><span>アカウント名が入ります</span></a></li>
+										<li><a href="#"><img src="user.jpg" alt="アカウント名が入ります"><span>アカウント名が入ります</span></a></li>
+										<li><a href="#"><img src="user.jpg" alt="アカウント名が入ります"><span>アカウント名が入ります</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div><!--/mypageSub-->
+									</div>
+			</div><!--/Contents-->
+
+<div class="pickupMessage">
+    <div class="messageClose"><img src="https://www.kyoto-happy.co.jp/_assets/img/footer/close.png" alt="close"></div>
+    <a href="">
+        <div class="messageBox">
+            <p style="text-align: center;">デリケートなシルクは、<br />
+日頃のお手入れが大切です。<br />
+「さがす」ケアメンテ事例集<br />
+素材：シルクで検索すると・・・</p>
+        </div>
+    </a>
+</div>
+
+<footer class="fnavi PCpart">
+		<div class="fnavi_main">
+			<ul>
+            	<li class="fnavi01">
+                	<ul>
+                    	<li class="headline"><a href="/use/">ご注文方法／価格表</a></li>
+                        <li><a href="/use/cat/howtoorder/">ご注文方法</a></li>
+                        <li><a href="/use/price/list/">価格表／カタログ請求</a></li>
+                        <li><a href="/use/evaluate/blog/">評価</a></li>
+                    </ul>
+                </li>
+                <li class="fnavi02">
+                	<ul>
+                    	<li class="headline"><a href="/carementeh/">サービス概要・メニュー一覧</a></li>
+                        <li><a href="/carementeh/overview/style/">サービス概要</a></li>
+                        <li><a href="/carementeh/service/aquadry/">サービスメニュー一覧</a></li>
+                    </ul>
+                </li>
+                <li class="fnavi03">
+                	<ul>
+                    	<li class="headline"><a href="/technology/">ケアメンテの技術</a></li>
+                        <li><a href="/technology/washing/weightlessness/">ハッピーの水系洗浄を支える技術</a></li>
+                        <li><a href="/technology/before_after/ripron/">Before &amp; After</a></li>
+                        <li><a href="/technology/data/weightlessness/ma_test/">技術を支える検証データ</a></li>
+                    </ul>
+                </li>
+                <li class="fnavi04">
+                	<ul>
+                    	<li class="headline"><a href="/shop/">取扱い店舗一覧</a></li>
+                        <li><a href="/shop_search/">現在地から検索</a></li>
+                        <li><a href="/shop/brand/abeno_harukas/">ショップ情報</a></li>
+                    </ul>
+                </li>
+                <li class="fnavi05">
+                	<ul>
+                    	<li class="headline"><a href="/corporate/">会社情報</a></li>
+                        <li><a href="/corporate/company/profile/">会社概要</a></li>
+                        <li><a href="/corporate/media/literary/">メディア情報</a></li>
+                        <li><a href="/corporate/recruit/cultivation/">リクルート</a></li>
+                        <li><a href="/corporate/csr/weightlessness/">環境への取組み</a></li>
+                        <li><a href="/corporate/europe/2013_summer/">ヨーロッパ洗浄技術交流紀行</a></li>
+                    </ul>
+                </li>
+			</ul>
+		</div>
+        <div class="fnavi_sub">
+        	<ul>
+            	<li><a href="/mypage/">マイページ</a></li><li><a href="/knowledge/">おしゃれの雑学</a></li><li><a href="/mailmag/">メールマガジン</a></li><li><a href="/movie/">ケアメンテ&reg;を動画で紹介</a></li><li><a href="/faq/">よくあるご質問</a></li><li><a href="/carementeh_search/">さがす ＜ケアメンテ事例集＞</a></li><li><a href="/review/">きづく ＜お客さまレビュー＞</a></li><li><a href="/mypage/sns.html">つなぐ ＜ハッピーSNS＞</a></li>
+            </ul>
+        </div>
+	</footer>
+
+<div id="pageback"><a href="javascript:history.back();"><img src="https://www.kyoto-happy.co.jp/_assets/img/footer/pageback.png" alt="戻る"/></a></div>
+<div id="pagetop"><img src="https://www.kyoto-happy.co.jp/_assets/img/footer/pagetop.png" alt="pagetop"/></div>
+<footer class="sp-border clearfix">
+	<div class="content">
+    	<div class="sns">
+        	<ul class="PCpart">
+            	<li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><img src="https://www.kyoto-happy.co.jp/_assets/img/footer/icon_fb.gif" alt="ハッピーケアメンテfacebook" class="icon-fb"></a></li>
+            	<li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><img src="https://www.kyoto-happy.co.jp/_assets/img/footer/icon_tw.gif" alt="ハッピーケアメンテtwitter" class="icon-tw"></a></li>
+            	<li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><img src="https://www.kyoto-happy.co.jp/_assets/img/footer/icon_instagram.gif" alt="instagram" class="icon-instagram"></a></li>
+            	<li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><img src="https://www.kyoto-happy.co.jp/_assets/img/footer/icon_yt.gif" alt="ハッピーケアメンテYouTube" class="icon-yt"></a></li>
+        	</ul>
+        	<ul class="SPpart">
+            	<li class="ttl-follow">FOLLOW US</li>
+            	<li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><img src="https://www.kyoto-happy.co.jp/_assets/img_sp/footer/icon_fb.gif" alt="ハッピーケアメンテfacebook" class="icon-fb"></a></li>
+            	<li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><img src="https://www.kyoto-happy.co.jp/_assets/img_sp/footer/icon_tw.gif" alt="ハッピーケアメンテtwitter" class="icon-tw"></a></li>
+            	<li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><img src="https://www.kyoto-happy.co.jp/_assets/img_sp/footer/icon_instagram.gif" alt="instagram" class="icon-instagram"></a></li>
+            	<li><a href="/movie/" target="_blank"><img src="https://www.kyoto-happy.co.jp/_assets/img_sp/footer/icon_yt.gif" alt="ハッピーケアメンテYouTube" class="icon-yt"></a></li>
+        	</ul>
+    	</div>
+    	<div class="navi">
+			<ul class="PCpart">
+				<li><a href="/contact/">お問い合わせ</a></li>
+				<li><a href="/corporate/recruit/cultivation/">リクルート</a></li>
+				<li><a href="/privacy/">特定商取引法に基づく表記</a></li>
+			</ul>
+    	</div>
+	</div>
+</footer>
+<footer>
+	<div class="copyright">&copy; 2017 Happy Co., Ltd.  All Rights Reserved.</div>
+</footer>
+
+
+<script type="text/javascript">
+if ( navigator.userAgent.indexOf('CareMenteh App User') != -1 ){
+	document.write('<link rel="stylesheet" type="text/css" href="https://www.kyoto-happy.co.jp/_assets/css/app.css?170316">');
+}else {
+	document.write('<link rel="stylesheet" type="text/css" href="https://www.kyoto-happy.co.jp/_assets/css/app_no.css?170316">');
+}
+</script>
+
+<!--<div id="pageback"><a href="javascript:history.back();"><img src="https://www.kyoto-happy.co.jp/_assets/img_app/pageback.png" alt="戻る"/></a></div>-->
+
+<div class="loadingWrap app">
+	<img src="https://www.kyoto-happy.co.jp/_assets/img_sp/common_page/loading.gif" width="40" height="40">
+</div>
+
+<div class="app">
+	<div class="menu"><a href="/app_home/"><img src="https://www.kyoto-happy.co.jp/_assets/img_app/icon1.png" alt="ホーム"></a></div>
+	<div class="menu"><a href="/shop/"><img src="https://www.kyoto-happy.co.jp/_assets/img_app/icon2.png" alt="ショップ検索"></a></div>
+	<div class="menu"><a href="/order/"><img src="https://www.kyoto-happy.co.jp/_assets/img_app/icon3.png" alt="ご注文"></a></div>
+	<div class="menu"><a href="tel:0120886868"><img src="https://www.kyoto-happy.co.jp/_assets/img_app/icon4.png" alt="お電話"></a></div>
+	<div class="menu"><a href="/mypage/"><img src="https://www.kyoto-happy.co.jp/_assets/img_app/icon5.png" alt="マイページ"></a></div>
+</div>		</div>
+		<!--/Container-->
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('[id^=def-]').darkTooltip({
+					trigger: 'click',
+					opacity: 1,
+					gravity: 'north'
+				});
+			});
+		</script>
+		<script type="text/javascript">
+			$(function () {
+				$('.tab_menu a').click(function (e) {
+					$('.tab_menu .active').removeClass('active');
+					$(this).parent().addClass('active');
+					$('.tab_contents').each(function () {
+						$(this).removeClass('active');
+					});
+					$(this.hash).addClass('active');
+					e.preventDefault();
+				});
+			});
+		</script>
+		<script>
+			$('.menu_button').click(function () {
+				$(this).next('.nav').slideToggle('slow').siblings('.nav').slideUp('slow');
+				$(this).siblings('.menu_button').removeClass('active');
+				$(this).toggleClass('active');
+			});
+		</script>
+		<script>
+			var like_array = new Array();
+			$(function () {
+				$(".edit-form").css("clear", "both").hide();
+				$(".edit-response").on("click", function () {
+					var targ = $(this).attr("rel");
+					$(".target_" + targ).find(".postingTxt").hide();
+					$(".target_" + targ).find(".edit-form").show();
+				});
+			});
+		</script>
+		<script src="https://www.kyoto-happy.co.jp/_assets/js/xc.js"></script>
+
+		<?php
+				$webroot = $_SERVER['DOCUMENT_ROOT'];
+				include($webroot."/include/body_retargeting_cord.php");
+				?>
+
+
+	</body>
+</html>

@@ -1,0 +1,138 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>きづく＜お客様レビュー＞　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+		<meta name="format-detection" content="telephone=no">
+		<?php if(preg_match("/(Android|iPhone|CareMenteh)/", $_SERVER["HTTP_USER_AGENT"])): ?><meta name="viewport" content="width=320, user-scalable=no" /><?php else: ?><meta name="viewport" content="width=1280" />
+		<?php endif; ?>
+
+		<link rel="stylesheet" href="/_assets/css/default.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/common.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/mypage.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="/_assets/css/tooltipster.bundle.min.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+		<script src="/_assets/js/jquery.js"></script>
+		<script src="/_assets/js/common.js"></script>
+		<script src="/_assets/js/ga.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="/_assets/js/jquery.darktooltip.js"></script>
+        <script src="/_assets/js/tooltipster.bundle.min.js"></script>
+        
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+
+	</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+		<div id="Container">
+			<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/include/header.php");
+				?>
+			</header>
+
+			<div id="Contents">
+
+				<div class="mainvisual__section">
+					<div>REVIEW<br><p>きづく＜お客様レビュー＞</p></div>
+				</div>
+				<div class="logoutArea">
+					<div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+				</div>
+
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu no-arrow">きづく＜お客様レビュー＞</p></div>
+				</div>
+
+				<!--<div class="mypageNavi PCpart">
+					<ul>
+						<li><a href="/mypage/sns.html">マイページ トップ</a></li>
+						<li><a href="/mypage/friend/">フレンド</a></li>
+						<li><a href="/community/">コミュニティ</a></li>
+						<li class="current"><a href="/review/">レビュー</a></li>
+						<li><a href="/mypage/message/">メッセージ</a></li>
+						<li><a href="<?php echo $this->get("user_link"); ?>">プロフィール</a></li>
+					</ul>
+				</div>-->
+				<div class="mypageHead SPpart">
+					<h1>きづく＜レビュー＞</h1>
+					<!--<div class="mypageNavi SPpart">
+						<div class="menu_button"><span>マイページ メニュー</span></div>
+						<ul class="nav">
+							<?php $publicGadget->html_mypage_navi_sp() /* .html_mypage_navi_sp */ ?>
+						</ul>
+					</div>-->
+				</div>
+
+				<div class="mypageArea">
+
+					<div class="mypageMain">                    
+						<div class="mainContents2">
+							<h2 class="PCpart">レビュー確認画面</h2>
+							<div class="postingForm">                
+
+								<?php if (!StaticFunction::is_empty($this->get('error_array'))) { ?>
+									<ul class="error_box">
+										<?php
+										foreach ($this->get('error_array') as $value) {
+											echo '<li>・ ' . $value['message'] . '</li>';
+										}
+										?>
+									</ul>
+								<?php } ?>
+
+							</div><!--/postingForm-->
+						</div><!--/mainContents2-->
+					</div>
+
+					<div class="mypageSub">
+						<?php $publicGadget->get_news(); /* 右カラムのお知らせ */ ?>
+                        <div class="happyOrder2"><a href="/carementeh_search/"><img src="/_assets/img/mypage/ico_search.png" alt="さがす">さがす</a></div>
+                        <div class="happyOrder2"><a href="/mypage/sns.html"><img src="/_assets/img/mypage/ico_sns.png" alt="つなぐ">つなぐ</a></div>
+                        <div class="happyOrder2"><a href="/mypage/"><img src="/_assets/img/mypage/ico_mypage.png" alt="マイページ">マイページ</a></div> 
+                        <div class="happyOrder2"><a href="/order/"><img src="/_assets/img/mypage/ico_order.png" alt="ご注文">ご注文</a></div> 
+					</div><!--/mypageSub-->
+				</div>
+			</div><!--/Contents-->
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer.php");
+			?>
+		</div>
+		<!--/Container-->
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('[id^=def-]').darkTooltip({
+					trigger: 'click',
+					opacity: 1,
+					gravity: 'north'
+				});
+			});
+		</script>
+		<script>
+			$('.menu_button').click(function () {
+				$(this).next('.nav').slideToggle('slow').siblings('.nav').slideUp('slow');
+				$(this).siblings('.menu_button').removeClass('active');
+				$(this).toggleClass('active');
+			});
+		</script>
+		
+		<?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/body_retargeting_cord.php");
+		?>
+		
+		
+	</body>
+</html>

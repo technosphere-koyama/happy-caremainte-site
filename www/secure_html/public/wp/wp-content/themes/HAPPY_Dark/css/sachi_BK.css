@@ -1,0 +1,822 @@
+@charset "utf-8";
+/*==================================
+  幸 sachi
+==================================*/
+.sachi .content {
+	color: #050505;
+	width: 100%;
+	padding-top: 0;
+}
+.sachi .content a {
+	color: #050505;
+}
+.sachi .content a:hover img {
+	opacity: .5;
+}
+.mainCover {
+	position: relative;
+}
+.mainCover .cover img {
+	width: 100%;
+	vertical-align: middle;
+}
+.backnumberLink {
+	position: absolute;
+	top: 5%;
+	right: 5%;
+}
+.backnumberLink a {
+	display: block;
+	border: 1px solid #000;
+	color: #fff;
+	font-size: 14px;
+	padding: 8px 30px;
+	border-radius: 2px;
+	background: rgba(0,0,0,.7);
+}
+.backnumberLink i {
+	font-size: 16px;
+	margin-right: 10px;
+}
+.mainCover .cover h1 {
+	position: absolute;
+	top: 15%;
+	left: 5%;
+	border-bottom: none;
+	padding: 0;
+	margin: 0;
+}
+.mainCover .cover h1 img {
+	width: auto;
+	height: 320px;
+}
+.mainCover .cover h2 {
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+	color: #fff;
+	font-size: 34px;
+	font-weight: bold;
+	text-align: right;
+}
+.mainCover .cover h2 .number {
+	display: inline-block;
+	background: #6a3b93;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 22px;
+	padding: 5px 8px;
+	margin: 0 0 10px;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif;
+}
+.mainCover .cover h2.vol26 {
+	color: #4AA8DF;
+}
+.mainCover .cover h2 .number {
+	background: #4AA8DF;
+}
+.mainCover span {
+	display: block;
+	text-align: right;
+	font-size: 20px;
+}
+.main_topWrap {
+	width: 1100px;
+	margin: 30px auto;
+	font-size: 14px;
+	line-height: 1.6;
+}
+.main_topWrap a{
+	color: #001ba0;
+	text-decoration: underline;
+}
+.memberBtnArea {
+	text-align: right;
+}
+.memberBtnArea > div {
+	display: inline-block;
+}
+.memberBtnArea > div a {
+	display: block;
+	width: 280px;
+	margin: 0 3px;
+	padding: 9px 0 7px;
+	border-radius: 20px;
+	box-sizing: border-box;
+	color: #fff;
+	text-align: center;
+	line-height: 1.6;
+}
+.memberBtnArea > div:first-of-type a {
+	background: #6a3b93;
+}
+.memberBtnArea > div:last-of-type a {
+	background: #3e4758;
+}
+.main_bottomWrap {
+	width: 100%;
+	background: #dbdbdb;
+	padding: 15px 0;
+	border: #dbdbdb solid 1px;
+	text-align: center;
+	margin: 0 auto 60px;
+	display: inline-block;
+}
+.main_bottomWrap .Wrap {
+	text-align: center;
+	margin: 0 auto;
+}
+.main_bottomWrap .title {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	padding: 6px 0;
+	margin: 0 auto;
+	float: left;
+	letter-spacing: 0.1em;
+}
+.main_bottomWrap .title span{
+	color: #6a3b93;
+}
+.main_bottomWrap .txt {
+	text-align: left;
+	font-size: 12px;
+	margin: 4px auto 0;
+	line-height: 1.6em;
+	letter-spacing: 0.1em;
+	float: left;
+}
+
+
+.sachi section {
+	overflow: hidden;
+	width: 1100px;
+	margin: 20px auto 0;
+	font-size: 15px;
+	line-height: 2.2;
+}
+.sachi .lead {
+	font-size: 17px;
+	margin-top: 20px;
+}
+.sachi section .imgCenter {
+	max-width: 100%;
+	margin-bottom: 60px;
+}
+.sachi section h3 {
+	font-size: 24px;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif;
+	font-weight: bold;
+	margin-bottom: 30px;
+	padding-top: 30px;
+}
+.sachi section h4 {
+	font-size: 16px;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.sachi section p {
+	margin-bottom: 30px;
+}
+.sachi .mainTxt .box {
+	display: inline-block;
+	margin-bottom: 50px;
+}
+.sachi .mainTxt p {
+	margin-bottom: 20px;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+.sachi .txtR {
+	margin: -80px 0 0;
+	text-align: right;
+}
+
+.sachi section .imgR {
+	float: right;
+	margin-left: 30px;
+	margin-bottom: 30px;
+	width: 480px;
+}
+.sachi section .imgL {
+	float: left;
+	margin-right: 30px;
+	margin-bottom: 10px;
+}
+.sachi section .imgR img {
+	width: 480px;
+}
+.sachi section .imgL img {
+	width: 480px;
+}
+
+
+.sachi section .sectionBox{
+	display: inline-block;
+	clear: both;
+}
+.sachi section .sectionBox p{
+	margin: 0 0 30px;
+}
+.sachi section .sectionBox .txtBox{
+	float: left;
+	width: 580px;
+}
+.sachi section .sectionBox .imgBox{
+	float: right;
+	margin-left: 30px;
+	margin-bottom: 30px;
+	font-size: 12px;
+	line-height: 1.5;
+	width: 480px;
+}
+.sachi section .sectionBox .imgBox img{
+	width: 480px;
+	margin: 0 0 10px;
+	height: auto;
+}
+
+.happytime {
+	text-align: center;
+	margin: 100px 0 120px;
+}
+.happytime h4 {
+	display: initial;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif;
+	color: #fff;
+	background: #6a3b93;
+	font-size: 15px;
+	letter-spacing: 0;
+	padding: 7px 40px;
+	border-radius: 20px;
+}
+.sachi .happytime p {
+	margin: 15px auto 20px;
+}
+.happytime .balloon {
+	position: relative;
+	background: #eee;
+	width: 50%;
+	margin: auto;
+	padding: 24px 40px;
+	border-radius: 10px;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: bold;
+	line-height: 1.8;
+	text-align: left;
+}
+.happytime .balloon:after {
+	position: absolute;
+	bottom: -20px;
+	right: 5%;
+	content: '';
+	display: inline-block;
+	width: 30px;
+	height: 42px;
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/balloon.png) no-repeat;
+	background-size: contain;
+	vertical-align: middle;
+}
+
+.sachi .subTxt {
+	padding: 60px 0;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 60px;
+}
+.sachi .subTxt .imgR img {
+	width: 300px;
+}
+.sachi .subTxt .imgL img {
+	width: 300px;
+}
+.sachi .subTxt  {
+	margin-bottom: 20px;
+}
+.sachi .subTxt p {
+	margin-bottom: 0;
+}
+
+.credit {
+	border: 1px solid #ccc;
+	padding: 30px 30px 10px 30px;
+	box-sizing: border-box;
+}
+.sachi .credit .imgL {
+	float: right;
+	margin-right: 0;
+}
+.sachi .credit .imgL img {
+	width: 350px;
+}
+.credit h5 {
+	font-weight: bold;
+	font-size: 15px;
+}
+.credit p {
+	font-size: 13px;
+	text-align: justify;
+  text-justify: inter-ideograph;
+}
+.credit .creditTop {
+	margin-bottom: 0!important;
+}
+.credit .creditBottom p:last-child {
+	margin-bottom: 0;
+}
+
+
+
+#backnumber {
+	overflow: visible;
+	display: block;
+	text-align: center;
+	margin: 100px auto 70px;
+}
+#backnumber h4 {
+	display: initial;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif;
+	color: #fff;
+	background: #6a3b93;
+	font-size: 13px;
+	letter-spacing: 0;
+	padding: 7px 40px;
+	border-radius: 20px;
+}
+#backnumber p {
+	font-size: 12px;
+	margin-top: 20px;
+}
+#backnumber ul {
+	display: block;
+}
+#backnumber li {
+	float: left;
+	width: 18.4%;
+	height: auto;
+	margin-right: 2%;
+	margin-bottom: 40px;
+	font-size: 12px;
+}
+#backnumber li img {
+	width: 100%;
+	margin-bottom: 5px;
+}
+#backnumber li a.pdf div:before {
+	content: "\f1c1";
+	font-family: FontAwesome;
+	color: #e5181c;
+	margin-right: 5px;
+}
+
+
+/*Vol.23*/
+.mainCover .cover h2.title_blue {
+	color:#003894;
+	letter-spacing:0;
+}
+.pdf_linkbtn a {
+	display: block;
+	width: 20%;
+	margin: -80px auto 100px;
+	background: #6a3b93;
+	font-size: 15px;
+	letter-spacing: 0;
+	padding: 4px 40px;
+	border-radius: 20px;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+}
+.sachi section .imgC {
+	width: 75%;
+	margin: auto;
+	text-align: center;
+}
+.sachi section .imgC img {
+	width: 100%;
+}
+.sachi section .imgC p {
+	font-size: 13px;
+	line-height: 1.5;
+	text-align: left;
+	margin: 20px auto 50px;
+}
+.sachi section .imgSmall {
+	width: 260px;
+}
+.sachi section .imgR.imgSmall img {
+	width: 100%;
+}
+.sachi section .imgR p,
+.sachi section .imgL p {
+	font-size: 12px;
+	line-height: 1.5;
+	margin-top: 3px;
+	width: 480px;
+}
+.sachi section .imgR.imgSmall p {
+	font-size: 12px;
+	line-height: 1.5;
+	margin-top: 10px;
+}
+.sachi section .thumb_three {
+	width: 100%;
+}
+.sachi section .thumb_three ul{
+	display: inline-block;
+}
+.sachi section .thumb_three li{
+	float: left;
+	width: 32%;
+	margin: 0 2% 2% 0;
+}
+.sachi section .thumb_three li:nth-of-type(3n){
+	margin: 0 0 2% 0;
+}
+.sachi section .thumb_three li p {
+	font-size: 12px;
+	line-height: 1.5;
+	margin-top: 3px;
+	width: 100%;
+}
+
+
+
+@media print, screen and (min-width:769px){
+/*======================
+PCレイアウト*/
+	.subtitle_vol23{
+		position: absolute;
+		top: 12%;
+		right: 5%;
+		font-size: 18px;
+		font-weight: bold;
+		color: #ce1724;
+		line-height: 1.6em;
+		text-align: right;
+	}
+	.subtitle_vol23 span{
+		font-size: 13px;
+		color: #003894;
+	}
+	.main_topWrap p {
+		float: left;
+		width: 40%;
+		margin: 0 0 20px;
+	}
+	.main_topWrap .memberBtnArea {
+		padding-top: 10px;
+	}
+	.postscript .memberBtnArea {
+		margin-top: 60px;
+		text-align: center;
+	}
+	.postscript .memberBtnArea > div a {
+		width: 350px;
+		margin: 0 6px;
+	}
+	.credit > div {
+		float: left;
+	}
+	.credit .creditTop,
+	.credit .creditBottom {
+		width: 670px;
+	}
+	.credit .creditBottom img {
+		width: 300px;
+		height: auto;
+	}
+	#backnumber li:nth-child(5n) {
+		margin-right: 0;
+	}
+	.main_bottomWrap .Wrap {
+		width: 1100px;
+	}
+	.main_bottomWrap .title {
+		width: 200px;
+	}
+}
+
+
+@media screen and (max-width:768px){
+/*======================
+SPレイアウト*/
+	.PCpart {
+    display: none !important;
+  }
+	.sachi .content {
+		margin: 0;
+	}
+	.sachi img {
+		max-width: 100%;
+	}
+
+	.mainCover {
+		margin-bottom: 0;
+	}
+	.backnumberLink {
+		position: relative;
+		top: 0;
+		right: 0;
+		text-align: center;
+	}
+	.backnumberLink i {
+		font-size: 14px;
+	}
+	.backnumberLink a {
+		display: block;
+		border: none;
+		background: #eee;
+		color: #333;
+		font-size: 11px;
+		padding: 7px 5%;
+	}
+	.subtitle_vol23{
+		font-size: 15px;
+		font-weight: bold;
+		color: #ce1724;
+		text-align: center;
+		padding: 5px 0;
+		background: #cacad4;
+	}
+	.subtitle_vol23 span{
+		font-size: 11px;
+		color: #003894;
+		text-align: center;
+	}
+	.mainCover .cover {
+		position: relative;
+	}
+	.mainCover .cover h1 {
+		top: 8%;
+		border: none;
+	}
+	.mainCover .cover h1 img {
+		height: 88px;
+	}
+	.mainCover .cover h2 {
+		bottom: 8%;
+		font-size: 14px;
+		font-size: 3.8vw;
+		line-height: 1.4;
+		margin-bottom: 0;
+	}
+	.mainCover .cover h2 .number {
+		font-size: 12px;
+	}
+	.mainCover .cover h2 span {
+		font-size: 10px;
+	}
+	.main_topWrap {
+		width: 90%;
+		margin: 20px 5%;
+		box-sizing: border-box;
+		font-size: 12px;
+		text-align: center;
+	}
+	.content .main_topWrap p {
+		font-size: 12px;
+		line-height: 1.6;
+		margin-bottom: 10px;
+	}
+	.memberBtnArea > div {
+		display: block;
+	}
+	.memberBtnArea > div a {
+		width: 100%;
+		margin: 0;
+		padding: 7px 0;
+		font-size: 12px;
+	}
+	.memberBtnArea > div:first-of-type a {
+		margin-bottom: 5px;
+	}
+	.main_bottomWrap {
+		width: 100%;
+		background: #dbdbdb;
+		padding: 10px 0;
+		margin: 0 auto 10px;
+		border: #dbdbdb solid 1px;
+		display: inline-block;
+	}
+	.main_bottomWrap .title {
+		font-size: 14px;
+		font-weight: bold;
+		text-align: center;
+		padding: 15px;
+		margin: 0 auto;
+		letter-spacing: 0;
+	}
+	.main_bottomWrap .title span{
+		color: #6a3b93;
+	}
+	.main_bottomWrap .txt {
+		text-align: left;
+		font-size: 11px;
+		padding: 0 15px;
+		margin: 0 auto 10px;
+		line-height: 1.6em;
+		letter-spacing: 0;
+	}
+
+	.sachi section {
+		width: 90%;
+		margin: 0 5%;
+		font-size: 0.75rem;
+	}
+	.sachi .lead {
+		margin-bottom: 30px!important;
+		font-size: 13px;
+	}
+	.sachi section .imgCenter {
+		margin-bottom: 40px;
+		width: 100%;
+	}
+	.sachi section h3 {
+		font-size: 18px;
+		padding-top: 10px;
+		margin-bottom: 10px;
+		width: 300px;
+	}
+	.sachi section h4 {
+		font-size: 15px;
+		margin-bottom: 10px;
+	}
+	.sachi .mainTxt .box {
+		display: inline-block;
+		margin-bottom: 0;
+		width: 100%;
+	}
+	.sachi .mainTxt p {
+		margin-bottom: 40px;
+    text-align: justify;
+    text-justify: inter-ideograph;
+	}
+	.sachi .txtR {
+		margin: -30px 0 0;
+		text-align: right;
+		font-size: 13px;
+	}
+	.sachi section .imgR,
+	.sachi section .imgL {
+		float: none;
+		margin: 0;
+		margin-bottom: 20px;
+		width: 100%;
+	}
+	.sachi section .imgR p,
+	.sachi section .imgL p {
+		width: 100%;
+		font-size: 0.5rem;
+		margin-bottom: 15px;
+	}
+	.sachi section .imgL img,
+	.sachi section .imgR img {
+		width: 100%;
+	}
+	.sachi section .thumb_three ul{
+		display: inline-block;
+	}
+	.sachi section .thumb_three li{
+		width: 100%;
+		margin: 0;
+	}
+	.sachi section .thumb_three li:nth-of-type(3n){
+		margin: 0;
+	}
+	.sachi section .thumb_three li p {
+		font-size: 12px;
+		line-height: 1.5;
+		margin-top: 3px;
+		width: 100%;
+		font-size: 0.5rem;
+		margin-bottom: 15px;
+	}
+
+	.sachi section .sectionBox{
+		display: inline-block;
+		clear: both;
+	}
+	.sachi section .sectionBox p{
+		margin: 0 0 10px;
+	}
+	.sachi section .sectionBox .txtBox{
+		width: 100%;
+	}
+	.sachi section .sectionBox .imgBox{
+		width: 100%;
+	}
+	.sachi section .sectionBox .imgBox img{
+		width: 100%;
+		margin: 0 0 10px;
+		height: auto;
+	}
+	.sachi section .sectionBox .imgBox p{
+		font-size: 10px;
+		line-height: 1.6;
+	}
+
+	.happytime {
+		margin: 60px 0 80px;
+	}
+	.happytime h4 {
+		font-weight: normal;
+	}
+	.sachi .happytime p {
+		margin: 10px 0 20px;
+	}
+	.happytime .balloon {
+		width: 100%;
+		padding: 22px 8%;
+		box-sizing: border-box;
+	}
+
+	.sachi .subTxt {
+		padding: 40px 0;
+		margin-bottom: 50px;
+	}
+	.sachi .subTxt .imgR img {
+		width: 100%;
+	}
+	.sachi .subTxt .imL img {
+		width: 100%;
+	}
+
+	.credit {
+		padding: 5%;
+	}
+	.sachi .credit .imgL img {
+		width: 100%;
+	}
+	.sachi .credit p {
+		margin-bottom: 20px;
+		font-size: 11px;
+		line-height: 1.8em;
+	}
+	.sachi .creditBottom p {
+		margin-bottom: 10px;
+	}
+
+	.sachi section.postscript {
+		margin: 20px auto;
+	}
+	.sachi section.postscript p {
+		margin-bottom: 15px;
+	}
+
+	#backnumber {
+		margin: 60px auto -30px;
+	}
+	#backnumber p {
+		margin-bottom: 30px;
+		font-size: 10px;
+		line-height: 1.8em;
+	}
+	#backnumber li {
+		width: 23%;
+		margin-right: 2%;
+		margin-bottom: 30px;
+		font-size: 10px;
+		line-height: 1.4em;
+	}
+	#backnumber li img{
+		width: 100%;
+		height: auto;
+	}
+	#backnumber li:nth-child(4n) {
+		margin-right: 0;
+	}
+
+
+	/*Vol.23*/
+	.pdf_linkbtn a {
+		width: 100%;
+		margin: 0 auto 60px;
+		box-sizing: border-box;
+		font-size: 13px;
+	}
+	.sachi section .imgC {
+		width: 100%;
+		display: inline-block;
+		clear: both;
+	}
+	.sachi section .imgC p {
+		font-size: 10px;
+		margin: 10px auto 20px;
+	}
+	.sachi .mainTxt p + .imgR.SPpart {
+		margin: -20px auto 40px;
+	}
+	.sachi section .imgR.imgSmall {
+		float: right;
+		width: 40%;
+		margin: 8px 0 20px 20px;
+	}
+	.sachi section .imgR.imgSmall p {
+		font-size: 8px;
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,12 @@
+/* ハッピー通信用 */
+
+.news_title {margin-bottom:50px;}
+body .infomag__back {background-image: url("../img/footer04.png") !important;}
+.LColumn p {margin-bottom: 0 !important;}
+table {border:none !important;}
+table th {border:none !important;}
+table td {border:none !important;}
+.bg {background: #fff; color: #000;}
+.content a, #pankuzu-wrapp a {color: #000;}
+ul.infomag li {border-bottom: 1px solid #ccc;  margin-bottom: 10px;padding: 5px 10px}
+.guideNav {background:#000}

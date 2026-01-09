@@ -1,0 +1,1683 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト　トップページ　*/
+
+/*メインビジュアル*/
+.careSearch .mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/search/bg_mv.jpg) center center no-repeat;
+	background-size:cover;
+}
+
+
+/*トップ*/
+.careSearch .careSearchIndex h4{
+	font-size: 36px;
+	margin-top: -10px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.careSearch .careSearchIndex .h4_shoulder{
+	text-align: center;
+	font-size: 16px;
+	margin-bottom: 12px;
+}
+.careSearch .careSearchIndex p{
+	margin-bottom: 40px;
+	line-height: 1.8;
+}
+.careSearch .careSearchIndex p a{
+	line-height: 1.8;
+	color: #9a7339;
+	text-decoration: underline;
+}
+.careSearch .section-imgRight{
+	text-align: center;
+}
+.careSearch .section-imgRight p{
+	font-size: 14px;
+	text-align: center;
+	background: #e8e7e1;
+	display: inline-table;
+	padding: 20px;
+	border-radius: 10px;
+}
+.careSearch .section-imgRight p span{
+	font-size: 12px;;
+}
+.careSearch .howtouse{
+	width: 1100px;
+}
+.careSearch .howtouse li{
+	float: left;
+	width: 340px;
+}
+.careSearch .howtouse li.arrow{
+	width: 40px;
+}
+.careSearch .howtouse li p{
+	font-size: 12px;
+	text-align: center;
+	margin-top: 40px;
+}
+.careSearch .howtouse li .title{
+	width: 79px;
+	height: auto;
+	margin-bottom: 28px;
+}
+
+.SearchWindow{
+	position: absolute;
+	background: rgba(255, 255, 255, 0.95);
+	border: #ccc solid 1px;
+	border-radius: 6px;
+	text-align: center;
+	top: 570px;
+	right: 30px;
+}
+.SearchWindow .SearchWindowClose{
+	position: absolute;
+	background-color: #9a7339;
+	border-radius:50%;
+	width: 40px;
+	height: 40px;
+	top: -15px;
+	right: -15px;
+	cursor: pointer;
+}
+.SearchWindow .SearchWindowClose img{
+	width: 16px;
+	height: auto;
+	margin: 12px 0 0 0;
+}
+.SearchWindow .SearchWindowClose:hover{
+	opacity: 0.8;
+}
+.SearchWindow .SearchWindowBox{
+	width: 240px;
+}
+.SearchWindow .SearchWindowBox ul{
+	margin: 0 0 20px;
+	border-bottom: #ccc solid 1px;
+}
+.SearchWindow .SearchWindowBox p{
+	font-size: 11px;
+	line-height: 1.6em;
+	margin: 20px 0;
+}
+.SearchWindow .SearchWindowBox img{
+	width: 50%;
+	height: auto;
+	margin: 20px 0;
+}
+.SearchWindow .SearchWindowBox .hermes{
+	width: 180px;
+	border: #f57539 solid 1px;
+	margin: 0 auto 20px;
+	border-radius:4%;
+}
+.SearchWindow .SearchWindowBox .hermes img{
+	width: 150px;
+	margin: 5px;
+}
+
+
+/*検索フォーム*/
+.careSearch .formTxt p{
+	line-height: 1.8;
+}
+.careSearch .btnarea.top{
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 40px;
+}
+.careSearch .searchForm{
+	margin-top: 20px;
+}
+.careSearch .searchForm dt{
+	float: none;
+	padding-top: 15px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+.careSearch .searchForm dd{
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 15px;
+	display:inline-block;
+}
+.careSearch .searchForm p.itemL{
+	width: 360px;
+	float:left;
+}
+.careSearch .searchForm p.itemS{
+	width: 240px;
+	float:left;
+}
+.careSearch .searchForm .search_section{
+	display:inline-block;
+	margin: 20px 0 0;
+}
+.careSearch .searchForm .search_section .search_subtitle{
+	margin: 5px 0 10px 0;
+	font-size: 13px;
+	font-weight:bold;
+}
+.careSearch .searchForm label{
+	margin-right: 20px;
+	font-size: 13px;
+	line-height: 2.2;
+	width: 300px;
+}
+.careSearch .searchForm input[type="checkbox"]{
+	margin-right: 10px;
+}
+.careSearch .searchForm a{
+	color: #9a7339;
+	text-decoration: underline;
+}
+.careSearch .searchForm input[type="text"]{
+	width: 300px;
+	padding: 6px 8px;
+	border: 1px solid #ddd;
+	font-size: 13px;
+}
+.careSearch .btnarea{
+	width: 100%;
+	text-align: center;
+	margin-top: 15px;
+	clear: both;
+}
+.careSearch .btnarea input{
+	background-color: #9a7339;
+	color: #fff;
+	width: 400px;
+	height: 40px;
+	border: none;
+	font-size: 14px;
+	line-height: 0;
+	letter-spacing: 0.1em;
+	cursor: pointer;
+}
+.careSearch .btnarea input:hover{
+	border: 1px solid #9a7339;
+	color: #9a7339;
+	background-color: #fff;
+}
+.careSearch .btnarea input.reset{
+	background-color: #999;
+	color: #fff;
+	width: 200px;
+	height: 40px;
+	border: none;
+	font-size: 14px;
+	line-height: 0;
+	letter-spacing: 0.1em;
+	margin-right: 20px;
+	cursor: pointer;
+}
+.careSearch .btnarea input.reset:hover{
+	border: 1px solid #999;
+	color: #999;
+	background-color: #fff;
+}
+.selected-search{
+	margin:10px 0 0;
+}
+.selected-search ul{
+	float: left;
+}
+.selected-search li{
+	float: left;
+	padding: 8px;
+	margin:3px 6px 3px 0;
+	background-color: #ddd;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font-size: 11px;
+}
+
+
+/*ブランド選択*/
+.careSearch .careBrandLine{
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.careSearch .careBrand1{
+	padding-top: 15px;
+	width: 80%;
+	margin: 0 auto;
+}
+.careSearch .careBrand1 li,
+.careSearch .careBrand2 li{
+	display: inline;
+	float: left;
+	padding: 0;
+	width: 10%;
+}
+.careSearch .careBrand1 li a,
+.careSearch .careBrand2 li a,
+.careSearch .careBrand2 li span{
+	display: block;
+	border: 1px solid #ddd;
+	padding: 20px 0;
+	text-decoration: none;
+	color: #333;
+	margin: 10px;
+	text-align: center;
+	font-size: 18px;
+}
+.careSearch .careBrand2 li span{
+	border: none;
+}
+.careSearch .careBrand2{
+	clear: both;
+	overflow: hidden;
+	padding: 15px 0;
+	width: 80%;
+	margin: 0 auto;
+}
+
+
+/*ブランド選択2*/
+.careSearch .searchBrandLi{
+	border-top: 1px solid #ddd;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.careSearch .searchBrandLi dd{
+	border-bottom: 1px solid #ddd;
+	padding: 8px 0;
+}
+.careSearch .searchBrandLi label{
+	display: block;
+	font-size: 13px;
+	line-height: 2.2;
+}
+.careSearch .searchBrandLi input[type="checkbox"]{
+	margin-right: 10px;
+}
+.careSearch input.searchBrandBtn{
+	margin-left: 20px;
+}
+
+
+/*検索結果*/
+.careSearch .pagettl-sub{
+	margin-top: -15px;
+	color: #a93c3c;
+}
+.careSearch .mainContents3 .searchResult .karteItem{
+	overflow: hidden;
+	max-width: 1100px;
+	display:-webkit-box;
+    display:-moz-box;
+    display:-ms-box;
+    display:-webkit-flexbox;
+    display:-moz-flexbox;
+    display:-ms-flexbox;
+    display:-webkit-flex;
+    display:-moz-flex;
+    display:-ms-flex;
+    display:flex;
+    -webkit-box-lines:multiple;
+    -moz-box-lines:multiple;
+    -webkit-flex-wrap:wrap;
+    -moz-flex-wrap:wrap;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+	margin-top: 20px;
+}
+.careSearch .mainContents3 .searchResult .index_sample1{
+	position: absolute;
+	font: 14em "Libre Baskerville";
+	transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	color: #666;
+	opacity:0.3;
+	z-index: 99999;
+	pointer-events: none;
+	top: 1600px;
+	padding: 0 0 0 120px;
+}
+.careSearch .mainContents3 .searchResult .index_sample2{
+	position: absolute;
+	font: 14em "Libre Baskerville";
+	transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	color: #666;
+	opacity:0.3;
+	z-index: 99999;
+	pointer-events: none;
+	top: 2700px;
+	padding: 0 0 0 120px;
+}
+.careSearch .mainContents3 .searchResult .index_subtitle{
+	margin: 15px 0 -10px 0;
+	color: #9a7339;
+	font-size: 15px;
+	font-weight: bold;
+}
+.careSearch .mainContents3 .searchResult .karteItem li{
+	position: relative;
+	float: left;
+	margin: 0 7px 7px 0;
+	text-align: center;
+	border: 1px solid #eee;
+	padding: 10px 10px 50px;
+	width: 17.49%;
+	overflow: hidden;
+}
+.careSearch .mainContents3 .searchResult .karteItem li:nth-child(5n){
+	margin: 0 0 7px 0;
+}
+.careSearch .mainContents3 .searchResult .karteItem .itemImg img{
+	width: 170px;
+	height: auto;
+	border: 1px solid #ddd;
+}
+.careSearch .mainContents3 .searchResult .karteItem .itemImg{
+	margin: 5px 0 10px;
+}
+.careSearch .mainContents3 .searchResult .karteItem .itemName,
+.careSearch .mainContents3 .searchResult .karteItem .itemType,
+.careSearch .mainContents3 .searchResult .karteItem .itemDate,
+.careSearch .mainContents3 .searchResult .karteItem .itemStatus{
+	font-size: 11px;
+	margin-bottom: 5px;
+	color: #666;
+}
+.careSearch .mainContents3 .searchResult .karteItem .itemName,
+.careSearch .mainContents3 .searchResult .karteItem .itemType{
+	line-height: 1.4;
+	word-wrap: break-word;
+}
+.careSearch .mainContents3 .searchResult .karteItem input{
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+	width: 172px;
+	margin: 5px 0;
+	padding: 6px 0;
+	background-color:#a9803c;
+	color: #fff;
+	border:none;
+	border-radius: 2px;
+	cursor : pointer;
+}
+.careSearch .mainContents3 .searchResult .karteItem input:hover{
+	opacity:0.9;
+	filter: alpha(opacity=90);        /* ie lt 8 */
+	-ms-filter: "alpha(opacity=90)";  /* ie 8 */
+	-moz-opacity:0.9;                 /* FF lt 1.5, Netscape */
+	-khtml-opacity: 0.9;              /* Safari 1.x */
+}
+.careSearch .searchResult .postingPagenavi{
+	margin-top: 10px;
+}
+
+
+/*カルテ*/
+.careSearch .mypageArea{
+	margin-top: 50px;
+	overflow: visible;
+}
+.careSearch h1{
+	margin-bottom: 20px;
+}
+.careSearch .index_bottomcopy{
+	margin:50px 0 30px;
+	line-height: 1.6em;
+	text-align: center;
+}
+.careSearch .SearchBtn{
+	text-align: center;
+	margin:0 auto 40px;
+	font-size: 15px;
+}
+.careSearch .SearchBtn a{
+	width: 340px;
+	color: #fff;
+	text-align: center;
+	padding: 16px 0 16px 35px;
+	background:#9a7339 url(https://www.kyoto-happy.co.jp:8443/_assets/img/search/icon-searcher.png) no-repeat 50px 12px;
+	background-size: 7% auto;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	display:inline-block;
+}
+.careSearch .backBtn{
+	width: 145px;
+	margin:0 5px 40px 0;
+	font-size: 12px;
+	background: #fafafa;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	display:inline-block;
+}
+.careSearch .backBtn2{
+	width: 120px;
+	margin:0 0 40px 0;
+	font-size: 12px;
+	background: #fafafa;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	display:inline-block;
+}
+.careSearch .backBtn3{
+	width: 176px;
+	margin:0 5px 40px 0;
+	font-size: 12px;
+	background: #fafafa;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	display:inline-block;
+}
+.careSearch .backBtn2.bottom{
+	float: right;
+	margin:40px 0 60px;
+}
+.careSearch .backBtn3.bottom{
+	margin:50px 0 0;
+}
+.careSearch .backbtnBottom{
+	text-align: right;
+}
+.careSearch .backBtn a,
+.careSearch .backBtn2 a,
+.careSearch .backBtn3 a{
+	display: block;
+	color: #333;
+	text-align: left;
+	padding: 8px 0 8px 40px;
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/mypage/back_arrow.png) no-repeat 20px 12px;
+}
+.careSearch .backBtn a:hover,
+.careSearch .backBtn2 a:hover,
+.careSearch .backBtn3 a:hover{
+	color: #9a7339;
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/mypage/back_arrow_on.png) no-repeat 20px 12px;
+}
+.careSearch .karteyArea .karteInfo .karteInfoBlock{
+	width: 30%;
+	overflow: hidden;
+	float: left;
+	border-bottom: 1px solid #ccc;
+	margin: 0 15px 22px 30px;
+	padding: 0 0 10px;
+}
+.careSearch .karteyArea .karteInfo .karteInfoBlock.first{
+	margin-left: 0;
+}
+.careSearch .karteyArea .karteInfo dt,
+.careSearch .karteyArea .karteInfo dd{
+	float: left;
+}
+.careSearch .karteyArea .karteInfo dt{
+	font-weight: bold;
+	margin-right: 30px;
+}
+.careSearch .karteyArea .karteInfo .karteInfoBlock.right{
+	width: 30%;
+	border-right: none;
+}
+.careSearch .karteyArea .karteInfo .karteInfoBlock.wmax{
+	width: 98%;
+	margin-left: 0;
+}
+.careSearch .karteyArea .karteInfo .karteInfoBlock.wmax dd{
+	border-right: none;
+}
+.careSearch .commentArea{
+	margin: 40px 0;
+}
+.careSearch .commentArea h5{
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.careSearch .commentArea .commentTxt{
+	border: 1px solid #ddd;
+	padding: 20px;
+	line-height: 1.8;
+}
+.careSearch .linkTxt{
+	text-align: right;
+	margin: 10px 0 40px;
+}
+.careSearch .linkTxt a{
+	color: #9a7339;
+	text-decoration: underline;
+	position: relative;
+	display: inline-block;
+	padding-left: 16px;
+}
+.careSearch .linkTxt a::before,
+.careSearch .linkTxt a::after{
+	position: absolute;
+	top: 0;
+	bottom: 1px;
+	left: 0;
+	margin: auto;
+	content: "";
+	vertical-align: middle;
+}
+.careSearch .linkTxt a::before{
+	left: 2px;
+	width: 4px;
+	height: 4px;
+	border-top: 2px solid #9a7339;
+	border-right: 2px solid #9a7339;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.careSearch .karteyArea .karteColumnWrap li{
+	text-align: center;
+	display: inline-block;
+	width: 35%
+}
+.careSearch .karteyArea .karteColumnWrap li.wmax{
+	width: 100%;
+}
+.careSearch .karteyArea .karteColumnWrap li.wmax img{
+	width: 400px;
+	height: auto;
+}
+.careSearch .karteyArea .karteColumnWrap2 .historyTable{
+	margin-top: -10px;
+}
+.careSearch .karteyArea .karteColumnWrap2 .historyTable td,
+.careSearch .karteyArea .karteColumnWrap2 .historyTable .historyTableTotal th{
+	padding: 10px;
+}
+.careSearch .karteColumnWrap2 .smallTxt{
+	font-size: 12px;
+	text-align: right;
+	margin-top: 10px;
+}
+.careSearch .karteyArea .karteImagesWrap .karteImagesWrapL{
+	float: left;
+	width: 70%;
+}
+.careSearch .karteyArea .karteImagesWrap .karteImagesWrapR{
+	float: right;
+	width: 30%;
+	text-align: center;
+}
+.careSearch .karteImages{
+	width: 100%;
+	text-align: center;
+	margin: 10px 0;
+}
+.careSearch .karteImages td{
+	vertical-align: top;
+	padding: 5px 10px;
+}
+.careSearch .karteImages td img{
+	width: 90%;
+	height: auto;
+}
+.careSearch .karteImages td.before,
+.careSearch .karteImages td.after{
+	width: 30%;
+}
+.careSearch .karteImages td.arrow{
+	width: 5%;
+	vertical-align: middle;
+}
+.careSearch .karteImages td.arrow img{
+	width: 30px;
+	height: auto;
+}
+.careSearch .karteImages td.label{
+	width: 25%;
+}
+.careSearch .karteImages th{
+	text-align: center;
+	font-weight: normal;
+	padding-top: 20px;
+}
+.careSearch .karteSize{
+	margin: 0 auto 20px;
+}
+.careSearch .karteSize th{
+	text-align: center;
+	font-weight: normal;
+	padding: 5px 0;
+}
+.careSearch .karteSize .karteSizeImg{
+	position: relative;
+}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize1{top: 50px;left: 128px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize2{top: 42px;left: 210px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize3{top: 110px;left: 226px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize4{top: 131px;left: 128px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize5{top: 161px;left: 128px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize6{top: 198px;left: 128px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize7{top: 174px;left: 18px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize8{top: 209px;left: 61px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize9{top: 290px;left: 128px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize10{top: 219px;left: 234px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize11{top: 268px;left: 234px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize12{top: 316px;left: 128px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize13{top: 339px;left: 162px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize14{top: 192px;left: 54px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize15{top: 31px;left: 139px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize16{top: 31px;left: 206px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize17{top: 63px;left: 139px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize18{top: 104px;left: 139px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize19{top: 123px;left: 139px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize20{top: 200px;left: 139px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize21{top: 152px;left: 238px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize22{top: 238px;left: 60px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize23{top: 238px;left: 202px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize24{top: 276px;left: 139px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize25{top: 319px;left: 139px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize26{top: 356px;left: 162px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize27{top: 233px;left: 139px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize28{top: 254px;left: 160px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize29{top: 77px;left: 22px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize30{top: 355px;left: 154px;}
+
+.careSearch .karteCaution{
+	clear: both;
+	padding: 20px 0;
+}
+.careSearch .mainContents.searchKarte{
+	width: 100%;
+	margin-top: 40px;
+	margin-bottom: 70px;
+}
+.careSearch .mainContents.searchKarte h5{
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.careSearch .mypageArea .mainContents.searchKarte .postingArea .userAvatar{
+	width: 5%;
+}
+.careSearch .mypageArea .mainContents.searchKarte .postingArea .userTxt{
+	width: 95%;
+}
+
+.mypageArea .searchKarte .postingPagenavi{
+	margin: 30px 0;
+}
+.edit-delete{
+	font-size: 12px;
+	line-height: 28px;
+	color: #fff;
+	-webkit-font-smoothing: antialiased;
+	font-weight: bold;
+	margin: 0;
+	padding: 7px 18px 5px;
+	vertical-align: baseline;
+	background-color: #666;
+	border: none;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	cursor: pointer;
+}
+.edit-delete:hover{
+	background-color: #555;
+}
+
+.postingBtnArea span a{
+	font-size: 13px;
+	line-height: 26px;
+	color: #fff;
+	-webkit-font-smoothing: antialiased;
+	font-weight: bold;
+	margin: 0;
+	padding: 8px 18px;
+	vertical-align: baseline;
+	background-color: #9a7339;
+	border: none;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+.postingBtnArea span a:hover{
+	background-color: #826231;
+}
+}
+
+
+
+@media screen and (max-width:640px){
+/*======================
+SPレイアウト　トップページ*/
+
+/*メインビジュアル*/
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/search/bg_mv.jpg) left center no-repeat;
+	background-size:cover;
+}
+
+
+/*トップ*/
+#Container{
+	margin-bottom: 0;
+}
+#pagetop{
+	bottom: 2%;
+}
+#pageback{
+	bottom: 2%;
+}
+
+.careSearch .careSearchIndex h4{
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	line-height: 1.6;
+	text-align: center;
+}
+.careSearch .careSearchIndex .h4_shoulder{
+	font-size: 11px;
+	font-weight: normal;
+	line-height: 1.6;
+	text-align: center;
+	margin-bottom: 5px;
+}
+.careSearch .careSearchIndex p{
+	margin-top: 10px;
+	margin-bottom: 30px;
+	line-height: 1.8;
+	font-size: 13px;
+}
+.careSearch .careSearchIndex .btnarea{
+	width: 100%;
+	text-align: center;
+	margin-top: 15px;
+}
+.careSearch .careSearchIndex p a{
+	line-height: 1.8;
+	color: #9a7339;
+	text-decoration: underline;
+	text-align: center;
+}
+.careSearch .section-imgRight{
+	text-align: center;
+	line-height: 1.6;
+}
+.careSearch .section-imgRight p{
+	font-size: 13px;
+	text-align: center;
+	background: #e8e7e1;
+	display: inline-table;
+	padding: 20px;
+	border-radius: 6px;
+}
+.careSearch .section-imgRight p span{
+	font-size: 11px;;
+}
+.careSearch .careSearchIndex .btnarea input{
+	background-color: #9a7339;
+	color: #fff;
+	width: 100%;
+	height: 40px;
+	border: none;
+	font-size: 14px;
+	line-height: 0;
+	letter-spacing: 0.1em;
+	cursor: pointer;
+	-webkit-tap-highlight-color:rgba(255,255,255,0.4);
+}
+.careSearch .howtouse{
+	margin-top: 40px;
+}
+.careSearch .howtouse li{
+	width: 100%;
+	text-align: left;
+}
+.careSearch .howtouse li img{
+	display: block;
+	width: 70%;
+	height: auto;
+	margin:  0 auto;
+}
+.careSearch .howtouse li p{
+	font-size: 11px;
+	margin-top: 10px;
+	text-align: center;
+}
+.careSearch .howtouse li .title{
+	width: 20%;
+	height: auto;
+	margin: 0 0 14px;
+}
+
+.SearchWindow{
+	position: absolute;
+	background: rgba(255, 255, 255, 0.95);
+	border: #ccc solid 1px;
+	border-radius: 4px;
+	text-align: center;
+	top: 250px;
+	right: 3%;
+	padding: 5px;
+}
+.SearchWindow .SearchWindowClose{
+	position: absolute;
+	background-color: #9a7339;
+	border-radius:50%;
+	width: 24px;
+	height: 24px;
+	top: -10px;
+	right: -6px;
+	cursor: pointer;
+}
+.SearchWindow .SearchWindowClose img{
+	width: 10px;
+	height: auto;
+	margin: 7px 0 0 0;
+}
+.SearchWindow .SearchWindowClose:hover{
+	opacity: 0.8;
+}
+.SearchWindow .SearchWindowBox{
+	width: 90px;
+}
+.SearchWindow .SearchWindowBox ul{
+	margin: 0 0 5px;
+	border-bottom: #ccc solid 1px;
+}
+.SearchWindow .SearchWindowBox p{
+	font-size: 7px;
+	line-height: 1.6em;
+	margin: 10px 0;
+}
+.SearchWindow .SearchWindowBox img{
+	width: 70%;
+	height: auto;
+	margin: 10px 0;
+}
+.SearchWindow .SearchWindowBox .hermes{
+	width: 88px;
+	border: #f57539 solid 1px;
+	margin: 0 auto;
+	border-radius:4%;
+}
+.SearchWindow .SearchWindowBox .hermes img{
+	width: 78px;
+	margin: 5px;
+}
+
+.SearchBrandlist{
+	text-align: center;
+	padding: 5px;
+	margin: 0 auto;
+}
+.SearchBrandlist .SearchBrandlistBox{
+	width: 100%;
+	margin: 0 0 10px;
+}
+.SearchBrandlist .SearchBrandlistBox p{
+	font-size: 10px;
+	line-height: 1.6em;
+	margin: 20px 0 10px;
+}
+.SearchBrandlist .SearchBrandlistBox .brand{
+	border-bottom: #999 solid 1px;
+	padding: 0;
+	display: table;
+}
+.SearchBrandlist .SearchBrandlistBox .brand div{
+	float: left;
+	width: 57px;
+	height: 24px;
+	padding: 6px;
+	display: table-cell;
+}
+.SearchBrandlist .SearchBrandlistBox .brand div img{
+	width: 100%;
+	vertical-align: middle;
+	height: auto;
+}
+.SearchBrandlist .SearchBrandlistBox .hermes{
+width: 120px;
+border: #f57539 solid 1px;
+margin: 8px auto 0;
+border-radius:4%;
+}
+.SearchBrandlist .SearchBrandlistBox .hermes img{
+width: 90px;
+margin: 5px 15px;
+}
+
+
+/*検索フォーム*/
+.careSearch .searchForm{
+	margin-top: 10px;
+}
+
+.careSearch .searchForm .search_section{
+	display:inline-block;
+	margin: 20px 0 0;
+}
+.careSearch .searchForm .search_section .search_subtitle{
+	margin: 5px 0 20px 0;
+	font-size: 13px;
+	font-weight:bold;
+}
+
+.careSearch .searchForm dt{
+	float: none;
+	padding-top: 10px;
+	margin-bottom: 5px;
+	font-weight: bold;
+	text-align: left;
+}
+.careSearch .searchForm dd{
+	padding-bottom: 15px;
+}
+.careSearch .searchForm label{
+	display: block;
+	font-size: 12px;
+	line-height: 2.4;
+}
+.careSearch .searchForm input[type="checkbox"]{
+	margin-right: 10px;
+}
+.careSearch .searchForm a{
+	color: #9a7339;
+	text-decoration: underline;
+	line-height: 1.8;
+}
+.careSearch .searchForm input[type="text"]{
+	width: 100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 6px 8px;
+	border: 1px solid #ddd;
+	font-size: 13px;
+}
+.careSearch .searchForm .btnarea{
+	width: 100%;
+	text-align: center;
+	margin-top: 15px;
+}
+.careSearch .btnarea input{
+	background-color: #9a7339;
+	color: #fff;
+	width: 49%;
+	height: 40px;
+	border: none;
+	font-size: 14px;
+	line-height: 0;
+	letter-spacing: 0.1em;
+	cursor: pointer;
+	-webkit-tap-highlight-color:rgba(255,255,255,0.4);
+}
+.careSearch .btnarea input.reset{
+	background-color: #999;
+	color: #fff;
+	width: 49%;
+	height: 40px;
+	border: none;
+	font-size: 14px;
+	line-height: 0;
+	letter-spacing: 0.1em;
+	margin-right: 2%;
+	cursor: pointer;
+	-webkit-tap-highlight-color:rgba(255,255,255,0.4);
+}
+.searchSelect{
+	font-size: 10px;
+	line-height: 1.8;
+	margin-top: 10px;
+}
+
+.selected-search{
+	display: inline-block;
+	clear: both;
+}
+.selected-search ul{
+	float: left;
+}
+.selected-search li{
+	float: left;
+	padding: 8px;
+	margin:3px 6px 3px 0;
+	background-color: #ddd;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font-size: 9px;
+}
+
+
+/*ブランド選択*/
+.careSearch .careBrand1{
+	border-top: 1px solid #ddd;
+	margin-top: 20px;
+	padding-top: 15px;
+}
+.careSearch .careBrand1 li,
+.careSearch .careBrand2 li{
+	display: inline;
+	float: left;
+	padding: 0;
+	width: 20%;
+}
+.careSearch .careBrand1 li a,
+.careSearch .careBrand2 li a,
+.careSearch .careBrand2 li span{
+	display: block;
+	border: 1px solid #ddd;
+	padding: 15px 0;
+	text-decoration: none;
+	color: #333;
+	margin: 5px;
+	text-align: center;
+	font-size: 13px;
+}
+.careSearch .careBrand2 li span{
+	border: none;
+}
+.careSearch .careBrand2{
+	clear: both;
+	overflow: hidden;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #ddd;
+}
+.careSearch .btnarea.searchBrand{
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+.careSearch .btnarea.searchBrand input{
+	background-color: #9a7339;
+	color: #fff;
+	width: 200px;
+	height: 40px;
+	border: none;
+	font-size: 14px;
+	line-height: 0;
+	letter-spacing: 0.1em;
+	cursor: pointer;
+	-webkit-tap-highlight-color:rgba(255,255,255,0.4);
+}
+
+
+/*ブランド選択2*/
+.careSearch .searchBrandLi{
+	border-top: 1px solid #ddd;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.careSearch .searchBrandLi dd{
+	border-bottom: 1px solid #ddd;
+	padding: 4px 0;
+}
+.careSearch .searchBrandLi label{
+	display: block;
+	font-size: 13px;
+	line-height: 2.2;
+}
+.careSearch .searchBrandLi input[type="checkbox"]{
+	margin-right: 10px;
+}
+.careSearch input.searchBrandBtn{
+	margin-left: 3%;
+}
+.careSearch .btnarea.searchBrand2{
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+.careSearch .btnarea.searchBrand2 input{
+	background-color: #9a7339;
+	color: #fff;
+	width: 47%;
+	height: 40px;
+	border: none;
+	font-size: 14px;
+	line-height: 0;
+	letter-spacing: 0.1em;
+	cursor: pointer;
+	-webkit-tap-highlight-color:rgba(255,255,255,0.4);
+}
+
+
+/*検索結果*/
+.careSearch .pagettl-sub{
+	margin-top: -15px;
+	margin-bottom: 20px;
+	color: #a93c3c;
+	font-size: 11px;
+}
+.careSearch .searchResult p{
+	margin-bottom: 10px;
+}
+.careSearch .mainContents3 .searchResult .karteItem{
+	position: relative;
+	overflow: hidden;
+	max-width: 718px;
+	display:-webkit-box;
+    display:-moz-box;
+    display:-ms-box;
+    display:-webkit-flexbox;
+    display:-moz-flexbox;
+    display:-ms-flexbox;
+    display:-webkit-flex;
+    display:-moz-flex;
+    display:-ms-flex;
+    display:flex;
+    -webkit-box-lines:multiple;
+    -moz-box-lines:multiple;
+    -webkit-flex-wrap:wrap;
+    -moz-flex-wrap:wrap;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+}
+.careSearch .mainContents3 .searchResult .karteItem .index_sample{
+	position: absolute;
+	font: 6.0em "Libre Baskerville";
+	transform: rotate(50deg);
+	-moz-transform: rotate(50deg);
+	-webkit-transform: rotate(50deg);
+	color: #666;
+	opacity:0.3;
+	z-index: 99999;
+	pointer-events: none;
+	top: 260px;
+	left: -35px;
+}
+.careSearch .mainContents3 .searchResult .index_subtitle{
+	margin: 10px 0;
+	color: #9a7339;
+	font-size: 15px;
+	font-weight: bold;
+}
+.careSearch .mainContents3 .searchResult .karteItem li{
+	position: relative;
+	float: left;
+	margin-bottom: 10px;
+	text-align: center;
+	border: 1px solid #eee;
+	padding: 10px 10px 50px;
+	width: 40.5%;
+	overflow: hidden;
+}
+.careSearch .mainContents3 .searchResult .karteItem li:nth-child(odd){
+	margin-right: 3%;
+}
+.careSearch .mainContents3 .searchResult .karteItem .itemImg img{
+	width: 100%;
+	height: auto;
+	border: 1px solid #ddd;
+}
+.careSearch .mainContents3 .searchResult .karteItem .itemImg{
+	margin: 5px 0;
+}
+.careSearch .mainContents3 .searchResult .karteItem .itemName,
+.careSearch .mainContents3 .searchResult .karteItem .itemType,
+.careSearch .mainContents3 .searchResult .karteItem .itemDate,
+.careSearch .mainContents3 .searchResult .karteItem .itemStatus{
+	font-size: 11px;
+	margin-bottom: 4px;
+	color: #666;
+}
+.careSearch .mainContents3 .searchResult .karteItem .itemName,
+.careSearch .mainContents3 .searchResult .karteItem .itemType{
+	word-wrap: break-word;
+}
+.careSearch .mainContents3 .searchResult .karteItem .itemStatus{
+	margin: 10px auto 0;
+	font-size: 9px;
+	width: 100%;
+	background: #999;
+	padding: 3px 2px;
+	color: #fff;
+}
+.careSearch .mainContents3 .searchResult .karteItem input{
+	position: absolute;
+	bottom: 10px;
+	left: 6%;
+	width: 88%;
+	margin: 5px 0;
+	padding: 4px 0;
+	background-color:#a9803c;
+	color: #fff;
+	border:none;
+	border-radius: 2px;
+	-webkit-tap-highlight-color:rgba(255,255,255,0.4);
+}
+
+
+/*カルテ*/
+.careSearch .mypageArea{
+	margin-top: 0;
+}
+.careSearch .karteyArea .karteInfo{
+	padding-top: 10px;
+}
+.careSearch .karteyArea .karteInfo dt{
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.careSearch .karteyArea .karteInfo dd{
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+}
+.careSearch .commentArea{
+	margin: 40px 0;
+}
+.careSearch .commentArea h5{
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.careSearch .commentArea .commentTxt{
+	border: 1px solid #ddd;
+	padding: 12px;
+	line-height: 1.8;
+}
+.careSearch .linkTxt{
+	text-align: right;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.careSearch .linkTxt a{
+	color: #9a7339;
+	text-decoration: underline;
+	position: relative;
+	display: inline-block;
+	padding-left: 16px;
+	font-size: 12px;
+}
+.careSearch .linkTxt a::before,
+.careSearch .linkTxt a::after{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	content: "";
+	vertical-align: middle;
+}
+.careSearch .linkTxt a::before{
+	left: 2px;
+	width: 4px;
+	height: 4px;
+	border-top: 2px solid #9a7339;
+	border-right: 2px solid #9a7339;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.careSearch .karteyArea .karteColumnWrap li{
+	text-align: center;
+	display: inline-block;
+	width: 43%
+}
+.careSearch .karteyArea .karteColumnWrap li.wmax{
+	width: 100%;
+}
+.careSearch .karteyArea .karteColumnWrap li.wmax img{
+	width: 100%;
+	height: auto;
+}
+.careSearch .karteyArea .karteColumnWrap .statusBlock{
+	margin-bottom: 30px;
+}
+.careSearch .karteColumnWrap2 .smallTxt{
+	font-size: 8px;
+	line-height: 1.6;
+	text-align: right;
+	margin-top: 10px;
+}
+.careSearch .karteyArea .karteColumnWrap2{
+	font-size: 10px;
+}
+.careSearch .karteyArea .karteColumnWrap2.karteImagesWrap,
+.careSearch .karteyArea .karteColumnWrap2.karteSizeWrap{
+	padding: 8px;
+}
+.careSearch .karteyArea .karteImagesWrap .karteImagesWrapL,
+.careSearch .karteyArea .karteImagesWrap .karteImagesWrapR{
+	width: 100%;
+}
+.careSearch .karteyArea .karteImagesWrap .karteImagesWrapR{
+	text-align: center;
+}
+.careSearch .karteyArea .karteImagesWrap .karteImagesWrapR img{
+	float: left;
+	width: 50%;
+	height: auto;
+}
+.careSearch .karteImages{
+	width: 100%;
+	text-align: center;
+	margin: 5px 0;
+}
+.careSearch .karteImages td{
+	vertical-align: top;
+	padding: 4px 0;
+}
+.careSearch .karteImages td img{
+	width: 90%;
+	height: auto;
+}
+.careSearch .karteImages td.before,
+.careSearch .karteImages td.after{
+	width: 30%;
+}
+.careSearch .karteImages td.arrow{
+	width: 5%;
+	vertical-align: middle;
+}
+.careSearch .karteImages td.arrow img{
+	width: 80%;
+	height: auto;
+}
+.careSearch .karteImages td.label{
+	width: 25%;
+}
+.careSearch .karteImages th{
+	text-align: center;
+	font-weight: normal;
+	padding-top: 10px;
+}
+.careSearch .karteSize{
+	margin: 0 auto 20px;
+}
+.careSearch .karteSize th{
+	text-align: center;
+	font-weight: normal;
+	padding: 5px 0;
+}
+.careSearch .karteSize .karteSizeImg{
+	position: relative;
+}
+.careSearch .karteSize td.arrow{
+	width: 5%;
+	vertical-align: middle;
+}
+.careSearch .karteSize td.arrow img{
+	width: 80%;
+	height: auto;
+}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize1{top: 21px;left: 50px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize2{top: 18px;left: 88px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize3{top: 48px;left: 95px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize4{top: 58px;left: 50px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize5{top: 72px;left: 50px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize6{top: 89px;left: 50px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize7{top: 77px;left: 0px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize8{top: 94px;left: 19px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize9{top: 131px;left: 50px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize10{top: 98px;left: 99px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize11{top: 121px;left: 99px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize12{top: 143px;left: 50px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize13{top: 153px;left: 66px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize14{top: 86px;left: 16px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize15{top: 12px;left: 55px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize16{top: 12px;left: 85px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize17{top: 27px;left: 55px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize18{top: 45px;left: 55px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize19{top: 55px;left: 55px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize20{top: 90px;left: 57px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize21{top: 68px;left: 100px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize22{top: 106px;left: 20px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize23{top: 106px;left: 83px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize24{top: 124px;left: 55px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize25{top: 144px;left: 55px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize26{top: 160px;left: 67px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize27{top: 105px;left: 55px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize28{top: 114px;left: 66px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize29{top: 34px;left: 5px;}
+.careSearch .karteyArea .karteColumnWrap2 .karteSize .karteSize30{top: 161px;left: 62px;}
+
+.careSearch .index_bottomcopy{
+	margin:20px 0;
+	line-height: 1.6em;
+}
+
+.careSearch .SearchBtn{
+	text-align: center;
+	margin:0 auto 40px;
+	font-size: 13px;
+}
+.careSearch .SearchBtn a{
+	width: 85%;
+	color: #fff;
+	text-align: center;
+	padding: 12px 0 12px 25px;
+	background:#9a7339 url(https://www.kyoto-happy.co.jp:8443/_assets/img/search/icon-searcher.png) no-repeat 22px 10px;
+	background-size: 7% auto;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	display:inline-block;
+}
+.careSearch .backbtnBottom{
+	text-align: center;
+}
+.careSearch .backBtn,
+.careSearch .backBtn2,
+.careSearch .backBtn3{
+	display: inline-block;
+	width: 49%;
+}
+.careSearch .backBtn a,
+.careSearch .backBtn2 a,
+.careSearch .backBtn3 a{
+	display: block;
+	font-size: 12px;
+	text-align: center;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background: #fafafa;
+	padding: 7px 15px;
+	margin-top: 30px;
+}
+.careSearch .backBtn2.bottom,
+.careSearch .backBtn3.bottom{
+	width: 100%;
+}
+.careSearch .mainContents.searchKarte{
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+.careSearch .mypageArea .karteyArea .mainContents.searchKarte .postingForm .postingBtnArea{
+	margin-top: 0;
+}
+.careSearch .mypageArea .karteyArea .mainContents.searchKarte .postingForm{
+	margin-bottom: 20px;
+}
+
+.mypageArea .searchKarte .postingPagenavi{
+	margin: 15px 0;
+}
+.mypageArea .searchKarte .postingPagenavi.delete{
+	clear: none;
+	padding-right: 5px;
+}
+.edit-form textarea{
+	margin-top: 20px;
+}
+.edit-delete{
+	font-size: 10px;
+	line-height: 31px;
+	color: #fff;
+	margin: 0;
+	padding: 10px 18px 9px;
+	vertical-align: baseline;
+	background-color: #666;
+	border: none;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.postingBtnArea span a{
+	display: block;
+	background-color: #9a7339;
+	color: #fff;
+	border: 1px solid #9a7339;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font-size: 10px;
+	padding: 6px 20px;
+}
+}
+
+
+/* 20190808 追記 */
+.allResultBtn{
+	width: 30%;
+	margin: 0 auto 60px;
+	text-align: center;
+}
+.allResultBtn a{
+	display: block;
+	padding: 12px 0;
+	background-color: #a9803c;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 4px;
+}
+.careSearch .formTxt h4{
+	color: inherit;
+	font-family: inherit;
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 0;
+	margin-bottom: 5px;
+}
+
+.pickupMessage, #pageback, #pagetop {
+	display: none !important;
+	opacity: 0 !important;
+}
+.searchFilter {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: rgba(53, 53, 53, .9);
+}
+.searchFilter_wrap {
+	position: relative;
+	width: 1100px;
+	margin: 25px auto;
+}
+.searchFilter .selected-search {
+	display: table;
+	width: 80%;
+	margin: 0;
+}
+.searchFilter .selected-search > * {
+	display: table-cell;
+	vertical-align: middle;
+}
+.searchFilter .selected-search dt {
+	width: 12%;
+	color: #fff;
+	font-weight: 600;
+}
+.searchFilter .selected-search dd {
+	width: 68%;
+}
+.careSearch .searchFilter .btnarea {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: auto;
+	margin: 0;
+	transform: translateY(-50%);
+}
+.careSearch .searchFilter .btnarea input {
+	width: auto;
+	height: auto;
+	padding: 16px 22px;
+	border: none !important;
+	border-radius: 2px;
+	box-sizing: border-box;
+	font-weight: 600;
+	letter-spacing: 0;
+}
+.careSearch .searchFilter .btnarea input.reset {
+	margin-right: 7px;
+}
+
+@media screen and (max-width:767px) {
+	.allResultBtn {
+		width: 100%;
+		margin: 30px auto;
+	}
+	.allResultBtn a {
+		font-size: 3.8vw;
+	}
+	.careSearch .formTxt h4 {
+		font-size: 4.8vw;
+	}
+	.careSearch .formTxt p {
+		font-size: 3.8vw;
+		line-height: 1.4;
+		margin: 5% 0 0;
+	}
+
+	.searchFilter {
+		bottom: 50px;
+	}
+	.searchFilter_wrap {
+		width: 90%;
+		margin: 15px auto;
+	}
+	.searchFilter .selected-search {
+		display: block;
+	}
+	.searchFilter .selected-search > * {
+		display: block;
+	}
+	.searchFilter .selected-search,
+	.searchFilter .selected-search dt,
+	.searchFilter .selected-search dd {
+		width: 100%;
+	}
+	.searchFilter .selected-search dt {
+		font-size: 3.8vw;
+	}
+	.searchFilter .selected-search dd {
+		overflow-y: scroll;
+		max-height: 68px;
+		margin-top: 5px;
+	}
+	.careSearch .searchFilter .btnarea {
+		clear: both;
+		position: static;
+		transform: none;
+	}
+	.careSearch .searchFilter .btnarea input {
+		width: 49%;
+		padding: 13px 0;
+		font-size: 3.5vw;
+	}
+	.careSearch .searchFilter .btnarea input.reset {
+		margin-right: 2%;
+	}
+
+	.karteItem li.tap {
+		opacity: .5;
+	}
+}

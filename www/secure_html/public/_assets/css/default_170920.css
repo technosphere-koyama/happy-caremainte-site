@@ -1,0 +1,230 @@
+@charset "UTF-8";
+
+.flL{float:left}
+.flR{float:right}
+.tcntr{text-align:center !important}
+.tright{text-align:right !important}
+.tleft{text-align:left !important}
+.vmiddle{vertical-align:middle !important}
+
+.clear{clear:both;}
+
+@media print, screen and (min-width:641px){
+/*======================
+PC CSSリセット*/
+
+body,div,pre,p,blockquote,
+form,fieldset,input,textarea,select,option,
+dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,
+table,th,td,embed,object {
+margin:0;
+padding:0;
+vertical-align: baseline;
+}
+
+h1,h2,h3,h4,h5,h6 {
+font-style: normal;
+font-weight:normal;
+font-size: 1.0em;
+}
+ 
+table {border-spacing:0;}
+* html table {border-collapse:collapse;}
+*:first-child+html table {border-collapse:collapse;}
+caption,th {text-align:left;}
+table,th,td,img {border:0;}
+img,input {vertical-align:middle;}
+q:before,q:after {content:'';}
+ul {list-style: none;}
+
+
+/*======================
+初期設定*/
+
+body{
+	line-height: 1.5em;
+	font-size: 80%;
+	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,sans-serif;
+	color: #323333;
+	background-color: #fff;
+}
+
+a{ color:#000; text-decoration:none; outline:none; cursor:pointer; transition: opacity 0.2s ease-out; -webkit-transition: opacity 0.2s ease-out; }
+a img{ will-change: opacity; transition: opacity 0.2s ease-out; -webkit-transition: opacity 0.2s ease-out; }
+a:hover, a:hover img{opacity: .5;}
+.btn a:hover{opacity: .5;}
+
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix {display: inline-table;}
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+.clearfix{zoom:1;}
+
+.mgT0{margin-top:0px !important}
+.mgT10{margin-top:10px !important}
+.mgT20{margin-top:20px !important}
+.mgT30{margin-top:30px !important}
+.mgT40{margin-top:40px !important}
+.mgT50{margin-top:50px !important}
+.mgT60{margin-top:60px !important}
+.mgT70{margin-top:70px !important}
+.mgT80{margin-top:80px !important}
+.mgT90{margin-top:90px !important}
+.mgT100{margin-top:100px !important}
+.mgB0{margin-bottom:0px !important}
+.mgB10{margin-bottom:10px !important}
+.mgB20{margin-bottom:20px !important}
+.mgB30{margin-bottom:30px !important}
+.mgB40{margin-bottom:40px !important}
+.mgB50{margin-bottom:50px !important}
+.mgB60{margin-bottom:60px !important}
+.mgB70{margin-bottom:70px !important}
+.mgB80{margin-bottom:80px !important}
+.mgB90{margin-bottom:90px !important}
+.mgB100{margin-bottom:100px !important}
+.mgB180{margin-bottom:180px !important}
+
+/*hint文字色*/
+input.blur,
+textarea.blur{
+	color: #666666;
+}
+
+/*placeholder文字色*/
+::-webkit-input-placeholder {
+    color: #666666;
+}
+:-moz-placeholder {
+    color: #666666;
+}
+}
+
+@media screen and (max-width:640px){
+/*======================
+SP CSSリセット*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+img{vertical-align: top;}
+
+body {
+    line-height:1;
+	color: #000;
+	background-color: #fff;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+ul,
+nav ul, 
+ol,
+nav ol {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+	text-decoration: none;
+}
+
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix {display: inline-table;}
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+.clearfix{zoom:1;}
+
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+
+/*android4のバグ*/
+p{
+	background-color: transparent;
+}
+
+/*フォーム部分リセット*/
+select,
+input[type="text"],
+textarea{
+	-webkit-appearance: none;
+	border-radius: 0px;
+}
+
+}

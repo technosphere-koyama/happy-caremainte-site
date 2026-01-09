@@ -1,0 +1,27 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>WEBカウンセリング　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+		<meta name="description" content="株式会社ハッピーのWEBカウンセリングページです">
+		<meta name="keywords" content="WEBカウンセリング">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="refresh" content="0;URL=form.html">
+		<?php if(preg_match("/(Android|iPhone|CareMenteh)/", $_SERVER["HTTP_USER_AGENT"])): ?><meta name="viewport" content="width=320, user-scalable=no" /><?php else: ?><meta name="viewport" content="width=1280" />
+		<?php endif; ?>
+		
+		<!-- Open Graph Protocol -->
+		<meta property="og:url" content="https://www.kyoto-happy.co.jp/order/">
+		<meta property="og:title" content="WEBカウンセリング　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?>">
+		<meta property="og:description" content="株式会社ハッピーのWEBカウンセリングページです">
+		<meta property="og:image" content="https://www.kyoto-happy.co.jp/_assets/img/header/logo.png">
+		<!-- Open Graph Protocol -->
+
+	</head>
+
+	<body id="pTop">
+	</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>カウンセリング｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/counseling.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+<body id="counseling">
+  <?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	<!--　/header_nav　-->
+	
+	<div class="bg">
+    <section id="counseling_top">
+      
+      <div class="container">
+        <ul>
+      <?php foreach ($this->get("counseling_all") AS $key => $val) { ?>
+      <form name="karte_form" action="index_comment01.html" method="GET">
+      <li onclick="$(this).parent().submit();">
+        <input type="hidden" name="chart_id" value="<?=$val['number']?>">
+				<div class="date"><?=$val['date']?></div>
+        <div class="name">ご注文のお預かり品</div>	
+          <?php if ($val['status'] == 3) {?>
+            <div class="status03">カウンセリング完了</div>			
+					<?php } else if ($val['status'] == 2) {?>
+						<div class="status03">カルテ承認済</div>
+					<?php } else if ($val['status'] == 1) {?>
+						<div class="status02">カルテ確認中</div>
+					<?php } else {?>
+						<div class="status01">カルテ未読</div>
+					<?php } ?>
+				<div class="number">カルテNo：<?=$val['number']?></div>
+				<div class="orders"><img src="../mypage/img/mypage01.png" alt=""><p><span><?=$val['order_num']?></span>点</p></div>
+				<div class="price"><p>金額</p><p><span>
+					<?php echo number_format($val['price']); ?>
+				</span>円</p></div>
+      </li>
+      </form>
+			<?php } ?>
+        </ul>
+      </div>
+      <div class="postingPagenavi">
+        <ul class="pageNumbers">
+          <?php echo $this->get("pageng_html"); ?>
+        </ul>
+      </div>
+    </section>
+    <br>
+    <br>
+    <!--　/#counseling_top -->
+    
+		
+    <section id="counseling_txt">
+      <div class="container">
+				<div class="counseling_txt_img">
+          <img src="../img/counseling.png" alt="" width="130" height="206">
+        </div>
+				<div class="counseling_txt_box">
+          <p>それではWebカウンセリングをはじめます。<br>ただいまお預かりしているカルテを選んでください。</p>
+				</div>
+			</div>
+    </section>
+    <!--　/#counseling_txt -->
+	</div><?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/footer_new.php");
+  ?>
+  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+  });
+  </script>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+<?php
+/*
+ * マイページ(共通)
+ * プロフィール編集画面
+ */
+require '../../core/PreLoad.inc';
+$aic = new CommunityController();
+$aic->leave_complete();
+$aic->view('community');
+?>

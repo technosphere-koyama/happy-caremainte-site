@@ -1,0 +1,91 @@
+@use 'mixin';
+
+#knowledge {
+  .btn {
+    a {
+      @include contentButton;
+    }
+  }
+  table tbody tr th:nth-of-type(1),
+  table tbody tr td:first-child {
+    white-space: nowrap;
+  }
+
+  .chemicalFiber, .trench_coat, .kimono {
+    th {
+      text-align: left;
+    }
+  }
+  .chemicalFiber, .discoloration, .lining {
+    td {
+      text-align: center;
+    }
+  }
+
+  .section {
+    @include section-grid(2, 4);
+
+    p.midashi {
+      @include for-sp {
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 1.4;
+        margin-top: 15px;
+        height: 40px;
+      }
+      @include for-pc {
+        font-size: 12px;
+        letter-spacing: 0.05em;
+        margin-top: 30px;
+      }
+    }
+
+    p.text {
+      width: 100%;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      line-height: 1.8em;
+      margin-top: 10px;
+      @include for-pc {
+        -webkit-line-clamp: 5;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .knowledgeBorderBox {
+    @extend .serviceBorderBox;
+    @extend .roundedBox;
+    h3 {
+      font-family: inherit;
+    }
+    > div {
+      margin-bottom: $verticalGap / 2;
+      border-bottom: $tableBorder;
+    }
+    > div:last-child {
+      border-bottom: none;
+    }
+    .matome {
+      text-align: center;
+      p {
+        font-weight: bold;
+        margin-left: 8%;
+        margin-right: 8%;
+      }
+    }
+
+    figure {
+      img {
+        width: 100%;
+      }
+      p {
+        margin-top: 0;
+        text-align: left;
+      }
+    }
+  }
+}

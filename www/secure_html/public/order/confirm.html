@@ -1,0 +1,9 @@
+<?php
+/*
+ * 登録画面
+ */
+require '../../core/PreLoad.inc';
+$uac = new OrderController();
+$uac->confirm();
+$uac->view('order');
+?>

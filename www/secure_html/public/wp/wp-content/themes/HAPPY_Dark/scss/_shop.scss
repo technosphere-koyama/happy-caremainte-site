@@ -1,0 +1,394 @@
+#shop {
+  .section {
+    @include section-grid(2, 4, $pcGap: 1%);
+  }
+  .linkBtn, .store-return {
+    text-align: center;
+    a {
+      @include contentButton;
+    }
+  }
+  .searchBtn {
+    text-align: center;
+  }
+  .logo img {
+    background: white;
+  }
+
+  /* ref: _assets/css/shop.sss */
+  @include for-pc {
+    .searchBtn {
+      display: none;
+    }
+
+    ul.section {
+      li {
+        p.midashi {
+          font-size: 12px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    /*コンテンツ*/
+    .content {
+      h4 {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 70px;
+      }
+
+      h5 {
+        font-weight: bold;
+      }
+
+      h6 {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+    }
+
+    .LColumn {
+      margin-bottom: 70px;
+
+      .section-imgCenter img {
+        margin-bottom: 30px;
+      }
+    }
+
+    /*ショップ検索*/
+
+    .shopSearch {
+      ul {
+        display: table;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid hsl(0, 0%, 50%);
+        padding: 12px 0;
+        font-size: 14px;
+      }
+
+      li {
+        display: table-cell;
+        vertical-align: middle;
+        line-height: 1.4;
+
+        &:first-child {
+          width: 30%;
+        }
+
+        &:nth-child(2) {
+          padding: 0 10px;
+        }
+
+        &:nth-child(3) {
+          width: 10%;
+        }
+      }
+    }
+
+    /*ショップ情報*/
+
+    .shopinfo img {
+      width: 100%;
+    }
+
+    .linkBtn {
+      &.repeat a {
+        margin: 0 auto 20px !important;
+      }
+    }
+
+    h6 span {
+      // color: $purple;
+      @include sawarabi;
+      font-size: 12px;
+      margin-right: 20px;
+      border: 1px solid $purple;
+      padding: 3px 17px;
+    }
+
+    .bonus {
+      // color: $purple;
+      text-decoration: underline;
+    }
+
+    .shopSearch {
+      h5 {
+        font-size: 16px;
+        border-bottom: $secondaryBorder;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+      }
+
+      &.area {
+        margin-bottom: 40px;
+
+        &.last {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .member {
+      margin-bottom: 20px;
+
+      br {
+        display: none;
+      }
+    }
+
+    .store-return {
+      margin: 20px 5px 40px 0;
+    }
+
+    .listdetail {
+      dt {
+        position: relative;
+        width: 80px;
+        float: left;
+        clear: both;
+
+        &::after {
+          content: ":";
+          position: absolute;
+          top: -2px;
+          right: 0;
+        }
+      }
+
+      dd {
+        margin-left: 110px;
+      }
+    }
+  }
+
+
+  @include for-sp {
+    ul.section {
+      li {
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+        p.midashi {
+          font-size: 11px;
+          line-height: 1.4;
+          margin-top: 5px;
+        }
+      }
+    }
+
+    /*コンテンツ*/
+
+    .content {
+      .pagettl-sub {
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      h4 {
+        margin: 20px 0 40px;
+        text-align: center;
+        font-size: 13px;
+      }
+
+      h5 {
+        margin-bottom: 10px;
+        font-size: 12px;
+      }
+    }
+
+    .LColumn {
+      .section-imgRight p, .section-imgLeft p, .section-imgCenter p {
+        margin-bottom: 40px;
+      }
+
+      p {
+        a {
+          text-decoration: underline;
+        }
+
+        &.last {
+          margin-bottom: 0;
+        }
+      }
+
+      .section-imgRight img, .section-imgLeft img, .section-imgCenter img {
+        padding-bottom: 15px;
+      }
+
+      .section-imgRight.imgSmall img, .section-imgLeft.imgSmall img {
+        float: right;
+        width: 40%;
+        height: auto;
+        margin: 5px 0 2px 10px;
+        padding: 0;
+      }
+
+      .section-imgCenter {
+        &.imgSmall img {
+          float: right;
+          width: 40%;
+          height: auto;
+          margin: 5px 0 2px 10px;
+          padding: 0;
+        }
+
+        img {
+          margin-top: 15px;
+        }
+      }
+    }
+
+    /*ショップ検索*/
+
+    .shopSearch {
+      a {
+        text-decoration: underline;
+      }
+
+      ul {
+        width: 100%;
+        font-size: 13px;
+        border-bottom: $secondaryBorder;
+        padding: 10px 0;
+        margin-top: 5px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      li {
+        vertical-align: middle;
+        line-height: 1.4;
+        margin-bottom: 5px;
+
+        a {
+          font-weight: bold;
+        }
+      }
+    }
+
+    /*ショップ情報*/
+
+    .shopinfo img {
+      width: 100% !important;
+      padding: 15px 0 0 0;
+    }
+
+    .LColumn .logo {
+      text-align: center;
+
+      img {
+        width: 65%;
+        height: auto;
+        margin: 0 auto;
+      }
+    }
+
+    .linkBtn {
+      &.repeat a {
+        margin: 0 auto 40px !important;
+      }
+    }
+
+    .LColumn .card {
+      text-align: center;
+
+      img {
+        width: 50%;
+        height: auto;
+        margin: 0 auto;
+      }
+    }
+
+    h6 {
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid white;
+
+      span {
+        // color: $purple;
+        @include sawarabi;
+        font-size: 10px;
+        margin-right: 10px;
+        border: 1px solid $purple;
+        padding: 3px 17px;
+      }
+    }
+
+    .bonus {
+      // color: $purple;
+      text-decoration: underline;
+    }
+
+    .shopSearch {
+      h5 {
+        font-size: 13px;
+        border-bottom: $secondaryBorder;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+        background: url(/_assets/img_sp/shop/icn_arrow.png) right 6px no-repeat;
+        background-size: 4%;
+
+        &.active {
+          background: url(/_assets/img_sp/shop/icn_arrow_on.png) right 6px no-repeat;
+          background-size: 4%;
+        }
+      }
+
+      .accordionWrap {
+        display: none;
+      }
+
+      &.area {
+        margin-bottom: 20px;
+
+        &.last {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .member {
+      margin-bottom: 20px;
+    }
+
+    .listdetail {
+      dt {
+        position: relative;
+        width: 75px;
+        float: left;
+        clear: both;
+        padding-bottom: 20px;
+
+        h6 {
+          border: 0;
+          line-height: 100%;
+          padding-bottom: 0;
+        }
+
+        &::after {
+          content: ":";
+          position: absolute;
+          top: -2px;
+          right: 0;
+        }
+      }
+
+      dd {
+        margin-left: 95px;
+        padding-bottom: 20px;
+      }
+    }
+
+  }
+}

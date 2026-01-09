@@ -1,0 +1,42 @@
+/* 本物の「真・価値」創造用 */
+
+.news_title {margin-bottom:50px;}
+body .real_value__back {background-image: url("../img/footer05.png") !important;}
+.LColumn p {margin-bottom: 0 !important;}
+table {border:none !important;}
+table td {border:none !important;padding:1px !important;;width:calc(100% / 3);}
+
+.bg {background: #fff; color: #000;}
+.content a, #pankuzu-wrapp a {color: #000;}
+ul.infomag li {border-bottom: 1px solid #ccc;  margin-bottom: 10px;padding: 5px 10px}
+
+.real_value {color: #c4a971; text-align: center;font-family: "sawarabi", serif; font-weight: normal;font-size:18px;}
+
+
+@media (max-width: 600px) {
+	.real_value {font-size: 16px;line-height: 1.4;}
+}
+
+/* クリーニングとケアメンテの違い…ここが知りたい */ 
+.difference2-title {font-weight:bold;margin-bottom:10px;color:#0000ff}
+.difference2-link a {color:#0000ff}
+.difference2-table {width:100%;border:none;margin-bottom:30px !important;}
+.difference2-table th {border:none !important;padding:5px 10px !important;vertical-align: top;text-align:left;color:#6a3b93;font-weight:bold;line-height: 1.7;}
+.difference2-table td {border:none !important;padding:5px 10px !important;width:auto !important;line-height: 1.7;}
+.difference2-table td.difference2-table-img {width:15% !important;text-align:center;vertical-align: top}
+@media (max-width: 580px) {
+	.difference2-table th {display:block;width:100% !important;padding:5px 10px 0 !important;}
+	.difference2-table td {display:block;width:100% !important;padding:0 10px 5px !important;}
+	.difference2-table td.difference2-table-img {width:100% !important;}
+	.difference2-table td.difference2-table-img img {width:50%;}
+	.guideNav {background:#000}
+}
+
+/* サービス・技術一覧 */
+table.carementeh-table {width:100%;margin:10px 20px 30px;}
+table.carementeh-table td {width:50%;font-size:14px}
+
+@media (max-width: 580px) {
+	table.carementeh-table {margin:10px 0 30px}
+	table.carementeh-table td {display:block;width:100%; font-size:12px;padding:5 px 0 !important;padding: 0px !important;}
+}

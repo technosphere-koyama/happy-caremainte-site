@@ -1,0 +1,264 @@
+.bg {background:#fff;color:#000}
+.mt10 {margin-top:10px !important;}
+.mb30 {margin-bottom:30px !important;}
+.mb20 {margin-bottom:20px !important;}
+.mb50 {margin-bottom:50px !important;}
+.mb100 {margin-bottom:100px !important;}
+
+#lp-contents {margin: auto;width: 980px;}
+.top-page {text-align:center;font-size:26px;}
+
+.guideNav {display:none !important}
+
+table.top-01-text {margin:0 auto;width:70%;}
+table.top-01-text th {text-align:center;width:15%;padding:5px;}
+table.top-01-text th img {width:100%;}
+table.top-01-text td {text-align:center;padding:5px;font-weight:bold;color:#C1272D;font-size: 28px;}
+
+table.top-02-text {margin:0 auto 10px;width:90%;background:#E5DFD8}
+table.top-02-text th {text-align:center;width:20%;padding:10px 10px 0;}
+table.top-02-text th img {width:100%;}
+table.top-02-text td {text-align:center;padding:10px 5px;font-weight:bold;color:#C1272D;font-size: 28px;}
+
+/* 共通 */
+
+.top-text {width:90%;margin:0 auto 20px;font-size:14px;}
+.top-text a {text-decoration: underline;}
+.page-img {width:90%;margin:0 auto 30px;}
+.check-text {text-align:center;width:90%;margin:5px auto;background:#E5DFD8;border-top:3px solid #C1272D;border-bottom:1px solid #C1272D;color:#C1272D;padding:5px 0;font-size:24px;}
+
+a#A,a#B,a#C,a#D,a#E,a#F,a#G,a#H {display:block;padding-top:80px;margin-top:-80px;}
+
+.area-title {position: relative;width:90%;margin:30px auto 20px;text-align:center;padding: 15px 0;border-radius: 10px; background-color: #662d91; color: #ffff00; font-weight: bold;font-size: 28px;}
+.area-title:before { position: absolute; top: 100%; left: 49%;height: 0;width: 0;border-style: solid;border-color: transparent; border-top-color: #662d91;border-width: 10px; content: "";}
+.area-title-02 {font-size:28px;}
+.area-title-small {font-size:18px;}
+
+
+.star-btn {width:70%;margin:10px auto;}
+.tel {width:90%;margin:10px auto}
+.hermes {width:80%;margin:10px auto}
+.mail {width:90%;margin:10px auto 50px}
+
+.arrow-button {border-radius: 30px;/*color: #662d91*/;display: block;border:2px solid #662d91;padding: 8px; position: relative; text-align: center;text-decoration: none; width: 90%;margin:10px auto 30px;font-weight:bold;font-size:24px;}
+.arrow-button:hover {background:#662d91;color:#fff}
+.arrow-button::after{content: '';border: 0;border-top: solid 2px #fff;border-right: solid 2px #fff; display: inline-block; width: 10px; height: 10px; position: absolute; top: 50%;right: 20px;  transform: translateY(-50%) rotate(45deg);}
+.arrow-button:hover::after {border-top: solid 2px #fff;border-right: solid 2px #fff;color:#fff}
+
+.form-button {color: #662d91;display: block;border:2px solid #000;padding: 8px; position: relative; text-align: center;text-decoration: none; width: 80%;margin:0 auto 50px;font-weight:bold;font-size:24px;}
+.form-button:hover {}
+.form-button::after{content: '';border: 0;border-top: solid 2px #662d91;border-right: solid 2px #662d91; display: inline-block; width: 10px; height: 10px; position: absolute; top: 50%;right: 20px;  transform: translateY(-50%) rotate(45deg);}
+.form-button span {color:#000}
+
+/* Bエリア */
+.b-text {text-align:center;font-size:26px;}
+.b-text-span {text-align:center;font-size:22px;}
+
+table.check-text-table {width:auto;margin:0 auto}
+table.check-text-table th {padding:0 10px}
+.b-room-area {width:90%;margin:0 auto 30px;text-align:center;}
+.b-room-text-01 {font-size:24px;text-align:center;margin: 20px auto 10px;}
+.b-room-text-02 {font-size: 24px;text-align: left;margin: 10px auto 30px;}
+.b-text-17 {text-align:center;margin: 20px auto 0;font-size: 24px;}
+
+/* Cエリア */
+.c-area {width:90%;margin:0 auto 30px;text-align:center;}
+.c-area-text {color:#C1272D;font-size:26px;text-align:center;}
+
+/* Aエリア */
+.a-3star {text-align:center;}
+.a-area {width:90%;margin:0 auto;text-align:center;}
+table.a-star-table {width:100%;margin:0 auto 20px;}
+table.a-star-table th {width: 25%;text-align:center;padding:5px;}
+table.a-star-table td {vertical-align:middle;font-size:24px;padding:5px 10px;text-align:left;color:#000}
+.a-star-strong  {color:#C1272D;font-weight:bold;font-size:34px;}
+.a-star-span {color:#C1272D;font-weight:bold;font-size:30px}
+.a-star-div {color:#C1272D;font-weight:bold;font-size:26px}
+.a-star-black {font-weight:bold;font-size:30px}
+table.a-area-table {width:100%;margin:0 auto 20px;}
+table.a-area-table th {width: 15%;text-align:center;padding:5px;}
+table.a-area-table th img {width:100px;}
+table.a-area-table td {vertical-align:middle;font-size:26px;padding:5px 10px;text-align:left}
+.red-strong {color:#C1272D;font-weight:bold;font-size:28px;}
+.red-span {color:#C1272D;font-weight:bold;}
+.a-form-btn {margin:0 auto 50px;}
+.a-mypage {background:#ccc;padding:20px 20px 10px}
+.mypage-title {text-align:center;font-size:26px;margin-bottom:20px;}
+.mypage-span {background: linear-gradient(transparent 50%, #f8ff01 50%); font-weight: bold;padding:0 50px;}
+.mypage-text {text-align:left;font-size:18px}
+.mypage-button {border-radius: 20px;color: #662d91;display: block;border:2px solid #662d91;padding: 5px; position: relative; text-align: center;text-decoration: none; width: 70%;margin:20px auto 10px;font-weight:bold;font-size:18px;}
+.mypage-button:hover {background:#662d91;color:#fff}
+.mypage-button::after{content: '';border: 0;border-top: solid 2px #662d91;border-right: solid 2px #662d91; display: inline-block; width: 10px; height: 10px; position: absolute; top: 50%;right: 20px;  transform: translateY(-50%) rotate(45deg);}
+.mypage-button:hover::after {border-top: solid 2px #fff;border-right: solid 2px #fff;color:#fff}
+.a-flow-03 {width:90%;margin:0 auto;}
+
+/* Dエリア */
+.d-area {width:80%;margin:0 auto 20px}
+.d-tax {text-align:right;font-size:16px;}
+table.d-table {width:100%;margin:10px auto 30px;border-spacing:0}
+table.d-table th {width: 25%;text-align:center;padding:0;border-bottom:4px dotted #E5DFD8}
+table.d-table th img {width:100px;}
+table.d-table td {vertical-align:middle;font-size:26px;font-weight:bold;border-bottom:4px dotted #E5DFD8}
+table.d-table td.fee {font-weight:normal;font-size:24px;}
+.d-att {font-size:18px;}
+
+/* Eエリア */
+.lp-flow {text-align:center;margin:0 auto 50px;}
+.lp-flow img {display:block;margin:5px auto}
+.lp-flow img.e-arrow {margin:20px auto}
+.lp-flow img.e-up {margin-top:-10px;}
+
+/* Fエリア */
+.f-text {text-align:center;font-size:24px;}
+.f-img {text-align:center;margin:0 auto 30px;}
+
+/* Gエリア */
+.lp-faq {text-align:center;margin:0 auto 30px;}
+.lp-faq img {display:block;margin:0 auto 10px;}
+.g-contact-text-01 {text-align:center;margin:10px auto;font-weight:bold;font-size:28px;color:#C1272D}
+
+/* Hエリア */
+.lp-voice {text-align:center;margin:0 auto 20px;}
+.h-happy-img {margin:50px auto 20px;}
+.h-contact-text-01 {text-align:center;margin:10px auto 0;font-weight:bold;font-size:24px;color:#1088dc}
+.h-contact-text-02 {text-align:center;margin:10px auto;font-weight:bold;font-size:28px;color:#C1272D}
+
+@media (min-width: 992px) {
+
+}
+@media (max-width: 991px) {
+	#lp-contents {margin: 50px auto;width: 100%;font-size:12px;}
+	.top-text {margin:0 auto;font-size:12px;}
+}
+
+@media (min-width: 961px) {
+	.sp_banner {display:none}
+}
+
+
+@media (max-width: 960px) {
+	.footer_sns {display:none !important}
+}
+
+
+
+@media (min-width: 801px) {
+}
+
+@media (max-width: 800px) {
+	.mb20 {margin-bottom:10px !important;}
+	.mb50 {margin-bottom:20px !important;}
+	.mb100 {margin-bottom:30px !important;}
+	.smt30 {margin-top:30px !important;}
+	.smb10 {margin-bottom:10px !important;}
+	.top-page {font-size:14px;}
+	table.top-01-text {width:100%;}
+	table.top-01-text td {font-size: 14px;}
+	table.top-02-text {width:100%;}
+	table.top-02-text th {width:17%;padding:0 0 0 5px;}
+	table.top-02-text td {font-size: 14px;padding:10px 0;}
+	.top-text {width: 95%;}
+	.page-img {width: 95%; margin: 0 auto 10px;}
+	.area-title {width:95%;font-size:14px;padding: 8px 0;}
+	.area-title:before {left: 47%;}
+	.area-title-02 {font-size:12px;}
+	.area-title-small {font-size:12px;}
+	.check-text {width:95%;font-size:11px;}
+	.hermes {width:90%;margin:0 auto 10px}
+	.mail {margin:10px auto 30px}
+	.star-btn {width:95%;margin:10px auto 0;}
+	.arrow-button {width: 85%;font-size:14px;margin:10px auto 10px;}
+	.arrow-button::after{right: 10px;}
+	.form-button {width: 90%;font-size:14px;margin:0 auto 20px;border: 1px solid #000;}
+	.form-button::after {right: 10px;}
+	/* Bエリア */
+	.b-text {font-size:14px;}
+	.b-text-span {font-size:12px;}
+
+	table.check-text-table th {padding:0 5px}
+	.b-room-text-01 {font-size:12px;margin:5px auto}
+	.b-room-text-02 {font-size: 12px;}
+	.b-text-17 {margin: 10px auto 0;font-size: 14px;}
+
+	/* Cエリア */
+	.c-area {width:100%;}
+	.c-area-text {font-size:12px;}	
+
+	/* Aエリア */
+	.a-3star {width:35%;margin: 0 auto}
+	.a-area {width:95%;}
+
+	table.a-star-table {margin:0 auto 10px;}
+	table.a-star-table th {width: 20%;padding:0;}
+	table.a-star-table td {font-size:10px;padding:5px;}
+	.a-star-strong  {font-size:16px;}
+	.a-star-span {font-size:14px}
+	.a-star-div {font-size:12px}
+	.a-star-black {font-size:14px}
+
+	.a-form-btn {margin:0 auto 25px;}
+	table.a-area-table th {padding:0;}
+	table.a-area-table td {font-size:11px;padding:5px}
+	.red-strong {font-size:12px;}
+	.a-mypage {padding:20px 10px 10px}
+	.mypage-title {font-size:14px;margin-bottom:10px;}
+	.mypage-span {padding:0 20px}
+	.mypage-text {font-size:11px}
+	.mypage-button {width: 80%;font-size:12px;margin-top:5px;}
+	.mypage-button::after{width: 5px; height: 5px;right: 10px;}
+
+
+	/* Dエリア */
+	.d-area {width:95%;}
+	.d-tax {font-size:11px;}
+	.d-att {font-size:10px;}
+	table.d-table {margin:10px auto;}
+	table.d-table th {width:15% !important;}
+	table.d-table th img {width:auto;}
+	table.d-table td {font-size:14px;padding-left:10px;}
+	table.d-table td.fee {font-size:14px;padding-left:0;}
+
+
+	/* Eエリア */
+	.lp-flow {margin:0 auto 30px;}
+	.lp-flow img.e-arrow {margin:10px auto;width: 20px;}
+
+	/* Fエリア */
+	.f-text {font-size:10px;}
+	.f-img {width:90%}
+
+	/* Gエリア */
+	.lp-faq img {width:95%}
+	.g-contact-text-01 {font-size:16px;}
+
+	/* Hエリア */
+	.h-happy-img {margin:30px auto 20px;}
+	.h-contact-text-01 {font-size:12px;}
+	.h-contact-text-02 {font-size:16px;}
+
+
+}
+
+
+@media (min-width: 601px) {
+	.img-pc-none {display:none}
+}
+
+@media (max-width: 600px) {
+	.img-sp-none {display:none}
+}
+
+@media (min-width: 481px) {
+}
+
+@media (max-width: 500px) {
+}
+
+@media (max-width: 480px) {
+} 
+
+.new-text {margin:20px 20px 80px;font-size:14px;}
+
+@media (max-width: 600px) {
+	.new-text {margin:20px 20px;font-size:12px;}
+}

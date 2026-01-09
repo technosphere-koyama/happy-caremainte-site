@@ -1,0 +1,95 @@
+@import "mixin";
+
+@include for-pc {
+  /* 店舗リスト ref: use.css L:577 */
+  .useShop dl {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 30% auto;
+    grid-template-rows: auto;
+    margin-bottom: 1em;
+    > * {
+      grid-row: 1;
+    }
+  }
+  .useShop dt img {
+    width: 156px;
+  }
+}
+@include for-sp {
+  .useShop dt {
+    text-align: center;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/* 価格表 /use/price/pricelist/ ref: use.css L:705- */
+.priceList {
+  margin: 10px 0 1em;
+  border: $tableBorder;
+  box-sizing: border-box;
+  li { /* = tr */
+    display: grid;
+    grid-template-columns: auto 110px;
+    grid-template-rows: auto;
+    border-top: $tableBorder;
+    &:first-child {
+      border-top: none;
+    }
+    > * { /* = td */
+      padding: 4px 10px;
+      box-sizing: border-box;
+      border-left: $tableBorder;
+      grid-row: 1;
+    }
+    > :first-child {
+      border-left: none;
+    }
+    *[class^=cell2] {
+      text-align: right;
+    }
+  }
+  + p {
+    clear: both;
+  }
+}
+
+.howtoorder .howtoorderWrap .searchBtn{
+  text-align: right;
+  margin-bottom: $verticalGap;
+}
+.howtoorder .howtoorderWrap a{
+  @include contentButton;
+}
+
+/* === /use/howtoorder/tel === */
+.useNum span {
+  font-size: 150%;
+  font-weight: normal;
+  display: inline-block;
+  margin: 1em 0;
+}
+/* === /use/price/catalog === */
+.catalog-border {
+  border: 1px solid white;
+  padding: 273px 7% 45px 7%;
+  background: url('../img/catalog-thumbnail.jpg') no-repeat center 45px;
+  max-height: 223px;
+  p {
+    text-align: center;
+  }
+  @include for-pc {
+    & {
+      background-position: 50px 45px;
+      padding-top: 45px;
+      padding-left: 240px;
+    }
+    p {
+      text-align: left;
+      margin-top: 98px;
+    }
+  }
+}
+

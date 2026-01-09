@@ -1,0 +1,9 @@
+<?php
+/*
+ * パスワード再設定タイムアウト画面
+ */
+require '../../../core/PreLoad.inc';
+$alc = new PasswordResetController();
+$alc->timeout();
+$alc->view('pwreset');
+?>

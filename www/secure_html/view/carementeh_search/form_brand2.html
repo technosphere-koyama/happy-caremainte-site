@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>ブランド検索｜さがす＜ケアメンテ実例集＞｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/search.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+</head>
+<body id="careSearch">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+	<!--　/header_nav　-->
+	
+	<div class="bg">
+    <section id="case" class="careBrand">
+      <div class="tac case_top"><img src="../img/header01.png" alt="さがす"></div>
+      <h2 class="tac">CAREMENTEH SEARCH<br>
+        <span>さがす ケアメンテ事例集</span></h2>
+      <div class="container">
+        <div class="tac">
+          <p class="tit_txt">ブランド・アパレルメーカーを指定する</p>
+        </div>
+				<h3 class="tac">ただいまの登録件数：<span><?php echo $this->get("care_count") ?></span>点</h3>
+				<div class="initial"><?php echo $this->get('mojiname')?></div>
+        <div class="tac">
+          <p>検索したいブランド・メーカー名をクリックしてください。1銘柄のみの選択になります。</p>
+        </div>
+        <?php if (!StaticFunction::is_empty($this->get('alert'))) { ?>
+          <ul class="error_box">
+            <?php
+            echo $this->get('alert');
+            ?>
+          </ul>
+        <?php } else { ?>
+          <form method="post" name="form01" action="<?php print URL_REQUEST; ?>">
+            <dl class="searchBrandLi">
+              <?php foreach ($this->get("brand_list") AS $value) { ?>
+                <dd><label><input type="checkbox" name="brand_code[<?php echo $value['brand_code'] ?>]" value="<?php echo $value['brand_name'] ?>"><span><?php echo $value['brand_name'] ?></span></label></dd>
+              <?php } ?>
+            </dl>
+            <dt class="btnarea searchBrand2"><input type="button" id="btn" class="btn" value="戻　る" onClick="location.href = '/carementeh_search/form.html'"><input type="button" id="btn2" class="searchBrandBtn" value="確　定" onclick="document.form01.submit()"></dt>
+          </form>
+          <?php } ?>
+      </div>
+    </section>
+    <!--　/#case.careBrand -->
+
+    <div class="footer_sns">
+      <div class="container">
+        <ul>
+          <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!--　/.footer_sns -->
+	</div>
+  <!--　/.footer_nav_sp -->
+  <?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/footer_new.php");
+  ?>
+  <script>
+  $(function() {
+    $('a[href^="#"]').click(function(){
+      var speed = 500;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+		
+    var menuFlag = true;
+    $('.header_nav_common .header_tab').on('click', function() {
+      menuFlag = !menuFlag;
+      if(menuFlag){
+        $('.header_nav_common').css("top","0");
+      } else {
+        $('.header_nav_common').css("top","-95px");
+      }
+  	});
+
+		
+  });
+  </script>
+	</body>
+</html>

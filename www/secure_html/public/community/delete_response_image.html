@@ -1,0 +1,8 @@
+<?php
+/*
+ * コミュニティ投稿の画像を削除するページ（viewは存在しない）
+ */
+require '../../core/PreLoad.inc';
+$aic = new CommunityController();
+$aic->delete_response_image();
+

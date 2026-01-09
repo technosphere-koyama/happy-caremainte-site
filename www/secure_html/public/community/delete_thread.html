@@ -1,0 +1,10 @@
+<?php
+/*
+ * コミュニティを削除する
+ * えらーの場合のみviewに渡す
+ */
+require '../../core/PreLoad.inc';
+$aic = new CommunityController();
+$aic->delete_thread();
+$aic->view('community');
+?>

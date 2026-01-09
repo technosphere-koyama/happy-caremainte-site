@@ -1,0 +1,509 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト*/
+
+/*メインビジュアル*/
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/shop/bg_mv.jpg) center center no-repeat;
+	background-size:cover;
+}
+
+/*トップ*/
+.searchBtn a{
+	display: block;
+	position: relative;
+	background: #fff;
+	border: 1px solid #b99867;
+	width: 500px;
+	padding: 20px 0;
+	margin: 0 auto 85px;
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ";
+	font-size: 22px;
+	color: #a9803c;
+	letter-spacing: 0.1em;
+	text-align: center;
+	text-indent: 40px;
+}
+.searchBtn a:hover{
+	opacity: 0.8;
+}
+.searchBtn a:after{
+	position: absolute;
+	content: "";
+	width: 18px;
+	height: 27px;
+	margin: -5px 0 0 -210px;
+	background-image: url(https://www.kyoto-happy.co.jp:8443/_assets/img/shop/btn_pin.gif);
+	background-repeat: no-repeat;
+	background-size: 18px 27px;
+}
+
+ul.section{
+	width:1100px;
+	overflow:hidden;
+	margin-bottom:50px;
+}
+
+ul.section li{
+	width:266px;
+	float:left;
+	overflow:hidden;
+	margin-right:12px;
+	margin-bottom:50px;
+}
+ul.section li:nth-child(4n){
+	margin-right:0;
+}
+ul.section li p.midashi{
+	font-size:13px;
+	margin-top:10px;
+}
+ul.section li p.midashi a{
+	color:#333;
+}
+
+
+/*コンテンツ*/
+h4{
+	text-align: center;
+	font-size: 28px;
+	margin-bottom: 70px;
+}
+h5{
+	font-weight: bold;
+}
+h6{
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.LColumn{
+	margin-bottom: 70px;
+}
+.LColumn .section-imgCenter img{
+	margin-bottom: 30px;
+}
+
+/*ショップ検索*/
+.shopSearch ul{
+	display: table;
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid #ddd;
+	padding: 12px 0;
+}
+.shopSearch li{
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 1.4;
+}
+.shopSearch li:first-child{
+	width: 30%;
+}
+.shopSearch li:nth-child(2){
+	width: 60%;
+	padding: 0 10px;
+}
+.shopSearch li:nth-child(3){
+	width: 10%;
+}
+
+/*ショップ情報*/
+.shopinfo img{
+	width: 100%;
+}
+.linkBtn a{
+	display: block;
+	position: relative;
+	background: #fff;
+	border: 1px solid #b99867;
+	width: 260px;
+	padding: 6px 0;
+	margin: 0 auto 85px;
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ";
+	font-size: 13px;
+	color: #a9803c;
+	text-decoration: none;
+	text-indent: -10px;
+	text-align: center;
+}
+.linkBtn a:hover{
+	opacity: 0.8;
+}
+.linkBtn a:after{
+	position: absolute;
+	content: "";
+	width: 13px;
+	height: 11px;
+	margin: 7px 0 0 15px;
+	background-image: url(https://www.kyoto-happy.co.jp:8443/_assets/img/shop/list/icn01.gif);
+	background-repeat: no-repeat;
+	background-size: 13px 11px;
+}
+.linkBtn.repeat a{
+	margin: 0 auto 20px!important;
+}
+h6 span{
+	color: #a9803c;
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ";
+	font-size: 12px;
+	margin-right: 20px;
+	border: 1px solid #a9803c;
+	padding: 3px 17px;
+}
+.bonus{
+	color: #9a7339;
+	text-decoration: underline;
+}
+.shopSearch h5{
+	font-size: 16px;
+	border-bottom: 1px solid #333;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+.shopSearch.area{
+	margin-bottom: 40px;
+}
+.shopSearch.area.last{
+	margin-bottom: 0;
+}
+
+.member {
+	margin-bottom: 20px;
+}
+.member br {
+	display: none;
+}
+
+.store-return {
+	margin:20px 5px 40px 0;
+	font-size: 12px;
+	background: #fafafa;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	display:inline-block;
+}
+.store-return a{
+	display: block;
+	color: #333;
+	text-align: left;
+	text-decoration: none;
+	padding: 6px 20px 6px 40px;
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/mypage/back_arrow.png) no-repeat 20px 12px;
+}
+.store-return a:hover{
+	color: #9a7339;
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/mypage/back_arrow_on.png) no-repeat 20px 12px;
+}
+
+.listdetail dt {
+	position: relative;
+	width: 80px;
+	float: left;
+	clear: both;
+}
+.listdetail dt::after {
+	content: ":";
+    position: absolute;
+	top: -2px;
+    right: 0;
+}
+.listdetail dd {
+	margin-left: 110px;
+}
+}
+
+@media screen and (max-width:640px){
+/*======================
+SPレイアウト*/
+
+
+/*メインビジュアル*/
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/shop/bg_mv.jpg) center center no-repeat;
+	background-size:auto 90px;
+}
+
+/*トップ*/
+.searchBtn a{
+	display: block;
+	position: relative;
+	background: #fff;
+	border: 1px solid #b99867;
+	width: 100%;
+	padding: 12px 0;
+	margin: 0 auto 40px;
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ";
+	font-size: 15px;
+	font-weight: bold;
+	color: #a9803c;
+	letter-spacing: 0.1em;
+	text-align: center;
+	text-indent: 30px;
+}
+.searchBtn a:before{
+	position: absolute;
+	content: "";
+	width: 14px;
+	height: 21px;
+	margin: -2px 0 0 -30px;
+	background-image: url(https://www.kyoto-happy.co.jp:8443/_assets/img/shop/btn_pin.gif);
+	background-repeat: no-repeat;
+	background-size: 14px 21px;
+}
+ul.section{
+	overflow:hidden;
+}
+ul.section li{
+	width:48.5%;
+	float:left;
+	overflow:hidden;
+	margin-right:3%;
+	margin-bottom:15px;
+}
+ul.section li:nth-child(even){
+	margin-right: 0;
+}
+ul.section li img{
+	width:100%;
+	height:auto;
+}
+ul.section li p.midashi{
+	font-size:11px;
+	line-height:1.4;
+	margin-top:5px;
+}
+ul.section li p.midashi a{
+	color:#333;
+}
+
+.footernavi .link_menu{
+	border-top: 1px solid #eee;
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/common_page/icon_arrow.png) 94.5% 14px no-repeat;
+	background-size: 2%;
+}
+.footernavi .link_menu a{
+	display: block;
+	padding: 0 5%;
+}
+.footernavi .link_menu.on a{
+	color: #a87f42;
+}
+
+/*コンテンツ*/
+.content{
+	margin: 0 5%;
+}
+.content .pagettl-sub{
+	color: #333333;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.8;
+	margin-bottom: 20px;
+}
+.content h4{
+	margin: 20px 0 40px;
+	text-align: center;
+	font-size: 13px;
+}
+.content h5{
+	margin-bottom: 10px;
+	font-size: 12px;
+}
+
+.LColumn .section-imgRight p,
+.LColumn .section-imgLeft p,
+.LColumn .section-imgCenter p{
+	margin-bottom: 40px;
+}
+.LColumn p a{
+	text-decoration: underline;
+	color: #a9803c;
+}
+.LColumn p.last{
+	margin-bottom: 0;
+}
+.LColumn .section-imgRight img,
+.LColumn .section-imgLeft img,
+.LColumn .section-imgCenter img{
+	padding-bottom: 15px;
+}
+.LColumn .section-imgRight.imgSmall img,
+.LColumn .section-imgLeft.imgSmall img,
+.LColumn .section-imgCenter.imgSmall img{
+	float: right;
+	width: 40%;
+	height: auto;
+	margin: 5px 0 2px 10px;
+	padding: 0;
+}
+
+.LColumn .section-imgCenter img{
+	margin-top: 15px;
+}
+
+
+/*ショップ検索*/
+.shopSearch a{
+	text-decoration: underline;
+	color: #a9803c;
+}
+.shopSearch ul{
+	width: 100%;
+	font-size: 13px;
+	border-bottom: 1px solid #eee;
+	padding: 10px 0;
+	margin-top: 5px;
+}
+.shopSearch ul:first-child{
+	margin-top: 0;
+}
+.shopSearch li{
+	vertical-align: middle;
+	line-height: 1.4;
+	margin-bottom: 5px;
+}
+.shopSearch li a{
+	font-weight: bold;
+}
+
+/*ショップ情報*/
+.shopinfo img{
+	width: 100%!important;
+	padding: 15px 0 0 0;
+}
+.LColumn .logo{
+	text-align: center;
+}
+.LColumn .logo img{
+	width: 65%;
+	height: auto;
+	margin: 0 auto;
+}
+.linkBtn a{
+	display: block;
+	position: relative;
+	background: #fff;
+	border: 1px solid #b99867;
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+	width: 100%;
+	padding: 10px 0;
+	margin: -20px auto 85px;
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ";
+	font-size: 13px;
+	color: #a9803c;
+	text-decoration: none;
+	text-indent: -10px;
+	text-align: center;
+}
+.linkBtn a:after{
+	position: absolute;
+	content: "";
+	width: 14px;
+	height: 12px;
+	margin: 2px 0 0 15px;
+	background-image: url(https://www.kyoto-happy.co.jp:8443/_assets/img/shop/list/icn01.gif);
+	background-repeat: no-repeat;
+	background-size: 14px 12px;
+}
+.linkBtn.repeat a{
+	margin: 0 auto 40px!important;
+}
+.LColumn .card{
+	text-align: center;
+}
+.LColumn .card img{
+	width: 50%;
+	height: auto;
+	margin: 0 auto;
+}
+h6{
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #eee;
+}
+h6 span{
+	color: #a9803c;
+	font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ";
+	font-size: 10px;
+	margin-right: 10px;
+	border: 1px solid #a9803c;
+	padding: 3px 17px;
+}
+.bonus{
+	color: #9a7339;
+	text-decoration: underline;
+}
+.shopSearch h5{
+	font-size: 13px;
+	border-bottom: 1px solid #333;
+	padding-bottom: 10px;
+	margin-bottom: 5px;
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/shop/icn_arrow.png) right 6px no-repeat;
+	background-size: 4%;
+}
+.shopSearch h5.active{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img_sp/shop/icn_arrow_on.png) right 6px no-repeat;
+	background-size: 4%;
+}
+.shopSearch .accordionWrap{
+	display: none;
+}
+.shopSearch.area{
+	margin-bottom: 20px;
+}
+.shopSearch.area.last{
+	margin-bottom: 0;
+}
+.member {
+	margin-bottom: 20px;
+}
+.listdetail dt {
+	position: relative;
+	width: 75px;
+	float: left;
+	clear: both;
+	padding-bottom: 20px;
+}
+.listdetail dt h6 {
+	border: 0;
+	line-height: 100%;
+	padding-bottom: 0;
+}
+.listdetail dt::after {
+	content: ":";
+    position: absolute;
+	top: -2px;
+    right: 0;
+}
+.listdetail dd {
+	margin-left: 95px;
+	padding-bottom: 20px;
+}
+
+.LColumn .store-return{
+	width: 100%;
+}
+.LColumn .store-return a{
+	display: block;
+	color: #333;
+	text-decoration: none;
+	font-size: 12px;
+	text-align: center;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background: #fafafa;
+	padding: 7px 15px;
+	margin-top: 30px;
+}
+}

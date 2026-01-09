@@ -1,0 +1,562 @@
+# Translation of Plugins - Slider, Gallery, and Carousel by MetaSlider &#8211; Image Slider, Video Slider - Stable (latest release) in Japanese
+# This file is distributed under the same license as the Plugins - Slider, Gallery, and Carousel by MetaSlider &#8211; Image Slider, Video Slider - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-03-06 02:50:34+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: ja_JP\n"
+"Project-Id-Version: Plugins - Slider, Gallery, and Carousel by MetaSlider &#8211; Image Slider, Video Slider - Stable (latest release)\n"
+
+#: themes/manifest-premium.php:28
+msgid "vertical"
+msgstr "垂直方向"
+
+#: admin/Notices.php:377 inc/slide/metaslide.class.php:161
+#: inc/slide/metaslide.image.class.php:143
+#: inc/slide/metaslide.image.class.php:247
+#: inc/slide/metaslide.image.class.php:301
+#: inc/slide/metaslide.image.class.php:420 ml-slider.php:844 ml-slider.php:926
+#: ml-slider.php:1038 ml-slider.php:2551 ml-slider.php:2592
+msgid "Bad request"
+msgstr "不正なリクエスト"
+
+#: inc/slide/metaslide.image.class.php:410
+msgid "Access denied"
+msgstr "アクセスが拒否されました"
+
+#: admin/slideshows/Themes.php:390
+msgid "We removed your selected theme as it could not be found. Was the folder deleted?"
+msgstr "選択されたテーマが見つかりませんでしたので削除しました。 フォルダーは削除されましたか？"
+
+#: admin/routes/api.php:631
+msgid "This was not a slideshow, so we cannot delete it."
+msgstr "これはスライドショーではなかったので、削除することはできません。"
+
+#: ml-slider.php:2378
+msgid "MetaSlider Pro"
+msgstr "MetaSlider Pro"
+
+#: inc/slide/metaslide.image.class.php:593
+msgid "Schedule"
+msgstr "スケジュール"
+
+#: admin/slideshows/Themes.php:60
+msgid "No themes found."
+msgstr "テーマが見つかりませんでした。"
+
+#: admin/views/pages/parts/toolbar.php:25
+msgid "Add a new slide"
+msgstr "新しいスライドを追加"
+
+#: admin/slideshows/Settings.php:59
+msgid "New Slideshow"
+msgstr "新規スライドショー"
+
+#: ml-slider.php:686
+msgid "Add to slideshow"
+msgstr "スライドショーを追加"
+
+#: admin/slideshows/Settings.php:85 inc/slider/metaslider.class.php:127
+msgid "Previous"
+msgstr "前へ"
+
+#: inc/slide/metaslide.class.php:431 inc/slide/metaslide.class.php:687
+#: inc/slide/metaslide.class.php:688
+msgid "Update slide image"
+msgstr "スライドの画像を更新する"
+
+#: admin/Table.php:162 admin/Table.php:298 inc/slide/metaslide.class.php:419
+msgid "Delete Permanently"
+msgstr "完全に削除する"
+
+#: admin/Table.php:161 admin/Table.php:297 inc/slide/metaslide.class.php:409
+msgid "Restore"
+msgstr "復元"
+
+#: inc/slide/metaslide.class.php:130
+msgid "There was an error updating the image. Please try again"
+msgstr "画像を更新する際にエラーが発生しました。もう一度お試しください。"
+
+#: inc/slide/metaslide.class.php:311
+msgid "There was an error while updating the database. Please try again."
+msgstr "データベースを更新する際にエラーが発生しました。もう一度お試しください。"
+
+#: inc/slide/metaslide.class.php:120
+msgid "The image was successfully updated."
+msgstr "画像を正常に更新しました。"
+
+#: ml-slider.php:727
+msgid "YouTube"
+msgstr "YouTube"
+
+#: ml-slider.php:726
+msgid "Vimeo"
+msgstr "Vimeo"
+
+#: ml-slider.php:733
+msgid "Layer Slide"
+msgstr "レイヤースライド"
+
+#: ml-slider.php:732
+msgid "Post Feed"
+msgstr "投稿 Feed"
+
+#: admin/Pages.php:168 admin/views/pages/parts/slider-settings-legacy.php:896
+#: themes/architekt/customize.php:49
+msgid "Opacity"
+msgstr "不透明度"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:991
+#: admin/views/pages/parts/slider-settings.php:797
+msgid "CSS Classes"
+msgstr "CSS クラス"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:1004
+#: admin/views/pages/parts/slider-settings.php:810
+msgid "Print CSS"
+msgstr "CSS を出力"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:1017
+#: admin/views/pages/parts/slider-settings.php:823
+msgid "Print JS"
+msgstr "JS を出力"
+
+#: admin/Table.php:183 admin/views/pages/parts/slider-settings-legacy.php:1056
+#: admin/views/pages/parts/slider-settings.php:856
+msgid "Shortcode"
+msgstr "ショートコード"
+
+#: ml-slider.php:1943
+msgid "Choose slideshow"
+msgstr "スライドショーを選択"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: ml-slider.php
+msgid "https://www.metaslider.com"
+msgstr "https://www.metaslider.com"
+
+#: ml-slider.php:1953
+msgid "Insert slideshow"
+msgstr "スライドショーを挿入"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:912
+msgid "Caption Speed"
+msgstr "キャプション・スピード"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:1035
+#: admin/views/pages/parts/slider-settings.php:841
+msgid "Delay adding the flexslider class to the slideshow."
+msgstr "スライドショーに flexslider クラスを追加するのを遅らせる"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:985
+#: admin/views/pages/parts/slider-settings.php:791
+msgid "Developer Options"
+msgstr "開発者オプション"
+
+#. Plugin Name of the plugin
+#. Author of the plugin
+#: ml-slider.php ml-slider.php:526
+msgid "MetaSlider"
+msgstr "Meta Slider"
+
+#: inc/metaslider.widget.class.php:112
+msgid "Title:"
+msgstr "タイトル:"
+
+#: inc/metaslider.widget.class.php:115
+msgid "Select Slider:"
+msgstr "スライダーを選択:"
+
+#: inc/metaslider.widget.class.php:125 ml-slider.php:1958
+#: admin/assets/dist/js/app.js:2
+msgid "No slideshows found"
+msgstr "スライドショーがありません"
+
+#: admin/Pages.php:139 themes/architekt/customize.php:146
+#: themes/bitono/customize.php:272 themes/blend/customize.php:258
+#: themes/bubble/customize.php:303 themes/clarity/customize.php:316
+#: themes/cubic/customize.php:281 themes/databold/customize.php:269
+#: themes/default-base/customize.php:301 themes/disjoint/customize.php:163
+#: themes/draxler/customize.php:225 themes/highway/customize.php:296
+#: themes/jenga/customize.php:103 themes/nexus/customize.php:262
+#: themes/outline/customize.php:277 themes/precognition/customize.php:150
+#: themes/radix/customize.php:128 themes/simply-dark/customize.php:222
+#: admin/assets/dist/js/app.js:2
+msgid "Caption"
+msgstr "キャプション"
+
+#: admin/Pages.php:140
+msgid "New Window"
+msgstr "新規ウインドウ"
+
+#: admin/Pages.php:138
+msgid "URL"
+msgstr "URL"
+
+#: inc/slide/metaslide.image.class.php:443
+msgid "Image Slide"
+msgstr "画像スライド"
+
+#: inc/slide/metaslide.image.class.php:540
+msgid "General"
+msgstr "一般"
+
+#: inc/slide/metaslide.image.class.php:548
+msgid "SEO"
+msgstr "SEO"
+
+#: inc/slide/metaslide.image.class.php:525
+msgid "Warning: The image data does not exist. Please re-upload the image."
+msgstr "注: 画像データが存在しません。もう一度アップロードしてください。"
+
+#: admin/views/slides/tabs/seo.php:7
+msgid "Image Title Text"
+msgstr "画像タイトルテキスト"
+
+#: admin/views/slides/tabs/seo.php:33
+msgid "Image Alt Text"
+msgstr "画像の代替文字列"
+
+#: ml-slider.php:2387
+msgid "Documentation"
+msgstr "ドキュメンテーション"
+
+#: admin/Pages.php:159
+msgid "Caution: This setting is for advanced developers only. If you're unsure, leave it checked."
+msgstr "注意: この設定は上級の開発者のみ使用できます。もし確信が持てなければチェックしたままにしてください。"
+
+#: ml-slider.php:685
+msgid "Image"
+msgstr "画像"
+
+#: admin/views/pages/parts/toolbar.php:29
+msgid "Add Slide"
+msgstr "スライドを追加"
+
+#: admin/views/pages/settings.php:42
+msgid "Settings"
+msgstr "設定"
+
+#: admin/views/pages/parts/toolbar.php:114 admin/assets/dist/js/app.js:2
+msgid "Save"
+msgstr "保存"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:30
+#: admin/views/pages/parts/slider-settings-legacy.php:786
+#: admin/views/pages/parts/slider-settings.php:34
+#: themes/bitono/customize.php:102 themes/databold/customize.php:112
+#: themes/default-base/customize.php:116 themes/highway/customize.php:109
+#: themes/nexus/customize.php:102
+msgid "Width"
+msgstr "幅"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:32
+#: admin/views/pages/parts/slider-settings.php:36
+#: admin/assets/js/gutenberg/components/block-edit.js:57
+#: admin/assets/js/gutenberg/components/block-edit.js:82
+msgid "Slideshow width"
+msgstr "スライドショー幅"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:33
+#: admin/views/pages/parts/slider-settings-legacy.php:46
+#: admin/views/pages/parts/slider-settings-legacy.php:631
+#: admin/views/pages/parts/slider-settings.php:37
+#: admin/views/pages/parts/slider-settings.php:50
+#: admin/views/pages/parts/slider-settings.php:559
+msgid "px"
+msgstr "px"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:43
+#: admin/views/pages/parts/slider-settings-legacy.php:802
+#: admin/views/pages/parts/slider-settings.php:47
+#: themes/bitono/customize.php:112 themes/cubic/customize.php:102
+#: themes/databold/customize.php:102 themes/default-base/customize.php:126
+#: themes/highway/customize.php:119 themes/nexus/customize.php:112
+msgid "Height"
+msgstr "高さ"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:45
+#: admin/views/pages/parts/slider-settings.php:49
+msgid "Slideshow height"
+msgstr "スライドショーの高さ"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:68
+#: admin/views/pages/parts/slider-settings-legacy.php:663
+#: admin/views/pages/parts/slider-settings.php:591
+msgid "Random"
+msgstr "ランダム"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:72
+msgid "Swirl"
+msgstr "回転"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:76
+msgid "Rain"
+msgstr "レイン"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:80
+msgid "Straight"
+msgstr "ストレート"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:88
+msgid "Slice Up"
+msgstr "スライスアップ"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:108
+msgid "Fold"
+msgstr "左から短冊ワイプ"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:104
+#: admin/views/pages/parts/slider-settings.php:72
+msgid "Fade"
+msgstr "フェード"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:120
+msgid "Box Random"
+msgstr "角切りランダムワイプ"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:124
+msgid "Box Rain"
+msgstr "右下へ角切りワイプ"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:128
+msgid "Box Rain Reverse"
+msgstr "左上へ角切りワイプ"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:136
+msgid "Box Rain Grow Reverse"
+msgstr "左上へ角切りワイプ (サイズ増)"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:140
+#: admin/views/pages/parts/slider-settings.php:76
+msgid "Slide"
+msgstr "スライド"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:147
+#: admin/views/pages/parts/slider-settings.php:83
+#: themes/architekt/customize.php:10 themes/bitono/customize.php:10
+#: themes/blend/customize.php:10 themes/bubble/customize.php:10
+#: themes/clarity/customize.php:10 themes/cubic/customize.php:10
+#: themes/databold/customize.php:10 themes/default-base/customize.php:10
+#: themes/disjoint/customize.php:10 themes/draxler/customize.php:10
+#: themes/highway/customize.php:10 themes/jenga/customize.php:10
+#: themes/nexus/customize.php:10 themes/outline/customize.php:10
+#: themes/precognition/customize.php:10 themes/radix/customize.php:10
+#: themes/simply-dark/customize.php:10
+msgid "Arrows"
+msgstr "矢印"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:178
+#: admin/views/pages/parts/slider-settings.php:114
+#: themes/architekt/customize.php:61 themes/bitono/customize.php:164
+#: themes/blend/customize.php:101 themes/bubble/customize.php:131
+#: themes/clarity/customize.php:187 themes/cubic/customize.php:134
+#: themes/databold/customize.php:144 themes/default-base/customize.php:178
+#: themes/disjoint/customize.php:38 themes/draxler/customize.php:114
+#: themes/highway/customize.php:151 themes/jenga/customize.php:38
+#: themes/nexus/customize.php:154 themes/outline/customize.php:111
+#: themes/precognition/customize.php:71 themes/radix/customize.php:65
+#: themes/simply-dark/customize.php:114 admin/assets/dist/js/app.js:2
+msgid "Navigation"
+msgstr "ナビゲーション"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:156
+#: admin/views/pages/parts/slider-settings-legacy.php:187
+#: admin/views/pages/parts/slider-settings.php:92
+#: admin/views/pages/parts/slider-settings.php:123
+#: admin/assets/dist/js/app.js:2
+msgid "Hidden"
+msgstr "非表示"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:190
+#: admin/views/pages/parts/slider-settings.php:126
+#: admin/assets/dist/js/app.js:2
+msgid "Dots"
+msgstr "点"
+
+#: admin/Table.php:178 admin/assets/dist/js/app.js:2
+msgid "Title"
+msgstr "タイトル"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:406
+#: admin/views/pages/parts/slider-settings.php:335
+msgid "Center Align"
+msgstr "中央揃え"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:419
+#: admin/views/pages/parts/slider-settings.php:348
+#: admin/assets/dist/js/app.js:2
+msgid "Auto Play"
+msgstr "自動再生"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:580
+#: admin/views/pages/parts/slider-settings.php:509
+msgid "Carousel Mode"
+msgstr "カルーセル・モード"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:627
+#: admin/views/pages/parts/slider-settings.php:555
+msgid "Pixel margin between slides in carousel."
+msgstr "カルーセル内のスライドの間隔 (px) 。"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:674
+#: admin/views/pages/parts/slider-settings.php:602
+msgid "Hover Pause"
+msgstr "停止ボタン表示"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:679
+#: admin/views/pages/parts/slider-settings.php:607
+msgid "Pause the slideshow when hovering over slider, then resume when no longer hovering."
+msgstr "スライダーをポイントしたときにスライド ショーを一時停止し、ホバリングを再開する。"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:687
+#: admin/views/pages/parts/slider-settings.php:615
+msgid "Reverse"
+msgstr "逆戻り"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:788
+#: admin/views/pages/parts/slider-settings-legacy.php:804
+msgid "Number of squares"
+msgstr "スクエアの数"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:819
+#: admin/views/pages/parts/slider-settings.php:703
+msgid "Horizontal"
+msgstr "水平方向"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:826
+#: admin/views/pages/parts/slider-settings.php:710
+msgid "Vertical"
+msgstr "垂直方向"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:516
+#: admin/views/pages/parts/slider-settings.php:445
+msgid "Disabled"
+msgstr "無効"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:509
+#: admin/views/pages/parts/slider-settings.php:438
+msgid "Standard"
+msgstr "標準"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:497
+#: admin/views/pages/parts/slider-settings.php:426
+msgid "Image Crop"
+msgstr "画像の切り抜き"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:502
+#: admin/views/pages/parts/slider-settings.php:431
+msgid "Smart Crop"
+msgstr "スマート切り抜き"
+
+#: admin/views/slides/tabs/crop.php:14
+msgid "Crop Position"
+msgstr "切り抜きの位置"
+
+#: admin/Pages.php:149
+msgid "Select replacement image"
+msgstr "代替画像を選択"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:523
+#: admin/views/pages/parts/slider-settings.php:452
+msgid "Disabled (Smart Pad)"
+msgstr "無効 (Smart Pad)"
+
+#: admin/views/slides/tabs/crop.php:19
+msgid "Top Left"
+msgstr "左上"
+
+#: admin/views/slides/tabs/crop.php:20
+msgid "Top Center"
+msgstr "上中央"
+
+#: admin/views/slides/tabs/crop.php:21
+msgid "Top Right"
+msgstr "右上"
+
+#: admin/views/slides/tabs/crop.php:22
+msgid "Center Left"
+msgstr "中央左"
+
+#: admin/views/slides/tabs/crop.php:23
+msgid "Center Center"
+msgstr "中央/中央"
+
+#: admin/views/slides/tabs/crop.php:24
+msgid "Center Right"
+msgstr "中央右"
+
+#: admin/views/slides/tabs/crop.php:25
+msgid "Bottom Left"
+msgstr "左下"
+
+#: admin/views/slides/tabs/crop.php:26
+msgid "Bottom Center"
+msgstr "下中央"
+
+#: admin/views/slides/tabs/crop.php:27
+msgid "Bottom Right"
+msgstr "右下"
+
+#: inc/slide/metaslide.image.class.php:581
+msgid "Crop"
+msgstr "切り抜き"
+
+#: themes/architekt/customize.php:20 themes/architekt/customize.php:91
+#: themes/bitono/customize.php:20 themes/bitono/customize.php:40
+#: themes/bitono/customize.php:174 themes/blend/customize.php:20
+#: themes/blend/customize.php:111 themes/blend/customize.php:138
+#: themes/bubble/customize.php:20 themes/bubble/customize.php:40
+#: themes/bubble/customize.php:141 themes/bubble/customize.php:168
+#: themes/bubble/customize.php:195 themes/clarity/customize.php:20
+#: themes/clarity/customize.php:40 themes/clarity/customize.php:60
+#: themes/clarity/customize.php:197 themes/cubic/customize.php:20
+#: themes/cubic/customize.php:40 themes/cubic/customize.php:144
+#: themes/cubic/customize.php:171 themes/customize.php:28
+#: themes/customize.php:48 themes/databold/customize.php:20
+#: themes/databold/customize.php:40 themes/databold/customize.php:154
+#: themes/databold/customize.php:181 themes/default-base/customize.php:20
+#: themes/default-base/customize.php:40 themes/default-base/customize.php:188
+#: themes/disjoint/customize.php:20 themes/disjoint/customize.php:48
+#: themes/draxler/customize.php:20 themes/draxler/customize.php:40
+#: themes/draxler/customize.php:124 themes/highway/customize.php:20
+#: themes/highway/customize.php:40 themes/highway/customize.php:60
+#: themes/highway/customize.php:161 themes/highway/customize.php:188
+#: themes/jenga/customize.php:20 themes/jenga/customize.php:48
+#: themes/nexus/customize.php:20 themes/nexus/customize.php:40
+#: themes/nexus/customize.php:164 themes/nexus/customize.php:384
+#: themes/outline/customize.php:20 themes/outline/customize.php:40
+#: themes/outline/customize.php:121 themes/outline/customize.php:148
+#: themes/precognition/customize.php:20 themes/precognition/customize.php:81
+#: themes/precognition/customize.php:115 themes/radix/customize.php:20
+#: themes/radix/customize.php:47 themes/simply-dark/customize.php:20
+#: themes/simply-dark/customize.php:40 themes/simply-dark/customize.php:124
+msgid "Default"
+msgstr "デフォルト"
+
+#: admin/views/pages/parts/toolbar.php:60
+msgid "Add a new slideshow"
+msgstr "新しいスライドショーを追加"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:624
+#: admin/views/pages/parts/slider-settings.php:552
+msgid "Carousel Margin"
+msgstr "カルーセルのマージン"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:882
+msgid "Delay between squares in ms."
+msgstr "スクエアの遅延速度を秒単位で設定する。"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:733
+#: admin/views/pages/parts/slider-settings.php:661
+msgid "How long to display each slide, in milliseconds."
+msgstr "各スライドの表示時間をミリ秒単位で指定する。"
+
+#: admin/views/pages/parts/slider-settings-legacy.php:862
+msgid "Next Text"
+msgstr "次へのテキスト"

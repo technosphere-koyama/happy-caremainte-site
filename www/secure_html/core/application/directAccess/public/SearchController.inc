@@ -1,0 +1,831 @@
+<?php
+
+/* * **********************************
+ * NAME:SearchController
+ * DESC:
+ *  ゲスト用イベント検索結果画面
+ * NOTICE:
+ * CREATE: 2016.10.6 aoyama
+ * UPDATE: 2016.11.15 aoyama
+ *		ディレクトリ名変更（search→carementeh_search)
+ * *********************************** */
+class SearchController extends PublicOpenControllerFrame {
+
+	private $sGroup;
+
+	/* Constructor */
+	public function __construct() {
+		parent::__construct();
+		$this->sGroup = 'search';
+
+		$api = new Rest();
+		// 全件数を取得するための代替
+		$full_list = $api->get_item_care_search("", "", "", "", "", "", "", 0, 1);
+		$this->set("care_count", StaticFunction::count_num_format($full_list['item_count']));
+
+		//ログインの有無にかかわらずセッションからユーザ情報を取得
+		$this->public_user_data = SESSION::read(CONF::read('LOGIN_CATEGORY.PUBLIC'));
+
+		$this->set("page_group", "search");
+	}
+
+	/*	 * **********************************
+	 * NAME  : response_delete
+	 * INPUT : NONE
+	 * OUTPUT: NONE
+	 * DESC  :
+	 *  レスポンスを削除するメソッド
+	 * NOTICE:
+	 * CREATE: 2016.11.27 aoyama
+	 * *********************************** */
+	public function response_delete() {
+		
+		/* ログインチェック */
+		$login = new Login();
+		if (!$login->is_login()) {
+			$this->redirect("/carementeh_search/");
+		}
+
+		/* ハッシュチェック */
+		if (!StaticFunction::check_token(REQUEST::get_data('token'))) {
+			$this->redirect("/carementeh_search/");
+		}
+
+		//tl_id（タイムラインID）の有無を確認
+		if (StaticFunction::is_empty(REQUEST::get_data('item_id'))) {
+			$this->redirect("/carementeh_search/");
+		}
+		
+		//コメントのactiveをOFFに
+		$search = new SearchModel();
+		$param_list = array(
+			"active" => DB_ACTIVE_OFF
+		);
+		$condition = array(
+			"WHERE" => array(
+				"user_id" => DbCast::id($this->public_user_data['system_user_id']),
+				"care_response_id" => DbCast::id(REQUEST::get_data('cr_id'))
+			)
+		);
+			
+		$search->delete_response($param_list,$condition);
+		
+		//いいねを削除
+		$like = new LikeModel();
+		$like->delete_care_response_like(REQUEST::get_data('cr_id'));
+
+		//正常終了時はセッションを削除
+		$this->redirect("/carementeh_search/detail.html?item_id=" . REQUEST::get_data("item_id"));
+	}
+	
+	
+	/*	 * **********************************
+	 * NAME  : index
+	 * INPUT : 
+	 * OUTPUT: 
+	 * DESC  :
+	 * 		検索TOP画面
+	 * NOTICE:
+	 * CREATE: 2016.11.6 aoyama
+	 * *********************************** */
+	public function index() {
+
+		$this->redirect("/carementeh_search/form.html");
+		return;
+
+		// 初回導線チェック
+		if (!StaticFunction::is_empty(SESSION::read($this->sGroup . '.tutorial'))) {
+			$this->set("tutorial",1);
+		} else {
+			$this->set("tutorial", "0");
+		}
+
+		return;
+	}
+
+	/*	 * **********************************
+	 * NAME  : form
+	 * INPUT : 検索条件の文字列（GET？）
+	 * OUTPUT: 検索結果を配列で出力
+	 * DESC  :
+	 * 		検索条件選択画面
+	 * NOTICE:
+	 * CREATE: 2016.11.6 aoyama
+	 * UPDATE: 2-16.11.18 aoyama
+	 *		カテゴリ選択をハードコーディングするため
+	 *		APIリクエストを停止
+	 * *********************************** */
+	public function form() {
+
+		// 初回導線チェック
+		$tutorial_flg = 0;
+		if (!StaticFunction::is_empty(SESSION::read($this->sGroup . '.tutorial'))) {
+			$this->set("tutorial", 1);
+			$tutorial_flg = 1;
+		} else {
+			$this->set("tutorial", "0");
+		}
+		
+		/*
+		$api = new Rest();
+
+		if (!$array = $api->get_item_care_category()) {
+			$this->set("alert", "ケアメンテアイテムが見つかりません。");
+			return;
+		}
+		*/
+
+		$item_array = array();
+//		foreach ($array['item_list'] AS $value) {
+//			$item_array[$value['code']] = $value['name'];
+//		}
+		$this->set("item_array", $item_array);
+
+		$dirt_array = array();
+//		foreach ($array['id5_list'] AS $value) {
+//			$dirt_array[$value['code']] = $value['name'];
+//		}
+		$this->set("dirt_array", $dirt_array);
+
+		//選択したブランドをセット
+		$brand_array = array();
+		if (!StaticFunction::is_empty(SESSION::read($this->sGroup . '.brand_code'))) {
+			foreach (SESSION::read($this->sGroup . '.brand_code') AS $key => $value) {
+				$brand_array = SESSION::read($this->sGroup . '.brand_code');
+			}
+		}
+		$this->set("brand_array", $brand_array);
+		SESSION::delete($this->sGroup);
+
+		if ($tutorial_flg) {
+			SESSION::write($this->sGroup . '.tutorial', $tutorial_flg);
+		}
+
+		$material_array = array();
+//		foreach ($array['sozai0_list'] AS $value) {
+//			$material_array[$value['code']] = $value['name'];
+//		}
+		$this->set("material_array", $material_array);
+
+		$color_array = array();
+//		foreach ($array['color_list'] AS $value) {
+//			$color_array[$value['code']] = $value['name'];
+//		}
+		$this->set("color_array", $color_array);
+
+		$pattern_array = array();
+//		foreach ($array['color2_list'] AS $value) {
+//			$pattern_array[$value['code']] = $value['name'];
+//		}
+		$this->set("pattern_array", $pattern_array);
+		
+		$separater = "_";
+
+		// POSTデータがある場合、セッションに登録する。
+		if (!StaticFunction::is_empty(REQUEST::post_data())) {
+			
+
+			//パラメータを受け取りGETにマージしてresult.htmlへリダイレクト
+			$get_param = array();
+			if (!StaticFunction::is_empty(REQUEST::post_data('item'))) {
+				foreach (REQUEST::post_data('item') AS $value) {
+					$post_item_array[] = $value;
+				}
+				$get_param["item"] = implode($separater, $post_item_array);
+			}
+
+			if (!StaticFunction::is_empty(REQUEST::post_data('dirt'))) {
+				foreach (REQUEST::post_data('dirt') AS $value) {
+					$post_dirt_array[] = $value;
+				}
+				$get_param["id5"] = implode($separater, $post_dirt_array);
+			}
+			if (!StaticFunction::is_empty(REQUEST::post_data('brand_code'))) {
+				foreach (REQUEST::post_data('brand_code') AS $value) {
+					$post_brand_array[] = $value;
+				}
+				$get_param["select"] = implode($separater, $post_brand_array);
+			}
+
+			if (!StaticFunction::is_empty(REQUEST::post_data('material'))) {
+				foreach (REQUEST::post_data('material') AS $value) {
+					$post_material_array[] = $value;
+				}
+				$get_param["sozai0"] = implode($separater, $post_material_array);
+			}
+
+			if (!StaticFunction::is_empty(REQUEST::post_data('color'))) {
+				foreach (REQUEST::post_data('color') AS $value) {
+					$post_color_array[] = $value;
+				}
+				$get_param["color"] = implode($separater, $post_color_array);
+			}
+
+			if (!StaticFunction::is_empty(REQUEST::post_data('pattern'))) {
+				foreach (REQUEST::post_data('pattern') AS $value) {
+					$post_pattern_array[] = $value;
+				}
+				$get_param["color2"] = implode($separater, $post_pattern_array);
+			}
+
+			if (!StaticFunction::is_empty(REQUEST::post_data('parano'))) {
+				$get_param["parano"] = REQUEST::post_data('parano');
+			}
+
+			$this->redirect("/carementeh_search/result.html?" . http_build_query($get_param));
+		}
+
+		return;
+	}
+
+	// --------------------------------------- ADDED By UKS MS on 2021-11-15 -------------------------------
+	// --------------------------------------- CHANGES START -----------------------------------------------
+	/*	 * **********************************
+	 * NAME  : formTest
+	 * INPUT : 検索条件の文字列（GET？）
+	 * OUTPUT: 検索結果を配列で出力
+	 * DESC  :
+	 * 		検索条件選択画面
+	 * NOTICE:
+	 * CREATE: 2021-11-15 UKS MS
+	 * UPDATE: 
+	 *		カテゴリ選択をハードコーディングするため
+	 *		APIリクエストを停止
+	 * *********************************** */
+	public function formTest() {
+
+		// 初回導線チェック
+		$tutorial_flg = 0;
+		if (!StaticFunction::is_empty(SESSION::read($this->sGroup . '.tutorial'))) {
+			$this->set("tutorial", 1);
+			$tutorial_flg = 1;
+		} else {
+			$this->set("tutorial", "0");
+		}
+		
+		/*
+		$api = new Rest();
+
+		if (!$array = $api->get_item_care_category()) {
+			$this->set("alert", "ケアメンテアイテムが見つかりません。");
+			return;
+		}
+		*/
+
+		$item_array = array();
+//		foreach ($array['item_list'] AS $value) {
+//			$item_array[$value['code']] = $value['name'];
+//		}
+		$this->set("item_array", $item_array);
+
+		$dirt_array = array();
+//		foreach ($array['id5_list'] AS $value) {
+//			$dirt_array[$value['code']] = $value['name'];
+//		}
+		$this->set("dirt_array", $dirt_array);
+
+		//選択したブランドをセット
+		$brand_array = array();
+		if (!StaticFunction::is_empty(SESSION::read($this->sGroup . '.brand_code'))) {
+			foreach (SESSION::read($this->sGroup . '.brand_code') AS $key => $value) {
+				$brand_array = SESSION::read($this->sGroup . '.brand_code');
+			}
+		}
+		$this->set("brand_array", $brand_array);
+		SESSION::delete($this->sGroup);
+
+		if ($tutorial_flg) {
+			SESSION::write($this->sGroup . '.tutorial', $tutorial_flg);
+		}
+
+		$material_array = array();
+//		foreach ($array['sozai0_list'] AS $value) {
+//			$material_array[$value['code']] = $value['name'];
+//		}
+		$this->set("material_array", $material_array);
+
+		$color_array = array();
+//		foreach ($array['color_list'] AS $value) {
+//			$color_array[$value['code']] = $value['name'];
+//		}
+		$this->set("color_array", $color_array);
+
+		$pattern_array = array();
+//		foreach ($array['color2_list'] AS $value) {
+//			$pattern_array[$value['code']] = $value['name'];
+//		}
+		$this->set("pattern_array", $pattern_array);
+		
+		$separater = "_";
+
+		// POSTデータがある場合、セッションに登録する。
+		if (!StaticFunction::is_empty(REQUEST::post_data())) {
+			
+
+			//パラメータを受け取りGETにマージしてresult.htmlへリダイレクト
+			$get_param = array();
+			if (!StaticFunction::is_empty(REQUEST::post_data('item'))) {
+				foreach (REQUEST::post_data('item') AS $value) {
+					$post_item_array[] = $value;
+				}
+				$get_param["item"] = implode($separater, $post_item_array);
+			}
+
+			if (!StaticFunction::is_empty(REQUEST::post_data('dirt'))) {
+				foreach (REQUEST::post_data('dirt') AS $value) {
+					$post_dirt_array[] = $value;
+				}
+				$get_param["id5"] = implode($separater, $post_dirt_array);
+			}
+			if (!StaticFunction::is_empty(REQUEST::post_data('brand_code'))) {
+				foreach (REQUEST::post_data('brand_code') AS $value) {
+					$post_brand_array[] = $value;
+				}
+				$get_param["select"] = implode($separater, $post_brand_array);
+			}
+
+			if (!StaticFunction::is_empty(REQUEST::post_data('material'))) {
+				foreach (REQUEST::post_data('material') AS $value) {
+					$post_material_array[] = $value;
+				}
+				$get_param["sozai0"] = implode($separater, $post_material_array);
+			}
+
+			if (!StaticFunction::is_empty(REQUEST::post_data('color'))) {
+				foreach (REQUEST::post_data('color') AS $value) {
+					$post_color_array[] = $value;
+				}
+				$get_param["color"] = implode($separater, $post_color_array);
+			}
+
+			if (!StaticFunction::is_empty(REQUEST::post_data('pattern'))) {
+				foreach (REQUEST::post_data('pattern') AS $value) {
+					$post_pattern_array[] = $value;
+				}
+				$get_param["color2"] = implode($separater, $post_pattern_array);
+			}
+
+			if (!StaticFunction::is_empty(REQUEST::post_data('parano'))) {
+				$get_param["parano"] = REQUEST::post_data('parano');
+			}
+
+			$this->redirect("/carementeh_search/result.html?" . http_build_query($get_param));
+		}
+
+		return;
+	}
+	// --------------------------------------- Chages END ---------------------------------------------------
+
+	/*	 * **********************************
+	 * NAME  : form_brand
+	 * INPUT : 検索条件の文字列（GET？）
+	 * OUTPUT: 検索結果を配列で出力
+	 * DESC  :
+	 * 		ブランドイニシャル選択画面
+	 * NOTICE:
+	 * CREATE: 2016.11.6 aoyama
+	 * *********************************** */
+	public function form_brand() {
+
+		$api = new Rest();
+
+		if (!$array = $api->get_item_care_brand_initial()) {
+			$this->set("alert", "ケアメンテアイテムが見つかりません。");
+			return;
+		}
+
+		$this->set("initial_array", $array['brand_initial']);
+		return;
+	}
+
+	/*	 * **********************************
+	 * NAME  : form_brand2
+	 * INPUT : 検索条件の文字列（get_data('mojicode')）
+	 * OUTPUT: 
+	 * DESC  :
+	 * 		ブランド選択画面
+	 * NOTICE:
+	 * CREATE: 2016.11.6 aoyama
+	 * *********************************** */
+	public function form_brand2() {
+
+		// POSTデータがある場合、セッションに登録する。
+		if (!StaticFunction::is_empty(REQUEST::post_data())) {
+
+			SESSION::write($this->sGroup . '.brand_code', REQUEST::post_data('brand_code'));
+
+			if (!StaticFunction::is_empty($error_array)) {
+				$this->set('error_array', $error_array);
+				return;
+			}
+
+			SESSION::write($this->sGroup . '.brand_code', REQUEST::post_data('brand_code'));
+
+			//問題なければ確認画面へ
+			$this->redirect("/carementeh_search/form.html");
+		}
+
+		$api = new Rest();
+		if (!$array = $api->get_item_care_brand(REQUEST::get_data('mojicode'))) {
+			$this->set("alert", "ケアメンテアイテムが見つかりません。");
+			return;
+		}
+		if ($array['code'] != "200") {
+			$this->set("alert", "ケアメンテアイテムが見つかりません。");
+			return;
+		}
+
+		$this->set("mojiname", REQUEST::get_data('mojiname'));
+		$this->set("brand_list", $array['brand_list']);
+		return;
+	}
+
+	/*	 * **********************************
+	 * NAME  : result
+	 * INPUT : 検索条件の文字列
+	 * OUTPUT: 検索結果を配列で出力
+	 * DESC  :
+	 * 		検索結果一覧
+	 * NOTICE:
+	 * CREATE: 2016.11.6 aoyama
+	 * *********************************** */
+	public function result() {
+
+		// 初回導線チェック
+		if (!StaticFunction::is_empty(SESSION::read($this->sGroup . '.tutorial'))) {
+			$this->set("tutorial", 1);
+		} else {
+			$this->set("tutorial", "0");
+			SESSION::write($this->sGroup . '.tutorial', 1);
+		}
+
+		$this->set("get_query", URL_QUERY);
+		
+		$api = new Rest();
+
+		//ページ指定文字のサニタイズ
+		$pd = (InputVali::is_num(REQUEST::get_data('pd'))) ? REQUEST::get_data('pd') : 0;
+		$pp = (InputVali::is_num(REQUEST::get_data('pp'))) ? REQUEST::get_data('pp') : CONF::read('PAGING.DEFAULT_NUM_PUBLIC');
+
+		$item = (!StaticFunction::is_empty(REQUEST::get_data('item'))) ? REQUEST::get_data('item') : "";
+		$id5 = (!StaticFunction::is_empty(REQUEST::get_data('id5'))) ? REQUEST::get_data('id5') : "";
+		$select = (!StaticFunction::is_empty(REQUEST::get_data('select'))) ? REQUEST::get_data('select') : "";
+		$sozai0 = (!StaticFunction::is_empty(REQUEST::get_data('sozai0'))) ? REQUEST::get_data('sozai0') : "";
+		$color = (!StaticFunction::is_empty(REQUEST::get_data('color'))) ? REQUEST::get_data('color') : "";
+		$color2 = (!StaticFunction::is_empty(REQUEST::get_data('color2'))) ? REQUEST::get_data('color2') : "";
+		$parano = (!StaticFunction::is_empty(REQUEST::get_data('parano'))) ? REQUEST::get_data('parano') : "";
+
+		if (!$careList = $api->get_item_care_search($item, $id5, $select, $sozai0, $color, $color2, $parano, $pd, $pp)) {
+			$this->set("alert", "ケアメンテが見つかりません。");
+			$this->set("careAllArray", array());
+			return;
+		}
+
+		if (StaticFunction::is_empty($careList['item_list'])) {
+			$this->set("item_count", 0);
+			$this->set("careAllArray", array());
+			$this->set("alert", "ケアメンテが見つかりません。");
+			return;
+		}
+
+		$careAllArray = array();
+		foreach ($careList['item_list'] AS $value) {
+
+			$careAllArray[] = array(
+				"item_id" => $value['item_id'],
+				"item_link" => "/carementeh_search/detail.html?item_id=" . $value['item_id'],
+				"category" => $value['category'],
+				"brand_name" => $value['brand_name'],
+				"material" => $value['material'],
+				"pattern" => $value['pattern'],
+				"thumb_url" => CONF::read("EXTERNAL_IMAGE.TARGET_URL") . "/netkuroku/images/N" . $value['item_id'] . "7.jpg"
+			);
+		}
+		$this->set("careAllArray", $careAllArray);
+		$this->set("item_count", StaticFunction::count_num_format($careList['item_count']));
+
+
+		
+		//ページング用
+		$page = new PAGING();
+		$this->set("pageng_html", $page->make_paging($careList['item_count']));
+
+		return;
+	}
+
+	/*	 * **********************************
+	 * NAME  : detail
+	 * INPUT : 検索条件の文字列
+	 * OUTPUT: 検索結果を配列で出力
+	 * DESC  :
+	 * 		詳細
+	 * NOTICE:
+	 * CREATE: 2016.11.6 aoyama
+	 * *********************************** */
+	public function detail() {
+
+
+		$api = new Rest();
+		$login = new Login();
+
+		if (!$itemDetail = $api->get_item_care_detail(REQUEST::get_data("item_id"))) {
+			$this->set("alert", "ケアメンテアイテムが見つかりません。");
+			return;
+		}
+		if ($itemDetail['code'] != "200") {
+			$this->set("alert", $itemDetail['message']);
+			return;
+		}
+
+		//アイテム情報が取得できたのでviewに渡す
+		$this->set("item_id", REQUEST::get_data("item_id"));
+		$this->set("item_detail", $itemDetail["item"]);
+
+		//メンテナンス
+		$maintenanceArray = array();
+		$maintenance_price = 0;
+		if (!StaticFunction::is_empty($itemDetail["item"]["maintenance"])) {
+			foreach ($itemDetail["item"]["maintenance"] AS $maintenance) {
+				$maintenance_price += (int) $maintenance['maintenanceunitprice'];
+				$maintenanceArray[] = array(
+					"method" => $maintenance['maintenancename'],
+					"price" => StaticFunction::count_num_format($maintenance['maintenanceunitprice'])
+				);
+			}
+		}
+		$this->set("maintenance_array", $maintenanceArray);
+		$this->set("maintenance_price", StaticFunction::count_num_format($maintenance_price));
+
+		//個別にviewに渡すもの
+		$image_name_array = array(
+			"image_state"
+			, "image_damage"
+			, "image_1_before", "image_1_after"
+			, "image_2_before", "image_2_after"
+			, "image_3_before", "image_3_after"
+			, "image_label_1", "image_label_2"
+			, "image_4_before", "image_4_after"
+			, "image_5_before", "image_5_after"
+			, "image_6_before", "image_6_after"
+			, "image_model_front", "image_model_back"
+			, "image_7_before", "image_7_after"
+			, "image_8_before", "image_8_after"
+			, "image_9_before", "image_9_after"
+			, "image_model_2_front", "image_model_2_back"
+			, "image_size_before_front", "image_size_after_front"
+			, "image_size_before_back", "image_size_after_back"
+		);
+
+		foreach ($image_name_array AS $imgVal) {
+			if (!StaticFunction::is_empty($itemDetail["item"][$imgVal])) {
+				$this->set($imgVal . "_url", CONF::read("EXTERNAL_IMAGE.TARGET_URL") . $itemDetail["item"][$imgVal]);
+			}
+		}
+
+		/*
+		 * ケアメンテへのコメント一覧用
+		 * ここは基幹システムとの連家パターンです。
+		 */
+		//ページ指定文字のサニタイズ
+		$pd = (InputVali::is_num(REQUEST::get_data('pd'))) ? REQUEST::get_data('pd') : 0;
+		$pp = (InputVali::is_num(REQUEST::get_data('pp'))) ? REQUEST::get_data('pp') : CONF::read('PAGING.DEFAULT_NUM_PUBLIC');
+
+		$search = new SearchModel();
+		$image = new Image();
+
+		$commentAllList = $search->get_response_list(REQUEST::get_data("item_id"), $pd, $pp);
+		$commentAllArray = array();
+		if (!StaticFunction::is_empty($commentAllList)) {
+			foreach ($commentAllList AS $value) {
+
+				$edit_link = ($value['user_id'] == $this->public_user_data['system_user_id']) ? "/carementeh_search/response_edit.html?cr_id=" . $value['target_id'] : "";
+
+				$commentAllArray[] = array(
+					"item_id" => REQUEST::get_data("item_id"),
+					"target_id" => $value['target_id'],
+					"comment" => $value['comment'],
+					"comment_view" => StaticFunction::decode_view_text(nl2br($value['comment'])),
+					"update_time" => DbDateTime::get_date_type_dot($value['time']),
+					"system_id" => $value['system_id'],
+					"nickname" => $value['nickname'],
+					"avatar" => $image->get_avatar_url($value['system_id']),
+					"like_count" => $value['like_count'],
+					"like_link" => "/_API/forExternal/likeApi.php?type=care_response&target_id=" . $value['target_id'],
+					"edit_link" => $edit_link
+				);
+			}
+		}
+		$this->set("commentAllArray", $commentAllArray);
+
+		//いいねしているコメントの配列を取得
+		$like = new LikeModel();
+		$comment_like_array = array();
+		if ($login->is_login()) {
+			$this->set("is_login", true);
+			$like_for_js = $like->get_care_response_like_own($this->public_user_data['system_user_id'], $commentAllArray);
+
+			$in_array = array();
+			foreach ($like_for_js AS $val) {
+				$in_array[] = "'care_response:" . $val['target_id'] . "'";
+			}
+			$comment_like_array = implode(",", $in_array);
+		}
+
+		$this->set("comment_like_array", $comment_like_array);
+
+
+		//コミュニティ総数を取得
+		$comment_num = $search->get_response_num(REQUEST::get_data("item_id"));
+
+		//ページング出力
+		$page = new PAGING();
+		$this->set("pageng_html", $page->make_paging($comment_num));
+
+		/*
+		 *  POSTデータがある場合、セッションに登録する。
+		 * UPDATE: 2016.10.28 aoyama
+		 * 		編集機能を追加
+		 * UPDATE: 2016.12.15 aoyama
+		 *		投稿、編集はcompleteへ！
+		 */
+		if (!StaticFunction::is_empty(REQUEST::post_data())) {
+			
+			SESSION::write($this->sGroup . '.comment', REQUEST::post_data('comment'));
+			if (!StaticFunction::is_empty(REQUEST::post_data('cr_id'))) {
+				SESSION::write($this->sGroup . '.cr_id', REQUEST::post_data('cr_id'));
+			}
+
+			/* ハッシュチェック */
+			if (!StaticFunction::check_token(REQUEST::post_data('token'))) {
+				$this->formReturn();
+				return;
+			}
+			
+			//セッションのフォームデータをチェック
+			$error_array = $this->checkSessionParameter();
+
+			if (!StaticFunction::is_empty($error_array)) {
+				$this->set('error_array', $error_array);
+				$this->formReturn();
+				return;
+			}
+
+			$this->redirect("/carementeh_search/response_complete.html?item_id=" . REQUEST::get_data("item_id"));
+		}
+		return;
+	}
+
+	/*	 * **********************************
+	 * NAME  : response_confirm
+	 * INPUT : NONE
+	 * OUTPUT: NONE
+	 * DESC  :
+	 *  レスポンスを確認するメソッド
+	 * NOTICE:
+	 * CREATE: 2016.11.11 aoyama
+	 * *********************************** */
+	public function response_confirm() {
+
+		$api = new Rest();
+
+		if (!$itemDetail = $api->get_item_care_detail(REQUEST::get_data("item_id"))) {
+			$this->set("alert", "ケアメンテアイテムが見つかりません。");
+			return;
+		}
+		if ($itemDetail['code'] != "200") {
+			$this->set("alert", $itemDetail['message']);
+			return;
+		}
+		$this->set("item_id", REQUEST::get_data("item_id"));
+
+		$this->formReturn();
+	}
+
+	/*	 * **********************************
+	 * NAME  : response_complete
+	 * INPUT : NONE
+	 * OUTPUT: NONE
+	 * DESC  :
+	 *  レスポンスを確認するメソッド
+	 * NOTICE:
+	 * CREATE: 2016.10.20 aoyama
+	 * *********************************** */
+	public function response_complete() {
+
+		/*
+		 * バリデーション:エラーのときはindex.htmlに飛ばす
+		 * indexのcheckSessionParameterとエラー情報の渡し方が異なる理由として
+		 * ここでバリデーションに引っかかるということは予期しないアクセスなので
+		 * そこまで親切にしなくてもいいかなと。(aoyama)
+		 */
+		if (StaticFunction::is_empty(SESSION::read($this->sGroup))) {
+			LOGS_ERR("セッションエラー");
+			$this->redirect("/carementeh_search/");
+		}
+		$error_array = $this->checkSessionParameter();
+		if (!StaticFunction::is_empty($error_array)) {
+			LOGS_ERR($error_array);
+			$this->redirect("/carementeh_search/");
+		}
+
+		//基幹システムに接続しチェック
+		$api = new Rest();
+		if (!$itemDetail = $api->get_item_care_detail(REQUEST::get_data("item_id"))) {
+			LOGS_ERR($itemDetail);
+			$this->redirect("/carementeh_search/");
+		}
+		if ($itemDetail['code'] != "200") {
+			LOGS_ERR($itemDetail);
+			$this->redirect("/carementeh_search/");
+		}
+
+		$search = new SearchModel();
+
+		$datetime = DbDateTime::get_cur_datetime();
+
+		//編集モード
+		if (!StaticFunction::is_empty(SESSION::read($this->sGroup . '.cr_id'))) {
+
+			// レスポンス更新処理
+			// 配列にPOSTデータを格納
+			$param_list = array(
+				'update_time' => DbCast::datetime($datetime),
+				"comment" => DbCast::string(SESSION::read($this->sGroup . '.comment'))
+			);
+
+			$condition = array(
+				"WHERE" => array(
+					"care_response_id" => DbCast::id(SESSION::read($this->sGroup . '.cr_id'))
+				)
+			);
+			/* DB登録エラー */
+			if (!$insert_id = $search->edit_response($param_list, $condition)) {
+				LOGS_ERR("公開ケアメンテのコメント編集に失敗しました。");
+				$error_array[] = array("message" => "コメント編集に失敗しました。");
+				$this->set('error_array', $error_array);
+				return;
+			}
+		}
+		//新規登録モード
+		else {
+			// レスポンス登録処理
+			// 配列にPOSTデータを格納
+			$param_array = array(
+				'update_time' => DbCast::datetime($datetime),
+				'create_time' => DbCast::datetime($datetime),
+				"comment" => DbCast::string(SESSION::read($this->sGroup . '.comment')),
+				"care_system_id" => DbCast::string(REQUEST::get_data("item_id")),
+				'user_id' => DbCast::id($this->public_user_data['system_user_id']),
+				"active" => DbCast::float(DB_ACTIVE_ON)
+			);
+
+			/* DB登録エラー */
+			if (!$insert_id = $search->post_response($param_array)) {
+				LOGS_ERR("公開ケアメンテのコメント登録に失敗しました。");
+				$error_array[] = array("message" => "コメントに失敗しました。");
+				$this->set('error_array', $error_array);
+				return;
+			}
+		}
+
+		//正常終了時はセッションを削除
+		$this->redirect("/carementeh_search/detail.html?item_id=" . REQUEST::get_data("item_id"));
+	}
+
+	/*	 * **********************************
+	 * NAME:checkResponseSessionParameter
+	 * DESC:
+	 *  レスポンス専用ののセッション情報バリデーション
+	 * NOTICE:
+	 * CREATE: 2016.11.11 aoyama
+	 * *********************************** */
+	private function checkSessionParameter() {
+
+		$error_array = array();
+
+		if (!InputVali::is_comment_thread(SESSION::read($this->sGroup . '.comment'))) {
+			$error_array[] = array('target' => 'comment', 'message' => 'コミュニティコメントは400文字以内で入力してください。');
+		}
+
+		return $error_array;
+	}
+
+	/*	 * **********************************
+	 * NAME:formResponseReturn
+	 * DESC:
+	 *  セッション情報をレスポンス用フォームに渡すためにセットする機能
+	 * NOTICE:
+	 * CREATE: 2016.11.11 aoyama
+	 * *********************************** */
+	private function formReturn() {
+
+		// セッションの情報をセットしてviewに渡す
+		if (!StaticFunction::is_empty(SESSION::read($this->sGroup))) {
+			$this->set("comment", SESSION::read($this->sGroup . '.comment'));
+			$this->set("comment_veiw", StaticFunction::decode_view_text(nl2br(SESSION::read($this->sGroup . '.comment'))));
+		}
+	}
+
+}
+
+?>

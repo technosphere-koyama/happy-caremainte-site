@@ -1,0 +1,9 @@
+<?php
+/*
+ * ログイン
+ */
+require '../../core/PreLoad.inc';
+$mc = new LoginController();
+$mc->index();
+$mc->view('login');
+?>

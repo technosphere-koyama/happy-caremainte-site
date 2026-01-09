@@ -1,0 +1,37 @@
+<div class="header_nav header_nav_common" id="header_nav_common">
+	<nav id="menu_pc_trigger">
+		<div>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<p>MENU</p>
+	</nav>
+	<div class="wrap">
+		<div class="title">
+			<ul>
+				<li><a href="/"><h1><img src="/wp/wp-content/themes/HAPPY_Dark/img/logo_w.png" alt="ハッピー ケアメンテ" class="logo"></h1></a></li>
+				<li class="sac"><a href="/carementeh_search/"><span>Before&After検索<br>概算お見積り事例集</span><div class="flx"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header01_w_y.png" alt=""><div><strong>「さがす」</strong></div></div></a></li>
+				<li><a href="/review/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header02_w.png" alt=""><span>お客さまレビュー</span><strong>「きづく」</strong></a></li>
+				<li><a href="/mypage/sns.html"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header03_w.png" alt=""><span>ハッピー SNS</span><strong>「つなぐ」</strong></a></li>
+				<li><a href="/mypage/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/header04_w.png" alt=""><span>お客さま専用ページ</span><strong>マイページ</strong></a></li>
+			</ul>
+		</div>
+		<div class="sublink">
+			<div class="telBox">
+				<div class="tel_top">
+					<a href="tel:0120-88-6868"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_tel_w.png" alt="tel"><span class="number">0120-88-6868</span>
+					<span class="time">月～土  <span class="sub">9:00～18:00<br>(日曜・祝祭日は除く)</span></span></a>
+				</div>
+				<div class="hermes">
+					<a href="tel:0120-88-3040">
+					<span>エルメス <br>お客様専用ダイヤル</span><br class="sp"><img src="/wp/wp-content/themes/HAPPY_Dark/img/icon_tel_w.png" alt="tel">0120-88-3040</a>
+				</div>
+			</div>
+			<div class="order">
+				<a href="/order/"><img src="/wp/wp-content/themes/HAPPY_Dark/img/order_w.png" alt="WEB"><br>
+				<span>お申し込み</span></a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,158 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>幸 sachi　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+		<meta name="description" content="過去にケアメンテをご利用いただいたお客様から、サービスのレビューをいただいています。">
+		<meta name="keywords" content="クリーニング,シミ,しみ,着物,宅配,ウェットクリーニング,水洗い,高級,黄ばみ">
+		<meta name="format-detection" content="telephone=no">
+		<?php if(preg_match("/(Android|iPhone|CareMenteh)/", $_SERVER["HTTP_USER_AGENT"])): ?><meta name="viewport" content="width=320, user-scalable=no" /><?php else: ?><meta name="viewport" content="width=1280" />
+		<?php endif; ?>
+
+		<!-- Open Graph Protocol -->
+		<meta property="og:url" content="https://www.kyoto-happy.co.jp/sachi/">
+		<meta property="og:title" content="幸 sachi　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?>">
+		<meta property="og:description" content="過去にケアメンテをご利用いただいたお客様から、サービスのレビューをいただいています">
+		<meta property="og:image" content="https://www.kyoto-happy.co.jp/_assets/img/header/logo.png">
+		<!-- Open Graph Protocol -->
+
+		<link rel="stylesheet" href="/_assets/css/default.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/common.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="/_assets/css/tooltipster.bundle.min.css">
+
+		<link rel="stylesheet" href="/_assets/css/sachi.css?<?php echo date('YmdHis');?>">
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+		<script src="/_assets/js/jquery.js"></script>
+		<script src="/_assets/js/jquery.bxslider.min.js"></script>
+		<script src="/_assets/js/common.js"></script>
+		<script src="/_assets/js/common_3rd.js"></script>
+		<script src="/_assets/js/ga.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="/_assets/js/tooltipster.bundle.min.js"></script>
+
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+
+	</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+		<div id="Container">
+			<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/include/header.php");
+				?>
+			</header>
+
+
+			<div id="Contents" class="sachi">
+				<div class="content">
+		      <div class="mainCover">
+		        <div class="backnumberLink"><a href="#backnumber"><i class="fa fa-caret-down" aria-hidden="true"></i>バックナンバーはこちら</a></div>
+		        <div class="cover">
+		          <img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201909_cover.jpg" alt="甘味や旨味の中に「苦渋味」を感じるお茶本来の味わいを楽しんでほしい">
+		          <h1><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/sachi_logo-olive.svg" alt="幸 sachi"></h1>
+		          <h2><div class="number">Vol. 25</div><br>甘味や旨味の中に「苦渋味」を感じる<br>お茶本来の味わいを楽しんでほしい<span>中村藤𠮷本店</span></h2>
+		        </div>
+		      </div>
+
+		      <div class="main_bottomWrap">
+		        <div class="Wrap">
+		          <div class="title"><span>WEBマガジン　</span><br class="PCpart">幸（sachi）とは？</div>
+		          <div class="txt">“技”を持つ職人達。華やかな表舞台の裏には人知れず腕を磨き精進する姿がある。<br>
+		          職人技と呼ばれる“極み”を完成した人々、”ケアメンテ”も縁の下の力持ちに徹し、<br class="PCpart">
+		          静かに”技”を研鑽している。伝統工芸の職人技とケアメンテの職人技は共通しており、 <br class="PCpart">
+		          それぞれの技の“極み”を発見してもらうために「幸」がある。<br>
+		          長年に渡りご紹介してきたハッピーの季刊誌 「幸（sachi）」が、WEB版に生まれ変わり待望の復刊です。</div>
+		        </div>
+		      </div>
+
+		      <section class="mainTxt">
+		        <p class="lead">日本に喫茶の習慣がもたらされたのは鎌倉時代初期。臨済宗の開祖・栄西が宋から茶種を持ち帰ったことから始まると伝わっています。以来、日本を代表するお茶の産地として発展してきた宇治で160年余りにわたって良質のお茶づくりを行ってきた中村藤𠮷本店の中村省悟さんに、宇治茶の魅力をうかがいました。</p>
+
+		        <div class="box">
+		          <h3>宇治茶の美味しさの秘密</h3>
+		          <div class="imgR">
+		            <img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201909_img01.jpg" alt="宇治茶の美味しさの秘密">
+		            <p style="text-align:center;">拝見場でお茶の香りを確かめる井上賢人さん</p>
+		          </div>
+		          <p>名だたる茶商が軒を連ねる宇治橋通商店街。世界遺産・平等院からほど近いこの地に、中村藤𠮷本店が店を構えたのは安政元年（1854）のこと。初代は鳥取藩池田公と縁の深い御物茶師・星野宗以のもとで丁稚奉公をし、若くして手代となったのちに茶商「中村藤𠮷」を創業したそうです。<br>
+		          当時は幕末の混乱の時代。旧来の価値観や嗜好が変化するなかで商いは波に乗り、良質の宇治茶づくりを目指した中村藤𠮷のお茶は普及していきました。<br>
+		          宇治茶の特徴は、新芽の育成中に茶葉を被覆して、太陽光を遮って育てる栽培法にあります。光を遮ることで茶葉に含まれる甘味が苦味に変化するのを防ぐとともに、鮮やかな色の茶葉となり、豊かな香りや旨味のあるお茶に育つのです。<br>
+		          「お茶の良し悪しは、１に香り、２に味わい。そして茶葉の形の美しさだと考えています」と話すのは、同社専務の中村省悟さん。中村さんは、「茶葉の見た目の良さはもちろん大切ですが、それ以上に実際に口に含んだときに美味しいと感じることを重視しています」と言います。</p>
+		          <div class="imgL"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201909_img02.jpg" alt="宇治茶の美味しさの秘密"></div>
+		          <p>被覆による栽培とともに宇治茶の美味しさを生んでいるのが、浅蒸しの工程です。浅蒸しとは、摘み取った茶葉の酸化発酵を止めるために行われる工程のことで、宇治茶の場合は10秒から30秒程度蒸して次の工程に進みます。宇治では古来この浅蒸しの製法が取り入れられてきました。<br>
+		          「浅蒸しによって、豊かな香りと黄味を帯びた爽やかな色のお茶が生まれます。被覆して育てた茶葉本来の、素材の味わいを引き出す製法でもあるんですよ」。見た目にも上品な宇治茶はこのようにして生まれるのです。</p>
+		        </div>
+
+		        <div class="box">
+		          <h3>中村藤𠮷本店のお茶</h3>
+		          <div class="imgCenter"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201909_img03.jpg" alt="中村藤𠮷本店のお茶"></div>
+		          <p>中村藤𠮷本店が、一年を通じて美味しいお茶を提供するために心がけているのは、「香り、味、色をバランスよく整えること」とか。「収穫する年によって気候条件などが異なり、茶葉の生育にも影響があります。その中で、いつ飲んでいただいても変わらない味だと思ってもらえるようなお茶にするのが私たちの仕事です」と、中村さんが言うように、仕上げ作業もまたお茶の美味しさを左右します。<br>
+		          その仕事の大切さは、宇治の「重要文化的景観」に選定されている同社の建物からも分かります。それは、明治期の典型的な茶商の佇まいを残す建物に今も残る「拝見窓」と呼ばれる天窓の存在。季節に変わりなく安定した光が注ぐ北側に設けられた窓の下には、拝見場（審査場）と呼ばれる台があり、そこで代々の茶師たちがお茶の微妙な色合いや風味を厳しい目で審査してきたのだとか。現在、同社でその役割を担う井上賢人さんもその一人。<br>
+		          「例えば、定番商品である『中村茶』は、煎茶や玉露など7種類を合組（ブレンドのこと）したお茶です。拝見窓の下で茶葉の色、抽出したお茶の色、香りが、私たちの求める一定のレベルに達しているかを、直接確認しています」。審査をするにあたっては、目と鼻に神経を集中。直前に食べたものや体調に左右されないよう、コンディションにも気を使うと言います。「でも、お客様がお茶を飲まれるときのコンディションが必ずしも万全とは限りません。何を召し上がったあとに飲まれるかも人それぞれ異なります。ですから、お菓子と一緒にお茶を飲んでいただいたときに、化学反応を起こして『美味しい』と感じてもらえるように仕上げることを心がけています」。</p>
+		        </div>
+
+		        <div class="box">
+		          <h3>信念を持ったお茶づくりを</h3>
+		          <div class="imgL"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201909_img04.jpg" alt="信念を持ったお茶づくりを"></div>
+		          <p>以前は仲卸専門の茶商でしたが、平成6年（1994）にオリジナル合組の「中村茶」の販売を開始するとともに小売業にも進出。中村さんはその経緯を、「例えば仲卸では、茶葉の見た目で価値が下がることがあります。でも、見た目が不揃いでも、美味しいお茶もあります。茶商である私たち自身が美味しいと考えるお茶を見極めて、適正価格で提供していきたいと考えて小売にも進出することにしました」と話します。そんな中村さんが美味しいと考えるお茶とは？　「旨味、苦味、渋味がバランス良く感じられるお茶でしょうか。品質の高いお茶には心地よい『苦渋味』があります。一方で品質が悪いとそれが『えぐ味』になってしまいます。甘味や旨味の中に程よい『苦渋味』を残したお茶本来の美味しさを、多くの人に知ってほしいですね」。<br>
+		          時代とともに人々の嗜好が変わる中で、抹茶のチョコレートやバウムクーヘンなどのスイーツ類の開発を早くから手がけてきた中村藤𠮷本店。平成13年（2001）に製茶工場を改修してオープンした喫茶室には、開店前から多くの外国人観光客が行列をなし、宇治茶の魅力が海外にも広まっていることをうかがわせます。<br>
+		          いち早くニーズを読み取り商品開発をする一方で、茶商自身が美味しいと考えるお茶を、信念を持って提供し続けていることが中村藤𠮷本店の人気の秘密なのでしょう。</p>
+		        </div>
+
+		        <div class="box">
+		          <h3>茶の湯とともに発展した宇治のお茶</h3>
+		          <div class="imgR"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201909_img05.jpg" alt="茶の湯とともに発展した宇治のお茶"></div>
+		          <p>栄西が茶種を持ち帰って以降、禅寺や武家を中心に普及した喫茶の習慣。特に、千利休が侘び茶を完成させると、京都では茶の湯の文化が発展しました。また、洛中（京都市内中心部）からほど近い宇治の地は、地形や気候が茶葉の栽培に適していたこともあり、多くの茶園が設けられるようになりました。江戸時代になると幕府に献上されるなど、高級茶としての地位を確立し、現在に至っています。</p>
+		        </div>
+
+		      </section>
+
+		      <section class="credit">
+		        <div class="imgL"><img src="https://www.kyoto-happy.co.jp:8443/_assets/img/sachi/201909_img06.jpg" alt="中村藤𠮷本店"></div>
+		        <div class="creditTop">
+		          <h5>中村藤𠮷本店</h5>
+		          <p>安政元年（1854）、初代中村藤𠮷が、茶商「中村藤𠮷」創業。当時「丸屋藤𠮷」を名乗っていたことから、現在の屋号の「まると」が生まれる。本店中庭にある宝来舟松（ほうらいふなまつ）と呼ばれる樹齢約250年の黒松は、宇治市名木百選に選ばれている。平成13年、製茶工場をカフェに改装。宇治茶と抹茶スイーツを気軽に楽しめる場所を提供している。</p>
+		        </div>
+		        <div class="creditBottom">
+		          <h5>店舗</h5>
+		          <p>住所　京都府宇治市宇治壱番10<br>電話番号　0774-22-7800<br>営業時間　10:00～19:00（カフェは入店17:30まで）※季節により変動あり<br>定休日　なし</p>
+		        </div>
+		      </section>
+
+
+	<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/sachi/parts-sachi.php");
+				?>
+			</header>
+
+			</div><!--/content-->
+	</div><!--/Contents-->
+
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer.php");
+			?>
+		</div>
+		<!--/Container-->
+
+		<?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/body_retargeting_cord.php");
+		?>
+
+
+	</body>
+</html>

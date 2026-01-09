@@ -1,0 +1,303 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title><?php echo $this->get("item_detail.item_id"); ?>　|　さがす＜ケアメンテ事例集＞　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?></title>
+		<meta name="description" content="1900点を超える豊富な実例集から、お困りの衣服に似たアイテムを探して、「ケアメンテ」の洗い・仕上がり感をイメージしてください。">
+		<meta name="keywords" content="クリーニング,シミ,しみ,着物,宅配,ウェットクリーニング,水洗い,高級,黄ばみ">
+		<meta name="format-detection" content="telephone=no">
+		<?php if(preg_match("/(Android|iPhone|CareMenteh)/", $_SERVER["HTTP_USER_AGENT"])): ?><meta name="viewport" content="width=320, user-scalable=no" /><?php else: ?><meta name="viewport" content="width=1280" />
+		<?php endif; ?>
+
+		<!-- Open Graph Protocol -->
+		<meta property="og:url" content="https://www.kyoto-happy.co.jp/carementeh_search/detail.html?item_id=<?php echo $this->get("item_detail.item_id"); ?>">
+		<meta property="og:title" content="<?php echo $this->get("item_detail.item_id"); ?>　|　さがす＜ケアメンテ事例集＞　|　<?php echo CONF::read('PUBLIC_SITE.DEFAULT_TITLE'); ?>">
+		<meta property="og:description" content="1900点を超える豊富な実例集から、お困りの衣服に似たアイテムを探して、「ケアメンテ」の洗い・仕上がり感をイメージしてください。">
+		<meta property="og:image" content="https://www.kyoto-happy.co.jp/_assets/img/header/logo.png">
+		<!-- Open Graph Protocol -->
+
+		<link rel="stylesheet" href="/_assets/css/default.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/common.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/mypage.css?<?php echo date('YmdHis');?>">
+		<link rel="stylesheet" href="/_assets/css/search.css?<?php echo date('YmdHis');?>">
+        <link rel="stylesheet" href="/_assets/css/tooltipster.bundle.min.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+		<script src="/_assets/js/jquery.js"></script>
+		<script src="/_assets/js/common.js"></script>
+		<script src="/_assets/js/ga.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="/_assets/js/jquery.darktooltip.js"></script>
+
+		<link rel="stylesheet" href="/_assets/css/lightbox.css">
+		<script src="/_assets/js/lightbox.js"></script>
+        
+        <script src="/_assets/js/tooltipster.bundle.min.js"></script>
+        
+        <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/headtag_cord.php");
+		?>
+        
+	</head>
+
+	<body id="pTop">
+		<?php ((CONF::read('DEBUG_BAR.IS_ACTIVE')) ? (print DebugBarMaster::html_source_render($this->get_all())) : ('')); ?>
+		<?php $publicGadget->get_sns_code() /* .get_sns_code */ ?>
+
+		<div id="Container">
+
+			<header>
+				<?php
+				/* ヘッダーインクルード */
+				include(DIR_PUBLIC . "/include/header.php");
+				?>
+			</header>
+
+			<div id="Contents" class="careSearch">
+
+				<div class="mainvisual__section">
+					<div>WEB COUNSELING<br><p>WEB カウンセリング</p></div>
+				</div>
+
+				<div id="pankuzu-wrapp">e
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu"><a href="/counseling/result.html">カルテ一覧</a></p></div>
+				</div>
+
+				<div class="mypageArea">
+
+					<div class="mainContents3">
+                        
+						<div class="pagettl"><h1></h1></div>
+
+						<div class="RColumn">
+
+							<div class="karteyArea">
+
+								<dl class="karteInfo">
+									<div class="karteInfoBlock wmax">
+										<dt>ご氏名</dt>
+										<dd><?php echo $this->get("item_detail.item_id"); ?></dd>
+									</div>
+									<div class="karteInfoBlock wmax">
+										<dt>お預り番号</dt>
+										<dd><?php echo $this->get("item_detail.item_name"); ?></dd>
+									</div>
+									<div class="karteInfoBlock wmax">
+										<dt>ハーフコード</dt>
+										<dd><?php echo $this->get("item_detail.color"); ?></dd>
+									</div>
+									<div class="karteInfoBlock wmax">
+										<dt>ブランド</dt>
+										<dd class="wmax"><?php echo $this->get("item_detail.brand"); ?></dd>
+									</div>
+									<div class="karteInfoBlock wmax">
+										<dt>主な素材</dt>
+										<dd class="wmax"><?php echo $this->get("item_detail.sozai"); ?></dd>
+									</div>
+									<div class="karteInfoBlock wmax">
+										<dt>お届け予定日</dt>
+										<dd class="wmax"><?php echo $this->get("item_detail.sozai"); ?></dd>
+									</div>
+									<div class="karteInfoBlock wmax">
+										<dt>生地メーカー</dt>
+										<dd class="wmax"><?php echo $this->get("item_detail.sozai"); ?></dd>
+									</div>
+								</dl>
+							</div>
+						</div>
+						<div class="LColumn">
+
+							<div class="karteyArea">
+
+								<div class="karteColumnWrap2 karteImagesWrap">
+									<div class="karteColumnWrap">
+										<div class="statusBlock">
+											<h3>お預り時点の汚れの状態</h3>
+											<ul class="karteItem">
+												<li>前身ごろ</li>
+												<li>後身ごろ</li>
+												<li class="wmax"><img src="<?php echo $this->get("image_state_url"); ?>" alt="お預り時点の汚れの状態"></li>
+											</ul>
+										</div>
+										<div class="statusBlock">
+											<h3>お預り時点の損傷の状態</h3>
+											<ul class="karteItem">
+												<li>前身ごろ</li>
+												<li>後身ごろ</li>
+												<li class="wmax"><img src="<?php echo $this->get("image_damage_url"); ?>" alt="お預り時点の損傷の状態"></li>
+											</ul>
+										</div>
+										<div class="statusMark">
+											<img src="/_assets/img/mypage/karte5.jpg" alt="マーク">
+										</div>
+									</div>
+								</div>
+								
+								<div class="karteyArea">
+
+									<dl class="karteColumnWrap">
+										<div class="statusBlock">
+											<h3>お預かり時の状態</h3>
+											<ul class="karteItem" style="text-align: left;">
+												<li style="text-align: left;">黄ばんでいる</li>
+											</ul>
+										</div>
+										<div class="statusBlock">
+											<h3>起こり得る状態変化</h3>
+											<ul class="karteItem" style="text-align: left;">
+												<li style="text-align: left;    width: 100%;">色っぽくなる　色が薄くなる</li>
+												<li style="text-align: left;    width: 100%;">移染</li>
+												<li style="text-align: left;    width: 100%;">変色／脱色</li>
+												<li style="text-align: left;    width: 100%;">色むら</li>
+												<li style="text-align: left;    width: 100%;">生地折れ</li>
+												<li style="text-align: left;    width: 100%;">風合い変わり</li>
+
+											</ul>
+										</div>
+										<div class="statusBlock">
+											<h3>メンテナンス事項</h3>
+											<ul class="karteItem" style="text-align: left;">
+												<li style="text-align: left;    width: 100%;">ボタン脱着（アクアドレイのみ→不要）</li>
+											</ul>
+										</div>
+										<div class="statusBlock">
+											<h3>物件備考</h3>
+											<ul class="karteItem" style="text-align: left;">
+												<li style="text-align: left;    width: 100%;">製品洗い→シワ感あり 裏地オフ白</li>
+											</ul>
+										</div>
+										<div class="statusBlock">
+											<h3>弁償不可</h3>
+											<ul class="karteItem" style="text-align: left;">
+												<li style="text-align: left;    width: 100%;">未承認</li>
+											</ul>
+										</div>
+									</dl>
+								</div>
+							</div>
+							<!--
+							<div class="karteColumnWrap2 karteImagesWrap">
+								<table class="karteImages">
+									<tbody>
+										<tr>
+											<td class="smallTxt tcntr" colspan="3">写真をクリックすると<br class="SPpart">画像が拡大されます。</td>
+											<td rowspan="8"><img src="/_assets/img/search/N0003017F2.jpg" alt="前"><img src="/_assets/img/search/N0003017B2.jpg" alt="後"></td>
+										</tr>
+										<tr>
+											<th>⑦ BEFORE</th>
+											<th></th>
+											<th>⑦ AFTER</th>
+											<th></th>
+										</tr>
+										<tr>
+											<td class="before"><a href="#"><img src="/_assets/img/search/N000301719.jpg" alt="BEFORE"></a></td>
+											<td class="arrow"><img src="/_assets/img/search/search_arrow.gif" alt="矢印"></td>
+											<td class="after"><a href="#"><img src="/_assets/img/search/N000301720.jpg" alt="AFTER"></a></td>
+											<td></td>
+										</tr>
+										<tr>
+											<th>⑧ BEFORE</th>
+											<th></th>
+											<th>⑧ AFTER</th>
+											<th></th>
+										</tr>
+										<tr>
+											<td class="before"><a href="#"><img src="/_assets/img/search/N000301721.jpg" alt="BEFORE"></a></td>
+											<td class="arrow"><img src="/_assets/img/search/search_arrow.gif" alt="矢印"></td>
+											<td class="after"><a href="#"><img src="/_assets/img/search/N000301722.jpg" alt="AFTER"></a></td>
+											<td></td>
+										</tr>
+										<tr>
+											<th></th>
+											<th></th>
+											<th></th>
+											<th></th>
+										</tr>
+										<tr>
+											<td class="before"></td>
+											<td class="arrow"></td>
+											<td class="after"></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>-->
+                            
+							</div><!--/mainContents-->
+						</div><!--/karteyArea-->
+					</div><!--/mainContents3-->
+				</div>
+			</div><!--/Contents-->
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer.php");
+			?>
+		</div>
+		<!--/Container-->
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('[id^=def-]').darkTooltip({
+					trigger: 'click',
+					opacity: 1,
+					gravity: 'north'
+				});
+			});
+		</script>
+		<script>
+			var like_array = new Array(<?php echo $this->get("comment_like_array"); ?>);
+			$(function () {
+				$(".edit-form").css("clear", "both").hide();
+				$(".edit-response").on("click", function () {
+					var targ = $(this).attr("rel");
+					$(".target_" + targ).find(".postingTxt").hide();
+					$(".target_" + targ).find(".edit-form").show();
+				});
+			});
+		</script>
+		<script src="/_assets/js/xc.js"></script>
+        <script type="text/javascript">
+		function backlink() {
+			var ref = document.referrer; //前ページ
+		
+			if (ref != "") {
+				var n = ref.indexOf("//")+2;
+				var m = ref.indexOf("/",n+1);
+				if (m == -1) {m = ref.length;}
+				//ドメイン名を抜き出す
+				if (n > -1) {ref = ref.substring(n,m);}
+			}
+			//ドメイン名が同じ場合
+			if (document.domain == ref) {
+				s = "<a href='javascript:history.back()'>検索結果に戻る</a>";
+			} else {
+				document.getElementById("view_back").style.display="none";
+				document.getElementById("view_back2").style.display="none";
+			}
+			document.getElementById("view_back").innerHTML = s;
+			document.getElementById("view_back2").innerHTML = s;
+		}
+		</script>
+        <script type="text/javascript">
+			//戻るリンクの表示
+			backlink();
+		</script>
+		
+       <?php
+		$webroot = $_SERVER['DOCUMENT_ROOT'];
+		include($webroot."/include/body_retargeting_cord.php");
+		?>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,9 @@
+<?php
+/*
+ * マイページ-初回ログイン
+ */
+require '../../../core/PreLoad.inc';
+$aic = new MypageLoginFirstController();
+$aic->index();
+$aic->view("mypage".DS."login_first");
+?>

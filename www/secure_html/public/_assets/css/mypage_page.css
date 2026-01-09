@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+@media print, screen and (min-width:641px){
+/*======================
+PCレイアウト*/
+
+.viewsp{
+	display: none;
+}
+
+/*メインビジュアル*/
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/mypage/bg_mv.jpg) center center no-repeat;
+	background-size:cover;
+}
+
+.use .use_section{
+	margin: 0 0 40px;
+}
+
+.use .use_section img{
+	margin: 0 0 10px;
+}
+
+.use .use_section .btn{
+	text-align: right;
+}
+
+.linkBtnCommon{
+	background-color: #a9803c;
+	color: #fff;
+	font-size: 12px;
+	text-decoration: none;
+	line-height: 5;
+	margin-right: 10px;
+	padding: 10px 35px 10px 22px;
+	position: relative;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px; 
+	border-radius:2px;
+}
+.linkBtnCommon::before,
+.linkBtnCommon::after{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	content: "";
+	vertical-align: middle;
+}
+.linkBtnCommon::after{
+	right: 22px;
+	width: 4px;
+	height: 4px;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #fff;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.linkBtnCommon:hover{
+	background-color: #936e30;
+}
+
+}
+
+
+@media screen and (max-width:640px){
+/*======================
+SPレイアウト*/
+
+.viewpc{
+	display: none;
+}
+
+/*メインビジュアル*/
+.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/mypage/bg_mv.jpg) left center no-repeat;
+	background-size:cover;
+}
+
+.use img{
+	width: 100%;
+}
+
+.use .use_section{
+	margin: 0 0 25px;
+}
+
+.linkBtnCommon{
+	display: block;
+	background-color: #a9803c;
+	color: #fff;
+	font-size: 12px;
+	line-height: 1.4;
+	text-decoration: none;
+	margin-top: 10px;
+	padding: 10px 0 10px 15px;
+	position: relative;
+}
+.linkBtnCommon::before,
+.linkBtnCommon::after{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	content: "";
+	vertical-align: middle;
+}
+.linkBtnCommon::after{
+	right: 15px;
+	width: 4px;
+	height: 4px;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #fff;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+
+}

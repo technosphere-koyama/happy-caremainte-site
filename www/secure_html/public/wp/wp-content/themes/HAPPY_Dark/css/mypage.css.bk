@@ -1,0 +1,3530 @@
+@charset "utf-8";
+/*==================================
+  mypage
+==================================*/
+#mypage:before {
+	content:"";
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+  width:100%;
+  height:100vh;
+  background-size:cover;
+	background: url(/mypage/img/mypage_bg.jpg) no-repeat top center/cover fixed;
+}
+#mypage #banner {
+  background: #fffabd;
+	color: #050505;
+  padding: 11px 0;
+	font-size: 3vw;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  line-height: 1.5;
+}
+#mypage #member_beginner a {
+	color:#6a3b93
+}
+#mypage #member_point {
+	color: #050505;
+	margin-top: 30px;
+}
+#mypage #member_point .container {
+	background: #FFF;
+	overflow: hidden;
+	padding: 40px 0;
+}
+#mypage #member_point .container .member_point_box {
+  margin: 0 auto;
+	position: relative;
+}
+#mypage #member_point .container .member_point_box .member_point_box_inner {
+	height: 60%;
+	position: absolute;
+  top: 0;
+  right: 0;
+	bottom: 0;
+  left: 0;
+  margin: auto;
+}
+#mypage #member_point .container .member_point_box .member_point_box_inner h2 {
+	font-size: 4vw;
+}
+#mypage #member_point .container .member_point_box .member_point_box_inner p.member_point_data {
+	font-size: 4vw;
+	line-height: 1.4;
+}
+#mypage #member_point .container .member_point_box .member_point_box_inner p.member_point_data span {
+  display: block;
+	font-size: 8vw;
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+#mypage #member_point .container .member_point_box .member_point_box_inner p.member_point_rank {
+	color: #6b6600;
+	font-size: 5vw;
+	margin-top: 10px;
+}
+#mypage #member_point .container p.member_point_ticket {
+	font-size: 4vw;
+	margin-top: 20px;
+}
+#mypage #member_point .container p.member_point_ticket span {
+	color: #6a3b93;
+	-webkit-text-stroke: 0.05em #6a3b93;
+	display: inline-block;
+	font-size: 7vw;
+	line-height: 1;
+  margin: 0 5px;
+}
+#mypage #member_information {
+	margin-top: 30px;
+}
+#mypage #member_information .member_information_box {
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+#mypage #member_information .logoutBtn {
+  margin: 5vw 0 0;
+}
+#mypage #member_information .logoutBtn a {
+	border: 1px solid #FFF;
+  border-radius: 5px;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5vw;
+  line-height: 1.2;
+  padding: 3vw;
+}
+#mypage #member_information .logoutBtn a:hover {
+  color: rgba(255,255,255,0.7);
+}
+#mypage #member_information .member_information_box .member_information_name {
+  display: flex;
+	align-items: flex-end;
+}
+#mypage #member_information .member_information_box .member_information_name img {
+  width: 20vw;
+}
+#mypage #member_information .member_information_box .member_information_name .member_information_name_txt {
+	margin-left: 10px;
+}
+#mypage #member_information .member_information_box .member_information_name h2 {
+  font-size :4vw;
+	line-height: 1;
+}
+#mypage #member_information .member_information_box .member_information_name h2 span {
+  font-size :3vw;
+}
+#mypage #member_information .member_information_box .member_information_name p {
+	font-size: 3vw;
+	margin-top: 5px;
+}
+#mypage #member_information .btnArea {
+	display: flex;
+	margin-top: 5%;
+}
+#mypage #member_information .btnArea > div {
+	flex: 1;
+}
+#mypage #member_information .btnArea a:hover {
+  color: rgba(5,5,5,0.7);
+}
+#mypage #member_information .btn a {
+  background: #FFF;
+  border-radius: 10vw;
+  color: #050505;
+	display: flex;
+	align-items: center;
+  justify-content: center;
+  font-size: 3.5vw;
+	line-height: 1.2;
+  padding: 3vw 0;
+}
+#mypage #member_information .btn a img {
+  width: 10vw;
+}
+#mypage #member_information .btn a span {
+  margin-left: 5px;
+}
+#mypage #member_information .btn a span .small {
+  font-size: 3vw;
+	margin-left: -0.5em;
+}
+#mypage #member_information .order {
+  background: #FFF;
+	border-radius: 10vw;
+	flex: 1;
+	margin-left: 15px;
+  padding: 0.5vw;
+}
+#mypage #member_information .order a {
+  background: #FFF;
+	border: 1px solid #6a3b93;
+  border-radius: 8vw;
+  color: #050505;
+	display: flex;
+	align-items: center;
+  justify-content: center;
+  font-size: 3.5vw;
+	line-height: 1;
+  padding: 4vw 0;
+}
+#mypage #member_information .order a img {
+  width: 11vw;
+}
+#mypage #member_information .order a span {
+  margin-left: 10px;
+}
+#mypage #member_menu {
+  color: #050505;
+	margin-top: 60px;
+}
+#mypage #member_menu ul {
+  display: flex;
+	flex-wrap: wrap;
+}
+#mypage #member_menu ul li {
+	background: #FFF;
+  border-radius: 5px;
+	margin: 0 2% 2% 0;
+	padding: 7vw 2% 2vw;
+  text-align: center;
+	width: 45%;
+	position: relative;
+}
+#mypage #member_menu ul li.linkoff a {
+	pointer-events: none;
+}
+#mypage #member_menu ul li.linkoff a:before {
+	background: rgba(0,0,0,0.7);
+	border-radius: 5px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  content: "";
+  width: 100%;
+}
+#mypage #member_menu ul li.linkoff a:after {
+	color: #FFF;
+  font-size: 6vw;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  content: "工事中";
+  height: 6vw;
+  line-height: 6vw;
+  text-align: center;
+}
+#mypage #member_menu ul li:nth-child(even) {
+  margin-right: 0;
+}
+#mypage #member_menu ul li .member_menu_img {
+  display: inline-block;
+	line-height: 0;
+  position: relative;
+}
+#mypage #member_menu ul li .member_menu_img .badge {
+  position: absolute;
+  top: -4vw;
+  right: -4vw;
+  font-size: 3vw;
+  line-height: 8vw;
+  border-radius: 50%;
+  width: 8vw;
+  height: 8vw;
+  background-color: #6a3b93;
+  color: #FFF;
+  text-align: center;
+}
+#mypage #member_menu ul li img {
+	width: 20vw;
+}
+#mypage #member_menu ul li a {
+  color:#000;
+}
+#mypage #member_menu ul li h3 {
+	font-size: 4vw;
+	height: 10vw;
+	line-height: 1.2;
+}
+#mypage #member_menu ul li:first-child h3 {
+	line-height: 10vw;
+}
+#mypage #member_menu ul li:first-child h3 a {
+	color: #000;
+}
+#mypage #member_menu_sub {
+  color: #050505;
+	margin-top: 20px;
+}
+#mypage #member_menu_sub ul {
+  background: #FFF;
+  border-radius: 5px;
+	padding: 10vw 5vw;
+}
+#mypage #member_menu_sub ul li {
+  border-top: 1px solid #050505;
+	font-size: 3vw;
+  padding: 9px 0;
+	position: relative;
+}
+#mypage #member_menu_sub ul li:last-child {
+  border-bottom: 1px solid #050505;
+}
+#mypage #member_menu_sub ul li a {
+  color: #050505;
+	display: inline-block;
+	width: 100%;
+}
+#mypage #member_menu_sub ul li a:after {
+  position: absolute;
+  top: 0;
+  right: 10px;
+	bottom: 0;
+  width: 2vw;
+  height: 2vw;
+  margin: auto;
+  border-top: 2px solid #050505;
+  border-right: 2px solid #050505;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: '';
+}
+#mypage #member_menu_sub ul li a:hover {
+  opacity: 0.7;
+}
+#mypage #member_sns {
+	margin-top: 22vw;
+}
+#mypage #member_sns .member_snsHead {
+	margin-bottom: 40px;
+  text-align: center;
+}
+#mypage #member_sns .member_snsHead h2 {
+	display: inline-block;
+  font-size: 6.5vw;
+	line-height: 1.5;
+	position: relative;
+}
+#mypage #member_sns .member_snsHead h2:before {
+	margin: 0 10px 0 0;
+  content: "";
+  display: inline-block;
+  width: 12vw;
+  height: 12vw;
+  background: url(/wp/wp-content/themes/HAPPY_Dark/img/header03_w.png);
+  background-size: contain;
+  vertical-align: middle;
+}
+#mypage #member_sns .member_snsHead p {
+  font-size: 3.5vw;
+	line-height: 1.5;
+	margin-top: 5px;
+}
+#mypage #member_sns .member_sns_tit h2 {
+  font-size: 4vw;
+	line-height: 1.5;
+}
+#mypage #member_sns .member_sns_tit h2 img {
+  width: 50vw;
+}
+#mypage #member_sns .member_sns_tit p {
+  font-size: 3vw;
+	line-height: 1.5;
+	margin-top: 5px;
+}
+#mypage #member_sns ul.member_sns_list {
+  margin: 30px auto 0;
+}
+#mypage #member_sns ul.member_sns_list li {
+	margin: 0 7px;
+  outline:none;
+}
+#mypage #member_sns ul.member_sns_list li .member_sns_list_img img {
+	background: #FFF;
+  border: 1vw solid #FFF;
+  border-radius: 50%;
+	margin: auto;
+	max-width: 90%;
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt h3 {
+  font-size: 4vw;
+	margin-top: 10px;
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt p {
+	background: #afafaf;
+  border-radius: 4vw;
+	color: #FFF;
+	display: inline-block;
+  font-size: 3vw;
+	margin-top: 10px;
+  padding: 1px 4vw;
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn {
+	margin-top: 5%;
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn a {
+	color: #FFF;
+  background: #6a3b93;
+  border-radius: 8vw;
+  display: inline-block;
+  font-size: 3vw;
+  padding: 1.5vw 3vw 1.5vw 10vw;
+	position: relative;
+	text-align: center;
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn a:after {
+	content: normal;
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn a:hover {
+	color: rgba(255,255,255,0.7);
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn a:before {
+	content: '';
+	background: url(/img/check_w.png) no-repeat 0% center/contain scroll;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 3vw;
+	margin: auto;
+	width: 6vw;
+	height: 6vw;
+}
+#mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn a:hover:before {
+	opacity: 0.7;
+}
+#mypage #member_sns .member_sns_list_sp ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#mypage #member_sns .member_sns_list_sp ul li {
+  margin: 10vw 4% 5vw 0;
+  width: 48%;
+}
+#mypage #member_sns .member_sns_list_sp ul li:nth-child(even) {
+  margin-right: 0;
+}
+#mypage #member_sns .member_sns_list_sp li .member_sns_list_img img {
+	background: #FFF;
+	border: 4px solid #FFF;
+  border-radius: 50%;
+	max-width: 90%;
+}
+#mypage #member_sns .member_sns_list_sp .member_sns_list_txt h3 {
+	color: #6a3b93;
+  font-size: 4vw;
+}
+#mypage #member_sns .member_sns_list_sp .member_sns_list_txt p {
+	background: #afafaf;
+	border-radius: 4vw;
+	color: #FFF;
+	display: inline-block;
+  font-size: 3vw;
+	padding: 1px 4vw;
+}
+#mypage #member_sns .member_sns_list_sp .member_sns_list_txt .btn {
+	margin-top: 10px;
+}
+#mypage #member_sns .member_sns_list_sp .member_sns_list_txt .btn a {
+	color: #FFF;
+  background: #6a3b93;
+  border-radius: 8vw;
+  display: inline-block;
+  font-size: 3vw;
+  padding: 1.5vw 3vw 1.5vw 10vw;
+	position: relative;
+}
+#mypage #member_sns .member_sns_list_sp .member_sns_list_txt .btn a:before {
+	content: '';
+	background: url(/img/check_w.png) no-repeat 0% center/contain scroll;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 3vw;
+	margin: auto;
+	width: 6vw;
+	height: 6vw;
+}
+#mypage #member_sns .member_sns_list_sp .btn_toggle {
+  background: #848484;
+  border-radius: 8vw;
+  color: #FFF;
+  display: block;
+  font-size: 3.5vw;
+	margin-top: 20px;
+  padding: 3vw 0;
+	position: relative;
+  text-align: center;
+	width: 90vw;
+}
+#mypage #member_sns .member_sns_list_sp .btn_toggle:before {
+  display: block;
+  position: absolute;
+	top: 3.5vw;
+  left: 28vw;
+  width: 3vw;
+  height: 3vw;
+  margin: auto;
+  border-top: 2px solid #FFF;
+  border-right: 2px solid #FFF;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  content: '';
+}
+#mypage #member_sns .member_sns_list_sp .btn_toggle.active:before {
+	top: 5.5vw;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+	transition: all .5s ease;
+}
+#mypage #member_sns .member_sns_list_sp .member_sns_list_sp_hide {
+  display: none;
+}
+#mypage #member_sns .container > div.btn:last-child {
+  margin-top: 50px;
+  text-align: center;
+}
+#mypage #member_sns .container > div.btn:last-child a {
+  color: #FFF;
+  background: #6a3b93;
+  border-radius: 8vw;
+  display: inline-block;
+  font-size: 4vw;
+  padding: 3vw 10vw;
+	text-indent: -0.5em;
+	position: relative;
+}
+#mypage #member_sns .container > div.btn:last-child a:after,
+#mypage #partner .btnArea .btn a:after {
+  position:absolute;
+  top:0;
+  right:5vw;
+  bottom:0;
+  right:20px;
+  border-top:0.5vw solid #FFF;
+  border-right:0.5vw solid #FFF;
+  -webkit-transform:rotate(45deg);
+  transform:rotate(45deg);
+  width:2vw;
+  height:2vw;
+  margin: auto;
+  content:'';
+}
+@media (min-width: 992px) {
+  #mypage #member_sns .container > div.btn:last-child a:after,
+	#mypage #partner .btnArea .btn a:after {
+    right:20px;
+    border-top:2px solid #FFF;
+    border-right:2px solid #FFF;
+    width:10px;
+    height:10px;
+  }
+}
+#mypage #member_sns_sub {
+	margin-top: 22vw;
+	padding-bottom: 20vw;
+}
+#mypage #member_sns_sub h2 {
+  font-size: 6vw;
+}
+#mypage #member_sns_sub ul {
+  background: #FFF;
+  border-radius: 5px;
+	margin-top: 20px;
+	padding: 10vw 5vw;
+}
+#mypage #member_sns_sub ul li {
+  border-top: 1px solid #050505;
+	font-size: 3vw;
+  padding: 9px 0 9px 12vw;
+	position: relative;
+}
+#mypage #member_sns_sub ul li:last-child {
+  border-bottom: 1px solid #050505;
+}
+#mypage #member_sns_sub ul li a {
+  color: #050505;
+	display: inline-block;
+	width: 100%;
+}
+#mypage #member_sns_sub ul li a:after {
+  position: absolute;
+  top: 0;
+  right: 10px;
+	bottom: 0;
+  width: 2vw;
+  height: 2vw;
+  margin: auto;
+  border-top: 2px solid #050505;
+  border-right: 2px solid #050505;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: '';
+}
+#mypage #member_sns_sub ul li a:hover {
+  opacity: 0.7;
+}
+#mypage #member_sns_sub ul li a img {
+  position: absolute;
+	top: 0;
+  bottom: 0;
+  left: 8px;
+  margin: auto;
+	width: 7vw;
+}
+#mypage #case {
+  border-top: none;
+}
+#mypage #reading {
+  border-top: none;
+	padding: 0;
+}
+#mypage #partner {
+	padding: 22vw 0 20vw;
+}
+#mypage #partner h2 {
+  font-family: 'sawarabi';
+  -webkit-font-smoothing: antialiased;
+	font-size: 6vw;
+	font-weight: normal;
+	padding-bottom: 10vw;
+	position: relative;
+}
+#mypage #partner h2:after {
+	position: absolute;
+	right: 0;
+	bottom: 25px;
+  left: 0;
+	background: #FFF;
+	border-radius: 0.5vw;
+	content: '';
+	margin: auto;
+	width: 15vw;
+  height: 1vw;
+}
+#mypage #partner p {
+	font-size: 4vw;
+	line-height: 1.5;
+  display: inline-block;
+}
+#mypage #partner ul {
+	background: #FFF;
+	margin-top: 30px;
+	padding: 6% 3%;
+}
+#mypage #partner ul li {
+	display: inline-block;
+	margin-right: 3%;
+	width: 46%;
+}
+#mypage #partner ul li:nth-child(even) {
+	margin-right: 0;
+}
+#mypage #partner ul li a {
+	display: inline-block;
+}
+#mypage #partner .btnArea {
+	margin-top: 30px;
+}
+#mypage #partner .btnArea .btn {
+	margin-top: 5%;
+}
+#mypage #partner .btnArea .btn a {
+	color: #FFF;
+  background: #6a3b93;
+  border-radius: 8vw;
+  display: inline-block;
+  font-size: 4vw;
+  padding: 3vw 10vw;
+	position: relative;
+}
+#mypage #partner .btnArea .btn a:hover {
+	color: rgba(255,255,255,0.7);
+}
+#mypage #partner .btnArea .hermes {
+  background: #ff6600;
+}
+#mypage #partner .btnArea .hermes a {
+	color: #FFF;
+  display: inline-block;
+  font-size: 5vw;
+	width: 95%;
+  line-height: 1.5;
+  padding: 2vw 0 3vw 5%;
+  position: relative;
+}
+#mypage #partner .btnArea .hermes a:hover {
+	color: rgba(255,255,255,0.7);
+}
+#mypage #partner .btnArea .hermes a span {
+  font-size: 4vw;
+	padding-right: 5vw;
+}
+#mypage #partner .btnArea .hermes a span:after {
+  position: absolute;
+  top: 0;
+  right: 5vw;
+  bottom: 0;
+  width: 3vw;
+  height: 3vw;
+  margin: auto;
+  border-top: 1vw solid #FFF;
+  border-right: 1vw solid #FFF;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: '';
+}
+#mypage #partner .btnArea .hermes a:hover span:after {
+	opacity: 0.7;
+}
+#mypage #partner .btnArea .hermes a img {
+  display: inline-block;
+  margin: 1vw 10px 0 0;
+	vertical-align: top;
+  width: 6vw;
+}
+#mypage #app {
+  padding: 22vw 0 20vw;
+}
+#mypage #app .container {
+		border-bottom: solid 1px #fff;
+	}
+@media (min-width: 992px) {
+	#mypage #app {
+    padding: 40px 0 60px;
+  }
+	#mypage #partner {
+    padding: 40px 0 60px;
+  }
+  #mypage #partner h2 {
+    font-size: 26px;
+		padding-bottom: 70px;
+  }
+  #mypage #partner h2:after {
+    border-radius: 2px;
+    width: 72px;
+    height: 4px;
+    margin-bottom:30px;
+  }
+  #mypage #partner p {
+    font-size: 16px;
+		text-align: center;
+		width: 100%;
+  }
+  #mypage #partner ul {
+    padding: 3%;
+  }
+  #mypage #partner ul li {
+    max-width: 156px;
+  }
+  #mypage #partner ul li:nth-child(even) {
+    margin-right: 3%;
+  }
+  #mypage #partner ul li:nth-child(5n) {
+    margin-right: 0;
+  }
+  #mypage #partner .btnArea {
+    display: flex;
+    justify-content: space-between;
+  }
+	#mypage #partner .btnArea .btn {
+    margin-top: 0;
+  }
+  #mypage #partner .btnArea .btn a {
+    border-radius: 22px;
+    font-size: 16px;
+    padding: 6px 32px;
+  }
+  #mypage #partner .btnArea .hermes a {
+		display: flex;
+    align-items: center;
+		justify-content: center;
+    font-size: 24px;
+		line-height: 2;
+    padding: 0 11px;
+  }
+  #mypage #partner .btnArea .hermes a span {
+    font-size: 18px;
+		margin-right: 10px;
+		padding-right: 20px;
+    position: relative;
+  }
+  #mypage #partner .btnArea .hermes a span:after {
+    right: 5px;
+    border-top: 2px solid #FFF;
+    border-right: 2px solid #FFF;
+    width: 10px;
+    height: 10px;
+  }
+  #mypage #partner .btnArea .hermes a img {
+		margin-top: 0;
+		width: 4%;
+  }
+  #mypage .header_nav_common {
+    display: block;
+  }
+  #mypage .bg {
+    padding-top: 105px;
+  }
+	#mypage.kiyaku .bg {
+		padding-top: 10vw;
+	}
+  #mypage #banner {
+    font-size: 16px;
+    padding: 39px 0;
+  }
+  #mypage #member_point .container .member_point_box {
+		margin: auto;
+    width: 510px;
+    height: 255px;
+  }
+  #mypage #member_point .container .member_point_box .member_point_box_inner {
+    height: 70%;
+  }
+  #mypage #member_point .container .member_point_box .member_point_box_inner h2 {
+    font-size: 18px;
+  }
+  #mypage #member_point .container .member_point_box .member_point_box_inner p.member_point_data {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  #mypage #member_point .container .member_point_box .member_point_box_inner p.member_point_data span {
+    font-size: 56px;
+  }
+  #mypage #member_point .container .member_point_box .member_point_box_inner p.member_point_rank {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+  #mypage #member_point .container p.member_point_ticket {
+    font-size: 18px;
+  }
+  #mypage #member_point .container p.member_point_ticket span {
+    font-size: 30px;
+  }
+  #mypage #member_information .container {
+    display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+  }
+	#mypage #member_information .logoutBtn {
+    margin: 15px 0 0 25px;
+  }
+	#mypage #member_information .logoutBtn a {
+    font-size: 16px;
+    line-height: 1;
+    padding: 10px 45px;
+  }
+  #mypage #member_information .member_information_box .member_information_name img {
+    width: auto;
+  }
+  #mypage #member_information .member_information_box .member_information_name .member_information_name_txt {
+    height: 60px;
+    margin-left: 15px;
+  }
+  #mypage #member_information .member_information_box .member_information_name h2 {
+    font-size :24px;
+  }
+  #mypage #member_information .member_information_box .member_information_name h2 span {
+    font-size :18px;
+  }
+  #mypage #member_information .member_information_box .member_information_name p {
+    font-size: 16px;
+  }
+	#mypage #member_information .btnArea > div {
+    flex: auto;
+  }
+  #mypage #member_information .btn a {
+    border-radius: 34px;
+    font-size: 16px;
+		line-height: 1;
+    padding: 10px 45px;
+  }
+  #mypage #member_information .btn a span .small {
+    font-size: 10px;
+  }
+  #mypage #member_information .btn a img {
+    width: 45px;
+  }
+  #mypage #member_information .order {
+		border-radius: 34px;
+    padding: 3px;
+  }
+  #mypage #member_information .order a {
+    border: 1px solid #6a3b93;
+    border-radius: 34px;
+    font-size: 16px;
+    padding: 10px 32px;
+  }
+  #mypage #member_information .order a img {
+    width: 58px;
+  }
+  #mypage #member_menu ul li {
+    flex: 1;
+		margin: 0 2% 0 0;
+    padding: 40px 0 28px;
+	}
+    #mypage #member_menu ul li.linkoff a:after {
+    font-size: 22px;
+    height: 28px;
+    line-height: 28px;
+  }
+  #mypage #member_menu ul li:nth-child(even) {
+    margin-right: 2%;
+  }
+  #mypage #member_menu ul li:last-child {
+    margin-right: 0;
+  }
+  #mypage #member_menu ul li .member_menu_img .badge {
+    top: -13px;
+    right: -13px;
+    font-size: 18px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+  }
+  #mypage #member_menu ul li img {
+    width: auto;
+  }
+  #mypage #member_menu ul li h3 {
+    font-size: 18px;
+		height: 42px;
+  }
+  #mypage #member_menu ul li:first-child h3 {
+    line-height: 42px;
+  }
+  #mypage #member_menu_sub {
+    margin-top: 40px;
+  }
+  #mypage #member_menu_sub ul {
+    padding: 50px 30px;
+  }
+  #mypage #member_menu_sub ul li {
+    font-size: 20px;
+  }
+  #mypage #member_menu_sub ul li a:after {
+    width: 12px;
+    height: 12px;
+  }
+  #mypage #member_sns {
+    margin-top: 100px;
+  }
+  #mypage #member_sns .member_snsHead h2 {
+    font-size: 30px;
+  }
+  #mypage #member_sns .member_snsHead h2:before {
+    width: 72px;
+    height: 72px;
+  }
+  #mypage #member_sns .member_snsHead p {
+    font-size: 18px;
+  }
+  #mypage #member_sns .member_snsHead p .SPpart {
+    display: none;
+  }
+  #mypage #member_sns .member_sns_tit h2 {
+    font-size: 18px;
+		line-height: 1.8;
+  }
+  #mypage #member_sns .member_sns_tit h2 img {
+    width: 246px;
+  }
+  #mypage #member_sns .member_sns_tit p {
+    font-size: 16px;
+  }
+  #mypage #member_sns ul.member_sns_list {
+		display: block;
+	}
+  #mypage #member_sns ul.member_sns_list li .member_sns_list_img img {
+    border: 7px solid #FFF;
+  }
+  #mypage #member_sns ul.member_sns_list .member_sns_list_txt h3 {
+    font-size: 20px;
+  }
+  #mypage #member_sns ul.member_sns_list .member_sns_list_txt p {
+    border-radius: 14px;
+    font-size: 13px;
+    padding: 1px 19px;
+  }
+  #mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn {
+    margin-top: 20px;
+  }
+  #mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn a {
+    border-radius: 21px;
+    font-size: 12px;
+    padding: 9px 0 9px 25px !important;
+    width: 117px;
+  }
+  #mypage #member_sns ul.member_sns_list .member_sns_list_txt .btn a:before {
+    left: 15px;
+    width: 23px;
+    height: 23px;
+  }
+  .slide-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -34px;
+  }
+  .prev-arrow {
+    transition: all .2s ease;
+    cursor: pointer;
+    left: -70px;
+    padding-right: 0px;
+    padding-left: 10px;
+    width: 20px;
+    height: 34px;
+  }
+  .prev-arrow:hover {
+    transition: all .2s ease;
+    opacity: 0.7;
+  }
+  .next-arrow {
+    transition: all .2s ease;
+    cursor: pointer;
+    right: -70px;
+    padding-right: 10px;
+    padding-left: 0px;
+    width: 20px;
+    height: 34px;
+  }
+  .next-arrow:hover {
+    transition: all .2s ease;
+    opacity: 0.7;
+  }
+	#mypage #member_sns .container > div.btn:last-child a {
+    border-radius: 22px;
+    font-size: 16px;
+    padding: 6px 32px;
+  }
+	#mypage #member_sns .container > div.btn:last-child a:hover {
+    color: rgba(255,255,255,0.7);
+  }
+  #mypage #member_sns_sub {
+    margin-top: 100px;
+		padding-bottom: 80px;
+  }
+  #mypage #member_sns_sub h2 {
+    font-size: 24px;
+  }
+  #mypage #member_sns_sub ul {
+    padding: 50px 30px;
+  }
+  #mypage #member_sns_sub ul li {
+    font-size: 20px;
+    padding: 9px 0 9px 55px;
+  }
+  #mypage #member_sns_sub ul li a:after {
+    width: 12px;
+    height: 12px;
+  }
+  #mypage #member_sns_sub ul li a img {
+    left: 10px;
+		width: 32px;
+  }
+}
+
+/*==================================
+  ログイン関連画面
+==================================*/
+#mypage .mypageMain .footer_sns {
+	background: #433e51;
+  display: block !important;
+}
+#mypage .mainContents h2 {
+  background: #FFF;
+  border-radius: 5px;
+  color: #050505;
+	font-size: 3vw;
+	margin-top: 30px;
+	padding: 2vw 0 2vw 16vw;
+  position: relative;
+}
+#mypage .mainContents h2 img {
+  width: 8vw;
+  position: absolute;
+  top: 0.2vw;
+  left: 4vw;
+	bottom: 0;
+  margin: auto;
+}
+#mypage .mainContents p {
+  margin: 20px 0;
+}
+#mypage .mainContents .karteSearch {
+  border-radius: 5px;
+  border: 1px solid #FFF;
+  padding: 5vw;
+	margin-bottom: 40px;
+}
+#mypage .mainContents .karteSearch dl{
+  overflow: hidden;
+}
+#mypage .mainContents .karteSearch dt:first-child{
+	margin-top: 0;
+}
+#mypage .mainContents .karteSearch dt{
+	margin: 20px 0 10px;
+}
+#mypage .mainContents .karteSearch dd{
+	overflow: hidden;
+	margin: 0;
+}
+#mypage .mainContents .karteSearch .selectform,
+#mypage .mainContents .karteSearch .dateselect{
+	height: 40px;
+	margin-bottom: 8px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+}
+#mypage .mainContents .karteSearch .selectform{
+	width: 100%;
+}
+#mypage .mainContents .karteSearch .dateselect{
+	width: 28%;
+	margin-right: 2%;
+	float: left;
+}
+#mypage .mainContents .karteSearch .selectform:after,
+#mypage .mainContents .karteSearch .selectform:before,
+#mypage .mainContents .karteSearch .dateselect:after,
+#mypage .mainContents .karteSearch .dateselect:before{
+	content: '';
+	z-index: 1;
+	display: block;
+	width: 8px;
+	border-bottom: 1px solid #050505;
+	position: absolute;
+	top: 55%;
+	right: 11px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg)
+}
+#mypage .mainContents .karteSearch .selectform:after,
+#mypage .mainContents .karteSearch .dateselect:after{
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+#mypage .mainContents .karteSearch .selectform select,
+#mypage .mainContents .karteSearch .dateselect select{
+	border: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 100%;
+	padding: 0 11px;
+	font-size: 13px;
+	background-color: #fff;
+	display: inline-block;
+	border-radius: 5px;
+}
+#mypage .mainContents .karteSearch .dateselectTxt{
+	float: left;
+	margin-left: 8px;
+	position: relative;
+	top: 12px;
+}
+#mypage .mainContents .karteSearch .btnarea{
+	width: 100%;
+	text-align: center;
+}
+#mypage .mainContents .karteSearch .btnarea input{
+	background-color: #6a3b93;
+	color: #fff;
+	width: 200px;
+	height: 40px;
+	border: none;
+	font-size: 14px;
+	line-height: 0;
+	cursor: pointer;
+	border-radius: 8vw;
+}
+#mypage .mainContents .karteSearch .btnarea input:hover{
+	color: rgba(255,255,255,0.7);
+}
+/*タブ*/
+#mypage .mainContents #mypagetab .tab_menu{
+	margin-bottom: 0;
+}
+#mypage .mainContents #mypagetab .tab_menu li{
+	display: inline-block;
+	width: 48%;
+	text-align: center;
+	border-top: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-bottom: none;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+#mypage .mainContents #mypagetab .tab_menu li a{
+	font-size: 12px;
+	display: block;
+	padding: 8px 0;
+	color: #FFF;
+}
+#mypage .mainContents #mypagetab .tab_menu li.active{
+	background: #433e51;
+	border-bottom: none;
+}
+#mypage .mainContents #mypagetab .tab_menu li:first-child.active{
+	border-left: 1px solid #ddd;
+}
+#mypage .mainContents #mypagetab .tab_menu li:first-child{
+	margin-right: 2%;
+}
+#mypage .mainContents #mypagetab .tab_menu li.active a{
+	color: #FFF;
+	padding-right: 1px;
+}
+#mypage .mainContents #mypagetab .tab_contents{
+	display: none;
+	overflow: hidden;
+	margin-top: -1px;
+	padding-bottom: 20vw;
+}
+#mypage .mainContents #mypagetab .tab_contents.active{
+	border-top: 1px solid #FFF;
+	display: block;
+	background: #433e51;
+}
+#mypage .mainContents .historyTable{
+	background: #FFF;
+	border-radius: 5px;
+	border-collapse: collapse;
+	color: #050505;
+	width: 100%;
+  margin: 30px 0;
+}
+#mypage .mainContents .historyTable tr{
+	border-bottom: 1px solid #eee;
+  display: flex;
+	padding: 10px;
+}
+#mypage .mainContents .historyTable.detail tr:last-child{
+	border: none;
+	margin-bottom: 0;
+}
+#mypage .mainContents .historyTable tr:first-child{
+	border-bottom: 2px solid #050505;
+	margin-top: 10px;
+}
+#mypage .mainContents .historyTable tr:last-child{
+	margin-bottom: 30px;
+}
+#mypage .mainContents .historyTable th{
+	font-size: 10px;
+	text-align: left;
+  width: 25%;
+}
+#mypage .mainContents .historyTable th:nth-child(2){
+  width: 35%;
+}
+#mypage .mainContents .historyTable th:nth-child(3){
+	width: 25%;
+}
+#mypage .mainContents .historyTable th:nth-child(4){
+	width: 30%;
+}
+#mypage .mainContents .historyTable th:nth-child(4){
+	width: 30%;
+}
+#mypage .mainContents .historyTable th:last-child{
+  width: 5%;
+}
+#mypage .mainContents .historyTable td{
+	font-size: 9px;
+	padding: 0;
+	display: block;
+  width: 25%;
+}
+#mypage .mainContents .historyTable td:nth-child(2){
+  width: 35%;
+}
+#mypage .mainContents .historyTable td:nth-child(3){
+  width: 25%;
+}
+#mypage .mainContents .historyTable td:nth-child(4){
+  width: 15%;
+}
+#mypage .mainContents .historyTable td:last-child{
+	width: 20%;
+}
+#mypage .mainContents .historyTable td:before{
+	content: attr(data-label);
+  float: left;
+  font-weight: bold;
+	font-size: 12px;
+}
+#mypage .mainContents .historyTable input{
+	width: 100%;
+	padding: 3px 0;
+	border: 1px solid #333;
+	background: #fff;
+}
+#mypage .mainContents .tab2_inner{
+	background: #FFF;
+	border-radius: 5px;
+	color: #050505;
+  margin: 30px 0;
+	padding: 5vw;
+}
+#mypage .mainContents .tab2_inner p{
+	margin-top: 0;
+}
+#mypage .mainContents .karteItem{
+  display: flex;
+  flex-wrap: wrap;
+	padding: 0 1%;
+}
+#mypage .mainContents .karteItem li{
+	margin-bottom: 5vw;
+	box-shadow: 0 0 6px #999;
+  -moz-box-shadow: 0 0 6px #999;
+  -webkit-box-shadow: 0 0 6px #999;
+  -o-box-shadow: 0 0 6px #999;
+  padding: 0;
+	width: 48%;
+	margin-right: 4%;
+	text-align: center;
+	position: relative;
+	padding-bottom: 40px;
+}
+#mypage .mainContents .karteItem li:nth-child(even){
+  margin-right: 0;
+}
+#mypage .mainContents .karteItem li a:hover {
+	opacity: .5;
+}
+#mypage .mainContents .karteItem li h4,#mypage .mainContents .karteItem li h5 {
+	font-weight: normal;
+}
+#mypage .mainContents .karteItem li h4 {
+	font-size: 11px;
+}
+#mypage .mainContents .karteItem li .itemNo {
+	font-weight: bold;
+	font-size: 14px;
+}
+#mypage .mainContents .karteItem li .itemName {
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 1.3;
+}
+#mypage .mainContents .karteItem li .itemType,#mypage .mainContents .karteItem li .itemDate {
+	font-size: 12px;
+	line-height: 1.3;
+  margin-top: 5px;
+}
+#mypage .mainContents .karteItem li .itemStatus {
+	background: #6a3b93;
+  color: #FFF;
+	margin-top: 5px;
+	font-size: 14px;
+	position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+#mypage .mainContents .karteItem li img{
+  width: 100% !important;
+}
+@media (min-width: 768px) {
+  #mypage .mainContents .historyTable th {
+    font-size: 12px;
+  }
+  #mypage .mainContents .historyTable td {
+    font-size: 12px;
+  }
+}
+@media (min-width: 992px) {
+  #mypage .mypageMain .footer_sns {
+    background: #000;
+  }
+  #mypage .mainContents h2 {
+    font-size: 18px;
+    padding: 9px 0 9px 75px;
+  }
+  #mypage .mainContents h2 img {
+    width: 40px;
+		top: 8px;
+    left: 20px;
+  }
+  #mypage .mainContents .karteSearch {
+    padding: 30px 30px;
+  }
+	#mypage .mainContents .karteSearch dt{
+    width: 150px;
+    float: left;
+    clear: both;
+    padding: 8px 0 0;
+		text-align: right;
+		margin: 0;
+  }
+  #mypage .mainContents .karteSearch dd{
+    /*width: 630px;*/
+    float: left;
+    margin-left: 40px;
+  }
+  #mypage .mainContents .karteSearch .selectform,
+  #mypage .mainContents .karteSearch .dateselect{
+    float: left;
+    height: 40px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+  }
+  #mypage .mainContents .karteSearch .selectform{
+    width: 200px;
+  }
+  #mypage .mainContents .karteSearch .dateselect{
+    width: 90px;
+  }
+  #mypage .mainContents .karteSearch .selectform:after,
+  #mypage .mainContents .karteSearch .selectform:before,
+  #mypage .mainContents .karteSearch .dateselect:after,
+  #mypage .mainContents .karteSearch .dateselect:before{
+    content: '';
+    z-index: 1;
+    display: block;
+    width: 8px;
+    border-bottom: 1px solid #050505;
+    position: absolute;
+    top: 55%;
+    right: 11px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+  }
+  #mypage .mainContents .karteSearch .selectform:after,
+  #mypage .mainContents .karteSearch .dateselect:after{
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  #mypage .mainContents .karteSearch .selectform select,
+  #mypage .mainContents .karteSearch .dateselect select{
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    padding: 0 11px;
+    font-size: 14px;
+    background: rgba(255,255,255,1);
+    display: inline-block;
+		border-radius: 5px;
+  }
+  #mypage .mainContents .karteSearch .dateselectTxt{
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    top: 10px;
+  }
+  #mypage .mainContents .karteSearch .btnarea{
+    padding-top: 15px;
+		width: 630px;
+    text-align: left;
+		margin-left: 190px;
+  }
+  #mypage .mainContents .karteSearch .btnarea input{
+    background-color: #6a3b93;
+		border: none;
+		border-radius: 20px;
+    color: #fff;
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 0;
+    cursor: pointer;
+  }
+  #mypage .mainContents .karteSearch .btnarea input:hover{
+    color: rgba(255,255,255,0.7);
+  }
+	/*タブ*/
+  #mypage .mainContents #mypagetab .tab_menu li{
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: none;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+  }
+  #mypage .mainContents #mypagetab .tab_menu li a{
+    font-size: 13px;
+    display: block;
+    padding: 8px 0;
+    color: #FFF;
+  }
+  #mypage .mainContents #mypagetab .tab_menu li:first-child.active{
+    border-left: 1px solid #ddd;
+  }
+  #mypage .mainContents #mypagetab .tab_menu li:first-child{
+    margin-right: 1%;
+  }
+  #mypage .mainContents #mypagetab .tab_menu li.active a{
+    color: #FFF;
+    padding-right: 1px;
+  }
+  #mypage .mainContents #mypagetab .tab_contents{
+    display: none;
+    overflow: hidden;
+    margin-top: -1px;
+		padding-bottom: 130px;
+  }
+  #mypage .mainContents #mypagetab .tab_contents.active{
+    display: block;
+  }
+	#mypage .mainContents .historyTable{
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #mypage .mainContents .historyTable tr{
+    border-bottom: 1px solid #eee;
+		align-items: center;
+    margin: 0 30px;
+		padding: 10px 0;
+  }
+  #mypage .mainContents .historyTable th{
+		font-size: 16px;
+    padding-bottom: 5px;
+  }
+	#mypage .mainContents .historyTable th:nth-child(2){
+    width: 30%;
+  }
+  #mypage .mainContents .historyTable th:nth-child(3){
+    width: 25%;
+  }
+  #mypage .mainContents .historyTable td{
+		font-size: 16px;
+  }
+	#mypage .mainContents .historyTable td:nth-child(2){
+    width: 30%;
+  }
+  #mypage .mainContents .historyTable td:nth-child(3){
+    width: 25%;
+  }
+  #mypage .mainContents .historyTable td span{
+		font-size: 26px;
+		margin-right: 5px;
+  }
+  #mypage .mainContents .historyTable input{
+    width: 60px;
+  }
+	#mypage .mainContents .tab2_inner{
+    padding: 30px;
+  }
+	#mypage .mainContents .karteItem li{
+		margin-right: 2%;
+		margin-bottom: 3%;
+		width: 23%;
+  }
+	#mypage .mainContents .karteItem li:nth-child(even){
+		margin-right: 2%;
+  }
+	#mypage .mainContents .karteItem li:nth-child(4n){
+		margin-right: 0;
+  }
+
+}
+
+/***ワードローブ***/
+#mypage .mainContents .karteWrap .wardrobeItem{
+	clear: both;
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+#mypage .mainContents .karteWrap .wardrobeItem input{
+    margin-top: 15px;
+    margin-right: 6px;
+    vertical-align: -1px;
+  }
+#mypage .mainContents .karteWrap .karteItem.wardrobe{
+  margin-top: 20px;
+  border-bottom: 2px solid #050505;
+  padding-bottom: 10px;
+}
+#mypage .mainContents .karteWrap .wardrobeItem .karteItem .itemCheck{
+  margin: 15px 0 4px;
+  font-size: 11px;
+	position: relative;
+}
+#mypage .mainContents .karteWrap .wardrobeItem .karteItem .itemCheck input{
+  margin-top: 0;
+}
+#mypage .mainContents .karteWrap .wardrobeItem .karteItem .itemChange{
+  font-size: 10px;
+  color: #050505;
+  margin-bottom: 5px;
+}
+#mypage .mainContents .karteWrap .btnarea{
+  width: 100%;
+  text-align: center;
+}
+#mypage .mainContents .karteWrap .btnarea input{
+  background-color: #6a3b93;
+	border-radius: 8vw;
+  color: #fff;
+  width: 200px;
+  height: 40px;
+  border: none;
+  font-size: 14px;
+  line-height: 0;
+  cursor: pointer;
+}
+#mypage .mainContents .karteWrap .wardrobeItem h3{
+	font-size: 16px;
+	padding-bottom: 30px;
+	position: relative;
+}
+#mypage .mainContents .karteWrap .wardrobeItem h3:after{
+	position: absolute;
+	right: 0;
+  bottom: 18px;
+  left: 0;
+  background: #050505;
+  border-radius: 0.5vw;
+  content: '';
+  margin: auto;
+  width: 15vw;
+  height: 0.5vw;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive h3{
+	font-size: 16px;
+	padding-bottom: 30px;
+	position: relative;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive h3:after{
+	position: absolute;
+	right: 0;
+  bottom: 18px;
+  left: 0;
+  background: #050505;
+  border-radius: 0.5vw;
+  content: '';
+  margin: auto;
+  width: 15vw;
+  height: 0.5vw;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dl{
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dt{
+  width: 100%;
+  /*margin-top: 20px;*/
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dd{
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  margin-left: 0;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dd.border{
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dd input[type="text"]{
+  width: 100%;
+  margin-bottom: 0;
+	border-radius: 5px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dd input.name_sei{
+  margin-bottom: 10px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .addressform input.postal{
+  width: 37%;
+  margin-bottom: 0;
+	border-radius: 5px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .addressform .zipbtn{
+  margin-bottom: 0;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .addressform2[type="text"]{
+  width: 100%;
+	border-radius: 5px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .addressform p{
+  float: left;
+  margin: 0 10px 0 0;
+  padding: 8px 0 0;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .contactnum input{
+  margin-bottom: 0;
+	border-radius: 5px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .contactnum p{
+  margin: 0 9px;
+  padding: 0;
+  vertical-align: middle;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .dateselect{
+	border-radius: 5px;
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive dl p{
+  clear: both;
+  font-size: 13px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+}
+#mypage .mainContents .karteWrap .wardrobeDelive .btnarea{
+  overflow: hidden;
+  margin: 20px 0;
+}
+#mypage .mainContents .karteWrap #form_1{
+	background: #FFF;
+  border-radius: 5px;
+  color: #050505;
+  margin: 30px 0;
+  padding: 5vw;
+}
+#mypage .mainContents .wardrobeItem .karteItem.wardrobe li {
+	position: relative;
+}
+#mypage .mainContents .wardrobeItem .chkAll{
+	position: relative;
+  padding: 0 0 5px 0;
+  border-bottom: 2px solid #eee;
+}
+#mypage .mainContents .wardrobeItem label input[type="checkbox"] {
+	margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+#mypage .mainContents .wardrobeItem label input[type="checkbox"] + span {
+	width: 17px;
+  height: 17px;
+  display: inline-block;
+	position: relative;
+	vertical-align: sub;
+	margin: 0 10px 0 0;
+}
+#mypage .mainContents .wardrobeItem .chkAll label input[type="checkbox"] + span {
+	vertical-align: text-bottom;
+}
+#mypage .mainContents .wardrobeItem label input[type="checkbox"] + span::before {
+	background: #FFF;
+	border: 1px #616161 solid;
+  /*border-color: #6a3b93;
+	border-radius: 5px;*/
+	position: absolute;
+  top: 0;
+  left: 0;
+	content: '';
+	width: 17px;
+  height: 17px;
+}
+#mypage .mainContents .wardrobeItem label input[type="checkbox"]:checked + span::before {
+	background-color: #6a3b93;
+}
+#mypage .mainContents .wardrobeItem label input[type="checkbox"]:checked + span::after {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+	position: absolute;
+	content: '';
+	z-index: 1;
+  border: 2px solid #fff;
+  border-width: 0 2px 2px 0;
+  top: 3px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+}
+@media (min-width: 992px) {
+  #mypage .mainContents .karteWrap .btnarea input:hover{
+    color: rgba(255,255,255,0.7);
+  }
+  #mypage .mainContents .karteWrap .wardrobeItem h3{
+		font-size: 18px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeItem h3:after{
+		bottom: -12px;
+    border-radius: 2px;
+    width: 72px;
+    height: 4px;
+    margin-bottom: 30px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeItem input{
+    margin-right: 10px;
+    vertical-align: 1px;
+  }
+  #mypage .mainContents .karteWrap .karteItem.wardrobe{
+    margin-top: 10px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeItem .karteItem .itemCheck{
+    margin: 10px 0 4px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeItem .karteItem .itemChange{
+    font-size: 10px;
+    color: #050505;
+  }
+  #mypage .mainContents .karteWrap .btnarea{
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+  }
+  #mypage .mainContents .karteWrap .btnarea input{
+    background-color: #6a3b93;
+		border-radius: 20px;
+    color: #fff;
+    width: 200px;
+    height: 40px;
+    border: none;
+    font-size: 14px;
+    line-height: 0;
+    cursor: pointer;
+  }
+  #mypage .mainContents .karteWrap .btnarea input:hover{
+    color: rgba(255,255,255,0.7);
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive h3{
+		font-size: 18px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive h3:after{
+		bottom: -12px;
+    border-radius: 2px;
+    width: 72px;
+    height: 4px;
+    margin-bottom: 30px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dt{
+    float: left;
+    width: 15%;
+		border-bottom: 1px solid #eee;
+    padding: 5px 5% 24px 0;
+    text-align: right;
+	}
+  #mypage .mainContents .karteWrap .wardrobeDelive dt.pb23{
+    padding-bottom: 23px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dt:first-child{
+    height: 216px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dd{
+    float: left;
+    width: 80%;
+    margin-bottom: 15px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dd.border.pb16{
+		padding-bottom: 16px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dd.border.pb21{
+		padding-bottom: 21px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dd input[type="text"]{
+    width: 100%;
+    margin-bottom: 0;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .addressform input.postal{
+    width: 150px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .addressform2[type="text"]{
+    width: 260px;
+    margin-left: 30px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .addressform p{
+    float: left;
+    margin: 0 20px 0 0;
+    padding: 8px 0 0;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .contactnum input{
+    margin-bottom: 0;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .contactnum p{
+    margin: 0 20px;
+    padding: 0;
+    vertical-align: middle;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .dateselect{
+    margin-bottom: 0;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive dl p{
+    clear: both;
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding-top: 30px;
+  }
+  #mypage .mainContents .karteWrap .wardrobeDelive .btnarea{
+    overflow: hidden;
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+  h5.messageSend{
+    font-weight: bold;
+    font-size: 14px;
+    margin: 30px 0 10px;
+  }
+  .postingForm.send{
+    margin-bottom: 30px;
+  }
+	#mypage .mainContents .karteWrap #form_1{
+    padding: 30px;
+  }
+  #mypage .mainContents .wardrobeItem label input[type="checkbox"] + span {
+    width: 17px;
+    height: 17px;
+		vertical-align: sub;
+		margin: 0 10px 0 -20px;
+  }
+  #mypage .mainContents .wardrobeItem label input[type="checkbox"] + span::before {
+    width: 17px;
+    height: 17px;
+  }
+	#mypage .mainContents .wardrobeItem .chkAll label input[type="checkbox"] + span {
+    margin: 0 10px 0 0;
+  }
+}
+
+/***ただいまのお預かり品***/
+@media (min-width: 992px) {
+	#mypage .mainContents.ordered h2 img {
+    top: 0;
+  }
+}
+
+/*==================================
+  ログイン
+==================================*/
+/***ログイン***/
+.login_top:before {
+	background: url(/mypage/img/mypage_bg.jpg) no-repeat top center/cover fixed;
+}
+.login_top .footer_sns {
+  display: block !important;
+}
+.login_top .loginWrap {
+	padding: 15vw 0 0;
+}
+.loginBox{
+	width:100%;
+	margin: 0 auto;
+	text-align:center;
+	margin-top: 30px;
+	margin-top: 15vw;
+	position: relative;
+}
+.loginBox h3{
+	font-size:6vw;
+	font-weight: normal;
+	margin-bottom: 5vw;
+	font-family: 'sawarabi';
+  -webkit-font-smoothing: antialiased;
+}
+.loginBox input{
+	width: 100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	padding: 3vw;
+	font-size: 3vw;
+	margin-bottom: 5vw;
+}
+.loginBox input[type="file"]{
+	border: none;
+	padding-left: 0;
+}
+.loginBox input::-webkit-input-placeholder{
+    color: #ccc;
+}
+.loginBox input:-ms-input-placeholder{
+    color: #ccc;
+}
+.loginBox input::-moz-placeholder{
+    color: #ccc;
+}
+.loginBox .btn{
+	color: #FFF;
+  background: #6a3b93;
+	border: none;
+  border-radius: 8vw;
+  display: inline-block;
+  font-size: 4vw;
+  padding: 2vw 10vw;
+	width: auto;
+	font-weight: bold;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+}
+.loginBox .btn:hover{
+	color: rgba(255,255,255,0.7);
+}
+.loginBox #btn{
+	margin-top: 20px;
+}
+.loginBox .passforget{
+	width: 100%;
+	margin: 0 auto;
+}
+.loginBox .passforget p{
+	text-align:center;
+	font-size:3vw;
+}
+.loginBox .passforget a{
+	text-decoration: underline;
+	color: #FFF;
+	text-align:left;
+}
+.loginBox .passforget a:hover{
+	text-decoration: none;
+}
+.loginBox p{
+	text-align:left;
+	font-size:3vw;
+	line-height: 2;
+	margin-bottom: 20px;
+}
+.loginBox p.tcntr{
+	margin-top: 30px;
+}
+.loginBox a{
+	text-decoration: underline;
+	color: #9a7339;
+}
+
+
+/***初期設定***/
+.loginBox h3.settingTtl{
+	margin-bottom: 30px;
+	line-height: 1.6;
+	font-size: 16px;
+}
+.loginBox dt{
+	text-align: left;
+	margin-bottom:5px;
+}
+.loginBox dd input{
+	margin-bottom: 20px;
+}
+.loginBox span.attention{
+	color:#999;
+}
+.loginBox span{
+	color:#a93c3c;
+}
+.loginBox .addressselect{
+	float:left;
+	border: 1px solid #ddd;
+	width:100%;
+	height:40px;
+	margin-bottom: 20px;
+	padding:0 11px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+}
+.loginBox .addressselect select{
+	border:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	width:100%;
+	height:100%;
+	font-size:110%;
+	background-color:#fff;
+}
+.loginBox .addressselect:before,
+.loginBox .addressselect:after{
+	content: '';
+	z-index: 1;
+	display: block;
+	width: 8px;
+	border-bottom: 1px solid #9a7339;
+	position: absolute;
+	top:60%;
+	right:11px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg)
+}
+.loginBox .addressselect:after{
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+.loginBox dd textarea{
+	max-width:100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	margin-bottom:20px;
+	padding:11px;
+	font-size:110%;
+}
+.loginBox dd textarea::-webkit-input-placeholder {
+    color: #ccc;
+}
+.loginBox dd textarea:-ms-input-placeholder {
+    color: #ccc;
+}
+.loginBox dd textarea::-moz-placeholder {
+    color: #ccc;
+}
+.loginBox dd textarea{
+	width: 100%;
+	height: 150px;
+}
+.loginBox .settingTxt{
+	text-align: center;
+	font-size: 12px;
+}
+@media (max-width: 991px) {
+  .login_top .loginWrap .bg_w {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .login_top .bg {
+    padding-top: 105px;
+  }
+  .login_top .loginWrap {
+    padding: 0;
+  }
+	.loginBox{
+    width:540px;
+    margin: 0 auto;
+    text-align:center;
+    margin-bottom: 80px;
+  }
+  .loginBox h3{
+    font-size:26px;
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+  .loginBox input{
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    padding: 11px;
+    font-size: 110%;
+    margin-bottom:20px;
+  }
+  .loginBox input[type="file"]{
+    border: none;
+    padding-left: 0;
+  }
+  .loginBox input::-webkit-input-placeholder{
+      color: #ccc;
+  }
+  .loginBox input:-ms-input-placeholder{
+      color: #ccc;
+  }
+  .loginBox input::-moz-placeholder{
+      color: #ccc;
+  }
+  .loginBox .btn{
+    border-radius: 22px;
+    font-size: 16px;
+    padding: 6px 41px;
+  }
+  .loginBox .passforget{
+    width: auto;
+    margin: 0 auto;
+		position: absolute;
+    bottom: 12px;
+    right: 0;
+  }
+  .loginBox .passforget p{
+    text-align:left;
+    font-size:12px;
+		margin-top:5px;
+  }
+  .loginBox .passforget a{
+    text-decoration: underline;
+    color: #FFF;
+    text-align:left;
+  }
+  .loginBox .passforget a:hover{
+    text-decoration: none;
+  }
+  .loginBox p{
+		font-size: 13px;
+    text-align:left;
+    line-height: 2;
+    margin-bottom: 20px;
+  }
+  .loginBox a{
+    text-decoration: underline;
+    color: #9a7339;
+  }
+  /***初期設定***/
+  .loginBox h3.settingTtl{
+    margin-bottom: 50px;
+    line-height: 1.6;
+  }
+  .loginBox dt{
+    text-align: left;
+    margin-bottom:10px;
+  }
+  .loginBox span.attention{
+    color:#999;
+  }
+  .loginBox span{
+    color:#a93c3c;
+  }
+  .loginBox .addressselect{
+    float:left;
+    border: 1px solid #ddd;
+    width:100%;
+    height:40px;
+    margin-bottom: 20px;
+    padding:0 11px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+  }
+  .loginBox .addressselect select{
+    border:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    width:100%;
+    height:100%;
+    font-size:110%;
+    background-color:#fff;
+  }
+  .loginBox .addressselect:before,
+  .loginBox .addressselect:after{
+    content: '';
+    z-index: 1;
+    display: block;
+    width: 8px;
+    border-bottom: 1px solid #9a7339;
+    position: absolute;
+    top:60%;
+    right:11px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+  }
+  .loginBox .addressselect:after{
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  .loginBox dd textarea{
+    max-width:100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    margin-bottom:20px;
+    padding:11px;
+    font-size:110%;
+  }
+  .loginBox dd textarea::-webkit-input-placeholder {
+      color: #ccc;
+  }
+  .loginBox dd textarea:-ms-input-placeholder {
+      color: #ccc;
+  }
+  .loginBox dd textarea::-moz-placeholder {
+      color: #ccc;
+  }
+  .loginBox dd textarea{
+    width: 100%;
+    height: 150px;
+  }
+  .loginBox .settingTxt{
+    text-align: center;
+    font-size:12px;
+  }
+  .login_top #member {
+    padding-bottom: 130px !important;
+  }
+}
+
+/*==================================
+  登録情報の変更 /registration/
+==================================*/
+/***登録情報の変更***/
+
+.registration_top:before {
+	background: url(/mypage/img/mypage_bg.jpg) no-repeat top center/cover fixed;
+}
+.registration_top .footer_sns {
+  display: block !important;
+}
+.registration_top .registrationWrap {
+	padding: 15vw 0 0;
+}
+.registrationBox{
+	min-height:600px;
+	width:100%;
+	margin: 0 auto;
+	text-align:center;
+	margin-top: 30px;
+	margin-top: 15vw;
+	position: relative;
+}
+.registrationBox h3{
+	font-size:6vw;
+	font-weight: normal;
+	margin-bottom: 5vw;
+	font-family: 'sawarabi';
+  -webkit-font-smoothing: antialiased;
+}
+.registrationBox input{
+	width: 100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	padding: 11px;
+	font-size: 110%;
+	margin-bottom:20px;
+}
+.registrationBox .contactform dt {
+	text-align: left;
+	margin-bottom: 14px;
+}
+.registrationBox .contactform dd {
+	margin: 0;
+	text-align: left;
+}
+.registrationBox .contactform .contactnum input {
+	width:29%;
+}
+.registrationBox .contactform #zip {
+	width:35%;
+	margin-right: 3%;
+}
+.registrationBox .contactform #zipbtn {
+	width:100%;
+	color: #FFF;
+	background: #6a3b93;
+	border-radius: 8vw;
+	display: inline-block;
+	font-size: 5vw;
+	padding: 3vw 0;
+	position: relative;
+	text-align: center;
+	border:none;
+	font-weight: bold;
+}
+.registrationBox .contactform #pref {
+	width: 100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	padding: 11px;
+	font-size: 110%;
+	margin-bottom:20px;
+}
+.registrationBox .btnarea input,
+.registrationBox .btnarea2 input {
+	width:100%;
+	color: #FFF;
+	background: #6a3b93;
+	border-radius: 8vw;
+	display: inline-block;
+	font-size: 5vw;
+	padding: 3vw 0;
+	position: relative;
+	text-align: center;
+	border:none;
+ font-weight: bold;
+}
+.registrationBox .btnarea2 .cancelbtn {
+	background: #888;
+}
+.registrationBox .contactform.conf {
+	clear:both;
+	overflow:hidden;
+	border-bottom: 1px solid #ddd;
+}
+.registrationBox .contactform.conf:last-child {
+	border-bottom: none;
+}
+.registrationBox .contactform.conf dl {
+	clear:both;
+	overflow:hidden;
+}
+.registrationBox .contactform.conf dt {
+	width:35vw;
+	float:left;
+	padding:9px 0;
+}
+.registrationBox .contactform.conf dt {
+	padding:0;
+}
+.registrationBox .contactform.conf dd {
+	width:52vw;
+	float:right;
+	text-align: left;
+}
+.registrationBox .contactform.conf .btnarea2 {
+	clear:both;
+	overflow:hidden;
+	padding-top: 30px;
+	float: none;
+	width: 100%;
+}
+.registrationBox a {
+ color: #FFF;
+ text-decoration: underline;
+}
+.registrationBox.comp p {
+	text-align: left;
+}
+.registrationBox .privacy2 p {
+	text-align: left;
+}
+@media (max-width: 991px) {
+	.registration_top .registrationWrap .bg_w {
+    margin-left: 0;
+  }
+	.registrationBox .contactform #zipbtn {
+		font-size: 10px;
+		padding: 6px 0;
+    width: 52%;
+	}
+}
+
+@media (min-width: 992px) {
+  .registration_top .bg {
+    padding-top: 105px;
+  }
+  .registration_top .registrationWrap {
+    padding: 0;
+  }
+	.registrationBox{
+    width:700px;
+    margin: 60px auto;
+    text-align:center;
+    margin-bottom: 80px;
+  }
+	.registrationBox h3{
+    font-size:26px;
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+	.registrationBox form {
+		margin: 60px 0;
+	}
+	.registrationBox .contactform {
+		clear:both;
+		overflow:hidden;
+	}
+	.registrationBox .contactform.conf {
+		border-bottom: none;
+	}
+	.registrationBox .contactform dl,
+	.registrationBox .contactform.conf dl {
+		clear:both;
+		overflow:hidden;
+	}
+	.registrationBox .contactform dt,
+	.registrationBox .contactform.conf dt {
+		width:180px;
+		float:left;
+		padding:9px 0;
+		border-top: 1px solid #ddd;
+		font-size: 14px;
+	}
+	.registrationBox .contactform.conf .btnarea2 {
+		border-top: none;
+  }
+	.registrationBox .contactform.conf dt {
+		margin-bottom: 0;
+		padding-top: 14px;
+	}
+	.registrationBox .contactform dd,
+	.registrationBox .contactform.conf dd {
+		width:480px;
+		float:right;
+		text-align: left;
+		border-top: 1px solid #ddd;
+		padding-top: 14px;
+		font-size: 14px;
+	}
+  .registrationBox .contactform dd .ipt_50 {
+		width:48%;
+		margin-right: 4%;
+	}
+	.registrationBox .contactform dd .ipt_50:last-child {
+		margin-right: 0;
+	}
+	.registrationBox .contactform .contactnum input {
+		width:31%;
+	}
+	.registrationBox .contactform #zip {
+		width:20%;
+		margin-right: 3%;
+	}
+	.registrationBox .contactform #zipbtn {
+		border-radius: 22px;
+		font-size: 14px;
+	  padding: 6px 0;
+	  width: 40%;
+	}
+	.registrationBox .contactform #pref {
+		width: 30%;
+	}
+	.registrationBox .contactform .btnarea,
+	.registrationBox .contactform .btnarea2 {
+		width: 100%;
+		text-align:center;
+	}
+
+	.registrationBox .btnarea input,
+	.registrationBox .btnarea2 input {
+		border-radius: 22px;
+		font-size: 16px;
+	  padding: 6px 7%;
+	  width: 40%;
+		margin: 20px 10px;
+	}
+}
+
+/*==================================
+マイページナビ追加
+==================================*/
+#mypage_nav {
+border-bottom: 1px solid #FFF;
+padding: 30px 0;
+}
+#counseling #mypage_nav {
+border-bottom: 1px solid #050505;
+}
+#mypage_nav ul {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+}
+#mypage_nav ul li {
+position: relative;
+width: 50%;
+}
+#mypage_nav ul li a.on {
+background: #e8dff4;
+}
+#mypage_nav ul li.linkoff a {
+pointer-events: none;
+}
+#mypage_nav ul li.linkoff a:before{
+background: rgba(0,0,0,0.7);
+z-index: 1;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+margin: auto;
+content: "";
+width: 100%;
+}
+#mypage_nav ul li.linkoff a:after{
+color: #FFF;
+font-size: 5vw;
+z-index: 2;
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+margin: auto;
+content: "工事中";
+height: 5vw;
+line-height: 5vw;
+text-align: center;
+}
+#mypage_nav ul li a {
+background: #FFF;
+border-right: 1px solid #050505;
+border-bottom: 1px solid #050505;
+color: #050505;
+display: flex;
+align-items: center;
+font-size: 3vw;
+line-height: 1.4;
+padding: 1.5vw 0 1.5vw 2vw;
+}
+#mypage_nav ul li a:hover {
+color: rgba(5,5,5,0.7);
+}
+#mypage_nav ul li:nth-child(even) a {
+border-right: none;
+}
+#mypage_nav ul li a img {
+margin-right: 1vw;
+height: 7vh;
+}
+#mypage_nav ul li:first-child a img {
+padding-top: 1vh;
+height: 6vh;
+}
+#mypage_nav ul li:last-child a span {
+text-indent: 0.5em;
+}
+@media (min-width: 992px) {
+#mypage_nav {
+margin-bottom: 30px;
+}
+#mypage_nav ul li {
+width: auto;
+flex: 1;
+}
+#mypage_nav ul li a {
+border-bottom: none;
+font-size: 12px;
+line-height: 1.2;
+padding: 7px 0 7px 10px;
+}
+#mypage_nav ul li.linkoff a:after{
+font-size: 18px;
+height: 28px;
+line-height: 28px;
+}
+#mypage_nav ul li:nth-child(even) a {
+border-right: 1px solid #050505;
+}
+#mypage_nav ul li:last-child a {
+border-right: none;
+}
+#mypage_nav ul li a img {
+margin-right: 5px;
+height: 42px;
+}
+#mypage_nav ul li:first-child a img {
+padding-top: 4px;
+height: 38px;
+}
+}
+/*==================================
+member_beginner
+==================================*/
+#mypage #member_beginner {
+padding-top: 50px;
+}
+#mypage #member_beginner .member_beginnerWrap {
+background: #FFF;
+border-radius: 5px;
+color: #050505;
+padding: 15vw 5vw;
+position: relative;
+}
+#mypage #member_beginner .member_beginnerWrap .member_beginner_parts01 {
+position: absolute;
+top: 2vw;
+left: 2vw;
+width: 25vw;
+}
+#mypage #member_beginner .member_beginnerWrap .member_beginner_parts02 {
+position: absolute;
+top: 2vw;
+right: 2vw;
+width: 25vw;
+}
+#mypage #member_beginner .member_beginnerWrap .member_beginner_parts03 {
+position: absolute;
+bottom: 2vw;
+left: 2vw;
+-webkit-transform: rotate(180deg);
+transform: rotate(180deg);
+width: 25vw;
+}
+#mypage #member_beginner .member_beginnerWrap .member_beginner_parts04 {
+position: absolute;
+bottom: 2vw;
+right: 2vw;
+-webkit-transform: rotate(180deg);
+transform: rotate(180deg);
+width: 25vw;
+}
+#mypage #member_beginner .member_beginnerWrap h2 {
+font-size: 6vw;
+font-family: 'sawarabi';
+-webkit-font-smoothing: antialiased;
+font-weight: normal;
+position: relative;
+z-index: 5;
+}
+#mypage #member_beginner .member_beginnerWrap ul {
+position: relative;
+z-index: 5;
+}
+#mypage #member_beginner .member_beginnerWrap ul li {
+border-bottom: 1px solid #b5b5b5;
+padding: 4vw 0;
+text-align: justify;
+text-justify: inter-ideograph;
+}
+#mypage #member_beginner .member_beginnerWrap ul li.noline {
+border-bottom: none;
+}
+
+#mypage #member_beginner .member_beginnerWrap ul li:last-child {
+border-bottom: none;
+}
+#mypage #member_beginner .member_beginnerWrap ul li h3 {
+font-size: 4vw;
+}
+#mypage #member_beginner .member_beginnerWrap ul li p span {
+	font-weight: bold;
+}
+#mypage #member_beginner .member_beginnerWrap ul li h3 span {
+background: #6a3b93;
+border-radius: 50%;
+color: #FFF;
+display: inline-block;
+font-size: 3vw;
+line-height: 8vw;
+margin: 0 2vw 2vw 0;
+text-align: center;
+width: 8vw;
+height: 8vw;
+font-weight: normal;
+}
+#mypage #member_beginner .member_beginnerWrap ul li p {
+font-size: 3.5vw;
+font-weight: normal;
+line-height: 1.6;
+}
+#mypage #member_beginner .member_beginnerWrap ul li p span.borderBtm {
+border-bottom: 1px solid #050505;
+}
+#mypage #member_beginner .member_beginnerWrap ul li p span.beginnerLink {
+display: inline-block;
+margin: 10px 0;
+padding-left: 1em;
+text-indent: -1em;
+}
+#mypage #member_beginner .member_beginnerWrap ul li p span.beginnerLink a {
+color: #6a3b93;
+text-decoration: underline;
+}
+#mypage #member_beginner .member_beginnerWrap ul li p span.beginnerLink a:hover {
+text-decoration: none;
+}
+#mypage #member_beginner .member_beginnerWrap ul li p span.beginnerNote {
+display: inline-block;
+font-size: 2vw;
+padding-left: 1em;
+text-indent: -1em;
+}
+@media (max-width: 991px) {
+	#mypage #member_beginner .member_beginnerWrap ul li h3 {
+		line-height: 1.5;
+		margin-bottom: 1em;
+    display: flex;
+    align-items: baseline;
+	}
+
+}
+@media (min-width: 992px) {
+#mypage #member_beginner .member_beginnerWrap {
+padding: 50px 30px 80px;
+}
+#mypage #member_beginner .member_beginnerWrap > div {
+max-width: 810px;
+margin: auto;
+}
+#mypage #member_beginner .member_beginnerWrap .member_beginner_parts01 {
+top: 10px;
+left: 10px;
+width: 143px;
+}
+#mypage #member_beginner .member_beginnerWrap .member_beginner_parts02 {
+top: 10px;
+right: 10px;
+width: 143px;
+}
+#mypage #member_beginner .member_beginnerWrap .member_beginner_parts03 {
+bottom: 10px;
+left: 10px;
+width: 143px;
+}
+#mypage #member_beginner .member_beginnerWrap .member_beginner_parts04 {
+bottom: 10px;
+right: 10px;
+width: 143px;
+}
+#mypage #member_beginner .member_beginnerWrap h2 {
+font-size: 24px;
+}
+#mypage #member_beginner .member_beginnerWrap ul {
+margin-top: 30px;
+}
+#mypage #member_beginner .member_beginnerWrap ul li {
+padding: 20px 0;
+}
+#mypage #member_beginner .member_beginnerWrap ul li h3 {
+font-size: 18px;
+font-weight: normal;
+}
+#mypage #member_beginner .member_beginnerWrap ul li h3 span {
+font-size: 16px;
+line-height: 30px;
+margin: 0 10px 10px 0;
+width: 30px;
+height: 30px;
+}
+#mypage #member_beginner .member_beginnerWrap ul li p {
+font-size: 14px;
+}
+#mypage #member_beginner .member_beginnerWrap ul li p span.beginnerNote {
+font-size: 12px;
+}
+}
+
+/* histry */
+#mypage #histoyContents {
+	margin-top: 10px;
+	padding: 0 0 45vw;
+}
+#mypage #histoyContents .container .lBox ul li:first-child {
+	border-top: 5px solid #fff;
+	display: block;
+}
+#mypage #histoyContents .container .lBox ul li.info01 span.label {
+	line-height:1.6;
+}
+#mypage #histoyContents .container .lBox ul li {
+	border-bottom: 1px solid #cccccc;
+	display: flex;
+  align-items: center;
+	font-size: 4vw;
+	padding: 5px 0;
+}
+#mypage #histoyContents .container .lBox ul li.info02 .label_box,
+#mypage #histoyContents .container .lBox ul li.info03 .label_box,
+#mypage #histoyContents .container .lBox ul li.info05 .label_box,
+#mypage #histoyContents .container .lBox ul li.info06 .label_box {
+	display: flex;
+	justify-content: space-between;
+	margin-right: 10px;
+  width: 18vw;
+}
+#mypage #histoyContents .container .lBox ul li span.name {
+	margin: 4px 0 0 10px;
+}
+#mypage #histoyContents .container .lBox ul li.info07 {
+	display: block;
+  line-height: 1.6;
+}
+#mypage #histoyContents .container .lBox ul li:last-child {
+	border-bottom: 2px solid #fff;
+}
+#mypage #histoyContents .container .rBox {
+ color:#000;
+ margin-top: 20px;
+ padding: 12vw 4vw 10vw;
+ position: relative;
+ background-color: #fff;
+ border-radius: 1vw;
+}
+#mypage #histoyContents .container .rBox ul.list {
+	margin: auto;
+  width: 93.75%;
+}
+#mypage #histoyContents .container .rBox ul li.info01 {
+	text-align:center;
+}
+#mypage #histoyContents .container .rBox ul li.info01 img {
+	width:25vw;
+}
+#mypage #histoyContents .container .rBox ul li h3 {
+	font-size:4vw;
+}
+#mypage #histoyContents .container .rBox ul li.info02 .karteImages {
+background-color:#eee;
+text-align:center;
+line-height:0;
+margin-bottom: 40px;
+}
+#mypage #histoyContents .container .rBox ul li.info02 .karteImages img {
+width:360px;
+}
+#mypage #histoyContents .container .rBox ul li.info02 .status_box .status_box_inner .status_img {
+	display:flex;
+}
+#mypage #histoyContents .container .rBox ul li.info02 .status_box .status_box_inner .status_img > div:first-child {
+	margin-right:4%;
+}
+#mypage #histoyContents .container .rBox ul li h4 {
+	font-size:12px;
+}
+#mypage #histoyContents .container .rBox ul li.info02 .status_box .status_box_inner .status_img .status_img_figure {
+	position:relative;
+}
+#mypage #histoyContents .container .rBox ul li.info02 ul.status_guide {
+	margin-top:3vw;
+	width:100%;
+}
+#mypage #histoyContents .container .rBox ul li.info02 ul.status_guide li {
+	display: inline-block;
+	font-size: 3vw;
+	margin-right: 4vw;
+	-webkit-text-stroke: 0.03em #050505;
+}
+#mypage #histoyContents .container .rBox ul li.bordr_btm h3 {
+	border-bottom: 1px solid #cccccc;
+	margin: 20px 0 5px;
+}
+#mypage #histoyContents .container .rBox ul li ul.list_sub {
+	font-size: 3vw;
+  width: 100%;
+}
+#mypage #histoyContents .container .rBox ul li.info02 ul.status_guide li img {
+	width: 4vw;
+	height: 4vw;
+	vertical-align: sub;
+}
+#mypage #histoyContents .container .rBox ul li ul.list_sub li {
+	list-style-type: disc;
+  margin-left: 5vw;
+}
+#mypage #histoyContents .container .rBox ul li.bordr_btm p {
+	font-size: 3vw;
+}
+#mypage #histoyContents .container .lBox .info_price {
+  margin-top: 60px;
+}
+#mypage #histoyContents .container .lBox .info_price h3 {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 5px;
+}
+
+#mypage #histoyContents .container .lBox .info_price p {
+  font-size: 3vw;
+  line-height: 1.5;
+  margin-top: 10px;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+#mypage #histoyContents .container .lBox .info_price .menuBox {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 3vw;
+}
+
+#mypage #histoyContents .container .lBox .info_price .menuBox.bordr_btm {
+  border-bottom: 1px dashed #b2b2b2;
+}
+
+#mypage #histoyContents .container .lBox .info_price .menuBox>div {
+  padding: 5px 0;
+}
+
+#mypage #histoyContents .container .lBox .info_price .menuBox .name {
+  width: 72%;
+}
+
+#mypage #histoyContents .container .lBox .info_price .menuBox .price {
+  text-align: right;
+  width: 28%;
+}
+
+#mypage #histoyContents .container .lBox .info_price .menuBox .price span {
+  margin-right: 5px;
+}
+#mypage #histoyContents .container .lBox .info_price .menuBox .name .status {
+font-size: 10px;
+line-height: 1.0;
+padding-bottom:2px;
+}
+#mypage #histoyContents .container .lBox .info_price .total {
+  border-top: 2px solid #050505;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 3vw;
+  padding-top: 5px;
+}
+
+#mypage #histoyContents .container .lBox .info_price .total span {
+  font-size: 4vw;
+  margin: 0 5px 0 15px;
+}
+
+#mypage #histoyContents .container .lBox .info_price .total .name {
+  line-height: 8vw;
+  width: 72%;
+}
+
+#mypage #histoyContents .container .lBox .info_price .total .price {
+  text-align: right;
+  width: 28%;
+}
+#mypage #histoyContents .att {
+	font-size: 10px;
+	margin-top: 40px;
+}
+#mypage #histoyContents .lBox .btn {
+	/*text-align:center;*/
+	margin-bottom: 20px;
+}
+#mypage #histoyContents .lBox .btn a {
+	color: #fff;
+	border-style: solid;
+  border-radius: 8vw;
+	border-color: #fff;
+	border-width: 1px;
+	display: inline-block;
+	font-size: 4vw;
+	padding: 3vw 6vw;
+}
+#mypage #histoyContents .lBox .postingForm {
+	margin-top: 3vw;
+	background-color: #fff;
+	border-radius: 5px;
+	padding:4vw;
+}
+#mypage #histoyContents .lBox .postingForm .postingComments {
+	color:#000;
+	font-size:10px;
+}
+#mypage #histoyContents .lBox .postingForm textarea {
+	width:90%;
+	padding:10px;
+}
+@media (max-width: 991px) {
+	#mypage #histoyContents .lBox .postingForm textarea {
+		width:92%;
+	}
+	#mypage #histoyContents .lBox .postingForm .postingComments {
+		margin-bottom:3vw;
+	}
+}
+#mypage #histoyContents button {
+	background-color: #6a3b93;
+	color: #fff;
+	width: 200px;
+	height: 40px;
+	border: none;
+	font-size: 14px;
+	line-height: 0;
+	cursor: pointer;
+	border-radius: 8vw;
+}
+#mypage #histoyContents .karteSize {
+	position: relative;
+}
+#mypage #histoyContents .karteSize .karteSizeImg {
+	text-align: center;
+	font-size: 8px;
+}
+#mypage #histoyContents .karteSize .karteSizeImg img {
+	vertical-align:middle;
+}
+#mypage #histoyContents .karteSize span {
+	position: absolute;
+	width: 4vw;
+	text-align: center;
+}
+#mypage #histoyContents .karteSize .karteSize1{top: 2.8vw;left: 18vw;}/*283*/
+#mypage #histoyContents .karteSize .karteSize2{top: 2.72vw;left: 30vw;}
+#mypage #histoyContents .karteSize .karteSize3{top: 9.54vw;left: 33.65vw;}
+#mypage #histoyContents .karteSize .karteSize4{top: 11.26vw;left: 18vw;}/**/
+#mypage #histoyContents .karteSize .karteSize5{top: 15.33vw;left: 18vw;}/**/
+#mypage #histoyContents .karteSize .karteSize6{top: 21.28vw;left: 18vw;}/**/
+#mypage #histoyContents .karteSize .karteSize7{top: 15.65vw;left: 0.78vw;}/**/
+#mypage #histoyContents .karteSize .karteSize8{top: 22.22vw;left: 6.41vw;}/**/
+#mypage #histoyContents .karteSize .karteSize9{top: 30.52vw;left: 18vw;}/**/
+#mypage #histoyContents .karteSize .karteSize10{top: 23.47vw;left: 34.12vw;}/**/
+#mypage #histoyContents .karteSize .karteSize11{top: 31.3vw;left: 34.12vw;}/**/
+#mypage #histoyContents .karteSize .karteSize12{top: 39.44vw;left: 18vw;}/**/
+#mypage #histoyContents .karteSize .karteSize13{top: 42.57vw;left: 11.42vw;}
+#mypage #histoyContents .karteSize .karteSize14{top: 18.31vw;left: 7.51vw;}
+#mypage #histoyContents .karteSize .karteSize15{top: 0.62vw;left: 56.19vw;}/**/
+#mypage #histoyContents .karteSize .karteSize16{top: 0.62vw;left: 66.36vw;}
+#mypage #histoyContents .karteSize .karteSize17{top: 5.63vw;left: 56.19vw;}/**/
+#mypage #histoyContents .karteSize .karteSize18{top: 11.89vw;left: 56.19vw;}/**/
+#mypage #histoyContents .karteSize .karteSize19{top: 15.49vw;left: 56.19vw;}/**/
+#mypage #histoyContents .karteSize .karteSize20{top: 21.44vw;left: 56.19vw;}/**/
+#mypage #histoyContents .karteSize .karteSize21{top: 16.9vw;left: 72.15vw;}
+#mypage #histoyContents .karteSize .karteSize22{top: 25.98vw;left: 43.35vw;}
+#mypage #histoyContents .karteSize .karteSize23{top: 30vw;left:69.8vw;}
+#mypage #histoyContents .karteSize .karteSize24{top: 32vw;left: 56.19vw;}/**/
+#mypage #histoyContents .karteSize .karteSize25{top: 38.34vw;left: 56.03vw;}
+#mypage #histoyContents .karteSize .karteSize26{top: 43.51vw;left: 59.94vw;}
+#mypage #histoyContents .karteSize .karteSize27{top: 26.6vw;left: 56.19vw;}/**/
+#mypage #histoyContents .karteSize .karteSize28{top: 29.42vw;left: 59.79vw;}
+@media (min-width: 992px) {
+	#mypage #histoyContents button {
+		margin-top: 5px;
+		background-color: #6a3b93;
+		border: none;
+		border-radius: 20px;
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 0;
+    cursor: pointer;
+	}
+	#mypage #histoyContents .lBox .postingForm {
+		margin-top: 40px;
+		padding:10px;
+	}
+  #mypage #histoyContents {
+    padding: 0 0 150px;
+	}
+	#mypage #histoyContents .container .lBox {
+		float: left;
+    width: 26.2%;
+	}
+	#mypage #histoyContents .container .lBox ul li {
+		font-size: 16px;
+	}
+	#mypage #histoyContents .container .lBox ul li span {
+		font-size: 14px;
+	}
+	#mypage #histoyContents .container .lBox ul li span.label {
+    font-size: 12px;
+  }
+	#mypage #histoyContents .container .lBox ul li.info02 .label_box,
+	#mypage #histoyContents .container .lBox ul li.info03 .label_box,
+	#mypage #histoyContents .container .lBox ul li.info05 .label_box,
+	#mypage #histoyContents .container .lBox ul li.info06 .label_box {
+		width:75px;
+	}
+	#mypage #histoyContents .container .rBox {
+		float: right;
+		margin-top: 0;
+    padding: 3% 3% 5%;
+    width: 62.4%;
+		border-radius: 5px;
+	}
+	#mypage #histoyContents .container .rBox ul.list {
+		height: auto;
+    overflow-x: visible;
+    overflow-y: visible;
+	}
+	#mypage #histoyContents .container .rBox ul li.info01 img {
+		width: auto;
+	}
+	#mypage #histoyContents .container .rBox ul li.info02 .status_box {
+		display:flex;
+	}
+	#mypage #histoyContents .container .rBox ul li.info02 .status_box .status_box_inner:first-child {
+		margin-right:4%;
+	}
+	#mypage #histoyContentsl .container .rBox ul li h3 {
+		font-size: 14px;
+		line-height: 1.5;
+	}
+	#mypage #histoyContentsl .container .rBox ul li h4 {
+		font-size:12px;
+	}
+	#mypage #histoyContentsl .container .rBox ul li.info02 ul.status_guide {
+		margin:0;
+	}
+	#mypage #histoyContentsl .container .rBox ul li.info02 ul.status_guide li {
+		font-size:10px;
+		margin-right:10px;
+	}
+	#mypage #histoyContentsl .container .rBox ul li h3 {
+		font-size: 14px;
+		line-height: 1.5;
+	}
+	#mypage #histoyContentsl .container .rBox ul li ul.list_sub {
+		font-size:12px;
+	}
+	#mypage #histoyContents .container:after {
+		display: block;
+	  content: "";
+	  clear: both;
+	}
+	#mypage #histoyContents .container .rBox ul li h3 {
+		font-size:14px;
+		line-height:1.5;
+	}
+	#mypage #histoyContents .container .rBox ul li.info02 ul.status_guide li img {
+		width: 16px;
+    height: 14px;
+	}
+	#mypage #histoyContents .container .rBox ul li.info02 ul.status_guide li {
+		font-size: 10px;
+    margin-right: 10px;
+	}
+	#mypage #histoyContents .container .rBox ul li ul.list_sub li {
+		margin-left:15px;
+	}
+	#mypage #histoyContents .container .rBox ul li ul.list_sub {
+		font-size: 12px;
+	}
+	#mypage #histoyContents .container .rBox ul li.bordr_btm p {
+		font-size: 12px;
+	}
+	#mypage #histoyContents .karteSize {
+		height: 320px;
+		position: relative;
+	}
+	#mypage #histoyContents .karteSize .karteSizeImg {
+		text-align: center;
+	  font-size: 12px;
+		width:500px;
+	}
+	#mypage #histoyContents .karteSize .karteSizeImg img {
+		vertical-align:middle;
+	}
+	#mypage #histoyContents .karteSize span {
+		position: absolute;
+		width: 30px;
+		text-align: center;
+	}
+	#mypage #histoyContents .karteSize .karteSize1{top: 18px;left: 115px;}/*283*/
+	#mypage #histoyContents .karteSize .karteSize2{top: 11px;left: 192px;}
+	#mypage #histoyContents .karteSize .karteSize3{top: 61px;left: 215px;}
+	#mypage #histoyContents .karteSize .karteSize4{top: 72px;left: 115px;}/**/
+	#mypage #histoyContents .karteSize .karteSize5{top: 98px;left: 115px;}/**/
+	#mypage #histoyContents .karteSize .karteSize6{top: 136px;left: 115px;}/**/
+	#mypage #histoyContents .karteSize .karteSize7{top: 100px;left: 5px;}/**/
+	#mypage #histoyContents .karteSize .karteSize8{top: 142px;left: 41px;}/**/
+	#mypage #histoyContents .karteSize .karteSize9{top: 195px;left: 115px;}/**/
+	#mypage #histoyContents .karteSize .karteSize10{top: 150px;left: 218px;}/**/
+	#mypage #histoyContents .karteSize .karteSize11{top: 200px;left: 218px;}/**/
+	#mypage #histoyContents .karteSize .karteSize12{top: 252px;left: 115px;}/**/
+	#mypage #histoyContents .karteSize .karteSize13{top: 272px;left: 73px;}
+	#mypage #histoyContents .karteSize .karteSize14{top: 117px;left: 48px;}
+	#mypage #histoyContents .karteSize .karteSize15{top: 4px;left: 359px;}/**/
+	#mypage #histoyContents .karteSize .karteSize16{top: 4px;left: 424px;}
+	#mypage #histoyContents .karteSize .karteSize17{top: 36px;left: 359px;}/**/
+	#mypage #histoyContents .karteSize .karteSize18{top: 76px;left: 359px;}/**/
+	#mypage #histoyContents .karteSize .karteSize19{top: 99px;left: 359px;}/**/
+	#mypage #histoyContents .karteSize .karteSize20{top: 137px;left: 359px;}/**/
+	#mypage #histoyContents .karteSize .karteSize21{top: 108px;left: 461px;}
+	#mypage #histoyContents .karteSize .karteSize22{top: 166px;left: 277px;}
+	#mypage #histoyContents .karteSize .karteSize23{top: 192px;left: 446px;}
+	#mypage #histoyContents .karteSize .karteSize24{top: 205px;left: 359px;}/**/
+	#mypage #histoyContents .karteSize .karteSize25{top: 245px;left: 358px;}
+	#mypage #histoyContents .karteSize .karteSize26{top: 278px;left: 383px;}
+	#mypage #histoyContents .karteSize .karteSize27{top: 170px;left: 359px;}/**/
+	#mypage #histoyContents .karteSize .karteSize28{top: 188px;left: 382px;}
+	#mypage #histoyContents .att {
+		font-size: 12px;
+		margin-top: 40px;
+	}
+	#mypage #histoyContents .container .lBox .info_price p {
+	font-size: 11px;
+}
+
+#mypage #histoyContents .container .lBox .info_price .menuBox {
+	font-size: 14px;
+	flex-wrap: nowrap;
+}
+
+#mypage #histoyContents .container .lBox .info_price .menuBox .name {
+	line-height: 32px;
+	width: 70%;
+}
+
+#mypage #histoyContents .container .lBox .info_price .menuBox .price {
+	font-size: 12px;
+	width: 30%;
+}
+
+#mypage #histoyContents .container .lBox .info_price .menuBox .price span {
+	font-size: 16px;
+}
+
+#mypage #histoyContents .container .lBox .info_price .total {
+	font-size: 14px;
+}
+
+#mypage #histoyContents .container .lBox .info_price .total span {
+	font-size: 16px;
+}
+
+#mypage #histoyContents .container .lBox .info_price .total .name {
+	line-height: 32px;
+	width: 70%;
+}
+
+#mypage #histoyContents .container .lBox .info_price .total .price {
+	font-size: 12px;
+	width: 30%;
+}
+#mypage #histoyContents .lBox .btn a {
+	border-radius: 22px;
+	 font-size: 16px;
+	 padding: 6px 32px;
+}
+}
+
+@media (min-width: 768px) {
+
+#mypage.postingPagenavi {
+	margin-top: 30px;
+}
+
+#mypage .postingPagenavi ul {
+	text-align: center;
+}
+
+#mypage .postingPagenavi li {
+	display: inline-block;
+	margin: 3px;
+}
+
+#mypage .postingPagenavi li a,
+#mypage .postingPagenavi li span {
+	font-size: 11px;
+	line-height: 100%;
+	padding: 13px 15px;
+	background: #bbb;
+	display: block;
+	color: #fff;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+#mypage .postingPagenavi li span.dots {
+	background: #fff;
+	color: #333;
+	padding: 0 10px;
+}
+
+#mypage .postingPagenavi li span.current {
+	background: #6a3b93;
+	color: #fff;
+}
+
+#mypage .postingPagenavi li a:hover {
+	background: #999;
+}
+}
+
+#mypage .mainContents #mypagetab.historyChart {
+  background: #433e51;
+  padding: 1vw 0 20vw;
+}
+@media (min-width: 992px){
+  #mypage .mainContents #mypagetab.historyChart {
+    background: none;
+    padding: 0 0 130px;
+  }
+}
+#mypage .mainContents #mypagetab.historyChart .karteItem a img {
+width: 114px;
+}
+
+/*検索 アコーディオン*/
+#mypage .mainContents .karteSearch {
+	position: relative;
+}
+#mypage .mainContents .karteSearch h3 {
+	font-size: 5vw;
+}
+#mypage .mainContents .karteSearch dl {
+	display: none;
+}
+#mypage .mainContents .karteSearch .accordionBtn {
+	background: #6a3b93;
+	border-radius: 2.5vh;
+	color: #fff;
+	cursor: pointer;
+  font-size: 3vw;
+	line-height: 5vh;
+	position: absolute;
+  top: 5vw;
+  right: 5vw;
+	width: 14vw;
+  height: 5vh;
+	padding-left: 12vw;
+}
+#mypage .mainContents .karteSearch .accordionBtn:hover {
+	color: rgba(255,255,255,0.7);
+}
+#mypage .mainContents .karteSearch .accordionBtn .accordionTxt {
+	margin: 0;
+	border-bottom: none;
+	background: none;
+}
+#mypage .mainContents .karteSearch .accordionBtn .accordionIcon {
+	width: 7vw;
+  height: 7vw;
+  position: absolute;
+  top: 0;
+	bottom: 0;
+  left: 4vw;
+	margin: auto;
+}
+#mypage .mainContents .karteSearch .accordionBtn .accordionIcon span {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+  left: 6px;
+  margin: auto;
+  width: 50%;
+  height: 2px;
+  background-color: #FFF;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+	transition: all .2s;
+}
+#mypage .mainContents .karteSearch .accordionBtn:hover .accordionIcon span {
+	background-color: rgba(255,255,255,0.7);
+}
+#mypage .mainContents .karteSearch .accordionBtn .accordionIcon span:nth-of-type(1) {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+}
+#mypage .mainContents .karteSearch .accordionBtn .accordionIcon span:nth-of-type(2) {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+#mypage .mainContents .karteSearch .accordionBtn.active .accordionIcon span:nth-of-type(1) {
+  display:none;
+}
+#mypage .mainContents .karteSearch .accordionBtn.active .accordionIcon span:nth-of-type(2) {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+@media (min-width: 768px){
+	#mypage .mainContents .karteSearch .accordionBtn {
+    top: 6.5vw;
+  }
+	#mypage .mainContents .karteSearch .accordionBtn .accordionIcon {
+		width: 5vw;
+    height: 5vw;
+  }
+}
+@media (min-width: 992px){
+	#mypage .mainContents .karteSearch h3 {
+    font-size: 1.17em;
+  }
+	#mypage .mainContents .karteSearch .accordionBtn {
+    border-radius: 20px;
+    font-size: 14px;
+    line-height: 40px;
+    top: 30px;
+    right: 30px;
+    width: 70px;
+    height: 40px;
+    padding-left: 50px;
+  }
+  #mypage .mainContents .karteSearch .accordionBtn .accordionIcon {
+    width: 30px;
+    height: 30px;
+    left: 18px;
+  }
+  #mypage .mainContents .karteSearch .accordionBtn .accordionIcon span {
+    left: 6px;
+    width: 50%;
+    height: 2px;
+    border-radius: 4px;
+  }
+}
+
+#mypage .howto {
+	color:#050505;
+	margin-top:30px;
+}
+#mypage .howto .container {
+	background: #FFF;
+	overflow: hidden;
+	padding: 40px 0;
+}
+#mypage .howto .container .ttl {
+	padding: 0 40px;
+
+}
+#mypage .howto .container .ttl h2 {
+	font-family: 'sawarabi';
+  -webkit-font-smoothing: antialiased;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 1.8;
+	text-align: left;
+}
+#mypage .howto .container .ttl ul {
+	text-align: left;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 2;
+}
+#mypage .howto .container .ttl ul li a {
+	color: #000;
+	text-decoration: underline;
+}
+#mypage .howto .container .howto_img {
+	padding: 40px;
+	padding-top: 140px;
+  margin-top:-100px;
+}
+@media (max-width: 991px) {
+	#mypage .howto .container {
+		padding: 5vw 0;
+	}
+	#mypage .howto .container .ttl {
+		padding: 0 5vw;
+	}
+	#mypage .howto .container .ttl h2 {
+		font-size: 16px;
+	}
+	#mypage .howto .container .ttl ul {
+		font-size: 10px;
+	}
+	#mypage .howto .container .howto_img {
+		padding: 5vw;
+	  margin-top:0;
+	}
+	#mypage .howto {
+		margin-bottom: 60px;
+	}
+}

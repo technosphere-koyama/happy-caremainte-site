@@ -1,0 +1,46 @@
+@charset "utf-8";
+.frm { background: url(../img/form_bg.jpg) no-repeat top center/cover fixed; }
+.frm .footer_sns { display:block !important; }
+.frm a { color: #FFF; text-decoration: underline; }
+.frm .frmWrap { padding:7vw 0 0; }
+.frm .frmBox { min-height:600px; width:100%; margin: 0 auto; text-align:center; margin-top: 30px; margin-top: 15vw; position: relative; }
+.frm .frmBox h3 { font-size:6vw; font-weight: normal; margin-bottom: 5vw; font-family: 'sawarabi'; -webkit-font-smoothing: antialiased; }
+.frm .frmBox .annotation { font-size:3vw; }
+.frm .frmBox dt { text-align: left; margin-bottom: 14px; }
+.frm .frmBox dd { margin: 0; text-align: left; }
+.frm .frmBox input { width: 100%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #ddd; padding: 11px; font-size: 110%; margin-bottom:20px;  }
+.frm .frmBox textarea{ width: 100%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #ddd; padding: 11px; font-size: 110%; margin-bottom:20px;  }
+.frm .frmBox input[type="tel"]  { width: 30%; }
+.frm .frmBox input[type="button"] { width:100%; color: #FFF; background: #6a3b93; border-radius: 8vw; display: inline-block; font-size: 5vw; padding: 3vw 0; position: relative; text-align: center; border:none; font-weight: bold; }
+.frm .frmBox input[type="radio"] { width:auto; }
+.frm .frmBox input[type="radio"]:first-child { margin-top: 16px; }
+.frm .frmBox select { width: 100%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #ddd; padding: 11px; font-size: 110%; margin-bottom:20px;}
+.frm .frmBox input#zip { width:35%; margin-right: 3%; }
+.frm .frmBox input#zipbtn { border-radius: 22px; font-size: 14px; padding: 6px 7%; width: 70%;}
+.frm .frmBox .btnarea { width: 100%; text-align:center;}
+.frm .frmBox .taking_check label { display:block; }
+.frm .frmBox .contactnum2 input { width: 14%; }
+.frm .frmBox dt.w100 { width:100%; text-align: left; }
+.frm .frmBox dd.w100 { width:100%; text-align: left; }
+.frm .frmBox .sns_privacy-txt { text-align: left; }
+.frm .frmBox .sns_privacy-txt p { margin: 20px 0; line-height: 2.2; }
+@media (min-width: 992px) {
+	.frm .frmWrap { padding:80px 0; }
+	.frm .frmBox { width:700px; margin: 80px auto; text-align:center; margin-bottom: 80px; }
+	.frm .frmBox h3 { font-size:26px; font-weight: normal; margin-bottom: 20px; }
+	.frm .frmBox .annotation { font-size:14px; padding:20px 0; }
+	.frm .frmBox form { margin: 60px 0; }
+	.frm .frmBox dl { clear:both; overflow:hidden; }
+	.frm .frmBox dt { width:140px; float:left; padding:9px 0; text-align: right; }
+	.frm .friend dt { width:200px; }
+	.frm .frmBox dd { width:530px; float:right; text-align: left; }
+	.frm .friend dd { width:470px; }
+	.frm .frmBox dd .ipt_50 { width:48%; margin-right: 4%; }
+	.frm .frmBox dd .ipt_50:last-child { margin-right: 0; }
+	.frm .frmBox input[type="tel"]  { width: 31%; }
+	.frm .frmBox input#zip { width:20%; margin-right: 3%; }
+	.frm .frmBox select#pref { width: 30%; }
+	.frm .frmBox input#zipbtn { width:40%;}
+	.frm .frmBox input#btn { border-radius: 22px; font-size: 16px; padding: 6px 7%; width: 40%;}
+	.frm .frmBox .sns_privacy-txt p { margin: 20px 0; line-height: 2.2; }
+}

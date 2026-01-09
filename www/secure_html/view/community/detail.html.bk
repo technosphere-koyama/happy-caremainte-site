@@ -1,0 +1,444 @@
+<?php
+$publicGadget = new PublicGadget();
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>コミュニティを探す｜コミュニティ｜ハッピー ケアメンテ®</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns_dummy.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/sns.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+<script src="/_assets/js/jquery.darktooltip.js"></script>
+</head>
+<body id="mypage" class="sns_top">
+	<?php
+  /* ヘッダーインクルード */
+  include(DIR_PUBLIC . "/include/header_new.php");
+  ?>
+		<div id="Container">
+			<?php
+			/* ヘッダーインクルード */
+			include(DIR_PUBLIC . "/include/header_new.php");
+			?>
+
+			<div id="Contents" <?php if ($this->get("is_top_community")) { ?>class="TopCommunity"<?php } ?>>
+				<div class="mainvisual__section">
+					<div>COMMUNITY<br><p>コミュニティ</p></div>
+				</div>
+				<div class="logoutArea">
+					<?php if($this->get("is_login")) { ?>
+					<div class="logoutBtn"><a href="/mypage/logout/">ログアウト</a></div>
+					<?php } ?>
+				</div>
+
+				<div id="pankuzu-wrapp">
+					<div class="pan-border"><p class="pankuzu"><a href="/">トップ</a></p><p class="pankuzu"><a href="/community">コミュニティ</a></p><p class="pankuzu no-arrow"><?php echo $this->get("community_name") ?></p></div>
+				</div>
+
+				<div class="mypageNavi PCpart" style="min-height:21px">
+					<?php if($this->get("is_login")) { ?>
+					<ul>
+						<li><a href="/mypage/sns.html">トップ</a></li>
+						<li><a href="/mypage/friend/">フレンド</a></li>
+						<li class="current"><a href="/community/">コミュニティ</a></li>
+						<li><a href="/mypage/message/">メッセージ</a><?php if ($this->get("count_unread") > 0) { ?><div class="unreadMsgNumber"><span><?php echo $this->get("count_unread"); ?></span></div><?php } ?></li>
+						<li><a href="<?php echo $this->get("user_link"); ?>">プロフィール</a></li>
+					</ul>
+					<?php } ?>
+				</div>
+                <?php if ($this->get("is_top_community")) { ?>
+                    <div class="tc_cover" style="background-image:url('<?php echo $this->get("topcom_bg_url") ?>')"></div>
+                    <div class="tc_head">
+                        <img src="<?php echo $this->get("avatar"); ?>" alt="<?php echo $this->get("community_name") ?>">
+                        <h1><span><?php echo $this->get("community_name") ?></span></h1>
+                        <span class="category"><?php echo $this->get("category_name") ?></span>
+                        <p><?php echo nl2br($this->get("topcom_description")) ?></p>
+                    </div>
+                <?php } else { ?>
+                    <div class="mypageHead SPpart">
+                        <h1><?php echo $this->get("community_name") ?></h1>
+                    </div>
+                <?php } ?>
+				<div class="mypageArea">
+					<?php if (!StaticFunction::is_empty($this->get('error'))) { ?>
+						<div id="mypagetab" class="mypageMain">
+							<p class="error_box">
+								<?php echo $this->get('error'); ?>
+							</p>
+						</div>
+					<?php } else { ?>
+
+						<div id="mypagetab" class="mypageMain">
+
+							<ul class="tab_menu SPpart">
+								<li class="active"><a href="#post">投稿</a></li><li><a href="#profile">プロフィール</a></li>
+							</ul>
+
+							<div id="profile" class="mainSide tab_contents">
+								<div class="userProfile">
+									<div class="userAvatar"><img src="<?php echo $this->get("avatar"); ?>" alt="<?php echo $this->get("community_name") ?>"></div>
+									<div class="userTxt">
+										<div class="userName"><?php echo $this->get("community_name") ?></div>
+									</div>
+								</div>
+								<div class="userCommunity noFrame">
+                                    <?php if (!$this->get("is_entry")) { // コミュニティに参加していないとき ?>
+                                        <div class="userCommunityBtn2"><a href="/community/detail.html/?tid=<?php echo $this->get("thread_id") ?>&mode=entry">このコミュニティに参加する</a></div>
+                                    <?php } else { // コミュニティに参加している ?>
+                                        <div class="userCommunityBtn2"><a href="/community/leave.html/?tid=<?php echo $this->get("thread_id") ?>">このコミュニティから外れる</a></div>
+                                    <?php } ?>
+                                    <?php if ($this->get("is_comm_admin")) { // 関連ユーザーはthreadの編集ができる ?>
+										<div class="userCommunityBtn2"><a href="/community/edit.html/?tid=<?php echo $this->get("thread_id") ?>">このコミュニティを編集する</a></div>
+									<?php } ?>
+                                    <?php if ($this->get("is_owner_thread")) { // 作成者のみが削除できる ?>
+                                    <div class="userCommunityBtn2"><a href="/community/delete_thread.html/?tid=<?php echo $this->get("thread_id") ?>">このコミュニティを削除する</a></div>
+                                    <?php } ?>
+								</div>
+
+								<div class="userCommunity">
+									<h5>管理人</h5>
+									<div class="userCommunityInfo">
+										<div class="userCommunityImg"><a href="/profile/?uid=<?php echo $this->get("system_id") ?>"><img src="<?php echo $this->get("avatar_user") ?>" alt="<?php echo $this->get("nickname") ?>"></a></div>
+										<div class="userCommunityName"><a href="/profile/?uid=<?php echo $this->get("system_id") ?>"><?php echo $this->get("nickname"); ?></a></div>
+									</div>
+								</div>
+
+                                <?php if($this->get("is_login")) { ?>
+								<div class="userCommunity">
+									<h5>フォロワー:<?php echo $this->get("match_num"); ?></h5>
+									<?php foreach ($this->get("match_array") AS $match_val) { ?>
+										<div class="userCommunityInfo">
+											<div class="userCommunityImg"><a href="/profile/?uid=<?php echo $match_val['system_id']; ?>"><img src="<?php echo $match_val["avatar"]; ?>" alt="コミュニティ"></a></div>
+											<div class="userCommunityName"><a href="/profile/?uid=<?php echo $match_val["system_id"]; ?>"><?php echo $match_val["nickname"]; ?></a></div>
+										</div>
+									<?php } ?>
+								</div>
+                                <?php } ?>
+
+								<div class="userCommunity">
+									<h5>プロフィール</h5>
+									<div class="userCommunityInfo infoTxt">
+										<?php echo nl2br($this->get("community_detail")) ?>
+									</div>
+								</div>
+								<div class="userCommunity">
+									<h5>コミュニティのカテゴリー</h5>
+									<div class="userCommunityInfo infoTxt"><?php echo $this->get("category_name") ?></div>
+								</div>
+							</div><!--/mainSide-->
+
+							<div id="post" class="mainContents tab_contents active">
+								<?php if (!StaticFunction::is_empty($this->get('error_array'))) { ?>
+									<ul class="error_box">
+										<?php
+										foreach ($this->get('error_array') as $value) {
+											echo '<li>・ ' . $value['message'] . '</li>';
+										}
+										?>
+									</ul>
+								<?php } ?>
+
+								<?php if ($this->get("is_comm_admin")) { /** ノーマル：エントリーのみ　トップコミュニティ：関連のみ */ ?>
+								<form id="form_1" name="form01" method="POST" action="/community/detail.html?tid=<?php echo $this->get("thread_id") ?>"  enctype="multipart/form-data">
+									<input type="hidden" name="tid" value="<?php echo $this->get("thread_id") ?>">
+									<div class="postingForm">
+										<textarea name="comment" placeholder="投稿を入力"><?php echo $this->get("comment") ?></textarea>
+										<div class="postingBottom">
+											<div class="postingImgBtn">
+                                                <span class="SPpart">ファイルを選択</span><input type="file" accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/mp4, video/quicktime, video/mpeg, video/ogv, image/*" display="inline" role="button" tabindex="0" name="response_file[]">
+                                                <span class="SPpart">ファイルを選択</span><input type="file" accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/mp4, video/quicktime, video/mpeg, video/ogv, image/*" display="inline" role="button" tabindex="0" name="response_file[]">
+                                                <span class="SPpart">ファイルを選択</span><input type="file" accept="video/*,  video/x-m4v, video/webm, video/x-ms-wmv, video/x-msvideo, video/3gpp, video/flv, video/mp4, video/quicktime, video/mpeg, video/ogv, image/*" display="inline" role="button" tabindex="0" name="response_file[]">
+                                            </div>
+											<div class="postingBtnArea"><button type="submit" value="" ><span>投稿する</span></button></div>
+										</div>
+									</div><!--/postingForm-->
+								</form>
+								<?php } ?>
+                                <?php $comment_array = $this->get("comment_array") ?>
+								<?php foreach ($this->get("responseAllArray") AS $value) { ?>
+									<div class="postingArea">
+										<div class="userAvatar"><img src="<?php echo $value['avatar'] ?>" alt="<?php echo $value['nickname'] ?>"></div>
+										<div class="userTxt">
+											<div class="userName"><a href="/profile/?uid=<?php echo $value['system_id'] ?>"><?php echo $value['nickname'] ?></a></div>
+											<div class="postingTime"><?php echo $value['update_time'] ?></div>
+
+											<?php if (!StaticFunction::is_empty($value['edit_link']) && !$this->get("entry_view")) { // 自分の記事 ?>
+												<div id="def-response_<?php echo $value['response_id'] ?>" class="postingMenu" data-tooltip="#html-response_<?php echo $value['response_id'] ?>"><a aria-label="削除する" href="#" aria-haspopup="true" aria-expanded="false" rel="toggle" role="button"></a></div>
+												<div id="html-response_<?php echo $value['response_id'] ?>" style="display:none;">
+													<a href="javascript:void(0)" class="edit-response" rel="response_<?php echo $value['response_id'] ?>">編集・削除</a>
+												</div>
+											<?php } ?>
+										</div>
+										<div class="target_response_<?php echo $value['response_id'] ?>">
+											<div class="postingTxt"><?php echo $value['response_text_view']; ?></div>
+											<?php if (!StaticFunction::is_empty($value['edit_link'])) { // 自分の記事 ?>
+												<div class="postingForm edit-form ">
+													<form method="POST" action="/community/detail.html?tid=<?php echo $this->get("thread_id") ?>"  enctype="multipart/form-data">
+														<input type="hidden" name="rid" value="<?php echo $value['response_id'] ?>">
+														<textarea name="comment" class="edit-textarea" placeholder="投稿を入力"><?php echo $value['response_text']; ?></textarea>
+														<div class="postingBottom">
+															<div class="postingImgBtn">
+                                                                <span class="SPpart">ファイルを選択</span><input type="file" accept=" image/*" display="inline" role="button" tabindex="0" name="response_file[]">
+                                                                <span class="SPpart">ファイルを選択</span><input type="file" accept=" image/*" display="inline" role="button" tabindex="0" name="response_file[]">
+                                                                <span class="SPpart">ファイルを選択</span><input type="file" accept=" image/*" display="inline" role="button" tabindex="0" name="response_file[]">
+                                                            </div>
+															<div class="postingBtnArea"><button type="submit" value="" ><span>変更する</span></button></div>
+															<div class="postingBtnArea"><a style="color:#fff; background-color:red;padding:3px 10px;" href="./response_delete.html?tid=<?php echo $value['thread_id'] ?>&rid=<?php echo $value['response_id'] ?>&token=<?php echo SESSION::read('EXPIRES.ORIGINAL_TOKEN'); ?>">削除する</a></div>
+														</div>
+													</form>
+												</div>
+											<?php } ?>
+										</div>
+                                        <?php /* コミュニティ投稿の画像一覧 */
+                                        if (!StaticFunction::is_empty($value['file_url'])) {
+                                            foreach($value['file_url'] AS $img_url) {
+                                                ?>
+                                                <div class="postingImg">
+                                                    <a href="<?php echo $img_url; ?>" data-lightbox="image-community_response_<?php echo $value['response_id'] ?>"><!--
+                                                --><img src="<?php echo $img_url; ?>"></a>
+                                                    <?php if ($value['is_my_post']) { // 自分のタイムライン ?>
+                                                        <br><a href="./delete_response_image.html?rid=<?php echo $value['response_id'] ?>&file_name=<?php echo $img_url ?>&pd=<?php echo $this->get("pd") ?>&pp=<?php echo $this->get("pp") ?>" class="edit-delete">削除</a>
+                                                    <?php } ?>
+                                                </div>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
+
+										<div class="postingLike">
+											<a href="javascript:void(0)" rel="response:<?php echo $value['response_id'] ?>" role="button"><img src="/_assets/img/mypage/like.png">:<span class="like_count"><?php echo $value['like_count'] ?></span></a>
+										</div>
+
+                                        <!-- レスポンスへの返信ここから -->
+                                        <?php if($this->get("is_login")) { ?>
+                                        <?php if (array_key_exists($value['response_id'],$comment_array)) { ?>
+                                            <?php foreach ($comment_array[$value['response_id']] AS $response) { ?>
+                                                <div class="postingComment noBorder">
+                                                    <div class="postingCommentArea replay">
+                                                        <div class="userAvatar">
+                                                            <a href="<?php echo $response['user_link'] ?>"><img src="<?php echo $response['avatar'] ?>" alt="<?php echo $response['nickname'] ?>"></a>
+                                                        </div>
+                                                        <div class="userTxt">
+                                                            <div class="userName">
+                                                                <a href="<?php echo $response['user_link'] ?>"><?php echo $response['nickname'] ?></a>
+                                                                <p><?php echo $response['comment_text'] ?></p>
+                                                            </div>
+                                                            <div class="postingTime"><?php echo $response['update_time'] ?></div>
+                                                            <?php if (!StaticFunction::is_empty($response['edit_link'])) { // 自分のコメントの削除 ?>
+                                                                <a href="javascript:void(0)" class="comment_del">削除</a>
+                                                                <a href="<?php echo $response['edit_link'] ?>" class="comment_del_commit" style="display:none;">削除する</a>
+                                                            <?php } ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                        <?php } ?>
+                                        <?php } ?>
+                                        <!-- レスポンスへの返信ここまで -->
+
+                                        <!-- コミュニティ投稿への返信フォームここから -->
+																				<script>
+																					$(function () {
+																							$('.comment_attention').hide();
+																					    $('.postingComment').click(function () {
+																					        $('.comment_attention').show('fast');
+																					    });
+																					});
+																				</script>
+																				<?php if (!$this->get("is_login")) { // ログインしていないとき ?>
+																					<div class="comment_attention">
+																						<div class="white_logout"><a href="/login/?callback=/community/detail.html/?tid=<?php echo $this->get("thread_id") ?>">アカウント登録またはログインし、<br class="SPpart">コミュニティへの参加が必要です。<br>アカウント登録／ログイン</a></div>
+																					</div>
+																					<div class="postingComment noBorder">
+	                                            <div class="postingReplay last">
+	                                                <form>
+	                                                    <div class="userAvatar PCpart"><img src="<?php echo $this->get("my_avatar"); ?>" alt="<?php echo $this->get("my_nickname"); ?>"></div>
+	                                                    <textarea placeholder="コメントを入力" class="sns" disabled="disabled"></textarea>
+	                                                    <button type="submit" class="response_submit" disabled="disabled"><span>コメントする</span></button>
+	                                                </form>
+	                                            </div>
+	                                        </div>
+																				<?php } else { ?>
+																				<?php if (!$this->get("is_entry")) { // コミュニティに参加していないとき ?>
+																					<div class="comment_attention">
+																						<div class="white_noentry"><a href="/community/detail.html/?tid=<?php echo $this->get("thread_id") ?>&mode=entry">コミュニティへの参加が必要です。<br class="PCpart">こちらを<br class="SPpart">クリックするとこのコミュニティへ参加できます。</a></div>
+																					</div>
+																					<div class="postingComment noBorder">
+	                                            <div class="postingReplay last">
+	                                                <form>
+	                                                    <div class="userAvatar PCpart"><img src="<?php echo $this->get("my_avatar"); ?>" alt="<?php echo $this->get("my_nickname"); ?>"></div>
+	                                                    <textarea placeholder="コメントを入力" class="sns" disabled="disabled"></textarea>
+	                                                    <button type="submit" class="response_submit"><span>コメントする</span></button>
+	                                                </form>
+	                                            </div>
+	                                        </div>
+																				<?php } else { // コミュニティに参加している ?>
+																					<div class="postingComment noBorder">
+	                                            <div class="postingReplay last">
+	                                                <form id="form_3" name="form03" method="POST" action="/community/comment.html"  enctype="multipart/form-data">
+	                                                    <input type="hidden" name="token" value="<?php echo SESSION::read('EXPIRES.ORIGINAL_TOKEN'); ?>">
+	                                                    <input type="hidden" name="thread_id" value="<?php echo $value['thread_id'] ?>">
+	                                                    <input type="hidden" name="response_id" value="<?php echo $value['response_id'] ?>">
+	                                                    <input type="hidden" name="pd" value="<?php echo REQUEST::get_data('pd') ?>">
+	                                                    <input type="hidden" name="pp" value="<?php echo REQUEST::get_data('pp') ?>">
+	                                                    <div class="userAvatar PCpart"><img src="<?php echo $this->get("my_avatar"); ?>" alt="<?php echo $this->get("my_nickname"); ?>"></div>
+	                                                    <textarea name="comment_text" placeholder="コメントを入力" class="sns" id="adjust"></textarea>
+	                                                    <button type="submit" value="" class="response_submit" onclick="if(validate(document.form03))document.form03.submit()"><span>コメントする</span></button>
+	                                                </form>
+	                                            </div>
+	                                        </div>
+		                                    <?php } ?>
+																				<?php } ?>
+                                        <!-- コミュニティ投稿への返信フォームここまで -->
+
+
+									</div>
+								<?php } ?>
+								<div class="postingPagenavi">
+									<ul class="pageNumbers">
+										<?php echo $this->get("pageng_html"); ?>
+									</ul>
+								</div>
+							</div><!--/mainContents-->
+						</div>
+						<div class="mypageSub">
+                            <?php if ($this->get("is_top_community")) { ?>
+                            <div class="tc_information PCpart">
+                                <p>ホームページ</p>
+                                <a href="<?php echo $this->get("topcom_url") ?>" target="_blank"><?php echo $this->get("topcom_url") ?></a>
+                                <ul class="sns">
+                                    <?php if(!StaticFunction::is_empty($this->get("topcom_twitter"))) { ?>
+                                    <li><a href="<?php echo $this->get("topcom_twitter") ?>" target="_blank"><img src="/_assets/img/mypage/ico_sns01.gif" alt="Twitter"></a></li>
+                                    <?php } ?>
+                                    <?php if(!StaticFunction::is_empty($this->get("topcom_facebook"))) { ?>
+                                    <li><a href="<?php echo $this->get("topcom_facebook") ?>" target="_blank"><img src="/_assets/img/mypage/ico_sns02.gif" alt="Facebook"></a></li>
+                                    <?php } ?>
+                                    <?php if(!StaticFunction::is_empty($this->get("topcom_instagram"))) { ?>
+                                    <li><a href="<?php echo $this->get("topcom_instagram") ?>" target="_blank"><img src="/_assets/img/mypage/ico_sns03.gif" alt="Instagram"></a></li>
+                                    <?php } ?>
+                                    <?php if(!StaticFunction::is_empty($this->get("topcom_youtube"))) { ?>
+                                    <li><a href="<?php echo $this->get("topcom_youtube") ?>" target="_blank"><img src="/_assets/img/mypage/ico_sns04.gif" alt="YouTube"></a></li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+
+
+                                <?php if(!$this->get("is_login")) { // この領域にログアウト状態のデザインを追加してください ?>
+                                <div class="userCommunityBtn2"><a href="/entry/">新規会員登録する</a></div>
+                                <?php } // ここまで ?>
+
+
+                                <?php if($this->get("is_login")) { ?>
+
+                                    <div class="tc_connect">
+                                    <h4>このコミュニティのメンバー</h4>
+                                    <?php $g_author = $this->get("list_comm_author"); ?>
+                                    <?php foreach ((array)$this->get("list_comm_author_group") AS $key => $val) { ?>
+                                        <?php if(array_key_exists($val['id'],$g_author)) { ?>
+                                    <div class="accout_wrap">
+                                        <h5><?php echo $val['group_name'] ?></h5>
+                                        <ul class="account">
+                                            <?php if(array_key_exists($val['id'],$g_author)) {foreach ((array)$g_author[$val['id']] AS $author_val) { ?>
+                                            <li><a href="<?php echo $author_val['user_link'] ?>"><!--
+                                            --><img src="<?php echo $author_val['avatar'] ?>" alt="<?php echo $author_val['nickname'] ?>"><!--
+                                            --><span><?php echo $author_val['nickname'] ?></span><!--
+                                            --></a></li>
+                                            <?php }} ?>
+                                        </ul>
+                                    </div>
+                                            <?php } ?>
+                                    <?php } ?>
+                                </div>
+
+
+                                <div class="tc_connect">
+                                    <h4>管理人のフレンド</h4>
+                                    <div class="accout_wrap">
+                                        <ul class="account">
+                                            <?php foreach ($this->get("friendArray") AS $friends) { ?>
+                                            <li><a href="<?php echo $friends['user_link']; ?>"><img src="<?php echo $friends['avatar']; ?>" alt="<?php echo $friends['nickname']; ?>"><span><?php echo $friends['nickname']; ?></span></a></li>
+                                            <?php } ?>
+                                        </ul>
+                                    </div>
+                                </div>
+							<?php } ?>
+
+                            <?php } else { ?>
+                            <?php $publicGadget->get_news(); /* 右カラムのお知らせ */ ?>
+                            <?php } ?>
+						</div><!--/mypageSub-->
+					<?php } ?>
+				</div>
+			</div><!--/Contents-->
+			<?php
+			/* フッターインクルード */
+			include(DIR_PUBLIC . "/include/footer_new.php");
+			?>
+		</div>
+		<!--/Container-->
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('[id^=def-]').darkTooltip({
+					trigger: 'click',
+					opacity: 1,
+					gravity: 'north'
+				});
+			});
+		</script>
+		<script type="text/javascript">
+			$(function () {
+				$('.tab_menu a').click(function (e) {
+					$('.tab_menu .active').removeClass('active');
+					$(this).parent().addClass('active');
+					$('.tab_contents').each(function () {
+						$(this).removeClass('active');
+					});
+					$(this.hash).addClass('active');
+					e.preventDefault();
+				});
+			});
+		</script>
+		<script>
+			$('.menu_button').click(function () {
+				$(this).next('.nav').slideToggle('slow').siblings('.nav').slideUp('slow');
+				$(this).siblings('.menu_button').removeClass('active');
+				$(this).toggleClass('active');
+			});
+		</script>
+		<script>
+			var like_array = new Array(<?php echo $this->get("response_like_array"); ?>);
+			$(function () {
+				$(".edit-form").css("clear", "both").hide();
+				$(".edit-response").on("click", function () {
+					var targ = $(this).attr("rel");
+					$(".target_" + targ).find(".postingTxt").hide();
+					$(".target_" + targ).find(".edit-form").show();
+				});
+              $(".comment_del").on("click", function () {
+                $(this).hide();
+                $(this).next(".comment_del_commit").show();
+              });
+			});
+		</script>
+		<script src="/_assets/js/xc.js"></script>
+
+		<?php
+				$webroot = $_SERVER['DOCUMENT_ROOT'];
+				include($webroot."/include/body_retargeting_cord.php");
+				?>
+
+
+	</body>
+</html>

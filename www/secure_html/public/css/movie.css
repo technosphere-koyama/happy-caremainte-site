@@ -1,0 +1,297 @@
+@charset "UTF-8";
+#movie:before {
+	content:"";
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+  width:100%;
+  height:100vh;
+  background-size:cover;
+	background: url(../movie/img/knowledge_bg.png) no-repeat top center/cover fixed;
+}
+.header_nav_common + .bg {
+  padding-top: 10vw;
+  /*padding-bottom: 150px;*/
+}
+body#movie .mainvisual__section {
+  background-image: url("../img/footer04.png");
+}
+#movie .mainvisual__section {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 55px;
+  background: no-repeat center top;
+  padding-top: 55px;
+}
+
+.mainvisual__section p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.mainvisual__section p:before {
+  content: "［  ";
+  font-weight: 400;
+}
+.mainvisual__section p:after {
+  content: " ］";
+  font-weight: 400;
+}
+.content a, #pankuzu-wrapp a {
+  color: white;
+}
+.bg > #Contents {
+  /* @extend .container */
+  margin: auto;
+  width: 90vw;
+}
+
+
+@media print, screen and (min-width:992px){
+/*======================
+PCレイアウト　トップページ　*/
+.header_nav_common + .bg {
+  padding-bottom: 150px;
+}
+
+/*.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/movie/bg_mv.jpg) center center no-repeat !important;
+	background-size: cover !important;
+}
+*/
+#pankuzu-wrapp {
+  /* width:100%; */
+  padding: 10px 0;
+  border-bottom: 1px solid #efefef;
+  font-size: 11px;
+}
+
+#pankuzu-wrapp p.pankuzu {
+  background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/icon_pankuzu.gif) right center no-repeat;
+  background-size: 4px 7px;
+  float: left;
+  padding-right: 16px;
+  margin-right: 10px;
+}
+
+#pankuzu-wrapp p.no-arrow {
+  background: none;
+}
+
+#pankuzu-wrapp .pan-border {
+  /* width:1100px; */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#pankuzu-wrapp a:hover {
+  opacity: 0.5;
+}
+		
+#pankuzu-wrapp {
+  margin-bottom: 50px;
+}
+h5{
+	font-weight: bold;
+	text-align: left;
+}
+
+.movie-cont{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.youtube_icon{
+	text-align: right;
+}
+.youtube_icon img{
+	width: 60px;
+	margin: 40px 0 0;
+	filter:alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+
+}
+
+#thumbnail {
+    margin-top: 50px;
+}
+#thumbnail li {
+	margin-bottom: 15px;
+	width: 48%;
+	display: inline-block;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #ddd;
+}
+#thumbnail li:nth-child(odd) {
+    margin-right: 2%;
+}
+#thumbnail li:last-child, #thumbnail li:nth-last-child(2) {
+    margin-bottom: 60px;
+	padding-bottom: 0;
+    border-bottom: 0;
+}
+#thumbnail li img {
+    width: 120px;
+    height: auto;
+}
+.ytdetail {
+	display: inline-block;
+	margin-left: 15px;
+	vertical-align: top;
+	max-width: 355px;
+}
+.ytdetail h3 {
+	width: 320px;
+	padding:0 0 15px;
+	line-height: 150%;
+	margin-bottom: 0;
+	font-weight: normal;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.ytdetail h3 a {
+	color: #FFF;
+	font-size:14px;
+}
+.ytdetail h3 a:hover {
+	text-decoration: underline;
+}
+.ytdetail p {
+	color: #FFF;
+	font-size:13px;
+}
+.time img.ytlogo {
+	width: 32px !important;
+	height: auto !important;
+	margin: -18px 0 0 0;
+	vertical-align: middle;
+}
+}
+
+
+@media screen and (max-width:991px){
+/*======================
+SPレイアウト　トップページ*/
+/*.mainvisual__section{
+	background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/movie/bg_mv.jpg) center center no-repeat !important;
+	background-size:auto 90px;
+}*/
+div#pankuzu-wrapp {
+  width: 100%;
+  padding: 8px 0;
+  border-bottom: 1px solid #efefef;
+  font-size: 8px;
+  line-height: 1.9;
+}
+
+div#pankuzu-wrapp p.pankuzu {
+  background: url(https://www.kyoto-happy.co.jp:8443/_assets/img/common_page/icon_pankuzu.gif) right center no-repeat;
+  background-size: 3px;
+  float: left;
+  padding-right: 12px;
+  margin-right: 7px;
+}
+
+div#pankuzu-wrapp p.no-arrow {
+  background: none;
+}
+
+div#pankuzu-wrapp .pan-border {
+  width: 90%;
+  margin: 0 5%;
+  overflow: hidden;
+}
+.sec_movie {
+  padding-bottom: 20vw;
+}
+.movie-cont{
+	max-width: 100%;
+	margin: 20px auto 0;
+}
+
+.youtube_icon{
+	text-align: right;
+}
+.youtube_icon img{
+	width: 30px;
+	margin: 10px 0 0;
+	filter:alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+
+}
+
+#player {
+	width: 100%;
+	height: 28vh;
+}
+#thumbnail {
+    margin-top: 30px;
+}
+#thumbnail li {
+	margin-bottom: 10px;
+	vertical-align: top;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+	display: flex;
+}
+#thumbnail li > a {
+	width: 32%;
+}
+#thumbnail li:last-child {
+	margin-bottom: 0px;
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+#thumbnail li img {
+   /* width: 30%;*/
+    height: auto;
+}
+.ytdetail {
+	display: inline-block;
+	width: 65%;
+	margin-left: 3%;
+}
+.ytdetail h3 {
+	margin-top: 0px;
+	margin-bottom: 2%;
+	font-size: 3vw;
+	font-weight: normal;
+	text-align: left;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.ytdetail h3 a {
+	color: #FFF;
+}
+.ytdetail h3 a:hover {
+	text-decoration: underline;
+}
+.ytdetail p {
+	color: #FFF;
+	font-size: 3vw;
+}
+.ytdetail p img{
+	width: 8vw;
+	vertical-align: sub;
+}
+}
+
+@media screen and (min-width:768px){
+  #player {
+    height: 40vh;
+  }
+}
+@media print, screen and (min-width:992px){
+  #player {
+    width: 100%;
+    height: 562px;
+  }
+}

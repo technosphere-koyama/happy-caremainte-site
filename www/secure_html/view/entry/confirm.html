@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('CareMenteh App User') != -1) {
+	document.write('<meta name="viewport" content="width=320, user-scalable=no" />');
+}else{
+	document.write('<meta name="viewport" content="width=1280" />');
+}
+</script>
+<title>新規会員登録｜ハッピー ケアメンテ&reg;</title>
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/common.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/mypage.css" rel="stylesheet">
+<link href="/wp/wp-content/themes/HAPPY_Dark/css/frm.css" rel="stylesheet">
+<link rel="stylesheet" href="/wp/wp-content/themes/HAPPY_Dark/css/transitional.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.min.js"></script>
+<![endif]-->
+<script type='text/javascript' src='/wp/wp-content/themes/HAPPY_Dark/lib/jquery-3.3.1.min.js'></script>
+</head>
+<body id="top" class="registration_top">
+    <?php
+    /* ヘッダーインクルード */
+    include(DIR_PUBLIC . "/include/header_new.php");
+    ?>
+	<!--　/header_nav　-->
+  <div class="bg">
+
+    
+		<section class="registrationWrap">
+      <div class="container">
+        <div class="bg_w">
+        <div class="registrationBox">
+          <h3>新規会員登録</h3>
+          <p>下記内容でよろしければ、送信ボタンを押してください。</p>
+
+			<form id="form_1" name="form01" method="POST" action="./complete.html"  enctype="multipart/form-data">
+				<input type="hidden" name="mode" value="core">
+				<dl class="contactform conf">
+					<dt>お名前 <sup>※</sup> : </dt>
+					<dd><?php echo $this->get("name_view") ?></dd>
+                  </dl>
+                <dl class="contactform conf">
+					<dt>ふりがな <sup>※</sup> : </dt>
+					<dd><?php echo $this->get("kana_view") ?></dd>
+				  </dl>
+				<dl class="contactform conf">
+					<dt>電話番号 <sup>※</sup> : </dt>
+					<dd><?php echo $this->get("telephone_view") ?></dd>
+				</dl>
+				<dl class="contactform conf">
+					<dt>メールアドレス <sup>※</sup> : </dt>
+					<dd><?php echo $this->get("email") ?></dd>
+                </dl>
+                <dl class="contactform conf">
+					<dt>メールサブアドレス : </dt>
+					<dd><?php echo $this->get("email2") ?></dd>
+                </dl>
+                <dl class="contactform conf">
+					<dt>住所 : </dt>
+					<dd><?php echo $this->get("address_view") ?></dd>
+                </dl>
+                <dl class="contactform conf">
+					<dt>性別 <sup>※</sup> : </dt>
+					<dd><?php echo $this->get("sex") ?></dd>
+                </dl>
+                <dl class="contactform conf">
+					<dt>生年月日 <sup>※</sup> : </dt>
+					<dd><?php echo $this->get("birth_view") ?></dd>
+                </dl>
+                <dl class="contactform conf">
+					<dt>職種 <sup>※</sup> : </dt>
+					<dd><?php echo $this->get("wkbn") ?></dd>
+                </dl>
+                <dl class="contactform conf">
+					<dt>パスワード : </dt>
+                    <dd><?php echo $this->get("pass_mask") ?></dd>
+                    
+                    <dt class="btnarea2"><input type="button" id="cancelbtn" class="cancelbtn" value="戻　る" onclick="javascript:window.history.back(-1);return false;"><input type="button" id="btn" class="btn" value="送　信" onclick="document.form01.submit()"></dt>
+                </dl>
+			</form>
+
+        </div>
+      </div>
+      <!--bg_w-->
+			</div>
+		</section>
+
+    <div class="footer_sns">
+      <div class="container">
+        <ul>
+          <li><a href="https://www.facebook.com/pages/%e3%83%8f%e3%83%83%e3%83%94%e3%83%bc%2d%e3%82%b1%e3%82%a2%e3%83%a1%e3%83%b3%e3%83%86Happy%2dCareMenteh%2f107312759374049" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/Happy_KYOTO" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/happycarementeh/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCZyJC69VvnDqIAgsEQ-rTeQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!--　/.footer_sns -->
+    <?php
+	/* ヘッダーインクルード */
+	include(DIR_PUBLIC . "/include/footer_top.php");
+	?>
+  </div>
+  <!--　/.bg -->
+  <?php
+	/* ヘッダーインクルード */
+	include(DIR_PUBLIC . "/include/footer_nav.php");
+	?>
+
+  
+</body>
+</html>
