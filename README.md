@@ -43,6 +43,54 @@ www/
 - **FCM**: プッシュ通知 (Firebase Cloud Messaging)
 - **WordPress**: ブログ・お知らせ管理
 
+## ローカル開発環境 (Docker)
+
+### 必要条件
+
+- Docker
+- Docker Compose
+
+### セットアップ
+
+```bash
+# 1. セットアップスクリプトを実行
+./docker-setup.sh
+
+# 2. Dockerコンテナを起動
+docker-compose up -d
+```
+
+### アクセスURL
+
+| サービス | URL |
+|----------|-----|
+| サイト | http://localhost:8080/ |
+| WordPress | http://localhost:8080/wp/ |
+| phpMyAdmin | http://localhost:8081/ |
+
+### データベース情報
+
+| DB名 | ユーザー | パスワード | 用途 |
+|------|----------|-----------|------|
+| happy_sns | happy_sns | happy_sns_pass | カスタムアプリ |
+| happy_wp | happy_wp | happy_wp_pass | WordPress |
+
+### コンテナ操作
+
+```bash
+# 起動
+docker-compose up -d
+
+# 停止
+docker-compose down
+
+# ログ確認
+docker-compose logs -f web
+
+# コンテナに入る
+docker-compose exec web bash
+```
+
 ## git管理外ファイル
 
 以下は `.gitignore` で除外されています:

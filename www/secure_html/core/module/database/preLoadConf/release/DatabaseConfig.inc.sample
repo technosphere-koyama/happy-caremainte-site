@@ -1,0 +1,19 @@
+<?php
+
+/* ---------------------------------------
+  database (本番環境用サンプル)
+  このファイルをコピーして DatabaseConfig.inc を作成してください
+  ---------------------------------------- */
+$config["DB"] = array(
+	"DBMS" => "mysql",
+	"HOST" => "YOUR_DB_HOST",
+	"PORT" => "3306",
+	"CHAR_SET" => "utf8",
+	"NAME" => "YOUR_DB_NAME",
+	"USER_ID" => "YOUR_DB_USER",
+	"USER_PW" => "YOUR_DB_PASSWORD",
+
+	"IS_CHECK_TABLES" => true
+);
+
+?>

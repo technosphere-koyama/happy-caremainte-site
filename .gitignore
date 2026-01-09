@@ -25,6 +25,18 @@ www/secure_html/public/wp/wp-content/debug.log
 # =============================================
 www/secure_html/public/wp/wp-config.php
 
+# 本番・ステージング環境のDB設定 (認証情報含む)
+www/secure_html/core/module/database/preLoadConf/release/DatabaseConfig.inc
+www/secure_html/core/module/database/preLoadConf/staging/DatabaseConfig.inc
+
+# REST API設定
+www/secure_html/core/module/REST/preLoadConf/release/RestConfig.inc
+www/secure_html/core/module/REST/preLoadConf/staging/RestConfig.inc
+
+# FCM設定
+www/secure_html/core/module/fcm/preLoadConf/release/fcmConfig.inc
+www/secure_html/core/module/fcm/preLoadConf/staging/fcmConfig.inc
+
 # =============================================
 # SSL証明書
 # =============================================
